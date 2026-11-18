@@ -39,7 +39,8 @@ for g in clones:
             flag('git:%s' % name, 'indahl-ai/%s: local clone %s differs from GitHub %s' % (name, local[:8], remote[:8]))
 
 # 2 Hugging Face code mirrors, 3 YO
-if not QUICK:
+# HF WALL 18 Nov 2026 (the owner: hard wall, no Hugging Face): the HF repos are private and no longer synced, so they are not checked
+if False:
     try:
         from huggingface_hub import HfApi
         api = HfApi()

@@ -1,0 +1,23 @@
+{
+ "a": "http://localhost:8787",
+ "b": "http://localhost:8789",
+ "checked": 5363,
+ "mismatches": [
+  {
+   "path": "/contact",
+   "method": "GET",
+   "same": false,
+   "a": [
+    200,
+    null,
+    "text/html; charset=utf-8"
+   ],
+   "b": [
+    404,
+    null,
+    "text/plain;charset=UTF-8"
+   ],
+   "body_same": false
+  }
+ ]
+}

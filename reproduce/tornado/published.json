@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/tornado/live.json",
+ "feed_sha256": "c13884c8e410ed5f8ef7f728175de6bb633731dd3d83e7fb52a3260f00fc2800",
+ "headline": {
+  "desk": "TORNADO",
+  "display": "17.6%",
+  "hi": 0.19038,
+  "keys": [],
+  "lo": 0.16246,
+  "n": null,
+  "of": null,
+  "outcome": "ABOVE",
+  "value": 0.17648
+ },
+ "read_at": "2026-11-15T21:41:58Z",
+ "stamp": "2026-11-15T21:27:30Z"
+}

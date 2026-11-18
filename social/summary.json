@@ -1,0 +1,463 @@
+{
+ "desk": "social",
+ "page": "/social",
+ "division": "/hermes",
+ "built_utc": "2026-11-15 22:01 UTC",
+ "status": "complete",
+ "headline": {
+  "big": "31 of 6,160",
+  "line": "matched political committees and election cycles read above, below or consistent, on Google's stated election ad spend against the committee's FEC filings, with an outcome that holds under both timing bands, does not turn on the itemization rule set after the data, rests on an FEC ID match alone and carries no note. In all 80 read above, below or consistent and 6,080 read cannot tell. For all cycle rows, 0 NOTHING_RETURNED. CANNOT_TELL 6,080 of 6,160 (497 NO_INTERVAL_FORMABLE, 3,261 STRADDLES_EDGE, 2,322 TOO_WIDE_TO_RESOLVE).",
+  "href": "/social",
+  "section": "adspend",
+  "numbers": [
+   {
+    "text": "31",
+    "value": 31,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.decided_cycle_rows.robust_id_no_flags"
+   },
+   {
+    "text": "6,160",
+    "value": 6160,
+    "file": "adspend/summary_adspend.json",
+    "path": "totals.cycle_rows"
+   },
+   {
+    "text": "80",
+    "value": 80,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.decided_cycle_rows.n"
+   },
+   {
+    "text": "6,080",
+    "value": 6080,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.cycle_rows.all.CANNOT_TELL"
+   },
+   {
+    "text": "497",
+    "value": 497,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+   },
+   {
+    "text": "3,261",
+    "value": 3261,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell_by_reason.STRADDLES_EDGE"
+   },
+   {
+    "text": "2,322",
+    "value": 2322,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+   },
+   {
+    "text": "0",
+    "value": 0,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.nothing_returned"
+   },
+   {
+    "text": "6,080",
+    "value": 6080,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.cannot_tell"
+   },
+   {
+    "text": "6,160",
+    "value": 6160,
+    "file": "adspend/summary_adspend.json",
+    "path": "outcomes.req13_cycle.n_readings"
+   }
+  ]
+ },
+ "headline_rule": "Only rows that read ABOVE, BELOW or CONSISTENT and do not rest on a rule defined after the data. CANNOT_TELL rows and readings defined after the data give no headline. A section gives one only if its own summary counts those rows.",
+ "sections": {
+  "dsa": {
+   "status": "cleared",
+   "anchor": "social-dsa",
+   "section_file": "dsa/section_dsa.html",
+   "section_sha256": "d9c56c253701c30c41a0b06446f37d05292445533c61ce2969e5254f2013681e",
+   "summary_file": "dsa/summary_dsa.json",
+   "summary_sha256": "70415f2e27b859c3340fa57b16ba3414902c593412abfd2c086754804335d58a",
+   "scored": "2026-11-10 04:19",
+   "gate_passed": true,
+   "rows": 519,
+   "outcomes": {
+    "ABOVE": 39,
+    "BELOW": 82,
+    "CONSISTENT": 41,
+    "CANNOT_TELL": 357,
+    "NOTHING_RETURNED": 0
+   },
+   "decided_as_printed": {
+    "ABOVE": 39,
+    "BELOW": 82,
+    "CONSISTENT": 41
+   },
+   "decided_not_resting_on_a_rule_after_the_data": null,
+   "headline_eligible": false,
+   "note": "summary_dsa.json does not count the decided rows that use no rule set after the data, so this section gives no headline"
+  },
+  "adspend": {
+   "status": "cleared",
+   "anchor": "adspend",
+   "section_file": "adspend/section_adspend.html",
+   "section_sha256": "ce7a8d00e4c8bbb5d320a2d091309f04b5bc25d87390314bcb084f0936154c5d",
+   "summary_file": "adspend/summary_adspend.json",
+   "summary_sha256": "d8174ab30ee41e972ca35fa1559f98f836e9280d3c5ee61e0054ca16fa5c381b",
+   "scored": "2026-11-10 03:50 UTC",
+   "gate_passed": true,
+   "rows": 6160,
+   "outcomes": {
+    "ABOVE": 28,
+    "BELOW": 26,
+    "CONSISTENT": 26,
+    "CANNOT_TELL": 6080,
+    "NOTHING_RETURNED": 0
+   },
+   "decided_as_printed": {
+    "ABOVE": 28,
+    "BELOW": 26,
+    "CONSISTENT": 26
+   },
+   "decided_not_resting_on_a_rule_after_the_data": 31,
+   "headline_eligible": true,
+   "note": "robust_id_no_flags: decided, same outcome on the second timing ruler, same outcome with unseen money counted in full (the itemization rule set after the data), no name match in the tier, no flag"
+  },
+  "tiktok": {
+   "status": "cleared",
+   "anchor": "social-tiktok",
+   "section_file": "tiktok/section_tiktok.html",
+   "section_sha256": "d5d3d1ef41b9cc0bc4892b98faed941bdf976d2c4b488233c8e5ee3da8f94a97",
+   "summary_file": "tiktok/summary_tiktok.json",
+   "summary_sha256": "b76b3ea8fef300b1f249319ee21e284f5dea3227a2b20478ffdf23a050b104d5",
+   "scored": "2026-11-10 09:52 UTC",
+   "gate_passed": true,
+   "rows": 828,
+   "outcomes": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 828,
+    "NOTHING_RETURNED": 0
+   },
+   "decided_as_printed": {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CONSISTENT": 0
+   },
+   "decided_not_resting_on_a_rule_after_the_data": 0,
+   "headline_eligible": false,
+   "defined_after_the_data_decided": {
+    "ABOVE": 1
+   },
+   "note": "no row is decided under the committed rules. The readings defined after the data are a separate column and give no headline"
+  },
+  "bluesky": {
+   "status": "cleared",
+   "anchor": "bluesky",
+   "section_file": "bluesky/section_bluesky.html",
+   "section_sha256": "5d37716b05c5b513bb0e8840e597aa62b7742d982dbdfb42ce8483b803d05644",
+   "summary_file": "bluesky/summary_bluesky.json",
+   "summary_sha256": "fee938ec388a6a8c0239d04cc32b83a0ad89816a211241d3672461e7125798c7",
+   "scored": "2026-11-10 12:33 UTC",
+   "gate_passed": true,
+   "rows": 26,
+   "outcomes": {
+    "ABOVE": 0,
+    "BELOW": 1,
+    "CONSISTENT": 0,
+    "CANNOT_TELL": 25,
+    "NOTHING_RETURNED": 0
+   },
+   "decided_as_printed": {
+    "ABOVE": 0,
+    "BELOW": 1,
+    "CONSISTENT": 0
+   },
+   "decided_not_resting_on_a_rule_after_the_data": null,
+   "headline_eligible": false,
+   "note": "no headline reader for this section"
+  }
+ },
+ "numbers": [
+  {
+   "text": "31",
+   "value": 31,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.decided_cycle_rows.robust_id_no_flags"
+  },
+  {
+   "text": "6,160",
+   "value": 6160,
+   "file": "adspend/summary_adspend.json",
+   "path": "totals.cycle_rows"
+  },
+  {
+   "text": "80",
+   "value": 80,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.decided_cycle_rows.n"
+  },
+  {
+   "text": "6,080",
+   "value": 6080,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.cycle_rows.all.CANNOT_TELL"
+  },
+  {
+   "text": "497",
+   "value": 497,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "3,261",
+   "value": 3261,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "2,322",
+   "value": 2322,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.nothing_returned"
+  },
+  {
+   "text": "6,080",
+   "value": 6080,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell"
+  },
+  {
+   "text": "6,160",
+   "value": 6160,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.n_readings"
+  },
+  {
+   "text": "39",
+   "value": 39,
+   "file": "dsa/summary_dsa.json",
+   "path": "outcomes.ABOVE"
+  },
+  {
+   "text": "82",
+   "value": 82,
+   "file": "dsa/summary_dsa.json",
+   "path": "outcomes.BELOW"
+  },
+  {
+   "text": "41",
+   "value": 41,
+   "file": "dsa/summary_dsa.json",
+   "path": "outcomes.CONSISTENT"
+  },
+  {
+   "text": "357",
+   "value": 357,
+   "file": "dsa/summary_dsa.json",
+   "path": "outcomes.CANNOT_TELL"
+  },
+  {
+   "text": "2026-11-10 04:19",
+   "value": "2026-11-10 04:19",
+   "file": "dsa/summary_dsa.json",
+   "path": "updated_utc"
+  },
+  {
+   "text": "28",
+   "value": 28,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.cycle_rows.all.ABOVE"
+  },
+  {
+   "text": "26",
+   "value": 26,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.cycle_rows.all.BELOW"
+  },
+  {
+   "text": "26",
+   "value": 26,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.cycle_rows.all.CONSISTENT"
+  },
+  {
+   "text": "6,080",
+   "value": 6080,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.cycle_rows.all.CANNOT_TELL"
+  },
+  {
+   "text": "2026-11-10 03:50",
+   "value": "2026-11-10 03:50 UTC",
+   "file": "adspend/summary_adspend.json",
+   "path": "updated"
+  },
+  {
+   "text": "828",
+   "value": 828,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "outcomes.CANNOT_TELL"
+  },
+  {
+   "text": "2026-11-10 09:52",
+   "value": "2026-11-10 09:52 UTC",
+   "file": "tiktok/summary_tiktok.json",
+   "path": "updated"
+  },
+  {
+   "text": "1",
+   "value": 1,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "outcomes.BELOW"
+  },
+  {
+   "text": "25",
+   "value": 25,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "outcomes.CANNOT_TELL"
+  },
+  {
+   "text": "2026-11-10 12:33",
+   "value": "2026-11-10 12:33 UTC",
+   "file": "bluesky/summary_bluesky.json",
+   "path": "updated"
+  },
+  {
+   "text": "120",
+   "value": 120,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "237",
+   "value": 237,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.nothing_returned"
+  },
+  {
+   "text": "357",
+   "value": 357,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.cannot_tell"
+  },
+  {
+   "text": "519",
+   "value": 519,
+   "file": "dsa/summary_dsa.json",
+   "path": "req13.n_readings"
+  },
+  {
+   "text": "497",
+   "value": 497,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "3,261",
+   "value": 3261,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "2,322",
+   "value": 2322,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.nothing_returned"
+  },
+  {
+   "text": "6,080",
+   "value": 6080,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.cannot_tell"
+  },
+  {
+   "text": "6,160",
+   "value": 6160,
+   "file": "adspend/summary_adspend.json",
+   "path": "outcomes.req13_cycle.n_readings"
+  },
+  {
+   "text": "796",
+   "value": 796,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "32",
+   "value": 32,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.cannot_tell_by_reason.TOO_WIDE_TO_RESOLVE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.nothing_returned"
+  },
+  {
+   "text": "828",
+   "value": 828,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.cannot_tell"
+  },
+  {
+   "text": "828",
+   "value": 828,
+   "file": "tiktok/summary_tiktok.json",
+   "path": "req13_all.n_readings"
+  },
+  {
+   "text": "6",
+   "value": 6,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.cannot_tell_by_reason.NO_INTERVAL_FORMABLE"
+  },
+  {
+   "text": "19",
+   "value": 19,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.cannot_tell_by_reason.STRADDLES_EDGE"
+  },
+  {
+   "text": "0",
+   "value": 0,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.nothing_returned"
+  },
+  {
+   "text": "25",
+   "value": 25,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.cannot_tell"
+  },
+  {
+   "text": "26",
+   "value": 26,
+   "file": "bluesky/summary_bluesky.json",
+   "path": "req13.n_readings"
+  }
+ ]
+}

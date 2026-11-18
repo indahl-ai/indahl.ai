@@ -1,0 +1,20 @@
+{
+  "name": "indahl-quote-check",
+  "version": "1.0.0",
+  "description": "Check every quotation in a draft, article or report against its source, word for word. Marks each VERBATIM, ALTERED, PARAPHRASE_IN_QUOTES, MISATTRIBUTED, NOT_FOUND or CANNOT_TELL with the source text beside it. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "verification",
+    "quotes",
+    "journalism",
+    "research",
+    "receipts"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

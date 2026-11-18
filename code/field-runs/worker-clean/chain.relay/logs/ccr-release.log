@@ -1,0 +1,38 @@
+[
+ {
+  "path": "worker.js",
+  "sha256": "9a78f3154945b383b98f406c64c27250a7e4fd9026448bcfe77632ebec7ae480",
+  "approvals": [
+   {
+    "approval_seq": 0,
+    "scope": {
+     "kind": "file"
+    },
+    "outcome": "SAME",
+    "reason": null
+   }
+  ],
+  "lines": 629,
+  "uncovered_lines": 0,
+  "uncovered_ranges": [],
+  "unapproved": false
+ },
+ {
+  "path": "wrangler.toml",
+  "sha256": "0a4083f4685586b487f0f91b6683fdf6105ab34509ec06f7bf20420fadd77580",
+  "approvals": [
+   {
+    "approval_seq": 1,
+    "scope": {
+     "kind": "file"
+    },
+    "outcome": "SAME",
+    "reason": null
+   }
+  ],
+  "lines": 35,
+  "uncovered_lines": 0,
+  "uncovered_ranges": [],
+  "unapproved": false
+ }
+]

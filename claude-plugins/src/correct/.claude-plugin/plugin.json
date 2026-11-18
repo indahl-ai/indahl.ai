@@ -1,0 +1,20 @@
+{
+  "name": "indahl-correct",
+  "version": "1.0.0",
+  "description": "Record a correction beside the original, never over it. Produces a corrections ledger entry and a list of downstream places to update, each marked UPDATED, NOTIFIED, CANNOT_REACH or NOT_NEEDED. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "corrections",
+    "publishing",
+    "integrity",
+    "receipts",
+    "errata"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/linkrot/live.json",
+ "feed_sha256": "5be79c3ed9e411b9954b3bb8bc133376cb27c382325232ba9b23f36be69d1516",
+ "headline": {
+  "desk": "LINKROT",
+  "display": "3.4%",
+  "hi": 0.0429,
+  "keys": [],
+  "lo": 0.0268,
+  "n": 67,
+  "of": 1980,
+  "outcome": "CONSISTENT",
+  "value": 0.0339
+ },
+ "read_at": "2026-11-18T16:30:16Z",
+ "stamp": "18 Nov 16:22"
+}

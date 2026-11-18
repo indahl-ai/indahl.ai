@@ -1,0 +1,20 @@
+{
+  "name": "indahl-triangulate",
+  "version": "1.0.0",
+  "description": "Put a question to three independent seats run blind, then read where they agree and split. Returns ABOVE, BELOW, CONSISTENT or CANNOT_TELL with what would decide it, and a receipt of every seat's answer. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "verification",
+    "review",
+    "decision",
+    "receipts"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

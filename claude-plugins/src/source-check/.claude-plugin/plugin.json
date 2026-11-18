@@ -1,0 +1,20 @@
+{
+  "name": "indahl-source-check",
+  "version": "1.0.0",
+  "description": "Check every citation, reference or link in a paper, report or answer: does it exist, does it say what the text claims, which version was read. Marks each SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "verification",
+    "citations",
+    "research",
+    "references",
+    "receipts"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

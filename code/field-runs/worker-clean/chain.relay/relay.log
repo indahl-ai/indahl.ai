@@ -1,0 +1,18 @@
+2026-11-14T09:00:16 START install lane default pid 20726
+2026-11-14T09:00:31 DONE install rc 0
+2026-11-14T09:00:31 START house-scan lane default pid 20773
+2026-11-14T09:00:46 DONE house-scan rc 0
+2026-11-14T09:00:46 START ccr-approve lane default pid 20807
+2026-11-14T09:01:01 DONE ccr-approve rc 0
+2026-11-14T09:01:01 START ship lane site pid 20906
+2026-11-14T09:06:18 DONE ship rc 0
+2026-11-14T09:06:18 START ccr-release lane default pid 26972
+2026-11-14T09:06:33 DONE ccr-release rc 0
+2026-11-14T09:06:33 START snap-after lane default pid 27092
+2026-11-14T09:09:19 DONE snap-after rc 0
+2026-11-14T09:09:19 START compare lane default pid 27811
+2026-11-14T09:09:34 FAILED compare rc 1
+2026-11-14T09:09:34 START gate lane default pid 27850
+2026-11-14T09:09:49 FAILED gate rc 1
+2026-11-14T09:09:49 START ccr-verify lane default pid 27876
+2026-11-14T09:10:04 DONE ccr-verify rc 0

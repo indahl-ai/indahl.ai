@@ -1,0 +1,4 @@
+path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,reason,nothing_returned
+/comparison/1 A cms-hpt.txt at the root of the domain,1 A cms-hpt.txt at the root of the domain,CANNOT_TELL,466,979,0.476,0.4449,0.5073,0.4449,0.5073,NO_INTERVAL_FORMABLE,355
+/comparison/2 The file it links resolves to data,2 The file it links resolves to data,CONSISTENT,10,456,0.0219,0.012,0.0399,0.012,0.0399,,51
+/comparison/3 The file starts with the template header,3 The file starts with the template header,CONSISTENT,1,285,0.0035,0.0006,0.0196,0.0006,0.0196,,0

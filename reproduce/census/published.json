@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/census/live.json",
+ "feed_sha256": "d7875a646a0e3920eef403796354d3d8e9b55515b62d90c6843e16143b286beb",
+ "headline": {
+  "desk": "CENSUS",
+  "display": "117 of 117",
+  "hi": 1.0,
+  "keys": [],
+  "lo": 0.9682096231761248,
+  "n": 117,
+  "of": 117,
+  "outcome": "ABOVE",
+  "value": 1.0
+ },
+ "read_at": "2026-11-15T21:41:44Z",
+ "stamp": "2026-11-15T02:03:00Z"
+}

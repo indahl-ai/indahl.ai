@@ -1,0 +1,20 @@
+{
+  "name": "indahl-batch",
+  "version": "1.0.0",
+  "description": "Run a check or audit over something too big for one context window, such as a whole site, a large repo or a folder of papers. Splits the job into batches with fresh workers, writes results to files and merges them with nothing dropped. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "audit",
+    "large-scale",
+    "review",
+    "context",
+    "receipts"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

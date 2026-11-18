@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/support/live.json",
+ "feed_sha256": "39b3d52842e4a8c3cf9eed2552d93fc251226746fbe426c8a9cfe36ddae9bb76",
+ "headline": {
+  "desk": "SUPPORT",
+  "display": "24%",
+  "hi": 0.3327,
+  "keys": [],
+  "lo": 0.1514,
+  "n": 103,
+  "of": 432,
+  "outcome": "ABOVE",
+  "value": 0.2384
+ },
+ "read_at": "2026-11-15T21:41:25Z",
+ "stamp": "15 Nov 19:25"
+}

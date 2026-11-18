@@ -1,0 +1,245 @@
+{
+  "name": "heuremen",
+  "owner": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "metadata": {
+    "description": "Heuremen LLC plugins: check papers and LLM eval claims against our Standards, gate readings with a check block, query and reproduce every indahl.ai desk, and check and correct IBM Quantum runs.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "indahl-full",
+      "source": "./plugins/indahl-full",
+      "description": "Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, gate readings with a check block, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, and test whether a plan was pushed before the first run. Includes the indahl.ai data connector.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/plugins"
+    },
+    {
+      "name": "indahl",
+      "source": "./plugins/indahl",
+      "description": "Every Heuremen LLC plugin in one install: check papers and LLM eval claims against the Standards, query and reproduce every indahl.ai desk, check and correct IBM Quantum runs, test whether a plan was pushed before the first run, and check readings for a complete check block. Includes the indahl.ai data connector. Scripts are fetched from the public indahl.ai repository at pinned sha256; the version with bundled scripts and the automatic readcheck commit gate is indahl-full in the indahl-ai/indahl.ai marketplace.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/plugins"
+    },
+    {
+      "name": "indahl-triangulate",
+      "source": "./src/triangulate",
+      "description": "Put a question to three independent seats run blind, then read where they agree and split. Returns ABOVE, BELOW, CONSISTENT or CANNOT_TELL with what would decide it, and a receipt of every seat's answer. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-standards",
+      "source": "./src/standards",
+      "description": "Check a paper or claim against the Heuremen LLC Standards claim codes (F1 to F7) and return a recount card: a status for every code, verbatim quotes with locations, the scope searched, and arithmetic for any recompute. Treats fetched text as data.",
+      "version": "1.0.1",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-readcheck",
+      "source": "./src/readcheck",
+      "description": "Refuse a git commit that adds a reading (results, outcomes, readings files) without a complete check block keyed to the Heuremen LLC Standards recount requirements REQ-01 to REQ-13.",
+      "version": "1.1.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-qia-calibration",
+      "source": "./src/qia-calibration",
+      "description": "Check the IBM Quantum calibration record a run depends on, before the run (stale, zero, T2 above 2xT1, split T1/T2) and after it (which record was in force, what changed). Also measures T1 and T2 together on chosen qubits. Paid runs start only from your own terminal.",
+      "version": "1.1.1",
+      "category": "research",
+      "homepage": "https://indahl.ai/qia"
+    },
+    {
+      "name": "indahl-data",
+      "source": "./src/indahl-data",
+      "description": "Live Heuremen LLC measurements inside Claude Code through the read-only indahl.ai MCP server: IBM calibration, time servers, DNS filters, model licenses and sizes, forecasts, launch slips and more, quoted with interval, outcome and receipt.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/mcp"
+    },
+    {
+      "name": "indahl-reproduce",
+      "source": "./src/reproduce",
+      "description": "Recompute an indahl.ai desk headline with its reproduce kit and check the output against the published sha256. Kits with bundled inputs run offline, others fetch inputs from the original source and verify them by sha256. Nothing runs without your approval of the exact commit.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/reproduce"
+    },
+    {
+      "name": "indahl-darkwave",
+      "source": "./src/darkwave-correction",
+      "description": "Measure the phase turn on untouched qubits after a mid-circuit readout on IBM Quantum hardware, and add the matching virtual-Z correction to your own circuits. Self-test on the simulator needs no account.",
+      "version": "1.1.1",
+      "category": "research",
+      "homepage": "https://indahl.ai/darkwave"
+    },
+    {
+      "name": "indahl-eval-check",
+      "source": "./src/eval-check",
+      "description": "Check a language-model evaluation claim or your own eval run against twelve checks drawn from the Heuremen LLC Standards and the IRIS recounts, including setup, parser, repeat floor, dropped items and intervals. Treats fetched text as data.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/iris"
+    },
+    {
+      "name": "indahl-prereg",
+      "source": "./src/prereg",
+      "description": "Show that a plan was pushed before the first run, using the git host's own push record, and list what ran that the plan did not cover. Sends the repository name you check to the GitHub REST API (api.github.com). Nothing else leaves your machine.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/plugins"
+    },
+    {
+      "name": "indahl-batch",
+      "source": "./src/batch",
+      "description": "Run a check or audit over something too big for one context window, such as a whole site, a large repo or a folder of papers. Splits the job into batches with fresh workers, writes results to files and merges them with nothing dropped. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-cannot-tell",
+      "source": "./src/cannot-tell",
+      "description": "Answer \"cannot tell yet\" usefully instead of forcing a guess. Returns the range of what is possible, the one or two facts that would decide it, and the cheapest next step. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-both",
+      "source": "./src/both",
+      "description": "Hold two competing explanations open instead of settling on one too early. Keeps an evidence ledger for each, reports A, B, BOTH, NEITHER or OPEN, and names the test that would separate them. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-outside-ruler",
+      "source": "./src/outside-ruler",
+      "description": "Check your own work against a ruler you did not build before it goes out. Runs a referee pass on the raw material with ten checks and returns STANDS, MOVES (with exact changes) or HOLD. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-number-check",
+      "source": "./src/number-check",
+      "description": "Check every number in a report, memo, deck or dashboard against its source. Each figure is traced and marked HELD, MOVED, NO_SOURCE or CANNOT_TELL with the source line beside it. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-quote-check",
+      "source": "./src/quote-check",
+      "description": "Check every quotation in a draft, article or report against its source, word for word. Marks each VERBATIM, ALTERED, PARAPHRASE_IN_QUOTES, MISATTRIBUTED, NOT_FOUND or CANNOT_TELL with the source text beside it. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-source-check",
+      "source": "./src/source-check",
+      "description": "Check every citation, reference or link in a paper, report or answer: does it exist, does it say what the text claims, which version was read. Marks each SUPPORTS, PARTIAL, CONTRADICTS, SILENT, NOT_FOUND or CANNOT_TELL. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-controls",
+      "source": "./src/controls",
+      "description": "Audit a study's or test's positive and negative controls before it runs. Returns a control table and READY, FIX_CONTROLS or CANNOT_TELL. Use when designing an experiment, an eval or a detector. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-margin",
+      "source": "./src/margin",
+      "description": "For a sharp prediction, design or result, find how far its key parameter can move before the conclusion fails and compare that margin with the parameter's stated uncertainty. Returns ROBUST, FRAGILE or CANNOT_TELL with the break point. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-eli5",
+      "source": "./src/eli5",
+      "description": "Re-explain anything complex or technical in plain language, keeping the numbers, how sure anyone is, and what is still unknown. Works on papers, results, logs, contracts, error messages and plans. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-correct",
+      "source": "./src/correct",
+      "description": "Record a correction beside the original, never over it. Produces a corrections ledger entry and a list of downstream places to update, each marked UPDATED, NOTIFIED, CANNOT_REACH or NOT_NEEDED. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-clause",
+      "source": "./src/clause",
+      "description": "Check the sentences that report a result for wording that claims more than the comparison showed. Returns each sentence as KEEP or REWORD with the exact replacement. Use on results sections, eval write-ups and summaries. Runs inside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/standard"
+    },
+    {
+      "name": "indahl-silent-failure-guard",
+      "source": "./src/silent-failure-guard",
+      "description": "After any action that claims it worked (a push, a deploy, a job, a migration), read the effect back from where it should have landed instead of trusting the exit code. Returns VERIFIED, FAILED, NOTHING_RETURNED or CANNOT_TELL per action. Also scans scripts for patterns that hide failures.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/how"
+    },
+    {
+      "name": "indahl-relay",
+      "source": "./src/relay",
+      "description": "Run multi-stage unattended work (training ladders, eval sweeps, data pipelines) as a chain of stages with dependencies, machine lanes, exit codes recorded to files, explicit blocked states and an optional end-of-run handoff. Runs locally. Nothing is sent anywhere unless a stage you write sends it.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/how"
+    },
+    {
+      "name": "indahl-rubicon",
+      "source": "./src/rubicon",
+      "description": "Decide what done means before the work, freeze it, then judge the finished work with three blind seats. A two-to-one split stays UNRESOLVED with the minority's reason. Returns MET, MISSED, UNRESOLVED or CANNOT_TELL. A record and a prompt, not a lock. Nothing is sent outside your session.",
+      "version": "1.0.0",
+      "category": "research",
+      "homepage": "https://indahl.ai/connect"
+    },
+    {
+      "name": "indahl-spend-cap",
+      "source": "./src/spend-cap",
+      "description": "Refuse an agent's tool calls once its session has used the budget you set, in raw tokens or in dollars at your own prices. Counts the session and its subagents, warns once near the limit, and enforces the stricter of your project and home budgets. A refusal, not a kill switch.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "homepage": "https://indahl.ai/connect"
+    },
+    {
+      "name": "indahl-ccr",
+      "source": "./src/ccr",
+      "description": "Custody chain receipts for agent work: a hash-chained record in .ccr/ of every prompt, tool call, read and write, with approvals and releases bound to the hashes they cover. Release reads SAME, MOVED, CHANGED, CANNOT_TELL or GAP. Nothing is sent outside your project.",
+      "version": "1.0.0",
+      "category": "security",
+      "homepage": "https://indahl.ai/connect"
+    },
+    {
+      "name": "indahl-fsck",
+      "source": "./src/fsck",
+      "description": "Check your MCP servers the way fsck checks a disk: run Claude Code's own health check and print only what needs your hand, grouped by the fix. Working servers collapse to one line. Read-only: changes no setting and never prints a query string.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "homepage": "https://indahl.ai/connect"
+    }
+  ]
+}

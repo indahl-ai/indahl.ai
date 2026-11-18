@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/pkglicense/live.json",
+ "feed_sha256": "2e985c5e006b0957902faf2292a80a07381639c9c8c8a3a87ea6ff2371bda275",
+ "headline": {
+  "desk": "PKGLICENSE",
+  "display": "7 of 704",
+  "hi": 0.0204,
+  "keys": [],
+  "lo": 0.0048,
+  "n": 7,
+  "of": 704,
+  "outcome": "CONSISTENT",
+  "value": 0.0099
+ },
+ "read_at": "2026-11-15T21:41:30Z",
+ "stamp": "15 Nov 05:30"
+}

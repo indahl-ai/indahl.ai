@@ -1,0 +1,44 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/quake/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "quake_tick.py lines 17 to 18, 60 to 65, 328 to 348 and 360, the sequence-block bootstrap and the headline cell",
+   "path": "quake_score.py",
+   "sha256": "e50503461485c50e1fd9b08fbb46a85afa0010605e1736ba14f9aaec678c680e"
+  }
+ ],
+ "desk": "quake",
+ "inputs": [
+  {
+   "bytes": 3789654,
+   "gzip_added": false,
+   "modified": "2026-11-15T14:23:29Z",
+   "path": "data/quake_rows.json.gz",
+   "sha256": "e0a509730794ca10e617f518cd96aa7437a9a506d567aed9b85a3445c59b81cc",
+   "stored": "data/quake_rows.json.gz",
+   "stored_sha256": "e0a509730794ca10e617f518cd96aa7437a9a506d567aed9b85a3445c59b81cc"
+  },
+  {
+   "bytes": 183188,
+   "gzip_added": true,
+   "modified": "2026-11-15T14:23:29Z",
+   "path": "summary_quake.json",
+   "sha256": "938f446b52611adfe2c80d1b772c28271162ad3fdc6788a80ae76d47959faf63",
+   "stored": "summary_quake.json.gz",
+   "stored_sha256": "759149980742614c9bea341c6625b041de516076a7e80529b2d14be93c0410ac"
+  }
+ ],
+ "made": "2026-11-15T21:41:45Z",
+ "mode": "inputs",
+ "name": "QUAKE",
+ "reference": [
+  {
+   "path": "desk/quake_tick.py",
+   "sha256": "fd9a56356c04a2dba197a3226128f6c3df0aa1657ab0c307356ba671645096d8"
+  }
+ ]
+}

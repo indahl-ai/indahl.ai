@@ -1,0 +1,20 @@
+{
+  "name": "indahl-number-check",
+  "version": "1.0.0",
+  "description": "Check every number in a report, memo, deck or dashboard against its source. Each figure is traced and marked HELD, MOVED, NO_SOURCE or CANNOT_TELL with the source line beside it. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "verification",
+    "numbers",
+    "reports",
+    "finance",
+    "receipts"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

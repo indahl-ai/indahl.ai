@@ -1,0 +1,149 @@
+site_lock: waiting for the lock (free (last: ship.sh: The public repo carries every file the site serves: the hermes checker scripts and the served oy files were being filtered out (the owner caught it); new served-public gate on every release, released 08:51:22))
+site_lock: held after 0s as "ship.sh: indahl.ai worker cleaned for public: code only the retired flock hosts reached is gone (house address, private site routing, personal quotes), comments stripped, unused service bindings dropped; parity 5363 URLs 0 mismatches; worker.js now in the public repo (field run: field-runs/worker-clean)"
+== 1 BUILD
+  faults: up to date
+  guards: up to date
+  paper: up to date
+  paper source: synced to the public repo
+  bill: up to date
+swept 0
+census refresh: summary unchanged since the last page build
+neo refresh: summary unchanged since the last page build
+quake refresh: summary unchanged since the last page build
+roadmap: 37 live desks added from DESKS, open-item rules applied (unchanged)
+qia list: rendered 2587 rows from list.json (unchanged)
+  downloads: plain copies re-made from their sources
+  downloads: airline/airline-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: arxivdrift/arxivdrift-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: cada/cada-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: cadence/cadence-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: forecast/forecast-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: hfsize/hfsize-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: hosts/hosts-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: launch/launch-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: linkrot/linkrot-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: stack/stack-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: tape/tape-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: time/time-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: uptime/uptime-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: water/water-data-pack.zip: rebuilt 2026-11-14 (an input changed)
+  downloads: ledger pack.size.hosts-data-pack: 8 KB -> 7 KB
+reproduce refresh: 28 kits, 0 remade or tried
+oy school pages 389
+iris study pages 9
+study pages 197
+sagar pages 163
+  brands: 2 rows left off, a field the row needs is not in its feed (first: time: time: no 'outcome')
+entities: 809 entities indexed (192 company, 100 organisation, 39 agency, 47 model, 38 backend, 389 school, 4 package), 89 light pages
+brands: 331 brand pages and the index (14 named only on pages)
+  forecasters feeds: cone fresh, fedsep fresh, flu fresh, forecast fresh, neo fresh, predictions fresh, quake fresh, revise fresh, seasonal fresh, solar fresh, steo fresh, tornado fresh, water fresh
+forecasters: 98 rows from CONE, FEDSEP, FLU, FORECAST, NEO, NOW, QUAKE, REVISE, SEASONAL, SOLAR, STEO, TORNADO, WATER, held none
+alerts: 30 outcome desks, 26 update pages, 5 divisions and 245 brand pages can send alerts (median tick 2.1 min), /alerts built
+notify: /follow, /webhooks, /changelog (156 releases), 1 newsletter issues in the feed, calendars, OPML, the device button on 30 desks, brand feed links on 245 pages, Follow in 1368 footers
+signup: the one sign-up form in 1373 footers
+findable: 43 desk pages with data links or embed, 30 change feeds
+receipts: 3172 of 3172 live snippets on indahl.ai pages carry a receipt link (3868 links on 137 pages, 0 sit only where a link cannot go, 0 not found on their page, 217 share one spot and link to their desk receipts)
+built 1375 pages + style.css + pages.js
+  downloads: oy/oy-data-pack.zip: inputs moved, contents unchanged, pack kept
+receipts: 3911 rows, 69 index pages, 4 written, 0 stale files removed
+== 2 COPY
+copies: 300 files in 81 sets; drift: 0
+== 3 GATES
+ledger: 3911 rows (3837 live, 31 live headlines read against their feeds); drift: 0
+copies: 300 files in 81 sets; drift: 0
+downloads gate: 181 files; stale: 0
+backups gate: 0 in public
+site gate: 143 pages, 1450 served files read for wording; breaches: 0
+runcheck gate: page and package unchanged since the last identical run
+source gate: 197 rows, 0 fail
+qia list gate: page table = list.json (2587 rows)
+receipts gate: 3911 ledger rows, 3683 receipt links on served pages; breaches: 0
+jsonld gate: 1376 pages, 377 datasets; breaches: 0
+corrections gate: ok, every row links to a real file or commit
+BRANDS GATE: every brand-page number traces to a desk row or a ledger row (1719 rows, 317 pages)
+BELL GATE: 1376 served pages read, 0 names in the end-of-page Index, each page unchanged without it
+FORECASTERS GATE: every number on /forecasters traces to a desk feed or a ledger row (98 rows from CONE, FEDSEP, FLU, FORECAST, NEO, NOW, QUAKE, REVISE, SEASONAL, SOLAR, STEO, TORNADO, WATER)
+email gate: 6150 files read, 0 addresses found
+notify gate: every feed, calendar and OPML file parses, every event cites its schedule
+accountability gate: 7 pages; breaches: 0
+alert receipts gate: 14 chained lines; breaches: 0
+reproduce gate: 28 kits rerun from their own contents in 59 s; breaches: 0
+== 4 COMMIT
+  heuremen.org: nothing to commit
+ledger: 3911 rows (3837 live, 31 live headlines read against their feeds); drift: 0
+  indahl-ai: 4fd96da1b indahl.ai worker cleaned for public: code only the retired flock hosts reached is gone (house address, private site routing, personal quotes), comments stripped, unused service bindings dropped; parity 5363 URLs 0 mismatches; worker.js now in the public repo (field run: field-runs/worker-clean)
+== 5 DEPLOY
+
+  heuremen.org pushed
+✨ Success! Uploaded 90 files (5099 already uploaded) (3.78 sec)
+Uploaded heuremen-door (14.01 sec)
+No targets deployed for heuremen-door (0.53 sec)
+  stamps: manifest 6027 files, sha256 74b4a5198c3f8b5d
+== 5b PUBLIC REPOS
+  public: site pages mirrored (local build = deployed build 505627f0aecee67c)
+heuremen_org_public: 1242 files copied to indahl.ai/heuremen-org, edits {'footer byline: last name removed': 42, 'run label: house word removed, values unchanged': 4}
+   plugins: 25 directory copies built from src/ (no .py, no command hooks)
+   bundle: plugins/indahl-full built from 22 plugins, 112 files
+   bundle: plugins/indahl built from 22 plugins, 103 files
+   openai: indahl.zip (Indahl), submission JSON for 50 tools
+   openai: indahl-data.zip (Indahl Data), submission JSON for 50 tools
+   openai: indahl-standards.zip (Indahl Standards)
+   openai: indahl-eval-check.zip (Indahl Eval Check)
+   openai: indahl-reproduce.zip (Indahl Reproduce)
+   openai: indahl-qia-calibration.zip (Indahl QIA Calibration)
+   openai: indahl-darkwave.zip (Indahl Darkwave)
+   openai: indahl-prereg.zip (Indahl Prereg)
+   openai: indahl-readcheck.zip (Indahl Readcheck)
+   openai: indahl-triangulate.zip (Indahl Triangulate)
+   openai: indahl-batch.zip (Indahl Batch)
+   openai: indahl-cannot-tell.zip (Indahl Cannot Tell)
+   openai: indahl-both.zip (Indahl Both)
+   openai: indahl-outside-ruler.zip (Indahl Outside Ruler)
+   openai: indahl-number-check.zip (Indahl Number Check)
+   openai: indahl-quote-check.zip (Indahl Quote Check)
+   openai: indahl-source-check.zip (Indahl Source Check)
+   openai: indahl-controls.zip (Indahl Controls)
+   openai: indahl-margin.zip (Indahl Margin)
+   openai: indahl-correct.zip (Indahl Correct)
+   openai: indahl-clause.zip (Indahl Clause)
+   openai: indahl-silent-failure-guard.zip (Indahl Silent Failure Guard)
+   openai: indahl-relay.zip (Indahl Relay)
+  code sweep: 4882 code and plan files from 148 folders
+  code sweep held: house word 975, bulk folder 283, gitignored 77, house folder 54, email address 21, key or token pattern 18, over 512 KB 5
+  public desks: 1 file(s) re-synced from the working folders
+  public reproduce kits: 28 copied
+  public backups: swept 0
+scrub gate: no the referee V term in the public mirror (0 retired file(s) removed, 26 file(s) rewritten)
+  public indahl.ai: 38151bf7d indahl.ai worker cleaned for public: code only the retired flock hosts reached is gone (house address, private site routing, personal quotes), comments stripped, unused service bindings dropped; parity 5363 URLs 0 mismatches; worker.js now in the public repo (field run: field-runs/worker-clean)
+  public heuremen.org: current
+  public claude-plugins mirror: 6a76cd8 Mirror of indahl.ai claude-plugins/ at 38151bf7d
+buildinfo: 4fd96da1b, public 38151bf7d, 19 gate lines, KV ok
+served-public gate: 5189 served files, 0 missing from the public repo
+== 5c INDEXNOW
+indexnow: sent 106 urls, status 200
+== 6 VERIFY
+live drift: 0
+== 7 STAMPS
+  stamps: release 38151bf7defc manifest 74b4a5198c3f8b5d file 901e867b7f522002 changed 147 removed 0 ots none queued 143
+  stamps: wayback: started in the background (log ledger/stamps/wayback_run.log)
+== 7b WEBSUB
+websub: 0 feed(s) pinged after the ship, 0 failed
+== 7c LEDGER BACKUP
+  ledger pushed to the private backup
+== 7d ARCHIVE BACKUP
+  archive pushed to the private repo
+== 7e ZENODO
+  zenodo: QIA Research Package: STALE (2 files: qia-research-package.zip) but held by the 24 h guard, last version 2026-11-13 14:13 UTC
+  zenodo: IRIS Research Package: current (2026-11-13, doi:10.5281/zenodo.24199607)
+  zenodo: ATLAS Data Pack: current (2026-11-10, doi:10.5281/zenodo.24110654)
+  zenodo: OY Data Pack: current (2026-11-12, doi:10.5281/zenodo.24167970)
+  zenodo: MODEL Data Pack: current (2026-11-12, doi:10.5281/zenodo.24167973)
+  zenodo: QIA List Pack: current (2026-11-12, doi:10.5281/zenodo.24165046)
+  zenodo: IRIS List Pack: current (2026-11-01, doi:10.5281/zenodo.23874315)
+  zenodo: Darkwave Correction Kit: STALE (2 files: darkwave-correction-kit.zip) but held by the 24 h guard, last version 2026-11-13 17:24 UTC
+  zenodo: SOCIAL Data Pack: current (2026-11-14, doi:10.5281/zenodo.24213466)
+  zenodo: HERMES Desk Packs: STALE (36 files: airline-data-pack.zip, airq-data-pack.zip, arxivdrift-data-pack.zip, cadence-data-pack.zip, fedsep-data-pack.zip, flu-data-pack.zip, forecast-data-pack.zip, hpt-data-pack.zip, launch-data-pack.zip, linkrot-data-pack.zip, revise-data-pack.zip, seasonal-data-pack.zip, stack-data-pack.zip, steo-data-pack.zip, tape-data-pack.zip, tornado-data-pack.zip, trials-data-pack.zip, wiki-data-pack.zip) but held by the 24 h guard, last version 2026-11-13 22:20 UTC
+  zenodo: IRIS Desk Packs: STALE (14 files: ailuminate-data-pack.zip, hflicense-data-pack.zip, hfsize-data-pack.zip, hosts-data-pack.zip, pkginstall-data-pack.zip, pkglicense-data-pack.zip, weights-data-pack.zip) but held by the 24 h guard, last version 2026-11-13 14:36 UTC
+  zenodo: ATLAS Desk Packs: STALE (8 files: cone-data-pack.zip, neo-data-pack.zip, quake-data-pack.zip, solar-data-pack.zip) but held by the 24 h guard, last version 2026-11-13 22:20 UTC
+  zenodo: OY Desk Packs: STALE (4 files: campus-data-pack.zip, rank-data-pack.zip) but held by the 24 h guard, last version 2026-11-13 22:20 UTC
+site_lock: released, command exit 0

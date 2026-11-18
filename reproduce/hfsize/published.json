@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/hfsize/live.json",
+ "feed_sha256": "c7fcea571eadb4afe3739418edfae610fb9408b04c87d43e2cd239d9f66f0b2d",
+ "headline": {
+  "desk": "HFSIZE",
+  "display": "11 of 133",
+  "hi": 0.142,
+  "keys": [],
+  "lo": 0.0468,
+  "n": 11,
+  "of": 133,
+  "outcome": "CANNOT_TELL",
+  "value": 0.0827
+ },
+ "read_at": "2026-11-16T13:04:56Z",
+ "stamp": "16 Nov 10:46"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "indahl-clause",
+  "version": "1.0.0",
+  "description": "Check the sentences that report a result for wording that claims more than the comparison showed. Returns each sentence as KEEP or REWORD with the exact replacement. Use on results sections, eval write-ups and summaries. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "results",
+    "evaluation",
+    "clinical",
+    "review"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

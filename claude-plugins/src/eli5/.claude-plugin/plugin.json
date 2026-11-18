@@ -1,0 +1,20 @@
+{
+  "name": "indahl-eli5",
+  "version": "1.0.0",
+  "description": "Re-explain anything complex or technical in plain language, keeping the numbers, how sure anyone is, and what is still unknown. Works on papers, results, logs, contracts, error messages and plans. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/connect",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "explain",
+    "plain-language",
+    "teaching",
+    "summary",
+    "accessibility"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/solar/live.json",
+ "feed_sha256": "d264d763b020736dcd74af702f90e62ee5c322a3fbd1f3261b756e5b895860c5",
+ "headline": {
+  "desk": "SOLAR",
+  "display": "4 of 8",
+  "hi": 0.324,
+  "keys": [],
+  "lo": 0.207,
+  "n": 4,
+  "of": 8,
+  "outcome": "ABOVE",
+  "value": 0.2675
+ },
+ "read_at": "2026-11-15T21:38:53Z",
+ "stamp": "2026-11-15T14:21:39Z"
+}

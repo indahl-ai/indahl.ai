@@ -1,0 +1,22 @@
+Indahl fsck: 123 servers checked
+
+NOT CONFIGURED       datadog:mcp
+                     → the plugin ships a placeholder address: set it up from the plugin's own docs, or turn the plugin off
+NO SUCH HOST         corporate-legal:Definely
+                     → the address does not exist: turn the plugin off in /plugins or remove the server
+WRONG ADDRESS        corporate-legal:TopCounsel · data:definite
+                     → the host answers but the MCP path is gone: update or turn off the plugin
+BAD TOKEN            github:github · zoom-zoom-mcp · zoom-zoom-docs-mcp · zoom-zoom-whiteboard-mcp
+                     → the server refused the token the config sends: fix the header or token for this server, or turn it off
+LOCAL SERVER EXITS   prisma:Prisma-Local
+                     → the local command starts and dies: run it in a terminal to see why, or remove it
+HANDSHAKE REFUSED    aws-mcp
+                     → the server rejects the MCP handshake: update its command or remove it
+RE-AUTH              Microsoft 365 · Stripe · PayPal · Ticket Tailor
+                     → run /mcp and sign in again
+SIGN IN OR DISABLE   small-business (25) · sales (11) · product-management (4) · marketing (4) · bio-research (3) · brand-voice (2) · runpod · lapyn · zapier · gitbook · gitlab · foundation · exa · render · prisma · canva · corporate-legal · adobe-for-creativity · figma · sanity · miro · operations · design · engineering · common-room · legal · enterprise-search · data
+                     → installed plugin that was never signed in: /mcp to sign in, or turn the plugin off in /plugins
+SAME URL TWICE       claude.ai Microsoft 365 = plugin:sales:microsoft-365 · claude.ai Canva = plugin:canva:canva · claude.ai Stripe = plugin:small-business:stripe · claude.ai PayPal = plugin:small-business:paypal · claude.ai Notion = plugin:small-business:notion · claude.ai Slack = plugin:small-business:slack
+                     → two entries reach one server: keep one, turn the other off
+
+OK: 38 servers answer and need nothing

@@ -1,0 +1,94 @@
+{
+ "independent": true,
+ "agent_rerun": {
+  "C1": true,
+  "C2": true,
+  "C3": true
+ },
+ "seats": [
+  {
+   "name": "A",
+   "criteria": {
+    "C1": {
+     "outcome": "MET",
+     "planted_fail_caught": true,
+     "reason": "Parity crawl covered 5,363 URLs (sitemap, /mcp, /mcp/research, /mcp/models, redirects). old vs new 0 mismatches; old vs old 0; planted copy with /contact removed showed 200 vs 404 on /contact, so the check catches a dropped route. Run on localhost STAGING=1 as the criterion specifies."
+    },
+    "C2": {
+     "outcome": "MET",
+     "planted_fail_caught": true,
+     "reason": "Reran scan_house.py on the deployed worker.js and wrangler.toml: 0 hits, rc=0. README states a planted copy holding a private address was caught; I did not see that planted file or its output. The word list is private so I could not inspect it. The scan strips one pattern (id.replace(/flock/g, \"house\")) before scanning, a small blind spot, but nothing was found. MET."
+    },
+    "C3": {
+     "outcome": "MISSED",
+     "planted_fail_caught": true,
+     "reason": "The deploy happened but the criterion is 'live site unchanged after deploy'. The before/after live crawl failed its own floor check: 107 URLs outside the floor, compare.rc=1. Later evidence (oldsrc vs deployed on the same pages: 0/5363) suggests the cause was a pages rebuild, not the worker, but that is a post-hoc explanation, not the frozen check. The planted /connect mismatch is caught (live_planted differs from live_before on /connect). The floor was measured pre-deploy and never fixed, so the live crawl failed as designed."
+    },
+    "C4": {
+     "outcome": "MISSED",
+     "planted_fail_caught": true,
+     "reason": "code/worker/worker.js and wrangler.toml are in the public repo, and deployed worker.js sha256 starts 9a78f315, matching the README. But the criterion requires the served-public gate to pass, and it exits 1 when I rerun it: 1 missing, receipts/stamps/release_38151bf7defc.json. gate.rc=1 in the chain. The README says the gate now names this and leaves it to the next release, but the gate still fails. The gate does check for worker.js (it would fail if absent): I did not run a removed-worker.js test myself, but the gate code lists the worker files as required."
+    }
+   },
+   "done": false,
+   "done_reason": "The requester would likely accept the code cleanup (parity clean, scan clean, files public), but two frozen criteria fail as written: the live crawl differs beyond the floor and the gate exits nonzero. The README explains both honestly but moves the goalposts instead of passing them. The chain ended with 2 failed stages, and ccr-verify returned rc 3 with the completeness cross-check not run. They would probably want the gate green and the live comparison redone against a post-rebuild baseline before calling it done.",
+   "pass_but_fail": "The localhost parity and the sitemap crawl only exercise URLs from the sitemap, the MCP endpoints and a few extras, with two request shapes. A request path or header that only a retired host reached (for example a Host header for a retired domain) is never sent, so it could still hit code deleted without anyone noticing, or fall to an unrouted default. The cleaned worker would pass every check and still change behavior for those visitors. Also, the 107 post-deploy differences are explained away by a rebuild, but the same-pages parity only proves source equivalence, not that the deployed bytes serve the same pages as the old worker did at the live edge."
+  },
+  {
+   "name": "B",
+   "criteria": {
+    "C1": {
+     "outcome": "MET",
+     "planted_fail_caught": true,
+     "reason": "Old vs new on localhost, 5,363 URLs, 0 mismatches; old vs old 0; planted /contact removal caught (200 vs 404). Weak spots: the new-worker side is not tied to final bytes, the crawl is mostly GET with few MCP paths, and the removed retired-host branches were never exercised."
+    },
+    "C2": {
+     "outcome": "MET",
+     "planted_fail_caught": true,
+     "reason": "Reran scan_house.py on the deployed files: 0 hits. Planted private address reported caught. The word list is private, so its coverage cannot be judged, and the scan covers only two files."
+    },
+    "C3": {
+     "outcome": "MISSED",
+     "planted_fail_caught": true,
+     "reason": "The frozen check, the live crawl before and after against the stated floor, failed (compare stage failed). The pipeline-rebuild explanation rests on a different, local, same-pages run, which is not the frozen check and does not test live. The planted /connect change is detected."
+    },
+    "C4": {
+     "outcome": "MISSED",
+     "planted_fail_caught": null,
+     "reason": "Public code/worker files match the deployed bytes, but the frozen check is the gate's exit code, and my rerun exited 1 (one release receipt missing). No evidence of the planted removed-worker.js case. A red gate for an unrelated reason proves nothing about worker.js."
+    }
+   },
+   "done": false,
+   "done_reason": "Two of four frozen criteria are not met on their frozen terms. The README explains the failures and the requester would likely accept that, but a run with 2 of 9 stages failed is presented as finished.",
+   "pass_but_fail": "The visible-change proof compares old and new source locally with a pre-built crawl list and never isolates live after deploy. A regression visible only on live (a binding or route dropped from wrangler.toml, a POST/MCP path outside the crawl) would pass every check, and the private-word scan's list cannot be audited from outside."
+  },
+  {
+   "name": "C",
+   "criteria": {
+    "C1": {
+     "outcome": "MET",
+     "planted_fail_caught": true,
+     "reason": "Parity old vs new, 5,363 URLs including MCP calls, 0 mismatches; control 0; planted /contact caught (200 vs 404)."
+    },
+    "C2": {
+     "outcome": "MET",
+     "planted_fail_caught": true,
+     "reason": "scan_house.py on the deployed files: 0 hits, and an IPv4 grep found none. Planted run reported caught but not seen. The word list is private."
+    },
+    "C3": {
+     "outcome": "CANNOT_TELL",
+     "planted_fail_caught": true,
+     "reason": "Live pages return 200, but the criterion's own before/after crawl failed (107 outside the floor). The local same-pages test shows the worker code did not change output. It does not show the live site was unchanged. The planted /connect change is caught."
+    },
+    "C4": {
+     "outcome": "CANNOT_TELL",
+     "planted_fail_caught": null,
+     "reason": "Public worker.js is byte-identical to the deployed file and the gate lists both files as required, but the gate stage failed (rc 1) over a late receipt, and the planted removed-worker.js check was never shown."
+    }
+   },
+   "done": false,
+   "done_reason": "Nearly done but not clean: deployed and published, private material gone, but compare and gate failed, and the after-deploy proof rests on a substitute test chosen afterwards. They would want a clean re-run of the after-deploy comparison and a gate at exit 0.",
+   "pass_but_fail": "Checks measure the worker's behaviour or its text, not the rest of the public repo or the live site. A visitor-visible live change could not be told apart from the rebuild, and private names could sit elsewhere in the public repo, for example in published criteria, receipts or logs, and still pass."
+  }
+ ]
+}

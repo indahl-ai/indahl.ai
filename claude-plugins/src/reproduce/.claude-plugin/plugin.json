@@ -1,0 +1,19 @@
+{
+  "name": "indahl-reproduce",
+  "version": "1.0.0",
+  "description": "Recompute an indahl.ai desk headline with its reproduce kit and check the output against the published sha256. Kits with bundled inputs run offline, others fetch inputs from the original source and verify them by sha256. Nothing runs without your approval of the exact commit.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/reproduce",
+  "repository": "https://github.com/Heuremen-LLC/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "reproducibility",
+    "verification",
+    "open-data",
+    "research"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

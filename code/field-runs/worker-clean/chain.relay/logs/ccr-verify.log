@@ -1,0 +1,15 @@
+{
+ "entries": 3,
+ "problems": [],
+ "cross_check_ran": false,
+ "unpaired_calls": {
+  "seqs": [],
+  "reads": "CANNOT_TELL on the result (denied, failed or cut off)"
+ },
+ "anchors_checked": 0,
+ "signed": 0,
+ "key": null,
+ "session_cross_check": "not run (no transcripts directory): completeness unknown",
+ "completeness": "holds up to the last anchor and only for sessions the cross-check saw"
+}
+verify_rc=3

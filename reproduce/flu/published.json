@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/flu/live.json",
+ "feed_sha256": "7f2fdc28db4ab2b630fe586e00a12f199ecc68d7d2079c933d3241de1007056b",
+ "headline": {
+  "desk": "FLU",
+  "display": "16,629 of 18,756",
+  "hi": 0.9455,
+  "keys": [],
+  "lo": 0.8143,
+  "n": 16629,
+  "of": 18756,
+  "outcome": "BELOW",
+  "value": 0.8866
+ },
+ "read_at": "2026-11-15T21:40:34Z",
+ "stamp": "2026-11-15T21:07:51Z"
+}

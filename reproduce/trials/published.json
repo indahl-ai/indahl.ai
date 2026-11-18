@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/trials/live.json",
+ "feed_sha256": "550910db3fa22dec289de228fd62cf62387ceb527111ff3b90c928b23a2bf018",
+ "headline": {
+  "desk": "TRIALS",
+  "display": "21.5%",
+  "hi": 0.2208,
+  "keys": [],
+  "lo": 0.21,
+  "n": 4789,
+  "of": 22242,
+  "outcome": "ABOVE",
+  "value": 0.2153
+ },
+ "read_at": "2026-11-15T21:43:33Z",
+ "stamp": "2026-11-15 19:18 UTC"
+}

@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/cone/live.json",
+ "feed_sha256": "caa9f65a0bb2ebb9a6f5a2e95f1fe0a12776da2085976fb57a133b918e2e6985",
+ "headline": {
+  "desk": "CONE",
+  "display": "697 of 1,315",
+  "hi": 0.6041,
+  "keys": [],
+  "lo": 0.4515,
+  "n": 697,
+  "of": 1315,
+  "outcome": "CANNOT_TELL",
+  "value": 0.53
+ },
+ "read_at": "2026-11-15T21:41:35Z",
+ "stamp": "2026-11-15T14:21:38Z"
+}

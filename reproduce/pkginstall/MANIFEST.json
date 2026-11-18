@@ -1,0 +1,58 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/pkginstall/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "pkginstall_tick.py lines 112 to 116, the counts, the interval and the comparison block",
+   "path": "pkginstall_score.py",
+   "sha256": "83f85ac7b65b0ad5309b7fff0add48fe5978c5662358ef175171d7c9cd7e322d"
+  }
+ ],
+ "desk": "pkginstall",
+ "inputs": [
+  {
+   "bytes": 158673,
+   "gzip_added": true,
+   "modified": "2026-11-15T14:51:42Z",
+   "path": "data/projects.json",
+   "sha256": "51add02f75136fee55120c9f03d7da2295ac7d9c2bd2d3b1936910c0a60ad28a",
+   "stored": "data/projects.json.gz",
+   "stored_sha256": "918f6234dd8f7bf7aa0bca33cc02a4b5a62cbd41e5922816aaef2307d9839af0"
+  },
+  {
+   "bytes": 19,
+   "gzip_added": true,
+   "modified": "2026-11-15T14:51:42Z",
+   "path": "data/listdate.txt",
+   "sha256": "ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399",
+   "stored": "data/listdate.txt.gz",
+   "stored_sha256": "d23e1d3031fea3e62381d44a960e1fd2cc4c5ddb518c54cf3810ab9c34896a96"
+  },
+  {
+   "bytes": 1172,
+   "gzip_added": true,
+   "modified": "2026-11-15T14:51:42Z",
+   "path": "summary_pkginstall.json",
+   "sha256": "f4287d73a5eaa0316346573f2136b33ffc1066cc7a2604e8ca039125673e9a95",
+   "stored": "summary_pkginstall.json.gz",
+   "stored_sha256": "b011a4675d0d24c092b30145cbb880fd68c7fcda9097d6d4588e72bd8177f36c"
+  }
+ ],
+ "made": "2026-11-15T21:41:29Z",
+ "mode": "fetch",
+ "name": "PKGINSTALL",
+ "reference": [
+  {
+   "path": "desk/pkginstall_tick.py",
+   "sha256": "96436ae80a8e7318667011f595fc30c55a4212ffaed03e5d1fdc9cb1f35af50d"
+  }
+ ],
+ "sources": [
+  "The top PyPI projects list of the date in data/listdate.txt, https://hugovk.github.io/top-pypi-packages/top-pypi-packages.json",
+  "For each project, https://pypi.org/pypi/PROJECT/json, and pip install --dry-run of the command its description gives. Each row carries its read time."
+ ],
+ "why_not_included": "PyPI metadata is under the PyPI terms of service and not an open licence"
+}

@@ -1,7 +1,268 @@
 {
- "built_utc": "2026-11-19T17:58:47Z",
+ "built_utc": "2026-11-19T21:26:08Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 417,
+   "commit": "fa9993576c05b4a84f8236ac830a8acfc51fc41c",
+   "files": 2120,
+   "id": "fa9993576c05",
+   "json": "/receipts/stamps/release_fa9993576c05.json",
+   "ledger_sha256": "9fefa49175a1948b4774763892ac073699cec64b0a57084c870bf057981cb660",
+   "manifest_sha256": "8e0af3030b1c5798e033d321221cf2f99015f847b332bc431308ac29f9c2cba6",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-19T20:56:00Z",
+   "sha256": "648b97f077d9b4cab4fb39866b9c51c05796159188e119cff166e0a378c725b1",
+   "wayback": [
+    {
+     "capture": "https://web.archive.org/web/20261119104739/https://indahl.ai/iris",
+     "timestamp": "20261119104739",
+     "url": "https://indahl.ai/iris"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119104808/https://indahl.ai/oy",
+     "timestamp": "20261119104808",
+     "url": "https://indahl.ai/oy"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119104838/https://indahl.ai/atlas",
+     "timestamp": "20261119104838",
+     "url": "https://indahl.ai/atlas"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119172735/https://indahl.ai/social",
+     "timestamp": "20261119172735",
+     "url": "https://indahl.ai/social"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119172904/https://indahl.ai/tape",
+     "timestamp": "20261119172904",
+     "url": "https://indahl.ai/tape"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173015/https://indahl.ai/ailuminate",
+     "timestamp": "20261119173015",
+     "url": "https://indahl.ai/ailuminate"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173053/https://indahl.ai/airline",
+     "timestamp": "20261119173053",
+     "url": "https://indahl.ai/airline"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173133/https://indahl.ai/airq",
+     "timestamp": "20261119173133",
+     "url": "https://indahl.ai/airq"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173202/https://indahl.ai/alerts",
+     "timestamp": "20261119173202",
+     "url": "https://indahl.ai/alerts"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173454/https://indahl.ai/arxivdrift",
+     "timestamp": "20261119173454",
+     "url": "https://indahl.ai/arxivdrift"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173523/https://indahl.ai/brand",
+     "timestamp": "20261119173523",
+     "url": "https://indahl.ai/brand"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173557/https://indahl.ai/cada",
+     "timestamp": "20261119173557",
+     "url": "https://indahl.ai/cada"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173625/https://indahl.ai/cadence",
+     "timestamp": "20261119173625",
+     "url": "https://indahl.ai/cadence"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173657/https://indahl.ai/campus",
+     "timestamp": "20261119173657",
+     "url": "https://indahl.ai/campus"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173727/https://indahl.ai/census",
+     "timestamp": "20261119173727",
+     "url": "https://indahl.ai/census"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173758/https://indahl.ai/change",
+     "timestamp": "20261119173758",
+     "url": "https://indahl.ai/change"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119173901/https://indahl.ai/cone",
+     "timestamp": "20261119173901",
+     "url": "https://indahl.ai/cone"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174406/https://indahl.ai/downloads",
+     "timestamp": "20261119174406",
+     "url": "https://indahl.ai/downloads"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174541/https://indahl.ai/fedsep",
+     "timestamp": "20261119174541",
+     "url": "https://indahl.ai/fedsep"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174614/https://indahl.ai/flu",
+     "timestamp": "20261119174614",
+     "url": "https://indahl.ai/flu"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174751/https://indahl.ai/forecast",
+     "timestamp": "20261119174751",
+     "url": "https://indahl.ai/forecast"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174822/https://indahl.ai/forecasters",
+     "timestamp": "20261119174822",
+     "url": "https://indahl.ai/forecasters"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174853/https://indahl.ai/hflicense",
+     "timestamp": "20261119174853",
+     "url": "https://indahl.ai/hflicense"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119174923/https://indahl.ai/hfsize",
+     "timestamp": "20261119174923",
+     "url": "https://indahl.ai/hfsize"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119175047/https://indahl.ai/hosts",
+     "timestamp": "20261119175047",
+     "url": "https://indahl.ai/hosts"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119175221/https://indahl.ai/launch",
+     "timestamp": "20261119175221",
+     "url": "https://indahl.ai/launch"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119175252/https://indahl.ai/linkrot",
+     "timestamp": "20261119175252",
+     "url": "https://indahl.ai/linkrot"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119175505/https://indahl.ai/neo",
+     "timestamp": "20261119175505",
+     "url": "https://indahl.ai/neo"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119175701/https://indahl.ai/pkginstall",
+     "timestamp": "20261119175701",
+     "url": "https://indahl.ai/pkginstall"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119175833/https://indahl.ai/pkglicense",
+     "timestamp": "20261119175833",
+     "url": "https://indahl.ai/pkglicense"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211241/https://indahl.ai/predictions",
+     "timestamp": "20261119211241",
+     "url": "https://indahl.ai/predictions"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211336/https://indahl.ai/quake",
+     "timestamp": "20261119211336",
+     "url": "https://indahl.ai/quake"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211406/https://indahl.ai/rank",
+     "timestamp": "20261119211406",
+     "url": "https://indahl.ai/rank"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211522/https://indahl.ai/revise",
+     "timestamp": "20261119211522",
+     "url": "https://indahl.ai/revise"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211552/https://indahl.ai/sagar",
+     "timestamp": "20261119211552",
+     "url": "https://indahl.ai/sagar"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211623/https://indahl.ai/seasonal",
+     "timestamp": "20261119211623",
+     "url": "https://indahl.ai/seasonal"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211722/https://indahl.ai/seat",
+     "timestamp": "20261119211722",
+     "url": "https://indahl.ai/seat"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211810/https://indahl.ai/secrecords",
+     "timestamp": "20261119211810",
+     "url": "https://indahl.ai/secrecords"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211838/https://indahl.ai/solar",
+     "timestamp": "20261119211838",
+     "url": "https://indahl.ai/solar"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211908/https://indahl.ai/stack",
+     "timestamp": "20261119211908",
+     "url": "https://indahl.ai/stack"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119211939/https://indahl.ai/steo",
+     "timestamp": "20261119211939",
+     "url": "https://indahl.ai/steo"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212010/https://indahl.ai/support",
+     "timestamp": "20261119212010",
+     "url": "https://indahl.ai/support"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212041/https://indahl.ai/time",
+     "timestamp": "20261119212041",
+     "url": "https://indahl.ai/time"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212157/https://indahl.ai/tornado",
+     "timestamp": "20261119212157",
+     "url": "https://indahl.ai/tornado"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212316/https://indahl.ai/trials",
+     "timestamp": "20261119212316",
+     "url": "https://indahl.ai/trials"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212344/https://indahl.ai/uptime",
+     "timestamp": "20261119212344",
+     "url": "https://indahl.ai/uptime"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212449/https://indahl.ai/water",
+     "timestamp": "20261119212449",
+     "url": "https://indahl.ai/water"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212521/https://indahl.ai/weights",
+     "timestamp": "20261119212521",
+     "url": "https://indahl.ai/weights"
+    },
+    {
+     "capture": "https://web.archive.org/web/20261119212552/https://indahl.ai/qia/list",
+     "timestamp": "20261119212552",
+     "url": "https://indahl.ai/qia/list"
+    }
+   ],
+   "wayback_waiting": 365
+  },
   {
    "changed": 1149,
    "commit": "ee3c037289fb7e3847e925385a6c8fbd414db36d",
@@ -266,7 +527,7 @@
      "url": "https://indahl.ai/pkglicense"
     }
    ],
-   "wayback_waiting": 1087
+   "wayback_waiting": 716
   },
   {
    "changed": 407,
@@ -512,7 +773,7 @@
      "url": "https://indahl.ai/weights"
     }
    ],
-   "wayback_waiting": 20
+   "wayback_waiting": 12
   },
   {
    "changed": 421,
@@ -773,7 +1034,7 @@
      "url": "https://indahl.ai/ailuminate/ailuminate-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 18
+   "wayback_waiting": 16
   },
   {
    "changed": 1148,
@@ -1863,7 +2124,7 @@
      "url": "https://indahl.ai/"
     }
    ],
-   "wayback_waiting": 10
+   "wayback_waiting": 8
   },
   {
    "changed": 372,

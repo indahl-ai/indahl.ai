@@ -4,7 +4,7 @@ WHO PAYS, STATED, POWER (with a ratio >= 3 written as 'POWER RATIO: <x>'), and S
 the owner, 19 Nov: "why the fuck would you fire on something you didn't check first?" (Pack Q #47, #50, #51)."""
 import json, sys, re, os, subprocess, glob
 d = json.load(sys.stdin); cmd = (d.get('tool_input') or {}).get('command', '')
-m = re.search(r'(demo[\w]*\.py)\s+--fire', cmd)
+m = re.search(r'(?:python\S*|\$PY)\s+(?:\S*/)?(demo[\w]*\.py)\s+--fire', cmd)
 if not m: sys.exit(0)
 cd = re.findall(r'cd\s+([^\s;&]+)', cmd); folder = os.path.expanduser(cd[-1]) if cd else os.getcwd()
 script = m.group(1); v = re.search(r'_(v\d+)', script); tag = v.group(1) if v else ''

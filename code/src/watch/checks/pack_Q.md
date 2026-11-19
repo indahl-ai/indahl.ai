@@ -105,3 +105,9 @@
     because it is blind to the effect is a control, not a claim.
 45. **Run this pack on EVERY design before it goes to a builder or the referee**, not only the one in front of you. *(18 Nov: run on
     Optimization, skipped on Dynamic circuits, and #4 would have fired.)*
+46. **The TREATMENT is ours, or it is not our demo.** Every demo's treatment is one of OUR findings or OUR correction, picked from the
+    whole inventory (yo_school/research/closeout/demos/FINDINGS_INVENTORY.md), never from a vendor tutorial with our findings bolted on as
+    a check. A treatment that M3, TREX, PEA, the tutorial or any client already does (stale readout figures fixed by moving the layout,
+    readout correction) is refused at the design stage. Items 38-44 above are checks every design carries; they are NOT the source list.
+    *(19 Nov: four of five demos treated generic readout calibration; the redirect then narrowed to the kick alone. the owner: "we have
+    a shit ton of novel findings and ideas that we were supposed to be fucking demonstrating.")*

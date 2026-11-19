@@ -274,11 +274,10 @@ for (const [k, g] of Object.entries(TOOLKIT_GROUPS)) {   // 16 Nov 2026: toolkit
   else if (!GROUPS[k] && g.tools) GROUPS[k] = { title: g.title, note: g.note, tools: g.tools };
 }
 // 19 Nov 2026 (the owner: "keep only the indahl quantum"): one connector, Indahl Quantum, with the IBM calibration audit tools only.
-// No study index (authored studies are off the site), no other division servers; /mcp and /api/v1 serve the same quantum tools.
+// No other division servers; /mcp and /api/v1 serve the same quantum tools (with the QIA study index, find_study).
 for (const k of Object.keys(GROUPS)) if (k !== 'quantum') delete GROUPS[k];
-GROUPS.quantum.tools = GROUPS.quantum.tools.filter(n => n === 'list_divisions' || /^qia_/.test(n));
 GROUPS.quantum.title = 'Indahl Quantum';
-GROUPS.quantum.note = 'QIA, the Quantum Idle Audit: the calibration IBM publishes for its quantum processors, measured against our own runs.';
+GROUPS.quantum.note = 'QIA, the Quantum Idle Audit: the calibration IBM publishes for its quantum processors, measured against our own runs, and the QIA index of quantum hardware studies.';
 { const keep = new Set(GROUPS.quantum.tools); for (let i = TOOLS.length - 1; i >= 0; i--) if (!keep.has(TOOLS[i].name)) TOOLS.splice(i, 1); }
 for (let i = PROMPTS.length - 1; i >= 0; i--) if (!TOOLS.some(t => t.name === PROMPTS[i].tool)) PROMPTS.splice(i, 1);
 export async function handleApi(req, env, u) {

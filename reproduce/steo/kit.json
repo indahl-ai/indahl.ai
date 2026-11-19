@@ -1,0 +1,65 @@
+{
+ "cwd": "",
+ "desk": "steo",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "cell": "all leads",
+    "series": "WTI"
+   },
+   "share"
+  ],
+  "hi": [
+   "cells",
+   {
+    "cell": "all leads",
+    "series": "WTI"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "cell": "all leads",
+    "series": "WTI"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "cell": "all leads",
+    "series": "WTI"
+   },
+   "inside"
+  ],
+  "of": [
+   "cells",
+   {
+    "cell": "all leads",
+    "series": "WTI"
+   },
+   "scored"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "cell": "all leads",
+    "series": "WTI"
+   },
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "STEO",
+ "output": "data/steo_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "steo_tick.py",
+   "data/steo_live.json",
+   "--offline"
+  ]
+ ]
+}

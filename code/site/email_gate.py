@@ -39,7 +39,7 @@ if __name__ == '__main__':
     if sys.argv[1:] == ['selftest']:
         import tempfile
         d = tempfile.mkdtemp(); f = os.path.join(d, 'a.html')
-        open(f, 'w').write('x jane.doe@example.org y Indahl@heuremen.com icon@2x.png')
+        open(f, 'w').write('x jane.doe@example.org y Indahl@heuremen.com <email>')
         h = scan([f]); assert len(h) == 1 and h[0][1] == 'j***@example.org', h; print('email gate selftest: one planted address caught, ours and image names passed'); sys.exit(0)
     fl = sorted(set(files())); h = scan(fl)
     for rel, a in h[:40]: print('  EMAIL IN SITE FILE %s: %s' % (rel, a))

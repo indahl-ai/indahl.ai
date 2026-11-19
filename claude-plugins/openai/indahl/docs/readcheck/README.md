@@ -52,6 +52,10 @@ Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. the o
 
 The plugin directory accepts command hooks only from Verified organizations, so this copy has the check commands and not the automatic commit gate. The full plugin, gate included, installs from our marketplace: `/plugin marketplace add indahl-ai/indahl.ai` then `/plugin install indahl-readcheck@heuremen`.
 
+## In this copy
+
+The plugin directory accepts command hooks only from Verified organizations, so this copy has the check commands and not the automatic commit gate. The full plugin, gate included, installs from our marketplace: `/plugin marketplace add indahl-ai/indahl.ai` then `/plugin install indahl-readcheck@heuremen`.
+
 ## How the scripts arrive
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:

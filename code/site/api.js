@@ -273,6 +273,14 @@ for (const [k, g] of Object.entries(TOOLKIT_GROUPS)) {   // 16 Nov 2026: toolkit
   if (GROUPS[k] && g.add) GROUPS[k].tools.push(...g.add.filter(n => !GROUPS[k].tools.includes(n)));
   else if (!GROUPS[k] && g.tools) GROUPS[k] = { title: g.title, note: g.note, tools: g.tools };
 }
+// 19 Nov 2026 (the owner: "keep only the indahl quantum"): one connector, Indahl Quantum, with the IBM calibration audit tools only.
+// No study index (authored studies are off the site), no other division servers; /mcp and /api/v1 serve the same quantum tools.
+for (const k of Object.keys(GROUPS)) if (k !== 'quantum') delete GROUPS[k];
+GROUPS.quantum.tools = GROUPS.quantum.tools.filter(n => n === 'list_divisions' || /^qia_/.test(n));
+GROUPS.quantum.title = 'Indahl Quantum';
+GROUPS.quantum.note = 'QIA, the Quantum Idle Audit: the calibration IBM publishes for its quantum processors, measured against our own runs.';
+{ const keep = new Set(GROUPS.quantum.tools); for (let i = TOOLS.length - 1; i >= 0; i--) if (!keep.has(TOOLS[i].name)) TOOLS.splice(i, 1); }
+for (let i = PROMPTS.length - 1; i >= 0; i--) if (!TOOLS.some(t => t.name === PROMPTS[i].tool)) PROMPTS.splice(i, 1);
 export async function handleApi(req, env, u) {
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
   const p = u.pathname;
@@ -315,7 +323,7 @@ export async function handleApi(req, env, u) {
           const clean = {}; for (const [k, v] of Object.entries(a)) clean[k] = String(v).slice(0, 20000);
           return ok({ description: pr.description, messages: [{ role: 'user', content: { type: 'text', text: pr.text(clean) } }] }); }
         case 'tools/list': return ok({ tools: TL.map(t => { const title = t.title || toolTitle(t.name); return { name: t.name, title, description: t.description, inputSchema: schema(t), outputSchema: ANSWER_SCHEMA, annotations: { title, readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: !!t.openWorld } }; }) });   // 13 Nov: every tool carries a title and explicit read-only, non-destructive, closed-world hints (Anthropic and OpenAI directory requirements: our own published data only)
-        case 'tools/call': { const n = msg.params && msg.params.name; if (!TL.some(t => t.name === n)) return err(-32602, 'unknown tool'); let r = await callTool(env, req, n, (msg.params && msg.params.arguments) || {}).catch(() => 'ERR'); if (n === 'list_divisions' && gm[1] && DIVS_FOR[gm[1]] && r && r.data) r = Object.assign({}, r, { data: r.data.filter(d => DIVS_FOR[gm[1]].includes(d.id)), all_divisions: 'https://indahl.ai/mcp (every division)' });  /* 16 Nov 2026 (the designer): a focused server lists its own divisions */ if (r === null) return err(-32602, 'unknown tool'); if (r === 'ERR') return ok({ content: [{ type: 'text', text: 'The source could not be read just now.' }], isError: true }); const text = JSON.stringify(r); return ok({ content: [{ type: 'text', text }, { type: 'text', text: JSON.stringify(await receipt(env, n, (msg.params && msg.params.arguments) || {}, text)) }], structuredContent: r, isError: false }); }   // 16 Nov: structuredContent matches outputSchema; the text blocks stay byte for byte for the receipt
+        case 'tools/call': { const n = msg.params && msg.params.name; if (!TL.some(t => t.name === n)) return err(-32602, 'unknown tool'); let r = await callTool(env, req, n, (msg.params && msg.params.arguments) || {}).catch(() => 'ERR'); if (n === 'list_divisions' && DIVS_FOR[gm[1] || 'quantum'] && r && r.data) r = Object.assign({}, r, { data: r.data.filter(d => DIVS_FOR[gm[1] || 'quantum'].includes(d.id)) });  /* 16 Nov 2026 (the designer): a focused server lists its own divisions */ if (r === null) return err(-32602, 'unknown tool'); if (r === 'ERR') return ok({ content: [{ type: 'text', text: 'The source could not be read just now.' }], isError: true }); const text = JSON.stringify(r); return ok({ content: [{ type: 'text', text }, { type: 'text', text: JSON.stringify(await receipt(env, n, (msg.params && msg.params.arguments) || {}, text)) }], structuredContent: r, isError: false }); }   // 16 Nov: structuredContent matches outputSchema; the text blocks stay byte for byte for the receipt
         default: return err(-32601, 'method not found');
       }
     };

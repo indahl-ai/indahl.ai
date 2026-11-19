@@ -51,8 +51,8 @@ SURFACES = {  # surface key -> file (paths relative to ~/bones-forge unless abso
     'media': 'indahl-ai/media.html',   # 26 Oct 2026: the press release lives on indahl.ai (heuremen.org links to it)
     'qia_matrix': 'indahl-ai/qia.html',
     'qia_process': 'indahl-ai/qia/process.html',
-    'qia_corp': 'indahl-ai/',   # 15 Nov 2026: calibrated studies moved off /qia
-    'qia_research': 'indahl-ai/',   # 15 Nov 2026: how each QIA reading is made, moved off the QIA page by his word   # 25 Oct: Recount Matrix: Quantum Hardware (generated from qia_leads/matrix_page)
+    'qia_corp': 'indahl-ai/qia/studies/corporate.html',   # 15 Nov 2026: calibrated studies moved off /qia
+    'qia_research': 'indahl-ai/qia/studies/research.html',   # 15 Nov 2026: how each QIA reading is made, moved off the QIA page by his word   # 25 Oct: Recount Matrix: Quantum Hardware (generated from qia_leads/matrix_page)
     'model_live': 'iris_index/claims_stack/status_model_live.json',   # 30 Oct: MODEL desk claims rounds (S1-S3), the file put in KV model_live
     'darkwave': 'heuremen.org/darkwave.html',   # 16 Nov: moved back to heuremen.org (his word);   # 1 Nov: the Darkwave page (paper + clock)
     'yo': 'indahl-ai/yo.html',   # 9 Nov: the YO desk (his word); every YO number moved here from iris_lab

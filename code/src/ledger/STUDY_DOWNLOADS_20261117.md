@@ -90,4 +90,4 @@ carry arXiv ids (papers revised / dead links); they are desk measurements, kept 
 - Scripts that read the retired /qia/list.json and will fail after deploy (private desk tools, not changed): iris_index/notices/qia/build_*_notices*.py
   (fetch https://indahl.ai/qia/list.json), qia_leads/recheck_published/fetch.py (reads public/qia/list.json); several one-off qia_leads add_*/fix_* scripts
   copy list.json into public/qia/ (build_site.py deletes it again and removed_gate.py refuses it).
-- Stale page indahl-ai/ (study moved to zenodo-24287983 and redirected by the worker) still carries a QIA List Pack link.
+- Stale page indahl-ai/qia/study/zenodo-19855345.html (study moved to zenodo-24287983 and redirected by the worker) still carries a QIA List Pack link.

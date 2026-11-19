@@ -13,7 +13,7 @@ import { handleNotify } from "../../indahl-ai/notify.js";
 import { handleSecurity, finalize as secFinalize, decorate as secDecorate, mtaSts } from "../../indahl-ai/security.js";
 const FAVICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" rx="28" fill="#1a1208"/><polygon points="100,36 176,168 24,168" fill="none" stroke="#c9a84c" stroke-width="14" stroke-linejoin="round"/></svg>';
 const PDFS = ["/faults.pdf", "/guards.pdf", "/quantum-idle-audit.pdf"];
-const MOVED = { "/las-fallas.pdf": "/faults.pdf", "/las-guardas.pdf": "/guards.pdf", "/": "/", "/record": "/qia/list", "/record/": "/qia/list", "/record.json": "/qia/list", "/record.html": "/qia/list" };   // 17 Nov 2026: study listed at its version 2 (zenodo:24287983). 17 Nov 2026: /record retired, a frozen duplicate of the QIA List
+const MOVED = { "/las-fallas.pdf": "/faults.pdf", "/las-guardas.pdf": "/guards.pdf", "/qia/study/zenodo-19855345": "/qia/study/zenodo-24287983", "/record": "/qia/list", "/record/": "/qia/list", "/record.json": "/qia/list", "/record.html": "/qia/list" };   // 17 Nov 2026: study listed at its version 2 (zenodo:24287983). 17 Nov 2026: /record retired, a frozen duplicate of the QIA List
 const IMMUTABLE = "public, max-age=31536000, immutable";
 function cachePolicy(req, r) {
   const u = new URL(req.url);

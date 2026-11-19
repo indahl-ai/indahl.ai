@@ -44,24 +44,24 @@ path,label,outcome,n,of,share,lo,hi,series,geo,step,width_basis,rows,scored,insi
 /cells[14],cells[14],ABOVE,,,0.9765625,0.9333551190997279,0.9919977285598879,SALES,West,S3,as served 2026,129,128,125,3,0,,1,6.5875120540019285,0.28000071421695394,0.96875,0.984375,0.7981439019139653,1.0965056557761723,0,2016-01,2026-09
 /cells[14]/counted_in,counted_in,,,,0.9765625,0.9333551190997279,0.9919977285598879,,,,,,128,125,,,,,,,,,,,,,
 /cells[14]/without_same_release,without_same_release,,,,,0.9333551190997279,0.9919977285598879,,,,,,128,125,,,,,,,,,,,,,
-/cells[15],cells[15],ABOVE,,,1.0,0.9684705387979147,1.0,STARTS,US,S1,as served 2026,129,118,118,0,0,,11,1.197518368571,0.13685500899217384,1.0,1.0,0.4040284164723916,0.7078319523670733,3,2016-01,2026-09
-/cells[15]/counted_in,counted_in,,,,1.0,0.9710813480114663,1.0,,,,,,129,129,,,,,,,,,,,,,
-/cells[15]/without_same_release,without_same_release,,,,,0.9676746189886368,1.0,,,,,,115,115,,,,,,,,,,,,,
-/cells[16],cells[16],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S1,none,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
-/cells[16]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[16]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[17],cells[17],ABOVE,,,0.9905660377358491,0.9484851921062201,0.9983327712155086,STARTS,US,S2,as served 2026,129,106,105,1,0,,23,1.6611927591141606,0.18907756070375425,0.9905660377358491,1.0,0.4874429071977076,1.0630529408541876,0,2016-01,2026-09
-/cells[17]/counted_in,counted_in,,,,0.9921875,0.9570726816506786,0.998619603637121,,,,,,128,127,,,,,,,,,,,,,
-/cells[17]/without_same_release,without_same_release,,,,,0.9484851921062201,0.9983327712155086,,,,,,106,105,,,,,,,,,,,,,
-/cells[18],cells[18],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S2,none,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
-/cells[18]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[18]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[19],cells[19],ABOVE,,,0.9922480620155039,0.9573955085729391,0.9986303146631554,STARTS,US,S3,as served 2026,129,129,128,1,0,,0,2.05761316872428,0.24561726689386268,0.9922480620155039,1.0,0.5342333720170254,1.0630529408541876,0,2016-01,2026-09
-/cells[19]/counted_in,counted_in,,,,0.9922480620155039,0.9573955085729391,0.9986303146631554,,,,,,129,128,,,,,,,,,,,,,
-/cells[19]/without_same_release,without_same_release,,,,,0.9573955085729391,0.9986303146631554,,,,,,129,128,,,,,,,,,,,,,
-/cells[20],cells[20],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S3,none,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
-/cells[20]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[20]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[15],cells[15],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S1,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[15]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[15]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[16],cells[16],ABOVE,,,1.0,0.9684705387979147,1.0,STARTS,US,S1,as served 2026,129,118,118,0,0,,11,1.197518368571,0.13685500899217384,1.0,1.0,0.4040284164723916,0.7078319523670733,3,2016-01,2026-09
+/cells[16]/counted_in,counted_in,,,,1.0,0.9710813480114663,1.0,,,,,,129,129,,,,,,,,,,,,,
+/cells[16]/without_same_release,without_same_release,,,,,0.9676746189886368,1.0,,,,,,115,115,,,,,,,,,,,,,
+/cells[17],cells[17],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S2,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[17]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[17]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[18],cells[18],ABOVE,,,0.9905660377358491,0.9484851921062201,0.9983327712155086,STARTS,US,S2,as served 2026,129,106,105,1,0,,23,1.6611927591141606,0.18907756070375425,0.9905660377358491,1.0,0.4874429071977076,1.0630529408541876,0,2016-01,2026-09
+/cells[18]/counted_in,counted_in,,,,0.9921875,0.9570726816506786,0.998619603637121,,,,,,128,127,,,,,,,,,,,,,
+/cells[18]/without_same_release,without_same_release,,,,,0.9484851921062201,0.9983327712155086,,,,,,106,105,,,,,,,,,,,,,
+/cells[19],cells[19],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S3,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[19]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[19]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[20],cells[20],ABOVE,,,0.9922480620155039,0.9573955085729391,0.9986303146631554,STARTS,US,S3,as served 2026,129,129,128,1,0,,0,2.05761316872428,0.24561726689386268,0.9922480620155039,1.0,0.5342333720170254,1.0630529408541876,0,2016-01,2026-09
+/cells[20]/counted_in,counted_in,,,,0.9922480620155039,0.9573955085729391,0.9986303146631554,,,,,,129,128,,,,,,,,,,,,,
+/cells[20]/without_same_release,without_same_release,,,,,0.9573955085729391,0.9986303146631554,,,,,,129,128,,,,,,,,,,,,,
 /cells[21],cells[21],CANNOT_TELL,,,,0.0,1.0,STARTS,Northeast,S1,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
 /cells[21]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
 /cells[21]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
@@ -98,24 +98,24 @@ path,label,outcome,n,of,share,lo,hi,series,geo,step,width_basis,rows,scored,insi
 /cells[32],cells[32],CANNOT_TELL,,,,0.0,1.0,STARTS,West,S3,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
 /cells[32]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
 /cells[32]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[33],cells[33],ABOVE,,,0.9830508474576272,0.9403013738539171,0.9953396551542378,COMPLETIONS,US,S1,as served 2026,129,118,116,1,1,,11,1.4646736453243239,0.15502622802515703,0.9830508474576272,0.9915254237288136,0.45955924881686006,1.3521264127365877,3,2016-01,2026-09
-/cells[33]/counted_in,counted_in,,,,0.9844961240310077,0.9452322795481141,0.995738018912609,,,,,,129,127,,,,,,,,,,,,,
-/cells[33]/without_same_release,without_same_release,,,,,0.9387986235183484,0.9952177478532923,,,,,,115,113,,,,,,,,,,,,,
-/cells[34],cells[34],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S1,none,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
-/cells[34]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[34]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[35],cells[35],ABOVE,,,1.0,0.9650260010779157,1.0,COMPLETIONS,US,S2,as served 2026,129,106,106,0,0,,23,1.6248371689101173,0.17655936452497795,0.9905660377358491,1.0,0.471467390732911,0.9641723054940433,0,2016-01,2026-09
-/cells[35]/counted_in,counted_in,,,,1.0,0.9708620041018919,1.0,,,,,,128,128,,,,,,,,,,,,,
-/cells[35]/without_same_release,without_same_release,,,,,0.9650260010779157,1.0,,,,,,106,106,,,,,,,,,,,,,
-/cells[36],cells[36],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S2,none,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
-/cells[36]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[36]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[37],cells[37],ABOVE,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,COMPLETIONS,US,S3,as served 2026,129,129,125,3,1,,0,2.259522272433828,0.23812212285104384,0.9689922480620154,1.0,0.5452457353034618,1.073897577018592,0,2016-01,2026-09
-/cells[37]/counted_in,counted_in,,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
-/cells[37]/without_same_release,without_same_release,,,,,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
-/cells[38],cells[38],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S3,none,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
-/cells[38]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
-/cells[38]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[33],cells[33],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S1,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[33]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[33]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[34],cells[34],ABOVE,,,0.9830508474576272,0.9403013738539171,0.9953396551542378,COMPLETIONS,US,S1,as served 2026,129,118,116,1,1,,11,1.4646736453243239,0.15502622802515703,0.9830508474576272,0.9915254237288136,0.45955924881686006,1.3521264127365877,3,2016-01,2026-09
+/cells[34]/counted_in,counted_in,,,,0.9844961240310077,0.9452322795481141,0.995738018912609,,,,,,129,127,,,,,,,,,,,,,
+/cells[34]/without_same_release,without_same_release,,,,,0.9387986235183484,0.9952177478532923,,,,,,115,113,,,,,,,,,,,,,
+/cells[35],cells[35],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S2,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[35]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[35]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[36],cells[36],ABOVE,,,1.0,0.9650260010779157,1.0,COMPLETIONS,US,S2,as served 2026,129,106,106,0,0,,23,1.6248371689101173,0.17655936452497795,0.9905660377358491,1.0,0.471467390732911,0.9641723054940433,0,2016-01,2026-09
+/cells[36]/counted_in,counted_in,,,,1.0,0.9708620041018919,1.0,,,,,,128,128,,,,,,,,,,,,,
+/cells[36]/without_same_release,without_same_release,,,,,0.9650260010779157,1.0,,,,,,106,106,,,,,,,,,,,,,
+/cells[37],cells[37],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S3,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[37]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[37]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[38],cells[38],ABOVE,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,COMPLETIONS,US,S3,as served 2026,129,129,125,3,1,,0,2.259522272433828,0.23812212285104384,0.9689922480620154,1.0,0.5452457353034618,1.073897577018592,0,2016-01,2026-09
+/cells[38]/counted_in,counted_in,,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
+/cells[38]/without_same_release,without_same_release,,,,,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
 /cells[39],cells[39],CANNOT_TELL,,,,0.0,1.0,RETAIL,US,S1,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
 /cells[39]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
 /cells[39]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,

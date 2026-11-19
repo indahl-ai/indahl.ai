@@ -120,3 +120,22 @@
     record). No demo headline, prediction or expected win comes from a simulator; offline runs are code smoke-tests only.
     The commit gate refuses it (watch/hooks/sim_headline_guard.py). *(19 Nov: told twice in one night, after #4 already
     said it. the owner: "qubits can run but they can't hide from us!")*
+49. **The runtime's automatic changes don't know our science; they treat it as error.** Transpiler optimization
+    (levels 1-3 merge and cancel rotations, re-route), twirling, dynamical decoupling and Estimator resilience
+    (TREX, ZNE, PEA) all alter or "mitigate" the kick, the ZZ, the readout asymmetry and our virtual corrections. Our
+    arm runs with those OFF (resilience 0, no twirling, no DD, our angles asserted unchanged in the transpiled circuit);
+    the client's defaults, if shown, are their own labelled arm. Print the options read back from the job. *(19 Nov:
+    simulation v1 ran on Estimator default resilience; optimization ran under twirling + XY4. the owner: "the changes
+    the simulations make to your fires do NOT know our science and think its an error.")*
+50. **Every change in our arm traces to one of OUR hardware fires.** Each correction parameter (a kick angle, a ZZ value or
+    sign, a readout table, a gate-error ratio, a depth choice) cites the hardware job ID or the record stamp it came from.
+    A parameter found, tuned or sign-checked on a simulator is refused: the simulator doesn't know our science and calls
+    it error. PLAN.md carries a SOURCES table, and the fire refuses a parameter with no hardware source. *(19 Nov: the
+    simulation demo's fold sign came from an offline planting test. the owner: "when you make a change based on a finding
+    from a sim and not one of our previous fires, you're fucked.")*
+51. **Before any fire: what IBM STATES, what OUR OWN past fires measured, and the power.** Read the stated figure and its
+    meaning from our closet first (our past runs already test IBM's conventions), never "unconfirmed" while our own data
+    answers it. Then compute the expected signal from our own hardware numbers against the run's floor from our own
+    repeats: under 3x the floor, the design is refused, not fired. *(19 Nov simulation v2: the 22 Oct run had settled IBM's
+    zz convention on fez; v1 had measured the chain; the fold was 0.0027 rad/step, under the floor. ~190 s on a pre-bought
+    CANNOT_TELL. the owner: "why the fuck would you fire on something you didn't check first?")*

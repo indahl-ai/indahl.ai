@@ -15,7 +15,7 @@ I = 'https://indahl.ai'
 SAMPLE_PDF = I + '/quantum-idle-audit.pdf'
 SAMPLE_DOI = 'https://doi.org/10.5281/zenodo.23169755'
 CONTACT = I + '/contact'
-PRICES = {'check': 'From $1,500', 'audit': '', 'monitor': '$2,500 a month', 'pilot': '$2,500 for 30 days'}   # 18 Nov 2026: the owner's decided sheet (yo-school research/launch_plan/PLAN_MARKUP.md, Pricing)   # the owner's numbers go here, e.g. 'From $X'
+PRICES = {'check': 'From $1,500', 'audit': '', 'monitor': '$2,500 a month', 'pilot': '$2,500 for 30 days'}   # 18 Nov 2026: the owner's decided sheet    # the owner's numbers go here, e.g. 'From $X'
 
 
 def price(k):
@@ -349,26 +349,6 @@ PAGES = {
     '/listed': ('Your study is listed | Quantum Idle Audit', 'What a QIA List entry means, how to correct it, and how authors can reply.', LISTED),
 }
 
-# The team's working plan, rendered from qia_plan.json to a local file only (never deployed).
-def _plan():
-    P = _json.load(open(os.path.join(HERE, 'qia_plan.json'), encoding='utf-8'))
-    li = lambda xs: ''.join('<li>%s</li>' % _e(x) for x in xs)
-    order = ''.join('<div class="card"><p class="k">%s</p><p>%s</p><p><small><b>Why:</b> %s</small></p></div>' % (_e(o['step']), _e(o['what']), _e(o['why'])) for o in P['order'])
-    dec = ''.join('<tr><td class="id">%s</td><td><b>%s</b><br><small>Owner: %s</small></td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-        _e(d['id']), _e(d['decision']), _e(d['owner']), _e(d['rec']), _e(d['why']), _e(d['status'])) for d in P['decisions'])
-    dates = ''.join('<tr><td class="id">%s</td><td>%s</td></tr>' % (_e(d['when']), _e(d['what'])) for d in P['dates'])
-    done = ''.join('<tr><td class="id">%s</td><td>%s</td></tr>' % (_e(d['when']), _e(d['what'])) for d in P['done'])
-    rel = ''.join('<div class="card"><p class="k">Version %s: %s</p><h3>%s</h3><p style="white-space:pre-wrap">%s</p><p><small>Headline %d characters; body about %d words</small></p>%s</div>' % (_e(r['v']), _e(r['angle']), _e(r['head']), _e(r['body']), len(r['head']), len(r['body'].split()), ('<p><small><b>Open:</b> %s</small></p>' % _e(r['open'])) if r.get('open') else '') for r in P['release'])
-    return f"""<div class="hero wrap"><p class="eyebrow">Working plan &middot; updated {_e(P['updated'])}</p><h1>{_e(P['title'])}</h1>
-<p class="lede">{_e(P['status'])}</p><p><b>{_e(P['rule'])}</b></p><p>{_e(P['constraint'])}</p></div>
-<section><div class="wrap"><h2>The order, and why</h2><div class="grid">{order}</div></div></section>
-<section><div class="wrap wide"><h2>Decisions</h2><div class="tscroll"><table class="qt"><thead><tr><th>#</th><th>Decision</th><th>Recommendation</th><th>Why</th><th>Status</th></tr></thead><tbody>{dec}</tbody></table></div></div></section>
-<section><div class="wrap"><h2>Dates ahead</h2><div class="tscroll"><table class="qt"><tbody>{dates}</tbody></table></div><p class="fine">Proposed, not booked. Every date moves if a check is still out.</p></div></section>
-<section><div class="wrap"><h2>the referee&rsquo;s recommendations</h2><ul>{li(P['sage'])}</ul><h2>the operator&rsquo;s recommendations</h2><ul>{li(P['bones'])}</ul></div></section>
-<section><div class="wrap"><h2>Press release drafts</h2><p>{_e(P['release_note'])}</p><div class="grid">{rel}</div></div></section>
-<section><div class="wrap"><h2>The IBM letter (right of reply)</h2><p><small>{_e(P['ibm_letter']['note'])}</small></p><p><b>To:</b> {_e(P['ibm_letter']['to'])}<br><b>Subject:</b> {_e(P['ibm_letter']['subject'])}</p><div class="card" style="white-space:pre-wrap">{_e(P['ibm_letter']['body'])}</div></div></section>
-<section><div class="wrap"><h2>Research for the designer</h2><p>Data-driven best practice, with sources, to settle the open dates and angles.</p><ol>{li(P['dude'])}</ol></div></section>
-<section><div class="wrap"><h2>What is already done</h2><div class="tscroll"><table class="qt"><tbody>{done}</tbody></table></div></div></section>"""
 
 
 if __name__ == '__main__':
@@ -376,9 +356,11 @@ if __name__ == '__main__':
     for p, (t, d, b) in PAGES.items():
         name = 'index.html' if p == '/' else p.strip('/') + '.html'
         open(os.path.join(OUT, name), 'w', encoding='utf-8').write(page(p, t, d, b))
-    # 18 Nov 2026 leak fix (owner: local copy only): the plan is written outside the deployed folder, never to the site
-    _pd = os.path.expanduser('~/bones-forge/private_plan'); os.makedirs(_pd, exist_ok=True)
-    open(os.path.join(_pd, 'plan.html'), 'w', encoding='utf-8').write(page('/plan', 'The plan | Quantum Idle Audit', 'Working plan.', _plan()).replace('<meta name="description"', '<meta name="robots" content="noindex, nofollow"><meta name="description"', 1))
+    # private plan: rendered by a module outside the public code, if present on this machine
+    _pp = os.path.expanduser('~/bones-forge/private_plan/plan_render.py')
+    if os.path.exists(_pp):
+        import importlib.util as _iu; _sp = _iu.spec_from_file_location('plan_render', _pp); _m = _iu.module_from_spec(_sp); _sp.loader.exec_module(_m)
+        open(os.path.join(os.path.dirname(_pp), 'plan.html'), 'w', encoding='utf-8').write(page('/plan', 'Plan', 'Plan.', _m.build(HERE, _e)).replace('<meta name="description"', '<meta name="robots" content="noindex, nofollow"><meta name="description"', 1))
     open(os.path.join(OUT, 'favicon.svg'), 'w').write(MARK.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"').replace('currentColor', '#806012'))
     open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: https://quantumidleaudit.com/sitemap.xml\n')
     open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

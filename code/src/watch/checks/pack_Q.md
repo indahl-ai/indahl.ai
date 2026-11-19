@@ -83,3 +83,25 @@
 36. **Literature from papers read, never search summaries;** no "known effect" without the paper's own number.
 37. **Paper, site and bill agree number for number** — one batch edit, one push, after the referee.
 
+
+## H. OUR OWN FINDINGS — every model, synth, plan and demo carries them (added 18 Nov 2026, the owner: "that's kinda our thing")
+38. **Every look kicks its neighbors.** A mid-circuit readout turns the phase of untouched neighboring qubits by 1.75 to 2.51 degrees
+    per readout, same direction, on ibm_fez, ibm_kingston and ibm_marrakesh (17 Nov; same direction 31 Oct). Any noise model or synth for
+    a circuit with mid-circuit measurement MUST include it, on EVERY neighbor of EVERY measured qubit, patch edges included. Fake-backend
+    Pauli models (IBM's figures) carry none of it. *(18 Nov: the dynamic-circuits demo synth left it out; the owner caught it.)*
+39. **The kick drifts but is trackable.** A fresh per-qubit table gives back 86 to 93 percent; a 27-day table 82 (fez) and 90
+    (kingston); on marrakesh the turn moved 0.95 degrees and the old table's overshoot was predicted to 0.01. Never assume a table is
+    current; snapshot its age.
+40. **Readout near entangled pairs costs fidelity.** 0.25 of pair fidelity on kingston; with an echo the extra loss was 0.010. A
+    refocusing echo is X at N/2 and N; an X pair bracketing a whole window is a FRAME FLIP, not an echo (KG-3b).
+41. **The record's readout figures can be wrong per qubit.** fez q155: record P(1|0) 0.982, measured 0.013. Run the readout guard
+    per qubit before correcting with published figures; flagged qubits code CANNOT_TELL, never silently dropped.
+42. **The record can be stale under a fresh stamp.** Entries dated earlier than the record's own timestamp (fez readout 9 Nov under a
+    13 Nov stamp). Read per-entry dates, not the header.
+43. **A correction is never measured and applied in the same job** (table from job P), and same-job readout calibration is OUR
+    proposal, not an IBM claim (IBM's M3 calibrates fresh, in separate jobs; IBM's QAOA tutorial uses no readout correction).
+44. **Scored observables must survive.** Exact value nonzero (|exact| >= 0.2 or ±1 stabilizers) and design-matched survival >= 0.3,
+    chosen by a written rule before data. An observable that decays to ~0 makes every fire a pre-bought CONSISTENT; one that survives
+    because it is blind to the effect is a control, not a claim.
+45. **Run this pack on EVERY design before it goes to a builder or the referee**, not only the one in front of you. *(18 Nov: run on
+    Optimization, skipped on Dynamic circuits, and #4 would have fired.)*

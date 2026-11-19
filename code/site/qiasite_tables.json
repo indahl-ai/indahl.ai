@@ -168,7 +168,7 @@
    "repro_ibm": "IBM's tutorial",
    "repro_ours": "the tutorial's method on our runs",
    "status": "Measured",
-   "source": "yo_school/research/h0_refresh_test/results_h0_ibm_*.text"
+   "source": "our run records (h0_refresh_test, results per processor)"
   },
   {
    "id": "R10",
@@ -181,7 +181,7 @@
    "repro_ibm": "from qiskit_ibm_runtime import QiskitRuntimeService; b = QiskitRuntimeService().backend('ibm_fez'); p = b.properties(); print(p.last_update_date, p.qubit_property(155)['prob_meas1_prep0'], b.target['measure'][(155,)].error)",
    "repro_ours": "About 2 seconds of QPU on your own account: prepare |0> on qubit 155 and measure, 4,096 shots (QuantumCircuit(156, 1); qc.measure(155, 0); transpile with initial_layout=[155] is implied by the physical index), then count how often it reads 1 and compare with prob_meas1_prep0 above. Same for |1> (add qc.x(155) first) against prob_meas0_prep1. Our raw counts and scripts are available on request.",
    "status": "Record fact (as read 18 Nov 2026, about 12:00 UTC) and hardware measurement",
-   "source": "yo-school research/closeout/record_readout/README.md"
+   "source": "our run records (record_readout)"
   }
  ],
  "calibrations": [
@@ -225,7 +225,7 @@
    "interval": "lowest to highest of 5 trial means",
    "cost": "about 105 s characterization per processor",
    "status": "Demonstrated on GHZ; non-GHZ workload scheduled",
-   "source": "yo_school/research/h0_refresh_test/"
+   "source": "our run records (h0_refresh_test)"
   },
   {
    "name": "Readout assignment correction from a minutes-old measurement instead of the record",
@@ -247,7 +247,7 @@
    "interval": "95 % bootstrap; equivalence margin +/-0.05",
    "cost": "about 70 s of QPU time per qubit to measure",
    "status": "Demonstrated on hardware, 17 Nov 2026 (kingston, marrakesh, fez)",
-   "source": "yo-school research/closeout/t2b/"
+   "source": "our run records (t2b)"
   },
   {
    "name": "Echo on the control qubit during idles on a coupled pair",
@@ -258,7 +258,7 @@
    "interval": "95 % intervals on the losses; an uncoupled control pair read in the same job",
    "cost": "no extra QPU time to apply; about 3 minutes to measure the coupling first",
    "status": "Demonstrated on hardware, 17 Nov 2026 (fez)",
-   "source": "yo-school research/closeout/zz1/"
+   "source": "our run records (zz1)"
   },
   {
    "name": "Forecasts from delivered gate errors",

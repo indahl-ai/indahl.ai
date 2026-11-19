@@ -18,7 +18,8 @@ try:
     if git('diff', '--cached', '--quiet', '--', 'code/tape').returncode == 0: print('tape push: current'); sys.exit(0)
     n = sum(1 for l in open(M + '/code/tape/tape.jsonl') if l.strip())
     c = git('-c', 'user.name=Heuremen LLC', '-c', 'user.email=%s+indahl-ai@users.noreply.github.com' % uid, 'commit', '-q', '-m',
-            'TAPE: chain and leaves through entry %d\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\n    if c.returncode: print('tape push: commit failed', (c.stderr or c.stdout)[-200:]); sys.exit(0)
+            'TAPE: chain and leaves through entry %d\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>' % n, '--', 'code/tape')
+    if c.returncode: print('tape push: commit failed', (c.stderr or c.stdout)[-200:]); sys.exit(0)
     p = git('push', '-q', 'origin', 'HEAD')
     if p.returncode and git('log', '-1', '--format=%s').stdout.startswith('TAPE: chain'): git('reset', '-q', '--soft', 'HEAD~1')   # undo our commit, the files stay staged for the release script
     print('tape push: entry', n, 'pushed' if p.returncode == 0 else 'not pushed, left for the release script: ' + (p.stderr or p.stdout)[-200:])

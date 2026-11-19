@@ -111,3 +111,12 @@
     readout correction) is refused at the design stage. Items 38-44 above are checks every design carries; they are NOT the source list.
     *(19 Nov: four of five demos treated generic readout calibration; the redirect then narrowed to the kick alone. the owner: "we have
     a shit ton of novel findings and ideas that we were supposed to be fucking demonstrating.")*
+47. **WHO PAYS comes before any physics.** A demo design starts with three lines, in this order, before any effect size: the paying
+    client type, the run they already do and pay for today, and why they would pay us to make it better. A run no paying client does (an
+    academic showcase, however big its number) is refused as a demo, and tabled as research. *(19 Nov: the lead demo drifted to a 40-qubit
+    measurement-built GHZ because it had the biggest number. the owner: "who's the client? who the fuck is going to pay for a run like that?")*
+48. **The chip, never the simulator.** Our findings were found on real qubits; Aer, fake backends and offline models
+    carry none of them and drop errors silently (symmetric readout, no coherent error, no crosstalk, no kick, no stale
+    record). No demo headline, prediction or expected win comes from a simulator; offline runs are code smoke-tests only.
+    The commit gate refuses it (watch/hooks/sim_headline_guard.py). *(19 Nov: told twice in one night, after #4 already
+    said it. the owner: "qubits can run but they can't hide from us!")*

@@ -11,14 +11,14 @@
    "math": "ratio = our RB error per gate / IBM's gate_error for the same qubit or edge in the same record",
    "repro_ibm": "backend.properties() gate_error per edge/qubit at the job's time",
    "repro_ours": "Simultaneous 1q RB and isolated 2q RB, same session; code and data public (Zenodo 10.5281/zenodo.23169755)",
-   "status": "Measured 23-24 Oct (16 runs on 7 processors, ledger qia.gate.*). Not repeated on 17 Nov for the five kingston qubits measured that day: their same-session gate errors sat around the published values (median delivered/stated 1.03 single-qubit, 0.98 two-qubit), and forecasts built from them gained nothing on IBM's QAOA tutorial (see Calibrations)",
+   "status": "Measured 23-24 Oct (16 runs on 7 processors). On 17 Nov the five kingston qubits measured that day sat around the published values (median delivered/stated 1.03 single-qubit, 0.98 two-qubit)",
    "source": "arxiv_one_readout/sweep_run/results_sweep_3.text; ledger qia.gate.*"
   },
   {
    "id": "C3",
    "what": "Published T2 above the physical bound 2 x T1",
    "ibm": "boston q85: T1 8.393 µs (27 Oct), T2 47.871 µs (14 Oct), ratio 5.7. kingston q121: 16.237 / 53.333 µs",
-   "ours": "boston q85 measured T1 7.544 [6.723, 8.35] µs; the ceiling 2 x T1 is 16.7 µs (30 Oct) and 20.5 µs on 11 Nov, against IBM's published 47.9 µs. kingston q121 ceiling 29.5 µs against 53.3 published. On 17 Nov the kingston entry is within the bound (T1 20.0, T2 29.1 µs); fez q148 (3.78 / 15.47 µs) and marrakesh q91 (101.4 / 256.5 µs) are above it in the record",
+   "ours": "boston q85 measured T1 7.544 [6.723, 8.35] µs; the ceiling 2 x T1 is at most 16.7 µs (twice the interval's upper end) (30 Oct) and 20.5 µs on 11 Nov, against IBM's published 47.9 µs. kingston q121 ceiling 29.5 µs against 53.3 published. On 17 Nov the kingston entry is within the bound (T1 20.0, T2 29.1 µs); fez q148 (3.78 / 15.47 µs) and marrakesh q91 (101.4 / 256.5 µs) are above it in the record",
    "interval": "95 % bootstrap",
    "date": "30 Oct and 11 Nov 2026 (measured); 17 Nov 2026 (record read)",
    "math": "physical limit: T2 <= 2 x T1 for a single qubit",
@@ -50,7 +50,7 @@
    "math": "0 of 1,024 shots -> 95 % upper bound 0.29 %",
    "repro_ibm": "backend.properties() prob_meas1_prep0 per qubit",
    "repro_ours": "prepare |0>, read, 20,000 shots per qubit",
-   "status": "Measured. Readout correction demonstrated 17 Nov on kingston, fez and marrakesh (see Calibrations): on qubits stated at zero, correcting with the published figure leaves +0.12 to +0.20 points more misreads per readout than correcting with a same-job measurement. The same-job correction is built from separate calibration circuits and scored on held-out test circuits never used to build it, so the comparison is not circular (qubits stated at zero: kingston 10, fez 8, marrakesh 13). At the level of Bell-pair fidelity, Phase 2 found no difference between the two corrections on any chip.",
+   "status": "Measured. Readout correction demonstrated 17 Nov on kingston, fez and marrakesh (see Calibrations): on qubits stated at zero, correcting with the published figure leaves +0.12 to +0.20 points more misreads per readout than correcting with a same-job measurement. The same-job correction is built from separate calibration circuits and scored on held-out test circuits never used to build it, so the comparison is not circular (qubits stated at zero: kingston 10, fez 8, marrakesh 13).",
    "source": "indahl-ai/qia_template/QIA-2026-001.json (D2); research/closeout/RECORD_CHECK_20261117.json"
   },
   {
@@ -70,13 +70,13 @@
    "id": "R5",
    "what": "Coupling zz recorded as 0.00 on edges that carry a calibrated two-qubit gate",
    "ibm": "fez 13-14 and 39-53, phoenix three edges (records of 21-22 Oct)",
-   "ours": "Measured 8.28 and 2.85 kHz on the fez edges, 14.21, 15.36 and 10.23 kHz on phoenix. In the 22 Oct records the same also holds for fez 109-118 and marrakesh 13-14, 55-59, 116-121; kingston carried three such edges from 28 Oct to 5 Nov. None on fez, kingston or marrakesh in the 13 Nov records. 17 Nov 2026: the 13 Nov record states 10.46 kHz on fez 13-14 and 8.82 kHz on 39-53; measured the same day 7.85 [7.46, 8.31] and 3.30 [2.90, 3.72] kHz (fit intervals, 400 shot redraws), 0.75x and 0.37x of stated. Edge 39-53 went from recorded as zero to overstated about 2.7 times. A reference edge measured 3.22 kHz against a stated 3.08 (1.04x) in the same job. Repeated the same evening: 7.92 [7.49, 8.37] and 3.02 [2.66, 3.38] kHz (0.76x and 0.34x of stated).",
+   "ours": "Measured 8.28 and 2.85 kHz on the fez edges, 14.21, 15.36 and 10.23 kHz on phoenix. In the 22 Oct records the same also holds for fez 109-118 and marrakesh 13-14, 55-59, 116-121; kingston carried three such edges from 28 Oct to 5 Nov. None on fez, kingston or marrakesh in the 13 Nov records. 17 Nov 2026: the 13 Nov record states 10.46 kHz on fez 13-14 and 8.82 kHz on 39-53; measured the same day 7.85 [7.46, 8.31] and 3.30 [2.90, 3.72] kHz (fit intervals, 400 shot redraws), 0.75x and 0.37x of stated. Edge 39-53 went from recorded as zero to stated at about 2.7 times the measured value. A reference edge measured 3.22 kHz against a stated 3.08 (1.04x) in the same job. Repeated the same evening: 7.92 [7.49, 8.37] and 3.02 [2.66, 3.38] kHz (0.76x and 0.34x of stated).",
    "interval": "per edge, two copies agree",
    "date": "21-22 Oct 2026 and 17 Nov 2026 (measured); history to 17 Nov 2026 (record read)",
    "math": "edge has gate_error < 1 and zz entry exactly 0",
    "repro_ibm": "backend.properties() gates and 'general' zz entries",
    "repro_ours": "the same fields read on the dates shown; direct zz phase-shift circuits",
-   "status": "Record fact (zeros gone from the 13 Nov records); the replacement values overstate the measured coupling on both edges (measured 17 Nov)",
+   "status": "Record fact (zeros gone from the 13 Nov records); the replacement values are about 1.3 and 2.7 times the coupling measured on 17 Nov",
    "source": "research/closeout/z7/"
   },
   {
@@ -94,7 +94,7 @@
   },
   {
    "id": "R8",
-   "what": "Stale flag only on gate errors",
+   "what": "Placeholder value 1 only on gate errors",
    "ibm": "a value not benchmarked for several days is reported as 1",
    "ours": "The value 1 appears only on gate_error (25 fez, 46 kingston, 45 marrakesh); never on readout_error or init_error, including entries older than 7 days",
    "interval": "count",
@@ -123,7 +123,7 @@
    "what": "Phase kick on untouched qubits during a mid-circuit readout",
    "ibm": "No field in the backend properties (read 17 Nov 2026)",
    "ours": "fez -1.62 [-2.08, -1.18], kingston -2.86 [-3.55, -2.09], marrakesh -2.39 [-3.00, -1.72] degrees per readout, 39 of 156 qubits read, 117 untouched. Repeated 17 Nov 2026: fez -1.78 [-2.22, -1.05], kingston -2.51 [-3.71, -1.90], marrakesh -1.75 [-2.65, -1.00] degrees per readout (99 % bootstrap over qubits); the backend properties read that day carry no field for it",
-   "interval": "95 %",
+   "interval": "95 % (22 Oct); 99 % (17 Nov repeat)",
    "date": "21-22 Oct and 17 Nov 2026",
    "math": "phase of the untouched qubits after N readouts minus after an idle of the same scheduled length, same job, divided by N",
    "repro_ibm": "none: the record carries no such field",
@@ -141,7 +141,7 @@
    "math": "readout arm minus equal idle, same job, two independent runs",
    "repro_ibm": "none",
    "repro_ours": "paper 1 (preprint): Zenodo 10.5281/zenodo.23169755",
-   "status": "Measured. No published backend property describes these (properties read 18 Nov 2026), and no calibration here returns them; limited to the chips and edges where the interval excludes zero (kingston coherence; marrakesh coherence and concurrence; fez concurrence)",
+   "status": "Measured. No published backend property describes these (properties read 18 Nov 2026); limited to the chips and edges where the interval excludes zero (kingston coherence; marrakesh coherence and concurrence; fez concurrence)",
    "source": "indahl-ai/qia_template/QIA-2026-001.json (E2, E3)"
   },
   {
@@ -173,11 +173,11 @@
   {
    "id": "R10",
    "what": "Published properties unchanged for days; a snapshot of an intermittent qubit held in place",
-   "ibm": "backend.properties(): readout entries normally refresh about daily, all 156 qubits together; fez q155 prob_meas1_prep0 = 0.982 (readout_error 0.497), not listed as faulty; target measure error on (155,) 0.497",
-   "ours": "Read 18 Nov 2026, about 12:00 UTC: ibm_phoenix's published properties are unchanged since 13 Nov UTC. ibm_fez, ibm_kingston, ibm_boston and ibm_pittsburgh published nothing new from 13 Nov until 18 Nov 08:46-09:46 UTC; their newest records carry 18 Nov stamps, but every readout entry is still the old one (fez 9 Nov, kingston and pittsburgh 12 Nov, boston 13 Nov) and most T1 entries likewise. ibm_marrakesh published again from 18 Nov 03:51 UTC (new initialization errors and a few gate entries first) and refreshed its readout and T1 entries at 18 Nov 08:21 UTC; ibm_chicago kept publishing (newest record 18 Nov 05:09 UTC), but only its readout entries are new (dated 18 Nov, except P(0|1) on 7 of 120 qubits still 10 Nov); its T1 and T2 entries date from 10 Nov. Fez's readout entries are dated 9 Nov 23:54 UTC. Fez q155 enters real bad-readout episodes lasting hours (15 of our 205 hourly calibration runs since 30 Oct, 7 %). IBM's last readout refresh before the record stopped, 9 Nov 23:54 UTC, caught the end of one: it states P(1|0) = 0.982; our hourly runs three and one hours earlier (20:54 and 22:54 UTC) had already read 0.936 and 0.995, and our next run, about one hour after the refresh (00:57 UTC), read 0.008. Since then the record has kept that snapshot. Under it, from our first run after IBM's refresh (10 Nov 00:57 UTC) to 18 Nov 03:52 UTC, 117 of our 129 hourly runs read P(1|0) 0.003-0.023, 3 read 0.03-0.11, and 9 were further episodes (0.21-0.86). Marrakesh q64 and q76 follow the same pattern (IBM's refresh at 13 Nov 03:47 UTC states 0.497 and 0.467; our hourly runs had read q64 at 0.21-0.44 from 23:24 UTC and q76 at 0.52-0.79 from 01:19 UTC, both still elevated 21 minutes after the refresh and back near their usual values within hours; good in about 95 % of hours since). Marrakesh's 18 Nov 08:21 UTC refresh replaced both: q64 P(1|0) 0.002, q76 0.096. Laid out from the published target, an 80-qubit GHZ circuit leaves q155 out (5 of 5 seeds); with q155's measure error set to its usual value it uses it (5 of 5). Avoiding a qubit with bad episodes is not clearly a harm, so this shows a layout change only.",
+   "ibm": "backend.properties(): readout entries normally refresh about daily, all 156 qubits together; fez q155 prob_meas1_prep0 = 0.982 (readout_error 0.497), not in IBM's faulty-qubit list; target measure error on (155,) 0.497",
+   "ours": "Measured on fez q155, 17-18 Nov 2026: P(1|0) 0.010 to 0.014. Read 18 Nov 2026, about 12:00 UTC: ibm_phoenix's published properties are unchanged since 13 Nov UTC. ibm_fez, ibm_kingston, ibm_boston and ibm_pittsburgh published nothing new from 13 Nov until 18 Nov 08:46-09:46 UTC; their newest records carry 18 Nov stamps, but every readout entry is still the old one (fez 9 Nov, kingston and pittsburgh 12 Nov, boston 13 Nov) and most T1 entries likewise. ibm_marrakesh published again from 18 Nov 03:51 UTC (new initialization errors and a few gate entries first) and refreshed its readout and T1 entries at 18 Nov 08:21 UTC; ibm_chicago kept publishing (newest record 18 Nov 05:09 UTC), but only its readout entries are new (dated 18 Nov, except P(0|1) on 7 of 120 qubits still 10 Nov); its T1 and T2 entries date from 10 Nov. Fez's readout entries are dated 9 Nov 23:54 UTC. Fez q155 enters real bad-readout episodes lasting hours (15 of our 205 regular calibration runs since 30 Oct, 7 %). IBM's last readout refresh before the record stopped, 9 Nov 23:54 UTC, caught the end of one: it states P(1|0) = 0.982; our regular runs three and one hours earlier (20:54 and 22:54 UTC) had already read 0.936 and 0.995, and our next run, about one hour after the refresh (00:57 UTC), read 0.008. Since then the record has kept that snapshot. Under it, from our first run after IBM's refresh (10 Nov 00:57 UTC) to 18 Nov 03:52 UTC, 117 of our 129 regular runs read P(1|0) 0.003-0.023, 3 read 0.03-0.11, and 9 were further episodes (0.21-0.86). Marrakesh q64 and q76 follow the same pattern (IBM's refresh at 13 Nov 03:47 UTC states 0.497 and 0.467; our regular runs had read q64 at 0.21-0.44 from 23:24 UTC and q76 at 0.52-0.79 from 01:19 UTC, both still elevated 21 minutes after the refresh and back near their usual values within hours; good in about 95 % of hours since). Marrakesh's 18 Nov 08:21 UTC refresh replaced both: q64 P(1|0) 0.002, q76 0.096. Laid out from the published target, an 80-qubit GHZ circuit leaves q155 out (5 of 5 seeds); with q155's measure error set to its usual value it uses it (5 of 5). Avoiding a qubit with bad episodes is not clearly a harm, so this shows a layout change only.",
    "interval": "99 % Clopper-Pearson on 8,192 shots per prepared state (readout run, 17 Nov) and 12,500 (in-session calibration of the combination run, 18 Nov)",
    "date": "18 Nov 2026, about 12:00 UTC (records read); 17-18 Nov 2026 (measured)",
-   "math": "record entry versus the same qubit measured hourly (prepare 0 and 1, 1,000 shots each, 99.9 % Clopper-Pearson) while that entry was in force; record versions compared entry by entry across our saved copies since 28 Oct",
+   "math": "record entry versus the same qubit measured on a regular cadence (prepare 0 and 1, 1,000 shots each, 99.9 % Clopper-Pearson) while that entry was in force; record versions compared entry by entry across our saved copies since 28 Oct",
    "repro_ibm": "from qiskit_ibm_runtime import QiskitRuntimeService; b = QiskitRuntimeService().backend('ibm_fez'); p = b.properties(); print(p.last_update_date, p.qubit_property(155)['prob_meas1_prep0'], b.target['measure'][(155,)].error)",
    "repro_ours": "About 2 seconds of QPU on your own account: prepare |0> on qubit 155 and measure, 4,096 shots (QuantumCircuit(156, 1); qc.measure(155, 0); transpile with initial_layout=[155] is implied by the physical index), then count how often it reads 1 and compare with prob_meas1_prep0 above. Same for |1> (add qc.x(155) first) against prob_meas0_prep1. Our raw counts and scripts are available on request.",
    "status": "Record fact (as read 18 Nov 2026, about 12:00 UTC) and hardware measurement",
@@ -207,43 +207,32 @@
    "source": "the_show/runs/2026-10-31-keystone/; arxiv_one_readout/"
   },
   {
-   "name": "Shorter readout instruction (measure_2)",
-   "fixes": "E1 (part)",
-   "prior_art": "IBM instruction",
-   "result": "Kick under measure_2 as a share of the kick under the default readout, 8 readouts: kingston 0.99 [0.79, 1.29] and fez 0.84 [0.73, 1.15] (22 Oct); marrakesh 0.51 [0.36, 0.65] (22 Oct) and 0.76 [0.67, 1.06] (17 Nov, same instrument lengths). The share does not follow the readout length and moves between calibration cycles, so the kick is measured per chip and per cycle instead.",
-   "interval": "95 % bootstrap over qubits",
-   "cost": "none",
-   "status": "Tested on three chips; effect varies by chip and day",
-   "source": "indahl-ai/qia_template/QIA-2026-001.json (E1)",
-   "client": "Not a dependable saving: the kick left after switching ranges from about the same (kingston, 22 Oct) to about half (marrakesh, 22 Oct) to three quarters (marrakesh, 17 Nov)."
-  },
-  {
    "name": "Placement from a fresh measurement instead of the record",
-   "fixes": "R1-R4, R8 (staleness), via placement",
+   "fixes": "R1-R4, R8 (old snapshots), via placement",
    "prior_art": "IBM's own refresh tutorial",
    "result": "17 Nov 2026: marrakesh +0.0509 [+0.0467, +0.0551], fez +0.0046 [+0.0030, +0.0067] Hellinger fidelity on GHZ",
    "interval": "lowest to highest of 5 trial means",
    "cost": "about 105 s characterization per processor",
-   "status": "Demonstrated on GHZ; non-GHZ workload scheduled",
+   "status": "Demonstrated on GHZ",
    "source": "our run records (h0_refresh_test)"
   },
   {
    "name": "Readout assignment correction from a minutes-old measurement instead of the record",
    "fixes": "D2",
    "prior_art": "standard readout mitigation",
-   "result": "17 Nov 2026, on the qubits IBM lists with zero readout error, correction from the published record leaves more error than correction measured in the same job, on the same shots: kingston +0.197 pp [+0.086, +0.296] (10 qubits), fez +0.196 pp [+0.124, +0.542] (8), marrakesh +0.123 pp [+0.050, +0.271] (13). Across all 156 qubits per chip the two corrections agree within the interval or the record does slightly better. 17-18 Nov 2026, fez q155 (record P(1|0) 0.982, measured 0.010-0.014): correcting with the record divides by 1 - 0.982 - 0.011 = 0.007, and a Bell pair on q155 read fidelity 26 and 72 (impossible values); corrected with the same job's measurement it read normally. With the record as published, the compiler leaves q155 out of an 80-qubit layout; with the measured value it uses it.",
+   "result": "17 Nov 2026, on the qubits IBM lists with zero readout error, correction from the published record leaves more error than correction measured in the same job, on the same shots: kingston +0.197 pp [+0.086, +0.296] (10 qubits), fez +0.196 pp [+0.124, +0.542] (8), marrakesh +0.123 pp [+0.050, +0.271] (13). 17-18 Nov 2026, fez q155 (record P(1|0) 0.982, measured 0.010-0.014): correcting with the record divides by 1 - 0.982 - 0.011 = 0.007, and a Bell pair on q155 read fidelity 26 and 72 (impossible values); corrected with the same job's measurement it read normally. With the record as published, the compiler leaves q155 out of an 80-qubit layout; with the measured value it uses it.",
    "interval": "95 % bootstrap over qubits",
    "cost": "a few seconds per processor",
    "status": "Demonstrated on hardware, 17 Nov 2026 (kingston, fez, marrakesh)",
    "source": "research/closeout/FIRE_PLAN_CLOSEOUT.md",
-   "client": "On qubits whose published readout error is zero, extra misreads left after correcting with the published figures / with a measurement taken in the same job (17 Nov 2026): kingston +0.20 / 0; fez +0.20 / 0; marrakesh +0.12 / 0 (percentage points per readout). 8 of 10, 5 of 8 and 7 of 13 of those qubits misread above zero. On a qubit whose published readout figure is stale (fez q155, stated 98 %, measures 1 %): correcting with the published figure / with the same-job measurement: Bell-pair fidelity 26 and 72 (impossible values) / normal."
+   "client": "On qubits whose published readout error is zero, extra misreads left after correcting with the published figures / with a measurement taken in the same job (17 Nov 2026): kingston +0.20 / 0; fez +0.20 / 0; marrakesh +0.12 / 0 (percentage points per readout). 8 of 10, 5 of 8 and 7 of 13 of those qubits misread above zero. On a qubit whose published readout figure is from an old snapshot (fez q155, stated 98 %, measures 1 %): correcting with the published figure / with the same-job measurement: Bell-pair fidelity 26 and 72 (impossible values) / normal."
   },
   {
    "name": "Measure T1 and T2 before an idle-heavy job instead of trusting the published values",
    "fixes": "C3",
-   "prior_art": "",
+   "prior_art": "—",
    "client": "Coherence an idling circuit keeps, published-T2 forecast / measured (17 Nov 2026): kingston q121 50 % / 28 %; marrakesh q91 67 % / 51 %; fez q148 78 % / 57 %. The published figure over-forecasts by 16 to 22 points on all three, including kingston q121 where the published pair looks physically valid. Sample: three qubits on one day, two of them chosen because their published pair breaks the physical bound; a chip-wide rate needs randomly chosen qubits. Random sample (18 Nov; 6 qubits per chip drawn by a fixed seed under a rule committed before the draw): the record missed in both directions. The rule committed before the draw reads a qubit only where IBM's forecast is at least 0.10; four drawn qubits fall below it (fez q35, kingston q23 and q61, marrakesh q15) and are marked as such in the coded output. Of the other 14, per chip: fez 2 kept more than forecast and 3 less; kingston 1 more, 2 less, 1 matched within ±0.05; marrakesh 4 more, 1 matched. Before the draw, the rule set aside three qubits on their record readout_error entry (fez q155, marrakesh q64 and q76), entries far off what we measured, so the sample leans toward qubits where the record looks good.",
-   "result": "17 Nov 2026, three qubits, published T2 against T1 and T2 measured in the same session: kingston q121 (published pair within the 2 x T1 bound; T2 29.1 published, 16.9 measured) kept 0.284 [0.237, 0.330] over a 20 us echo idle against a forecast of 0.503; marrakesh q91 (published T2 256.5 above the bound, 179.5 measured) 0.510 against 0.673; fez q148 (published T1 3.78 / T2 15.47, measured 2.24 / 2.15) 0.573 against 0.783. Published figure BELOW on all three. A forecast from the physical bound alone helps on marrakesh only, so the qubit is measured first. RANDOM SAMPLE (18 Nov 2026; 6 qubits per chip drawn by a fixed seed under a rule committed before the draw, record unchanged since 13 Nov): fez q114: kept 20.1 % [17.3, 23.0] after 93 us vs IBM forecast 31.8 % -> BELOW; T1 stated 93 us (2026-11-09), measured 49; T2 stated 81, measured 57 | fez q118: kept 27.6 % [24.8, 30.6] after 76 us vs IBM forecast 17.4 % -> ABOVE; T1 stated 76 us (2026-11-09), measured 90; T2 stated 43, measured 53 | fez q30: kept 21.5 % [18.7, 24.4] after 175 us vs IBM forecast 25.6 % -> BELOW; T1 stated 175 us (2026-11-09), measured 104; T2 stated 128, measured 104 | fez q35: kept 4.0 % [1.0, 7.1] after 180 us vs IBM forecast 1.9 % -> CANNOT_TELL (margin exceeds forecast); T1 stated 180 us (2026-11-09), measured 56; T2 stated 45, measured 20 | fez q49: kept 15.5 % [12.7, 18.6] after 61 us vs IBM forecast 10.2 % -> ABOVE; T1 stated 61 us (2026-11-09), measured 66; T2 stated 27, measured 30 | fez q69: kept 9.0 % [5.9, 12.0] after 96 us vs IBM forecast 20.9 % -> BELOW; T1 stated 96 us (2026-11-09), measured 28; T2 stated 61, measured 29 | kingston q125: kept 37.4 % [34.7, 40.3] after 221 us vs IBM forecast 30.8 % -> ABOVE; T1 stated 221 us (2026-11-12), measured 169; T2 stated 188, measured 199 | kingston q129: kept 10.2 % [7.4, 13.3] after 280 us vs IBM forecast 14.5 % -> BELOW; T1 stated 280 us (2026-11-12), measured 170; T2 stated 145, measured 120 | kingston q155: kept 30.5 % [27.6, 33.5] after 256 us vs IBM forecast 32.0 % -> CONSISTENT; T1 stated 256 us (2026-11-12), measured 386; T2 stated 225, measured 365 | kingston q23: kept 2.1 % [-0.9, 5.1] after 260 us vs IBM forecast 1.7 % -> CONSISTENT (margin exceeds forecast); T1 stated 260 us (2026-11-12), measured 138; T2 stated 64, measured 52 | kingston q47: kept 32.6 % [29.9, 35.5] after 381 us vs IBM forecast 42.8 % -> BELOW; T1 stated 381 us (2026-11-12), measured 289; T2 stated 448, measured 315 | kingston q61: kept 1.9 % [-1.0, 5.0] after 251 us vs IBM forecast 4.4 % -> CANNOT_TELL (margin exceeds forecast); T1 stated 251 us (2026-11-12), measured 207; T2 stated 80, measured 62 | marrakesh q111: kept 52.6 % [50.1, 55.3] after 63 us vs IBM forecast 37.7 % -> ABOVE; T1 stated 63 us (2026-11-12), measured 114; T2 stated 64, measured 99 | marrakesh q124: kept 23.7 % [21.1, 26.7] after 141 us vs IBM forecast 24.1 % -> CONSISTENT; T1 stated 141 us (2026-11-12), measured 58; T2 stated 99, measured 45 | marrakesh q15: kept 1.2 % [-1.9, 4.1] after 373 us vs IBM forecast 0.0 % -> CONSISTENT (margin exceeds forecast); T1 stated 373 us (2026-11-12), measured 270; T2 stated 32, measured 28 | marrakesh q18: kept 43.0 % [40.4, 45.7] after 53 us vs IBM forecast 24.1 % -> ABOVE; T1 stated 53 us (2026-11-12), measured 78; T2 stated 38, measured 39 | marrakesh q50: kept 51.3 % [48.7, 54.0] after 119 us vs IBM forecast 30.5 % -> ABOVE; T1 stated 119 us (2026-11-12), measured 177; T2 stated 100, measured 152 | marrakesh q62: kept 15.9 % [12.9, 19.0] after 115 us vs IBM forecast 10.3 % -> ABOVE; T1 stated 115 us (2026-11-12), measured 110; T2 stated 51, measured 45. Counts: fez: 6 of 6 measured (2 ABOVE, 3 BELOW, 1 CANNOT_TELL); kingston: 6 of 6 measured (1 ABOVE, 2 BELOW, 1 CANNOT_TELL, 2 CONSISTENT); marrakesh: 6 of 6 measured (4 ABOVE, 2 CONSISTENT). Claim rule fixed before fire: 'the record over-forecasts most qubits' on a chip needs 6 of 6 BELOW. The exclusion rule dropped fez q155 and marrakesh q64, q76 (stale readout entries), which biases the draw toward qubits whose record looks good. Re-reads (per-qubit description, outside every count): the floor-bound qubits re-read with the idle set to the record's T2: fez q35 kept 19.9 % [16.9, 22.9] vs forecast 36.8 % (BELOW); kingston q23 38.3 % vs 36.8 % and q61 35.2 % vs 36.8 % (CONSISTENT). marrakesh q15 33.0 % [30.3, 35.8] vs 36.8 % (BELOW as coded; the 3.8-point gap is inside the 5-point equivalence margin). T1, descriptive: against IBM's own 5-9 day refresh ratios, our same-hour T1 sits beyond 99 % of them on fez q35 (0.31 of stated) and q69 (0.30); the other ten are within IBM's own drift.",
+   "result": "17 Nov 2026, three qubits, published T2 against T1 and T2 measured in the same session: kingston q121 (published pair within the 2 x T1 bound; T2 29.1 published, 16.9 measured) kept 0.284 [0.237, 0.330] over a 20 us echo idle against a forecast of 0.503; marrakesh q91 (published T2 256.5 above the bound, 179.5 measured) 0.510 against 0.673; fez q148 (published T1 3.78 / T2 15.47, measured 2.24 / 2.15) 0.573 against 0.783. Measured BELOW the published forecast on all three.",
    "interval": "95 % bootstrap; equivalence margin +/-0.05",
    "cost": "about 70 s of QPU time per qubit to measure",
    "status": "Demonstrated on hardware, 17 Nov 2026 (kingston, marrakesh, fez)",
@@ -261,26 +250,15 @@
    "source": "our run records (zz1)"
   },
   {
-   "name": "Forecasts from delivered gate errors",
-   "fixes": "C1, B1",
-   "prior_art": "",
-   "result": "17 Nov 2026, kingston, same session: gate errors measured on the tutorial's five qubits scatter around the published values (delivered over published: single-qubit 0.52-1.16, median 1.03; two-qubit 0.68-1.75, median 0.98), unlike 23 Oct when every gate ran about 1.3x over. The tutorial's optimizer reached a poorer setting than on 23 Oct (P(optimal cut) about 0.08 against 0.29), so the two days are different circuits. Forecasts from published and from measured gate errors both sit within 0.7 points of hardware; the measured-error forecast closes a share of the gap consistent with zero. Decoupling and twirling added 1.3 [0.6, 2.1] points.",
-   "interval": "95 % Wilson on 10,000 shots; forecast draws",
-   "cost": "RB, about 40-60 s",
-   "status": "Tested on hardware, 17 Nov 2026: no gain on this circuit",
-   "source": "research/closeout/z1/",
-   "client": "IBM QAOA tutorial on kingston, 17 Nov 2026: published-figure forecast / same-session forecast / hardware = 0.080 / 0.080 / 0.073 P(optimal cut). Both forecasts sit above the hardware by about 0.7 points (resolved); measuring the gates in the same session did not close that gap. IBM's own error suppression added 1.3 points."
-  },
-  {
    "name": "Combinations (placement x phase correction x echo, readout correction applied to the same shots)",
    "fixes": "all of the above together",
    "prior_art": "",
-   "result": "17-18 Nov 2026, kingston and fez, all arms interleaved in one job per chip, five trials: the phase correction alone gives back +0.22 (kingston) and +0.05 (fez) of pair fidelity; the echo alone +0.36 and +0.21 (all ABOVE, every trial on the same side). The echo figure also includes the echo protecting the pair during the idle itself, so the two figures are not a ranking. The full stack minus the echo alone: +0.0001 [-0.004, +0.004] on kingston and -0.0006 [-0.004, +0.003] on fez: the stack adds nothing over the echo on either chip (fez read with the in-session readout correction; IBM's record for one fez qubit, q155, states a readout error the same job measured at about 1 %, so the record correction is not used for that qubit). The two corrections overlap (their joint gain is smaller than the sum), as predicted before the run. Readout correction on stated-zero pairs: no measurable change. Placement readings are descriptive. Marrakesh (18 Nov, analyzed twice, before and after a code fix; no reading differs): echo alone +0.159 [+0.064, +0.280] (ABOVE); phase correction alone +0.072 [-0.006, +0.183] (CONSISTENT as coded; the interval does not resolve whether it helps there today, and the next design adds an equivalence margin); full stack minus echo alone +0.002 [-0.002, +0.010] (not contradicted; read with the same job's readout correction, chosen after the data).",
+   "result": "17-18 Nov 2026, kingston and fez, all arms interleaved in one job per chip, five trials: the phase correction alone gives back +0.22 (kingston) and +0.05 (fez) of pair fidelity; the echo alone +0.36 and +0.21 (all ABOVE, every trial on the same side). The echo figure also includes the echo protecting the pair during the idle itself, so the two figures are not a ranking.",
    "interval": "99 % bootstrap over pairs crossed with five interleaved trials",
    "cost": "about 450 s per processor",
    "status": "Demonstrated on hardware, 17-18 Nov 2026 (kingston, fez, marrakesh)",
    "source": "research/closeout/FIRE_PLAN_CLOSEOUT.md",
-   "client": "Bell pairs held through repeated readouts of neighboring qubits, each arm against an idle of the same length on the same pairs (17-18 Nov 2026; readout corrected with the same job's calibration, chosen after the data). Loss under the readouts without our calibrations / with the echo alone: kingston -0.253 [-0.412, -0.111] / -0.010 [-0.026, +0.001]; fez -0.056 [-0.100, -0.017] / -0.011 [-0.029, +0.001]; marrakesh -0.083 [-0.240, +0.040] / -0.020 [-0.067, +0.004]. Share of the loss given back (uncorrected counts): phase correction alone 0.96-0.98 on kingston, 0.83-0.97 on fez; echo alone 0.95-0.96 on kingston, 0.74-0.82 on fez (ranges span the two placements; 99 % intervals in the results files). With IBM's readout figures as published, these lines read cannot-tell: the record flags 3 kingston and 9 fez qubits in these pairs."
+   "client": "Bell pairs held through repeated readouts of neighboring qubits, each arm against an idle of the same length on the same pairs (17-18 Nov 2026; readout corrected with the same job's calibration). Loss under the readouts without our calibrations / with the echo alone: kingston -0.253 [-0.412, -0.111] / -0.010 [-0.026, +0.001]; fez -0.056 [-0.100, -0.017] / -0.011 [-0.029, +0.001]; marrakesh -0.083 [-0.240, +0.040] / -0.020 [-0.067, +0.004]. Share of the loss given back (uncorrected counts): phase correction alone 0.96-0.98 on kingston, 0.83-0.97 on fez; echo alone 0.95-0.96 on kingston, 0.74-0.82 on fez (ranges span the two placements; 99 % intervals in the results files). With IBM's readout figures as published, these lines read cannot-tell: the record flags 3 kingston and 9 fez qubits in these pairs."
   }
  ]
 }

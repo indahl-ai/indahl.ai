@@ -209,7 +209,7 @@ def changelog(PAGES, page, hero_slim):
 def opml(desk_feeds, brands):
     o = lambda t, x, h: '<outline type="rss" text="%s" title="%s" xmlUrl="%s" htmlUrl="%s"/>' % (E(t), E(t), E(x), E(h))
     site = [o('Heuremen LLC: new studies and bench rounds', SITE + '/feed.xml', SITE + '/'),
-            o('Heuremen LLC weekly newsletter', SITE + '/newsletter/feed.xml', SITE + '/newsletter'), o('indahl.ai changelog', SITE + '/changelog.xml', SITE + '/changelog')]
+            o('Heuremen LLC weekly newsletter', SITE + '/newsletter/feed.xml', SITE + '/newsletter')]
     dk = [o('%s: changes to the headline' % n, '%s/%s/changes.xml' % (SITE, s), '%s/%s' % (SITE, s)) for s, n in desk_feeds]
     br = [o('%s: changes on the desks with rows about it' % n, '%s/brand/%s/changes.xml' % (SITE, s), '%s/brand/%s' % (SITE, s)) for s, n in brands]
     x = ('<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0"><head><title>indahl.ai feeds</title><ownerName>Heuremen LLC</ownerName><docs>http://opml.org/spec2.opml</docs></head><body>'
@@ -244,7 +244,6 @@ def follow_page(desk_feeds, cal_desks, names):
             '<h2 id="feeds">Feeds</h2><p>Feeds work in any feed reader. Each one announces new entries through the public WebSub hub at pubsubhubbub.appspot.com, so a reader that supports it gets them without asking again and again.</p>'
             '<ul class="nt-list"><li>New studies, desks and bench rounds: <a href="/feed.xml">feed.xml</a> (Atom) &middot; <a href="/feed.json">feed.json</a> (JSON Feed)</li>'
             '<li>The weekly newsletter: <a href="/newsletter/feed.xml">newsletter/feed.xml</a></li>'
-            '<li>Site updates: <a href="/changelog.xml">changelog.xml</a></li>'
             '<li>Every desk and organisation feed in one file, for one import into a feed reader: <a href="/feeds.opml" download>feeds.opml</a></li></ul>'
             '<p>Each desk posts to its own feed only when its headline makes a material change under the desk&rsquo;s rule:</p><ul class="nt-list nt-cols">' + dl + '</ul>'
             '<p>Each organisation the desks measure has a feed of the desks with rows about it, linked from its page under <a href="/brand">brand pages</a>, at /brand/&lt;name&gt;/changes.xml.</p>'
@@ -323,7 +322,7 @@ def apply(PAGES, page, hero_slim, HOME=None, cssv='', FEED=None):
     desk_feeds = sorted(((d, names.get(d, d.upper())) for d in desks if '/' + d in PAGES), key=lambda x: x[1])
     calendars(PAGES, names)
     nn = newsletter_feed(PAGES)
-    nc = changelog(PAGES, page, hero_slim)
+    nc = 0   # 19 Nov 2026 (the owner): /changelog archived (~/bones-forge/archive/indahl_changelog_20261119); not built
     opml(desk_feeds, sorted(((b, v[0]) for b, v in brands.items() if '/brand/' + b in PAGES), key=lambda x: x[1].lower()))
     PAGES['/follow'] = page('/follow', 'Follow indahl.ai: Email, Calendar, Feeds, Webhooks | Heuremen LLC',
                             'Every way to follow indahl.ai: email, notifications on this device, a calendar of source release dates, feeds, an OPML file, webhooks, the API and MCP.',
@@ -332,7 +331,7 @@ def apply(PAGES, page, hero_slim, HOME=None, cssv='', FEED=None):
                               'A signed POST to a server, or a Slack, Discord or Teams message, when an outcome changes on chosen indahl.ai desks.',
                               webhooks_page(desks), hero_slim('Webhooks', 'Outcome changes, sent to a server or chat'))
     tag = _script(); nd = nb = 0
-    for k in ('/follow', '/webhooks', '/changelog'):
+    for k in ('/follow', '/webhooks'):
         PAGES[k] = PAGES[k].replace('@@CSSV@@', cssv)
         if HOME is not None: HOME[k] = '/hermes'
     PAGES['/follow'] = PAGES['/follow'].replace('</body>', tag + '\n</body>', 1)
@@ -353,12 +352,11 @@ def apply(PAGES, page, hero_slim, HOME=None, cssv='', FEED=None):
     fl = 0
     for k in PAGES:
         d = PAGES[k]
-        if '<a href="/changes">Changes</a><a href="/community">' in d and 'href="/follow">Follow</a>' not in d:   # 15 Nov 2026: anchored on Changes now that the corrections link is gone
-            PAGES[k] = d.replace('<a href="/changes">Changes</a><a href="/community">', '<a href="/changes">Changes</a><a href="/follow">Follow</a><a href="/community">', 1); fl += 1
+        if '<a href="/community">' in d and 'href="/follow">Follow</a>' not in d:   # 19 Nov 2026: anchored on Community now that /changes is archived
+            PAGES[k] = d.replace('<a href="/community">', '<a href="/follow">Follow</a><a href="/community">', 1); fl += 1
     if FEED is not None:
         FEED.append(('/follow', 'Follow indahl.ai: Email, Calendar, Feeds, Webhooks', 'Every way to follow indahl.ai: email, notifications on this device, a calendar of source release dates, feeds, webhooks, the API and MCP.'))
-        FEED.append(('/changelog', 'Changelog: Every Release of indahl.ai', 'Every release of indahl.ai, newest first, read from the release commits of the site.'))
-    print('notify: /follow, /webhooks, /changelog (%d releases), %d newsletter issues in the feed, calendars, OPML, the device button on %d desks, brand feed links on %d pages, Follow in %d footers'
+    print('notify: /follow, /webhooks (%d releases, changelog archived), %d newsletter issues in the feed, calendars, OPML, the device button on %d desks, brand feed links on %d pages, Follow in %d footers'
           % (nc, nn, nd, nb, fl))
 
 
@@ -370,7 +368,7 @@ def gate():
     try: import icalendar
     except ImportError: icalendar = None
     import xml.dom.minidom as MD
-    feeds = ['newsletter/feed.xml', 'changelog.xml'] + sorted(os.path.relpath(p, PUB) for p in __import__('glob').glob(os.path.join(PUB, '*', 'changes.xml')))
+    feeds = ['newsletter/feed.xml'] + sorted(os.path.relpath(p, PUB) for p in __import__('glob').glob(os.path.join(PUB, '*', 'changes.xml')))
     for rel in feeds:
         p = os.path.join(PUB, rel)
         if not os.path.exists(p): bad.append('missing feed ' + rel); continue
@@ -397,7 +395,7 @@ def gate():
                     if not str(ev.get('URL', '')).startswith('https://'): bad.append('%s: event %s cites no https schedule page' % (rel, ev.get('UID')))
             except Exception as e: bad.append('%s does not parse as iCalendar: %s' % (rel, e))
     deny, hands, argue = _deny()
-    for name in ('follow.html', 'webhooks.html', 'changelog.html'):
+    for name in ('follow.html', 'webhooks.html'):
         p = os.path.join(HERE, name)
         if not os.path.exists(p): continue
         a = open(p, encoding='utf-8').read(); i, j = a.find('<main'), a.rfind('</main>')

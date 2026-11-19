@@ -9,8 +9,8 @@
 import { EmailMessage } from 'cloudflare:email';
 import { session, agreement, FREEMAIL } from './gate.js';
 
-const FIELDS = { reason: 20, name: 120, email: 160, organisation: 160, role: 120, scope: 3000, budget: 40, timeline: 40, referral: 300 };
-const REASONS = new Set(['engagement', 'privacy', 'security']);
+const FIELDS = { reason: 300, name: 120, email: 160, organisation: 160, role: 120, scope: 3000, budget: 40, timeline: 40, referral: 300 };
+// 19 Nov 2026 (the owner): the reason is free text now; the subject line still flags privacy and security requests by keyword.
 
 async function sha(s) {
   const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
@@ -34,7 +34,7 @@ export async function handleInquiry(req, env, render) {
     if (v.length > max) return reject(`The ${k} field is too long.`);
     rec[k] = v;
   }
-  if (!REASONS.has(rec.reason)) rec.reason = 'engagement';
+  const kind = /privacy/i.test(rec.reason || '') ? 'privacy' : /security|vulnerab/i.test(rec.reason || '') ? 'security' : 'engagement';
   const engagement = true;   // 26 Oct 2026 (his word): one inquiry form for everything; every reason goes through the agreements and the identity check
   let who = null, ag = null;
   if (engagement) {
@@ -86,7 +86,7 @@ async function notify(env, rec, key) {
   ].join('\r\n');
   const raw = [
     `From: Indahl inquiries <${env.INQUIRY_FROM}>`, `To: <${env.INQUIRY_TO}>`, `Reply-To: ${h(rec.email)}`,
-    `Subject: ${rec.reason === 'engagement' ? 'Inquiry' : rec.reason === 'privacy' ? 'PRIVACY REQUEST' : 'SECURITY REPORT'}: ${h(rec.organisation || rec.name)} (${h(rec.domain)})`, `Date: ${new Date().toUTCString()}`,
+    `Subject: ${kind === 'engagement' ? 'Inquiry' : kind === 'privacy' ? 'PRIVACY REQUEST' : 'SECURITY REPORT'}: ${h(rec.organisation || rec.name)} (${h(rec.domain)})`, `Date: ${new Date().toUTCString()}`,
     `Message-ID: <${crypto.randomUUID()}@indahl.ai>`, 'MIME-Version: 1.0', 'Content-Type: text/plain; charset=utf-8',
     'Content-Transfer-Encoding: 8bit', '', body,
   ].join('\r\n');

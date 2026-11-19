@@ -1,11 +1,11 @@
-# Capacity, 2026-11-19T16:56:49Z UTC
+# Capacity, 2026-11-19T17:03:26Z UTC
 
-- Mac: GPU 36%, load 6.92, processes {'harvest.py': 0, 'train_live.py': 0, 'mlx_lm lora': 0, 'mlx_lm server': 2, 'dpo': 0}
+- Mac: GPU 68%, load 3.91, processes {'harvest.py': 0, 'train_live.py': 0, 'mlx_lm lora': 0, 'mlx_lm server': 2, 'dpo': 0}
 - Armature: GPU 0.0%, CPU 1.0%, VRAM 6.1 of 10.0 GB, Ollama [{'name': 'qwen3:8b', 'on_gpu': True}]
-- Harvest logs silent (s): {'hermes3_8b': 613602, 'mistral_7b': 635778}
+- Harvest logs silent (s): {'hermes3_8b': 613998, 'mistral_7b': 636174}
 
 ## Advice
 - Armature GPU under 10% for the last 10 readings (VRAM 6.1 of 10.0 GB). Put a judge or a training job on it.
-- Harvest hermes3_8b silent for 10226 min.
-- Harvest mistral_7b silent for 10596 min.
+- Harvest hermes3_8b silent for 10233 min.
+- Harvest mistral_7b silent for 10602 min.
 - Judge replies slow or timing out: armature timeout. One tiny request should take under 5 s.

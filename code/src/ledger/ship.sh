@@ -16,7 +16,7 @@ set -euo pipefail
 MSG="${1:?usage: ship.sh \"what changed\"}"
 B="$HOME/bones-forge"; L="$B/ledger"; W="$B/cloudflare-workers/heuremen-door"
 exec > >(tee "$L/.last_ship_gates.txt") 2>&1   # 10 Nov: the ship output is kept, so /build.json can carry the gate lines (indahl-ai/accountability.py buildinfo)
-AUTHOR=(-c "user.name=Heuremen LLC" -c user.email=349448817+indahl-ai@users.noreply.github.com)   # 15 Nov 2026, the owner: every public commit comes from Heuremen LLC (this line had been the claude-owner identity)
+AUTHOR=(-c "user.name=Heuremen LLC" -c user.email=349448817+indahl-ai@users.noreply.github.com)   # 15 Nov 2026, the owner: every public commit comes from Heuremen LLC (this line had been the indahl-ai identity)
 newer() { [ "$1" -nt "$2" ]; }
 echo "== 1 BUILD"
 for k in FAULTS:faults GUARDS:guards; do src="$B/ligera/${k%%:*}.html"; out="$B/heuremen.org/${k##*:}.pdf"
@@ -85,7 +85,7 @@ PY
 for r in heuremen.org indahl-ai; do cd "$B/$r"; git add -u; git add -A -- '*.pdf' 2>/dev/null || true; [ "$r" = indahl-ai ] && git add -A -- oy 2>/dev/null || true
   if git diff --cached --quiet; then echo "  $r: nothing to commit"; else git "${AUTHOR[@]}" commit -q -m "$MSG" && echo "  $r: $(git log --oneline -1)"; fi; done
 echo "== 5 DEPLOY"
-cd "$B/heuremen.org"; WTOKEN=$(gh auth token -u claude-owner 2>/dev/null); PR=0; PO=$(WTOKEN="$WTOKEN" git -c credential.helper= -c 'credential.helper=!f() { echo username=claude-owner; echo "password=$WTOKEN"; }; f' push -q 2>&1) || PR=$?; echo "$PO" | sed -E 's#https://[^@]*@#https://#' | tail -2; if [ $PR -eq 0 ]; then echo "  heuremen.org pushed"; else echo "  heuremen.org PUSH FAILED (the Pages source repo refused it; live heuremen.org is NOT updated)"; fi
+cd "$B/heuremen.org"; WTOKEN=$(gh auth token -u indahl-ai 2>/dev/null); PR=0; PO=$(WTOKEN="$WTOKEN" git -c credential.helper= -c 'credential.helper=!f() { echo username=indahl-ai; echo "password=$WTOKEN"; }; f' push -q 2>&1) || PR=$?; echo "$PO" | sed -E 's#https://[^@]*@#https://#' | tail -2; if [ $PR -eq 0 ]; then echo "  heuremen.org pushed"; else echo "  heuremen.org PUSH FAILED (the Pages source repo refused it; live heuremen.org is NOT updated)"; fi
 cd "$B/indahl-ai"; git push -q 2>&1 | sed -E 's#https://[^@]*@#https://#' | tail -2 || true
 STAMP="$W/.last_deploy.sha"; NOW=$("$L/deploy_hash.sh")   # 10 Nov: one hash for ship.sh and push_public.sh (deploy_hash.sh), so the two lists never drift
 if [ "$(cat "$STAMP" 2>/dev/null)" != "$NOW" ]; then (cd "$W" && npx wrangler deploy 2>&1 | grep -i -E "deployed|uploaded|error" | grep -v -i token | tail -3) && echo "$NOW" > "$STAMP" && { python3 "$L/stamps.py" manifest || true; }; else echo "  indahl.ai worker: unchanged"; fi   # 10 Nov: the manifest of what this deploy sent (stamps.py)

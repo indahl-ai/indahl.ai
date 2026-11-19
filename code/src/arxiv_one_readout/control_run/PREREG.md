@@ -1,5 +1,5 @@
 # Control run: does a mid-circuit readout disturb qubits it never touches, and do the ordinary causes explain it?
-Written, SHA-256 hashed, and the hash pushed to the public repository github.com/claude-owner/Heuremen.org BEFORE any job is
+Written, SHA-256 hashed, and the hash pushed to the public repository github.com/indahl-ai BEFORE any job is
 submitted. Heuremen LLC, 21 October 2026. Circuits: run.py in this folder (same hash commit). Analysis: analyze.py, written before
 any result file is opened; its hash is committed before the first result is read.
 

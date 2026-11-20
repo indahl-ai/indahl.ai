@@ -87,6 +87,7 @@ footer .fine{margin-top:28px;font-size:12.5px}
 .herogrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
 figure.fig{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 18px 14px}
 figure.fig svg{display:block;width:100%;height:auto}
+figure.fig .figt{font-weight:600;margin:0 0 6px;font-size:14px}
 figure.fig figcaption{font-size:12.5px;color:var(--mute);margin-top:8px;line-height:1.5}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--mute);margin:2px 0 6px}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
@@ -196,15 +197,47 @@ def zz_figure():
     return f'<figure class="fig">{legend}{svg}<figcaption>{cap}</figcaption></figure>'
 
 
-FIG = zz_figure()
+def finance_figure():
+    """20 Nov 2026 (the owner): the hero chart is the finance sample report (QIA-2026-002): option-price error as a percent of the exact
+    price, all 32 copies pooled, client run against ours, both runs on each processor. Numbers from the report and /demo-finance."""
+    rows = [('ibm_fez', 'run 1', 8.4, 0.36), ('ibm_fez', 'run 2', 17.8, 0.75), ('ibm_kingston', 'run 1', 6.4, 2.55), ('ibm_kingston', 'run 2', 6.2, 0.01),
+            ('ibm_marrakesh', 'run 1', 23.1, 4.34), ('ibm_marrakesh', 'run 2', 22.5, 4.34)]
+    W, L, R, T, bh, gap, grp = 520, 112, 50, 10, 16, 5, 16
+    H = T + len(rows) * (2 * bh + gap) + 3 * grp + 30
+    mx = 25.0; X = lambda v: L + v / mx * (W - L - R)
+    g = []
+    for v in (0, 5, 10, 15, 20, 25):
+        g.append(f'<line x1="{X(v):.1f}" y1="{T}" x2="{X(v):.1f}" y2="{H-30}" stroke="var(--line)" stroke-width="1"/>')
+        g.append(f'<text x="{X(v):.1f}" y="{H-14}" text-anchor="middle" font-size="12.5" fill="var(--mute)">{v}%</text>')
+    y = T; last = None
+    for chip, run, th, ou in rows:
+        if chip != last:
+            y += grp if last else 4
+            g.append(f'<text x="{L-8}" y="{y+bh+gap/2+(0 if chip == "ibm_marrakesh" else 5):.1f}" text-anchor="end" font-size="13" fill="var(--fg)">{chip}</text>')
+            if chip == 'ibm_marrakesh': g.append(f'<text x="{L-8}" y="{y+bh+gap/2+15:.1f}" text-anchor="end" font-size="11.5" fill="var(--mute)">control</text>')
+            last = chip
+        g.append(f'<rect x="{L}" y="{y:.1f}" width="{X(th)-L:.1f}" height="{bh}" rx="2" fill="var(--mute)" fill-opacity=".45"/>')
+        g.append(f'<text x="{X(th)+5:.1f}" y="{y+bh-2:.1f}" font-size="12.5" fill="var(--mute)">{th:g}%</text>')
+        g.append(f'<rect x="{L}" y="{y+bh:.1f}" width="{max(X(ou)-L,2):.1f}" height="{bh}" rx="2" fill="var(--fez)"/>')
+        g.append(f'<text x="{max(X(ou),L+2)+5:.1f}" y="{y+2*bh-2:.1f}" font-size="12.5" font-weight="600" fill="var(--fg)">{ou:g}%</text>')
+        y += 2 * bh + gap
+    svg = f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Option-price error, client run against calibrated run, on ibm_fez, ibm_kingston and ibm_marrakesh" font-family="Inter,system-ui,sans-serif">' + ''.join(g) + '</svg>'
+    legend = ('<div class="legend"><span><i style="background:var(--mute);opacity:.45"></i>Their run, the default</span>'
+              '<span><i style="background:var(--fez)"></i>Ours, calibrated</span></div>')
+    cap = ('Error in the option price, as a percent of the exact price, with all 32 copies pooled. Same circuit, same processor, same shots, '
+           'run twice on each processor, 19 November 2026. ibm_marrakesh is our layout-fault control. '
+           '<a href="/qia-2026-002.pdf">Sample report</a> &middot; <a href="/demo-finance">Job records</a>.')
+    return f'<figure class="fig"><p class="figt">Option pricing: their run against ours</p>{legend}{svg}<figcaption>{cap}</figcaption></figure>'
+
+
+FIG = finance_figure()
 
 DEMOS = '''<section id="demos"><div class="wrap"><p class="eyebrow">Demonstrations</p><p class="sub demosub">Two rounds on three separate processors, across six industry workloads.</p><div class="grid demogrid"><a class="card democard" href="/demo-finance"><p class="k">Finance</p><h3>Option price error</h3><p><b>Default: up to 23% off. Calibrated: within 4.4%.</b></p></a><a class="card democard" href="/demo-chemistry"><p class="k">Chemistry</p><h3>Molecular energy error</h3><p><b>Default: 12.8&ndash;17.8 mHa. Calibrated: 0.9&ndash;4.6 mHa.</b></p></a><a class="card democard" href="/demo-optimization"><p class="k">Logistics</p><h3>Short of the noiseless answer</h3><p><b>Default: 3.1&ndash;6.7%. Calibrated: 1.6&ndash;4.6%.</b></p></a><a class="card democard" href="/demo-simulation"><p class="k">Simulation</p><h3>Error against the exact answer</h3><p><b>Default: 0.064&ndash;0.103. Calibrated: 0.020&ndash;0.077.</b></p></a><a class="card democard" href="/demo-error-correction"><p class="k">Error correction</p><h3>Logical failures per round</h3><p><b>Default: 17&ndash;28%. Calibrated: 10&ndash;18%.</b></p></a><a class="card democard" href="/demo-ai"><p class="k">AI and machine learning</p><h3>Shot bill at 40 qubits</h3><p><b>3.6&ndash;12&times; the published-figure plan. Measured in 23 seconds.</b></p></a></div></div></section>'''
 
 HOME = f'''
-<div class="hero wrap herogrid"><div><p class="eyebrow">Independent &middot; Rerunnable &middot; Dated</p>
-<h1>Independent checks of quantum hardware claims against the vendor&rsquo;s own calibration.</h1>
+<div class="hero wrap herogrid"><div><h1>Independent checks of quantum hardware claims against the vendor&rsquo;s own calibration.</h1>
 <p class="lede">Each line gives the published value, our measurement with its interval, and the record the job ran under.</p>
-<div class="btns"><a class="btn" href="#demos">See the demonstrations</a><a class="btn ghost" href="{CONTACT}" target="_blank" rel="noopener">Inquiries</a></div></div>
+<div class="btns"><a class="btn" href="{SAMPLE_PDF}">See a sample report</a></div></div>
 {FIG}</div>
 {DEMOS}
 <section class="soft"><div class="wrap report"><div>
@@ -253,7 +286,7 @@ METHOD = f'''
 <h3>The record the job ran under</h3><p>IBM states that its published properties come from calibration run about once a day (<a href="https://quantum.cloud.ibm.com/docs/tutorials/real-time-benchmarking-for-qubit-selection">IBM tutorial</a>). Each measured value is compared with the record in force when its job ran, not a daily median.</p>
 <h3>Intervals</h3><p>Brackets are 95% intervals unless the row names another; each row names its interval and the units it is taken over (qubits, pairs, trials or jobs). A result inside the interval is reported as consistent, with the bound printed. Where a row tests a size that matters, it states that margin.</p>
 <h3>Comparisons built in advance</h3><p>The comparison arm, the counts and the outcome rule are written down before the data is read. Anything defined after the data is labeled as such.</p>
-<h3>Evidence anyone can rerun</h3><p>Job IDs, raw counts, code and checksums ship with every report. The public standards behind these rules are at <a href="{I}/standard">indahl.ai/standard</a>.</p>
+<h3>Easily repeatable evidence</h3><p>Job IDs, raw counts, code and checksums ship with every report. The public standards behind these rules are at <a href="{I}/standard">indahl.ai/standard</a>.</p>
 </div></section>
 '''
 

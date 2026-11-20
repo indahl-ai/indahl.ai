@@ -71,6 +71,7 @@ footer .fine{margin-top:28px;font-size:12.5px}
 .herogrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
 figure.fig{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 18px 14px}
 figure.fig svg{display:block;width:100%;height:auto}
+figure.fig .figt{font-weight:600;margin:0 0 6px;font-size:14px}
 figure.fig figcaption{font-size:12.5px;color:var(--mute);margin-top:8px;line-height:1.5}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--mute);margin:2px 0 6px}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
@@ -96,7 +97,7 @@ table.qt{width:100%;border-collapse:collapse;font-size:.92rem;margin:1rem 0}tabl
 <h3>The record the job ran under</h3><p>IBM states that its published properties come from calibration run about once a day (<a href="https://quantum.cloud.ibm.com/docs/tutorials/real-time-benchmarking-for-qubit-selection">IBM tutorial</a>). Each measured value is compared with the record in force when its job ran, not a daily median.</p>
 <h3>Intervals</h3><p>Brackets are 95% intervals unless the row names another; each row names its interval and the units it is taken over (qubits, pairs, trials or jobs). A result inside the interval is reported as consistent, with the bound printed. Where a row tests a size that matters, it states that margin.</p>
 <h3>Comparisons built in advance</h3><p>The comparison arm, the counts and the outcome rule are written down before the data is read. Anything defined after the data is labeled as such.</p>
-<h3>Evidence anyone can rerun</h3><p>Job IDs, raw counts, code and checksums ship with every report. The public standards behind these rules are at <a href="https://indahl.ai/standard">indahl.ai/standard</a>.</p>
+<h3>Easily repeatable evidence</h3><p>Job IDs, raw counts, code and checksums ship with every report. The public standards behind these rules are at <a href="https://indahl.ai/standard">indahl.ai/standard</a>.</p>
 </div></section>
 </main>
 <footer class="qfoot"><div class="wrap">

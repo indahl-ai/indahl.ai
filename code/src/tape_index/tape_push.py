@@ -5,6 +5,7 @@ import os, sys, fcntl, subprocess
 M = os.environ.get('TAPE_MIRROR') or os.path.expanduser('~/bones-forge/public_mirror/indahl.ai')
 def git(*a): return subprocess.run(['git', '-C', M] + list(a), capture_output=True, text=True, timeout=180)
 try:
+    if os.path.exists(os.path.expanduser('~/bones-forge/ledger/PUBLIC_PUSH_HOLD')): print('tape push: HOLD (ledger/PUBLIC_PUSH_HOLD), skipped'); sys.exit(0)   # 20 Nov 2026: held during a history rewrite of the public repo
     if not os.path.isdir(M + '/.git'): print('tape push: no mirror clone'); sys.exit(0)
     lock = open(os.path.join(M, '.git', 'tape_push.lock'), 'w')
     try: fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)

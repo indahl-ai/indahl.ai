@@ -129,7 +129,7 @@ try:
 except Exception as _e: print('activity: schedule not computed:', type(_e).__name__, _e)   # never silent again
 _rd = {k: time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(v)) for k, v in (_fc.get('read') or {}).items() if k in live}
 _ev = {k: v for k, v in (_fc.get('every') or {}).items() if k in live}
-# 11 Nov 2026 (his "every page should have a live something at top"): /iris/lab gets its own clock, the the council lane training feed (live_export.py pushes KV council_live
+# 11 Nov 2026 (his "every page should have a live something at top"): /iris/lab gets its own clock, the the referee V training feed (live_export.py pushes KV council_live
 # when the training state moves, at least hourly; its state file's mtime is the last push), instead of the IRIS division feed's.
 try:
     _lx = os.path.getmtime(B + '/sage_library/council/.live_export_state')

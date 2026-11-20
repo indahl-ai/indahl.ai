@@ -200,9 +200,9 @@ def qia():
     H['qia']['table']['cta'] = dict(text='Check a wait: probe.py', href='/qia/probe.py', rest=' One Python file and an IBM key. Jobs in front are free, a timed probe costs 2 s of the plan. Source also on ', link2='GitHub', href2='https://github.com/indahl-ai/indahl.ai/blob/main/code/qia/probe.py', tail=', needs qiskit-ibm-runtime (PyPI).')
 def lab():
     # 11 Nov 2026 (his "ANY training we do is live on the lab page ... every page should have a live something at top and a data headline"): the newest
-    # paired test of a the council lane seat, and every seat's stage now, from sage_library/council/live_export.json (the allow-listed bytes live_export.py puts to KV council_live).
+    # paired test of a the referee V seat, and every seat's stage now, from sage_library/council/live_export.json (the allow-listed bytes live_export.py puts to KV council_live).
     if os.path.exists(B + '/sage_library/council/PAUSE') and os.path.exists(B + '/stan/results/baseline_dev.json'):
-        # 12 Nov 2026 (his "close it out on the lab too and make sure Stan is live"): the council lane is paused for STANYO, so the lab leads with STANYO. Every number is computed from
+        # 12 Nov 2026 (his "close it out on the lab too and make sure Stan is live"): The referee V is paused for STANYO, so the lab leads with STANYO. Every number is computed from
         # stan/results/baseline_dev.json: the untrained base's pooled agreement with the answer key (development half), and the pooled majority-class rate
         # (n-weighted mean of the per-code rates). Ledger rows stan.baseline.base and stan.baseline.majority.
         # 12 Nov 2026 (the referee break 1): the agreement headline counted CANNOT_TELL as agreeing with an unflagged recount, so it measured abstention.

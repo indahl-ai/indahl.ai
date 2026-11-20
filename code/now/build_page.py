@@ -173,6 +173,6 @@ parts.append(f'<p>The page shows the log as frozen on {ld(R["frozen_at"])}: {n(R
 body = '\n'.join(parts)
 page = ('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>NOW | Predictions Against the Record | Heuremen LLC</title></head><body>'
         f'<main class="wrap"><section id="hl-slot" class="hl-slot hl"><div class="hl-big">{E(hl_big)}</div><p class="hl-line">{E(hl_line)}</p></section>'
-        '<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>\n' + body + '\n<p class="meta">Heuremen LLC. Heuremen LLC.</p></main></body></html>')
+        '<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>\n' + body + '\n<p class="meta">Heuremen LLC.</p></main></body></html>')
 open(os.path.join(H, 'now.html'), 'w').write(page)
 print('now.html', len(page), 'bytes;', hl_big, '|', hl_line[:160])

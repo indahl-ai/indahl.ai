@@ -4699,3 +4699,63 @@ packs: P
 - P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
 - P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
 - P10: n/a: no rule set after the data
+
+## 2026-11-19 19:18 FORECAST Data Pack rebuilt by ledger/downloads.py: zip size 12 KB -> 13 KB
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the pack was rebuilt because a hash of its inputs differed from the hash recorded when it was last made (ledger/pack_inputs.json), and its contents differ from the zip it replaces, so the none is the pack against its own inputs
+- II: n/a: no comparison between two runs, one file size read before and after
+- III: n/a: no signed difference is reported, a size is a level of one file
+- V: holds: two counts side by side, the zip was opened again and its sha256 sidecar read back (1da0e51224dc1eb6), size 12900 bytes
+- VI: n/a: no interval outcome is claimed
+- R: holds: size read from the file in public/ by tools/desk_pack.py sizes into tools/desk_packs/pack_sizes.json on 2026-11-19 19:18, the page prints that file
+- P1: n/a: no quoted text is added to any page
+- P2: holds: the size names its zip, linked beside it
+- P3: holds: pack name as built, file name as served
+- P4: holds: no cause named, a size and a link only
+- P5: n/a: no intervals on this line
+- P6: holds: the line says what the zip holds, nothing stronger
+- P7: holds: the pack.size row is edited before the surface, release through ledger/ship.sh under site_lock
+- P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
+- P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
+- P10: n/a: no rule set after the data
+
+## 2026-11-19 19:18 SEAT Data Pack rebuilt by ledger/downloads.py: zip size 8 KB -> 9 KB
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the pack was rebuilt because a hash of its inputs differed from the hash recorded when it was last made (ledger/pack_inputs.json), and its contents differ from the zip it replaces, so the none is the pack against its own inputs
+- II: n/a: no comparison between two runs, one file size read before and after
+- III: n/a: no signed difference is reported, a size is a level of one file
+- V: holds: two counts side by side, the zip was opened again and its sha256 sidecar read back (d660671acb916130), size 8898 bytes
+- VI: n/a: no interval outcome is claimed
+- R: holds: size read from the file in public/ by tools/desk_pack.py sizes into tools/desk_packs/pack_sizes.json on 2026-11-19 19:18, the page prints that file
+- P1: n/a: no quoted text is added to any page
+- P2: holds: the size names its zip, linked beside it
+- P3: holds: pack name as built, file name as served
+- P4: holds: no cause named, a size and a link only
+- P5: n/a: no intervals on this line
+- P6: holds: the line says what the zip holds, nothing stronger
+- P7: holds: the pack.size row is edited before the surface, release through ledger/ship.sh under site_lock
+- P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
+- P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
+- P10: n/a: no rule set after the data
+
+## 2026-11-19 19:18 WATER Data Pack rebuilt by ledger/downloads.py: zip size 783 KB -> 782 KB
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the pack was rebuilt because a hash of its inputs differed from the hash recorded when it was last made (ledger/pack_inputs.json), and its contents differ from the zip it replaces, so the none is the pack against its own inputs
+- II: n/a: no comparison between two runs, one file size read before and after
+- III: n/a: no signed difference is reported, a size is a level of one file
+- V: holds: two counts side by side, the zip was opened again and its sha256 sidecar read back (f28061890d87f194), size 801103 bytes
+- VI: n/a: no interval outcome is claimed
+- R: holds: size read from the file in public/ by tools/desk_pack.py sizes into tools/desk_packs/pack_sizes.json on 2026-11-19 19:18, the page prints that file
+- P1: n/a: no quoted text is added to any page
+- P2: holds: the size names its zip, linked beside it
+- P3: holds: pack name as built, file name as served
+- P4: holds: no cause named, a size and a link only
+- P5: n/a: no intervals on this line
+- P6: holds: the line says what the zip holds, nothing stronger
+- P7: holds: the pack.size row is edited before the surface, release through ledger/ship.sh under site_lock
+- P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
+- P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
+- P10: n/a: no rule set after the data

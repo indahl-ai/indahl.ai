@@ -1,0 +1,41 @@
+{
+  "name": "indahl-triangulate",
+  "version": "1.0.0",
+  "description": "Put a question to three independent seats run blind, then read where they agree and split. Returns ABOVE, BELOW, CONSISTENT or CANNOT_TELL with what would decide it, and a receipt of every seat's answer. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "verification",
+    "review",
+    "decision",
+    "receipts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Triangulate",
+    "shortDescription": "Three blind reads, one verdict",
+    "longDescription": "Put a question to three independent seats run blind, then read where they agree and split. Returns ABOVE, BELOW, CONSISTENT or CANNOT_TELL with what would decide it, and a receipt of every seat's answer. Runs inside your session.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Triangulate: is this claim right?",
+      "Get three independent reads on this decision.",
+      "Check this number against three seats."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

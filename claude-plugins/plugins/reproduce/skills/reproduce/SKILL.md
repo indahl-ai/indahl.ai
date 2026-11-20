@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/reproduce/reproduce-c71e9ef99b6f.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py (sha256 c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py (sha256 c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4).
 
 
 # Reproduce an indahl.ai headline

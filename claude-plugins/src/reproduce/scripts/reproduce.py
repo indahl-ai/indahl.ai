@@ -2,7 +2,7 @@
 """reproduce.py -- Heuremen LLC (https://indahl.ai/reproduce). Standard library plus git. MIT license.
 
   python3 reproduce.py list                 the desks that have a kit, with their expected output sha256
-  python3 reproduce.py fetch <desk> [--dir D] fetch one kit (git sparse checkout of reproduce/<desk> from github.com/Heuremen-LLC/indahl.ai)
+  python3 reproduce.py fetch <desk> [--dir D] fetch one kit (git sparse checkout of reproduce/<desk> from github.com/indahl-ai/indahl.ai)
   python3 reproduce.py run <desk> [--dir D]   fetch, then print the commit, the kit files and the command it would run; runs nothing
   python3 reproduce.py run <desk> --ref <sha> --yes-commit <sha>
                                               runs the kit's own `python3 run.py --check`, only if the fetched commit is exactly <sha>
@@ -14,7 +14,7 @@ the repository, so it runs only with --yes-commit equal to the commit fetched, w
 the go to the exact code the user reviewed. Exit 3 means nothing was run. A matching sha256 shows the kit reproduces its published output with the desk's own code,
 not that the measurement is right."""
 import argparse, json, os, re, subprocess, sys, urllib.request
-REPO = 'https://github.com/Heuremen-LLC/indahl.ai'; RAW = 'https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/main/reproduce/README.md'
+REPO = 'https://github.com/indahl-ai/indahl.ai'; RAW = 'https://raw.githubusercontent.com/indahl-ai/indahl.ai/main/reproduce/README.md'
 def desks():
     t = urllib.request.urlopen(urllib.request.Request(RAW, headers={'User-Agent': 'heuremen-reproduce/1.0'}), timeout=30).read().decode()
     return re.findall(r'\| \[([A-Z0-9]+)\]\(([a-z0-9]+)/\) \| ([^|]+) \| `([0-9a-f]{64})` \|', t)

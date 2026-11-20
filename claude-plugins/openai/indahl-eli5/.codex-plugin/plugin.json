@@ -1,0 +1,40 @@
+{
+  "name": "indahl-eli5",
+  "version": "1.0.0",
+  "description": "Re-explain anything complex or technical in plain language, keeping the numbers, how sure anyone is, and what is still unknown. Works on papers, results, logs, contracts, error messages and plans. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "explain",
+    "plain-language",
+    "teaching",
+    "summary",
+    "accessibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Eli5",
+    "shortDescription": "Explain it plainly",
+    "longDescription": "Re-explain anything complex or technical in plain language, keeping the numbers, how sure anyone is, and what is still unknown. Works on papers, results, logs, contracts, error messages and plans. Runs inside your session.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Explain this paper like I am new to the field.",
+      "What does this error message mean, in plain words?",
+      "ELI5 this result, and keep how sure anyone is."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

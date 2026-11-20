@@ -1,0 +1,40 @@
+{
+  "name": "indahl-reproduce",
+  "version": "1.0.0",
+  "description": "Recompute an indahl.ai desk headline with its reproduce kit and check the output against the published sha256. Kits with bundled inputs run offline, others fetch inputs from the original source and verify them by sha256. Nothing runs without your approval of the exact commit.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "reproducibility",
+    "verification",
+    "open-data",
+    "research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Reproduce",
+    "shortDescription": "Rerun an indahl.ai desk kit",
+    "longDescription": "Recompute an indahl.ai desk headline with its reproduce kit and check the output against the published sha256. Kits with bundled inputs run offline, others fetch inputs from the original source and verify them by sha256. Nothing runs without your approval of the exact commit.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "List the desks with reproduce kits.",
+      "Reproduce the FLU desk.",
+      "Show what the TIME kit would run."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

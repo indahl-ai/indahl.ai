@@ -82,7 +82,7 @@ Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. the o
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/c6d8603c678d2053aaa4d184ddddb6affd93e75e/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
+- https://raw.githubusercontent.com/indahl-ai/indahl.ai/c6d8603c678d2053aaa4d184ddddb6affd93e75e/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
   sha256 9d791982654be52e6adb59c31ea2980c47a19836f2faebea392032c5e0295014
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

@@ -1,0 +1,40 @@
+{
+  "name": "indahl-cannot-tell",
+  "version": "1.0.0",
+  "description": "Answer \"cannot tell yet\" usefully instead of forcing a guess. Returns the range of what is possible, the one or two facts that would decide it, and the cheapest next step. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/plugins",
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "uncertainty",
+    "honesty",
+    "decision",
+    "verification"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indahl Cannot Tell",
+    "shortDescription": "Say can't-tell, usefully",
+    "longDescription": "Answer \"cannot tell yet\" usefully instead of forcing a guess. Returns the range of what is possible, the one or two facts that would decide it, and the cheapest next step. Runs inside your session.",
+    "developerName": "Heuremen LLC",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://indahl.ai",
+    "supportURL": "https://indahl.ai/contact",
+    "privacyPolicyURL": "https://indahl.ai/privacy",
+    "termsOfServiceURL": "https://indahl.ai/terms",
+    "defaultPrompt": [
+      "Is this claim right, or can't we tell yet?",
+      "Apply cannot tell to this.",
+      "Show cannot tell on an example."
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

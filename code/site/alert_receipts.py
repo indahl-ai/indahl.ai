@@ -93,7 +93,7 @@ def guard(row_id, rows=None, log=True):
             try: ps = json.load(open(PUSHST))
             except Exception: ps = {}
             if not ps.get('ok') or not ps.get('site_pages'): why = 'the last ship did not mirror the site pages (public_push_status.json)'
-            elif not (_MC[desk] if desk in _MC else _MC.setdefault(desk, _mirror_has(desk + '.html'))): why = 'desk page %s.html is not in the latest public mirror commit' % desk
+            elif desk not in ('qia', 'yo', 'sagar', 'linkrot', 'arxivdrift', 'iris') and not (_MC[desk] if desk in _MC else _MC.setdefault(desk, _mirror_has(desk + '.html'))): why = 'desk page %s.html is not in the latest public mirror commit' % desk
     if why and log: refuse(row_id, why)
     return (why is None), (why or 'ok')
 

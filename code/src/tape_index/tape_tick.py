@@ -110,7 +110,10 @@ out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=le
            feeds=feedrec, changes=changes_out, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/indahl-ai/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)
 os.makedirs(PUB + '/leaves', exist_ok=True)
-_PUBLISH and subprocess.run('cp tape.jsonl PLAN.md tape_tick.py tape_push.py tape_verify.py tapelib.py known_good.py %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
+# 20 Nov 2026: the tick copies DATA only (the chain, the plan, the leaves). It used to copy its own scripts here raw, and tape_push.py then pushed
+# them to the public repository with infrastructure ids and an internal name in a comment, around the scrubber and the internal gate.
+# The scripts now reach the mirror only through push_public.sh at a release, which scrubs them first.
+_PUBLISH and subprocess.run('cp tape.jsonl PLAN.md %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
 subprocess.run('mkdir -p %s/qbits/runs && cp qbits/PLAN_QBITS.md.text qbits/qbits_run.py qbits/synth_selftest.text %s/qbits/ && (cp qbits/runs/* %s/qbits/runs/ 2>/dev/null || true)' % (PUB, PUB, PUB), shell=True)
 # 30 Oct (site pass I-6): the chain files are pushed to the public repository in the background after each run, so the leaf links on the page open soon after an entry is written and not at the next release. Only code/tape is committed.
 if _PUBLISH and not os.environ.get('TAPE_NO_PUSH'): subprocess.Popen([sys.executable, '-I', os.path.join(H, 'tape_push.py')], stdout=open('push_last.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True)

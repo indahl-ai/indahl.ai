@@ -1,3 +1,3 @@
 path,label,outcome,n,of,share,lo,hi,who,lead,later_than_24h,earlier_than_24h,over_24h,reason
-/cells[0],All providers,CANNOT_TELL,15,,0.0,0.0,0.204,All providers,1 day,0,0,0,TOO_WIDE_TO_RESOLVE
-/cells[1],All providers,CANNOT_TELL,7,,0.714,0.359,0.918,All providers,7 days,5,0,5,TOO_WIDE_TO_RESOLVE
+/cells[0],All providers,CANNOT_TELL,16,,0.0,0.0,0.194,All providers,1 day,0,0,0,TOO_WIDE_TO_RESOLVE
+/cells[1],All providers,CANNOT_TELL,8,,0.625,0.306,0.863,All providers,7 days,5,0,5,TOO_WIDE_TO_RESOLVE

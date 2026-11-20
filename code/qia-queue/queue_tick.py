@@ -53,10 +53,12 @@ summ = {'updated': now.strftime('%d %b %H:%M UTC'), 'reads_held': len(hist), 'pr
 json.dump(summ, open(os.path.join(H, 'summary.json'), 'w'), indent=1)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='<cloudflare-account-id>', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 r = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'qia_queue', '--path', os.path.join(H, 'summary.json'), '--namespace-id', '<kv-namespace-id>', '--remote'], cwd=ROOT + '/cloudflare-workers/heuremen-door', env=env, capture_output=True, text=True)
+# 20 Nov 2026: this script is NOT copied here by the tick any more. The raw file carries infrastructure ids; push_public.sh copies it
+# through the scrubber at ship time. The tick copying it raw made the internal gate refuse every public push.
 PUB = ROOT + '/public_mirror/indahl.ai/code/qia-queue'
 if os.path.isdir(PUB):
     import shutil
-    for f, d in (('PLAN.md', 'PLAN.md'), ('queue_tick.py', 'queue_tick.py'), ('summary.json', 'summary.json'), ('data/history.jsonl', 'history.jsonl'), ('data/jobs.jsonl', 'jobs.jsonl')): shutil.copy(os.path.join(H, f), os.path.join(PUB, d))
+    for f, d in (('PLAN.md', 'PLAN.md'), ('summary.json', 'summary.json'), ('data/history.jsonl', 'history.jsonl'), ('data/jobs.jsonl', 'jobs.jsonl')): shutil.copy(os.path.join(H, f), os.path.join(PUB, d))
 print('qia_queue published' if r.returncode == 0 else 'qia_queue publish FAILED', len(out), 'processors')
 # 10 Nov 2026 (cold read row 5): rebuild the headlines from this read now, so the headline and the page body come from the same read
 try: _PUBLISH and subprocess.Popen([sys.executable, '-I', os.path.expanduser('~/bones-forge/watch/headlines.py')], stdout=open(os.path.expanduser('~/bones-forge/watch/tick_jobs.log'), 'a'), stderr=subprocess.STDOUT, start_new_session=True)

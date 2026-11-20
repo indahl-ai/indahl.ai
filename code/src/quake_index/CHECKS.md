@@ -3115,3 +3115,52 @@ row-record quake.prob10.week: value 0.2131, lo 0.1317, hi 0.3083, unit 876 of 4,
 row-record quake.prob10.month: value 0.2427, lo 0.1722, hi 0.3255, unit 1,757 of 7,240, outcome BELOW, as printed: every magnitude, 1 month 7,240 1,757 39.8 24.3 23.3 to 25.3 17.2 to 32.6 below 76
 row-record quake.prob10.year: value 0.5119, lo 0.417, hi 0.5973, unit 2,616 of 5,110, outcome CANNOT_TELL, as printed: every magnitude, 1 year 5,110 2,616 50.9 51.2 49.8 to 52.6 41.7 to 59.7 cannot tell (STRADDLES_EDGE) 41
 row-record quake.first.m3: value 0.9279, lo 0.8808, hi 0.9558, unit 656 of 707, outcome CANNOT_TELL, as printed: 656 of 707 inside, 92.8 percent, with a sequence interval of 88.1 to 95.6 percent.
+
+## 2026-11-20 11:52 QUAKE desk refresh record: the rows as shipped, recomputed from the run of 2026-11-20T15:10:18Z and the page built from it (durable source for the quake.* ledger rows)
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: every line below is read from summary_quake.json of the run at 2026-11-20T15:10:18Z, the same run quake.html prints, and the printed text is found in the rendered page (make_rows.py asserts it)
+- II: n/a: no comparison between two runs, numbers copied as printed
+- III: holds: above and below the range are separate columns in the cover lines, cannot tell is a reading and never folded into a share
+- V: holds: one ruler for the ranges, the stated 95 percent, and the stated chance for the bins, each read on the wider of the Wilson and sequence-group intervals as the plan states
+- VI: holds: outcomes as the plan states them, the reading column holds the four outcomes as the plan states them
+- R: holds: counts from the summary of 2026-11-20T15:10:18Z, no number typed by hand, display splits keep their label in the claim
+- P1: n/a: no quoted text in this record
+- P2: holds: each line names the cell and the page names the run date
+- P3: holds: labels as the page prints them
+- P4: holds: no cause named
+- P5: holds: every share has its Wilson and sequence intervals on the page line
+- P6: holds: the lines say what the page says and nothing stronger
+- P7: holds: ledger rows updated before the page ships, release through ledger/ship.sh
+- P8: holds: rows compared with the rendered page text by check_ledger.py at the gate
+- P9: holds: plain lines, no semicolons
+- P10: n/a: no rule set after the data in this record
+row-record quake.cover.m3: value 0.9631, lo 0.946, hi 0.977, unit 30,160 of 31,314, outcome CANNOT_TELL, as printed: M3 and above, every window 31,314 30,160 712 442 96.3 96.1 to 96.5 94.6 to 97.7 cannot tell (STRADDLES_EDGE) 83 12,248
+row-record quake.cover.m4: value 0.9847, lo 0.977, hi 0.9927, unit 30,717 of 31,194, outcome ABOVE, as printed: M4 and above 31,194 30,717 471 6 98.5 98.3 to 98.6 97.7 to 99.3 above 82 22,266
+row-record quake.cover.m5: value 0.9966, lo 0.9938, hi 0.9987, unit 31,206 of 31,314, outcome ABOVE, as printed: M5 and above 31,314 31,206 107 1 99.7 99.6 to 99.7 99.4 to 99.9 above 83 28,715
+row-record quake.cover.m6: value 0.9998, lo 0.9996, hi 1.0, unit 31,309 of 31,314, outcome ABOVE, as printed: M6 and above 31,314 31,309 5 0 100.0 100.0 to 100.0 100.0 to 100.0 above 83 30,857
+row-record quake.cover.m7: value 1.0, lo 0.9998, hi 1.0, unit 31,313 of 31,314, outcome ABOVE, as printed: M7 and above 31,314 31,313 1 0 100.0 100.0 to 100.0 100.0 to 100.0 above 83 31,197
+row-record quake.cover.m3.day: value 0.9883, lo 0.9796, hi 0.9932, unit 9,444 of 9,556, outcome ABOVE, as printed: M3 and above, 1 day 9,556 9,444 53 59 98.8 98.6 to 99.0 98.0 to 99.3 above 83 6,882
+row-record quake.cover.m3.week: value 0.9731, lo 0.9572, hi 0.9825, unit 9,187 of 9,441, outcome ABOVE, as printed: M3 and above, 1 week 9,441 9,187 145 109 97.3 97.0 to 97.6 95.7 to 98.2 above 82 3,568
+row-record quake.cover.m3.month: value 0.9579, lo 0.9384, hi 0.974, unit 8,623 of 9,002, outcome CONSISTENT, as printed: M3 and above, 1 month 9,002 8,623 225 154 95.8 95.4 to 96.2 93.8 to 97.4 consistent 80 1,641
+row-record quake.cover.m3.year: value 0.8766, lo 0.8059, hi 0.9397, unit 2,906 of 3,315, outcome BELOW, as printed: M3 and above, 1 year 3,315 2,906 289 120 87.7 86.5 to 88.7 80.6 to 94.0 below 42 157
+row-record quake.cover.all: value 0.9889, lo 0.9848, hi 0.993, unit 154,784 of 156,529, outcome ABOVE, as printed: every magnitude, every window 156,529 154,784 1,296 449 98.9 98.8 to 98.9 98.5 to 99.3 above 83 125,346
+row-record quake.prob.0_1: value 0.0026, lo 0.0009, hi 0.0043, unit 295 of 115,064, outcome CONSISTENT, as printed: 0 to 1 percent, not including 1 115,064 295 0.1 0.3 0.2 to 0.3 0.1 to 0.4 consistent 83
+row-record quake.prob.1_5: value 0.0324, lo 0.0192, hi 0.046, unit 560 of 17,260, outcome CANNOT_TELL, as printed: 1 to 5 percent, not including 5 17,260 560 2.4 3.2 3.0 to 3.5 1.9 to 4.6 cannot tell (STRADDLES_EDGE) 82
+row-record quake.prob.5_10: value 0.0629, lo 0.0413, hi 0.0871, unit 398 of 6,332, outcome CONSISTENT, as printed: 5 to 10 percent, not including 10 6,332 398 7.1 6.3 5.7 to 6.9 4.1 to 8.7 consistent 81
+row-record quake.prob.10_20: value 0.1039, lo 0.0728, hi 0.1388, unit 584 of 5,620, outcome BELOW, as printed: 10 to 20 percent, not including 20 5,620 584 14.4 10.4 9.6 to 11.2 7.3 to 13.9 below 78
+row-record quake.prob.20_40: value 0.1936, lo 0.1515, hi 0.2406, unit 945 of 4,882, outcome BELOW, as printed: 20 to 40 percent, not including 40 4,882 945 28.5 19.4 18.3 to 20.5 15.2 to 24.1 below 74
+row-record quake.prob.40_60: value 0.3358, lo 0.2535, hi 0.4159, unit 897 of 2,671, outcome BELOW, as printed: 40 to 60 percent, not including 60 2,671 897 49.3 33.6 31.8 to 35.4 25.4 to 41.6 below 58
+row-record quake.prob.60_80: value 0.4318, lo 0.3064, hi 0.564, unit 794 of 1,839, outcome BELOW, as printed: 60 to 80 percent, not including 80 1,839 794 69.6 43.2 40.9 to 45.5 30.6 to 56.4 below 46
+row-record quake.prob.80_90: value 0.6364, lo 0.4988, hi 0.7731, unit 476 of 748, outcome BELOW, as printed: 80 to 90 percent, not including 90 748 476 85.0 63.6 60.1 to 67.0 49.9 to 77.3 below 37
+row-record quake.prob.90_99: value 0.768, lo 0.6645, hi 0.8538, unit 639 of 832, outcome BELOW, as printed: 90 to 99 percent, not including 99 832 639 95.2 76.8 73.8 to 79.5 66.5 to 85.4 below 32
+row-record quake.prob.99_100: value 0.9774, lo 0.958, hi 0.9896, unit 1,252 of 1,281, outcome BELOW, as printed: 99 to 100 percent 1,281 1,252 99.9 97.7 96.8 to 98.4 95.8 to 99.0 below 21
+row-record quake.prob.mainshock: value 0.0019, lo 0.0, hi 0.0043, unit 61 of 31,314, outcome CONSISTENT, as printed: 61 of 31,314 windows saw one against a mean stated chance of 0.4 percent, and the reading is consistent.
+row-record quake.prob10.all: value 0.3126, lo 0.2409, hi 0.389, unit 5,587 of 17,873, outcome BELOW, as printed: every magnitude, every window 17,873 5,587 42.0 31.3 30.6 to 31.9 24.1 to 38.9 below 78
+row-record quake.prob10.m3: value 0.3058, lo 0.2281, hi 0.3882, unit 3,819 of 12,488, outcome BELOW, as printed: M3 and above 12,488 3,819 44.6 30.6 29.8 to 31.4 22.8 to 38.8 below 78
+row-record quake.prob10.m4up: value 0.3283, lo 0.2444, hi 0.4162, unit 1,768 of 5,385, outcome CANNOT_TELL, as printed: M4 and above, M5 and above, M6 and above and M7 and above 5,385 1,768 35.9 32.8 31.6 to 34.1 24.4 to 41.6 cannot tell (STRADDLES_EDGE) 53
+row-record quake.prob10.day: value 0.2387, lo 0.1434, hi 0.3377, unit 337 of 1,412, outcome BELOW, as printed: every magnitude, 1 day 1,412 337 36.1 23.9 21.7 to 26.2 14.3 to 33.8 below 54
+row-record quake.prob10.week: value 0.2131, lo 0.1347, hi 0.3092, unit 876 of 4,110, outcome BELOW, as printed: every magnitude, 1 week 4,110 876 36.7 21.3 20.1 to 22.6 13.5 to 30.9 below 73
+row-record quake.prob10.month: value 0.2428, lo 0.1703, hi 0.3306, unit 1,758 of 7,241, outcome BELOW, as printed: every magnitude, 1 month 7,241 1,758 39.8 24.3 23.3 to 25.3 17.0 to 33.1 below 76
+row-record quake.prob10.year: value 0.5119, lo 0.4208, hi 0.6041, unit 2,616 of 5,110, outcome CANNOT_TELL, as printed: every magnitude, 1 year 5,110 2,616 50.9 51.2 49.8 to 52.6 42.1 to 60.4 cannot tell (STRADDLES_EDGE) 41
+row-record quake.first.m3: value 0.9279, lo 0.8794, hi 0.9564, unit 656 of 707, outcome CANNOT_TELL, as printed: 656 of 707 inside, 92.8 percent, with a sequence interval of 87.9 to 95.6 percent.

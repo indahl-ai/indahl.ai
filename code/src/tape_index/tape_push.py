@@ -14,6 +14,16 @@ try:
     # the remote must not be ahead of the mirror: a local commit on top of newer remote commits would make the release script's pull diverge
     if git('fetch', '-q', 'origin').returncode: print('tape push: fetch failed, skipped'); sys.exit(0)
     if git('rev-list', '--count', 'HEAD..origin/main').stdout.strip() not in ('0', ''): print('tape push: the remote has newer commits, left to the release script'); sys.exit(0)
+    # 20 Nov 2026: the same internal-text gate the release runs, on code/tape, before anything is staged. A hit refuses the push (fail closed)
+    # and writes an alert; nothing under code/tape reaches the public repository around the gate again.
+    import re as _re
+    _src = open(os.path.expanduser('~/bones-forge/ledger/internal_gate.py')).read(); _m = _re.search(r"BAD_TEXT = re\.compile\((.*?)\)\s*(?:#|\n)", _src, _re.S); _ns = {}
+    exec('import re\nBAD_TEXT = re.compile(' + _m.group(1) + ')', _ns)
+    _hits = [f for f in os.listdir(M + '/code/tape') if os.path.isfile(M + '/code/tape/' + f) and not f.endswith('.jsonl') and _ns['BAD_TEXT'].search(open(M + '/code/tape/' + f, errors='ignore').read())]
+    if _hits:
+        print('tape push: REFUSED, internal text in code/tape:', ', '.join(_hits))
+        open(os.path.expanduser('~/bones-forge/alerts/ALERTS_OPEN.txt'), 'a').write('- [tape:push] internal text in public_mirror code/tape (%s); push refused (tape_index/tape_push.py)\n' % ', '.join(_hits))
+        sys.exit(0)
     git('add', 'code/tape')
     if git('diff', '--cached', '--quiet', '--', 'code/tape').returncode == 0: print('tape push: current'); sys.exit(0)
     n = sum(1 for l in open(M + '/code/tape/tape.jsonl') if l.strip())

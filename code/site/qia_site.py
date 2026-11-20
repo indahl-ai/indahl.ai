@@ -306,7 +306,7 @@ def _calibs():
 FINDINGS, CALIBS = _findings(), _calibs()
 _LS = os.path.expanduser('~/bones-forge/calibrations/demos/release/letter_sent.json')   # 19 Nov 2026: dated line goes up only when the IBM letter is actually sent (on_send.sh)
 if os.path.exists(_LS):
-    _ls = _json.load(open(_LS)); FINDINGS = FINDINGS.replace('the date the record was read.</p></div>\n', 'the date the record was read.</p><p class="lede"><b>Letter sent to IBM Quantum on %s,</b> with our findings, calibrations and demonstrations, and an advance copy of our launch release.</p></div>\n' % _e(_ls['date']), 1)
+    _ls = _json.load(open(_LS)); FINDINGS = FINDINGS.replace('the date the record was read.</p></div>\n', 'the date the record was read.</p><p class="lede"><b>Letter sent to IBM Corporate Media Relations on %s,</b> with our findings, calibrations and demonstrations, and an advance copy of our launch release.</p></div>\n' % _e(_ls['date']), 1)
 def _case(tag, who, title, checked, came, handed, src):
     return ('<div class="case"><p class="k">%s</p><h3>%s</h3><p class="who">%s</p><dl>'
             '<dt>What we checked</dt><dd>%s</dd><dt>What came back</dt><dd>%s</dd><dt>What the client gets</dt><dd>%s</dd></dl>'

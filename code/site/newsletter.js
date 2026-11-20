@@ -65,7 +65,7 @@ export async function handleWeekly(req, env, u, html, PAGES) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return null;
     const v = env.IRIS_BENCH ? await env.IRIS_BENCH.get(p === '/week' ? 'week_current' : 'week_' + p.slice(6)) : null;
     if (!v) return null;   // the built page
-    return new Response(v, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300', 'x-content-type-options': 'nosniff', 'referrer-policy': 'strict-origin-when-cross-origin',
+    return new Response(v.replace(/<a href="https:\/\/huggingface\.co\/indahl">Hugging Face<\/a>/g, '').replace(/github\.com\/Heuremen-LLC\/indahl\.ai/g, 'github.com/indahl-ai/indahl.ai'), { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300', 'x-content-type-options': 'nosniff', 'referrer-policy': 'strict-origin-when-cross-origin',
       'x-frame-options': 'DENY', 'tdm-reservation': '1', 'tdm-policy': 'https://indahl.ai/terms#ai-training',
       'content-security-policy': "default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" } });
   }

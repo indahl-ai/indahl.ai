@@ -24,7 +24,7 @@ The skill itself is `standards-check`. The Standard's full text and machine-read
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-standards@heuremen
 ```
 
@@ -41,7 +41,7 @@ None of its own. When you give an arXiv id or DOI, Claude fetches that paper wit
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/src/standards
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/src/standards
 
 ## Credits
 

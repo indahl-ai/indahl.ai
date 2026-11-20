@@ -23,7 +23,7 @@ You can also ask Claude to explain something simply.
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-eli5@heuremen
 ```
 
@@ -40,7 +40,7 @@ None. It runs inside your session and opens only what you point it at.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/src/eli5
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/src/eli5
 
 ## Credits
 

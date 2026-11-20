@@ -210,10 +210,10 @@ def write(p, sub, prompt, desc, kw, body):
     open(f'{d}/skills/{p}/SKILL.md', 'w').write(f'---\nname: {p}\ndescription: {json.dumps(desc)}\n---\n\n' + body + FOOT)
     full = desc + ' Nothing is sent outside your session.'
     json.dump({'name': f'indahl-{p}', 'version': '1.0.0', 'description': full, 'author': {'name': 'Heuremen LLC', 'url': 'https://indahl.ai'},
-               'homepage': 'https://indahl.ai/standard', 'repository': 'https://github.com/Heuremen-LLC/indahl.ai', 'license': 'MIT', 'keywords': kw,
+               'homepage': 'https://indahl.ai/standard', 'repository': 'https://github.com/indahl-ai/indahl.ai', 'license': 'MIT', 'keywords': kw,
                'icon': '.claude-plugin/icon.png'}, open(f'{d}/.claude-plugin/plugin.json', 'w'), indent=2)
     open(f'{d}/commands/{p}.md', 'w').write(f'---\ndescription: {sub}\nargument-hint: "<the report, draft or design to check>"\n---\n\nUse the {p} skill on: $ARGUMENTS\n\nIf nothing was given, ask what to check.\n')
-    open(f'{d}/README.md', 'w').write(f'# indahl-{p}\n\n{full}\n\nHeuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/src/{p}\n\n## Services this plugin contacts\n\nNone. It runs inside your session; it opens only the sources you point it at.\n\nPrivacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.\n')
+    open(f'{d}/README.md', 'w').write(f'# indahl-{p}\n\n{full}\n\nHeuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/src/{p}\n\n## Services this plugin contacts\n\nNone. It runs inside your session; it opens only the sources you point it at.\n\nPrivacy: https://indahl.ai/privacy. Terms: https://indahl.ai/terms.\n')
 
 for p, (sub, prompt, desc, kw, body) in S.items(): write(p, sub, prompt, desc, kw, body)
 names = list(S)

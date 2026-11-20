@@ -44,7 +44,7 @@ The hook (`hooks/hooks.json`, `scripts/watch_guard.py`) runs before every backgr
 cases 1 to 3 and 5 to 7 with a message telling the model how to fix the watch: add the failure states to the same pattern, add
 `--line-buffered`, wait on the PID, compare numbers, give the wait a deadline. It allows anything run in the foreground. `python3 scripts/watch_guard.py selftest` runs its planted cases.
 
-The hook ships in the version from our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`, then
+The hook ships in the version from our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`, then
 `/plugin install indahl-silent-failure-guard@heuremen`). The plugin directory accepts command hooks only from Verified organizations,
 so the directory copy carries the skill only.
 
@@ -55,7 +55,7 @@ jobs with a no-op.
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-silent-failure-guard@heuremen
 ```
 
@@ -72,7 +72,7 @@ None. It runs inside your session.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## Credits
 

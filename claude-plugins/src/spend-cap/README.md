@@ -72,7 +72,7 @@ One price set applies to every model in the session, so a cheaper subagent model
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-spend-cap@heuremen
 ```
 
@@ -89,7 +89,7 @@ None. Nothing leaves the machine.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 MIT licence.
 

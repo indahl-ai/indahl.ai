@@ -24,7 +24,7 @@ Hardware steps: `/darkwave measure --backend B --readout 5,6 --targets 4,8 --che
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-darkwave@heuremen
 ```
 
@@ -43,7 +43,7 @@ Nothing else is contacted. The plugin reads no personal data and stores nothing 
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/plugins/darkwave-correction
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/plugins/darkwave-correction
 
 Not affiliated with or endorsed by IBM. IBM Quantum and Qiskit are IBM marks, used only to name what the kit works with. Method and data: "A Readout's Kick Is a Turn", https://doi.org/10.5281/zenodo.23843468.
 

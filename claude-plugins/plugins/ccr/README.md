@@ -74,7 +74,7 @@ Hooks that were switched off write nothing, so the chain still looks whole. `ver
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-ccr@heuremen
 ```
 
@@ -91,7 +91,7 @@ None. Nothing is sent anywhere. Everything stays in `.ccr/`.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## Credits
 

@@ -50,7 +50,7 @@ Each stage's outcome is its own exit code, written to a file. A process that van
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-relay@heuremen
 ```
 
@@ -67,13 +67,13 @@ None. The plugin reads no personal data and stores nothing outside the folder be
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## How the scripts arrive
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py
+- https://raw.githubusercontent.com/indahl-ai/indahl/54b52d2598b41cb7bd08dd192b45d3fee6d17b90/pinned/46c113e5fedc/claude-plugins/src/relay/scripts/relay.py
   sha256 9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

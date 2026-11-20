@@ -23,7 +23,7 @@ Other forms: `/readcheck verify <folder>` and `/readcheck staged`. The answers i
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-readcheck@heuremen
 ```
 
@@ -40,7 +40,7 @@ None. It runs on your machine and reads your repository.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/src/readcheck
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/src/readcheck
 
 ## Credits
 
@@ -56,7 +56,7 @@ The plugin directory accepts command hooks only from Verified organizations, so 
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/readcheck/scripts/readcheck.py
+- https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/readcheck/scripts/readcheck.py
   sha256 cc0e26802ddbcc157def5ea0ee90e8d4a9b2c516336658f34072882c03c90592
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

@@ -10,7 +10,7 @@ Script: `${CLAUDE_PLUGIN_ROOT}/scripts/reproduce.py` (Python 3.9 or later and gi
 1. `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/reproduce.py" list` shows every desk with a kit, whether its inputs are included or fetched
    and verified, and the sha256 its output must have.
 2. `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/reproduce.py" run <desk>` fetches only that kit folder from
-   github.com/Heuremen-LLC/indahl.ai (a sparse checkout into ./indahl-reproduce), prints the commit and the command, and runs nothing.
+   github.com/indahl-ai/indahl.ai (a sparse checkout into ./indahl-reproduce), prints the commit and the command, and runs nothing.
 3. This executes downloaded code. Show the user the commit, the kit's README.md and what run.py does, say what it needs (most kits need
    numpy; some fetch their inputs from the original source and verify them by sha256), and ask before running. Only after a clear yes
    in this conversation, rerun with `--ref <commit shown> --yes-commit <commit shown>`; the script refuses if the code moved. Never add

@@ -3,7 +3,7 @@
 Plugins from Heuremen LLC (https://indahl.ai). Each plugin is named `indahl-...`; its section below uses the short name.
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-standards@heuremen
 /plugin install indahl-readcheck@heuremen
 /plugin install indahl-qia-calibration@heuremen
@@ -106,7 +106,7 @@ not a verdict on any vendor, model, package or author. The tools serve the curre
 
 ## reproduce
 
-`/reproduce <desk>` fetches that desk's reproduce kit from github.com/Heuremen-LLC/indahl.ai (a sparse checkout of one folder), runs the
+`/reproduce <desk>` fetches that desk's reproduce kit from github.com/indahl-ai/indahl.ai (a sparse checkout of one folder), runs the
 kit's own `python3 run.py --check` and reports whether its output matches the published sha256. `/reproduce list` shows every kit.
 
 This runs code downloaded from that repository on your machine. The script prints the commit it fetched and the command, and runs

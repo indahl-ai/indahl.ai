@@ -24,7 +24,7 @@ Hardware steps: `/darkwave measure --backend B --readout 5,6 --targets 4,8 --che
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-darkwave@heuremen
 ```
 
@@ -43,7 +43,7 @@ Nothing else is contacted. The plugin reads no personal data and stores nothing 
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/plugins/darkwave-correction
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/plugins/darkwave-correction
 
 Not affiliated with or endorsed by IBM. IBM Quantum and Qiskit are IBM marks, used only to name what the kit works with. Method and data: "A Readout's Kick Is a Turn", https://doi.org/10.5281/zenodo.23843468.
 
@@ -55,7 +55,7 @@ Refereed before release by the outside referee at Heuremen LLC (13 Nov 2026): ev
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/darkwave-correction/scripts/darkwave_kit.py
+- https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/darkwave-correction/scripts/darkwave_kit.py
   sha256 a43b1cf8989928dfd3f94b40b4ae5491d31e52e85cec117e315c4ad4fbc6a401
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

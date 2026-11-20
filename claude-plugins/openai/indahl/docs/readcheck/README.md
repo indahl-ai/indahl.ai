@@ -23,7 +23,7 @@ Other forms: `/readcheck verify <folder>` and `/readcheck staged`. The answers i
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-readcheck@heuremen
 ```
 
@@ -40,7 +40,7 @@ None. It runs on your machine and reads your repository.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/src/readcheck
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/src/readcheck
 
 ## Credits
 

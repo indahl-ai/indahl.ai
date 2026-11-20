@@ -50,7 +50,7 @@ Each stage's outcome is its own exit code, written to a file. A process that van
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-relay@heuremen
 ```
 
@@ -67,4 +67,4 @@ None. The plugin reads no personal data and stores nothing outside the folder be
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai

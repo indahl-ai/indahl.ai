@@ -23,7 +23,7 @@ Other forms: `witness SEAL`, `check SEAL --wrapper RUN.json`, `verify SEAL` and 
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-prereg@heuremen
 ```
 
@@ -42,7 +42,7 @@ Nothing else is contacted. The plugin reads no personal data and stores nothing 
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/plugins/prereg
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/plugins/prereg
 
 ## Credits
 

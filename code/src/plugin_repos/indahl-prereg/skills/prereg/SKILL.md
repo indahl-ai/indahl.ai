@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/prereg/prereg-c0b541c68b40.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py (sha256 c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py (sha256 c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d).
 
 
 Data sent: the owner/name of the repository you check goes to the GitHub REST API (api.github.com) to read its public push activity. Nothing else leaves the machine, and no token is sent unless the user set one.
@@ -21,7 +21,7 @@ Data sent: the owner/name of the repository you check goes to the GitHub REST AP
 # prereg
 
 Script: `$HOME/.cache/indahl-plugins/prereg/prereg-c0b541c68b40.py` (Python 3.9 or later and git). Plan and amendments: plans/prereg in
-github.com/Heuremen-LLC/indahl.ai (claude-plugins/).
+github.com/indahl-ai/indahl.ai (claude-plugins/).
 
 1. **Seal** the plan files: `python3 prereg.py seal PLAN.md analysis.py --tolerance 120 --kind wrapper`. It refuses files with uncommitted
    changes, records each file's git blob and the sha256 of its committed bytes, and writes prereg/seals/SEAL_NNN.json. Adding `--commit`

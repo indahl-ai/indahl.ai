@@ -44,7 +44,7 @@ The hook (`hooks/hooks.json`, `scripts/watch_guard.py`) runs before every backgr
 cases 1 to 3 and 5 to 7 with a message telling the model how to fix the watch: add the failure states to the same pattern, add
 `--line-buffered`, wait on the PID, compare numbers, give the wait a deadline. It allows anything run in the foreground. `python3 scripts/watch_guard.py selftest` runs its planted cases.
 
-The hook ships in the version from our own marketplace (`/plugin marketplace add Heuremen-LLC/indahl.ai`, then
+The hook ships in the version from our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`, then
 `/plugin install indahl-silent-failure-guard@heuremen`). The plugin directory accepts command hooks only from Verified organizations,
 so the directory copy carries the skill only.
 
@@ -55,7 +55,7 @@ jobs with a no-op.
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-silent-failure-guard@heuremen
 ```
 
@@ -72,7 +72,7 @@ None. It runs inside your session.
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## Credits
 
@@ -82,7 +82,7 @@ Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. the o
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/c6d8603c678d2053aaa4d184ddddb6affd93e75e/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
+- https://raw.githubusercontent.com/indahl-ai/indahl.ai/c6d8603c678d2053aaa4d184ddddb6affd93e75e/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
   sha256 9d791982654be52e6adb59c31ea2980c47a19836f2faebea392032c5e0295014
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

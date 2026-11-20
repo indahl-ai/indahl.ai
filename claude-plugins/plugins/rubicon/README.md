@@ -52,7 +52,7 @@ An acknowledged row stays open in the record, with the reason beside it. Acknowl
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-rubicon@heuremen
 ```
 
@@ -69,7 +69,7 @@ None. Nothing is sent anywhere. The record stays in `.rubicon/` in the working f
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 MIT licence.
 

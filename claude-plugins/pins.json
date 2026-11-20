@@ -40,9 +40,9 @@
   "url": "https://raw.githubusercontent.com/indahl-ai/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py"
  },
  "reproduce/scripts/reproduce.py": {
-  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
-  "sha256": "c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4",
-  "url": "https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py"
+  "commit": "8adc58f8e99db1f3104d0875047795373186a6ad",
+  "sha256": "8c4a77056ee5d6b81b446e03dc7fc049b3b929d2466cf9c844cf2f9db4fca7ef",
+  "url": "https://raw.githubusercontent.com/indahl-ai/indahl.ai/8adc58f8e99db1f3104d0875047795373186a6ad/claude-plugins/src/reproduce/scripts/reproduce.py"
  },
  "rubicon/scripts/rubicon.py": {
   "commit": "d30a91ae5edfb035140e7803fd20a43bad043a91",

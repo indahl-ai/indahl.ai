@@ -41,7 +41,7 @@ The second form reads a saved `claude mcp list` output.
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-fsck@heuremen
 ```
 
@@ -58,7 +58,7 @@ None. Nothing is sent anywhere by fsck itself. The health check is Claude Code's
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## Credits
 

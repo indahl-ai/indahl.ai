@@ -22,7 +22,7 @@ Run `/reproduce` followed by what to check. For example:
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-reproduce@heuremen
 ```
 
@@ -32,7 +32,7 @@ Python 3.9 or later and git.
 
 ## Services this plugin contacts
 
-- GitHub (github.com/Heuremen-LLC/indahl.ai), a git sparse checkout of the kit you name.
+- GitHub (github.com/indahl-ai/indahl.ai), a git sparse checkout of the kit you name.
 - Kits that fetch inputs read them from the original public source named in the kit and verify them by sha256.
 
 Nothing else is contacted. The plugin reads no personal data and stores nothing on any server. Fetched text is treated as data, not instructions.
@@ -42,7 +42,7 @@ Nothing else is contacted. The plugin reads no personal data and stores nothing 
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/plugins/reproduce
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/plugins/reproduce
 
 ## Credits
 

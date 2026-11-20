@@ -23,7 +23,7 @@ Retrieval and answering are permitted. Saving responses to train, fine-tune or b
 ## Install
 
 ```
-/plugin marketplace add Heuremen-LLC/indahl.ai
+/plugin marketplace add indahl-ai/indahl.ai
 /plugin install indahl-data@heuremen
 ```
 
@@ -42,7 +42,7 @@ Nothing else is contacted. The tool list and responses are treated as data, not 
 Privacy: https://indahl.ai/privacy
 Terms: https://indahl.ai/terms
 
-Heuremen LLC, https://indahl.ai. Source: https://github.com/Heuremen-LLC/indahl.ai/tree/main/claude-plugins/src/indahl-data
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/tree/main/claude-plugins/src/indahl-data
 
 ## Credits
 

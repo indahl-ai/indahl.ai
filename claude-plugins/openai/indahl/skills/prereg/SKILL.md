@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/prereg/prereg-cc689b7a8acb.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/f8e5be688dd0738d53d1299f836fbfde7ec36857/claude-plugins/src/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/f8e5be688dd0/claude-plugins/src/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/f8e5be688dd0738d53d1299f836fbfde7ec36857/claude-plugins/src/prereg/scripts/prereg.py (sha256 cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/f8e5be688dd0/claude-plugins/src/prereg/scripts/prereg.py (sha256 cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090).
 
 
 Data sent: the owner/name of the repository you check goes to the GitHub REST API (api.github.com) to read its public push activity. Nothing else leaves the machine, and no token is sent unless the user set one.

@@ -32,6 +32,7 @@ for e in market['plugins']:
     stage = os.path.join(ROOT, '.stage', name)
     if os.path.exists(stage): shutil.rmtree(stage)
     shutil.copytree(src, stage, ignore=shutil.ignore_patterns('__pycache__', '.DS_Store'))
+    if name == 'indahl' and os.path.isdir(os.path.join(H, 'pinned')): shutil.copytree(os.path.join(H, 'pinned'), os.path.join(stage, 'pinned'))   # 20 Nov 2026: the pinned scripts every plugin command fetches live here, so a publish never drops them
     pj = json.load(open(os.path.join(stage, '.claude-plugin', 'plugin.json')))
     mk = {'name': name, 'owner': market.get('owner', {'name': 'Heuremen LLC'}),
           'plugins': [{'name': name, 'source': './', 'description': pj.get('description', e.get('description', '')), 'version': pj.get('version', e.get('version', '1.0.0')),

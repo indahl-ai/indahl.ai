@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/ccr/ccr-715e5e35f686.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/93afd7335d58b56ef2da0e302b91fd2149a2a81f/claude-plugins/src/ccr/scripts/ccr.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/93afd7335d58/claude-plugins/src/ccr/scripts/ccr.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/93afd7335d58b56ef2da0e302b91fd2149a2a81f/claude-plugins/src/ccr/scripts/ccr.py (sha256 715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/93afd7335d58/claude-plugins/src/ccr/scripts/ccr.py (sha256 715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355).
 
 Run `python3 "$HOME/.cache/indahl-plugins/ccr/ccr-715e5e35f686.py" $ARGUMENTS` (use `python` where `python3` is unavailable) and report the output plainly.
 

@@ -68,7 +68,7 @@ Named by the owner, who found the problem the hard way. Built by the operator an
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl.ai/c9dc1f1f2107df3bac082d97d6e1a7bf4d89fd59/claude-plugins/src/fsck/scripts/fsck.py
+- https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/c9dc1f1f2107/claude-plugins/src/fsck/scripts/fsck.py
   sha256 7db9510eefcadc5c1a957e1c570529476853d6045f9dfa4b5f8764826387b250
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

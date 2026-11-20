@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/8eb90a0f63bc694ccc6b53af485d1731b7a20956/claude-plugins/src/qia-calibration/scripts/qia_check.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/8eb90a0f63bc/claude-plugins/src/qia-calibration/scripts/qia_check.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/8eb90a0f63bc694ccc6b53af485d1731b7a20956/claude-plugins/src/qia-calibration/scripts/qia_check.py (sha256 81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/8eb90a0f63bc/claude-plugins/src/qia-calibration/scripts/qia_check.py (sha256 81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f).
 
 
 Use the qia-check skill to run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py" $ARGUMENTS` and report the result.

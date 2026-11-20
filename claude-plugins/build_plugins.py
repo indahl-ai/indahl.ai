@@ -30,20 +30,17 @@ def scripts():
     return sorted(out)
 
 def pin():
+    """20 Nov 2026: a changed script is copied into pinned/<sha256 prefix>/claude-plugins/src/<rel> here; split_repos.py carries pinned/ into
+    indahl-ai/indahl, and the pin reads it from that repo's main branch. The folder name is the content hash and the command checks the
+    full sha256, so the pin never depends on a commit that a history rewrite could remove."""
     pins = json.load(open(PINS)) if os.path.exists(PINS) else {}
     for rel in scripts():
-        h = sha(open(os.path.join(SRC, rel), 'rb').read())
+        b = open(os.path.join(SRC, rel), 'rb').read(); h = sha(b)
         if pins.get(rel, {}).get('sha256') == h: continue
-        found = None
-        for path in ('claude-plugins/src/' + rel, 'claude-plugins/plugins/' + rel):   # 13 Nov: the first pins point at the pre-move path
-            r = subprocess.run(['gh', 'api', f'repos/{REPO}/commits?path={path}&per_page=5', '--jq', '.[].sha'], capture_output=True, text=True)
-            for c in r.stdout.split():
-                try: b = urllib.request.urlopen(urllib.request.Request(RAW.format(commit=c, path=path), headers={'User-Agent': 'indahl-plugins-build'}), timeout=60).read()
-                except Exception: continue
-                if sha(b) == h: found = {'commit': c, 'url': RAW.format(commit=c, path=path), 'sha256': h}; break
-            if found: break
-        if found: pins[rel] = found; print(f'  pin: {rel} -> {found["commit"][:9]}')
-        else: print(f'  pin: {rel} STALE (no published copy matches; ship, then rebuild)')
+        path = 'claude-plugins/src/' + rel; d = os.path.join(H, 'pinned', h[:12], path)
+        os.makedirs(os.path.dirname(d), exist_ok=True); open(d, 'wb').write(b)
+        pins[rel] = {'commit': h[:12], 'url': 'https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/%s/%s' % (h[:12], path), 'sha256': h}
+        print(f'  pin: {rel} -> pinned/{h[:12]} (publish with split_repos.py --push)')
     json.dump(pins, open(PINS, 'w'), indent=1, sort_keys=True)
 
 def fetch_block(entries):

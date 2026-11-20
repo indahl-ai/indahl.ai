@@ -10,9 +10,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/fsck/fsck-7db9510eefca.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/c9dc1f1f2107df3bac082d97d6e1a7bf4d89fd59/claude-plugins/src/fsck/scripts/fsck.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '7db9510eefcadc5c1a957e1c570529476853d6045f9dfa4b5f8764826387b250')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/c9dc1f1f2107/claude-plugins/src/fsck/scripts/fsck.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '7db9510eefcadc5c1a957e1c570529476853d6045f9dfa4b5f8764826387b250')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/c9dc1f1f2107df3bac082d97d6e1a7bf4d89fd59/claude-plugins/src/fsck/scripts/fsck.py (sha256 7db9510eefcadc5c1a957e1c570529476853d6045f9dfa4b5f8764826387b250).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/c9dc1f1f2107/claude-plugins/src/fsck/scripts/fsck.py (sha256 7db9510eefcadc5c1a957e1c570529476853d6045f9dfa4b5f8764826387b250).
 
 Run `python3 "$HOME/.cache/indahl-plugins/fsck/fsck-7db9510eefca.py"` (use `python` where `python3` is unavailable) and show its report exactly as printed.
 

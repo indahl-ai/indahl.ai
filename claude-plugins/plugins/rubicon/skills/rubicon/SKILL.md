@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/rubicon/rubicon-4683bcee1d79.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/d30a91ae5edfb035140e7803fd20a43bad043a91/claude-plugins/src/rubicon/scripts/rubicon.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '4683bcee1d797fc288a7b61008dc3036667c9bdf20dbd9ca47792592e1bd0fb0')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/d30a91ae5edf/claude-plugins/src/rubicon/scripts/rubicon.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '4683bcee1d797fc288a7b61008dc3036667c9bdf20dbd9ca47792592e1bd0fb0')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/d30a91ae5edfb035140e7803fd20a43bad043a91/claude-plugins/src/rubicon/scripts/rubicon.py (sha256 4683bcee1d797fc288a7b61008dc3036667c9bdf20dbd9ca47792592e1bd0fb0).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/d30a91ae5edf/claude-plugins/src/rubicon/scripts/rubicon.py (sha256 4683bcee1d797fc288a7b61008dc3036667c9bdf20dbd9ca47792592e1bd0fb0).
 
 
 # Indahl Rubicon

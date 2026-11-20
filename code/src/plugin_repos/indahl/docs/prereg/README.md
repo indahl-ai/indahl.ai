@@ -52,7 +52,7 @@ Refereed before release by the outside referee at Heuremen LLC (13 Nov 2026): ev
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl.ai/f8e5be688dd0738d53d1299f836fbfde7ec36857/claude-plugins/src/prereg/scripts/prereg.py
+- https://raw.githubusercontent.com/indahl-ai/indahl/403c5f956981c73a6c3f9a83b726ae14c4b1f3c1/pinned/f8e5be688dd0/claude-plugins/src/prereg/scripts/prereg.py
   sha256 cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

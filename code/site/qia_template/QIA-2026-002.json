@@ -1,0 +1,124 @@
+{
+ "case": "QIA-2026-002",
+ "date": "Calibrated run report · option pricing · run 19 November 2026 · issued 20 November 2026",
+ "chips": [
+  "ibm_fez",
+  "ibm_marrakesh",
+  "ibm_kingston"
+ ],
+ "labels": {
+  "dev_title": "Result: their run against ours",
+  "dev_cols": [
+   "#",
+   "Measure",
+   "Chip",
+   "Their run (fit with no noise term)",
+   "Ours, calibrated [99 % interval of the difference]"
+  ],
+  "states": "Exact price",
+  "rn_title": "Figures the run depended on",
+  "rn_cols": [
+   "#",
+   "Figure",
+   "Chip",
+   "IBM’s own documentation",
+   "What we measured that day"
+  ],
+  "fx_title": "What we changed",
+  "fx_cols": [
+   "#",
+   "Change",
+   "Source",
+   "Applied, and what it did"
+  ]
+ },
+ "deviations": [
+  {
+   "n": 1,
+   "figure": "Error in the option price, mean per copy over 32 copies",
+   "ibm_states": "8.2543",
+   "chip": "fez; runs 1 and 2",
+   "ibm_doc": "1.046 (run 1) · 1.079 (run 2)",
+   "delivered": "0.067 (run 1) · 0.069 (run 2)",
+   "deviation": "15.5x and 15.6x lower; ours better in both runs",
+   "how": "Ours minus theirs: −1.179 to −0.778 (run 1), −1.190 to −0.829 (run 2)."
+  },
+  {
+   "n": 2,
+   "figure": "Error in the option price, mean per copy over 32 copies",
+   "ibm_states": "8.2543",
+   "chip": "marrakesh; runs 1 and 2",
+   "ibm_doc": "1.910 (run 1) · 1.854 (run 2)",
+   "delivered": "0.360 (run 1) · 0.357 (run 2)",
+   "deviation": "5.3x and 5.2x lower; ours better in both runs",
+   "how": "Ours minus theirs: −1.582 to −1.518 (run 1), −1.539 to −1.455 (run 2)."
+  },
+  {
+   "n": 3,
+   "figure": "Error in the option price, mean per copy over 32 copies",
+   "ibm_states": "8.2543",
+   "chip": "kingston; runs 1 and 2",
+   "ibm_doc": "0.532 (run 1) · 0.586 (run 2)",
+   "delivered": "0.209 (run 1) · 0.068 (run 2)",
+   "deviation": "2.5x and 8.6x lower; ours better in both runs",
+   "how": "Ours minus theirs: −0.336 to −0.309 (run 1), −0.623 to −0.412 (run 2)."
+  },
+  {
+   "n": 4,
+   "figure": "Error with all 32 copies pooled into one estimate",
+   "ibm_states": "8.2543",
+   "chip": "fez, marrakesh, kingston",
+   "ibm_doc": "fez 8.4 % and 17.8 % off · marrakesh 23.1 % and 22.5 % · kingston 6.4 % and 6.2 %",
+   "delivered": "fez 0.36 % and 0.75 % off · marrakesh 4.34 % and 4.34 % · kingston 2.55 % and 0.01 %",
+   "deviation": "More shots do not fix the default price; the calibrated price lands within 4.4 %",
+   "how": "Percent of the exact price, run 1 and run 2. Pooling 128,000 shots per rung leaves the client’s price 6 to 23 % off."
+  }
+ ],
+ "record_notes": [
+  {
+   "n": 5,
+   "record": "Two-qubit gate error on the run’s two pairs",
+   "chip": "fez; pairs 51–58 and 58–71",
+   "ibm_doc": "“The QPU-reported properties are updated once a day, but the system may drift faster than the time between updates.”",
+   "shows": "Stated 0.00414 and 0.0025. Measured 0.003 to 0.00345 and 0.00172 to 0.00203: 0.69 to 0.83 times the stated figure. The record was off in the other direction."
+  },
+  {
+   "n": 6,
+   "record": "Two-qubit gate error on the run’s two pairs",
+   "chip": "marrakesh; pairs 133–134 and 134–135",
+   "ibm_doc": "—",
+   "shows": "Stated 0.0168 and 0.002. Measured 0.0159 to 0.0199 and 0.00113 to 0.00247. The layout the record picks carries a pair with about eight times the error of its neighbor."
+  },
+  {
+   "n": 7,
+   "record": "Two-qubit gate error on the run’s two pairs",
+   "chip": "kingston; pairs 105–106 and 105–117",
+   "ibm_doc": "—",
+   "shows": "Stated 0.00115 and 0.00103. Measured the same session 0.00172 to 0.0018 and 0.0015 to 0.00255: 1.45 to 2.47 times the stated figure."
+  }
+ ],
+ "effects": [
+  {
+   "n": 8,
+   "effect": "A fade term in the price fit",
+   "ibm_states": "Gate error measured on the run’s own pairs minutes before the main job",
+   "delivered": "Applied in the analysis only. The circuit, layout and shots are the client’s, unchanged.",
+   "how": "Both arms read the same shots, so the gap is the fit, not luck of the draw."
+  },
+  {
+   "n": 9,
+   "effect": "How strongly the fade is weighted, per chip",
+   "ibm_states": "Each chip’s earlier hardware run",
+   "delivered": "fez 1.35 · marrakesh 1.50 · kingston 0.63. Frozen before the run; nothing was fitted on these shots.",
+   "how": "On marrakesh the weight sits at the edge of the range searched: that layout carries more than a fade term absorbs, which is where the 4.3 % left over sits."
+  },
+  {
+   "n": 10,
+   "effect": "Against a client who already corrects with IBM’s stated gate error",
+   "ibm_states": "The same fade term, at the stated figure",
+   "delivered": "fez: better in run 2, the same within ±0.04 in run 1. marrakesh: better in run 1, worse by 0.012 to 0.016 in run 2. kingston: ours better in both runs.",
+   "how": "Where the record is right, using it gets close. The check tells you which day that is."
+  }
+ ],
+ "method": "Method: the client’s own amplitude-estimation circuit, layout and shots, run twice on each processor as 32 interleaved copies, 19 November 2026. Their arm fits with no noise term; ours adds a fade term from gate error measured on the chip in the same session. Error is the absolute gap to the exact price, 8.2543. Intervals are 99 %. Job records for every run: quantumidleaudit.com/demo-finance."
+}

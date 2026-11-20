@@ -78,7 +78,7 @@ export async function callback(req, env, fail) {
   const a = await r.json(), user = a.user || {};
   const email = String(user.email || '').toLowerCase(), m = email.match(/^[^\s@]+@([a-z0-9.-]+\.[a-z]{2,})$/);
   if (!m || user.email_verified !== true) return fail('We could not confirm an email address for that account.');
-  if (FREEMAIL.has(m[1])) return fail('Inquiries need an organisation account. Personal email services are not accepted.');
+  if (FREEMAIL.has(m[1])) return fail('Inquiries need an organization account. Personal email services are not accepted.');
   const now = Math.floor(Date.now() / 1000);
   const s = { e: email, d: m[1], n: [user.first_name, user.last_name].filter(Boolean).join(' ').slice(0, 120), u: String(user.id || ''),
     m: METHOD[a.authentication_method] || String(a.authentication_method || 'verified sign-in'), o: String(a.organization_id || ''), iat: now, exp: now + SESSION_S };

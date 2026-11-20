@@ -27,7 +27,7 @@ td.f{white-space:nowrap;font-family:Menlo,monospace;font-size:12.5px}
 </style></head><body>
 <p><a href="/">&larr; What&rsquo;s Lost with a Look</a></p>
 <h1>Readout vs equal idle</h1>
-<p>Does a mid-circuit readout advance an untouched neighbouring qubit&rsquo;s phase more than an idle of exactly the same length? IBM processors, 21 October 2026.</p>
+<p>Does a mid-circuit readout advance an untouched neighboring qubit&rsquo;s phase more than an idle of exactly the same length? IBM processors, 21 October 2026.</p>
 <p>On this page, every bracket [lo, hi] is a 95&thinsp;% interval from a 2000-draw bootstrap over untouched qubits, including the two quoted from the excitation test.</p>
 
 <h2>Design</h2>
@@ -49,7 +49,7 @@ td.f{white-space:nowrap;font-family:Menlo,monospace;font-size:12.5px}
 <tr><td>ibm_kingston</td><td class="n">+2.41&deg; [1.96, 3.58]</td><td class="n">+3.28&deg;</td></tr>
 <tr><td>ibm_marrakesh</td><td class="n">+2.13&deg; [1.44, 2.79]</td><td class="n">+3.01&deg;</td></tr>
 <tr><td>ibm_pittsburgh</td><td class="n">+1.79&deg; [1.16, 2.66]</td><td class="n">+2.75&deg;</td></tr></table></div>
-<p>Extra elapsed time would make the excess negative for untouched qubits precessing backwards. The excess is positive. The M1 arm here is compared with an idle whose measured qubits are in 0, so M1 &minus; D includes a phase that appears without any readout when the measured qubits are in 1. The <a href="/experiments/2026-10-21-excitation-test/">excitation test</a> has the matching idle-in-1 arm and shows the kick is not larger with the measured qubits in 1 (kick in 1 minus kick in 0: +0.204 [&minus;0.092, +0.320] on kingston, larger in 1 by at most 0.32&deg;, consistent with zero, and &minus;0.673 [&minus;0.982, &minus;0.403] on marrakesh, smaller in 1). A regression of the excess on the idle phase (in <a href="kick_analysis.py">kick_analysis.py</a>) is biased by noise in the idle phase and is not interpreted. The planned reading 3 (constant ratio versus constant delay across readout lengths, plan hashed locally) cannot tell with three distinct lengths. <a href="results_kick.text">kick analysis output</a> &middot; <a href="results_exploratory.text">exploratory neighbour/far split</a></p>
+<p>Extra elapsed time would make the excess negative for untouched qubits precessing backwards. The excess is positive. The M1 arm here is compared with an idle whose measured qubits are in 0, so M1 &minus; D includes a phase that appears without any readout when the measured qubits are in 1. The <a href="/experiments/2026-10-21-excitation-test/">excitation test</a> has the matching idle-in-1 arm and shows the kick is not larger with the measured qubits in 1 (kick in 1 minus kick in 0: +0.204 [&minus;0.092, +0.320] on kingston, larger in 1 by at most 0.32&deg;, consistent with zero, and &minus;0.673 [&minus;0.982, &minus;0.403] on marrakesh, smaller in 1). A regression of the excess on the idle phase (in <a href="kick_analysis.py">kick_analysis.py</a>) is biased by noise in the idle phase and is not interpreted. The planned reading 3 (constant ratio versus constant delay across readout lengths, plan hashed locally) cannot tell with three distinct lengths. <a href="results_kick.text">kick analysis output</a> &middot; <a href="results_exploratory.text">exploratory neighbor/far split</a></p>
 <p>The plan&rsquo;s SHA-256 was computed locally before submission and not externally timestamped. Job records: <a href="job_ibm_fez.json">fez</a> &middot; <a href="job_ibm_kingston.json">kingston</a> &middot; <a href="job_ibm_marrakesh.json">marrakesh</a> &middot; <a href="job_ibm_pittsburgh.json">pittsburgh</a> &middot; <a href="job_ibm_boston.json">boston (submitted and errored)</a></p>
 
 <h2>Files</h2>
@@ -58,7 +58,7 @@ td.f{white-space:nowrap;font-family:Menlo,monospace;font-size:12.5px}
 <tr><td class="f"><a href="run.py">run.py</a></td><td>builds and submits the circuits (Qiskit 2.5.2, qiskit-ibm-runtime 0.49.0, SamplerV2)</td></tr>
 <tr><td class="f"><a href="analyze.py">analyze.py</a></td><td>the declared analysis, which reads the raw files only</td></tr>
 <tr><td class="f"><a href="results_prereg.text">results_prereg.text</a></td><td>its output, with and without the cut</td></tr>
-<tr><td class="f"><a href="exploratory_neighbour_far.py">exploratory_neighbour_far.py</a></td><td>the neighbour / far split (exploratory)</td></tr>
+<tr><td class="f"><a href="exploratory_neighbour_far.py">exploratory_neighbour_far.py</a></td><td>the neighbor / far split (exploratory)</td></tr>
 <tr><td class="f">raw_&lt;chip&gt;.npz</td><td><a href="raw_ibm_fez.npz">fez</a> &middot; <a href="raw_ibm_kingston.npz">kingston</a> &middot; <a href="raw_ibm_marrakesh.npz">marrakesh</a> &middot; <a href="raw_ibm_pittsburgh.npz">pittsburgh</a> &mdash; counts per circuit</td></tr>
 <tr><td class="f">roles_&lt;chip&gt;.json</td><td>which qubits were measured and which were untouched</td></tr>
 <tr><td class="f">job_&lt;chip&gt;.json</td><td>IBM job IDs and backend metadata</td></tr>

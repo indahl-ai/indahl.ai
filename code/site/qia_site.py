@@ -117,7 +117,7 @@ def page(path, title, desc, body):
 <header><div class="wrap"><a class="brand" href="/">{MARK}<span>Quantum Idle Audit<small>Heuremen LLC</small></span></a><nav>{nav}</nav></div></header>
 <main>{body}</main>
 <footer class="qfoot"><div class="wrap">
-<p class="fl"><a href="{I}/qia">QIA on indahl.ai</a><a href="{CONTACT}">Inquiry</a><a href="{I}/conflict-of-interest">Conflict of interest</a><a href="{I}/terms">Terms</a><a href="{I}/privacy">Privacy</a></p>
+<p class="fl"><a href="{I}/qia">QIA on indahl.ai</a><a href="{CONTACT}">Inquiries</a><a href="{I}/conflict-of-interest">Conflict of interest</a><a href="{I}/terms">Terms</a><a href="{I}/privacy">Privacy</a></p>
 <p class="fs">Quantum Idle Audit &middot; A division of Heuremen LLC. &ldquo;We found it.&rdquo;</p>
 <p class="ai">Independent measurement of quantum hardware against the vendor&rsquo;s published calibration. Mutual NDA before any engagement. Nothing published without written consent. Fees are independent of findings. It runs its measurements on IBM Quantum under its own account and is not otherwise affiliated with IBM; IBM and the processor names are trademarks of IBM. &copy; 2026 Heuremen LLC. Retrieval and answering are permitted; use as AI training data is not.</p>
 </div></footer>
@@ -138,7 +138,7 @@ OFFERS = f'''<div class="grid">
 <div class="card"><p class="k">Full study audit</p><h3>A study read in full and recounted</h3>
 <p>Every claim quoted, located and recomputed from the released data or rerun on hardware, delivered as a line-item report with an evidence package.</p><p class="price">{price('audit')}</p></div>
 <div class="card"><p class="k">Monitoring</p><h3>Calibration watched over time</h3>
-<p>The processors a team depends on, read against their published calibration on a fixed schedule, with each deviation reported as it lands.</p><p class="price">{price('monitor')}</p><p class="fine">Billed monthly, cancel any month. Or $25,500 a year prepaid (15% off); $23,000 if signed during the pilot. A prepaid year is not refundable and cannot be cancelled.</p></div>
+<p>The processors a team depends on, read against their published calibration on a fixed schedule, with each deviation reported as it lands.</p><p class="price">{price('monitor')}</p><p class="fine">Billed monthly, cancel any month. Or $25,500 a year prepaid (15% off); $23,000 if signed during the pilot. A prepaid year is not refundable and cannot be canceled.</p></div>
 <div class="card"><p class="k">30-day pilot</p><h3>Monitoring on your own processors, for a month</h3>
 <p>Your backends and qubits read against their published calibration for 30 days: signed receipts for each run, one variance report, and the measured corrections.</p><p class="price">{price('pilot')}</p><p class="fine">If you stop within the 30 days, the unused days are refunded pro rata. The pilot fee counts toward a prepaid year signed during the pilot.</p></div>
 </div>''' 
@@ -206,7 +206,7 @@ HOME = f'''
 <div class="hero wrap herogrid"><div><p class="eyebrow">Independent &middot; Rerunnable &middot; Dated</p>
 <h1>Independent checks of quantum hardware claims against the vendor&rsquo;s own calibration.</h1>
 <p class="lede">Each line gives the published value, our measurement with its interval, and the record the job ran under.</p>
-<div class="btns"><a class="btn" href="#demos">See the demonstrations</a><a class="btn ghost" href="{CONTACT}" target="_blank" rel="noopener">Start an engagement inquiry</a></div></div>
+<div class="btns"><a class="btn" href="#demos">See the demonstrations</a><a class="btn ghost" href="{CONTACT}" target="_blank" rel="noopener">Inquiries</a></div></div>
 {FIG}</div>
 {DEMOS}
 <section class="soft"><div class="wrap report"><div>
@@ -234,7 +234,7 @@ HOME = f'''
 SERVICES = f'''
 <div class="hero wrap"><p class="eyebrow">Services</p><h1>Calibration checks, full audits and monitoring.</h1>
 <p class="lede">A mutual NDA comes first; each engagement is then scoped and quoted under a statement of work. Paid, collaborative and pro bono research engagements are considered.</p>
-<div class="btns"><a class="btn" href="{CONTACT}" target="_blank" rel="noopener">Start an engagement inquiry</a><a class="btn ghost" href="{SAMPLE_PDF}">See a sample report</a></div></div>
+<div class="btns"><a class="btn" href="{SAMPLE_PDF}">See a sample report</a></div></div>
 <section class="soft"><div class="wrap">{OFFERS}</div></section>
 <section><div class="wrap"><p class="eyebrow">How an engagement runs</p><h2>From scope to delivery</h2><p class="sub">Fixed steps, the same for every client.</p>
 <ol class="steps">
@@ -243,7 +243,7 @@ SERVICES = f'''
 <li><b>Report</b><span>A line-item report: stated, measured, interval, outcome.</span></li>
 <li><b>Hand over</b><span>The evidence package, rerunnable by the client or anyone the client names.</span></li>
 </ol></div></section>
-<section class="soft"><div class="wrap band"><div><h2>Confidentiality</h2><p>Mutual NDA first. Nothing about an engagement is published without written consent. Fees are independent of findings.</p></div><a class="btn" href="{CONTACT}">Engagement inquiry</a></div></section>
+<section class="soft"><div class="wrap band"><div><h2>Confidentiality</h2><p>Mutual NDA first. Nothing about an engagement is published without written consent. Fees are independent of findings.</p></div><a class="btn" href="{CONTACT}">Inquiries</a></div></section>
 '''
 
 METHOD = f'''
@@ -294,7 +294,7 @@ def _findings():
     return f"""<div class="hero wrap"><p class="eyebrow">Findings</p><h1>IBM&rsquo;s published calibration, set beside what the hardware delivered.</h1>
 <p class="lede">Each row prints IBM&rsquo;s figure as published, our measurement with its interval and date, and how a reader can check both sides. Heuremen LLC is not affiliated with IBM. Record facts are dated reads of IBM&rsquo;s backend properties. Effects with no field in the record are stated as of the date the record was read.</p></div>
 <section><div class="wrap wide"><div class="tscroll"><table class="qt"><thead><tr><th>Item</th><th>What</th><th>IBM&rsquo;s figure</th><th>Measured</th><th>Date and interval</th><th>How to check</th><th>Status</th></tr></thead><tbody>{rows}</tbody></table></div>
-<p class="fine">Outcomes follow the <a href="/method">method</a>: ABOVE, BELOW, CONSISTENT (printed as a bound) or CANNOT TELL. Papers cited as Zenodo records are preprints, not peer reviewed. Rows marked &ldquo;computed after the hardware result&rdquo; are labelled as such. <a href="{CONTACT}">Request full records of any listed run.</a></p></div></section>"""
+<p class="fine">Outcomes follow the <a href="/method">method</a>: ABOVE, BELOW, CONSISTENT (printed as a bound) or CANNOT TELL. Papers cited as Zenodo records are preprints, not peer reviewed. Rows marked &ldquo;computed after the hardware result&rdquo; are labeled as such. <a href="{CONTACT}">Request full records of any listed run.</a></p></div></section>"""
 def _calibs():
     rows = ''.join('<tr id="%s"><td data-l="Calibration"><b>%s</b>%s</td><td class="id" data-l="Addresses">%s</td><td data-l="Your run: without / with">%s</td><td data-l="Result on hardware">%s%s</td><td data-l="Cost">%s</td><td data-l="Status">%s</td></tr>' % (
         _e(c['name'].split(' (')[0].split()[0].lower() if c['name'].startswith('Combinations') else __import__('re').sub(r'[^a-z0-9]+','-',c['name'].lower())[:40].strip('-')), _e(c['name']), ('<br><small>%s</small>' % _e(c['prior_art'])) if c['prior_art'] else '', _e(c['fixes']), _e(c.get('client', '')) or '&mdash;', _e(c['result']),

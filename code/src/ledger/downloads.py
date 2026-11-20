@@ -38,7 +38,7 @@ def qia_pkg_map(zf):
     """inner path -> the file build_package.py copies it from (what it fetches from PyPI or writes itself is not listed)"""
     r = 'qia-research-package/'; M = {}
     for k in ('CITATION.cff', 'README.md', 'TESTED.md', 'qia_check.py'): M[k] = 'qia_package/src/' + k
-    M.update({'LICENSE.txt': 'public_mirror/indahl.ai/LICENSE.txt',
+    M.update({'LICENSE.txt': 'public_mirror/indahl.ai/LICENSE.txt', 'yo/yo_audit.py': 'yo/release/yo_audit.py',
               'papers/a-readout-is-not-an-idle.pdf': 'indahl-ai/quantum-idle-audit.pdf', 'faultsguards/faults.pdf': 'heuremen.org/faults.pdf',
               'faultsguards/guards.pdf': 'heuremen.org/guards.pdf'})
     for k in ('run_check.py', 'PLAN.md', 'README.md', 'requirements.txt'): M['t1t2-check/' + k] = 'public_mirror/indahl.ai/code/t1t2-check/' + k

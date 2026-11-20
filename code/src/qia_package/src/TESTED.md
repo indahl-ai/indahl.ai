@@ -17,3 +17,5 @@ Heuremen LLC, 2 November 2026, on the package as published at https://indahl.ai/
    step itself (QiskitRuntimeService with no arguments) is IBM's own code.
 
 answer on held-out IBM records at https://indahl.ai/iris/lab
+
+Not yet tested inside this package: the YO reader (`yo/yo_audit.py`) against the model. YO itself is scored against the exact code answer on every live read (https://indahl.ai/yo).

@@ -27,9 +27,9 @@ def text_blocks(page):
     big = T(first(r'<div class="hl-big">(.*?)</div>', page).group(1))
     line = T(first(r'<p class="hl-line">(.*?)</p>', page).group(1))
     how = T(first(r'<h2>How these rows were read</h2><p>(.*?)</p>', page).group(1))
-    chat = T(first(r'<h2 id="findings">(.*?)</h2>', page).group(1))
-    note = T(first(r'<h2 id="the-list">The list</h2>\s*<p class="meta">(.*?)</p>', page).group(1))
-    bacc = T(first(r'<h2 id="private-baccalaureate-colleges">Private baccalaureate colleges</h2><p>(.*?)</p>', page).group(1))
+    chat = T(first(r'<h2(?: id="findings")?>(Chatbot cited.*?)</h2>', page).group(1))
+    note = T(first(r'<h2(?: id="the-list")?>The list</h2>\s*<p class="meta">(.*?)</p>', page).group(1))
+    bacc = T(first(r'<h2(?: id="private-baccalaureate-colleges")?>Private baccalaureate colleges</h2><p>(.*?)</p>', page).group(1))
     return {'headline_number': big, 'headline_text': line, 'how_these_rows_were_read': how, 'chatbot_table_heading': chat, 'list_note': note, 'private_baccalaureate_text': bacc}
 
 def chatbot(tbl):

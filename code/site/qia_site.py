@@ -205,7 +205,7 @@ DEMOS = '''<section id="demos"><div class="wrap"><p class="eyebrow">Demonstratio
 HOME = f'''
 <div class="hero wrap herogrid"><div><p class="eyebrow">Independent &middot; Rerunnable &middot; Dated</p>
 <h1>Independent checks of quantum hardware claims against the vendor&rsquo;s own calibration.</h1>
-<p class="lede">Each line gives the published value, our measurement with its interval, and the record the job ran under, so anyone can rerun it.</p>
+<p class="lede">Each line gives the published value, our measurement with its interval, and the record the job ran under.</p>
 <div class="btns"><a class="btn" href="#demos">See the demonstrations</a><a class="btn ghost" href="{CONTACT}" target="_blank" rel="noopener">Start an engagement inquiry</a></div></div>
 {FIG}</div>
 {DEMOS}

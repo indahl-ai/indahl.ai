@@ -5,14 +5,13 @@ The copy is refreshed on every release from the files as last shipped. Git histo
 
 ## Edits made in this copy
 
-- footer byline: last name removed: 42 file(s)
+- footer byline: last name removed: 41 file(s)
 - run label: house word removed, values unchanged: 4 file(s)
 
 No value, count or result was changed. The files changed by each edit:
 
 ### footer byline: last name removed
 - correlations.html
-- darkwave.html
 - experiments/2026-09-24-temporal-spatial-correlations/data/index.html
 - experiments/2026-09-24-temporal-spatial-correlations/index.html
 - experiments/2026-10-04-three-positions/index.html

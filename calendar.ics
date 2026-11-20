@@ -4,26 +4,11 @@ PRODID:-//Heuremen LLC//indahl.ai calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:indahl.ai schedules
-X-WR-CALDESC:The Heuremen LLC weekly newsletter and the release dates the s
- ources of the indahl.ai desks publish. Each event links its source schedul
- e.
+X-WR-CALDESC:The release dates the sources of the indahl.ai desks publish. 
+ Each event links its source schedule.
 X-WR-TIMEZONE:UTC
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
-BEGIN:VEVENT
-UID:newsletter-weekly@indahl.ai
-DTSTAMP:20261110T000000Z
-DTSTART;VALUE=DATE:20261110
-DTEND;VALUE=DATE:20261111
-RRULE:FREQ=WEEKLY;BYDAY=TU
-SUMMARY:Heuremen LLC weekly newsletter
-DESCRIPTION:The Heuremen LLC weekly newsletter goes out every Tuesday. Ever
- y issue is kept at https://indahl.ai/newsletter. Sign up with the form at 
- the foot of any page on indahl.ai.
-URL:https://indahl.ai/newsletter
-CATEGORIES:Heuremen LLC
-TRANSP:TRANSPARENT
-END:VEVENT
 BEGIN:VEVENT
 UID:eia-steo-20261208@indahl.ai
 DTSTAMP:20261110T000000Z

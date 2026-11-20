@@ -54,7 +54,7 @@ SURFACES = {  # surface key -> file (paths relative to ~/bones-forge unless abso
     'qia_corp': 'indahl-ai/qia/studies/corporate.html',   # 15 Nov 2026: calibrated studies moved off /qia
     'qia_research': 'indahl-ai/qia/studies/research.html',   # 15 Nov 2026: how each QIA reading is made, moved off the QIA page by his word   # 25 Oct: Recount Matrix: Quantum Hardware (generated from qia_leads/matrix_page)
     'model_live': 'iris_index/claims_stack/status_model_live.json',   # 30 Oct: MODEL desk claims rounds (S1-S3), the file put in KV model_live
-    'darkwave': 'heuremen.org/darkwave.html',   # 16 Nov: moved back to heuremen.org (his word);   # 1 Nov: the Darkwave page (paper + clock)
+    'darkwave': 'indahl-ai/darkwave.html',   # 20 Nov 2026: the Darkwave page moved to indahl.ai (the owner)   # 16 Nov: moved back to heuremen.org (his word);   # 1 Nov: the Darkwave page (paper + clock)
     'yo': 'indahl-ai/yo.html',   # 9 Nov: the YO desk (his word); every YO number moved here from iris_lab
     'water': 'indahl-ai/water.html',   # 10 Nov: the WATER desk (ATLAS); its headline is built into the page from watch/headlines.json, the live panel reads /water/live.json
     'wiki': 'indahl-ai/wiki.html',   # 10 Nov: the WIKI desk (HERMES); one reading per page, headline built with it, the feed /wiki/live.json reads again weekly

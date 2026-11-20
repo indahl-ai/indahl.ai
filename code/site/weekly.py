@@ -188,7 +188,7 @@ def body(slug, evs=None, now=None, all_weeks=None):
         o.append('</ul>')
     if not ev: o.append('<p>No changes have been recorded in this week%s.</p>' % (' so far' if cur else ''))
     o.append('<!--NEWS--><h2>By email</h2><p>The sign-up form at the foot of this page emails this page every Tuesday. The same form can send new desks and new data, and outcome changes on the chosen desks.</p><!--/NEWS-->')   # 10 Nov 2026: the one form is in the footer (alerts.py signup_form)
-    o.append('<h2>Newsletter</h2><p>Every issue of the newsletter, as published: <a href="/newsletter">indahl.ai/newsletter</a>.</p>')   # 10 Nov 2026 (newsletter_pages.py)
+    pass   # 20 Nov 2026: newsletter retired   # 10 Nov 2026 (newsletter_pages.py)
     past = [s for s in (all_weeks or weeks(evs, now)) if s != slug]
     if past:
         o.append('<h2>Other weeks</h2><ul class="wk">' + ''.join('<li><a href="%s">%s</a></li>' % ('/week' if s == current_slug(now) else '/week/' + s, e(span(start_of(s)))) for s in reversed(past)) + '</ul>')

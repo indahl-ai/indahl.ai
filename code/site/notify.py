@@ -112,8 +112,8 @@ def schedule_events(desk=None, names=None):
 
 def calendars(PAGES, names):
     s = json.load(open(SCHED)); built = {}
-    built['calendar.ics'] = _vcal('indahl.ai schedules', 'The Heuremen LLC weekly newsletter and the release dates the sources of the indahl.ai desks publish. Each event links its source schedule.',
-                                  [newsletter_event()] + schedule_events(names=names))
+    built['calendar.ics'] = _vcal('indahl.ai schedules', 'The release dates the sources of the indahl.ai desks publish. Each event links its source schedule.',
+                                  schedule_events(names=names))   # 20 Nov 2026: the newsletter is retired
     for desk in sorted({x['desk'] for x in s['sources']}):
         if '/' + desk not in PAGES: continue
         built['%s/calendar.ics' % desk] = _vcal('indahl.ai %s: source release dates' % names.get(desk, desk.upper()),
@@ -208,8 +208,7 @@ def changelog(PAGES, page, hero_slim):
 # ------------------------------------------------------------------------------------------------ OPML
 def opml(desk_feeds, brands):
     o = lambda t, x, h: '<outline type="rss" text="%s" title="%s" xmlUrl="%s" htmlUrl="%s"/>' % (E(t), E(t), E(x), E(h))
-    site = [o('Heuremen LLC: new studies and bench rounds', SITE + '/feed.xml', SITE + '/'),
-            o('Heuremen LLC weekly newsletter', SITE + '/newsletter/feed.xml', SITE + '/newsletter')]
+    site = [o('Heuremen LLC: new studies and bench rounds', SITE + '/feed.xml', SITE + '/')]
     dk = [o('%s: changes to the headline' % n, '%s/%s/changes.xml' % (SITE, s), '%s/%s' % (SITE, s)) for s, n in desk_feeds]
     br = [o('%s: changes on the desks with rows about it' % n, '%s/brand/%s/changes.xml' % (SITE, s), '%s/brand/%s' % (SITE, s)) for s, n in brands]
     x = ('<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0"><head><title>indahl.ai feeds</title><ownerName>Heuremen LLC</ownerName><docs>http://opml.org/spec2.opml</docs></head><body>'
@@ -320,7 +319,8 @@ def apply(PAGES, page, hero_slim, HOME=None, cssv='', FEED=None):
     s = json.load(open(SCHED)); cal_desks = sorted({x['desk'] for x in s['sources'] if '/' + x['desk'] in PAGES})
     desk_feeds = sorted(((d, names.get(d, d.upper())) for d in desks if '/' + d in PAGES), key=lambda x: x[1])
     calendars(PAGES, names)
-    nn = newsletter_feed(PAGES)
+    nn = 0   # 20 Nov 2026 (the owner): newsletter retired; no feed
+    import shutil as _shn; _shn.rmtree(os.path.join(PUB, 'newsletter'), ignore_errors=True)
     nc = 0   # 19 Nov 2026 (the owner): /changelog archived (~/bones-forge/archive/indahl_changelog_20261119); not built
     opml(desk_feeds, sorted(((b, v[0]) for b, v in brands.items() if '/brand/' + b in PAGES), key=lambda x: x[1].lower()))
     PAGES['/follow'] = page('/follow', 'Follow indahl.ai: Email, Calendar, Feeds, Webhooks | Heuremen LLC',
@@ -367,7 +367,7 @@ def gate():
     try: import icalendar
     except ImportError: icalendar = None
     import xml.dom.minidom as MD
-    feeds = ['newsletter/feed.xml'] + sorted(os.path.relpath(p, PUB) for p in __import__('glob').glob(os.path.join(PUB, '*', 'changes.xml')))
+    feeds = sorted(os.path.relpath(p, PUB) for p in __import__('glob').glob(os.path.join(PUB, '*', 'changes.xml')))
     for rel in feeds:
         p = os.path.join(PUB, rel)
         if not os.path.exists(p): bad.append('missing feed ' + rel); continue

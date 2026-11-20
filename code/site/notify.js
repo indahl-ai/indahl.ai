@@ -321,7 +321,7 @@ export const JS = `(function () {
 `;
 
 // ------------------------------------------------------------------------------------------------ the door
-const STATIC = { '/calendar.ics': 'text/calendar; charset=utf-8', '/newsletter/feed.xml': 'application/atom+xml; charset=utf-8', '/changelog.xml': 'application/atom+xml; charset=utf-8',
+const STATIC = { '/calendar.ics': 'text/calendar; charset=utf-8', '/changelog.xml': 'application/atom+xml; charset=utf-8',
   '/feeds.opml': 'text/x-opml; charset=utf-8' };
 export async function handleNotify(req, env, u, ctx, fetcher) {
   const p = u.pathname;

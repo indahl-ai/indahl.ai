@@ -30,7 +30,7 @@ def built_feeds():
     def h(p):
         try: return hashlib.sha256(open(p, 'rb').read()).hexdigest()[:16]
         except OSError: return None
-    for rel in ('newsletter/feed.xml', 'changelog.xml'):
+    for rel in ('changelog.xml',):
         x = h(os.path.join(PUB, rel))
         if x: out[SITE + '/' + rel] = x
     fe = h(os.path.join(H, 'feed-entries.html'))

@@ -149,6 +149,8 @@ def _good_name(n, kind):
 
 
 def load_brands():
+    # 20 Nov 2026 (the owner): brand pages killed, no per-organization pages; company/organisation/agency entities only had /brand pages, so none
+    return {}
     ent = json.load(open(ENT))
     out = {}
     for e in ent['entities']:

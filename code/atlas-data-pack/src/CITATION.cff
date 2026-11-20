@@ -15,5 +15,5 @@ identifiers:
     value: "10.5281/zenodo.24110654"
     description: "This version, 2026-11-10."
 url: "https://indahl.ai/atlas/data-pack"
-repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
+repository-code: "https://github.com/indahl-ai/indahl.ai"
 keywords: [data centers, power plants, electricity prices, carbon intensity, OpenStreetMap, EIA, eGRID, GeoJSON]

@@ -52,14 +52,14 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 
 - MODEL: https://indahl.ai/hermes/model
 - Papers table: https://indahl.ai/hermes/model/papers
-- Code: https://github.com/Heuremen-LLC/indahl.ai
+- Code: https://github.com/indahl-ai/indahl.ai
 - MLCommons: https://mlcommons.org
 - MLPerf results messaging guidelines: https://github.com/mlcommons/policies/blob/master/MLPerf_Results_Messaging_Guidelines.adoc
 - Correction or removal form: https://indahl.ai/correction
 
 ## Notes on the data
 
-The files in `json/` are the files the MODEL page links, unchanged. The page also links the scripts that recompute each row from the MLCommons files, and those scripts are not in this pack. They are in the code folder at https://github.com/Heuremen-LLC/indahl.ai.
+The files in `json/` are the files the MODEL page links, unchanged. The page also links the scripts that recompute each row from the MLCommons files, and those scripts are not in this pack. They are in the code folder at https://github.com/indahl-ai/indahl.ai.
 
 The papers table on the MODEL papers page and the live model-claim rounds are not in this pack. The papers table has no data file, and the live rounds are a feed that the page reloads every 30 seconds.
 

@@ -3,8 +3,8 @@
 Heuremen LLC · https://indahl.ai/qia
 
 Tools to check IBM Quantum calibration figures before a run and after it. Your files are opened read-only and never changed. Reports go
-to a separate folder. Run on saved files, the checker sends nothing anywhere. Three parts do go online, each only when you run it: the
-`--pull` option and step 1 below contact IBM with your own saved account, the YO reader downloads the model from Hugging Face, and
+to a separate folder. Run on saved files, the checker sends nothing anywhere. Two parts do go online, each only when you run it: the
+`--pull` option and step 1 below contact IBM with your own saved account, and
 `t1t2-check` submits a job on your IBM account. Python 3.9 or later.
 
 ## Install the checker on its own
@@ -34,20 +34,11 @@ Add `[ibm]` to pull records with your own IBM account: `pip install "qia-check[i
 3. Read your write-up against the Faults: `python -m faultsguards faults`
 4. Give each reading a check block before it goes in a paper: `check-block/`
 
-## YO
-
-YO is our small model trained on IBM calibration records. It reads a record and flags stale and zero entries. On each run, the exact answer
-computed by code is printed beside YO's, so any disagreement shows. Use the code answer as the record of truth. YO reads eight qubits at a
-time and needs at least eight qubits with a T1, a T2 and their dates. Model: https://indahl.ai/downloads
-
-`python yo/yo_audit.py record.json --model indahl/YO` on Apple silicon (mlx-lm), or `--fused indahl/YO` elsewhere (transformers).
-
 ## What is here
 
 - `qia_check.py`: before and after checks, standard library only
 - `TESTED.md`: how this package was tested, with results
 - `START_HERE.html`: this guide as a page
-- `yo/`: YO's record reader
 - `faultsguards/`: the Standards as a Python package, with the PDFs
 - `t1t2-check/`: same-job T1 and T2 measurement on your account
 - `check-block/`: the check block and its commit gate
@@ -59,9 +50,8 @@ time and needs at least eight qubits with a T1, a T2 and their dates. Model: htt
 - QIA: https://indahl.ai/qia
 - List of studies: https://indahl.ai/qia/list
 - Key: https://indahl.ai/qia/key
-- Code: https://github.com/Heuremen-LLC/indahl.ai
+- Code: https://github.com/indahl-ai/indahl.ai
 - Standards on PyPI: https://pypi.org/project/faultsguards/
-- YO: https://indahl.ai/downloads
 
 ## Terms
 

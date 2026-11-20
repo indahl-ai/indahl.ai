@@ -6,7 +6,7 @@ authors:
 version: 1.1.1
 date-released: "2026-11-02"
 url: "https://indahl.ai/darkwave/kit"
-repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
+repository-code: "https://github.com/indahl-ai/indahl.ai"
 references:
   - type: dataset
     title: "A Readout's Kick Is a Turn: data and code"

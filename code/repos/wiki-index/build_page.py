@@ -409,7 +409,7 @@ if reps:
     parts.append(f'<p>Repeats. {txt}</p>')
 
 parts.append('<p class="meta">Named here and want to answer a row? <a href="/respond?u=wiki-all">Respond</a></p>')
-parts.append('<p class="meta">Plan, code and trend history for this page are public: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/wiki">wiki</a>. '
+parts.append('<p class="meta">Plan, code and trend history for this page are public: <a href="https://github.com/indahl-ai/indahl.ai/tree/main/code/wiki">wiki</a>. '
              'The plan was committed before any comparison on this page was read. A first scout reading of population, of the homepage figures and of the DSA '
              'member-state table (the Finland repeat and the Wikispecies figure that is not a whole thousand) came before it, and the plan says so. '
              f'Every number on this page comes from the reading of {E(read_stamp(L["updated"]))}. The desk reads its sources again about once a week and puts '

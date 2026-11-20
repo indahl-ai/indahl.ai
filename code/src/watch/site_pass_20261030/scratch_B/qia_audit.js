@@ -24,7 +24,7 @@
       f.appendChild(fb); box.appendChild(f);
     }
     var p = document.createElement('p'); p.className = 'bench-note';
-    p.textContent = 'Counts are for each processor’s newest saved record. Restamps compare consecutive saved records entry by entry for value and date. Updated ' + d.updated + ' UTC. Plan, script and recount: github.com/Heuremen-LLC/indahl.ai/tree/main/code/mirror';
+    p.textContent = 'Counts are for each processor’s newest saved record. Restamps compare consecutive saved records entry by entry for value and date. Updated ' + d.updated + ' UTC. Plan, script and recount: github.com/indahl-ai/indahl.ai/tree/main/code/mirror';
     box.appendChild(p);
   }).catch(function () { box.textContent = 'The audit could not be read just now.'; });
 })();

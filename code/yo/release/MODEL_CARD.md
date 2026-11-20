@@ -63,7 +63,7 @@ Defined after the data:
 
 This model is seed 44 of three training runs on the same plan, data and settings. Seed 44 was fixed in the plan before any data was built, seed 45 was planned before it was trained, and seed 46 was added to the plan after the seed 45 readings were seen. All three were scored once on the same 426 records. Stale qubits found in the whole-window records were 905, 928 and 920 of 928 (YO v2: 403), and the record audit was 0.990, 0.990 and 0.992 (YO v2: 0.961). Qubits flagged that were not stale were 1, 25 and 8, in 1, 4 and 2 of 390 audit items. CANNOT_TELL items given another verdict were 5, 24 and 11 of 100, and verdict scores were 390, 375 and 385 of 400 (YO v2: 377). This model has the fewest false flags and forced verdicts of the three, and also finds the fewest stale qubits over all audit items (1,127 of 1,172, against 1,165 and 1,164). The figures above are this adapter's. Another seed gave the different counts listed here, and three seeds are a small sample.
 
-The plan was committed before any data was built. Plan, code and every reading: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/yo . The results table: https://indahl.ai/iris/lab
+The plan was committed before any data was built. Plan, code and every reading: https://github.com/indahl-ai/indahl.ai/tree/main/code/yo . The results table: https://indahl.ai/iris/lab
 
 ## Live
 

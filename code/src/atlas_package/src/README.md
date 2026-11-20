@@ -108,8 +108,7 @@ That DOI always points to the newest version on Zenodo. Each version there also 
 - SEAT: https://indahl.ai/seat
 - SUPPORT: https://indahl.ai/support
 - CHANGE: https://indahl.ai/change
-- Code: https://github.com/Heuremen-LLC/indahl.ai
-- Data on Hugging Face: https://indahl.ai/downloads
+- Code: https://github.com/indahl-ai/indahl.ai
 - OpenStreetMap: https://www.openstreetmap.org/copyright
 - Epoch AI: https://epoch.ai/data/ai-data-centers
 - EIA-861: https://www.eia.gov/electricity/data/eia861/

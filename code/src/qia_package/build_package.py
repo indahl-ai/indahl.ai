@@ -1,5 +1,5 @@
 """build_package.py: assembles the QIA Research Package from public sources into dist/qia-research-package/ and zips it.
-Only public files go in: our own code folders on github.com/Heuremen-LLC/indahl.ai, the faultsguards release from PyPI, YO's reader, our PDFs.
+Only public files go in: our own code folders on github.com/indahl-ai/indahl.ai, the faultsguards release from PyPI, our PDFs.
 Refuses if any file names a local path, a key file or a token variable with a value."""
 import os, shutil, re, zipfile, hashlib, urllib.request, html, json
 B = os.path.expanduser('~/bones-forge/'); H = os.path.dirname(os.path.abspath(__file__)); D = H + '/dist/qia-research-package'
@@ -8,7 +8,7 @@ shutil.rmtree(H + '/dist', ignore_errors=True); os.makedirs(D)
 def cp(src, dst): os.makedirs(os.path.dirname(D + '/' + dst), exist_ok=True); shutil.copy(src, D + '/' + dst)
 for f in ('qia_check.py', 'README.md', 'CITATION.cff', 'TESTED.md'): cp(H + '/src/' + f, f)
 cp(B + 'public_mirror/indahl.ai/LICENSE.txt', 'LICENSE.txt')
-cp(B + 'yo/release/yo_audit.py', 'yo/yo_audit.py')
+# 20 Nov 2026: YO is out of the package (its model was on Hugging Face, which is gone)
 for f in ('run_check.py', 'PLAN.md', 'README.md', 'requirements.txt'): cp(PUB + 't1t2-check/' + f, 't1t2-check/' + f)
 CB = B + 'iris_package/dist/iris-research-package/check-block'   # 2 Nov: the cleaned check block, built and tested in the IRIS package
 assert os.path.isdir(CB), 'build the IRIS package first'
@@ -24,9 +24,6 @@ pj = json.load(urllib.request.urlopen('https://pypi.org/pypi/faultsguards/json',
 whl = [u for u in pj['releases'][v] if u['filename'].endswith('.whl')][0]; get(whl['url'], 'faultsguards/' + whl['filename'])
 assert hashlib.sha256(open(D + '/faultsguards/' + whl['filename'], 'rb').read()).hexdigest() == whl['digests']['sha256'], 'wheel hash differs from PyPI'
 get('https://heuremen.org/faults.pdf', 'faultsguards/faults.pdf'); get('https://heuremen.org/guards.pdf', 'faultsguards/guards.pdf')
-open(D + '/yo/README.md', 'w').write('# YO\n\nHeuremen LLC. YO reads an IBM calibration record and flags stale and zero entries. The exact answer computed by code is printed beside it.\n\n'
-    'Model: https://indahl.ai/downloads install mlx-lm            # Apple silicon\npython yo_audit.py record.json --model indahl/YO\n\n'
-    'pip install transformers torch  # elsewhere\npython yo_audit.py record.json --fused indahl/YO\n```\n\nEvery result: https://indahl.ai/iris/lab\n')
 # START_HERE.html from README.md, with the logo
 md = open(H + '/src/README.md').read(); body = []
 for blk in md.split('\n\n'):

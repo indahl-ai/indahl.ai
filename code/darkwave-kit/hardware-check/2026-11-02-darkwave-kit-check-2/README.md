@@ -24,6 +24,6 @@ Read after the result (defined after the data, from a recount of the raw arrays 
   in this folder the transpiler merges one correction into a neighbouring rz, so they show one fewer. The total angle added per target is the same.
 - The residual (corrected minus idle) is wrapped to one turn and not unwrapped near an expected value. This does not move the medians.
 - The drift line in the results needs the study's 31 October table, published at
-  https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction/run/data (fresh_kicks_ibm_kingston.json).
+  https://github.com/indahl-ai/indahl.ai/tree/main/code/readout-correction/run/data (fresh_kicks_ibm_kingston.json).
 
 Bands: 95 % bootstrap over targets, 2,000 resamples, seed 41. QPU time: 20 s and 9 s.

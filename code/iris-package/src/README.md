@@ -61,20 +61,19 @@ with open("replies.jsonl") as f, open("scored.jsonl", "w") as out:
 - `TESTED.md`: how the package was tested, on what, with the results, and what was not tested
 - `faultsguards/`: the Standards as a Python package, with the PDFs
 - `check-block/`: the check block and its commit gate
-- `faultsbench/`: the scorer and the planted items of our Standards bench, with the synthetic check that runs the scorer on planted worlds. Run `python synth.py` from inside `faultsbench/`. The prompts and the runner are in the repository: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench
+- `faultsbench/`: the scorer and the planted items of our Standards bench, with the synthetic check that runs the scorer on planted worlds. Run `python synth.py` from inside `faultsbench/`. The prompts and the runner are in the repository: https://github.com/indahl-ai/indahl.ai/tree/main/code/iris/faultsbench
 - `parser-check/`: `replycheck.py` regenerates replies from an lm-evaluation-harness task and writes each reply beside what each filter extracted, so the replies can be read in full. Run `python replycheck.py --help` for the named arguments. Output goes to `--out` (default `./replycheck_out`). It needs `pip install mlx-lm lm-eval` on Apple silicon.
 - `LICENSE.txt`, `CITATION.cff`
 
-Our other IRIS code, such as the round scorers, the training scripts and the run drivers, is in the repository at https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris and is not copied here because it depends on our own folders and data.
+Our other IRIS code, such as the round scorers, the training scripts and the run drivers, is in the repository at https://github.com/indahl-ai/indahl.ai/tree/main/code/iris and is not copied here because it depends on our own folders and data.
 
 ## Links
 
 - IRIS: https://indahl.ai/iris
 - List of studies: https://indahl.ai/iris/list
 - Key: https://indahl.ai/iris/key
-- Code: https://github.com/Heuremen-LLC/indahl.ai
+- Code: https://github.com/indahl-ai/indahl.ai
 - Standards on PyPI: https://pypi.org/project/faultsguards/
-- Data and models: https://indahl.ai/downloads
 
 ## Terms
 

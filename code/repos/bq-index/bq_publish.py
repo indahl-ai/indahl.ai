@@ -7,7 +7,7 @@ import heuremen_kit as K
 if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('bigquery: plan not committed'); sys.exit(0)
 SDK = '/opt/homebrew/share/google-cloud-sdk/bin'; GC = SDK + '/gcloud'; BQ = SDK + '/bq'; PROJECT = open(os.path.join(H, 'PROJECT')).read().strip() if os.path.exists(os.path.join(H, 'PROJECT')) else 'heuremen-llc-data'; DS = 'heuremen_public'
 PUB = os.path.expanduser('~/bones-forge/public_mirror/indahl.ai/code')
-TERMS = 'Heuremen LLC public data. Free to read, run and cite with attribution. Use to train machine learning models is not permitted. Source: github.com/Heuremen-LLC/indahl.ai, plans in code/SLUG/PLAN.md. https://indahl.ai'
+TERMS = 'Heuremen LLC public data. Free to read, run and cite with attribution. Use to train machine learning models is not permitted. Source: github.com/indahl-ai/indahl.ai, plans in code/SLUG/PLAN.md. https://indahl.ai'
 def run(cmd, to=300): return subprocess.run(cmd, capture_output=True, text=True, timeout=to)
 def legal(k): return re.sub(r'[^A-Za-z0-9_]', '_', k.replace('.', '__'))[:128] or 'col'
 def clean_file(src, dst):

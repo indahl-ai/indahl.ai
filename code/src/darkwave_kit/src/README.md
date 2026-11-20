@@ -37,7 +37,7 @@ We tested the kit on ibm_kingston on 2 November 2026 under plans committed and p
   prints before you trust a target's value.
 
 Brackets are 95 % bootstrap bands over the target qubits. Every number was recomputed from the raw arrays with separate code. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
-https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/darkwave-kit/hardware-check
+https://github.com/indahl-ai/indahl.ai/tree/main/code/darkwave-kit/hardware-check
 
 Version 1.1.1 (13 November 2026), this one, is version 1.1 with three changes and the same measurement and correction code: a target
 whose idle coherence is exactly 0 no longer crashes the printout after the job has run (its coherence prints as n/a); a paid submit
@@ -91,7 +91,7 @@ are in the study's own format, show the size of the turn we saw, and cannot be u
 
 - Darkwave: https://indahl.ai/darkwave
 - Data and code of the study: https://doi.org/10.5281/zenodo.23843468
-- Code: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/readout-correction
+- Code: https://github.com/indahl-ai/indahl.ai/tree/main/code/readout-correction
 - QIA Research Package, checks on the calibration record before and after a run: https://indahl.ai/qia/package
 
 ## Terms

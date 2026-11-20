@@ -10,19 +10,19 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/reproduce/reproduce-c71e9ef99b6f.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/reproduce/reproduce-8c4a77056ee5.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/8adc58f8e99db1f3104d0875047795373186a6ad/claude-plugins/src/reproduce/scripts/reproduce.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '8c4a77056ee5d6b81b446e03dc7fc049b3b929d2466cf9c844cf2f9db4fca7ef')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/reproduce/scripts/reproduce.py (sha256 c71e9ef99b6fcc4c72d64d1ea4565250d16b0a2b4720eb4b6188b6d945a554e4).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/8adc58f8e99db1f3104d0875047795373186a6ad/claude-plugins/src/reproduce/scripts/reproduce.py (sha256 8c4a77056ee5d6b81b446e03dc7fc049b3b929d2466cf9c844cf2f9db4fca7ef).
 
 
 # Reproduce an indahl.ai headline
 
-Script: `$HOME/.cache/indahl-plugins/reproduce/reproduce-c71e9ef99b6f.py` (Python 3.9 or later and git).
+Script: `$HOME/.cache/indahl-plugins/reproduce/reproduce-8c4a77056ee5.py` (Python 3.9 or later and git).
 
-1. `python3 "$HOME/.cache/indahl-plugins/reproduce/reproduce-c71e9ef99b6f.py" list` shows every desk with a kit, whether its inputs are included or fetched
+1. `python3 "$HOME/.cache/indahl-plugins/reproduce/reproduce-8c4a77056ee5.py" list` shows every desk with a kit, whether its inputs are included or fetched
    and verified, and the sha256 its output must have.
-2. `python3 "$HOME/.cache/indahl-plugins/reproduce/reproduce-c71e9ef99b6f.py" run <desk>` fetches only that kit folder from
+2. `python3 "$HOME/.cache/indahl-plugins/reproduce/reproduce-8c4a77056ee5.py" run <desk>` fetches only that kit folder from
    github.com/indahl-ai/indahl.ai (a sparse checkout into ./indahl-reproduce), prints the commit and the command, and runs nothing.
 3. This executes downloaded code. Show the user the commit, the kit's README.md and what run.py does, say what it needs (most kits need
    numpy; some fetch their inputs from the original source and verify them by sha256), and ask before running. Only after a clear yes

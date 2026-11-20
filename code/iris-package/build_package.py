@@ -1,5 +1,5 @@
 """build_package.py: assembles the IRIS Research Package from public sources into dist/iris-research-package/ and zips it.
-Only public files go in: our own code folders on github.com/Heuremen-LLC/indahl.ai, the faultsguards release from PyPI, the Faults and Guards PDFs.
+Only public files go in: our own code folders on github.com/indahl-ai/indahl.ai, the faultsguards release from PyPI, the Faults and Guards PDFs.
 Refuses if any file names a local path, a key file, a token, an email address or an internal label, or if the README links anywhere off the allowed list.
 Builds locally only. It does not deploy, push or send anything."""
 import os, shutil, re, zipfile, hashlib, urllib.request, html, json, subprocess, sys
@@ -45,7 +45,7 @@ for f in ('items.json', 'score.py', 'synth.py'): cp(IR + 'faultsbench/' + f, 'fa
 cp(H + '/src/replycheck.py', 'parser-check/replycheck.py')
 open(D + '/faultsbench/README.md', 'w').write('# Faults and Guards bench: scorer and planted items\n\nHeuremen LLC. `items.json` holds the planted items, each with its own truth. `score.py` scores replies written as `out/<model>/<arm>.jsonl` '
     '(arms bare, bare_copy and guard, one JSON object per line with id, raw and done_reason) and writes `results.json`. `synth.py` runs the scorer on planted worlds and asserts the expected outcomes. Run it from inside this folder, because it reads `items.json` and imports `score.py` from the current folder.\n\n'
-    '```\ncd faultsbench\npython synth.py\n```\n\nThe prompts (`items.py`), the runner and the plan are in the repository: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/faultsbench\n')
+    '```\ncd faultsbench\npython synth.py\n```\n\nThe prompts (`items.py`), the runner and the plan are in the repository: https://github.com/indahl-ai/indahl.ai/tree/main/code/iris/faultsbench\n')
 def get(u, dst):
     os.makedirs(os.path.dirname(D + '/' + dst), exist_ok=True)
     open(D + '/' + dst, 'wb').write(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'heuremen-package/1.0'}), timeout=60).read())
@@ -82,7 +82,7 @@ for r, _, fs in os.walk(D):
         if m: raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains {m.group(0)!r}')
         m = INTERNAL.search(t)
         if m and ('/check-block/' in p or p.endswith(('replycheck.py', 'README.md'))): raise AssertionError(f'REFUSED: {os.path.relpath(p, D)} contains internal wording {m.group(0)!r}')
-ALLOWED = re.compile(r'^https://(indahl\.ai/iris(/list|/key|/package)?|github\.com/Heuremen-LLC/indahl\.ai(/tree/main/code/[\w./-]+)?|pypi\.org/project/(faultsguards|iris-check)/|huggingface\.co/indahl)$')
+ALLOWED = re.compile(r'^https://(indahl\.ai/iris(/list|/key|/package)?|github\.com/indahl-ai/indahl\.ai(/tree/main/code/[\w./-]+)?|pypi\.org/project/(faultsguards|iris-check)/)$')
 for f in ('README.md', 'TESTED.md', 'faultsbench/README.md', 'CITATION.cff'):
     t = open(D + '/' + f).read()
     for u in re.findall(r'https://[^\s)"`>]+', t): assert ALLOWED.match(u), f'REFUSED: {f} links to {u}'

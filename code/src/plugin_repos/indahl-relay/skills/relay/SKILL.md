@@ -11,9 +11,9 @@ Show the user the commands before running them the first time.
 
 ```bash
 F="$HOME/.cache/indahl-plugins/relay/relay-9d2e36720036.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/54b52d2598b41cb7bd08dd192b45d3fee6d17b90/pinned/46c113e5fedc/claude-plugins/src/relay/scripts/relay.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0')" "$F.part" && mv "$F.part" "$F"; }
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl/54b52d2598b41cb7bd08dd192b45d3fee6d17b90/pinned/46c113e5fedc/claude-plugins/src/relay/scripts/relay.py (sha256 9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/46c113e5fedcd0c5292224491ad34de86d2c3af1/claude-plugins/src/relay/scripts/relay.py (sha256 9d2e36720036b69f1ecb857405e4c2067b4137c8db716827579a8e54c8cb63f0).
 
 
 Data sent: none. The plugin runs locally and sends nothing anywhere unless a stage you write sends it.

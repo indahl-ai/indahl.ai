@@ -19,7 +19,7 @@ Each entry gives the source as the OY pages state it, with the dates found in th
 - The schools are the private nonprofit baccalaureate colleges of the federal directory. The directory puts them in two Carnegie 2021 classes, Arts and Sciences focus and Diverse fields.
 - Federal ID and class: the federal IPEDS directory of the National Center for Education Statistics, U.S. Department of Education, https://nces.ed.gov/collegenavigator/ . The page states: Class from the 2021 Carnegie classification in the federal IPEDS directory. The pages state no separate terms for the class.
 - Schools whose pages we also read in full are marked in `read_in_full_label`, and the note beside the label is ours. They were read on 28 October 2026.
-- Scripts: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/oy
+- Scripts: https://github.com/indahl-ai/indahl.ai/tree/main/code/oy
 
 ## Not in this pack
 

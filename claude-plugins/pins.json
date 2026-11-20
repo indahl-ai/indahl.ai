@@ -15,9 +15,9 @@
   "url": "https://raw.githubusercontent.com/indahl-ai/indahl.ai/c9dc1f1f2107df3bac082d97d6e1a7bf4d89fd59/claude-plugins/src/fsck/scripts/fsck.py"
  },
  "prereg/scripts/prereg.py": {
-  "commit": "744bcd22548a29dcdc5a261477faccaeebc6938d",
-  "sha256": "c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d",
-  "url": "https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py"
+  "commit": "f8e5be688dd0738d53d1299f836fbfde7ec36857",
+  "sha256": "cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090",
+  "url": "https://raw.githubusercontent.com/indahl-ai/indahl.ai/f8e5be688dd0738d53d1299f836fbfde7ec36857/claude-plugins/src/prereg/scripts/prereg.py"
  },
  "qia-calibration/scripts/qia_check.py": {
   "commit": "8eb90a0f63bc694ccc6b53af485d1731b7a20956",

@@ -7,7 +7,7 @@ sys.path.insert(0, '.'); import hahn as R
 RUNS = [('ibm_kingston','run 1','kingston_run1'),('ibm_kingston','run 2','kingston_run2'),('ibm_marrakesh','run 1','marrakesh_run1'),
         ('ibm_marrakesh','run 2','marrakesh_run2'),('ibm_fez','run 1','fez_run1'),('ibm_fez','run 2','fez_run2'),('ibm_fez','clock 1','fez_clock1'),
         ('ibm_fez','clock 2','fez_clock2'),('ibm_pittsburgh','run 1','pittsburgh'),('ibm_phoenix','run 1','phoenix'),
-        ('ibm_kingston','fresh record','kingston_fresh'),('ibm_boston','run 1','boston')]
+        ('ibm_kingston','fresh record','kingston_fresh'),('ibm_boston','run 1','boston'),('ibm_marrakesh','fresh record','marrakesh_fresh')]
 PAT = re.compile(r'median ([\d.]+) \[([\d.]+), ([\d.]+)\] over (\d+) qubits -> (\w+)\s+\(below stated (\d+)\)')
 val = {}
 for chip, run, tag in RUNS:
@@ -32,4 +32,4 @@ for k, name in ((1, 'FIXED'), (2, 'FREE')):
     print(f"  {name}: {' -> '.join(f'{val[p][k]:.3f}' for p in pts)} at {' / '.join(f'{val[p][0]:.1f}' for p in pts)} h; decline first to last {first - last:+.3f}; floor 2 x {spread:.3f} = {2 * spread:.3f} -> {out}")
 print('  Points at 8 and 16 h were not run.')
 d = {t: abs(v[1] - v[2]) for t, v in val.items()}; t = max(d, key=d.get)
-print(f'FIT MODEL: largest |planned - free| over the twelve runs {d[t]:.3f} ({t})')
+print(f'FIT MODEL: largest |planned - free| over the thirteen runs {d[t]:.3f} ({t})')

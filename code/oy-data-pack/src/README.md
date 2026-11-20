@@ -49,7 +49,7 @@ Check the pack with `python verify.py`. It recounts the rows of every file, comp
 ## Links
 
 - OY: https://indahl.ai/oy
-- Code and scripts: https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/oy
+- Code and scripts: https://github.com/indahl-ai/indahl.ai/tree/main/code/oy
 - Correction or removal form: https://indahl.ai/correction
 - Federal IPEDS directory, College Navigator: https://nces.ed.gov/collegenavigator/
 

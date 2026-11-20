@@ -28,7 +28,7 @@ Nothing was committed, deployed or posted. ledger.py, ship.sh and indahl-ai/buil
 - E-9 fixed. state_s2.json and state_s3.json known_good now name what the round S1 check covers (arc_challenge and hellaswag on GPT-2, the plain-prompt gsm8k generation path on Qwen1.5-1.8B) and what it does not (mmlu, boolq, openbookqa, piqa, social_iqa, winogrande, gsm8k_cot, bbh_cot_fewshot, every chat-template run).
 - E-10 fixed. The live paragraph names EleutherAI lm-evaluation-harness 0.4.13 through mlx-lm 0.32.2 on Apple silicon, bf16 weights, and says variants with and without the chat template or few-shot turns are run where the card does not say.
 - E-11 fixed. state_s1.json: "All runs have ended. One run, IFEval chat, failed with an error and returned no result (ROUND_S1.md addendum 5)."
-- E-12 fixed. The live paragraph links github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/claims_stack, and live.js adds the same link beside Respond in every round. The folder lands there once the mirror is synced (item 4 above).
+- E-12 fixed. The live paragraph links github.com/indahl-ai/indahl.ai/tree/main/code/iris/claims_stack, and live.js adds the same link beside Respond in every round. The folder lands there once the mirror is synced (item 4 above).
 
 ## Vendor statements (mlperf_index and the MODEL sections of build_site.py)
 

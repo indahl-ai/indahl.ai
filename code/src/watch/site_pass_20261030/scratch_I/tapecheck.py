@@ -25,7 +25,7 @@ diff = [e['n'] for e in E_sorted if e['n'] not in lm or any(lm[e['n']].get(k) !=
 print('local vs live diffs:', diff, 'local count', len(loc))
 # 3 leaves from public GitHub for chosen entries
 import random
-GH = 'https://raw.githubusercontent.com/Heuremen-LLC/indahl.ai/main/code/tape/leaves/%d.json'
+GH = 'https://raw.githubusercontent.com/indahl-ai/indahl.ai/main/code/tape/leaves/%d.json'
 def merkle(leaves):
     lv = [sha(b'\x00' + ('%s\t%s' % (l, h)).encode()) for l, h in sorted(leaves)]
     if not lv: return sha(b'')

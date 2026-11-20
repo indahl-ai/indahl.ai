@@ -4,6 +4,7 @@
 
 ## Paper and data
 - [A Readout Is Not an Idle (PDF)](https://heuremen.org/a-readout-is-not-an-idle.pdf)
+- [A Readout's Kick Is a Turn (PDF)](https://heuremen.org/a-readouts-kick-is-a-turn-arxiv-submitted.pdf)
 - [Zenodo record](https://doi.org/10.5281/zenodo.23662284)
 - [What We Measured](https://heuremen.org/what-we-measured)
 - [Technical Summary](https://heuremen.org/technical-summary)

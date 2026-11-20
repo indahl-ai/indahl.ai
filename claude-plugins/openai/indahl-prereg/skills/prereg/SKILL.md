@@ -10,17 +10,17 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/prereg/prereg-c0b541c68b40.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/prereg/prereg-cc689b7a8acb.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl.ai/f8e5be688dd0738d53d1299f836fbfde7ec36857/claude-plugins/src/prereg/scripts/prereg.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/744bcd22548a29dcdc5a261477faccaeebc6938d/claude-plugins/plugins/prereg/scripts/prereg.py (sha256 c0b541c68b4045fe6e0e2bc85e51ed055d4a5bcc223e78b79ff1d41906db904d).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl.ai/f8e5be688dd0738d53d1299f836fbfde7ec36857/claude-plugins/src/prereg/scripts/prereg.py (sha256 cc689b7a8acb322d445d164d10e2cd0ab67b4610ef7d649a5ed52cc055fd0090).
 
 
 Data sent: the owner/name of the repository you check goes to the GitHub REST API (api.github.com) to read its public push activity. Nothing else leaves the machine, and no token is sent unless the user set one.
 
 # prereg
 
-Script: `$HOME/.cache/indahl-plugins/prereg/prereg-c0b541c68b40.py` (Python 3.9 or later and git). Plan and amendments: plans/prereg in
+Script: `$HOME/.cache/indahl-plugins/prereg/prereg-cc689b7a8acb.py` (Python 3.9 or later and git). Plan and amendments: plans/prereg in
 github.com/indahl-ai/indahl.ai (claude-plugins/).
 
 1. **Seal** the plan files: `python3 prereg.py seal PLAN.md analysis.py --tolerance 120 --kind wrapper`. It refuses files with uncommitted

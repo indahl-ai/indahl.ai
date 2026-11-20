@@ -22,7 +22,7 @@ from removed_ids import load as load_removed
 
 ROOT = LG.ROOT
 SRC = 'sagar/site/sagar_rows.json'
-REMOVED_FILE = 'indahl-ai/_by_author.json'
+REMOVED_FILE = 'indahl-ai/removed_by_author.json'
 E = html.escape
 
 

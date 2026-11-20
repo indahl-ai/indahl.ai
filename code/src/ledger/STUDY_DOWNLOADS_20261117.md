@@ -54,7 +54,7 @@ carry arXiv ids (papers revised / dead links); they are desk measurements, kept 
 - Feed entries carry study pages (one entry per study page), not list rows: they are the web pages, kept.
 
 ## Plan (what changes)
-1. Worker-only data: build_site.py writes public/_studies/{qia,iris,sagar}.json (filtered by indahl-ai/_by_author.json).
+1. Worker-only data: build_site.py writes public/_studies/{qia,iris,sagar}.json (filtered by indahl-ai/removed_by_author.json).
    worker.js answers 404 to any public request for /_studies/*, the three list.json paths and the list packs. api.js `studies()` reads
    /_studies/<division>.json through env.ASSETS (internal, not routed through the public handler). push_public.sh excludes _studies.
 2. The /qia/list search: list.js no longer downloads the List. It asks the worker for one page at a time,
@@ -70,7 +70,7 @@ carry arXiv ids (papers revised / dead links); they are desk measurements, kept 
 ## Done (17 Nov 2026, local only; nothing deployed, pushed or uploaded)
 - What the MCP path reads now: indahl-ai/api.js `studies()` reads `/_studies/<qia|iris|sagar>.json` through `env.ASSETS` (internal binding,
   never routed through the public handler). build_site.py writes those three files on every build from qia_leads/matrix_page/list.json,
-  iris_index/matrix_page/iris_list.json and sagar/site/list.json, each filtered by indahl-ai/_by_author.json.
+  iris_index/matrix_page/iris_list.json and sagar/site/list.json, each filtered by indahl-ai/removed_by_author.json.
 - worker.js answers 404 (all hosts) to /_studies/*, /(qia|iris|sagar)/list.(json|csv) and the list packs; /record.json now redirects to /qia/list.
 - /qia/list search: public/qia/list.js calls GET /qia/list/rows (indahl-ai/listrows.js, 50 rows a page plus the code and month options,
   same search and #anchor rules), so the browser never holds the whole List. Unit-tested in node on the real 2,585 rows.

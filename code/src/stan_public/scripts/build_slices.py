@@ -13,7 +13,7 @@ L=json.load(open(B+'/qia_leads/matrix_page/list.json'))['studies']
 try: L+= [dict(x,anchor='') for x in json.load(open(B+'/iris_index/matrix_page/iris_list.json'))['studies']]
 except Exception: pass
 rem=set()
-for p in (B+'/ledger/_at_request.json',B+'/qia_leads/REMOVED_ON_REQUEST.json'):
+for p in (B+'/ledger/removed_at_request.json',B+'/qia_leads/REMOVED_ON_REQUEST.json'):
     d=json.load(open(p)); rem|={x.lower() for x in (d['ids'] if isinstance(d,dict) else [y.get('doi') or y.get('id') or '' for y in d]) if x}
 gl={g['link'] for g in gold}; gids={aid(g['link']) for g in gold if aid(g['link'])}; gdoi={doi_of(g['link']) for g in gold if doi_of(g['link'])}
 nm=lambda t:re.sub(r'[^a-z0-9]+',' ',t.lower()).strip(); gt={nm(g['study']) for g in gold}

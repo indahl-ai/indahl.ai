@@ -49,7 +49,7 @@ def clean(t): return html.unescape(re.sub(r'<[^>]+>',' ',t or '')).strip()
 gold=json.load(open(S+'/data/gold_split.json'))['items']
 L=json.load(open(B+'/qia_leads/matrix_page/list.json'))['studies']
 rem=set()
-for p in (B+'/ledger/_at_request.json',B+'/qia_leads/REMOVED_ON_REQUEST.json'):
+for p in (B+'/ledger/removed_at_request.json',B+'/qia_leads/REMOVED_ON_REQUEST.json'):
     d=json.load(open(p)); rem|={x.lower() for x in (d['ids'] if isinstance(d,dict) else [y.get('doi') or y.get('id') or '' for y in d]) if x}
 def removed(s):
     k=[s['anchor'].lower() if s.get('anchor') else '', (doi_of(s['link']) or ''), 'arxiv-'+(aid(s['link']) or '#')]

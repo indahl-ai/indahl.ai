@@ -6,7 +6,7 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 find . -path ./.git -prune -o -type f -size +50M -print | sed 's#^\./##' | sort > SKIPPED_LARGE.txt
 [ -s SKIPPED_LARGE.txt ] || rm -f SKIPPED_LARGE.txt
 { [ -f SKIPPED_LARGE.txt ] && while read -r f; do echo "/$f"; done < SKIPPED_LARGE.txt; echo ".DS_Store"; } > .gitignore
-G=(-c core.hooksPath=/dev/null -c user.name=the owner -c user.email=349448817+claude-owner@users.noreply.github.com)   # the global readcheck hook is for readings, not for a backup repo
+G=(-c core.hooksPath=/dev/null -c "user.name=Heuremen LLC" -c user.email=349448817+indahl-ai@users.noreply.github.com)   # the global readcheck hook is for readings, not for a backup repo
 cok=1; git add -A && { git diff --cached --quiet || git "${G[@]}" commit -q -m "archive $(date -u +%FT%TZ)
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" || cok=0; }

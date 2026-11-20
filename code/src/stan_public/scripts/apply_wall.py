@@ -19,7 +19,7 @@ held=set()
 for d in dirs:
     for f in os.listdir(B+'/qia_leads/'+d): held.add(re.sub(r'^arxiv_','',f).rsplit('.',1)[0].lower())
 rem=set()
-for p in (B+'/ledger/_at_request.json',B+'/qia_leads/REMOVED_ON_REQUEST.json'):
+for p in (B+'/ledger/removed_at_request.json',B+'/qia_leads/REMOVED_ON_REQUEST.json'):
     d=json.load(open(p)); rem|={x.lower() for x in (d['ids'] if isinstance(d,dict) else [y.get('doi') or y.get('id') or '' for y in d]) if x}
 gl={g['link'] for g in gold}; gids={aid(g['link']) for g in gold if aid(g['link'])}; gdoi={doi_of(g['link']) for g in gold if doi_of(g['link'])}
 nm=lambda t:re.sub(r'[^a-z0-9]+',' ',t.lower()).strip(); gt={nm(g['study']) for g in gold}

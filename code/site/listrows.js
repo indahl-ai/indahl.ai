@@ -2,7 +2,7 @@
 // study on). The /qia/list page no longer downloads the whole List: its script (public/qia/list.js) asks GET /qia/list/rows for one page
 // at a time, with the same search, code filter, month filter and #anchor jump it had. The rows come from public/_studies/qia.json, read
 // through the ASSETS binding (worker.js refuses any public request for /_studies/). build_site.py writes that file from the List record,
-// filtered by indahl-ai/_by_author.json.
+// filtered by indahl-ai/removed_by_author.json.
 export const PER = 50;
 const byCode = (a, b) => a.localeCompare(b, undefined, { numeric: true });
 

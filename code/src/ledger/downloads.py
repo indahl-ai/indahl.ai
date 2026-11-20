@@ -10,7 +10,7 @@ Heuremen LLC, 11 Nov 2026 (the owner: the /qia/list.json download held two entri
              - every zip opens and its .sha256 sidecar matches its bytes, a desk pack's results/<desk>_outcomes.csv equals the served <desk>_outcomes.csv
              - each List pack holds the published list.json, list.csv rows, references.bib entries
              - the QIA Research Package holds every file it was made from, as that file reads now
-             - nothing listed in ledger/_at_request.json is in the served list.json files or the List packs
+             - nothing listed in ledger/removed_at_request.json is in the served list.json files or the List packs
 Desk packs and packages (11 Nov) have input maps and rebuild when an input changes. Held on purpose: run bundles under */runs/ and newsletter issues (frozen records)."""
 import os, sys, re, json, glob, time, zipfile, hashlib, subprocess, csv, io, shutil, importlib.util
 
@@ -31,7 +31,7 @@ def copy_rows():
             if q.startswith(PUB + '/'): rows.append((os.path.relpath(q, PUB), k, v['canonical']))
     return rows
 
-REMOVED = json.load(open(L + '/_at_request.json')) if os.path.exists(L + '/_at_request.json') else {'ids': []}
+REMOVED = json.load(open(L + '/removed_at_request.json')) if os.path.exists(L + '/removed_at_request.json') else {'ids': []}
 LISTPACKS = {}   # 17 Nov 2026, the owner: one public list per desk; no study-list downloads (a copy already downloaded keeps a removed study on). (was qia and iris: the List packs are no longer built, checked or served)
 
 def qia_pkg_map(zf):

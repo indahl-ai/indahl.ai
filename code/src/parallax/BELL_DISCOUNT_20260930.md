@@ -323,7 +323,7 @@ sign. But the deciding fact is the *shape* of the scatter: the one run nearest z
 trio (+200 ns) and the one run nearest zero in the RNG trio (02_31, "realigned/cleaned up") are
 each single outliers inside groups whose other two members read clearly negative -- there is no
 config-driven trend, just within-group noise on the same order as between-group noise. A real
-timing artifact would monotonically track the added/ 200 ns; a real RNG artifact would
+timing artifact would monotonically track the added/removed 200 ns; a real RNG artifact would
 move together across all three RNG-trio runs since they share the same XOR'd-in classical-RNG
 change; neither happens. The blind pair is the only internally tight group, but at n=2 it cannot
 carry the call on its own, and its mean is not an outlier from the other two groups' overlapping

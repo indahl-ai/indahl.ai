@@ -210,7 +210,7 @@ def main():
     studies, dropped, review, cands = build()
     # remove-at-request gate
     try:
-        rem = json.load(open(os.path.expanduser("~/bones-forge/ledger/_at_request.json")))["ids"]
+        rem = json.load(open(os.path.expanduser("~/bones-forge/ledger/removed_at_request.json")))["ids"]
     except Exception: rem = []
     studies = [s for s in studies if s["anchor"] not in rem and s["link"].replace("https://doi.org/", "") not in rem]
     json.dump({"note": "Ecology and evolution datasets on Dryad with released files, indexed from the record metadata and file list. A classification for indexing, not an assessment. Records with defense, military or intelligence funding are not listed.",

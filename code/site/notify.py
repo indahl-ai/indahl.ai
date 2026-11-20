@@ -235,15 +235,14 @@ def follow_page(desk_feeds, cal_desks, names):
     cl = ''.join('<li><a href="/%s">%s</a>: <a href="/%s/calendar.ics">calendar.ics</a></li>' % (s, E(names.get(s, s.upper())), s) for s in cal_desks)
     return ('<section class="legal">'
             '<p>Every way to follow indahl.ai. None of them needs an account.</p>'
-            '<h2 id="email">Email</h2><p>The sign-up form at the foot of every page sends the weekly newsletter every Tuesday, news of new desks and new data, and an email when an outcome changes on the chosen desks. To pick desks, use <a href="/alerts">the email updates page</a>. Every email has a one-click unsubscribe.</p>'
+            '<h2 id="email">Email</h2><p>The sign-up form at the foot of every page sends news of new desks and new data, and an email when an outcome changes on the chosen desks. To pick desks, use <a href="/alerts">the email updates page</a>. Every email has a one-click unsubscribe.</p>'
             '<h2 id="device">Notifications on this device</h2><p>A browser or phone can show a short notification when an outcome changes: the desk, the value before and now, and a link. Press the button to turn it on for every desk, or turn it on for one desk from that desk&rsquo;s page. The browser asks for permission first. On an iPhone or iPad, add indahl.ai to the Home Screen first, then open it from there.</p>'
             + _np_all() +
-            '<h2 id="calendar">Calendar</h2><p>One calendar holds the weekly newsletter and the release dates published by the sources behind each desk, each event with a link to the source&rsquo;s own schedule page. Only dates the source states are listed.</p>'
+            '<h2 id="calendar">Calendar</h2><p>One calendar holds the release dates published by the sources behind each desk, each event with a link to the source&rsquo;s own schedule page. Only dates the source states are listed.</p>'
             '<ul class="nt-list"><li><a href="webcal://indahl.ai/calendar.ics">Subscribe in a calendar app</a> &middot; <a href="/calendar.ics">calendar.ics</a></li></ul>'
             '<p>One desk at a time:</p><ul class="nt-list">' + cl + '</ul>'
             '<h2 id="feeds">Feeds</h2><p>Feeds work in any feed reader. Each one announces new entries through the public WebSub hub at pubsubhubbub.appspot.com, so a reader that supports it gets them without asking again and again.</p>'
             '<ul class="nt-list"><li>New studies, desks and bench rounds: <a href="/feed.xml">feed.xml</a> (Atom) &middot; <a href="/feed.json">feed.json</a> (JSON Feed)</li>'
-            '<li>The weekly newsletter: <a href="/newsletter/feed.xml">newsletter/feed.xml</a></li>'
             '<li>Every desk and organisation feed in one file, for one import into a feed reader: <a href="/feeds.opml" download>feeds.opml</a></li></ul>'
             '<p>Each desk posts to its own feed only when its headline makes a material change under the desk&rsquo;s rule:</p><ul class="nt-list nt-cols">' + dl + '</ul>'
             '<p>Each organisation the desks measure has a feed of the desks with rows about it, linked from its page under <a href="/brand">brand pages</a>, at /brand/&lt;name&gt;/changes.xml.</p>'

@@ -15,7 +15,7 @@ I = 'https://indahl.ai'
 SAMPLE_PDF = '/qia-2026-002.pdf'   # 20 Nov 2026 (the owner): the sample is a calibrated run report; the IBM bill stays on indahl.ai/qia only
 SAMPLE_DOI = 'https://doi.org/10.5281/zenodo.23169755'
 CONTACT = I + '/contact'
-PRICES = {'check': 'From $1,500', 'audit': '', 'monitor': '$2,500 a month', 'pilot': '$2,500 for 30 days'}   # 18 Nov 2026: the owner's decided sheet    # the owner's numbers go here, e.g. 'From $X'
+PRICES = {'check': '', 'audit': '$500', 'monitor': '$2,500 a month', 'pilot': '$2,500 for 30 days'}   # 18 Nov 2026: the owner's decided sheet    # the owner's numbers go here, e.g. 'From $X'
 
 
 def price(k):
@@ -133,9 +133,7 @@ OUTCOMES = '''<div class="out">
 </div>'''
 
 OFFERS = f'''<div class="grid">
-<div class="card"><p class="k">Calibration check</p><h3>One study against the vendor&rsquo;s calibration</h3>
-<p>Each figure the study relies on is checked against the calibration record its jobs ran under, with an interval and one of four outcomes per line.</p><p class="price">{price('check')}</p><p class="fine">From $1,200 for academic and individual buyers. Card payment accepted.</p></div>
-<div class="card"><p class="k">Full study audit</p><h3>A study read in full and recounted</h3>
+<div class="card"><p class="k">Full audit of a research paper</p><h3>A paper read in full and recounted</h3>
 <p>Every claim quoted, located and recomputed from the released data or rerun on hardware, delivered as a line-item report with an evidence package.</p><p class="price">{price('audit')}</p></div>
 <div class="card"><p class="k">Monitoring</p><h3>Calibration watched over time</h3>
 <p>The processors a team depends on, read against their published calibration on a fixed schedule, with each deviation reported as it lands.</p><p class="price">{price('monitor')}</p><p class="fine">Billed monthly, cancel any month. Or $25,500 a year prepaid (15% off); $23,000 if signed during the pilot. A prepaid year is not refundable and cannot be canceled.</p></div>
@@ -232,7 +230,7 @@ HOME = f'''
 '''
 
 SERVICES = f'''
-<div class="hero wrap"><p class="eyebrow">Services</p><h1>Calibration checks, full audits and monitoring.</h1>
+<div class="hero wrap"><p class="eyebrow">Services</p><h1>Full audits and monitoring.</h1>
 <p class="lede">A mutual NDA comes first; each engagement is then scoped and quoted under a statement of work. Paid, collaborative and pro bono research engagements are considered.</p>
 <div class="btns"><a class="btn" href="{SAMPLE_PDF}">See a sample report</a></div></div>
 <section class="soft"><div class="wrap">{OFFERS}</div></section>
@@ -273,7 +271,7 @@ LISTED = f'''
 <h3>Correcting an entry</h3><p>Corrections and removal requests go through <a href="{I}/correction">indahl.ai/correction</a> and are answered by email within five business days. A correct correction changes the entry.</p>
 <h3>Replying to an entry</h3><p>Authors may send a reply through the same form. With the authors&rsquo; permission, the reply is shown with the entry.</p>
 <h3>Commercial relationships</h3><p>Any commercial relationship connected to a listed entry is flagged on that entry, under the <a href="{I}/conflict-of-interest#relationships">conflict-of-interest policy</a>.</p>
-<h3>Going further</h3><p>Teams that want their own processors or studies measured line by line can commission a calibration check or a full audit.</p>
+<h3>Going further</h3><p>Teams that want their own processors or studies measured line by line can commission a full audit.</p>
 <p><a class="btn" href="/services">Services</a></p>
 </div></section>
 '''
@@ -333,7 +331,7 @@ PAGES = {
     '/': ('Quantum Idle Audit | Independent checks of quantum hardware claims', 'Independent checks of quantum hardware claims against the vendor’s own calibration, with line-item reports and evidence anyone can rerun.', HOME),
     '/findings': ('Findings | Quantum Idle Audit', 'IBM published calibration figures set beside measured hardware values, with intervals, dates and how to check both sides.', FINDINGS),
     '/calibrations': ('Calibrations | Quantum Idle Audit', 'Corrections applied on IBM hardware against an uncorrected reference: what each returns, its cost and status.', CALIBS),
-    '/services': ('Services | Quantum Idle Audit', 'Calibration checks, full study audits and monitoring of quantum hardware, scoped under a statement of work after a mutual NDA.', SERVICES),
+    '/services': ('Services | Quantum Idle Audit', 'Full audits of research papers and monitoring of quantum hardware, scoped under a statement of work after a mutual NDA.', SERVICES),
     '/method': ('Method | Quantum Idle Audit', 'How a Quantum Idle Audit reading is made: the stated value, the record the job ran under, intervals and four outcomes.', METHOD),
     '/examples': ('Examples | Quantum Idle Audit', 'Worked examples of a Quantum Idle Audit check by the work you do, with real runs on IBM processors and the outcome printed first.', EXAMPLES),
     # '/corrections' archived 19 Nov 2026 (the owner): back with a reliable private update pipeline (~/bones-forge/archive/qia_corrections_page_20261119)

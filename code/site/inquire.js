@@ -1,16 +1,16 @@
-// inquire.js -- the indahl.ai engagement inquiry gate (23 Oct 2026; his: "it's your turn to jump through hoops").
+// inquire.js -- the indahl.ai inquiry gate (23 Oct 2026).
 // POST /inquire from the form on /contact. 24 Oct 2026: engagement inquiries need the signed WorkOS session from gate.js and an
 // accepted NDA (the version and SHA-256 served at /nda.txt); without both, nothing is stored. Privacy requests and security reports
-// now use the same form and the same checks. Filters: organisational email only (personal mail
+// now use the same form and the same checks. Filters: organizational email only (personal mail
 // domains refused), a honeypot field, a minimum fill time, field length limits, and a per-visitor rate limit. Accepted inquiries are
 // stored in the private KV namespace INDAHL_INQUIRIES (key inq:<ISO time>:<random>); only the country is kept, never the raw IP.
-// Read them on the Mac with: python3 ~/bones-forge/indahl-ai/inquiries.py
+// Read them with the inquiries reader (internal).
 
 import { EmailMessage } from 'cloudflare:email';
 import { session, agreement, FREEMAIL } from './gate.js';
 
 const FIELDS = { reason: 300, name: 120, email: 160, organisation: 160, role: 120, scope: 3000, budget: 40, timeline: 40, referral: 300 };
-// 19 Nov 2026 (the owner): the reason is free text now; the subject line still flags privacy and security requests by keyword.
+// 19 Nov 2026: the reason is free text now; the subject line still flags privacy and security requests by keyword.
 
 async function sha(s) {
   const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
@@ -35,7 +35,7 @@ export async function handleInquiry(req, env, render) {
     rec[k] = v;
   }
   const kind = /privacy/i.test(rec.reason || '') ? 'privacy' : /security|vulnerab/i.test(rec.reason || '') ? 'security' : 'engagement';
-  const engagement = true;   // 26 Oct 2026 (his word): one inquiry form for everything; every reason goes through the agreements and the identity check
+  const engagement = true;   // 26 Oct 2026: one inquiry form for everything; every reason goes through the agreements and the identity check
   let who = null, ag = null;
   if (engagement) {
     ag = await agreement(req, env);
@@ -49,7 +49,7 @@ export async function handleInquiry(req, env, render) {
   if (!engagement && f.get('privacy') !== 'yes') return reject('Please confirm you have read the privacy notice.');
   const m = rec.email.toLowerCase().match(/^[^\s@]+@([a-z0-9.-]+\.[a-z]{2,})$/);
   if (!m) return reject('Please give a valid email address.');
-  if (engagement && FREEMAIL.has(m[1])) return reject('Please write from your organisation’s email address. Inquiries from personal email services are not reviewed.');
+  if (engagement && FREEMAIL.has(m[1])) return reject('Please write from your organization’s email address. Inquiries from personal email services are not reviewed.');
   const ip = req.headers.get('cf-connecting-ip') || '';
   const rk = 'rate:' + await sha(ip + '|' + new Date().toISOString().slice(0, 13));
   const n = Number(await env.INDAHL_INQUIRIES.get(rk) || 0);
@@ -82,7 +82,7 @@ async function notify(env, rec, key) {
     `Reason: ${rec.reason}`, `Referred by: ${rec.referral || '-'}`, (rec.agreements ? `AGREEMENTS: NDA v${rec.agreements.nda.version} and Privacy Notice ${rec.agreements.privacy.version} read to the end (Terms ${rec.agreements.terms.version}) and checked at ${rec.agreements.nda.accepted_at} by ${rec.agreements.nda.accepted_by}, ${rec.agreements.nda.title}, for ${rec.agreements.nda.organisation} (authority confirmed). Identity verified: ${rec.identity.verified_email} via ${rec.identity.method}.` : 'Agreements: not required for this reason'), '',
     'Scope, in their words:', rec.scope, '',
     `Approximate budget: ${rec.budget || 'not stated'}`, `Timeline: ${rec.timeline || 'not stated'}`, '',
-    `Stored as ${key}. Read all with: python3 ~/bones-forge/indahl-ai/inquiries.py`,
+    `Stored as ${key}. Read all with the inquiries reader.`,
   ].join('\r\n');
   const raw = [
     `From: Indahl inquiries <${env.INQUIRY_FROM}>`, `To: <${env.INQUIRY_TO}>`, `Reply-To: ${h(rec.email)}`,

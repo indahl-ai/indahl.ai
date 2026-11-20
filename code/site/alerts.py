@@ -351,8 +351,7 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
             'Each line says how often we check it, and so how soon an email can follow a change, or that it is sent when a new version is published. A division box covers the division page and every desk in it.</p>'
             '<p>You can have alerts and updates as they happen, in one daily digest or in one weekly digest on Tuesdays. Several changes found together come in one email.</p>'
             '<p>For every box, we email a confirmation link first and send nothing else until you open it. Every email has a link to unsubscribe, '
-            'and every alert has a link to change what you get. Each outcome desk&rsquo;s changes are also on its own feed, for example <a href="/airq/changes.xml">/airq/changes.xml</a>, '
-            'and each <a href="/brand">brand page</a> offers the rows about that organization.</p>'
+            'and every alert has a link to change what you get. Each outcome desk&rsquo;s changes are also on its own feed, for example <a href="/airq/changes.xml">/airq/changes.xml</a>.</p>'
             + signup_form('', listing) + '</section>')
     PAGES['/alerts'] = page('/alerts', 'Email Updates | Heuremen LLC', 'New desks and new data, and an email when an outcome or the published data changes on the indahl.ai desks and divisions you follow, with a confirmation link first for alerts.',
                             body, hero_slim('Email Updates'))

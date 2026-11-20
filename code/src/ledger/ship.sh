@@ -60,7 +60,7 @@ python3 "$B/qia_leads/matrix_page/render_list.py" --check   # 11 Nov: refuse if 
 # python3 "$L/receipts.py" check | tail -1   # 10 Nov: every ledger row has its receipt page and every receipt link on a served page resolves   # 30 Oct: every QIA calibrated row cites a kept file holding its number, or no ship   # 15 Nov 2026: receipts are internal, no public /r/ pages
 python3 "$B/indahl-ai/findable.py" --gate | tail -1   # 10 Nov: every served page's JSON-LD parses and each Dataset has the fields Google requires
 # python3 "$B/indahl-ai/corrections.py" --gate | tail -1   # 10 Nov: every corrections row links to a real file or commit, and its copy keeps the public-copy rules
-python3 "$B/indahl-ai/brands.py" --gate | tail -1   # 10 Nov: every brand-page number traces to a desk row or a ledger row
+: # 20 Nov 2026 (the owner): brand pages killed; no brand gate. python3 "$B/indahl-ai/brands.py" --gate   # 10 Nov: every brand-page number traces to a desk row or a ledger row
 python3 "$B/indahl-ai/entities.py" --gate | tail -1   # 10 Nov evening: every entity page traces its rows to a served page or a brand-page row; with the Follow links, each page is unchanged without them
 python3 "$B/indahl-ai/forecasters.py" --gate | tail -1   # 10 Nov: every /forecasters number traces to a desk feed or a ledger row, labels sit where the drawn intervals sit
 python3 "$B/indahl-ai/email_gate.py" | tail -1   # 10 Nov: no email address in any built site file (newsletter subscribers live only in the private KV)

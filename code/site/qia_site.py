@@ -15,7 +15,7 @@ I = 'https://indahl.ai'
 SAMPLE_PDF = '/qia-2026-002.pdf'   # 20 Nov 2026 (the owner): the sample is a calibrated run report; the IBM bill stays on indahl.ai/qia only
 SAMPLE_DOI = 'https://doi.org/10.5281/zenodo.23169755'
 CONTACT = I + '/contact'
-PRICES = {'check': '', 'audit': '$500', 'monitor': '$2,500 a month', 'pilot': '$2,500 for 30 days'}   # 18 Nov 2026: the owner's decided sheet    # the owner's numbers go here, e.g. 'From $X'
+PRICES = {'audit': '$500', 'monitor': '$2,500 a month', 'pilot': '$2,500 for 30 days'}   # 18 Nov 2026: the owner's decided sheet    # the owner's numbers go here, e.g. 'From $X'
 
 
 def price(k):

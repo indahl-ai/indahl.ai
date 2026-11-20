@@ -91,7 +91,7 @@ Heuremen LLC, ATLAS Data Pack, Zenodo, doi:10.5281/zenodo.23874305
 
 https://doi.org/10.5281/zenodo.23874305
 
-That DOI always points to the newest version on Zenodo. Each version there also has its own DOI. This version, 2026-11-10, is doi:10.5281/zenodo.24110654.
+That DOI always points to the newest version on Zenodo. Each version there also has its own DOI, shown on its Zenodo record.
 
 ## Links
 

@@ -249,3 +249,13 @@ body.qia{margin:0}
 .qia-facts dd{margin:0}
 /* copy not yet written or approved by Wayfinder: shown with a dashed outline until approved */
 .qia-ph{outline:1px dashed var(--qia-mid);outline-offset:3px;border-radius:2px}
+/* Examples, Findings, Services, Method (21 Nov 2026) */
+.qia-price{font:600 20px/1.2 var(--qia-mono);color:var(--qia-gold);margin:14px 0 0}
+.qia-price__terms{font-size:13px;color:var(--qia-mid);margin:6px 0 0}
+.qia-find__facts{margin-top:12px}
+.qia-find__facts div{font-size:14px}
+.qia-find__facts dd p{margin:0 0 6px}
+.qia-find__int{color:var(--qia-mid);font-size:13px}
+.qia-code{font:400 12.5px/1.5 var(--qia-mono);color:var(--qia-mid);overflow-wrap:anywhere}
+.qia-calib__row{scroll-margin-top:80px}
+.qia-section[id]{scroll-margin-top:72px}

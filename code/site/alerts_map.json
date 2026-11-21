@@ -3647,7 +3647,7 @@
 "cada": {
 "div": "atlas",
 "every": "checked about every 5 minutes, sent once a change holds for an hour",
-"every_min": 66,
+"every_min": 67,
 "mode": "update",
 "name": "CADA",
 "src": "rider",
@@ -3701,7 +3701,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3890,
+"every_min": 3903,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -3784,7 +3784,7 @@
 "hfsize": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 138,
+"every_min": 139,
 "mode": "outcome",
 "name": "HFSIZE",
 "src": "rider",
@@ -3802,7 +3802,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3760,
+"every_min": 3773,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -3896,7 +3896,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 622,
+"every_min": 624,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -3943,7 +3943,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 10 hours",
-"every_min": 571,
+"every_min": 572,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -3961,7 +3961,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 571,
+"every_min": 572,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -3970,7 +3970,7 @@
 "seat": {
 "div": "atlas",
 "every": "checked about every 15 minutes, sent once a change holds for an hour",
-"every_min": 79,
+"every_min": 80,
 "mode": "update",
 "name": "SEAT",
 "src": "rider",
@@ -3988,7 +3988,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 480,
+"every_min": 481,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -4015,7 +4015,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 571,
+"every_min": 572,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -4042,7 +4042,7 @@
 "time": {
 "div": "atlas",
 "every": "checked about every 5 minutes, sent once a change holds for an hour",
-"every_min": 66,
+"every_min": 67,
 "mode": "update",
 "name": "TIME",
 "src": "rider",
@@ -4051,7 +4051,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 480,
+"every_min": 481,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -4235,5 +4235,5 @@
 ]
 }
 },
-"tick_min": 2.16
+"tick_min": 2.17
 }

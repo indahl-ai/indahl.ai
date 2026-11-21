@@ -10,11 +10,11 @@ This kit recomputes the CAMPUS headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `3d7b820d2cc5db6491d51b4ad00800c1715035198a12b228be911dc34b6b1fde`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `fe00f96ae1cf9432b5f00c88ce28b57d4137cb116dad88789b416a50c5cf5c3f`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/campus/live.json served it at the feed stamp 20 Nov 23:47, read by us at 2026-11-21T00:13:38Z. The feed bytes had sha256 `11cf6efd1c739c660c65cf5d5df20421d6348f1fb634fc634f255d66603133e9`.
+The headline as the live feed https://indahl.ai/campus/live.json served it at the feed stamp 21 Nov 02:25, read by us at 2026-11-21T02:45:28Z. The feed bytes had sha256 `38329c4d723213e90b404c7c891144566734ab617921629d3312a41efe8d5d13`.
 
 - number: 267 of 305
 - value: 267
@@ -40,7 +40,7 @@ As the CAMPUS data pack lists them. Credit each source when using its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/reads.jsonl | 16,737,477 | `884041a9e1c1592bceb8eb37d0f516fdc761f26d129621677af6be8f8bde148b` |
+| data/reads.jsonl | 16,873,334 | `eaf975d8473dd712c15a8fbaedda90fa88a2dd66a3c48c5518c675fb1086e4e0` |
 
 ## Code
 

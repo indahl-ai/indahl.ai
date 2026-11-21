@@ -12,7 +12,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [AIRLINE](airline/) | included | `f32a4e777ddcb767a5d232aacfb62cb2fdaa988637a2dba251a24714e2230e58` |
 | [AIRQ](airq/) | fetch and verify | `a105a4e665f0c2eef3ebd8bd394bae4a764c41aefc25cd5db23ad288ac8a3aed` |
 | [CADENCE](cadence/) | included | `ef5f789c420e673298c1ff1cde1398ca11280f18262812a72e91a80b00df356e` |
-| [CAMPUS](campus/) | fetch and verify | `3d7b820d2cc5db6491d51b4ad00800c1715035198a12b228be911dc34b6b1fde` |
+| [CAMPUS](campus/) | fetch and verify | `fe00f96ae1cf9432b5f00c88ce28b57d4137cb116dad88789b416a50c5cf5c3f` |
 | [CENSUS](census/) | included | `43f7368f318b9aef23d0af04771a2eb2dcdbc8eb4e81455405b5762fdccc2f1b` |
 | [CHANGE](change/) | fetch and verify | `3da1b7f2707fa3cff0dab7ba2eb91494b96fadb45ee93ef03eeadccd7041c4a8` |
 | [CONE](cone/) | included | `3a3cc8410a5f9d20204e42be09f230296d0a5d27a7f22182b340590551e02201` |

@@ -26,7 +26,7 @@ def checks():
     except SystemExit as e: return None, 'sagar/intake_rows/CHECKS.md last entry incomplete (%s); no check block attached' % e
 def main(dry=False):
     c = json.load(open(os.path.join(ROOT, SRC))); rows = LG.load(); old = rows.get(RID)
-    snip = norm(c['sentence']); claim = ("SAGAR's set \"arXiv 2025, text on hand\": %d papers in the set so far; %d read by two independent readers in an order fixed before reading; %d set aside unread "
+    snip = norm(c['sentence']); claim = ("SAGAR's set \"arXiv 2025, text on hand\": %d papers in the set so far; %d read by a first reader and then a second reader, in an order fixed before reading; %d set aside unread "
                                           "(%d because they name Gaia or a third data release, %d by a rule fixed on each paper's identifier), as of %s" % (c['in_set'], c['read'], c['set_aside'], c['gaia_or_third_release'], c['by_identifier_rule'], c['at']))
     new = dict(id=RID, claim=claim, value=str(c['read']), lo=None, hi=None, unit='papers read (%d set aside unread)' % c['set_aside'], outcome='RECORD',
                source=dict(file=SRC, grep='"read": %d,' % c['read']), surfaces=[dict(surface='sagar', text=snip)], status='live')

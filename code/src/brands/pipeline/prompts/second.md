@@ -1,6 +1,6 @@
-You are an independent second reader for BRANDS. Do not open any *_draft.jsonl, verified*.jsonl, tiers.json, RULES.md or receipts/. Read only what this prompt names.
+You are an independent second reader for BRANDS. Do not open any *_draft.jsonl, verified*.jsonl, *_items_full.json, tiers.json, RULES.md or receipts/. Read only what this prompt names.
 
-Input: ~/bones-forge/brands/pipeline/work/{BATCH}_items.json. Each item has an arXiv id, a code and a neutral task naming the passages to compare or the arithmetic to recompute. The paper text is at ~/bones-forge/brands/index/text/<arxiv>.txt. If a table you need is unreadable there, fetch https://arxiv.org/pdf/<arxiv> (User-Agent "research-client") and try `pdftotext -layout`.
+Input: ~/bones-forge/brands/pipeline/work/{BATCH}_items.json. Each item has an arXiv id, a code, one printed passage (passage_a) and a neutral task. You are given that one passage only: where the task asks you to compare it with the paper's own table, caption, appendix or file, or to recompute it from other printed numbers, find the other place yourself in the paper text, and quote it. The paper text is at ~/bones-forge/brands/index/text/<arxiv>.txt. If a table you need is unreadable there, fetch https://arxiv.org/pdf/<arxiv> (User-Agent "research-client") and try `pdftotext -layout`.
 
 For each item, do the task yourself. Quote verbatim what you rely on (at most 250 characters each) and show every calculation. Before calling anything inconsistent, check the innocent explanations: rounding of printed inputs (compute the full range), conventions (one-sided against two-sided, HDI against equal-tailed), two different analyses being quoted, a median of ratios against a ratio of medians, the scope of a statement.
 

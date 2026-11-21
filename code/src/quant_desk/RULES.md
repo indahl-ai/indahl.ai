@@ -13,3 +13,11 @@ from the paper's own printed numbers: annualisation, cumulative return against p
 percentages, sums), F6 (text against the paper's own table, figure caption or appendix). F1 and F4 are drafted, kept off pages.
 Prose against prose is CANNOT_TELL. Severity tiers, the same as SAGAR: T1 arithmetic or typo, T2 contradiction, T3 sits in or sets a
 headline number. Every finding needs two readers: the draft agent and a blind second-reader agent.
+
+
+## 21 Nov 2026 (2026-11-21T04:21:32Z): what the second reader is given
+Dated line, ordered by the referee (OTHER DESKS: SAME CHANGE, 21 Nov 04:12Z) after her check of SAGAR's second reads.
+- Until now this desk's second reader was handed, with each item, the passage the first reader had paired with it, the first reader's tier and the first reader's quote. It judged them without seeing the first reader's verdict or working, but it did not find the place itself. No record made before this line may be called blind or independent.
+- All 748 existing records (verified and review) now carry `second_reader_saw: "pairing and tier"`, and their method label no longer says blind.
+- From the next second read launched, the second reader is given the printed passage and a neutral task only. The full item is kept in `work/<batch>_items_full.json` for the merge. Agreement needs matching verdicts at the same place; a matching verdict at a different place is logged as "agree, different place" and goes to review; a recompute with no paired place is counted on its own.
+- Backups of the pipeline, the prompts and the record files end in `.bak-20261121-secondinput`.

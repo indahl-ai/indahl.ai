@@ -3,7 +3,10 @@
 tick_bus rider. Each call advances the state machine without waiting:
   CUT    next 12 reachable papers -> index/batch_NN.json
   DRAFT  headless Sonnet agent (claude -p) drafts every cell -> index/batch_NN_draft.jsonl
-  SECOND headless Sonnet agent, blind, re-checks every draft finding (F2 non-convention, F3, F5, F6) -> work/batch_NN_second.jsonl
+  SECOND headless Sonnet agent re-checks every draft finding (F2 non-convention, F3, F5, F6) -> work/batch_NN_second.jsonl. Since 21 Nov 2026
+         (2026-11-21T04:21:32Z) it is given the printed passage and a neutral task only (work/batch_NN_items.json); the full item, with the
+         passage the first reader paired and its tier, stays in work/batch_NN_items_full.json for the merge. Before that it was shown the
+         pairing and the tier, so it was not blind to them (the referee, 21 Nov: OTHER DESKS: SAME CHANGE).
   MERGE  a finding is VERIFIED only when both agree (reader verdict matches, confidence medium or high) -> index/verified_auto.jsonl;
          disagreements -> work/review_queue.jsonl (the owner sees at most ~10 at a time)
 At most MAXJOBS agent jobs at once. PAUSED file stops it. Every step is a line in pipe.log."""
@@ -56,28 +59,62 @@ for pid_s, j in list(st['jobs'].items()):
     else:
         n = len(rows(os.path.join(P, 'work', j['batch'] + '_second.jsonl'))); b['second_rows'] = n; b['stage'] = 'second_done' if n else 'second_failed'
     log(f"DONE {j['stage']} {j['batch']} rows {n}"); del st['jobs'][pid_s]
+def _nrm(s): return ' '.join(str(s or '').split())
+def _page(t, q):
+    """page of the first place the quote sits in the text, by the [[PAGE n]] marks; None if it is not there word for word"""
+    nt = _nrm(t); i = nt.find(_nrm(q))
+    if i < 0 or not _nrm(q): return None
+    return len(re.findall(r'\[\[PAGE \d+\]\]', nt[:i])) or 1
+def _numtok(s): return {x for x in re.findall(r'\d+(?:\.\d+)?', re.sub(r'(?<=\d)[ ,](?=\d{3}\b)', '', str(s))) if len(x.replace('.', '')) >= 2}   # numbers of two or more digits, digit grouping removed
+def same_place(arxiv, passage_b, quotes):
+    """True: one of the second reader's quotes overlaps the passage the first reader paired, on the same page. False: none does.
+    None: the first reader paired no second passage (a recompute from several printed numbers), so there is no place to compare."""
+    pb = _nrm(passage_b)
+    if not pb: return None
+    import difflib
+    tp = os.path.join(I, 'text', arxiv + '.txt'); t_ = open(tp, encoding='utf-8', errors='replace').read() if os.path.exists(tp) else ''
+    pg_b = _page(t_, pb)
+    for q in quotes or []:
+        q = _nrm(q)
+        if not q: continue
+        m = difflib.SequenceMatcher(None, q, pb, autojunk=False).find_longest_match(0, len(q), 0, len(pb))
+        nq, nb = _numtok(q), _numtok(pb); shared = nq & nb   # a reader often condenses a table row, so shared numbers count as the same place: two of them, or one with three or more digits
+        if m.size >= max(12, int(0.5 * min(len(q), len(pb)))) or len(shared) >= 2 or any(len(x.replace('.', '')) >= 3 for x in shared):
+            pg_q = _page(t_, q)
+            if pg_b is None or pg_q is None or pg_q == pg_b: return True
+    return False
 # 2. merge batches whose second read is done
 for batch, b in st['batches'].items():
     if b.get('stage') != 'second_done': continue
-    items = {(x['item']): x for x in load(os.path.join(P, 'work', batch + '_items.json'), [])}
-    ver = 0; rev = 0
+    _full = os.path.join(P, 'work', batch + '_items_full.json'); _newrule = os.path.exists(_full)   # the full items file exists only for second reads launched under the 21 Nov rule
+    items = {(x['item']): x for x in load(_full if _newrule else os.path.join(P, 'work', batch + '_items.json'), [])}
+    _how = 'given the printed passage and a neutral task only' if _newrule else "shown the first reader's paired passage and tier"
+    ver = 0; rev = 0; diffplace = 0; noplace = 0
     for s in rows(os.path.join(P, 'work', batch + '_second.jsonl')):
         it = items.get(s.get('item'))
         if not it: continue
         rec = {'arxiv': it['arxiv'], 'code': it['code'], 'severity': it.get('severity'), 'draft_quote': it['draft_quote'],
                'reader_verdict': s.get('verdict'), 'reader_confidence': s.get('confidence'), 'reader_quotes': s.get('quotes'),
-               'reader_arithmetic': s.get('arithmetic'), 'batch': batch, 'date': time.strftime('%Y-%m-%d'), 'method': 'pipeline: draft agent + blind reader agent'}
-        if s.get('verdict') == MATCH[it['code']] and s.get('confidence') in ('high', 'medium'):
+               'reader_arithmetic': s.get('arithmetic'), 'batch': batch, 'date': time.strftime('%Y-%m-%d'), 'method': 'pipeline: draft agent + second reader agent (' + _how + ')', 'second_reader_saw': 'printed passage only' if _newrule else 'pairing and tier'}
+        _sp = same_place(it['arxiv'], it.get('passage_b'), s.get('quotes')) if _newrule else True   # under the old input the second reader was shown the pairing, so the place was the same by construction
+        rec['place'] = ('shown the pairing' if not _newrule else 'same place' if _sp else 'no paired place to compare' if _sp is None else 'different place')
+        _agree = s.get('verdict') == MATCH[it['code']] and s.get('confidence') in ('high', 'medium')
+        if _agree and _sp is False:   # 21 Nov 2026 (the referee): matching verdicts about different places are not agreement
+            rec['outcome'] = 'agree, different place'; diffplace += 1
+            open(os.path.join(P, 'work', 'review_queue.jsonl'), 'a').write(json.dumps(rec) + '\n'); rev += 1
+        elif _agree:
+            noplace += _sp is None
             open(os.path.join(I, 'verified_auto.jsonl'), 'a').write(json.dumps(rec) + '\n'); ver += 1
         elif s.get('verdict') not in ('HOLDS_CONSISTENT',):
             open(os.path.join(P, 'work', 'review_queue.jsonl'), 'a').write(json.dumps(rec) + '\n'); rev += 1
-    b['stage'] = 'merged'; b['verified'] = ver; b['to_review'] = rev; log(f'MERGE {batch}: verified {ver}, review {rev}, items {len(items)}')
+    b['stage'] = 'merged'; b['verified'] = ver; b['to_review'] = rev; log(f'MERGE {batch}: verified {ver}, review {rev}, items {len(items)} | second reader {_how}' + (f'; same verdict at a different place, not counted as agreement: {diffplace}; agreed with no paired place to compare: {noplace}' if _newrule else ''))
 # 3. launch work while there are free slots
 def free(): return MAXJOBS - len(st['jobs'])
 for batch, b in sorted(st['batches'].items()):
     if free() <= 0: break
     if b.get('stage') == 'drafted':
-        its = items_for(batch); save(os.path.join(P, 'work', batch + '_items.json'), its)
+        its = items_for(batch); save(os.path.join(P, 'work', batch + '_items_full.json'), its)   # kept for the merge; the second reader never opens it
+        save(os.path.join(P, 'work', batch + '_items.json'), [{k: x[k] for k in ('item', 'arxiv', 'code', 'task', 'passage_a')} for x in its])   # 21 Nov 2026 (the referee): the printed passage and the neutral task only
         if not its: b['stage'] = 'merged'; b['verified'] = 0; log(f'MERGE {batch}: no findings to second-read'); continue
         pid = launch('second', 'second.md', batch); st['jobs'][str(pid)] = {'batch': batch, 'stage': 'second'}; b['stage'] = 'second_running'
 for f in sorted(os.listdir(I)):   # orphans: a batch file with no draft that the state does not track

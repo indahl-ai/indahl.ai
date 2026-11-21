@@ -1,4 +1,4 @@
-First-pass desk audit for the quant desk (errata index of empirical quantitative-finance papers). Your output is a DRAFT. A blind second reader re-checks every PRESENT. Be conservative: PRESENT only when the paper itself shows it beyond doubt, CANNOT_TELL otherwise.
+First-pass desk audit for the quant desk (errata index of empirical quantitative-finance papers). Your output is a DRAFT. A second reader, given only the passage you quote and not your verdict or the place you paired it with, re-checks every PRESENT. Be conservative: PRESENT only when the paper itself shows it beyond doubt, CANNOT_TELL otherwise.
 
 Inputs:
 - ~/bones-forge/quant_desk/index/{BATCH}.json: 12 papers, newest first.

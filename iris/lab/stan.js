@@ -34,7 +34,7 @@
     var E = d.stan_e;
     if (E) {
       box.appendChild(h('h3', 'STAN-E, errata drafted by local models'));
-      box.appendChild(h('p', 'Each model is graded against findings that two independent readers confirmed. Confirmed papers so far: ' + E.verified_positive_papers + '. A hit is a confirmed finding the model also drafted.', 'meta'));
+      box.appendChild(h('p', 'Each model is graded against findings that a first reader marked and a second reader, shown the same passages, confirmed. Confirmed papers so far: ' + E.verified_positive_papers + '. A hit is a confirmed finding the model also drafted.', 'meta'));
       if (E.runs && E.runs.length) box.appendChild(table(['Run', 'Papers seen', 'Papers flagged', 'Confirmed papers seen', 'Hits', 'Recall, 95% interval', 'Unreadable replies'],
         E.runs.map(function (r) { return [r.model, r.papers_seen, r.papers_flagged, r.verified_positive_papers_seen, r.hits, iv(r.recall_wilson95), r.parse_fail]; })));
       if (E.running_now && E.running_now.length) box.appendChild(h('p', 'Running now: ' + E.running_now.map(function (j) { return j.model + ' on the ' + MACH[j.machine]; }).join(', ') + '.'));

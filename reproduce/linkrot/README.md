@@ -10,16 +10,16 @@ This kit recomputes the LINKROT headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `a68001ac446bea6ff9593871ffc5973bdd8316e9bf9c737be39e7873f3fd5858`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `be54d807a01527bc4203d4438ae4e6e1ffaf291dda0df72a0cd39e1e80b565c7`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 18 Nov 16:22, read by us at 2026-11-18T16:30:16Z. The feed bytes had sha256 `5be79c3ed9e411b9954b3bb8bc133376cb27c382325232ba9b23f36be69d1516`.
+The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 21 Nov 13:18, read by us at 2026-11-21T13:35:30Z. The feed bytes had sha256 `b2f5887d498673100d2f351e60a8768322649bad4266d447512f2cc3ea378389`.
 
 - number: 3.4%
-- value: 0.0339
-- interval: 0.0268 to 0.0429
-- outcome: CONSISTENT
+- value: 0.0344
+- interval: 0.0273 to 0.0434
+- outcome: CANNOT_TELL
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -38,8 +38,8 @@ As the LINKROT data pack lists them. Credit each source when using its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/links.json | 481,719 | `d45a86e5c8001b4513151f8ae6777d2a54cd8a90e0279a22c3965fb782b75e23` |
-| summary_linkrot.json | 13,656 | `5be79c3ed9e411b9954b3bb8bc133376cb27c382325232ba9b23f36be69d1516` |
+| data/links.json | 538,638 | `52bc78462931125525a853e196e832997a26024e2546962199de6a31daeb58fb` |
+| summary_linkrot.json | 14,084 | `b2f5887d498673100d2f351e60a8768322649bad4266d447512f2cc3ea378389` |
 
 ## Code
 

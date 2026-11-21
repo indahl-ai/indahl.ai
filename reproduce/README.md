@@ -22,7 +22,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [HFSIZE](hfsize/) | fetch and verify | `d3a8678dca1b26f272e6e8383330989010b904b2b957f190cb36e29f9b2461c5` |
 | [HPT](hpt/) | included | `6703a53c368adddd460f402959758e15a266a0a002b21edfbfb9961b371fe0f1` |
 | [LAUNCH](launch/) | fetch and verify | `9b86fccb7e97cdc034297acb756d8ece8d7d2f9d27e607b4c3f513b1a615c2ff` |
-| [LINKROT](linkrot/) | included | `a68001ac446bea6ff9593871ffc5973bdd8316e9bf9c737be39e7873f3fd5858` |
+| [LINKROT](linkrot/) | included | `be54d807a01527bc4203d4438ae4e6e1ffaf291dda0df72a0cd39e1e80b565c7` |
 | [NEO](neo/) | fetch and verify | `f736fda19153f7010fac276eaee4d36571bc6c475daefbfae636257d8c051f9f` |
 | [PKGINSTALL](pkginstall/) | fetch and verify | `50cd23a1327ebbdd6bf56db81e4b2200c5bb37460a70de0ef4d75659518d6baa` |
 | [PKGLICENSE](pkglicense/) | fetch and verify | `46ab84f4bef32aaa4d529cf50cf780da6697bf1850dab424d7115153b5766933` |

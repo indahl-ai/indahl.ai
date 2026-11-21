@@ -14,25 +14,25 @@
  "desk": "linkrot",
  "inputs": [
   {
-   "bytes": 481719,
+   "bytes": 538638,
    "gzip_added": true,
-   "modified": "2026-11-13T14:39:23Z",
+   "modified": "2026-11-20T14:44:22Z",
    "path": "data/links.json",
-   "sha256": "d45a86e5c8001b4513151f8ae6777d2a54cd8a90e0279a22c3965fb782b75e23",
+   "sha256": "52bc78462931125525a853e196e832997a26024e2546962199de6a31daeb58fb",
    "stored": "data/links.json.gz",
-   "stored_sha256": "3f0f1118940b8abe42b5f078d0a226469127c3e97137a07ca448e52de92c7bbe"
+   "stored_sha256": "78a08ba7a8850343ae24fda3eb38f9ce0104ccdcabd56e03078fa75a3d170b0d"
   },
   {
-   "bytes": 13656,
+   "bytes": 14084,
    "gzip_added": true,
-   "modified": "2026-11-18T16:22:15Z",
+   "modified": "2026-11-21T13:18:41Z",
    "path": "summary_linkrot.json",
-   "sha256": "5be79c3ed9e411b9954b3bb8bc133376cb27c382325232ba9b23f36be69d1516",
+   "sha256": "b2f5887d498673100d2f351e60a8768322649bad4266d447512f2cc3ea378389",
    "stored": "summary_linkrot.json.gz",
-   "stored_sha256": "f9608027a91cfaae20d49df1eff0fb4497c1d1c8288a911e0a2d5fc90cb2f570"
+   "stored_sha256": "f6e49bc0653035d0a770192afe536a675197df0857bd58b08ee656916dac8334"
   }
  ],
- "made": "2026-11-18T16:30:16Z",
+ "made": "2026-11-21T13:35:30Z",
  "mode": "inputs",
  "name": "LINKROT",
  "reference": [

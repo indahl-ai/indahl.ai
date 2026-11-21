@@ -1,17 +1,17 @@
 {
  "feed": "https://indahl.ai/linkrot/live.json",
- "feed_sha256": "5be79c3ed9e411b9954b3bb8bc133376cb27c382325232ba9b23f36be69d1516",
+ "feed_sha256": "b2f5887d498673100d2f351e60a8768322649bad4266d447512f2cc3ea378389",
  "headline": {
   "desk": "LINKROT",
   "display": "3.4%",
-  "hi": 0.0429,
+  "hi": 0.0434,
   "keys": [],
-  "lo": 0.0268,
-  "n": 67,
+  "lo": 0.0273,
+  "n": 68,
   "of": 1980,
-  "outcome": "CONSISTENT",
-  "value": 0.0339
+  "outcome": "CANNOT_TELL",
+  "value": 0.0344
  },
- "read_at": "2026-11-18T16:30:16Z",
- "stamp": "18 Nov 16:22"
+ "read_at": "2026-11-21T13:35:30Z",
+ "stamp": "21 Nov 13:18"
 }

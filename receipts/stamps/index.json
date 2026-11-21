@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-21T17:11:13Z",
+ "built_utc": "2026-11-21T17:34:25Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 61,
+   "commit": "7fd12afb492b6df182457807ceb5c5d85cb33ae9",
+   "files": 1830,
+   "id": "7fd12afb492b",
+   "json": "/receipts/stamps/release_7fd12afb492b.json",
+   "ledger_sha256": "231de4038d1d71404cbf013184613e5394fa14af6867c0042e3850988be64d6d",
+   "manifest_sha256": "2bce4f1a7fac716525dfce9d85067ef8feb7aa0d348a2317e3e6fd28b38dcf69",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-21T17:19:02Z",
+   "sha256": "2d5d596bb1332f57946e4a6b274710d6b4c2fcb1a7dc916b4e181d7cdf7c5e12",
+   "wayback": [],
+   "wayback_waiting": 59
+  },
   {
    "changed": 60,
    "commit": "adfbf71f1af7893d1ce119bfbd245013fcf7e213",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-21T17:05:54Z",
    "sha256": "87ba1d5012e03ad72895cfa1de9a026c5e940a2405bece51cde9b416e745fedf",
    "wayback": [],
-   "wayback_waiting": 59
+   "wayback_waiting": 25
   },
   {
    "changed": 90,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-21T16:55:51Z",
    "sha256": "0c053d00a3c60d3654f15acf774617b6373254f009385873e917dfdc48f6e5c3",
    "wayback": [],
-   "wayback_waiting": 45
+   "wayback_waiting": 27
   },
   {
    "changed": 95,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-21T16:21:57Z",
    "sha256": "9dfd9917ee4dc48d4660a181b9800967ab8b834fd1e9c0e12b0ff3a9aafc1820",
    "wayback": [],
-   "wayback_waiting": 32
+   "wayback_waiting": 25
   },
   {
    "changed": 53,

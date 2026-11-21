@@ -53,7 +53,7 @@ async function handle(req, env) {
     // 17 Nov 2026: quantumidleaudit.com, the Quantum Idle Audit business site (indahl-ai/qia_site.py builds public/_qiasite/)
     if (host === "quantumidleaudit.com" || host === "www.quantumidleaudit.com") {
       if (host === "www.quantumidleaudit.com" || u.protocol === "http:") return Response.redirect("https://quantumidleaudit.com" + u.pathname + u.search, 301);
-      const QS = { "/": "/_qiasite/", "/services": "/_qiasite/services", "/method": "/_qiasite/method", "/listed": "/_qiasite/listed", "/robots.txt": "/_qiasite/robots.txt", "/sitemap.xml": "/_qiasite/sitemap.xml", "/favicon.svg": "/_qiasite/favicon.svg", "/qia-2026-002-cover.jpg": "/_qiasite/qia-2026-002-cover.jpg", "/qia-2026-002.pdf": "/_qiasite/qia-2026-002.pdf" };
+      const QS = { "/": "/_qiasite/", "/console.css": "/_qiasite/console.css", "/heuremen-mark-mono-light.svg": "/_qiasite/heuremen-mark-mono-light.svg", "/services": "/_qiasite/services", "/method": "/_qiasite/method", "/listed": "/_qiasite/listed", "/robots.txt": "/_qiasite/robots.txt", "/sitemap.xml": "/_qiasite/sitemap.xml", "/favicon.svg": "/_qiasite/favicon.svg", "/qia-2026-002-cover.jpg": "/_qiasite/qia-2026-002-cover.jpg", "/qia-2026-002.pdf": "/_qiasite/qia-2026-002.pdf" };
       const p = /\.(jpg|svg|txt|xml|pdf)$/.test(u.pathname) ? u.pathname : (u.pathname.replace(/\.html$/, "").replace(/\/+$/, "") || "/");
       // 18 Nov 2026 (owner: "put a key on it"): /plan is the team's working plan; served only with the key (?k= once, then a cookie)
       if (p === "/plan") return new Response("Not found", { status: 404, headers: { "cache-control": "no-store" } });  // 18 Nov 2026: plan is local only

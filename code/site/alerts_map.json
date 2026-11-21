@@ -3674,7 +3674,7 @@
 "census": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 128,
 "mode": "outcome",
 "name": "CENSUS",
 "src": "rider",
@@ -3692,7 +3692,7 @@
 "cone": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 128,
 "mode": "outcome",
 "name": "CONE",
 "src": "rider",
@@ -3701,7 +3701,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3857,
+"every_min": 3849,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -3802,7 +3802,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3728,
+"every_min": 3721,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -3849,7 +3849,7 @@
 "neo": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 128,
 "mode": "outcome",
 "name": "NEO",
 "src": "rider",
@@ -3878,7 +3878,7 @@
 "pkginstall": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 128,
 "mode": "outcome",
 "name": "PKGINSTALL",
 "src": "rider",
@@ -3887,7 +3887,7 @@
 "pkglicense": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 146,
+"every_min": 145,
 "mode": "outcome",
 "name": "PKGLICENSE",
 "src": "rider",
@@ -3896,7 +3896,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 617,
+"every_min": 616,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -3934,7 +3934,7 @@
 "quake": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 128,
 "mode": "outcome",
 "name": "QUAKE",
 "src": "rider",
@@ -3943,7 +3943,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 566,
+"every_min": 565,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -3961,7 +3961,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 566,
+"every_min": 565,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -3988,7 +3988,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 476,
+"every_min": 475,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -3997,7 +3997,7 @@
 "solar": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 129,
+"every_min": 128,
 "mode": "outcome",
 "name": "SOLAR",
 "src": "rider",
@@ -4015,7 +4015,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 566,
+"every_min": 565,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -4051,7 +4051,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 476,
+"every_min": 475,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",

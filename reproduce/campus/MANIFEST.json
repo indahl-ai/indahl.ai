@@ -9,16 +9,16 @@
  "desk": "campus",
  "inputs": [
   {
-   "bytes": 11556708,
+   "bytes": 16737477,
    "gzip_added": true,
-   "modified": "2026-11-15T19:26:05Z",
+   "modified": "2026-11-20T23:57:07Z",
    "path": "data/reads.jsonl",
-   "sha256": "e90d9c18c5cae6f0a43fe6927e8eb34e052c3f2e6a4eb34096f653d9e8d17751",
+   "sha256": "884041a9e1c1592bceb8eb37d0f516fdc761f26d129621677af6be8f8bde148b",
    "stored": "data/reads.jsonl.gz",
-   "stored_sha256": "d23f28105cd1ad908c35ddd638fa703f46c595747332e607750f5d50638e940d"
+   "stored_sha256": "7cd392308743cfceb7f185520092e59d4db9ea884a16bd9204e4c3725b85d342"
   }
  ],
- "made": "2026-11-15T21:41:22Z",
+ "made": "2026-11-21T00:13:38Z",
  "mode": "fetch",
  "name": "CAMPUS",
  "reference": [

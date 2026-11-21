@@ -5499,3 +5499,63 @@ packs: P
 - P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
 - P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
 - P10: n/a: no rule set after the data
+
+## 2026-11-21 12:06 Zenodo sync: ATLAS Data Pack new version, version DOI doi:10.5281/zenodo.24403684 -> doi:10.5281/zenodo.24423534
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the record was versioned because the md5 of a file on the site differed from the md5 of the same file in its latest Zenodo version, so the none is the record against the site
+- II: n/a: no comparison between two runs
+- III: n/a: no signed difference is reported
+- V: holds: two records side by side, the DOI in the Zenodo publish response and the DOI written to ledger/zenodo_dois.json and zenodo_packs/dois.json, and the md5 of each uploaded file read back from the new version
+- VI: n/a: no interval outcome is claimed
+- R: holds: the DOI read from the Zenodo publish response on 2026-11-21 12:06
+- P1: n/a: no quoted text is added to any page
+- P2: holds: the DOI links to doi.org
+- P3: holds: record and file names as published
+- P4: holds: no cause named
+- P5: n/a: no intervals on this line
+- P6: holds: the line says which version holds the pack, nothing stronger
+- P7: holds: ledger rows edited before the page, release through ledger/ship.sh under site_lock
+- P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
+- P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
+- P10: n/a: no rule set after the data
+
+## 2026-11-21 12:09 FORECAST Data Pack rebuilt by ledger/downloads.py: zip size 13 KB -> 12 KB
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the pack was rebuilt because a hash of its inputs differed from the hash recorded when it was last made (ledger/pack_inputs.json), and its contents differ from the zip it replaces, so the none is the pack against its own inputs
+- II: n/a: no comparison between two runs, one file size read before and after
+- III: n/a: no signed difference is reported, a size is a level of one file
+- V: holds: two counts side by side, the zip was opened again and its sha256 sidecar read back (91016dfba6c5a096), size 12793 bytes
+- VI: n/a: no interval outcome is claimed
+- R: holds: size read from the file in public/ by tools/desk_pack.py sizes into tools/desk_packs/pack_sizes.json on 2026-11-21 12:09, the page prints that file
+- P1: n/a: no quoted text is added to any page
+- P2: holds: the size names its zip, linked beside it
+- P3: holds: pack name as built, file name as served
+- P4: holds: no cause named, a size and a link only
+- P5: n/a: no intervals on this line
+- P6: holds: the line says what the zip holds, nothing stronger
+- P7: holds: the pack.size row is edited before the surface, release through ledger/ship.sh under site_lock
+- P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
+- P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
+- P10: n/a: no rule set after the data
+
+## 2026-11-21 12:09 TIME Data Pack rebuilt by ledger/downloads.py: zip size 17 KB -> 16 KB
+packs: P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the pack was rebuilt because a hash of its inputs differed from the hash recorded when it was last made (ledger/pack_inputs.json), and its contents differ from the zip it replaces, so the none is the pack against its own inputs
+- II: n/a: no comparison between two runs, one file size read before and after
+- III: n/a: no signed difference is reported, a size is a level of one file
+- V: holds: two counts side by side, the zip was opened again and its sha256 sidecar read back (ca2ef446606b104d), size 16782 bytes
+- VI: n/a: no interval outcome is claimed
+- R: holds: size read from the file in public/ by tools/desk_pack.py sizes into tools/desk_packs/pack_sizes.json on 2026-11-21 12:09, the page prints that file
+- P1: n/a: no quoted text is added to any page
+- P2: holds: the size names its zip, linked beside it
+- P3: holds: pack name as built, file name as served
+- P4: holds: no cause named, a size and a link only
+- P5: n/a: no intervals on this line
+- P6: holds: the line says what the zip holds, nothing stronger
+- P7: holds: the pack.size row is edited before the surface, release through ledger/ship.sh under site_lock
+- P8: holds: rendered pages are read after build, check_ledger drift 0 is required before the ship completes
+- P9: holds: plain sentences, no semicolons, no AI statements, Heuremen LLC
+- P10: n/a: no rule set after the data

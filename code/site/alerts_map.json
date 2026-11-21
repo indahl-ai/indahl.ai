@@ -3896,7 +3896,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 624,
+"every_min": 623,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -4235,5 +4235,5 @@
 ]
 }
 },
-"tick_min": 2.17
+"tick_min": 2.16
 }

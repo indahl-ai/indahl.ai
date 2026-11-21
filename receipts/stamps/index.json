@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-20T21:27:09Z",
+ "built_utc": "2026-11-21T01:45:41Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 139,
+   "commit": "8d615e95b5c598c99002111e7ea03b22370a2187",
+   "files": 1805,
+   "id": "8d615e95b5c5",
+   "json": "/receipts/stamps/release_8d615e95b5c5.json",
+   "ledger_sha256": "b3b72a42309dfc9695f5bfed2eeaf5cda28e2011a6ea9fdc1ef642f672bb94d2",
+   "manifest_sha256": "9c0fac9a414da2c047668e17c9e5308345bde11294008f30bc0ff4dc34988f26",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-21T01:45:40Z",
+   "sha256": "0dc87fcf3896c8a4e4f151eb47e41947d26df1906751605124caecb592abee4a",
+   "wayback": [],
+   "wayback_waiting": 136
+  },
   {
    "changed": 143,
    "commit": "0ea96bf8c166236cba8b71762068d1c371f8f8d4",
@@ -236,7 +251,7 @@
      "url": "https://indahl.ai/iris/lab/runs"
     }
    ],
-   "wayback_waiting": 97
+   "wayback_waiting": 14
   },
   {
    "changed": 240,
@@ -768,7 +783,7 @@
      "url": "https://indahl.ai/plugins"
     }
    ],
-   "wayback_waiting": 807
+   "wayback_waiting": 796
   },
   {
    "changed": 417,
@@ -1029,7 +1044,7 @@
      "url": "https://indahl.ai/qia/list"
     }
    ],
-   "wayback_waiting": 255
+   "wayback_waiting": 254
   },
   {
    "changed": 1149,
@@ -14238,7 +14253,7 @@
    "released_at": "2026-11-10T21:26:47Z",
    "sha256": "8557ead26691345884abaf1681c095d2932efd6c6ee9c2bcf049f5acdca53b52",
    "wayback": [],
-   "wayback_waiting": 24
+   "wayback_waiting": 23
   },
   {
    "changed": 4429,

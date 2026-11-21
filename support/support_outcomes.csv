@@ -1,7 +1,7 @@
 path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,reason,wilson_lo,wilson_hi,products_tested
-/all,all,ABOVE,,,0.2424,0.1566,0.3417,429,104,0.1566,0.3417,,0.2043,0.2851,227
-/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1894,0.1438,0.2454,227,43,0.1438,0.2454,,,,
-/product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,ABOVE,,,0.0925,0.0613,0.1373,227,21,0.0613,0.1373,,,,
+/all,all,ABOVE,,,0.2419,0.1564,0.3377,430,104,0.1564,0.3377,,0.2038,0.2845,228
+/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1886,0.1431,0.2444,228,43,0.1431,0.2444,,,,
+/product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,ABOVE,,,0.0921,0.061,0.1367,228,21,0.061,0.1367,,,,
 /by_product/amazon-neptune,amazon-neptune,CANNOT_TELL,,,1.0,0.8513,1.0,22,22,0.8513,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/jira-service-management,jira-service-management,CANNOT_TELL,,,0.8571,0.4869,0.9743,7,6,0.4869,0.9743,TOO_WIDE_TO_RESOLVE,,,
 /by_product/jira-software,jira-software,CANNOT_TELL,,,0.8571,0.4869,0.9743,7,6,0.4869,0.9743,TOO_WIDE_TO_RESOLVE,,,

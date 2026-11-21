@@ -3701,7 +3701,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3840,
+"every_min": 3849,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -3802,7 +3802,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3712,
+"every_min": 3721,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -3896,7 +3896,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 614,
+"every_min": 616,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -3943,7 +3943,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 563,
+"every_min": 565,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -3961,7 +3961,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 563,
+"every_min": 565,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -3979,7 +3979,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 132,
+"every_min": 133,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
@@ -3988,7 +3988,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 474,
+"every_min": 475,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -4015,7 +4015,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 563,
+"every_min": 565,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -4024,7 +4024,7 @@
 "support": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 102,
+"every_min": 103,
 "mode": "outcome",
 "name": "SUPPORT",
 "src": "rider",
@@ -4051,7 +4051,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 474,
+"every_min": 475,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -4060,7 +4060,7 @@
 "trials": {
 "div": "hermes",
 "every": "checked about every 2 hours",
-"every_min": 102,
+"every_min": 103,
 "mode": "outcome",
 "name": "TRIALS",
 "src": "rider",
@@ -4235,5 +4235,5 @@
 ]
 }
 },
-"tick_min": 2.13
+"tick_min": 2.14
 }

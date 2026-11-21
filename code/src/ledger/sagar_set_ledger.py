@@ -27,7 +27,8 @@ def checks():
 def main(dry=False):
     c = json.load(open(os.path.join(ROOT, SRC))); rows = LG.load(); old = rows.get(RID)
     snip = norm(c['sentence']); claim = ("SAGAR's set \"arXiv 2025, text on hand\": %d papers in the set so far; %d read by a first reader and then a second reader, in an order fixed before reading; %d set aside unread "
-                                          "(%d because they name Gaia or a third data release, %d by a rule fixed on each paper's identifier), as of %s" % (c['in_set'], c['read'], c['set_aside'], c['gaia_or_third_release'], c['by_identifier_rule'], c['at']))
+                                          "(%d because they name Gaia or a third data release, %d by a rule fixed on each paper's identifier%s), as of %s" % (c['in_set'], c['read'], c['set_aside'], c['gaia_or_third_release'], c['by_identifier_rule'],
+                                          (', %d because they print no address we could confirm before writing; from 21 Nov 2026 the papers read are chosen by whether an author can be reached' % c['no_address_confirmed']) if c.get('contact_gate') is not None else '', c['at']))
     new = dict(id=RID, claim=claim, value=str(c['read']), lo=None, hi=None, unit='papers read (%d set aside unread)' % c['set_aside'], outcome='RECORD',
                source=dict(file=SRC, grep='"read": %d,' % c['read']), surfaces=[dict(surface='sagar', text=snip)], status='live')
     if old and old.get('status') == 'live' and old.get('surfaces') == new['surfaces'] and old.get('claim', '').split(', as of ')[0] == claim.split(', as of ')[0]:

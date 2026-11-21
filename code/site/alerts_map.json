@@ -3802,7 +3802,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3735,
+"every_min": 3736,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",

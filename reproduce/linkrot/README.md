@@ -10,16 +10,16 @@ This kit recomputes the LINKROT headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `be54d807a01527bc4203d4438ae4e6e1ffaf291dda0df72a0cd39e1e80b565c7`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `a0b4165c46acdc02e726a90f9c614dbb143fdd08cb7e14b2c1df7b7a4727068d`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 21 Nov 14:32, read by us at 2026-11-21T14:37:53Z. The feed bytes had sha256 `547b52bf4222d207c2de8d586a431c58901fa1a63a760c4fc7cbd27884c9fdb6`.
+The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 21 Nov 14:58, read by us at 2026-11-21T15:01:45Z. The feed bytes had sha256 `ff741449726374f93b63e3d0d155d84559e7b3b8b6b814710fa3030b9f4a8410`.
 
 - number: 3.4%
 - value: 0.0344
 - interval: 0.0273 to 0.0434
-- outcome: CANNOT_TELL
+- outcome: CONSISTENT
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -39,7 +39,7 @@ As the LINKROT data pack lists them. Credit each source when using its values.
 | File | Bytes | sha256 |
 |---|---|---|
 | data/links.json | 538,638 | `52bc78462931125525a853e196e832997a26024e2546962199de6a31daeb58fb` |
-| summary_linkrot.json | 14,084 | `547b52bf4222d207c2de8d586a431c58901fa1a63a760c4fc7cbd27884c9fdb6` |
+| summary_linkrot.json | 13,656 | `ff741449726374f93b63e3d0d155d84559e7b3b8b6b814710fa3030b9f4a8410` |
 
 ## Code
 

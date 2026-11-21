@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-21T04:59:45Z",
+ "built_utc": "2026-11-21T10:33:23Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 145,
+   "commit": "1d84eedea997ace5c15a19b6f05304983d7bd3ab",
+   "files": 1811,
+   "id": "1d84eedea997",
+   "json": "/receipts/stamps/release_1d84eedea997.json",
+   "ledger_sha256": "47a60218bd8fcf1f7fddf22bf3529a0eea90f4f4dfb6e67d8fe2e82c8ea9d247",
+   "manifest_sha256": "4425281227bcc7b1ec575aa4a50771673ae5a76e1c8a58d15f21a896c5a1f413",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-21T10:33:20Z",
+   "sha256": "fc6c2270ef6fb49caeba9f490f6aa6fa2137418ca57669a34299bd1b8134ac61",
+   "wayback": [],
+   "wayback_waiting": 142
+  },
   {
    "changed": 92,
    "commit": "460b35f87f9eeffdab014107d6f8972ab912a8a3",
@@ -166,7 +181,7 @@
      "url": "https://indahl.ai/iris/lab"
     }
    ],
-   "wayback_waiting": 59
+   "wayback_waiting": 2
   },
   {
    "changed": 81,
@@ -332,7 +347,7 @@
      "url": "https://indahl.ai/ailuminate/ailuminate_outcomes.csv"
     }
    ],
-   "wayback_waiting": 9
+   "wayback_waiting": 1
   },
   {
    "changed": 112,
@@ -533,7 +548,7 @@
      "url": "https://indahl.ai/ailuminate/ailuminate_outcomes.csv"
     }
    ],
-   "wayback_waiting": 23
+   "wayback_waiting": 4
   },
   {
    "changed": 70,
@@ -809,7 +824,7 @@
    "released_at": "2026-11-21T01:57:52Z",
    "sha256": "03c67dc55fe56fdc54074d86dfe5de1f58fb6a326ad6ddd381fdb61f88aa30b3",
    "wayback": [],
-   "wayback_waiting": 13
+   "wayback_waiting": 12
   },
   {
    "changed": 139,
@@ -1070,7 +1085,7 @@
      "url": "https://indahl.ai/airline/airline-data-pack.zip"
     }
    ],
-   "wayback_waiting": 4
+   "wayback_waiting": 2
   },
   {
    "changed": 143,
@@ -1306,7 +1321,7 @@
      "url": "https://indahl.ai/iris/lab/runs"
     }
    ],
-   "wayback_waiting": 14
+   "wayback_waiting": 12
   },
   {
    "changed": 240,
@@ -1838,7 +1853,7 @@
      "url": "https://indahl.ai/plugins"
     }
    ],
-   "wayback_waiting": 786
+   "wayback_waiting": 777
   },
   {
    "changed": 417,

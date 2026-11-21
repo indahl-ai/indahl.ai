@@ -387,6 +387,11 @@ if __name__ == '__main__':
     if os.path.exists(_pd):
         import importlib.util as _iu2; _sp2 = _iu2.spec_from_file_location('demos_render', _pd); _m2 = _iu2.module_from_spec(_sp2); _sp2.loader.exec_module(_m2)
         _m2.write_all(page, OUT)
+    _pc = os.path.expanduser('~/bones-forge/calibrations/site/console/build.py')   # 21 Nov 2026 (the owner: "Go with console"; ship now): The designer's Console pages replace home, demos, calibrations and add /runs, /monitoring, /inquiries
+    if os.path.exists(_pc):
+        import importlib.util as _iu3; _sp3 = _iu3.spec_from_file_location('console_build', _pc); _m3 = _iu3.module_from_spec(_sp3); _sp3.loader.exec_module(_m3)
+        _m3.write_all(OUT, inquiry_form=CONTACT)
+        assert not _m3.unresolved() and not _m3.placeholders(), 'REFUSED: the Console build still has unresolved links or placeholder copy: %r %r' % (_m3.unresolved(), _m3.placeholders())
     open(os.path.join(OUT, 'favicon.svg'), 'w').write(MARK.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"').replace('currentColor', '#806012'))
     open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: https://quantumidleaudit.com/sitemap.xml\n')
     open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

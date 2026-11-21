@@ -1,0 +1,251 @@
+/* =====================================================================
+   QIA Console — quantumidleaudit.com
+   One stylesheet for every page. Put class="qia" on <body>.
+   Fonts (Google Fonts, one request):
+   https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Cinzel:wght@600&family=JetBrains+Mono:wght@400;500&display=swap
+   Spec: SPEC.md in this folder. Prefix: qia-. No other dependencies.
+   ===================================================================== */
+
+/* ---------- 1. Tokens ---------- */
+.qia{
+  /* color */
+  --qia-bg:#1a1408;          /* cave ground: page */
+  --qia-panel:#231b0d;       /* raised panel, table head, cards */
+  --qia-line:#3b2f1b;        /* rules, borders */
+  --qia-text:#f7f0e0;        /* primary text */
+  --qia-mid:#bfae8e;         /* secondary text, captions, labels */
+  --qia-gold:#c9a84c;        /* calibrated figure, primary action, focus */
+  --qia-def:#6e604a;         /* default (their run) bars, struck figures */
+  --qia-teal:#46aaaa;        /* CONSISTENT, control */
+  --qia-teal-line:#2f5c5c;
+  --qia-red:#e0604c;         /* ABOVE */
+  --qia-red-line:#6b3328;
+  --qia-on-gold:#1a1408;     /* text on a gold button */
+
+  /* type */
+  --qia-sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --qia-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --qia-label:"Cinzel",Georgia,serif;
+
+  /* spacing: 4px base */
+  --qia-s1:4px; --qia-s2:8px; --qia-s3:12px; --qia-s4:16px;
+  --qia-s5:24px; --qia-s6:32px; --qia-s7:48px; --qia-s8:72px;
+
+  /* shape */
+  --qia-r1:6px;   /* buttons, fields, pills inside panels */
+  --qia-r2:10px;  /* panels, cards */
+  --qia-max:1120px;
+  --qia-gutter:max(16px,env(safe-area-inset-left));
+
+  background:var(--qia-bg);
+  color:var(--qia-text);
+  font:400 16px/1.55 var(--qia-sans);
+  -webkit-font-smoothing:antialiased;
+  color-scheme:dark;
+}
+.qia *,.qia *::before,.qia *::after{box-sizing:border-box}
+.qia a{color:inherit}
+.qia :focus-visible{outline:2px solid var(--qia-gold);outline-offset:2px;border-radius:2px}
+.qia h1,.qia h2,.qia h3{margin:0;text-wrap:balance}
+.qia p{margin:0}
+
+/* ---------- 2. Layout ---------- */
+.qia-wrap{max-width:var(--qia-max);margin:0 auto;padding-left:var(--qia-gutter);padding-right:max(16px,env(safe-area-inset-right))}
+@media (min-width:720px){.qia-wrap{padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right))}}
+.qia-section{padding-top:var(--qia-s7);padding-bottom:var(--qia-s7);border-top:1px solid var(--qia-line)}
+.qia-section:first-child{border-top:0}
+.qia-section__head{margin-bottom:var(--qia-s5)}
+.qia-section__head .qia-lede{margin-top:var(--qia-s2)}
+.qia-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:var(--qia-s6);align-items:center}
+@media (max-width:860px){.qia-split{grid-template-columns:1fr}}
+
+/* ---------- 3. Type ---------- */
+.qia-eyebrow{font:600 11.5px/1 var(--qia-label);letter-spacing:.24em;text-transform:uppercase;color:var(--qia-gold)}
+.qia-hero{font:700 clamp(28px,3.6vw,40px)/1.1 var(--qia-sans);letter-spacing:-.015em;font-stretch:95%;margin-top:var(--qia-s3)}
+.qia-h2{font:700 clamp(22px,2.4vw,26px)/1.2 var(--qia-sans);letter-spacing:-.01em}
+.qia-h3{font:700 18px/1.25 var(--qia-sans)}
+.qia-lede{color:var(--qia-mid);max-width:60ch;font-size:16px}
+.qia-small{font-size:13.5px;color:var(--qia-mid)}
+.qia-cap{font-size:13px;line-height:1.5;color:var(--qia-mid);margin-top:var(--qia-s3);max-width:72ch}
+.qia-num{font-family:var(--qia-mono);font-variant-numeric:tabular-nums}
+
+/* ---------- 4. Nav and footer ---------- */
+.qia-nav{border-bottom:1px solid var(--qia-line)}
+.qia-nav__in{display:flex;align-items:center;justify-content:space-between;gap:var(--qia-s3) var(--qia-s5);flex-wrap:wrap;padding-top:var(--qia-s4);padding-bottom:var(--qia-s4)}
+.qia-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.qia-brand img{width:30px;height:30px;display:block}  /* mark file as supplied: never redraw */
+.qia-brand b{display:block;font:600 12.5px/1.2 var(--qia-label);letter-spacing:.2em;text-transform:uppercase}
+.qia-brand small{display:block;font:400 11px/1.3 var(--qia-mono);color:var(--qia-mid)}
+.qia-navlinks{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;color:var(--qia-mid)}
+.qia-navlinks a{text-decoration:none}
+.qia-navlinks a:hover,.qia-navlinks [aria-current="page"]{color:var(--qia-text)}
+.qia-navlinks [aria-current="page"]{box-shadow:inset 0 -2px 0 var(--qia-gold)}
+.qia-status{display:flex;align-items:center;gap:8px;font:400 12px/1 var(--qia-mono);color:var(--qia-mid)}
+.qia-status i{width:7px;height:7px;border-radius:50%;background:var(--qia-gold)}
+.qia-foot{border-top:1px solid var(--qia-line);padding-top:var(--qia-s6);padding-bottom:var(--qia-s6);font-size:12.5px;color:var(--qia-mid)}
+.qia-foot p+p{margin-top:var(--qia-s2)}
+.qia-foot__links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:var(--qia-s3)}
+.qia-foot__links a{color:var(--qia-text);text-decoration:none}
+
+/* ---------- 5. Actions ---------- */
+.qia-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--qia-s5)}
+.qia-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:var(--qia-r1);font:600 14px/1 var(--qia-sans);text-decoration:none;background:var(--qia-gold);color:var(--qia-on-gold);border:1px solid var(--qia-gold);cursor:pointer}
+.qia-btn--ghost{background:transparent;color:var(--qia-text);border-color:var(--qia-line)}
+.qia-btn--ghost:hover{border-color:var(--qia-mid)}
+.qia-btn[aria-disabled="true"]{background:transparent;color:var(--qia-mid);border-color:var(--qia-line);cursor:not-allowed}
+.qia-link{color:var(--qia-gold);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* ---------- 6. Pills and outcome words ---------- */
+.qia-pill{display:inline-block;font:500 10.5px/1 var(--qia-mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--qia-line);border-radius:999px;padding:4px 8px;color:var(--qia-mid);white-space:nowrap;vertical-align:middle}
+.qia-pill--control,.qia-pill--consistent{color:var(--qia-teal);border-color:var(--qia-teal-line)}
+.qia-pill--above{color:var(--qia-red);border-color:var(--qia-red-line)}
+.qia-pill--below{color:var(--qia-gold);border-color:#5c4a1f}
+.qia-pill--cannot{color:var(--qia-text)}
+.qia-word{font-family:var(--qia-mono);font-size:.86em;letter-spacing:.04em;font-weight:500}
+.qia-word--above{color:var(--qia-red)} .qia-word--below{color:var(--qia-gold)}
+.qia-word--consistent{color:var(--qia-teal)} .qia-word--cannot{color:var(--qia-text)}
+
+/* ---------- 7. Panel and processor readout ---------- */
+.qia-panel{background:var(--qia-panel);border:1px solid var(--qia-line);border-radius:var(--qia-r2);overflow:hidden;min-width:0}
+.qia-panel__head{display:flex;justify-content:space-between;gap:6px 12px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--qia-line);font:400 12px/1.35 var(--qia-mono);color:var(--qia-mid)}
+.qia-panel__foot{padding:10px 14px;border-top:1px solid var(--qia-line);font:400 12.5px/1.4 var(--qia-mono)}
+.qia-panel__foot a{color:var(--qia-gold);text-decoration:none}
+/* one row per processor: chip | default (struck) | calibrated | factor, then the job ID line */
+.qia-readout{display:grid;grid-template-columns:minmax(0,1.3fr) auto auto minmax(64px,auto);gap:4px 16px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--qia-line);font:400 13.5px/1.3 var(--qia-mono);font-variant-numeric:tabular-nums}
+.qia-readout:last-of-type{border-bottom:0}
+.qia-readout__chip{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.qia-readout__def{color:var(--qia-mid);text-decoration:line-through;text-decoration-color:var(--qia-def);text-decoration-thickness:1.5px}
+.qia-readout__cal{color:var(--qia-text)}
+.qia-readout__x{font:700 22px/1 var(--qia-sans);color:var(--qia-gold);text-align:right;white-space:nowrap}
+.qia-readout__job{grid-column:1/-1;font:400 11.5px/1.4 var(--qia-mono);color:var(--qia-mid);overflow-wrap:anywhere}
+.qia-readout__job b{font-weight:400;color:var(--qia-text)}
+@media (max-width:520px){
+  .qia-readout{grid-template-columns:auto auto minmax(0,1fr)}
+  .qia-readout__chip{grid-column:1/-1}
+  .qia-readout__x{font-size:20px}
+}
+
+/* ---------- 8. Proof chart (default vs calibrated bars) ---------- */
+.qia-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--qia-mid);margin:var(--qia-s2) 0 var(--qia-s4)}
+.qia-legend span{display:inline-flex;align-items:center;gap:6px}
+.qia-legend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+.qia-legend .is-def i{background:var(--qia-def)} .qia-legend .is-cal i{background:var(--qia-gold)}
+.qia-chart{display:grid;gap:var(--qia-s4)}
+.qia-chart__row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;align-items:center}
+.qia-chart__name{font:400 13px/1.25 var(--qia-mono)}
+.qia-chart__name small{display:block;font-size:11px;color:var(--qia-teal)}
+.qia-chart__bars{display:grid;gap:3px}
+.qia-bar{display:flex;align-items:center;gap:6px;font:400 11.5px/1 var(--qia-mono);font-variant-numeric:tabular-nums;color:var(--qia-mid)}
+.qia-bar i{display:block;height:10px;border-radius:2px;min-width:2px;background:var(--qia-def)}
+.qia-bar--cal i{background:var(--qia-gold)} .qia-bar--cal{color:var(--qia-gold);font-weight:500}
+.qia-bar--gap{margin-top:5px}
+.qia-chart__axis{display:flex;justify-content:space-between;margin-left:130px;width:calc((100% - 130px) * .82);font:400 11px/1 var(--qia-mono);color:var(--qia-mid)}
+@media (max-width:520px){.qia-chart__row{grid-template-columns:86px minmax(0,1fr)}.qia-chart__axis{margin-left:96px;width:calc((100% - 96px) * .82)}}
+
+/* ---------- 9. Results table and job ID table ---------- */
+.qia-tablewrap{overflow-x:auto;border:1px solid var(--qia-line);border-radius:var(--qia-r2);-webkit-overflow-scrolling:touch}
+.qia-table{border-collapse:collapse;width:100%;min-width:520px;font:400 13px/1.4 var(--qia-mono);font-variant-numeric:tabular-nums}
+.qia-table th,.qia-table td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--qia-line);vertical-align:top}
+.qia-table th{background:var(--qia-panel);font-weight:500;color:var(--qia-mid);font-size:12px}
+.qia-table tr:last-child td{border-bottom:0}
+.qia-table td.is-cal{color:var(--qia-gold)}
+.qia-table td.is-chip{color:var(--qia-text);white-space:nowrap}
+.qia-table__note{font-size:12.5px;color:var(--qia-mid);margin-top:var(--qia-s2);max-width:72ch}
+/* job IDs: always visible, never inside a closed <details> */
+.qia-jobs{min-width:0}
+.qia-jobs td.is-id{font-size:12px;color:var(--qia-text);overflow-wrap:anywhere;user-select:all}
+.qia-jobs__more{margin-top:var(--qia-s3);font-size:13.5px}
+
+/* ---------- 10. Receipts block (home → job records) ---------- */
+.qia-receipts{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--qia-s6);align-items:start}
+@media (max-width:860px){.qia-receipts{grid-template-columns:1fr}}
+.qia-receipts__count{font:700 clamp(40px,6vw,64px)/1 var(--qia-sans);color:var(--qia-gold);letter-spacing:-.02em;margin-top:var(--qia-s3)}
+.qia-receipts__list{list-style:none;margin:0;padding:0}
+.qia-receipts__list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:10px 14px;border-bottom:1px solid var(--qia-line)}
+.qia-receipts__list li:last-child{border-bottom:0}
+.qia-receipts__list b{font-weight:600;font-size:14.5px}
+.qia-receipts__list span{font:400 12px/1.4 var(--qia-mono);color:var(--qia-mid);overflow-wrap:anywhere}
+.qia-receipts__list a{grid-row:span 2;align-self:center;color:var(--qia-gold);font:400 12.5px/1 var(--qia-mono);text-decoration:none;white-space:nowrap}
+
+/* ---------- 11. Outcomes, deliverables, steps ---------- */
+.qia-outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.qia-outcome{background:var(--qia-panel);border:1px solid var(--qia-line);border-top-width:3px;border-radius:var(--qia-r1);padding:14px;font-size:14px;color:var(--qia-mid)}
+.qia-outcome b{display:block;font:500 12px/1 var(--qia-mono);letter-spacing:.1em;margin-bottom:8px}
+.qia-outcome--above{border-top-color:var(--qia-red)} .qia-outcome--above b{color:var(--qia-red)}
+.qia-outcome--below{border-top-color:var(--qia-gold)} .qia-outcome--below b{color:var(--qia-gold)}
+.qia-outcome--consistent{border-top-color:var(--qia-teal)} .qia-outcome--consistent b{color:var(--qia-teal)}
+.qia-outcome--cannot{border-top-color:var(--qia-text)} .qia-outcome--cannot b{color:var(--qia-text)}
+.qia-steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:var(--qia-s3)}
+.qia-steps li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+.qia-steps li::before{content:counter(s);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--qia-gold);color:var(--qia-gold);font:500 12px/1 var(--qia-mono)}
+.qia-steps b{font-weight:600}
+.qia-steps span{color:var(--qia-mid)}
+
+/* ---------- 12. Demonstration cards and switcher ---------- */
+.qia-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.qia-card{display:block;background:var(--qia-panel);border:1px solid var(--qia-line);border-radius:var(--qia-r2);padding:16px;text-decoration:none}
+.qia-card:hover{border-color:var(--qia-def)}
+.qia-card .qia-eyebrow{font-size:10.5px}
+.qia-card b{display:block;font-weight:600;margin:10px 0 4px}
+.qia-card span{display:block;font:400 12.5px/1.45 var(--qia-mono);color:var(--qia-mid)}
+.qia-card--lead{border-color:var(--qia-gold)}
+.qia-switch{display:flex;flex-wrap:wrap;gap:6px}
+.qia-switch a,.qia-switch button{font:500 12.5px/1 var(--qia-sans);color:var(--qia-mid);background:transparent;border:1px solid var(--qia-line);border-radius:999px;padding:9px 13px;text-decoration:none;cursor:pointer}
+.qia-switch [aria-current="page"],.qia-switch [aria-pressed="true"]{color:var(--qia-on-gold);background:var(--qia-gold);border-color:var(--qia-gold)}
+
+/* ---------- 13. Definition rows (who / their run / what changed / outcome) ---------- */
+.qia-facts{display:grid;gap:0;border-top:1px solid var(--qia-line)}
+.qia-facts div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--qia-line);font-size:15px}
+.qia-facts dt,.qia-facts .k{font:600 10.5px/1.6 var(--qia-label);letter-spacing:.2em;text-transform:uppercase;color:var(--qia-mid)}
+@media (max-width:620px){.qia-facts div{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- 14. Calibration rows ---------- */
+.qia-calib{display:grid;gap:10px}
+.qia-calib__row{background:var(--qia-panel);border:1px solid var(--qia-line);border-radius:var(--qia-r2);padding:16px}
+.qia-calib__top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:flex-start}
+.qia-calib__name{font:600 16px/1.35 var(--qia-sans);max-width:60ch}
+.qia-calib__name small{display:block;font:400 12.5px/1.4 var(--qia-sans);color:var(--qia-mid);margin-top:2px}
+.qia-calib__tags{display:flex;flex-wrap:wrap;gap:6px}
+.qia-calib__grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;margin-top:12px}
+@media (max-width:720px){.qia-calib__grid{grid-template-columns:1fr}}
+.qia-calib__k{font:600 10.5px/1.6 var(--qia-label);letter-spacing:.2em;text-transform:uppercase;color:var(--qia-mid);margin-bottom:4px}
+.qia-calib__v{font:400 13px/1.5 var(--qia-mono);color:var(--qia-text)}
+.qia-calib details{margin-top:12px;border-top:1px solid var(--qia-line);padding-top:10px}
+.qia-calib summary{cursor:pointer;font:400 12.5px/1.4 var(--qia-mono);color:var(--qia-gold)}
+.qia-calib details p{font-size:13.5px;color:var(--qia-mid);margin-top:8px;max-width:80ch}
+
+/* ---------- 15. Monitoring feed ---------- */
+.qia-feed__row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto auto;gap:4px 16px;align-items:center;padding:11px 14px;border-bottom:1px solid var(--qia-line);font:400 13px/1.35 var(--qia-mono);font-variant-numeric:tabular-nums}
+.qia-feed__row:last-child{border-bottom:0}
+.qia-feed__what{color:var(--qia-mid)}
+.qia-feed__pub{color:var(--qia-mid);text-decoration:line-through;text-decoration-color:var(--qia-def)}
+.qia-feed__meas{color:var(--qia-gold);text-align:right}
+@media (max-width:620px){.qia-feed__row{grid-template-columns:minmax(0,1fr) auto}.qia-feed__what{grid-column:1/-1;grid-row:2}}
+
+/* ---------- 16. NDA-gated contact ---------- */
+.qia-gate{background:var(--qia-panel);border:1px solid var(--qia-line);border-radius:var(--qia-r2);padding:var(--qia-s5);max-width:640px}
+.qia-gate__step{border-top:1px solid var(--qia-line);padding:var(--qia-s4) 0}
+.qia-gate__step:first-of-type{border-top:0;padding-top:0}
+.qia-gate__k{display:flex;align-items:center;gap:10px;font:600 15px/1.3 var(--qia-sans)}
+.qia-gate__k i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--qia-gold);color:var(--qia-gold);font:500 12px/1 var(--qia-mono);font-style:normal;flex:none}
+.qia-gate__step.is-locked{opacity:.55}
+.qia-gate__step.is-locked .qia-gate__k i{border-color:var(--qia-line);color:var(--qia-mid)}
+.qia-field{display:block;margin-top:10px}
+.qia-field span{display:block;font-size:13px;color:var(--qia-mid);margin-bottom:6px}
+.qia-field input,.qia-field textarea,.qia-field .qia-input{display:block;width:100%;min-height:44px;background:var(--qia-bg);border:1px solid var(--qia-line);border-radius:var(--qia-r1);color:var(--qia-text);font:400 15px/1.4 var(--qia-sans);padding:10px 12px}
+.qia-field input:focus,.qia-field textarea:focus{border-color:var(--qia-gold);outline:none}
+.qia-check{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:14.5px}
+.qia-check input{width:18px;height:18px;margin-top:2px;accent-color:var(--qia-gold)}
+
+@media (prefers-reduced-motion:reduce){.qia *{transition:none!important;animation:none!important}}
+
+/* ---------- 17. Site build additions (site/console/build.py) ---------- */
+html:has(body.qia){background:#1a1408}
+body.qia{margin:0}
+.qia-skip{position:absolute;left:-9999px;top:0;background:var(--qia-gold);color:var(--qia-on-gold);padding:10px 14px;border-radius:var(--qia-r1);z-index:10}
+.qia-skip:focus{left:16px;top:12px}
+.qia-sub{font:600 17px/1.45 var(--qia-sans);color:var(--qia-text);margin-top:var(--qia-s2);max-width:60ch}
+.qia-head-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:var(--qia-s3)}
+.qia-facts dd{margin:0}
+/* copy not yet written or approved by Wayfinder: shown with a dashed outline until approved */
+.qia-ph{outline:1px dashed var(--qia-mid);outline-offset:3px;border-radius:2px}

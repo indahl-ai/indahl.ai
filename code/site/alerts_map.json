@@ -3701,7 +3701,7 @@
 "credit": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3864,
+"every_min": 3876,
 "mode": "outcome",
 "name": "CREDIT",
 "src": "rider",
@@ -3710,7 +3710,7 @@
 "fedsep": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 77,
+"every_min": 78,
 "mode": "outcome",
 "name": "FEDSEP",
 "src": "rider",
@@ -3784,7 +3784,7 @@
 "hfsize": {
 "div": "iris",
 "every": "checked about every 2 hours",
-"every_min": 137,
+"every_min": 138,
 "mode": "outcome",
 "name": "HFSIZE",
 "src": "rider",
@@ -3802,7 +3802,7 @@
 "hpt": {
 "div": "hermes",
 "every": "checked about every 3 days",
-"every_min": 3736,
+"every_min": 3747,
 "mode": "outcome",
 "name": "HPT",
 "src": "rider",
@@ -3896,7 +3896,7 @@
 "predictions": {
 "div": "hermes",
 "every": "checked about every 10 hours",
-"every_min": 618,
+"every_min": 620,
 "mode": "update",
 "name": "NOW",
 "src": "rider",
@@ -3943,7 +3943,7 @@
 "rank": {
 "div": "oy",
 "every": "checked about every 9 hours",
-"every_min": 567,
+"every_min": 568,
 "mode": "update",
 "name": "RANK",
 "src": "rider",
@@ -3952,7 +3952,7 @@
 "revise": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 77,
+"every_min": 78,
 "mode": "outcome",
 "name": "REVISE",
 "src": "rider",
@@ -3961,7 +3961,7 @@
 "seasonal": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 567,
+"every_min": 568,
 "mode": "outcome",
 "name": "SEASONAL",
 "src": "rider",
@@ -3979,7 +3979,7 @@
 "secrecords": {
 "div": "atlas",
 "every": "checked about every 2 hours",
-"every_min": 133,
+"every_min": 134,
 "mode": "outcome",
 "name": "SECRECORDS",
 "src": "rider",
@@ -3988,7 +3988,7 @@
 "social": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 477,
+"every_min": 478,
 "mode": "update",
 "name": "SOCIAL",
 "src": "rider",
@@ -4015,7 +4015,7 @@
 "steo": {
 "div": "hermes",
 "every": "checked about every 9 hours",
-"every_min": 567,
+"every_min": 568,
 "mode": "outcome",
 "name": "STEO",
 "src": "rider",
@@ -4051,7 +4051,7 @@
 "tornado": {
 "div": "hermes",
 "every": "checked about every 8 hours",
-"every_min": 477,
+"every_min": 478,
 "mode": "outcome",
 "name": "TORNADO",
 "src": "rider",
@@ -4096,7 +4096,7 @@
 "weights": {
 "div": "iris",
 "every": "checked about every hour",
-"every_min": 77,
+"every_min": 78,
 "mode": "outcome",
 "name": "WEIGHTS",
 "src": "rider",
@@ -4105,7 +4105,7 @@
 "wiki": {
 "div": "hermes",
 "every": "checked about every hour",
-"every_min": 77,
+"every_min": 78,
 "mode": "update",
 "name": "WIKI",
 "src": "rider",

@@ -1,7 +1,22 @@
 {
- "built_utc": "2026-11-21T17:34:25Z",
+ "built_utc": "2026-11-21T17:48:10Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 93,
+   "commit": "b1e89eced13f949373f0cf7e411791bde5ce5fb6",
+   "files": 1831,
+   "id": "b1e89eced13f",
+   "json": "/receipts/stamps/release_b1e89eced13f.json",
+   "ledger_sha256": "80f9d6e711ddfeb6f69b1f18685386628aff568337f91c113f61b571af7e6389",
+   "manifest_sha256": "6ac01b2d9ad7d595080ff0d50de852e2ab1f4e81bef52c54c1d5d1e177b3c580",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-21T17:48:10Z",
+   "sha256": "a77e8710dd09729b21a946675f8ba771833b0a9b7c845d1188f7d92f3f61b4f9",
+   "wayback": [],
+   "wayback_waiting": 90
+  },
   {
    "changed": 61,
    "commit": "7fd12afb492b6df182457807ceb5c5d85cb33ae9",
@@ -15,7 +30,7 @@
    "released_at": "2026-11-21T17:19:02Z",
    "sha256": "2d5d596bb1332f57946e4a6b274710d6b4c2fcb1a7dc916b4e181d7cdf7c5e12",
    "wayback": [],
-   "wayback_waiting": 59
+   "wayback_waiting": 8
   },
   {
    "changed": 60,
@@ -30,7 +45,7 @@
    "released_at": "2026-11-21T17:05:54Z",
    "sha256": "87ba1d5012e03ad72895cfa1de9a026c5e940a2405bece51cde9b416e745fedf",
    "wayback": [],
-   "wayback_waiting": 25
+   "wayback_waiting": 2
   },
   {
    "changed": 90,
@@ -45,7 +60,7 @@
    "released_at": "2026-11-21T16:55:51Z",
    "sha256": "0c053d00a3c60d3654f15acf774617b6373254f009385873e917dfdc48f6e5c3",
    "wayback": [],
-   "wayback_waiting": 27
+   "wayback_waiting": 26
   },
   {
    "changed": 95,
@@ -60,7 +75,7 @@
    "released_at": "2026-11-21T16:21:57Z",
    "sha256": "9dfd9917ee4dc48d4660a181b9800967ab8b834fd1e9c0e12b0ff3a9aafc1820",
    "wayback": [],
-   "wayback_waiting": 25
+   "wayback_waiting": 19
   },
   {
    "changed": 53,
@@ -120,7 +135,7 @@
    "released_at": "2026-11-21T15:10:28Z",
    "sha256": "f0a69b43c9a3fffdf0b6c226e780d798f8ba2393909855406f3b8ddd5898fc89",
    "wayback": [],
-   "wayback_waiting": 8
+   "wayback_waiting": 5
   },
   {
    "changed": 63,
@@ -165,7 +180,7 @@
    "released_at": "2026-11-21T14:04:39Z",
    "sha256": "a8f8927a7ac29f501937f4f6bab8b93ac2e0356c04b7189e02cb2cda7284744a",
    "wayback": [],
-   "wayback_waiting": 6
+   "wayback_waiting": 2
   },
   {
    "changed": 65,

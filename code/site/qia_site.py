@@ -391,6 +391,19 @@ if __name__ == '__main__':
     if os.path.exists(_pc):
         import importlib.util as _iu3; _sp3 = _iu3.spec_from_file_location('console_build', _pc); _m3 = _iu3.module_from_spec(_sp3); _sp3.loader.exec_module(_m3)
         _m3.write_all(OUT, inquiry_form=CONTACT)
+        # 21 Nov 2026 (the owner): the same canary reference code indahl.ai prints, one per page, from the private key (hlcref.py); recorded in the private registry
+        from hlcref import ref as _ref
+        import csv as _csv
+        _reg = os.path.expanduser('~/Documents/Heuremen LLC/EVIDENCE/REGISTRY.csv'); _have = set()
+        if os.path.exists(_reg): _have = {(r[0], r[1]) for r in _csv.reader(open(_reg)) if len(r) > 1}
+        for _fn in sorted(os.listdir(OUT)):
+            if not _fn.endswith('.html'): continue
+            _path = '/' if _fn == 'index.html' else '/' + _fn[:-5]; _code = _ref('qia:page:' + _path)
+            if not _code: continue
+            _f = os.path.join(OUT, _fn); _h = open(_f, encoding='utf-8').read()
+            if '<p class="qia-ai">' in _h and 'Reference HLC-' not in _h:
+                _h = _h.replace('>Details</a></p></footer>', '>Details</a> &middot; Reference %s</p></footer>' % _code, 1); open(_f, 'w', encoding='utf-8').write(_h)
+                if ('quantumidleaudit.com page', _path) not in _have and os.path.exists(_reg): open(_reg, 'a').write('quantumidleaudit.com page,%s,%s\n' % (_path, _code))
         assert not _m3.unresolved() and not _m3.placeholders(), 'REFUSED: the Console build still has unresolved links or placeholder copy: %r %r' % (_m3.unresolved(), _m3.placeholders())
     open(os.path.join(OUT, 'favicon.svg'), 'w').write(MARK.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"').replace('currentColor', '#806012'))
     open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: https://quantumidleaudit.com/sitemap.xml\n')

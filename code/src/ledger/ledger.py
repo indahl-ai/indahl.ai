@@ -133,22 +133,70 @@ def now():
     return D.datetime.now().astimezone().isoformat(timespec='seconds')
 
 
-def load():
-    if not os.path.exists(LEDGER):
-        return {}
+# 21 Nov 2026: ONE WRITER AT A TIME, AND NO SILENT LOSS. Until today save() wrote whatever this process held, with no lock. Two writers
+# under two different locks (a ship's QUAKE refresh under the site lock, the live-headline rider under its own) both loaded, and the
+# second save wiped the first: at 00:12:07Z on 21 Nov the refresh printed "23 rows refreshed", the ledger held none of them, and every
+# ship after it was refused. Now:
+#   - load() remembers what was on disk when this process read it;
+#   - save() takes one kernel lock, reads the file as it is NOW, and applies only the rows this process changed. Rows another writer
+#     changed or added meanwhile stay as that writer left them;
+#   - a row changed by another writer AND by this process is a conflict: nothing is written and the process exits non-zero;
+#   - after writing, save() reads the file back and checks that every row it changed is there as written.
+# The file's format is unchanged (one row a line, sorted by id), so receipts and hashes of row lines hold.
+class Rows(dict):
+    """the ledger as this process loaded it, with what was on disk at that moment"""
+    __slots__ = ('_base',)
+
+
+_LAST_BASE = [None]
+def _canon(r): return json.dumps(r, ensure_ascii=False, sort_keys=True)
+def _read():
     rows = {}
-    for line in open(LEDGER):
-        if line.strip():
-            r = json.loads(line); rows[r['id']] = r
+    if os.path.exists(LEDGER):
+        for line in open(LEDGER):
+            if line.strip():
+                r = json.loads(line); rows[r['id']] = r
+    return rows
+
+
+def load():
+    rows = Rows(_read()); rows._base = {k: _canon(v) for k, v in rows.items()}; _LAST_BASE[0] = rows._base
     return rows
 
 
 def save(rows):
-    tmp = LEDGER + '.tmp'
-    with open(tmp, 'w') as f:
-        for r in sorted(rows.values(), key=lambda r: r['id']):
-            f.write(json.dumps(r, ensure_ascii=False) + '\n')
-    os.replace(tmp, LEDGER)
+    import fcntl
+    base = getattr(rows, '_base', None)
+    if base is None: base = _LAST_BASE[0]   # a plain dict made from a load in this process
+    with open(os.path.join(HERE, '.ledger.flock'), 'a') as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        cur = _read(); changed = []
+        if base is None: out = dict(rows)   # nothing was loaded in this process: write what was handed over, as before, but under the lock
+        else:
+            out = dict(cur); conflict = []
+            for k in set(base) | set(rows):
+                m = _canon(rows[k]) if k in rows else None; b = base.get(k); c = _canon(cur[k]) if k in cur else None
+                if m == b: continue                        # not changed by this process: the row on disk stays as it is now
+                if c != b and c != m: conflict.append(k); continue
+                changed.append(k)
+                if m is None: out.pop(k, None)
+                else: out[k] = rows[k]
+            if conflict:
+                sys.exit('ledger.save REFUSED: %d row(s) were changed by another writer since this process loaded the ledger, and by this process too: %s. '
+                         'Nothing was written. Load the ledger again and reapply.' % (len(conflict), ', '.join(sorted(conflict)[:8])))
+        tmp = LEDGER + '.tmp'
+        with open(tmp, 'w') as f:
+            for r in sorted(out.values(), key=lambda r: r['id']):
+                f.write(json.dumps(r, ensure_ascii=False) + '\n')
+        os.replace(tmp, LEDGER)
+        back = _read()   # what the file holds now, not what was sent
+        lost = [k for k in changed if (_canon(back[k]) if k in back else None) != (_canon(rows[k]) if k in rows else None)]
+        if lost: sys.exit('ledger.save: READ BACK FAILED for %d row(s): %s. The ledger does not hold what was written.' % (len(lost), ', '.join(sorted(lost)[:8])))
+        if base is not None:
+            for k in changed:   # this process's view of what is on disk moves only for the rows it wrote
+                if k in rows: base[k] = _canon(rows[k])
+                else: base.pop(k, None)
+    return len(changed)
 
 
 def need(rows, cid):

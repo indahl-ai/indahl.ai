@@ -7,14 +7,16 @@ changed only in the source would read MISSING; this changes both in one step.
                                                     it is changed the same way. Prints what changed. Refuses if FILE lacks it.
   python3 reword.py --dry FILE "old" "new"           show only"""
 import json, os, shutil, sys, time
-B = os.path.expanduser('~/bones-forge'); LEDGER = os.path.join(B, 'ledger', 'ledger.jsonl')
+B = os.path.expanduser('~/bones-forge')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import ledger as LG   # 21 Nov 2026: the ledger is written only through ledger.save (one lock, merge, refuse a conflict); this file used to write it directly
+LEDGER = LG.LEDGER
 a = sys.argv[1:]; dry = a[:1] == ['--dry']; a = a[1:] if dry else a
 if len(a) != 3: raise SystemExit(__doc__)
 f, old, new = a; f = os.path.join(B, f) if not f.startswith('/') else f
 s = open(f, encoding='utf-8').read(); n = s.count(old)
 if not n: raise SystemExit('REFUSED: %s does not contain the old text' % f)
-rows = [json.loads(l) for l in open(LEDGER, encoding='utf-8')]; hit = []
-for r in rows:
+rows = LG.load(); hit = []
+for r in rows.values():
     for x in r.get('surfaces', []):
         if old in x.get('text', ''):
             hit.append(r['id'])
@@ -25,4 +27,4 @@ stamp = time.strftime('%Y%m%d')
 for p in (f, LEDGER):
     if not os.path.exists(p + '.bak-' + stamp + '-reword'): shutil.copy(p, p + '.bak-' + stamp + '-reword')
 open(f, 'w', encoding='utf-8').write(s.replace(old, new))
-if hit: open(LEDGER, 'w', encoding='utf-8').write('\n'.join(json.dumps(r, ensure_ascii=False) for r in rows) + '\n')
+if hit: print('ledger rows written: %d' % LG.save(rows))

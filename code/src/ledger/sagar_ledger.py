@@ -33,7 +33,7 @@ def _stored(t):   # check_ledger normalises the stored text again; a title that 
 def list_snip(r):   # the row as build_site.py prints it on /sagar (title cell + its Study page link, the code links, the tier link)
     return _stored(norm('<a>%s</a><br><span class="by"><a>Study page</a></span></td><td>%s<a>%s</a></td>' % (E(r['title']), ''.join('<a>%s</a> ' % c for c in r['code'].split()), r['tier'])))
 def study_snip(r):   # the first cell of the study page (make_sagar.py c1)
-    return _stored(norm('<a>%s</a><br><span class="by">arXiv %s, published %s</span>' % (E(r['title']), r['arxiv'], E(r['pub']))))
+    return _stored(norm('<a>%s</a><br><span class="by">arXiv %s, %s %s</span>' % (E(r['title']), r['arxiv'], r.get('pubword', 'published'), E(r['pub']))))   # 21 Nov 2026: rows of the arXiv 2025 set say "posted" (an arXiv listing date is not publication); every other row keeps "published"
 def claim(r):
     return 'SAGAR lists arXiv %s (%s) with claim codes %s, tier %s: where the paper prints one thing and shows another, classified for indexing' % (r['arxiv'], r['title'][:120], r['code'], r['tier'])
 

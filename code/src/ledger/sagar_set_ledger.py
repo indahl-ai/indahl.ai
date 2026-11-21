@@ -7,7 +7,7 @@ batch the readers finish, and a public number goes to the ledger before the page
 
 One row, id sagarset.arxiv-2025-text-on-hand, outcome RECORD:
   source   sagar/site/arm2_counts.json, with a grep anchor on the read count
-  surface  sagar: the sentence "<N> have been read. <M> were set aside unread: <K> because they name Gaia or a third data release",
+  surface  sagar: the sentence "<T> papers are in the set so far; <N> have been read; <M> were set aside unread; the rest wait in that order",
            normalised with check_ledger.norm, so what is written is what the drift gate compares
 It is added the first time, and refreshed (with a history entry naming the old and new counts) whenever the sentence changes.
 Written through ledger.save (one lock, merge, refuse a conflict). Check block: sagar/intake_rows/CHECKS.md if its last entry is complete
@@ -26,8 +26,8 @@ def checks():
     except SystemExit as e: return None, 'sagar/intake_rows/CHECKS.md last entry incomplete (%s); no check block attached' % e
 def main(dry=False):
     c = json.load(open(os.path.join(ROOT, SRC))); rows = LG.load(); old = rows.get(RID)
-    snip = norm(c['sentence']); claim = ("SAGAR's set \"arXiv 2025, text on hand\": %d papers read by two independent readers in an order fixed before reading; %d set aside unread "
-                                          "(%d because they name Gaia or a third data release, %d by a rule fixed on each paper's identifier), as of %s" % (c['read'], c['set_aside'], c['gaia_or_third_release'], c['by_identifier_rule'], c['at']))
+    snip = norm(c['sentence']); claim = ("SAGAR's set \"arXiv 2025, text on hand\": %d papers in the set so far; %d read by two independent readers in an order fixed before reading; %d set aside unread "
+                                          "(%d because they name Gaia or a third data release, %d by a rule fixed on each paper's identifier), as of %s" % (c['in_set'], c['read'], c['set_aside'], c['gaia_or_third_release'], c['by_identifier_rule'], c['at']))
     new = dict(id=RID, claim=claim, value=str(c['read']), lo=None, hi=None, unit='papers read (%d set aside unread)' % c['set_aside'], outcome='RECORD',
                source=dict(file=SRC, grep='"read": %d,' % c['read']), surfaces=[dict(surface='sagar', text=snip)], status='live')
     if old and old.get('status') == 'live' and old.get('surfaces') == new['surfaces'] and old.get('claim', '').split(', as of ')[0] == claim.split(', as of ')[0]:

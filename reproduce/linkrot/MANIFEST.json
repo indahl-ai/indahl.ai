@@ -25,20 +25,20 @@
   {
    "bytes": 14084,
    "gzip_added": true,
-   "modified": "2026-11-21T13:18:41Z",
+   "modified": "2026-11-21T14:32:17Z",
    "path": "summary_linkrot.json",
-   "sha256": "b2f5887d498673100d2f351e60a8768322649bad4266d447512f2cc3ea378389",
+   "sha256": "547b52bf4222d207c2de8d586a431c58901fa1a63a760c4fc7cbd27884c9fdb6",
    "stored": "summary_linkrot.json.gz",
-   "stored_sha256": "f6e49bc0653035d0a770192afe536a675197df0857bd58b08ee656916dac8334"
+   "stored_sha256": "b480053f0edceea7fd1b16f97ca42461dc21adcb1b15be37e59c468d843c7a20"
   }
  ],
- "made": "2026-11-21T13:35:30Z",
+ "made": "2026-11-21T14:37:53Z",
  "mode": "inputs",
  "name": "LINKROT",
  "reference": [
   {
    "path": "desk/linkrot_tick.py",
-   "sha256": "d0b5ff494c6b705a9113533d92f9e6f02a0439245de28e9f2bec76c37a0092e6"
+   "sha256": "26f6310707a3f388a781c482faff4953fe30a228a77770c35862ff8694ff27bf"
   }
  ]
 }

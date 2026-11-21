@@ -46,6 +46,14 @@ def probe(u):
         finally: lastreq[host] = time.time()
 # gate
 ctl = {u: probe(u)[0] for u in LIVE_CTL + DEAD_CTL}
+# 21 Nov 2026: a control that TIMES OUT (nothing returned, not a wrong reading) is asked again, twice at most, 30 s apart, before the gate is read.
+# zenodo.org timed out on single tries four times today and flipped the desk's outcome each time with the number unchanged. The rule itself is
+# untouched: a live control must still read LIVE and a dead one GONE or DNS_FAIL, and a control still timing out after three tries fails the gate.
+for _u in [u for u, s in ctl.items() if s == 'TIMEOUT']:
+    for _k in range(2):
+        time.sleep(30); ctl[_u] = probe(_u)[0]
+        if ctl[_u] != 'TIMEOUT': break
+    print('linkrot: control asked again after a timeout:', _u.split('//')[1][:28], '->', ctl[_u])
 gate_ok, msg = K.known_good(lambda c: all(c[u] == 'LIVE' for u in LIVE_CTL) and all(c[u] in ('GONE', 'DNS_FAIL') for u in DEAD_CTL), ctl)
 print('linkrot: gate', msg, {u.split('//')[1][:28]: s for u, s in ctl.items()} if not gate_ok else '')
 papers = [json.loads(l) for l in open('data/papers.jsonl')] if os.path.exists('data/papers.jsonl') else []

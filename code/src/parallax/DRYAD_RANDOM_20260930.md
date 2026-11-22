@@ -1,6 +1,6 @@
 # DRYAD RANDOM PICK, 2026-09-30 -- THE THREE FORMULAS ON A RANDOM RECORD
 
-The owner: "pick a random topic in the Dryad and hit that shit too... find one that gets us laid."
+The owner
 Seed = UTC minute at run time (18:28Z) = 28. Word list index 28 mod 20 = 8 -> **"bird"**.
 Page = 28 mod 5 + 1 = **4**. Index into page = 28 mod 100 = **28**.
 

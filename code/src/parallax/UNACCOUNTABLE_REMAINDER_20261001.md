@@ -1,6 +1,6 @@
 # THE UNACCOUNTABLE REMAINDER — 2026-10-01
 
-The owner's correction on PARTICLES_ARE_SUBSTRATE_20261001.md: "accounted for" in
+The owner's correction on PARTICLES_ARE_SUBSTRATE_20261001.md in
 those papers is the AUTHORS' word, not a measurement. A subtraction is a crazy hat
 unless its term was MEASURED INDEPENDENTLY. This pass re-reads the same seven
 records (Jacques 2007, Grangier 1986, Kimble 1977, and five modern arXiv records)

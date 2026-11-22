@@ -3,7 +3,7 @@
 import os, sys, re, json, time, math, collections, html.parser, urllib.request, urllib.parse, urllib.error, datetime, random, statistics
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('oldest: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('oldest: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 UA = {'User-Agent': 'heuremen-oldest/0.1 (+https://indahl.ai/oldest)'}; N = 30000; LIST = 'Y83YG'; CUT = '2000-01-01'
 def fetch(u, n=3, to=30, maxb=600000, headers=None):
     """-> (status, final_url, body bytes). status None = no connection."""

@@ -28,7 +28,7 @@
   "cmd": [
    "bash",
    "-c",
-   "[...]"
+   "python3 ~/forge/claude-plugins/src/ccr/scripts/ccr.py init --principal 'Heuremen LLC' >/dev/null; python3 ~/forge/claude-plugins/src/ccr/scripts/ccr.py approve worker.js --by 'the operator: parity 5363 urls 0 mismatches, house scan 0' && python3 ~/forge/claude-plugins/src/ccr/scripts/ccr.py approve wrangler.toml --by 'the operator: services removed, house scan 0'"
   ],
   "cwd": "~/forge/cloudflare-workers/heuremen-door",
   "env": {
@@ -116,7 +116,7 @@
   "cmd": [
    "bash",
    "-c",
-   "[...]"
+   "python3 ~/forge/claude-plugins/src/ccr/scripts/ccr.py verify; rc=$?; echo verify_rc=$rc; [ $rc -ne 2 ]"
   ],
   "cwd": "~/forge/cloudflare-workers/heuremen-door",
   "env": {

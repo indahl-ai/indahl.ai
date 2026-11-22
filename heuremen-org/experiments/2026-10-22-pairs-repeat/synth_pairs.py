@@ -1,5 +1,5 @@
 """Synthetic test of control_run/analyze_pairs_iq.py (UNCHANGED) in the REAL pairs schema, for the repeat (pairs_repeat/PREREG_PAIRS.md).
-Heuremen LLC, Heuremen LLC, 22 October 2026.
+Heuremen LLC, 22 October 2026.
 The 21 Oct test (synth_orig_20261021/make.py) used a toy chip (800 shots, loss 0.03) and had no null; this one sets the floor at the real scale.
 Per chip (ibm_fez, ibm_kingston, ibm_marrakesh): roles E, S, pairs, singles, K1 and the meta schema are the REAL 21 Oct ones
 (control_run/pairsjob_<chip>_copy<c>.json, the 21 Oct pub order per copy); cz wiring is the REAL 21 Oct properties file; every qubit's 0/1 IQ

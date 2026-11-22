@@ -1,4 +1,4 @@
-"""X-FLIP CHECK (PLAN_FLIP.md, sha256 in PLAN_FLIP.sha256). Heuremen LLC, Heuremen LLC, 22 October 2026.
+"""X-FLIP CHECK (PLAN_FLIP.md, sha256 in PLAN_FLIP.sha256). Heuremen LLC, 22 October 2026.
 Same roles and circuits as control_run/run_iq.py (control_run/run.py's spectator_circuit, unchanged, via a thin wrapper), N = 0, 4, 8,
 every readout raw IQ (meas_type kerneled). NEW: after the last step, X on every measured qubit (barrier-fenced), then the measured
 qubits' final readout (register 'efin') alongside the spectators'. Calibrations: all 0, all 1, and '0X' (read in 0, X, read again).

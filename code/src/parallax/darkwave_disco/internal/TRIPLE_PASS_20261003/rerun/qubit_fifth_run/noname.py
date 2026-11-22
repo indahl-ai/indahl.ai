@@ -1,4 +1,4 @@
-"""THE NO-NAME SHOT (the operator, by hand, 2026-10-02 evening). The owner: "Fire at will operator, you know what targets we're trying not to look at.... Fire."
+"""THE NO-NAME SHOT (the operator, by hand, 2026-10-02 evening). The owner
 What is left with no name (ledger §139, the Disco's none): a bit started OFF and pushed ten times with 30 us between pushes ends 2.0% more ON than its own
 fading allows (+0.0200 +- 0.0016, six reads, two runs); started ON or in-between it does not; with no time between the pushes OFF and ON mirror each other.
 The discarded half of all six reads (listen_discarded.py): the extra sits ON the OFF->ON line, in the plain ON cloud, nothing across the line.

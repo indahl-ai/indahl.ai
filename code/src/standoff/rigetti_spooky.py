@@ -1,4 +1,4 @@
-"""SPOOKY (the operator, 2026-10-07; the owner: "how would you show entanglement through a state change over time? ... see if it smells like the specialist"). Cepheus, our tone at 0.03.
+"""SPOOKY (the operator, 2026-10-07; the owner). Cepheus, our tone at 0.03.
 Six pairs (L, P) on good CZ couplers, spread apart. L is LOOKED AT (our tone on its readout frame); P is NEVER looked at. Both start half-way (rx pi/2).
   ENT1  one CZ: the pair entangled -- each of L and P alone is a 50/50 MIX
   PROD2 two CZs (they cancel): not entangled -- each of L and P alone is a whole SUPERPOSITION

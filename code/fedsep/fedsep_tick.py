@@ -17,7 +17,7 @@ VPY = os.path.expanduser('~/forge/revise_index/venv/bin/python')
 if os.path.realpath(sys.executable) != os.path.realpath(VPY) and not os.environ.get('FEDSEP_VENV'):
     os.execv(VPY, [VPY, os.path.abspath(__file__)] + sys.argv[1:])
 import heuremen_kit as K, sep_parse as P, agency as A
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('fedsep: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('fedsep: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 W = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door'); UA = {'User-Agent': 'heuremen-fedsep/0.1 (+https://indahl.ai/fedsep)'}
 SEPT = ['20150917', '20160921', '20170920', '20180926', '20190918', '20200916', '20210922', '20220921', '20230920', '20240918', '20250917']
 VARS = ['Change in real GDP', 'Unemployment rate', 'PCE inflation', 'Federal funds rate']

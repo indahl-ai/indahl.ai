@@ -13,7 +13,7 @@ except Exception:
         return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('stack: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('stack: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 W = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door')
 def feed(slug):
     try: return json.loads(urllib.request.urlopen(urllib.request.Request('https://indahl.ai/%s/live.json?x=%d' % (slug, time.time()), headers={'User-Agent': 'heuremen-stack/0.1'}), timeout=40).read())

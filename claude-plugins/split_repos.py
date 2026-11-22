@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""One public repo per plugin (15 Nov 2026, the owner: "can you make a seperate repo for each plugin? ... anytime you commit to the repo where
-the plugins live we have to re-publish"). Each plugin's built folder becomes the root of Heuremen-LLC/<plugin name>, with a one-entry
+"""One public repo per plugin (15 Nov 2026, the owner). Each plugin's built folder becomes the root of indahl-ai/<plugin name>, with a one-entry
 .claude-plugin/marketplace.json so it installs on its own. A repo gets a commit (and so a new directory version) ONLY when that plugin's
 own files change; nothing else in the house touches these repos.
 
@@ -25,6 +24,7 @@ def same(a, b):
     c = filecmp.dircmp(a, b, ignore=['.git'])
     def d(c): return bool(c.left_only or c.right_only or c.diff_files or c.funny_files) or any(d(s) for s in c.subdirs.values())
     return not d(c)
+sys.path.insert(0, os.path.expanduser('~/forge/ledger')); import house_terms as HT
 os.makedirs(ROOT, exist_ok=True); report = []
 for e in market['plugins']:
     name, src = e['name'], folder(e)
@@ -33,6 +33,10 @@ for e in market['plugins']:
     if os.path.exists(stage): shutil.rmtree(stage)
     shutil.copytree(src, stage, ignore=shutil.ignore_patterns('__pycache__', '.DS_Store', '*.bak*', '*.pre-*'))   # 21 Nov 2026: backups never reach a plugin repo
     if name == 'indahl' and os.path.isdir(os.path.join(H, 'pinned')): shutil.copytree(os.path.join(H, 'pinned'), os.path.join(stage, 'pinned'))   # 20 Nov 2026: the pinned scripts every plugin command fetches live here, so a publish never drops them
+    # 22 Nov 2026 (the owner's full scrub of names and handles, plugin repo histories recopied): the stage is scrubbed by ledger/house_terms.py
+    # before it is compared or committed, and a stage that still names a handle is refused, so a plugin repo can never take a name back.
+    HT.scrub_tree(stage)
+    if HT.check([stage], limit=5): report.append((name, 'REFUSED: house handle or name in the build (ledger/house_terms.py)')); continue
     pj = json.load(open(os.path.join(stage, '.claude-plugin', 'plugin.json')))
     mk = {'name': name, 'owner': market.get('owner', {'name': 'Heuremen LLC'}),
           'plugins': [{'name': name, 'source': './', 'description': pj.get('description', e.get('description', '')), 'version': pj.get('version', e.get('version', '1.0.0')),
@@ -58,7 +62,7 @@ for e in market['plugins']:
     report.append((name, status + ' -> pushed ' + run('git', 'rev-parse', '--short', 'HEAD', cwd=repo).stdout.strip()))
 shutil.rmtree(os.path.join(ROOT, '.stage'), ignore_errors=True)
 for n, s in report: print('%-28s %s' % (n, s))
-# 15 Nov 2026 (the owner: "is it updated automatically when we whip an update to a plugin?"): every plugin repo pushed here goes to
+# 15 Nov 2026 (the owner): every plugin repo pushed here goes to
 # Hugging Face in the same run (hf_mirror.sh, committed files only), so the HF cards never lag GitHub.
 _pushed = [n for n, s in report if '-> pushed' in s]
 if PUSH and _pushed:

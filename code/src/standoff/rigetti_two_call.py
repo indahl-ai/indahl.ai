@@ -1,4 +1,4 @@
-"""TWO'S CALL ON CEPHEUS (the operator, 2026-10-04 evening; the owner: "CLOSE THE TRIANGLES PROOVE THE SPECIALIST"). The call is written and hashed before this run:
+"""TWO'S CALL ON CEPHEUS (the operator, 2026-10-04 evening; the owner). The call is written and hashed before this run:
 parallax/darkwave_disco/calls/TWO_CALL_CEPHEUS_20261004.txt (sha256 8156c88650870b97...): crossing 8.33 / 5.15 / 3.18 / 1.97 / 1.22 % at spacings phi^0 / phi^2 / phi^4 / phi^6 / phi^8 us.
 OBSERVER  the laid spacings 1 / 2.618 / 6.854 / 17.944 / 46.979 us, ten X pushes, every qubit; starts |0> (the call), |1>, halfway; back-to-back pushes (no time) for |0> and |1>.
 TIME      each qubit's own decay over each spacing (|1> left that long), three copies spread through the batch; the batch's 8-sequence readout model; idle |0>.

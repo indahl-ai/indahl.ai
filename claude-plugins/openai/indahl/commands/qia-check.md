@@ -10,13 +10,13 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/8eb90a0f63bc/claude-plugins/src/qia-calibration/scripts/qia_check.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/qia-calibration/qia_check-5b09ae7ff3f8.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/5b09ae7ff3f8/claude-plugins/src/qia-calibration/scripts/qia_check.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '5b09ae7ff3f83db80e80110380d42b2ee182ba20859a3b75da711dd958c26933')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/8eb90a0f63bc/claude-plugins/src/qia-calibration/scripts/qia_check.py (sha256 81e0444d70a4325f9df4ac07737cfc0b3c6089ab66837fa3b07db158b8bec06f).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/5b09ae7ff3f8/claude-plugins/src/qia-calibration/scripts/qia_check.py (sha256 5b09ae7ff3f83db80e80110380d42b2ee182ba20859a3b75da711dd958c26933).
 
 
-Use the qia-check skill to run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-81e0444d70a4.py" $ARGUMENTS` and report the result.
+Use the qia-check skill to run `python3 "$HOME/.cache/indahl-plugins/qia-calibration/qia_check-5b09ae7ff3f8.py" $ARGUMENTS` and report the result.
 
 If nothing was given, ask whether this is before a run (one saved record) or after one (a folder of records plus the run's start and end
 times from the job record).

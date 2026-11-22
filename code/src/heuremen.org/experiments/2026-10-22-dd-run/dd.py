@@ -1,4 +1,4 @@
-"""DD run, 22 Oct 2026 (Heuremen LLC, Heuremen LLC). PLAN_DD.md, sha256 in PLAN_DD.sha256.
+"""DD run, 22 Oct 2026 (Heuremen LLC). PLAN_DD.md, sha256 in PLAN_DD.sha256.
 Question: does a symmetric X-X echo on the untouched qubits during each step remove (a) the readout phase kick and (b) the readout coherence
 cost? Like for like: the echo is applied identically in the idle arm (D) and the readout arm (M).
 Dry-run by default: builds, transpiles against the live chip, VERIFIES (X count on every spectator, every step exactly L, DD on/off scheduled

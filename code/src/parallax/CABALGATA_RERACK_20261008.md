@@ -3,7 +3,7 @@
 The operator, 8 October 2026. `parallax/out/qubit_fifth_run/cabalgata_rerack.py`. Reading only.
 
 The owner: *"this is the result of you looking and you're writing it off as an artifact again? re-rack it and
-triangulate."* And after: *"fucking Exor man... Time."*
+triangulate."* And after: *" Exor man... Time."*
 
 Both were right. My first test broke three standing orders:
 

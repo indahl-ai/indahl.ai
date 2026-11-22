@@ -1,4 +1,4 @@
-"""count_scan.py -- finds COUNTS in titles, headings, lead lines, descriptions and labels (23 Oct, his: "stop putting fucking numbers in titles").
+"""count_scan.py -- finds COUNTS in titles, headings, lead lines, descriptions and labels (23 Oct, his).
 A count = a number (digits or a spelled number) followed by a plural noun, after removing leading section numbers and dates."""
 import re, html, glob, os, sys
 B = os.path.expanduser('~/forge')

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds every published plugin folder from the originals in src/ (13 Nov 2026, the owner: "fix it, hit it").
+"""Builds every published plugin folder from the originals in src/ (13 Nov 2026, the owner).
 
   src/<part>        the originals, with their Python scripts and the readcheck commit hook. Our own marketplace serves these.
   plugins/<part>    the plugin directory copies: no .py file and no command hook (the directory accepts those only from Verified
@@ -20,6 +20,7 @@ PARTS = [e['source'].split('/src/', 1)[1] for e in json.load(open(os.path.join(o
 _OLD_PARTS = ['standards', 'eval-check', 'indahl-data', 'qia-calibration', 'reproduce', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause', 'silent-failure-guard', 'relay']
 SKIPDIR = {'__pycache__'}; LIC = {'LICENSE', 'LICENSE.txt', 'LICENSE-STANDARD.txt', 'NOTICE.txt'}
 sha = lambda b: hashlib.sha256(b).hexdigest()
+sys.path.insert(0, os.path.expanduser('~/forge/ledger')); import house_terms as HT   # 22 Nov 2026: no house handle or name in a pinned script
 
 def scripts():
     out = []
@@ -35,7 +36,7 @@ def pin():
     full sha256, so the pin never depends on a commit that a history rewrite could remove."""
     pins = json.load(open(PINS)) if os.path.exists(PINS) else {}
     for rel in scripts():
-        b = open(os.path.join(SRC, rel), 'rb').read(); h = sha(b)
+        b = open(os.path.join(SRC, rel), 'rb').read(); b = HT.scrub_blob('claude-plugins/src/' + rel, b) or b; h = sha(b)   # 22 Nov 2026: the published (scrubbed) bytes are what is pinned
         if pins.get(rel, {}).get('sha256') == h: continue
         path = 'claude-plugins/src/' + rel; d = os.path.join(H, 'pinned', h[:12], path)
         os.makedirs(os.path.dirname(d), exist_ok=True); open(d, 'wb').write(b)

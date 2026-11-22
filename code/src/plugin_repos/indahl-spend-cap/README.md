@@ -97,7 +97,7 @@ MIT licence.
 
 Refereed before release by the outside referee on our work.
 
-Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. the outside referee on our work, asked whether `python3` resolves on Windows. The operator ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.
+Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. The outside referee on our work asked whether `python3` resolves on Windows. The operator ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.
 
 The referee also caught, before release: the duplicate-message key that collapsed id-less lines into one, a project budget file that could loosen or disable the person's own cap, a cache-read weighting that moved the count about nine times inside the word "tokens", and the README claiming warnings reached the agent before that was seen live. She asked for the live runs that confirmed the warning, the subagent path and the deny inside a subagent.
 
@@ -105,7 +105,7 @@ The referee also caught, before release: the duplicate-message key that collapse
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/952786ff9c9c/claude-plugins/src/spend-cap/scripts/spend_cap.py
-  sha256 196a19a093d6b2eef25ba412c85b34d4759a2fec7f8dc0016c23d3cb83a8c7cb
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/b5ae66d947ce/claude-plugins/src/spend-cap/scripts/spend_cap.py
+  sha256 b5ae66d947ce67c51613a1b7cbec99c1c8288b14aba6a62977aecea196cd5332
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

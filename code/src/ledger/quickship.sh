@@ -1,6 +1,5 @@
 #!/bin/bash
-# quickship.sh -- copy and layout changes live in about a minute (15 Nov 2026, the owner: "it's been over an hour for three fucking text
-# updates... make sure it never fucking happens again"). Builds every page from source, runs the gates that protect page text (ledger, copies,
+# quickship.sh -- copy and layout changes live in about a minute (15 Nov 2026, the owner). Builds every page from source, runs the gates that protect page text (ledger, copies,
 # statistics regression), deploys the worker, then pushes the public repo in the background. Data refreshes, packs, Zenodo and stamps stay in
 # ship.sh, which the automatic ship still runs on schedule.
 #   ledger/quickship.sh "what changed"

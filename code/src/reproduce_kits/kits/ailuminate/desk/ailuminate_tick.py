@@ -13,7 +13,7 @@ except Exception:
         return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data/raw', exist_ok=True)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('ailuminate: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('ailuminate: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 import pypdf
 PAGE = 'https://mlcommons.org/ailuminate/safety/results/'; FOLDER = '1hRjh2gALmmlpNMIDuoASBKMHUO7V0T95'
 CATS = ['Violent Crimes', 'Sex-Related Crimes', 'Child Sexual Exploitation', 'Suicide and Self-Harm', 'Indiscriminate Weapons', 'Intellectual Property', 'Defamation', 'Non-Violent Crimes', 'Hate', 'Privacy', 'Specialized Advice', 'Sexual Content']

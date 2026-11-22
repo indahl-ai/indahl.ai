@@ -76,13 +76,13 @@ Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## Credits
 
-Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. the outside referee on our work, asked whether `python3` resolves on Windows. The operator ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.
+Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. The outside referee on our work asked whether `python3` resolves on Windows. The operator ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.
 
 ## How the scripts arrive
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/c6d8603c678d/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
-  sha256 9d791982654be52e6adb59c31ea2980c47a19836f2faebea392032c5e0295014
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/0f3a0969fb1e/claude-plugins/src/silent-failure-guard/scripts/watch_guard.py
+  sha256 0f3a0969fb1e307d625eeced31ed3bc21527311c508f5894eeb075f3befb90c2
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

@@ -16,7 +16,7 @@
   {
    "bytes": 1939924,
    "gzip_added": true,
-   "modified": "2026-11-22T14:56:10Z",
+   "modified": "2026-11-22T17:15:02Z",
    "path": "data/cycles.json",
    "sha256": "8c06fed325b8174fb57246c8ed5435a08f63a63a97a785e193dd2f4a97239cb7",
    "stored": "data/cycles.json.gz",
@@ -25,20 +25,20 @@
   {
    "bytes": 23048,
    "gzip_added": true,
-   "modified": "2026-11-22T14:56:10Z",
+   "modified": "2026-11-22T17:15:02Z",
    "path": "summary_support.json",
-   "sha256": "c99f02bcf995a2e933eb2038ba2bc347fb66b28cf1b51f4ae2568bd234947396",
+   "sha256": "dca22f62d5b17a6d9835e2fd207aec663398f7eef43a3802dd4b6fa7171744d8",
    "stored": "summary_support.json.gz",
-   "stored_sha256": "25bc9b51ede89d8bf9b021c76c4b3b94f665373a3bcd714146dda6064141d729"
+   "stored_sha256": "04ea215fa6b99eafe3695295368851f2570f22f38b84c4e358704debadcb11be"
   }
  ],
- "made": "2026-11-22T16:02:28Z",
+ "made": "2026-11-22T18:39:47Z",
  "mode": "fetch",
  "name": "SUPPORT",
  "reference": [
   {
    "path": "desk/support_tick.py",
-   "sha256": "478f04d428522d04052d7f3a8502c896483f9e3c2414b6e5919c14424bfce6f4"
+   "sha256": "f66b43bd3302d9562b604448fe441c22840081b85b3cb3469fcc220a573f630c"
   }
  ],
  "sources": [

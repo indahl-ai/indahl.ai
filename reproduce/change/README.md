@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/change/live.json served it at the feed stamp 22 Nov 15:41, read by us at 2026-11-22T16:02:32Z. The feed bytes had sha256 `06ff68e556e5342bbf0d7129f96eab05da568038cb67dd866eeff7be259bf2cb`.
+The headline as the live feed https://indahl.ai/change/live.json served it at the feed stamp 22 Nov 18:03, read by us at 2026-11-22T18:39:50Z. The feed bytes had sha256 `d22fedd31c3b9251e1dffc0c470ecc035d5ea7d41bad55683baa709b15f93aac`.
 
 - number: 10 of 33
 - value: 10
@@ -34,7 +34,7 @@ The input files are what the desk kept from its reads of the sources, with the t
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/rows.json | 116,884 | `1deaca0e37adf0dfe1e553e88975dc44de6726380431a0121e8118b4eaee723a` |
+| data/rows.json | 116,884 | `8cbcc478fba52d3484cbbbaa3517690e399398edeb379f1431d509cc77f42ecf` |
 
 ## Code
 

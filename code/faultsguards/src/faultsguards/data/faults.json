@@ -2,7 +2,7 @@
  "document": "Faults",
  "source": "FAULTS.html",
  "intro": [
-  "Every failure mode we have committed doing measurement work, with the number from the day it happened wherever there was one. Heuremen LLC, Heuremen LLC, 10 October 2026, revised 30 October 2026.",
+  "Every failure mode we have committed doing measurement work, with the number from the day it happened wherever there was one. Heuremen LLC, 10 October 2026, revised 30 October 2026.",
   "A running list of failure modes, grouped in families. Each was reached by committing it, not by anticipating it. Where a figure is given it is the one measured at the time. This document replaces earlier ones: a trail of numbered lessons, a document about two-answer framing, and a shorter version of this catalogue. A method's failures scattered across the documents they were found in cannot be counted, and counting them is what makes any of it checkable.",
   "The numbers are stable identifiers assigned when a mode was found, so they do not run in family order — a mode keeps its number when it moves. The procedures built against these are in the companion document, Guards, along with the only score either document has."
  ],
@@ -595,7 +595,7 @@
    "part": "VIII — When the guard becomes the deliverable",
    "paragraphs": [
     "Anyone can put a two-answer question to a language model and get a confident two-answer reply — correctly formatted, well argued, and wrong in the same specific way, dozens of times a day. The output reads like competence. Showing the count and the error rate is more use to whoever comes next than showing the conclusions, so that is what is here.",
-    "Faults — a running list of failure modes grouped in families, with the number from the day each was found, where there was one. Heuremen LLC, Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion: Guards, the procedures and the only score either document has. This document supersedes the earlier ones it was assembled from. No instance is reported with the run that produced it.",
+    "Faults — a running list of failure modes grouped in families, with the number from the day each was found, where there was one. Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion: Guards, the procedures and the only score either document has. This document supersedes the earlier ones it was assembled from. No instance is reported with the run that produced it.",
     "Heuremen LLC “We found it.”"
    ]
   }

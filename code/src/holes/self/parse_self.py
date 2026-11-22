@@ -1,4 +1,4 @@
-"""THE SELF LEDGER, step 1 (2026-09-26, the owner: "we're not accounting for ourselves"). Parse GridSong's own log into one row per
+"""THE SELF LEDGER, step 1 (2026-09-26, the owner). Parse GridSong's own log into one row per
 copper cycle: when, what the copper read (grid-before 200/212/300, echo), and what WE were doing: was her FSK riding the copper
 (TX START..COMPLETE/LOST), was the wire dead (PLC offline). Dates: the log carries clock time only; walked backward from the file's
 mtime, a day is subtracted whenever clock time jumps forward going back (rollover)."""

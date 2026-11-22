@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""auto_ship.py (11 Nov 2026, the owner: "we're not a static site, we dynamic").
+"""auto_ship.py (11 Nov 2026, the owner).
 
 The desk riders put fresh numbers in the live feeds every few ticks, but the page tables, brand and entity pages, /forecasters,
 data packs, receipts and Zenodo only move when ship.sh runs. This rider closes that gap: when any desk summary has changed since

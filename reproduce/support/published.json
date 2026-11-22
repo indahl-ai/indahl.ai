@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/support/live.json",
- "feed_sha256": "c99f02bcf995a2e933eb2038ba2bc347fb66b28cf1b51f4ae2568bd234947396",
+ "feed_sha256": "dca22f62d5b17a6d9835e2fd207aec663398f7eef43a3802dd4b6fa7171744d8",
  "headline": {
   "desk": "SUPPORT",
   "display": "24%",
@@ -12,6 +12,6 @@
   "outcome": "ABOVE",
   "value": 0.2448
  },
- "read_at": "2026-11-22T16:02:28Z",
- "stamp": "22 Nov 14:56"
+ "read_at": "2026-11-22T18:39:47Z",
+ "stamp": "22 Nov 17:15"
 }

@@ -239,8 +239,8 @@ The operator, 2026-10-03. Read-only audit of every quantum-hardware firing the p
 - **Lap down.** Ledger §12: the back-to-back room trend was "drift, retracted"; the alternating difference "has a ruler suspect"; ledger §21: "§12-14 Rigetti rooms (+1.1% full, -1.6% middle trio): inside q0's task-to-task flicker. NOT supported."
 - **CARRIES:** one firing pair; PAPER:189's values equal ledger §12 | **LAPS DON'T MEET** (no read file below §12).
 
-### B22 · 9/28 21:43 EDT · THE FUCK-UP STACK (rooms rotated, readout-proof; three-body) · 54 tasks
-- **Laid.** [LAID] 54 tasks x 1000/1500/4000 (UTC 01:43:39-01:44:08); `fuckup_stack.py`, `stack.npz`; $59.55.
+### B22 · 9/28 21:43 EDT · THE FAULT STACK (rooms rotated, readout-proof; three-body) · 54 tasks
+- **Laid.** [LAID] 54 tasks x 1000/1500/4000 (UTC 01:43:39-01:44:08); `fault_stack.py`, `stack.npz`; $59.55.
 - **Used for.** 7P:102 "the order of looking sets the heat" (ledger §154: "on Rigetti a full room of watchers heats an emitter's start +1.1% and a middle trio cools it -1.6%, rotated and readout-proof").
 - **Lap down.** Ledger §21: "§12-14 Rigetti rooms (+1.1% full, -1.6% middle trio): inside q0's task-to-task flicker. NOT supported." (LOOK2: q0's flip error flickers 5.3-9.9 % between tasks seconds apart.)
 - **n.** 54 tasks, rooms rotated A,H,F then F,H,A (two rounds).
@@ -493,7 +493,7 @@ The operator, 2026-10-03. Read-only audit of every quantum-hardware firing the p
 | B19 · 9/28 20:51 who's watching | PAPER:189 | 24 tasks | DON'T: ledger §11 only |
 | B20 · 9/28 20:58 headline (q9 alone) | PAPER:14 (abstract), PAPER:189 | 24 tasks, 2 q | DON'T: ledger §11 only |
 | B21 · 9/28 21:26-21:30 rooms | PAPER:189 | 72 tasks | DON'T: ledger §12 only |
-| B22 · 9/28 21:43 fuck-up stack | 7P:102 | 54 tasks | DON'T: ledger §21 "NOT supported" |
+| B22 · 9/28 21:43 fault stack | 7P:102 | 54 tasks | DON'T: ledger §21 "NOT supported" |
 | B23 · 9/28 21:57 one for the road | 7P:102 | 30 tasks | DON'T: as B22 |
 | Q01 · 10/1 23:09 Run 1, Kingston/Phoenix/Pittsburgh | none | 3 jobs | not used |
 | Q02 · 10/2 00:14 Run 2 | 7P:62 (0.60); 7P:68 (1.667) | 1 job (Kingston), 9 q | DON'T: +-0.07 dropped; lowest of six |

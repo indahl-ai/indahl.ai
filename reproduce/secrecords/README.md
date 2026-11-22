@@ -10,15 +10,15 @@ This kit recomputes the SECRECORDS headline number and its outcome label with th
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `116c7c2b6901e2cb855dbff21d4d1a616a9a37cde329a4dc4cd378d6f1fc60a6`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `4740ccce5fbdedd5a133cbcb06f8f5119b14ad81f7108c16f8d6098fcd218cb1`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 22 Nov 14:47, read by us at 2026-11-22T16:02:21Z. The feed bytes had sha256 `9be0c514da7cd502a163d640b932044c8bfeae4974239657cd8de37c9be1a040`.
+The headline as the live feed https://indahl.ai/secrecords/live.json served it at the feed stamp 22 Nov 17:00, read by us at 2026-11-22T18:39:45Z. The feed bytes had sha256 `a22277aac3e5266a89781b673ef9baa97347fd3dcd35aa4925c6efaafefab41f`.
 
-- number: 13%
-- value: 0.1301
-- interval: 0.0849 to 0.1943
+- number: 12%
+- value: 0.1224
+- interval: 0.0789 to 0.1853
 - outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -43,8 +43,8 @@ As the SECRECORDS data pack lists them. Credit each source when using its values
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/domains.json | 368,342 | `43b4cdd866e12fc51340f849fa78ae2d0aacb9bddaad76d7eee9428176ac4001` |
-| summary_secrecords.json | 14,936 | `9be0c514da7cd502a163d640b932044c8bfeae4974239657cd8de37c9be1a040` |
+| data/domains.json | 368,471 | `379a811fb2d46f834b1972aa8e0f2c55d9c73206162651314a4572751243c287` |
+| summary_secrecords.json | 14,934 | `a22277aac3e5266a89781b673ef9baa97347fd3dcd35aa4925c6efaafefab41f` |
 
 ## Code
 

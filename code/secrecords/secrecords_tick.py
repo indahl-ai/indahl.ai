@@ -17,7 +17,7 @@ H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, 
 if not os.environ.get('SR_FORKED') and not os.environ.get('SECRECORDS_SUMMARY_ONLY'):
     subprocess.Popen([sys.executable, '-I', os.path.abspath(__file__)], env=dict(os.environ, SR_FORKED='1'), stdout=open('data/last_run.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True); print('secrecords: started in the background'); sys.exit(0)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('secrecords: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('secrecords: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 _l = open('data/.lock', 'w')
 try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: print('secrecords: another run holds the lock'); sys.exit(0)

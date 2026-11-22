@@ -25,20 +25,20 @@
   {
    "bytes": 13656,
    "gzip_added": true,
-   "modified": "2026-11-22T15:49:30Z",
+   "modified": "2026-11-22T20:18:24Z",
    "path": "summary_linkrot.json",
-   "sha256": "d98e1e0b7b1495cccbf689d5a3663cc33b8e0af2e466f448a45908b3af17bf62",
+   "sha256": "2beeea173a7cfd1d33a712c48eb302c83beb673fc35d2ef09c063c37ebb135e3",
    "stored": "summary_linkrot.json.gz",
-   "stored_sha256": "9c148fa7b48bed965ec987e0ea9a8cc8e64e6233925a22598aa8abb9e854378e"
+   "stored_sha256": "be53f75b730d60aaf730394b97f50d31314623907d425352237ebb207d0d001c"
   }
  ],
- "made": "2026-11-22T16:02:15Z",
+ "made": "2026-11-22T20:27:29Z",
  "mode": "inputs",
  "name": "LETHE",
  "reference": [
   {
    "path": "desk/linkrot_tick.py",
-   "sha256": "13d98cb8822e78918ef1fb0f748af0ac5d613580b2aa81ea26578aa288b8e2d9"
+   "sha256": "bd267c1402776d2fbb9068919e9a483bb26318c998995fad43a2f3c6563468af"
   }
  ]
 }

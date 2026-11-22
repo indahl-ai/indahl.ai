@@ -90,7 +90,7 @@ def main():
             covered = ' '.join(norm(s['text']) for r in rows.values() if r['status'] == 'live' for s in r['surfaces'] if s['surface'] == k)
             nums = num.findall(t); un = [x for x in nums if x not in covered]
             print(f'  coverage {k:<40} {len(nums) - len(un):>4} of {len(nums):>4} decimal numbers in a ledger row')
-    # 15 Nov 2026, the owner ("why the fuck are we still waiting on the fucking scorecards"): a stale feed is reported here and by
+    # 15 Nov 2026, the owner (): a stale feed is reported here and by
     # alerts_check, and each live headline prints its own stamp, but it no longer holds every unrelated ship behind a slow refresh.
     # 21 Nov 2026 (control audit #1): one live feed that could not be read (LIVEFEED) or one desk that renamed a field (LIVEFIELD) refused the
     # whole site. Scoped like LIVESTALE and the reproduce gate: the failing desks are written to ledger/live_held.json (headlines.py takes

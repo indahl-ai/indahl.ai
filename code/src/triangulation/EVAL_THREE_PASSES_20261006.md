@@ -1,7 +1,7 @@
 # Three passes, one question, read with The specialist (6 October 2026, the operator)
 
 The question: which hole in the Seven needs the most support, and what patches it. The owner pressed it three ways:
-A (my first answer), B ("easiest to prove, or the hole that needs the most support?"), C ("you already fucked up once; will the plan meet the need?").
+A (my first answer), B ("easiest to prove, or the hole that needs the most support?"), C ().
 Then: "evaluate all three." Case file: triangle/cases/operator_three_passes_20261006.json. Tool run: triangle/triangle.py (output below).
 
 ## How I read them (The specialist, my formula, used on my own passes)

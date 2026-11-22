@@ -1,4 +1,4 @@
-// correctreq.js -- the correction or removal door (30 Oct 2026, the owner: "go for correction or removal option").
+// correctreq.js -- the correction or removal door (30 Oct 2026, the owner).
 // Open to anyone: no agreement, no sign-in, no work email. A person or organisation named on a page, or anyone who finds an error, can ask for a
 // correction or a removal. Nothing here is posted. We read every request in full and answer by email, and we may write back to confirm that a
 // removal request comes from the person or organisation named. Stored: the fields below and the time, kept 24 months as the privacy notice states.

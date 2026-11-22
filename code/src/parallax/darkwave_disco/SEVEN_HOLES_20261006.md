@@ -1,6 +1,6 @@
 # Seven -- the holes, by corner (6 October 2026, the operator, after the Phoenix day-2 read)
 
-The owner 10/6: "We do it right once or we're patching wrong forever... make sure it DIRECTLY supports what we're trying to do and patches whatever holes we have with the seven statements. Witness. Observer. Time. Triangulate. Pi."
+The owner 10/6
 Rule for this file: no run, read or fix goes ahead unless it closes a hole named here. No dates drive anything. Every patch says which corner it fills and how it gets a time leg.
 Corners: OBSERVER = ours / the maker's stated numbers (outside). WITNESS = clocks read inside the chip. TIME = the measured qubit's own decay clock. Pi = the gap between what we see from inside and what the world would rate.
 

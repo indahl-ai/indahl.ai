@@ -13,7 +13,7 @@ except Exception:
         return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('nas: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('nas: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 URL = 'https://nasstatus.faa.gov/api/airport-status-information'; UA = {'User-Agent': 'heuremen-airline/0.1 (+https://indahl.ai/airline)'}; W = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door')
 def parse(xmltext):
     """-> (update_time, {type name: [ {field: text, ...}, ... ]}) with every field as published; no filtering"""

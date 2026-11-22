@@ -260,6 +260,9 @@ def upgrade():
 
 # ---- publish: what the page reads
 def publish():
+    # 22 Nov 2026 (the owner's rule: receipts are internal; served release manifests named house files): the releases, proofs and index stay in
+    # ledger/stamps and are no longer copied to the worker's public/receipts/stamps. Kept as a function so release/upgrade still call it.
+    return
     try:
         os.makedirs(PUB, exist_ok=True)
         st = jload(S + '/ots_status.json', {}); caps = {}

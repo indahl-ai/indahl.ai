@@ -25,20 +25,20 @@
   {
    "bytes": 673523,
    "gzip_added": true,
-   "modified": "2026-11-22T15:41:28Z",
+   "modified": "2026-11-22T18:03:23Z",
    "path": "data/live_days.json",
    "sha256": "06577fa0bc7b27c6686cb6b393afa951c3652829b80a0389deab2cad7c42dbc8",
    "stored": "data/live_days.json.gz",
    "stored_sha256": "9846a0755c68243ca8b19c98c9b507f60189c1e2961cc97d46ba62db83a01f8e"
   }
  ],
- "made": "2026-11-22T16:03:07Z",
+ "made": "2026-11-22T18:39:59Z",
  "mode": "fetch",
  "name": "AIRQ",
  "reference": [
   {
    "path": "desk/airq_live_tick.py",
-   "sha256": "b74b4fe2ffb59cf45ea5eb8258d2951745e005e66741423e73bce02a477e5225"
+   "sha256": "c9e76f098e41b40eb66664624503c1b707693206c308c1acbde96e084269ac2a"
   }
  ],
  "sources": [

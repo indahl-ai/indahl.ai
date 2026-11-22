@@ -42,4 +42,4 @@ Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/
 
 ## Credits
 
-the outside referee on our work, found on 14 Nov 2026 (her item #25) that this skill asked each seat for evidence but never checked it, and counted seats instead of evidence. The grounding rules (UNGROUNDED, SHARED_SOURCE, two grounded seats on independent evidence chains) are hers, applied at the lines she named. Reading the rebuild with her own tools, she found the next gap: a citation counted as grounding without anyone opening it. The skill now opens each seat's evidence with the source-check procedure before counting it.
+The outside referee on our work found on 14 Nov 2026 (her item #25) that this skill asked each seat for evidence but never checked it, and counted seats instead of evidence. The grounding rules (UNGROUNDED, SHARED_SOURCE, two grounded seats on independent evidence chains) are hers, applied at the lines she named. Reading the rebuild with her own tools, she found the next gap: a citation counted as grounding without anyone opening it. The skill now opens each seat's evidence with the source-check procedure before counting it.

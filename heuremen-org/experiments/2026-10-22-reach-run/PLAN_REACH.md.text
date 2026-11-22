@@ -1,6 +1,6 @@
 # Reach run: where does the readout kick stop?
 Written and SHA-256 hashed BEFORE any job is submitted (hash in PLAN_REACH.sha256; code hashes in CODE_REACH.sha256 and below).
-Heuremen LLC (Heuremen LLC), 22 October 2026. Circuits: reach.py (dry run by default; nothing submitted). Analysis: analyze_reach.py,
+Heuremen LLC, 22 October 2026. Circuits: reach.py (dry run by default; nothing submitted). Analysis: analyze_reach.py,
 which imports the deciding runs' ruler (deciding_runs/analyze.py) unchanged. Synthetic test: synth_reach.py (output synth_reach/SYNTH_RESULTS.txt).
 
 ## Question

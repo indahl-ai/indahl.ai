@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """fault_cases.py -- THE FAULT LEDGER AS TRAINING. (the operator, 9 Oct 2026.)
 
-The owner: "same problems every single night, make sure our training is avoiding this bullshit."
-And earlier: "log your faults bro, we learned thats how you build everything... nobody said shit
-about training on your fuckups.....kind of our story, isn't it operator?"
+The owner
+And earlier: "log your faults bro, we learned thats how you build everything... nobody said 
+about training on your faults.....kind of our story, isn't it operator?"
 
 THE LEDGER IS AT 79 ROWS AND HAS NEVER BEEN TRAINED ON. It is read by a human, counted by
 faults.py, and that is all -- so the same shapes come back every night. The repeat classes on the

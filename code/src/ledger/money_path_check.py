@@ -73,8 +73,8 @@ def inquiry_door():
     """21 Nov 2026 (money-path check): /inquiries hands off to the NDA-gated form on indahl.ai. Check the hand-off page, the form's script, and
     the POST endpoint itself with a NON-STORING request: a POST with no fill-time field is refused by indahl-ai/inquire.js at line 30 ('too
     quickly', 400) before any store write, after it has proved the route answers, the store binding exists (503 otherwise) and the body parses."""
-    st, ct, body = get('/inquiries')
-    if st == 200 and b'indahl.ai/contact' not in body: fail('/inquiries no longer links the inquiry form (indahl.ai/contact)')
+    st, ct, body = get('/')   # 22 Nov 2026 (the owner): no /inquiries landing page; the nav Inquiry links the form directly
+    if st == 200 and b'https://indahl.ai/contact' not in body: fail('the QIA home page no longer links the inquiry form (indahl.ai/contact)')
     st, ct, body = get('https://indahl.ai/contact')
     if st != 200: fail('indahl.ai/contact (the NDA step) answered %s' % st)
     elif b'action="/agree"' not in body: fail('indahl.ai/contact has no NDA agreement form (action="/agree")')
@@ -140,7 +140,6 @@ def functional(src_bytes):
 def main():
     page('/', must='qia-cr')
     for s in demo_slugs(): page('/demo-' + s)
-    page('/inquiries')
     inquiry_door()
     try: subprocess.run([sys.executable, os.path.join(B, 'ledger', 'inquiry_bell.py')], timeout=150, capture_output=True)   # rings any new inquiry after a ship too
     except Exception: pass

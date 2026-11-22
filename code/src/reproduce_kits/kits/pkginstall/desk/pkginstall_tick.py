@@ -18,7 +18,7 @@ VPY = os.path.join(H, 'venv', 'bin', 'python')
 if not os.environ.get('PI_FORKED') and not os.environ.get('PKGINSTALL_SUMMARY_ONLY'):
     subprocess.Popen([VPY, os.path.abspath(__file__)], env=dict(os.environ, PI_FORKED='1'), stdout=open('data/last_run.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True); print('pkginstall: started in the background'); sys.exit(0)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('pkginstall: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('pkginstall: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 _l = open('data/.lock', 'w')
 try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: print('pkginstall: another run holds the lock'); sys.exit(0)

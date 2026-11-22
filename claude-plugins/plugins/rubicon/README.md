@@ -85,7 +85,7 @@ The referee also refereed the design before release. She found that adding a cri
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/d30a91ae5edf/claude-plugins/src/rubicon/scripts/rubicon.py
-  sha256 4683bcee1d797fc288a7b61008dc3036667c9bdf20dbd9ca47792592e1bd0fb0
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/9823ec46bec5/claude-plugins/src/rubicon/scripts/rubicon.py
+  sha256 9823ec46bec5d7f55524053a8877acc6734c0026891d748362fe22b76312ec07
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

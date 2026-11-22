@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zenodo_sync.py -- Zenodo follows the site. Heuremen LLC, 11 Nov 2026 (the owner: "likewise with zenodo ... we're not a static site").
+"""zenodo_sync.py -- Zenodo follows the site. Heuremen LLC, 11 Nov 2026 (the owner).
 
   zenodo_sync.py                 dry run (default): for every record in ZENODO_MAP.json compare the md5 of each file the site serves with the md5 of the
                                  same file in the record's latest published version, and say what would be updated

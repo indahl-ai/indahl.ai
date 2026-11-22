@@ -1,4 +1,4 @@
-"""Synthetic test of analyze_flip.py in the real raw-IQ schema (PLAN_FLIP.md). Heuremen LLC, Heuremen LLC, 22 October 2026.
+"""Synthetic test of analyze_flip.py in the real raw-IQ schema (PLAN_FLIP.md). Heuremen LLC, 22 October 2026.
 Roles (E, S), cz wiring and every qubit's 0/1 IQ cluster centres and spreads are the REAL ibm_kingston ones from the 21 Oct raw-readout run
 (control_run/iqjob_ibm_kingston.json, iqraw_ibm_kingston.npz, iq_backend_properties_ibm_kingston.json). Same pubs, meta, register names,
 shapes and dtype as run_flip.py writes (26 pubs, 3000 shots). Planted:

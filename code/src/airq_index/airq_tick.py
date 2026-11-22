@@ -3,7 +3,7 @@
 import os, sys, json, math, time, statistics, collections, urllib.request, urllib.parse, urllib.error, datetime, random, subprocess
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H); os.makedirs('data', exist_ok=True)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airq: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airq: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 ACC = os.path.expanduser('~/Documents/Heuremen LLC/ACCOUNTS')
 AQS_E, AQS_K = open(ACC + '/epa-aqs-key').read().split()[:2]; PA_K = open(ACC + '/purpleair-read-key').read().strip()
 # 9 Nov 2026 (addendum 4): the same read for a newer window. AIRQ_WINDOW=2025 (default) is the published read, unchanged, end 23:59:59 on 30 Sep as it was run.

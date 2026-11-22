@@ -26,6 +26,9 @@ Every number we commit to in advance, with its width and decision rule, is writt
 
 ## 6. Price, deposit and terms
 - **Fee:** [AMOUNT], fixed for the scope above.
+- **Monitoring billing (if this SOW is monitoring):** [billed monthly at [AMOUNT]] or [prepaid for the year: $25,500 (15% off monthly), or $23,000 if signed during the pilot].
+- **Pilot credit:** if signed during the 30-day pilot, the pilot's 30 days and its fee count toward the year.
+- **Term:** one (1) year from signature, no renewal (MSA §13).
 - **Payment:** 50% on signature, 50% on delivery. Net 15 from invoice date. 1.5% per month on overdue balances.
 - **Work begins** when the signed SOW and the deposit are both received.
 

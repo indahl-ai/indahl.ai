@@ -11,5 +11,7 @@ B="$HOME/forge"; S="$B/indahl-ai"; W="$B/cloudflare-workers/heuremen-door"
 # there read "worker unchanged" and deployed nothing. Every folder any indahl-ai/*.js or *.mjs imports from (from './<dir>/...) is now added to it.
 IMP=$(cat "$S"/*.js "$S"/*.mjs 2>/dev/null | grep -oE "from ['\"]\./[A-Za-z0-9_-]+/" | sed -E "s#from ['\"]\./##; s#/##" | sort -u)
 DIRS=(); for d in $(printf '%s\n' oy atlas iris qia hermes darkwave media brand receipts corrections week alerts newsletter security e $IMP | awk '!s[$0]++'); do [ -d "$S/$d" ] && DIRS+=("$S/$d"); done
+# 22 Nov 2026: receipts/stamps/ is written by stamps.py release AFTER each deploy (it stamps the deployed build), so it is left out of the hash;
+# otherwise every ship changed its own hash and the next ship redeployed for nothing. Those files ride the next real deploy.
 { cat "$W/worker.js" "$W"/desk_*.js "$W/wrangler.toml" "$S"/*.js "$S"/*.mjs "$S"/*.html "$S/style.css"   # 18 Nov 2026: *.mjs too (qia_measured.mjs, connector_tool.mjs are imported by tools_qia.js)
-  find "${DIRS[@]}" "$W/public" -type f -print0 | sort -z | xargs -0 cat; } | shasum -a 256 | cut -c1-16
+  find "${DIRS[@]}" "$W/public" -type f -not -path "$W/public/receipts/stamps/*" -print0 | sort -z | xargs -0 cat; } | shasum -a 256 | cut -c1-16

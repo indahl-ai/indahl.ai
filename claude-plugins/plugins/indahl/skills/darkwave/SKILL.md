@@ -10,15 +10,15 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/darkwave-correction/darkwave_kit-a43b1cf89899.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/744bcd22548a/claude-plugins/plugins/darkwave-correction/scripts/darkwave_kit.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != 'a43b1cf8989928dfd3f94b40b4ae5491d31e52e85cec117e315c4ad4fbc6a401')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/darkwave-correction/darkwave_kit-8e49aa1e4146.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/8e49aa1e4146/claude-plugins/src/darkwave-correction/scripts/darkwave_kit.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '8e49aa1e41461e0f9f6d847553bc2af7f69e726796b4c07c43d1ec60fb1fd234')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/744bcd22548a/claude-plugins/plugins/darkwave-correction/scripts/darkwave_kit.py (sha256 a43b1cf8989928dfd3f94b40b4ae5491d31e52e85cec117e315c4ad4fbc6a401).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/8e49aa1e4146/claude-plugins/src/darkwave-correction/scripts/darkwave_kit.py (sha256 8e49aa1e41461e0f9f6d847553bc2af7f69e726796b4c07c43d1ec60fb1fd234).
 
 
 # Darkwave Correction Kit
 
-Script: `$HOME/.cache/indahl-plugins/darkwave-correction/darkwave_kit-a43b1cf89899.py` (version 1.1.1: the published kit v1.1 plus a fix for a crash when printing a target whose idle coherence is 0, and a submit that runs
+Script: `$HOME/.cache/indahl-plugins/darkwave-correction/darkwave_kit-8e49aa1e4146.py` (version 1.1.1: the published kit v1.1 plus a fix for a crash when printing a target whose idle coherence is 0, and a submit that runs
 only from the user's own terminal; Python 3.10 or later). Needs
 `pip install -r "${CLAUDE_PLUGIN_ROOT}/scripts/requirements.txt"` (qiskit, qiskit-ibm-runtime, numpy, qiskit-aer). Install only when the
 user agrees. The kit reads the user's own saved IBM Quantum account and never stores the key. Method and data: the study "A Readout's

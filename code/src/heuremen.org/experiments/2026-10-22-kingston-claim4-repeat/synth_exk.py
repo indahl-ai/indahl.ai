@@ -1,4 +1,4 @@
-"""Synthetic test for the kingston repeat. Heuremen LLC, Heuremen LLC, 22 Oct 2026. Runs ../deciding_runs/synth_excitation.py's own
+"""Synthetic test for the kingston repeat. Heuremen LLC, 22 Oct 2026. Runs ../deciding_runs/synth_excitation.py's own
 source with exactly these substitutions: FakeFez -> FakeKingston and roles ibm_fez -> ibm_kingston (117 spectators, as on the chip); the builder
 call goes through excitation_k.build_exk at SHOTS; the two planted cases become CASES (G = 0 and G = +0.5 deg/step); the noise seed 9 becomes
 SEED (1..6); outputs go to a temporary folder. The analysis is analyze_excitation.excitation, unchanged. Usage: python synth_exk.py [shots]

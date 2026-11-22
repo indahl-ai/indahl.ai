@@ -1,4 +1,4 @@
-"""Flat-beat prediction run on fresh phoenix pairs, 22 Oct 2026 (built from zz.py of the one-neighbour run) (Heuremen LLC, Heuremen LLC). PLAN_FLAT.md, sha256 in PLAN_FLAT.sha256.
+"""Flat-beat prediction run on fresh phoenix pairs, 22 Oct 2026 (built from zz.py of the one-neighbour run) (Heuremen LLC). PLAN_FLAT.md, sha256 in PLAN_FLAT.sha256.
 Dry run by default (builds, transpiles against the live chip, estimates seconds, submits nothing). --fire submits.
 Usage: python zz.py CHIP [--fire]
 Layout: triples (B1, A, B2), B1 and B2 coupled to A. Every other neighbour of A is idle in 0 (no A of another triple and no B of

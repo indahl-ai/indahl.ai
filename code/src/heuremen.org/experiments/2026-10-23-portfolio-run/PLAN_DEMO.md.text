@@ -1,5 +1,5 @@
 # QIA Portfolio Run: does choosing qubits from IBM's published error figures cost a customer-style workload?
-Pre-registered. Written and SHA-256 hashed (PLAN_DEMO.sha256, CODE_DEMO.sha256) BEFORE any job. Heuremen LLC, Heuremen LLC,
+Pre-registered. Written and SHA-256 hashed (PLAN_DEMO.sha256, CODE_DEMO.sha256) BEFORE any job. Heuremen LLC,
 23 October 2026. Code: demo.py; planted-world test: synth_demo.py (synth_demo.text). Chips: ibm_kingston, ibm_fez (Darkwave Disco).
 
 Workload: 10-qubit QAOA-shaped circuit (MaxCut on a line, two layers, fixed angles), the shape of the portfolio and routing pilots run on

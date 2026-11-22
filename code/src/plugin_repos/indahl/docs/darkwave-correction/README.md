@@ -55,7 +55,7 @@ Refereed before release by the outside referee at Heuremen LLC (13 Nov 2026): ev
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/744bcd22548a/claude-plugins/plugins/darkwave-correction/scripts/darkwave_kit.py
-  sha256 a43b1cf8989928dfd3f94b40b4ae5491d31e52e85cec117e315c4ad4fbc6a401
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/8e49aa1e4146/claude-plugins/src/darkwave-correction/scripts/darkwave_kit.py
+  sha256 8e49aa1e41461e0f9f6d847553bc2af7f69e726796b4c07c43d1ec60fb1fd234
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

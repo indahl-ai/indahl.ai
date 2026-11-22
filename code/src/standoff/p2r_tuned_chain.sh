@@ -1,5 +1,5 @@
 #!/bin/bash
-# P2-R tuned (6 Oct, the owner: "take all caps off and get the job done"): collect the re-tune when Cepheus's 21:00Z window runs it; pick the amplitude by the
+# P2-R tuned (6 Oct, the owner): collect the re-tune when Cepheus's 21:00Z window runs it; pick the amplitude by the
 # rule written BEFORE the data (ledger §287): the LARGEST amplitude where the witness clocks keep >= 0.85 of their hand AND the looked-at qubits keep <= 0.80
 # (the tone looks); none qualifies -> HOLD, nothing fires. Then the length sweep at that amplitude, trains of 1-4 looks, 1500 shots, inside the window.
 cd ~/forge/standoff; export AWS_PROFILE=braket; PY=~/forge/qvenv/bin/python; L=fire_p2r.log

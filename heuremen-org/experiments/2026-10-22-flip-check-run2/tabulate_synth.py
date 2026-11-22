@@ -1,4 +1,4 @@
-"""Tabulate synth_results_full.txt (flipcheck_run2) into the numbers quoted in PLAN_FLIP.md. Heuremen LLC, Heuremen LLC, 22 Oct 2026."""
+"""[...]"""
 import re, sys, numpy as np, collections
 f = sys.argv[1] if len(sys.argv) > 1 else 'synth_results_full.txt'
 sc = None; rows = {}; fin = {}; dec = collections.Counter(); kg = collections.Counter(); kgf = []; idle = []

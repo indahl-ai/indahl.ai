@@ -44,4 +44,4 @@ Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai/
 
 ## Credits
 
-Named and shaped by the owner, from the way he has asked for explanations all along.
+Built by Heuremen LLC.

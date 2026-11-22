@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/fedsep/live.json",
- "feed_sha256": "d756820325e237c026b9cd9a9f02f7d3e4bd3aba8022030b7c6a4de62b9cc6ec",
+ "feed_sha256": "3e9a419194c48e7e6d17934eaa390abd44298ff662222faa149f34282ddee804",
  "headline": {
   "desk": "FEDSEP",
   "display": "6 of 41",
@@ -12,6 +12,6 @@
   "outcome": "BELOW",
   "value": 0.1463
  },
- "read_at": "2026-11-22T16:02:40Z",
- "stamp": "22 Nov 12:17"
+ "read_at": "2026-11-22T18:39:52Z",
+ "stamp": "22 Nov 16:58"
 }

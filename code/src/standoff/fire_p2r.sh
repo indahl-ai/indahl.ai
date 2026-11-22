@@ -1,5 +1,5 @@
 #!/bin/bash
-# P2-R chain (6 Oct, the owner: "go for amazon" / "Fire!"): round 1 after the 18:32Z recalibration, round 2 after 19:02Z. Cepheus's stamp read before each send.
+# P2-R chain (6 Oct, the owner): round 1 after the 18:32Z recalibration, round 2 after 19:02Z. Cepheus's stamp read before each send.
 cd ~/forge/standoff; export AWS_PROFILE=braket; PY=~/forge/qvenv/bin/python; L=fire_p2r.log
 stamp(){ $PY -c "import rigetti_drift_probe as P; print(P.cal_stamp())" 2>/dev/null | tail -1; }
 for spec in "1 2026-10-06T18:32" "2 2026-10-06T19:02"; do

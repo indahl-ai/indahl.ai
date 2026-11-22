@@ -4,7 +4,7 @@ import os, sys, io, csv, json, zipfile, random, time, pickle, urllib.request, st
 from collections import Counter
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airline: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('airline: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 B = 'https://transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_%d_%d.zip'
 YEARS = (2019, 2025, 2026); MONTHS = range(1, 9); MINF = 30; MINR = 30; DRAWS = 2000; TOL = 1.0
 SEED = 20261112   # PLAN_ADDENDUM_std2.md: named seed, one K.bootstrap call per airline and comparison. The 29 Oct read used one shared stream seeded 20261029, kept beside it as *_pre_std2.

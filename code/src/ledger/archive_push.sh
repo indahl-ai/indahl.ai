@@ -1,5 +1,5 @@
 #!/bin/bash
-# archive_push.sh -- commit and push ~/forge/archive_private to the private repo Heuremen-LLC/backup-private. Files over 50 MB are skipped and listed.
+# archive_push.sh -- commit and push ~/forge/archive_private to the private repo indahl-ai/backup-private. Files over 50 MB are skipped and listed.
 # Writes ledger/archive_backup_status.json on failure (watch/alerts_check.py reads it), removes it on success. Never fails a ship. 11 Nov 2026.
 A="$HOME/forge/archive_private"; S="$HOME/forge/ledger/archive_backup_status.json"; cd "$A" || exit 0
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"

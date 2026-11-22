@@ -1,7 +1,6 @@
 # THE PINATA IN THE MIDDLE -- zeta/Ramanujan-Casimir regularization, 2026-09-30
 
-Answers THIRD_RUNG_20260928.md Sec51 (the owner: "that Indian guy's equation... it belongs
-in the middle of the equation"). Casimir's move (CASIMIR_CALIBRATION_20260929.md Sec1-2):
+Answers THIRD_RUNG_20260928.md Sec51 (the owner). Casimir's move (CASIMIR_CALIBRATION_20260929.md Sec1-2):
 two divergent sums, discard each one's cutoff-dependent part, the finite remainder is
 physical if and only if it survives every cutoff. Run against the divergent clock fits
 kept as error rows in THREE_ON_YEAST_20260930.md and THREE_ON_MICE_ANTS_20260930.md, and

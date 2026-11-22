@@ -1,4 +1,4 @@
-"""Kingston repeat of the claim 4 excitation run. Heuremen LLC, Heuremen LLC, 22 Oct 2026. PLAN_EXK.md, sha256 in PLAN_EXK.sha256.
+"""Kingston repeat of the claim 4 excitation run. Heuremen LLC, 22 Oct 2026. PLAN_EXK.md, sha256 in PLAN_EXK.sha256.
 Imports ../deciding_runs/excitation.py (circuit builder, roles, arms) and ../deciding_runs/runs.py (fire path: copies, shuffle seed, transpile,
 estimate, submit, save) UNCHANGED, and changes exactly:
   1. shots per circuit: SHOTS below (the original returns 2000; asserted)

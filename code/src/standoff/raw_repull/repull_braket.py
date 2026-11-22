@@ -1,4 +1,4 @@
-"""2026-09-29 RAW RE-PULL, Braket (the owner: "go back more so we can go forward"). Every COMPLETED task since 2026-09-01 on our account:
+"""2026-09-29 RAW RE-PULL, Braket (the owner). Every COMPLETED task since 2026-09-01 on our account:
 the task record (created/ended, device, shots, metadata) + the full results.json from our own S3 output, saved gzipped and untouched --
 every measured qubit column, every shot, in shot order. Skips tasks already saved. One task at a time."""
 import boto3, json, gzip, os, sys

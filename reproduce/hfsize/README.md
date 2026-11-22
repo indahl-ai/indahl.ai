@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/hfsize/live.json served it at the feed stamp 22 Nov 14:47, read by us at 2026-11-22T16:02:26Z. The feed bytes had sha256 `51da3fad7116b2d231ca2d97783991a3ff79bd83891abd96de34fc198d727a33`.
+The headline as the live feed https://indahl.ai/hfsize/live.json served it at the feed stamp 22 Nov 17:00, read by us at 2026-11-22T18:39:47Z. The feed bytes had sha256 `019ec0426dee86d6e4c1ee41754a044c47d93cd8bb06f156915410347bd6396f`.
 
 - number: 10 of 123
 - value: 0.0813
@@ -42,8 +42,8 @@ As the HFSIZE data pack lists them. Credit each source when using its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/repos.json | 216,758 | `fa7ccf534b15651e7eb646c0cf0a2b0b004e688dd7a82cfb939885252198dcaf` |
-| summary_hfsize.json | 4,447 | `51da3fad7116b2d231ca2d97783991a3ff79bd83891abd96de34fc198d727a33` |
+| data/repos.json | 216,758 | `db53ba2b5cc3c926f4433a8dde50d7a271c11aea6e10bc6ebf3ef634f66408d9` |
+| summary_hfsize.json | 4,447 | `019ec0426dee86d6e4c1ee41754a044c47d93cd8bb06f156915410347bd6396f` |
 
 ## Code
 

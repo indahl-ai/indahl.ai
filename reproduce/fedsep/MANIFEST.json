@@ -16,7 +16,7 @@
   {
    "bytes": 4223,
    "gzip_added": true,
-   "modified": "2026-11-22T14:41:06Z",
+   "modified": "2026-11-22T16:58:27Z",
    "path": "data/projections.json",
    "sha256": "389aa46dd55e746079d0426e73bf4de42b087088ec596c0fd7cc821e6b031c3b",
    "stored": "data/projections.json.gz",
@@ -32,13 +32,13 @@
    "stored_sha256": "3e96b3c04806ad16396e55d08c10c325719f808bff1b1037356390640eda6dfb"
   }
  ],
- "made": "2026-11-22T16:02:40Z",
+ "made": "2026-11-22T18:39:52Z",
  "mode": "inputs",
  "name": "FEDSEP",
  "reference": [
   {
    "path": "desk/fedsep_tick.py",
-   "sha256": "259a96b68c7a3680c22993c54f913c208875a11ec4faa9bc2604a1cced65c22b"
+   "sha256": "ce6175c412c5f095753a0de78dcf2c0668c4b53dbe05f1d86016153e8b2eab2a"
   }
  ]
 }

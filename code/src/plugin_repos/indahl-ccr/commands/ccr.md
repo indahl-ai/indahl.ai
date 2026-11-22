@@ -10,12 +10,12 @@ sha256, and only then run it. If the download or the check fails, stop and tell 
 Show the user the commands before running them the first time.
 
 ```bash
-F="$HOME/.cache/indahl-plugins/ccr/ccr-715e5e35f686.py"
-[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/93afd7335d58/claude-plugins/src/ccr/scripts/ccr.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355')" "$F.part" && mv "$F.part" "$F"; }
+F="$HOME/.cache/indahl-plugins/ccr/ccr-4825f17bb490.py"
+[ -f "$F" ] || { mkdir -p "$(dirname "$F")" && curl -fsSL "https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/4825f17bb490/claude-plugins/src/ccr/scripts/ccr.py" -o "$F.part" && python3 -c "import hashlib,sys; sys.exit(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest() != '4825f17bb4900001875f09231b575f338e72b9cad6abfcc0c817e0e29e4d8619')" "$F.part" && mv "$F.part" "$F"; }
 ```
-Source: https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/93afd7335d58/claude-plugins/src/ccr/scripts/ccr.py (sha256 715e5e35f686179c8403555f80f8cd1c1b0b1a709420665af1fcc9b54a099355).
+Source: https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/4825f17bb490/claude-plugins/src/ccr/scripts/ccr.py (sha256 4825f17bb4900001875f09231b575f338e72b9cad6abfcc0c817e0e29e4d8619).
 
-Run `python3 "$HOME/.cache/indahl-plugins/ccr/ccr-715e5e35f686.py" $ARGUMENTS` (use `python` where `python3` is unavailable) and report the output plainly.
+Run `python3 "$HOME/.cache/indahl-plugins/ccr/ccr-4825f17bb490.py" $ARGUMENTS` (use `python` where `python3` is unavailable) and report the output plainly.
 
 - For `release`, list each approval's outcome (SAME, MOVED, CHANGED, CANNOT_TELL or GAP) with its reason, and the lines shipped outside any approval. Do not summarise MOVED as SAME.
 - For `why`, give the attribution exactly as recorded (WRITTEN_BY, RACE or UNATTRIBUTED). Cause is a judgement. Do not state one unless the user asks you to judge it, and then label it as your judgement and name the entries it rests on.

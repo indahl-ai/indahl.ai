@@ -15,8 +15,7 @@ for i, line in enumerate(text.splitlines(), 1):
 # extra steps. Internal reports write "Pi:", public drafts write "Open:"; either way it names what stays open, its size, and the pass that reads it.
 if not re.search(r"^\W*(pi|open)\s*[:\-—]", text, re.I | re.M):
     print("NO PI PART: every resolution has three parts, one always Pi (public: Open) -- what stays open, how big, which pass reads it"); bad += 1
-# 10/3 later (the owner: "value plus next action plus confidence from within and effective rating from without. four parter, half data,
-# all disco"): an internal report (Pi:) also carries its own confidence from within; the rating from without is the reader's, the critic's
+# 10/3 later (the owner): an internal report (Pi:) also carries its own confidence from within; the rating from without is the reader's, the critic's
 # (Crazy Gradient) or his -- write "Rating from without: pending" until it exists. Public drafts (Open:) carry error bars instead.
 if re.search(r"^\W*pi\s*[:\-—]", text, re.I | re.M) and not re.search(r"confidence", text, re.I):
     print("NO CONFIDENCE FROM WITHIN: a four-part report says how sure it is from inside, beside the rating from without"); bad += 1

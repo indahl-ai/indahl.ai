@@ -1,4 +1,4 @@
-"""patterns_of_patterns.py -- 7 Oct 2026 (the owner: "patterns of patterns... it literally goes on forever... recursions"). Level 1: every value read on 6 Oct
+"""patterns_of_patterns.py -- 7 Oct 2026 (the owner). Level 1: every value read on 6 Oct
 (ledger §288-§320) through The specialist. Level 2: The specialist thrown at its own hits -- the ratio between every pair of level-1 values, against the Seven's
 numbers, beside the same count on a shuffled-value ruler (the cheap-match rate for pairs). Level 3: the stooges' own numbers. No number guessed; rows."""
 import math, itertools, numpy as np

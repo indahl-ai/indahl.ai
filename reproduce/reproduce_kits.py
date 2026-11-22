@@ -176,7 +176,7 @@ NOKIT = {
  'hosts': dict(name='HOSTS', why='The headline is the count at the newest poll of OpenRouter, a live service whose answers cannot be replayed, and its flag test reads the 24 hours before the poll by the clock. Each poll is kept as parsed rows, not as the service’s answers.',
      check='Each published copy of the feed has its sha256 on the <a href="/tape">TAPE</a> chain, so any kept copy can be checked against what was published. The data pack holds the counts and outcomes.'),
  'tape': dict(name='TAPE', why='The headline is a clock, the time since the newest entry was chained.',
-     check='The chain itself can be checked offline. <a href="https://github.com/indahl-ai/indahl.ai/tree/main/code/tape">code/tape</a> holds tape.jsonl, every leaves file and tape_verify.py, which recomputes every hash and beacon with no network.'),
+     check='Each entry carries the hash of the entry before it.'),
  'revise': dict(name='REVISE', why='The headline compares the first BLS estimate with the most recent value, read from the BLS flat file on each run. The BLS table of first, second and third estimates is kept with its sha256. Until 10 Nov 2026 the flat file was not kept, so the published values cannot be replayed. From the next read on, each version of the flat file is kept by its sha256, and the start of its sha256 is in the feed.',
      check='The feed names the sha256 of the BLS table it read, and the <a href="/tape">TAPE</a> chain holds the sha256 of each published feed.'),
  'uptime': dict(name='UPTIME', why='The desk probes vendor services and their status pages live from two networks. A probe answer cannot be replayed.',

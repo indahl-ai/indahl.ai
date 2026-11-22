@@ -1,6 +1,6 @@
 # Reads the MLCommons v6.1 summary spreadsheet (datacenter closed tab) into raw/v61_ids.json: entry ID, submitter, system, accelerator, count and every result. python3 -I build_v61_ids.py
 import sys,json,os
-HERE=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,os.path.expanduser('~/forge/atlas/electricity'))
+HERE=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,os.path.join(HERE,'..','atlas','electricity'))   # 22 Nov 2026: located from this file, no home-folder name
 import xlsxread
 R=xlsxread.rows(os.path.join(HERE,'raw','summary_v61.xlsx'),0)
 model=[None]*len(R[1]); last=None

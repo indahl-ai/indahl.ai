@@ -81,9 +81,9 @@ A free neutron dies into a proton and an electron: two witnesses to one death. T
 - **Open:** Kingston's ON column; the in-between, its own clock against its neighbours'; whether a clock follows its own emitter.
 - **The margin:** everything here lives at 1-3 % in populations and near 0.6 in angles. The margin is the floor every triangle stands on.
 
-## THE DATA AND THE FUCKUPS
+## THE DATA AND THE FAULTS
 - The data dump: the reads, the frozen code with its hashes, the fire logs. Every qubit number above traces to a § in the run ledger and a read file.
-- The fuckups: every mistake caught since 9/28 and what it changed, and the triangle of fuckups (each error filled from two corners, and the ruler measuring itself).
+- The faults: every mistake caught since 9/28 and what it changed, and the triangle of faults (each error filled from two corners, and the ruler measuring itself).
 - Both are published alongside this page; links go in when they are up.
 
 ## THEIR RECORDS (sources)

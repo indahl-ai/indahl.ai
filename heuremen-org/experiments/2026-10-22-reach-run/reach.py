@@ -1,4 +1,4 @@
-"""Reach run, 22 Oct 2026 (Heuremen LLC, Heuremen LLC). PLAN_REACH.md, sha256 in PLAN_REACH.sha256. Where does the readout kick stop?
+"""Reach run, 22 Oct 2026 (Heuremen LLC). PLAN_REACH.md, sha256 in PLAN_REACH.sha256. Where does the readout kick stop?
 Dry-run by default: builds, picks the layouts from the live coupling map, prints the untouched-qubit counts at every exact distance, transpiles
 against the live chip, estimates seconds, submits nothing. --fire submits (Darkwave Disco instance). Usage: python reach.py CHIP [--fire] [--shots S]
 Design: K = 3 packed layouts in one job. Each layout is a breadth-first ball of 39 measured qubits around a centre; the centres are chosen from the

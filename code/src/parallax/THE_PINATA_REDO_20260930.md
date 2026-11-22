@@ -1,9 +1,7 @@
 # THE PINATA, REDONE -- Ramanujan's CONVERGENT 1/pi series in the middle, 2026-09-30
 
 Corrects THE_PINATA_20260930.md (which ran the -1/12 zeta/exponential/Abel regulators, the WRONG
-Ramanujan sum for this job -- THIRD_RUNG_20260928.md Sec56b, the owner ~23:00Z: "we switched that
-equation halfway through today; the morning runs had the other Ramanujan one in the middle -- go
-back and take a look"). Same 12 divergent clock series and 4 split differences as the morning run,
+Ramanujan sum for this job -- THIRD_RUNG_20260928.md Sec56b, the owner ~23:00Z). Same 12 divergent clock series and 4 split differences as the morning run,
 same windows, same records, built by calling `parallax/out/yeast/three/regularize.py`'s own
 (unedited) series-construction functions directly. New module:
 `parallax/out/the_middle/pinata_redo.py`. Raw output: `parallax/out/the_middle/pinata_redo_results.json`.

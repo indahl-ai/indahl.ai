@@ -1,5 +1,5 @@
 # Claim 4 run: is the readout kick bigger when the measured qubits are in 1?
-Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Heuremen LLC (Heuremen LLC), 22 October 2026.
+Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Heuremen LLC, 22 October 2026.
 Why: claim 4 rested on two chips, one copy per job, an analysis written after the data, and a plan with no outside timestamp. On that data the
 gap (check J, committed before computing) reads kingston +0.204 deg/step [-0.092, +0.320], marrakesh -0.673 [-0.982, -0.403].
 Circuits: excitation.py (control-run layout and builder; runs.py fire path). Analysis: analyze_excitation.py (analyze.py's rulers unchanged),

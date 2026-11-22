@@ -1,4 +1,4 @@
-# Every build, one command each (23 Oct 2026; his: "put it all in there, we have to be consistent from here on out")
+# Every build, one command each (23 Oct 2026; his)
 All entry points live in ~/forge/ledger/. Each one refuses on failure and verifies its own output. Nothing is ever built by hand.
 
 | What | Command | Builds from | Verifies |

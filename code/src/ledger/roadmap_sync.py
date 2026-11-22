@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""roadmap_sync.py (11 Nov 2026, the owner: "if you're not going to have a hardcoded path to update shit like this don't do it").
+"""roadmap_sync.py (11 Nov 2026, the owner).
 
 The /changes page is built from public_mirror/indahl.ai/ROADMAP.md. Before this, ROADMAP.md was edited by hand and went stale
 (new desks missing, waits that had already ended). ship.sh step 1 runs this before build_site.py:

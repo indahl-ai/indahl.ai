@@ -1,6 +1,4 @@
-"""THE STOPWATCH RUN (the operator, by hand, 2026-10-02). the owner: "You had a stopwatch for a qubit this entire time... you've been measuring time with our
-own ruler. Now do the opposite. What happens to time when one qubit looks at another? What happens to the measurement measuring time by the qubit and
-time by the observer qubit and time by the witness measurement?"  (His standing order of 9/28: listen to the clocks INSIDE the system.)
+"""THE STOPWATCH RUN (the operator, by hand, 2026-10-02). the owner  (His standing order of 9/28: listen to the clocks INSIDE the system.)
 THREE TIMES ON ONE EVENT, 60 us long:
   OURS      -- the 60 us we lay down from outside, and how long we TELL the emitter to stay ON (0 / 20 / 40 / 60 us: we park it OFF after that).
   THE BIT'S -- the emitter's own last look (what is left of it).

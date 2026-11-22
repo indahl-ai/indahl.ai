@@ -102,7 +102,7 @@ def check_removed(stale):
     return n
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
-# 11 Nov (the owner: "can the data packs also get an autonomous update every time that desk or page is updated ... we're not a static site")
+# 11 Nov (the owner)
 # Every desk pack and package has an INPUT MAP below. refresh compares a hash of the inputs with the hash recorded when the pack was last made
 # (ledger/pack_inputs.json). When they differ the pack is rebuilt into a scratch folder and its contents are compared with the placed zip.
 # Same contents: nothing is placed (an unchanged desk never makes a new pack). Different contents: the zip is placed, stamped with the build date

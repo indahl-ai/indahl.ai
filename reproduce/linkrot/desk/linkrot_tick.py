@@ -19,7 +19,7 @@ _lock = open(os.path.join(H, 'data', '.lock'), 'w')
 try: fcntl.flock(_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: print('linkrot: another run holds the lock, skipping'); sys.exit(0)   # 29 Oct: two writers corrupted links.json once
 W = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door'); UA = 'heuremen-linkrot/0.1 (+https://indahl.ai/linkrot)'
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('linkrot: plan not committed, refusing to read'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('linkrot: plan not committed, refusing to read'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 LIVE_CTL = ['https://github.com/torvalds/linux', 'https://www.python.org', 'https://arxiv.org/abs/1706.03762', 'https://example.com', 'https://zenodo.org']
 DEAD_CTL = ['https://github.com/this-owner-does-not-exist-7q2/none', 'https://example.com/no-such-page-7q2', 'https://made-up-host-7q2.invalid', 'https://raw.githubusercontent.com/torvalds/linux/master/no-such-file-7q2', 'https://zenodo.org/records/99999999999']
 locks = C.defaultdict(threading.Lock); lastreq = {}

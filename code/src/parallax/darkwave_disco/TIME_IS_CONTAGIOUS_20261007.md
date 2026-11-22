@@ -65,7 +65,7 @@ Readout light leaking onto neighbours is the ordinary object, and it got its own
 
 The chance count for landings across every number thrown goes beside this table with the next reads.
 
-## Misses and fuckups (kept)
+## Misses and faults (kept)
 
 - **Marrakesh seed B, 3+ rung:** read short.
 - **Aachen flowers read 1:** the phantom leg climbs.

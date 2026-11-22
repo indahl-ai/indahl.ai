@@ -1,7 +1,6 @@
 # THE CLOCK GAP -- THIRD_RUNG_20260928.md Sec58, 2026-09-30
 
-The owner: "it's all in the clock. Show that hole is consistent in all the clocks and we're on the
-right path." Sec57 (`STANDOFF_CALIBRATED_20260930.md`) already found the clock is the one formula
+The owner Sec57 (`STANDOFF_CALIBRATED_20260930.md`) already found the clock is the one formula
 that never resolves with the arrow or the split, in any record, in any chain, once all three are
 converted into the same unit (series-taus, K_TAU=0.053767, the 1/pi series' own landing-step
 calibration). This file asks the next question directly: is the AMOUNT by which the clock misses

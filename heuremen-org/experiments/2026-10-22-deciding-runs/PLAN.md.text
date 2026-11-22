@@ -1,7 +1,7 @@
 # Deciding runs: six readings already on the record, each read again beside the ordinary causes that could make it
 Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Version 3: the across-chip table combines chips by VALUE and WIDTH (not by counting labels) and prints the chip-to-chip spread;
 the floor re-measured on REAL hardware copies. Version 2 (0ea33d5) added the measured FLOOR, the trimmed mean for R4.2/R4.3 and
-the run 4 wording (version 1, commit 63482af, never fired). Heuremen LLC (Heuremen LLC), 22 October 2026.
+the run 4 wording (version 1, commit 63482af, never fired). Heuremen LLC, 22 October 2026.
 Circuits: runs.py (dry-run against the live chips, nothing submitted). Analysis: analyze.py, tested on synthetic data with planted effects
 (synth.py, output synth/synth_output.txt) and committed with this plan.
 

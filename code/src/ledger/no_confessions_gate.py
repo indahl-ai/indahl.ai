@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""no_confessions_gate.py (15 Nov 2026, the owner: "You act like everyone's a fucking buddy and you're coming clean, cut it" and
-"nobody fucking does that"). Public copy states what a thing is now. A fix is made, never announced; the version history holds the past.
+"""no_confessions_gate.py (15 Nov 2026, the owner and
+"nobody does that"). Public copy states what a thing is now. A fix is made, never announced; the version history holds the past.
 Refuses a release when a built public page carries one of these phrases about indahl.ai's own past errors. Legal pages are exempt.
   python3 no_confessions_gate.py     exit 1 and print every hit"""
 import glob, html, os, re, sys

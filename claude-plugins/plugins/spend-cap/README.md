@@ -105,7 +105,7 @@ The referee also caught, before release: the duplicate-message key that collapse
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/952786ff9c9c/claude-plugins/src/spend-cap/scripts/spend_cap.py
-  sha256 196a19a093d6b2eef25ba412c85b34d4759a2fec7f8dc0016c23d3cb83a8c7cb
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/b5ae66d947ce/claude-plugins/src/spend-cap/scripts/spend_cap.py
+  sha256 b5ae66d947ce67c51613a1b7cbec99c1c8288b14aba6a62977aecea196cd5332
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

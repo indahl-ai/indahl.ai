@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="The Ed25519 key that signs indahl.ai feeds, API answers, alert receipts and webhooks, and how to check a signature in Python and Node.">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 <meta name="author" content="Heuremen LLC">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Verify Signatures", "description": "The Ed25519 key that signs indahl.ai feeds, API answers, alert receipts and webhooks, and how to check a signature in Python and Node.", "url": "https://indahl.ai/verify", "inLanguage": "en", "dateModified": "2026-11-21T19:10:58Z", "isPartOf": {"@type": "WebSite", "@id": "https://indahl.ai/#website", "name": "indahl.ai", "url": "https://indahl.ai/"}, "publisher": {"@type": "Organization", "name": "Heuremen LLC", "url": "https://indahl.ai/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Verify Signatures", "description": "The Ed25519 key that signs indahl.ai feeds, API answers, alert receipts and webhooks, and how to check a signature in Python and Node.", "url": "https://indahl.ai/verify", "inLanguage": "en", "dateModified": "2026-11-22T19:41:30Z", "isPartOf": {"@type": "WebSite", "@id": "https://indahl.ai/#website", "name": "indahl.ai", "url": "https://indahl.ai/"}, "publisher": {"@type": "Organization", "name": "Heuremen LLC", "url": "https://indahl.ai/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Heuremen LLC", "item": "https://indahl.ai/"}, {"@type": "ListItem", "position": 2, "name": "Verify Signatures", "item": "https://indahl.ai/verify"}]}</script>
 <link rel="preload" href="/fonts/lora-normal-6b102ab3.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/abril-fatface-normal-804040b2.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,7 +54,7 @@ MCowBQYDK2VwAyEA0oTA2BSs50d4B22ZKEKRlAreYyj4VXRy4aoxrlh4hQ0=
 <ul class="ticks">
 <li>Every feed: <a href="/feed.xml">feed.xml</a>, <a href="/feed.json">feed.json</a>, the corrections feed, each desk’s changes feed, each organization feed, the newsletter feed and the changelog feed.</li>
 <li>Every JSON answer of the <a href="/api">API</a> under /api/.</li>
-<li>Every <a href="/r/alert/">alert receipt</a> as JSON, <a href="/transparency.json">transparency.json</a>, <a href="/build.json">build.json</a> and each deletion receipt.</li>
+<li><a href="/transparency.json">transparency.json</a>, <a href="/build.json">build.json</a> and each deletion receipt.</li>
 <li>Every webhook delivery, beside the shared-secret signature it already carries.</li>
 </ul>
 <p>A signed answer carries the header <code>x-indahl-signature-ed25519</code> (the signature of the exact body bytes, base64url) and <code>x-indahl-key-id</code>. The same signature is also served on its own at the same address with <code>.sig</code> added, for example <a href="/feed.xml.sig">/feed.xml.sig</a>. A feed can change between two requests, so the header of the same answer is the exact pair.</p>
@@ -105,7 +105,7 @@ const ok = crypto.verify(null, msg, crypto.createPublicKey(pem), Buffer.from(req
 <nav class="tabbar" aria-label="Divisions"><a href="/qia">QIA</a><a href="/iris">IRIS</a><a href="/hermes">HERMES</a><a href="/atlas">ATLAS</a><a href="/sagar">SAGAR</a></nav>
 <script src="/pwa.js?v=c90aaf8f" defer></script>
 <script src="/live-tags.js?v=b24b1e92" defer></script>
-<script src="/headline.js?v=b4933135" defer></script>
+<script src="/headline.js?v=ab23079c" defer></script>
 <script src="/nav.js?v=00c2abad" defer></script>
 <script src="/signup.js?v=ed9b3bb1" defer></script>
 </body>

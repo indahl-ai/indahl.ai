@@ -10,14 +10,14 @@ This kit recomputes the CAMPUS headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `fe00f96ae1cf9432b5f00c88ce28b57d4137cb116dad88789b416a50c5cf5c3f`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `975e05958a91b4d456f879d871322bb9f9474b09d22abd58595490103ad9d20b`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/campus/live.json served it at the feed stamp 22 Nov 14:38, read by us at 2026-11-22T16:02:19Z. The feed bytes had sha256 `b9ef0408ddf82b5cb452d330fc3575d4ec3feb1e4c88b5bd895079df76a2f3f1`.
+The headline as the live feed https://indahl.ai/campus/live.json served it at the feed stamp 22 Nov 16:58, read by us at 2026-11-22T18:39:43Z. The feed bytes had sha256 `60d7fc248f80f3dd4c31e4e60016206853316fd1f6212245c45a2bb7c7d02652`.
 
-- number: 267 of 305
-- value: 267
+- number: 269 of 305
+- value: 269
 - outcome: none, this headline carries no outcome label
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -40,7 +40,7 @@ As the CAMPUS data pack lists them. Credit each source when using its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/reads.jsonl | 18,911,420 | `fb6d28a6ef66f448a8abb9eb55618dcb7ff6858c8dc75f66c103dad87aa41fcb` |
+| data/reads.jsonl | 19,183,154 | `606eeeef6d9d9a70c1509e9df48241cf9d2fe5bf953c68ece11dc13dfc8ce53d` |
 
 ## Code
 

@@ -2,7 +2,7 @@
  "document": "Guards",
  "source": "GUARDS.html",
  "intro": [
-  "The procedures built against the failure modes, and the score they earn. Heuremen LLC, Heuremen LLC, 10 October 2026, revised 30 October 2026.",
+  "The procedures built against the failure modes, and the score they earn. Heuremen LLC, 10 October 2026, revised 30 October 2026.",
   "Companion to Faults, which catalogues the ways a language model doing measurement work goes wrong. This document is what we run against them. Every procedure here exists because the corresponding failure happened first, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because a method scattered across the documents it was found in cannot be scored.",
   "The organising principle, since it decides the shape of all of it. Nearly every failure in the companion document is the same error with different clothes: the comparison baseline was built with less care than the measurement, after the measurement, and in a direction that flattered it. It is the largest family in the prospective ledger: 217 of the 316 rows tagged with one of the first three families. So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is before the number is stated."
  ],
@@ -544,7 +544,7 @@
    "part": "V — What the guards score, and what we removed",
    "paragraphs": [
     "The fastest useful attack is on the ledger, and it needs no data of ours: the catalogue is fitted to its own instances and cannot score itself, so the only number worth disputing is the prospective one — and the honest objection is that 608 rows from one working relationship are few, that the bar was set by us, and that the person setting the bar and the person being scored are the same. All three are true and are the reason the sealed in-sample figure is printed beside it. The second attack is to take any procedure above, apply it to a published method of ours, and report what falls over.",
-    "Guards — the procedures, and their score. Heuremen LLC, Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion document: Faults, the failure modes written as procedure. Removed guards are listed with the reason.",
+    "Guards — the procedures, and their score. Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion document: Faults, the failure modes written as procedure. Removed guards are listed with the reason.",
     "Heuremen LLC “We found it.”"
    ]
   }

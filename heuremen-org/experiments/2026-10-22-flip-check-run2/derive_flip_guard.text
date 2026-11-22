@@ -1,5 +1,5 @@
 Derive the per-measured-qubit flip-rule failure on 21 Oct calibration-1 data (the numbers quoted in PLAN_FLIP.md, flip-readable guard).
-Heuremen LLC, Heuremen LLC, 22 October 2026. Read-only on control_run/iqjob_<chip>.json + iqraw_<chip>.npz.
+Heuremen LLC, 22 October 2026. Read-only on control_run/iqjob_<chip>.json + iqraw_<chip>.npz.
 DATA: every CAL state '1' pub (both copies; register c, 156 columns), 2 x 2000 = 4000 shots per qubit; CAL state '0' likewise for the 0 cluster.
 INDEXING: column = PHYSICAL qubit number (the calibration circuit measures qubit q into clbit q); measured qubits = rec['E'] (physical numbers).
 CLUSTERS (as analyze_iq.py): mu0, mu1 = mean of ALL cal-0 / cal-1 shots; t = projection on mu1 - mu0; cov0 from cal-0 shots with t < 0.5,

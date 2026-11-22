@@ -1,7 +1,7 @@
 """SIDE reading for ibm_marrakesh (pairs_repeat/PREREG_PAIRS.md): the same R1-R5, by control_run/analyze_pairs_iq.py UNCHANGED, on the pairs
 NOT wired (cz, the run's own saved properties) to measured qubits 82, 100, 119, whose 0/1 IQ clusters overlap or miss on marrakesh
 (flipcheck_run/derive_flip_guard.txt: flip-rule failure 98.9 %, 76.8 %, 71.4 % on 21 Oct calibration-1 data). Printed BESIDE the main
-reading; it does not replace it. Heuremen LLC, Heuremen LLC, 22 October 2026.
+reading; it does not replace it. Heuremen LLC, 22 October 2026.
 How: copies the run's marrakesh job records into a temp folder with the excluded pairs removed from 'pairs' and their two fin columns removed
 from every fin_ register (kept pairs keep their order, singles follow, as the runner lays them out); every other register (c_, m<k>_) and the
 properties file are copied as they are. Then runs the unchanged analysis on that folder. R5 still counts all 39 measured qubits (82, 100,

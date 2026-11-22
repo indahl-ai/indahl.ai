@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/change/live.json",
- "feed_sha256": "06ff68e556e5342bbf0d7129f96eab05da568038cb67dd866eeff7be259bf2cb",
+ "feed_sha256": "d22fedd31c3b9251e1dffc0c470ecc035d5ea7d41bad55683baa709b15f93aac",
  "headline": {
   "desk": "CHANGE",
   "display": "10 of 33",
@@ -15,6 +15,6 @@
   "outcome": null,
   "value": 10
  },
- "read_at": "2026-11-22T16:02:32Z",
- "stamp": "22 Nov 15:41"
+ "read_at": "2026-11-22T18:39:50Z",
+ "stamp": "22 Nov 18:03"
 }

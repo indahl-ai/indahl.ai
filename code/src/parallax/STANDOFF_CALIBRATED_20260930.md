@@ -1,7 +1,6 @@
 # THE STANDOFF, CALIBRATED -- THIRD_RUNG_20260928.md Sec57, 2026-09-30
 
-The owner: "each equation will resolve the other in a three-body standoff... the one in the middle
-might be for calibration, frequency calibration, just like a three-body problem." Sec50's standoff
+The owner Sec50's standoff
 failed because the arrow's k (seconds/shots), the clock's tau (seconds/shots) and the split's
 per-cycle crossing (a dimensionless fitted slope) live in different units. This file converts all
 three, on three records (yeast, horn, buzz J2 seat 116), into ONE unit using the 1/pi series

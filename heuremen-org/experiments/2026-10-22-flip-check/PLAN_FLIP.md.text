@@ -1,5 +1,5 @@
 # The X-flip check: is the coherence loss caused by a measured neighbour stuck in a level that reads as 0?
-Heuremen LLC, Heuremen LLC, 22 October 2026. Written and SHA-256 hashed (PLAN_FLIP.sha256; code in CODE_FLIP.sha256) BEFORE any job
+Heuremen LLC, 22 October 2026. Written and SHA-256 hashed (PLAN_FLIP.sha256; code in CODE_FLIP.sha256) BEFORE any job
 is submitted. Circuits: run_flip.py (control_run/run.py's `spectator_circuit`, unchanged, plus a thin wrapper). Analysis: analyze_flip.py,
 tested on synthetic data (synth_flip.py) before submission. Instance: Darkwave Disco.
 

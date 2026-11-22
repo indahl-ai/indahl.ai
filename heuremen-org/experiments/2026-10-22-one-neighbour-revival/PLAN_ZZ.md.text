@@ -1,5 +1,5 @@
 # One-neighbour revival: does an untouched qubit's coherence come back on the schedule its own coupling to ONE neighbour predicts, and where is it while it is gone?
-Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Heuremen LLC (Heuremen LLC), 22 October 2026.
+Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Heuremen LLC, 22 October 2026.
 Circuits: zz.py (dry-run against the live chips, nothing submitted). Analysis: analyze_zz.py, tested on synthetic data (synth_zz.py) with
 the ZZ scale planted at 0.5 (two seeds) and 1.0, and with no coupling at all (six seeds); outputs synth_*.txt, committed with this plan.
 

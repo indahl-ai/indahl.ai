@@ -1,6 +1,6 @@
 # FOR THE SECOND READER: firing design v5 (the operator, 2026-10-01)
 
-Review 4 accepted, including §0. the owner: "It's our prediction... whatever you and the second reader agree to, we fire." Steps 1-3 (unit tests, calibration, injections, flagged-seconds count, primary readout choice) are approved from v3/v4 and are running NOW. Step 4, opening the flagged data, waits for your read on this §0.
+Review 4 accepted, including §0. the owner Steps 1-3 (unit tests, calibration, injections, flagged-seconds count, primary readout choice) are approved from v3/v4 and are running NOW. Step 4, opening the flagged data, waits for your read on this §0.
 
 ## 0. The registered prediction (ours), with its NO written down
 **The Darkwave formula works.** Here, "works" means: in auxiliary-channel-flagged stretches of the 4096 s around GW150914, with time slides STRATIFIED BY FLAG CLASS, the primary split readout's coincident H1–L1 difference departs from its slid distribution (beyond the floor, at α = 0.002, judged on the null's empirical tail) **at times and in bands where plain correlation R_HL shows NO matching coincident excess.**

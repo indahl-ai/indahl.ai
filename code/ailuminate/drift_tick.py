@@ -179,7 +179,7 @@ def gate():
     print('drift: gate', 'passed' if ok else 'FAILED', flush=True); return ok
 
 if __name__ == '__main__':
-    if not (K.plan_committed(os.path.join(H, 'PLAN_ADDENDUM_drift.md')) or '--draft' in sys.argv): print('drift: addendum not committed (use --draft for a draft run)'); sys.exit(0)
+    if not (K.plan_committed(os.path.join(H, 'PLAN_ADDENDUM_drift.md')) or '--draft' in sys.argv): print('drift: addendum not committed (use --draft for a draft run)'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
     if not gate(): sys.exit(1)
     reads, labels, pages = load_real(); r = analyse(reads, labels, pages); now = time.time()
     out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime(now)), draft=not K.plan_committed(os.path.join(H, 'PLAN_ADDENDUM_drift.md')), gate='passed', reads=len(reads), first_read=reads[0]['stamp'], last_read=reads[-1]['stamp'], tests=r)

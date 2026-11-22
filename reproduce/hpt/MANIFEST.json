@@ -32,13 +32,13 @@
    "stored_sha256": "91a41317567ee810f294140abd1103e2a4f8148c570f6db42aecde030167c988"
   }
  ],
- "made": "2026-11-22T16:02:17Z",
+ "made": "2026-11-22T18:39:43Z",
  "mode": "inputs",
  "name": "HPT",
  "reference": [
   {
    "path": "desk/hpt_tick.py",
-   "sha256": "862e818deefe4c9bbc177d1e43f5411223d963f1100a81f76d274bb0a96792f2"
+   "sha256": "2d952b37cdd49105daffe678ef59be997b38889bb350214d18f57008bf306872"
   }
  ]
 }

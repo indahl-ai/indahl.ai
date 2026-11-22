@@ -18,7 +18,7 @@ def state(x, now):
     if x['isEmpty'] or commits == 0: return 'EMPTY', info
     return ('STUB' if commits <= 3 else 'CODE'), info
 now = time.time(); repos = json.load(open('data/repos.json')) if os.path.exists('data/repos.json') else {}
-ctl = q([('torvalds', 'linux'), ('Heuremen-LLC', 'linkrot-empty-control')]); gate_ok = False
+ctl = q([('torvalds', 'linux'), ('indahl-ai', 'linkrot-empty-control')]); gate_ok = False
 if ctl:
     a, b = state(ctl[0], now)[0], state(ctl[1], now)[0]; gate_ok = (a == 'CODE' and b == 'EMPTY'); print('repos: controls', a, b)
 links = json.load(open('data/links.json')) if os.path.exists('data/links.json') else {}

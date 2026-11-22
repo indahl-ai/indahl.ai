@@ -23,7 +23,7 @@ def _safe_rp(self):
     try: _rp(self)
     except TypeError: pass   # 2 Nov: Philadelphia Fed file has a malformed created/modified stamp; the data sheets are unaffected
 _rx.ExcelReader.read_properties = _safe_rp
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('revise: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('revise: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 UA = {'User-Agent': 'heuremen-revise/0.1 (+https://indahl.ai/revise)'}; W = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door'); STATED = 122.0
 import bls_source as BS
 URL = BS.TABLE

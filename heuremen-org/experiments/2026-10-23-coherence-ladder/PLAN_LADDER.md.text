@@ -1,6 +1,5 @@
 # The coherence ladder: T1, T2*, Hahn T2, CPMG-4, CPMG-16 on the same qubits in one job (kingston, marrakesh)
-Pre-registered. Written and SHA-256 hashed (PLAN_LADDER.sha256; code in CODE_LADDER.sha256) BEFORE any job is submitted. Heuremen LLC,
-Heuremen LLC, 23 October 2026. Circuits, fire path and analysis: ladder.py (one file). Synthetic test: synth_ladder.text.
+Pre-registered. Written and SHA-256 hashed (PLAN_LADDER.sha256; code in CODE_LADDER.sha256) BEFORE any job is submitted. Heuremen LLC, 23 October 2026. Circuits, fire path and analysis: ladder.py (one file). Synthetic test: synth_ladder.text.
 
 ## Why this run
 The Hahn T2 runs (../hahn_t2/) found IBM's published per-qubit T2 differs from the T2 we measure by about 20 to 60 % per qubit, with no

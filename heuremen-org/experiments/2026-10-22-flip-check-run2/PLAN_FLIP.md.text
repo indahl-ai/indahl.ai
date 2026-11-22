@@ -1,5 +1,5 @@
 # The X-flip check, RUN 2: is the coherence loss caused by a measured neighbour stuck in a level that reads as 0?
-Heuremen LLC, Heuremen LLC, 22 October 2026. RUN 2 (folder flipcheck_run2). Run 1 (folder flipcheck_run) stays exactly as it was.
+Heuremen LLC, 22 October 2026. RUN 2 (folder flipcheck_run2). Run 1 (folder flipcheck_run) stays exactly as it was.
 
 ## Why run 2 exists
 Run 1 was fired on 22 Oct. Its known-good check (1) FAILED: the idle arm sat above the calibration floor. After the data, the referee
@@ -20,7 +20,7 @@ flaw (run 1's analyzer FAILs on it) and run 2's known-good must PASS on it.
 Run 2 is a new run with new data, not a re-analysis of run 1's data.
 
 ## Original plan text (run 1), with the run-2 changes marked RUN 2
-Heuremen LLC, Heuremen LLC, 22 October 2026. Written and SHA-256 hashed (PLAN_FLIP.sha256; code in CODE_FLIP.sha256) BEFORE any job
+Heuremen LLC, 22 October 2026. Written and SHA-256 hashed (PLAN_FLIP.sha256; code in CODE_FLIP.sha256) BEFORE any job
 is submitted. Circuits: run_flip.py (control_run/run.py's `spectator_circuit`, unchanged, plus a thin wrapper). Analysis: analyze_flip.py,
 tested on synthetic data (synth_flip.py) before submission. Instance: Darkwave Disco.
 

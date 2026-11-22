@@ -1,6 +1,5 @@
 # The sweep: every per-qubit and per-edge figure IBM publishes, measured the way IBM documents measuring it
-Pre-registered. Written and SHA-256 hashed (PLAN_SWEEP.sha256, CODE_SWEEP.sha256) BEFORE any job is submitted. Heuremen LLC, the owner
-and the operator, 23 October 2026. Circuits, fire path and analysis: sweep.py (one file). Synthetic test: synth_sweep.text.
+Pre-registered. Written and SHA-256 hashed (PLAN_SWEEP.sha256, CODE_SWEEP.sha256) BEFORE any job is submitted. Heuremen LLC, 23 October 2026. Circuits, fire path and analysis: sweep.py (one file). Synthetic test: synth_sweep.text.
 Chips: ibm_fez, ibm_kingston, ibm_marrakesh, ibm_boston, ibm_pittsburgh, ibm_phoenix (Darkwave Disco). One job each, IBM's record saved at
 submission. T1 and T2 are measured in ../ladder_run and ../hahn_t2, zz in the direct-zz run; this job covers every other figure.
 

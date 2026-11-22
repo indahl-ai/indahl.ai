@@ -1,6 +1,6 @@
 # THE DISCOUNT HUNT -- every ordinary cause for the Bell-neighbors lead, NIST 2015, 2026-09-30
 
-The owner: "find every other reason to discount this one." No expectation written first, raw
+The owner No expectation written first, raw
 first, every test counted, sign kept, judged run vs run (between-run spread as the error, never
 shuffle), errors as rows, nothing labeled "artifact" without the number that shows it.
 

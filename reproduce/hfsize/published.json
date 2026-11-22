@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/hfsize/live.json",
- "feed_sha256": "51da3fad7116b2d231ca2d97783991a3ff79bd83891abd96de34fc198d727a33",
+ "feed_sha256": "019ec0426dee86d6e4c1ee41754a044c47d93cd8bb06f156915410347bd6396f",
  "headline": {
   "desk": "HFSIZE",
   "display": "10 of 123",
@@ -12,6 +12,6 @@
   "outcome": "CANNOT_TELL",
   "value": 0.0813
  },
- "read_at": "2026-11-22T16:02:26Z",
- "stamp": "22 Nov 14:47"
+ "read_at": "2026-11-22T18:39:47Z",
+ "stamp": "22 Nov 17:00"
 }

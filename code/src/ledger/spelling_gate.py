@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""spelling_gate.py (21 Nov 2026, the owner: "this is our third pass for British spellings.....glad we keep catching 'all of them'").
+"""spelling_gate.py (21 Nov 2026, the owner).
 A ship gate, so the next British spelling is refused at build time instead of found by a reader. Scans every built page of indahl.ai
 (indahl-ai/pages.js, the map the worker serves) and quantumidleaudit.com (public/_qiasite/*.html), with tags stripped, and refuses on
 any word in BRIT. Text inside curly double quotes and <blockquote>/<q> is skipped: that is other people's words (SAGAR quotes papers

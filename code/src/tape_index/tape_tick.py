@@ -14,7 +14,7 @@ except Exception:
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
 from tapelib import merkle, beacon, entry_hash, sha
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('tape: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('tape: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 _l = open('.lock', 'w')
 try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
 except OSError: sys.exit(0)
@@ -134,16 +134,19 @@ try:
     json.dump(chs, open('changes.json.tmp', 'w')); os.replace('changes.json.tmp', 'changes.json'); changes_out = TCH.publish(chs)
 except Exception as ex: print('tape: change record skipped (%s)' % type(ex).__name__)
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), read=1, count=len(chain), head=dict(n=last['n'], entry=last['entry'], t=last['t']), beacon=dict(n=bq['n'], t=bq['t'], value=bq['root'], drand_round=bq['subject'].replace('drand round ', '')), anchor=anch,
-           feeds=feedrec, changes=changes_out, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves='https://github.com/indahl-ai/indahl.ai/blob/main/code/tape/leaves/%d.json' % e['n']) for e in reversed(chain[-150:])])
+           feeds=feedrec, changes=changes_out, entries=[dict(n=e['n'], t=e['t'], kind=e['kind'], subject=e['subject'], root=e['root'], entry=e['entry'], prev=e['prev'], leaves=None) for e in reversed(chain[-150:])])
 json.dump(out, open('summary_tape.json', 'w'), indent=1)
-os.makedirs(PUB + '/leaves', exist_ok=True)
+# 22 Nov 2026 (the owner's full scrub, coordinator's call (c)): the chain, plan and leaves are no longer copied to the public repository.
+# The house chain here stays the internal record; the page shows entries without GitHub leaf links.
+PUBLIC_COPY = False
+PUBLIC_COPY and os.makedirs(PUB + '/leaves', exist_ok=True)
 # 20 Nov 2026: the tick copies DATA only (the chain, the plan, the leaves). It used to copy its own scripts here raw, and tape_push.py then pushed
 # them to the public repository with infrastructure ids and an internal name in a comment, around the scrubber and the internal gate.
 # The scripts now reach the mirror only through push_public.sh at a release, which scrubs them first.
-_PUBLISH and subprocess.run('cp tape.jsonl PLAN.md %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
-subprocess.run('mkdir -p %s/qbits/runs && cp qbits/PLAN_QBITS.md.text qbits/qbits_run.py qbits/synth_selftest.text %s/qbits/ && (cp qbits/runs/* %s/qbits/runs/ 2>/dev/null || true)' % (PUB, PUB, PUB), shell=True)
+PUBLIC_COPY and _PUBLISH and subprocess.run('cp tape.jsonl PLAN.md %s/ && cp leaves/* %s/leaves/' % (PUB, PUB), shell=True)
+PUBLIC_COPY and subprocess.run('mkdir -p %s/qbits/runs && cp qbits/PLAN_QBITS.md.text qbits/qbits_run.py qbits/synth_selftest.text %s/qbits/ && (cp qbits/runs/* %s/qbits/runs/ 2>/dev/null || true)' % (PUB, PUB, PUB), shell=True)
 # 30 Oct (site pass I-6): the chain files are pushed to the public repository in the background after each run, so the leaf links on the page open soon after an entry is written and not at the next release. Only code/tape is committed.
-if _PUBLISH and not os.environ.get('TAPE_NO_PUSH'): subprocess.Popen([sys.executable, '-I', os.path.join(H, 'tape_push.py')], stdout=open('push_last.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True)
+if PUBLIC_COPY and _PUBLISH and not os.environ.get('TAPE_NO_PUSH'): subprocess.Popen([sys.executable, '-I', os.path.join(H, 'tape_push.py')], stdout=open('push_last.log', 'w'), stderr=subprocess.STDOUT, start_new_session=True)
 env = dict(os.environ, CLOUDFLARE_ACCOUNT_ID='<cloudflare-account-id>', PATH='/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin')
 pr = _kv_put(['/opt/homebrew/bin/npx', 'wrangler', 'kv', 'key', 'put', 'tape_live', '--path', os.path.join(H, 'summary_tape.json'), '--namespace-id', '<kv-namespace-id>', '--remote'], cwd=W, env=env, capture_output=True, text=True)
 print('tape: entries', len(chain), 'head', last['entry'][:12], 'beacon', bv[:12], 'anchor n', anch['covers_n'], 'published' if pr.returncode == 0 else 'publish FAILED', flush=True)

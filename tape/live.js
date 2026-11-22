@@ -22,7 +22,7 @@
     top.appendChild(b); top.appendChild(h); top.appendChild(a); box.appendChild(top);
     box.appendChild(el('h3', 'The tape, newest first'));
     var t = el('table', null, 'mtx tape'), th = el('thead'), tr = el('tr'); ['Entry', 'Time', 'Kind', 'What', 'Hash'].forEach(function (x) { tr.appendChild(el('th', x)); }); th.appendChild(tr); t.appendChild(th);
-    var tb = el('tbody'); (d.entries || []).forEach(function (e) { var r = el('tr'); var c0 = el('td', null, 'n'); c0.appendChild(link(GH + 'leaves/' + e.n + '.json', String(e.n))); r.appendChild(c0); r.appendChild(el('td', when(e.t))); r.appendChild(el('td', KIND[e.kind] || e.kind)); r.appendChild(el('td', e.subject)); r.appendChild(el('td', short(e.entry), 'hashline')); tb.appendChild(r); });
+    var tb = el('tbody'); (d.entries || []).forEach(function (e) { var r = el('tr'); var c0 = el('td', null, 'n'); c0.appendChild(document.createTextNode(String(e.n))); r.appendChild(c0); r.appendChild(el('td', when(e.t))); r.appendChild(el('td', KIND[e.kind] || e.kind)); r.appendChild(el('td', e.subject)); r.appendChild(el('td', short(e.entry), 'hashline')); tb.appendChild(r); });
     t.appendChild(tb); box.appendChild(t);
   }
   function load() { fetch('/tape/live.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) { if (!d || !d.head) { box.textContent = 'Waiting for the first entry.'; return; } render(d); }).catch(function () { box.textContent = 'The read could not be loaded just now.'; }); }

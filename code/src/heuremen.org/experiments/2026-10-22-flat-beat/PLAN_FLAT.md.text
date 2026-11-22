@@ -1,5 +1,5 @@
 # Flat beat on ibm_phoenix: on FRESH pairs, does an untouched qubit beat against one neighbour in superposition at about 12.5 kHz whatever IBM's calibrated coupling, or at the calibrated coupling?
-Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Heuremen LLC (Heuremen LLC), 22 October 2026.
+Written, SHA-256 hashed and pushed to GitHub BEFORE any job is submitted. Heuremen LLC, 22 October 2026.
 Circuits: flat.py (from zz.py of the one-neighbour run). Analysis: analyze_flat.py (uses the one-neighbour run's coupling-name parser as
 fixed and disclosed there). Synthetic test: synth_flat.py with the beat planted as the calibration (track), as 12.5 kHz (flat), and absent
 (none), two seeds each; outputs synth_*.txt committed with this plan.

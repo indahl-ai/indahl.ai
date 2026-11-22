@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds the ChatGPT plugin directory packages (OpenAI) from the same directory copies the Anthropic directory gets (13 Nov 2026,
-The owner: "keep it an indahl bundle like on anthropic, indahl-data yadda yadda yadda"). One package per plugin in plugins/ (the parts and
+The owner). One package per plugin in plugins/ (the parts and
 the indahl bundle): openai/<name>/ with .codex-plugin/plugin.json (interface block for the listing), skills, commands, .mcp.json where the
 part has the indahl.ai connector, assets/logo.png and assets/icon.png, and openai/<name>.zip ready to upload. Plugins with the connector also
 get openai/<name>.chatgpt-app-submission.json (every tool's hints and justifications, five positive and three negative tests).

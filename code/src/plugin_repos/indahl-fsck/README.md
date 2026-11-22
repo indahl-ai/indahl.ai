@@ -62,7 +62,7 @@ Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
 
 ## Credits
 
-Named by the owner, who found the problem the hard way. Built by the operator and run first on our own setup: 123 servers in, a short list out.
+Built by Heuremen LLC and run first on our own setup: 123 servers in, a short list out.
 
 ## How the scripts arrive
 

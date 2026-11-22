@@ -16,7 +16,7 @@
   {
    "bytes": 184496,
    "gzip_added": true,
-   "modified": "2026-11-22T14:47:44Z",
+   "modified": "2026-11-22T17:01:00Z",
    "path": "data/projects.json",
    "sha256": "c0bdf2755068f1754a8b62c0a76aace3e768f333ab38bc1bba907d70bf00e53f",
    "stored": "data/projects.json.gz",
@@ -25,38 +25,38 @@
   {
    "bytes": 3070,
    "gzip_added": true,
-   "modified": "2026-11-22T14:47:44Z",
+   "modified": "2026-11-22T17:01:00Z",
    "path": "summary_pkglicense.json",
-   "sha256": "bf828ed71bd2f074da55fed2c3e38b68de296ade34aa563af25f0fabfd2d7e28",
+   "sha256": "e0f9455089429716d4d2e3985ccdcdd564eefec29e1e8208574af6091c530e35",
    "stored": "summary_pkglicense.json.gz",
-   "stored_sha256": "222a2d2d2371126a63c014601f3d66a6b8cee2dd4aa32c70e1f3121957c50300"
+   "stored_sha256": "93a7ae7cff3c3f4c962e781bdebafaea2d75321bac6a58eb9e694a4683310c1f"
   },
   {
    "bytes": 157667,
    "gzip_added": true,
-   "modified": "2026-11-22T15:16:40Z",
+   "modified": "2026-11-22T17:32:15Z",
    "path": "pkginstall/data/projects.json",
-   "sha256": "088b03c3c26cefdc53e8969eb0eaf0f63f747b6be8809a6cda58a0a7d63b6c95",
+   "sha256": "59a58bf089e2b1df6feed4d40b6e1b913860c974a6fe200a7d6389dd24be9bf5",
    "stored": "pkginstall/data/projects.json.gz",
-   "stored_sha256": "2c70b4f40efd112e3a5cb0d4114334dc6272f0b22a19ba2cf944b05fa45584a9"
+   "stored_sha256": "ce0450c2fb55ce21058ac7bd2f521ce5300e73d2b72e7ac088bb6cd2bad6ed25"
   },
   {
    "bytes": 19,
    "gzip_added": true,
-   "modified": "2026-11-22T15:16:40Z",
+   "modified": "2026-11-22T17:32:15Z",
    "path": "pkginstall/data/listdate.txt",
    "sha256": "ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399",
    "stored": "pkginstall/data/listdate.txt.gz",
    "stored_sha256": "d23e1d3031fea3e62381d44a960e1fd2cc4c5ddb518c54cf3810ab9c34896a96"
   }
  ],
- "made": "2026-11-22T16:02:36Z",
+ "made": "2026-11-22T18:39:51Z",
  "mode": "fetch",
  "name": "PKGLICENSE",
  "reference": [
   {
    "path": "desk/pkglicense_tick.py",
-   "sha256": "9d10950517d06573425b5643e4ca519b0d1064ab0b94a1fbf81df0769b861d1e"
+   "sha256": "8e8a9ca21856bf75f45661a0a7f89947b1bc6e83254073092a33c4233f758a76"
   }
  ],
  "sources": [

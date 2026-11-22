@@ -1,7 +1,37 @@
 {
- "built_utc": "2026-11-22T17:15:15Z",
+ "built_utc": "2026-11-22T18:45:59Z",
  "publisher": "Heuremen LLC",
  "releases": [
+  {
+   "changed": 295,
+   "commit": "a6143795774a5214ccad4ff7b97ad2d16087e9d4",
+   "files": 1896,
+   "id": "a6143795774a-20261122T184558Z",
+   "json": "/receipts/stamps/release_a6143795774a-20261122T184558Z.json",
+   "ledger_sha256": "4b3d6451aa45527efb4496a8cc928b234808f4efc3f2d9327aff60f5ce7a8139",
+   "manifest_sha256": "ae52a12724bac4c1557e0be50f73b4dfe5d9291f4ebc6e4a84a55036f83d1f94",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-22T18:45:58Z",
+   "sha256": "9600cd1015cc56e21680371c8353ab53dd808eb75a55a0df19035addffae0ede",
+   "wayback": [],
+   "wayback_waiting": 293
+  },
+  {
+   "changed": 111,
+   "commit": "a6143795774a5214ccad4ff7b97ad2d16087e9d4",
+   "files": 1895,
+   "id": "a6143795774a",
+   "json": "/receipts/stamps/release_a6143795774a.json",
+   "ledger_sha256": "5b70c7044b17a2e3be4be0da72212e0740fac960f670bf2d9273ffb71627f36c",
+   "manifest_sha256": "eaabe272d0bccdfa85d344cbf824eb98897077979f479d2f6d89172abbb50a33",
+   "ots": null,
+   "ots_status": "none",
+   "released_at": "2026-11-22T17:36:07Z",
+   "sha256": "2628a336655a9a266ef1bdd66b9bfdcd927cb00dd6b58660054df19c6b0838dc",
+   "wayback": [],
+   "wayback_waiting": 49
+  },
   {
    "changed": 67,
    "commit": "1e795c7b70bdea06ca885fc1c6e6012e29621f4f",
@@ -15,7 +45,7 @@
    "released_at": "2026-11-22T16:59:51Z",
    "sha256": "e6c886320d48956e1261b36cff7d11ee10841842a793b721c1b7a252152800f7",
    "wayback": [],
-   "wayback_waiting": 63
+   "wayback_waiting": 20
   },
   {
    "changed": 864,
@@ -30,7 +60,7 @@
    "released_at": "2026-11-22T16:39:45Z",
    "sha256": "b2cd09cd10869f57e86a7cf8d8c8ed8f2bc0d8a10c3cf04725d0a607000479a3",
    "wayback": [],
-   "wayback_waiting": 804
+   "wayback_waiting": 522
   },
   {
    "changed": 590,
@@ -45,7 +75,7 @@
    "released_at": "2026-11-22T14:58:50Z",
    "sha256": "1394a4f0bd39642158a62780d82d1bd94f43398ef85e06b672c3e4e80a7a7662",
    "wayback": [],
-   "wayback_waiting": 14
+   "wayback_waiting": 8
   },
   {
    "changed": 845,
@@ -75,7 +105,7 @@
    "released_at": "2026-11-22T12:43:21Z",
    "sha256": "2fb52d537ac6d367e6c2ee8e4e3b8ba19d59fd1d20da24b5aa67781a4b65e8a5",
    "wayback": [],
-   "wayback_waiting": 7
+   "wayback_waiting": 3
   },
   {
    "changed": 146,
@@ -1767,7 +1797,7 @@
      "url": "https://indahl.ai/airq/airq-data-pack.zip.sha256"
     }
    ],
-   "wayback_waiting": 7
+   "wayback_waiting": 5
   },
   {
    "changed": 864,
@@ -1782,7 +1812,7 @@
    "released_at": "2026-11-21T23:34:52Z",
    "sha256": "abfa4487c0505b52c53edd3253f73fbe7ec416d9e70a88ef01dcbdf2c67f9a42",
    "wayback": [],
-   "wayback_waiting": 21
+   "wayback_waiting": 19
   },
   {
    "changed": 90,

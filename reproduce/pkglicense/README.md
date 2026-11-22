@@ -14,7 +14,7 @@ Needs Python 3.9 or later and nothing else. It prints one line of JSON and check
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/pkglicense/live.json served it at the feed stamp 22 Nov 14:47, read by us at 2026-11-22T16:02:36Z. The feed bytes had sha256 `bf828ed71bd2f074da55fed2c3e38b68de296ade34aa563af25f0fabfd2d7e28`.
+The headline as the live feed https://indahl.ai/pkglicense/live.json served it at the feed stamp 22 Nov 17:01, read by us at 2026-11-22T18:39:51Z. The feed bytes had sha256 `e0f9455089429716d4d2e3985ccdcdd564eefec29e1e8208574af6091c530e35`.
 
 - number: 7 of 704
 - value: 0.0099
@@ -45,8 +45,8 @@ As the PKGLICENSE data pack lists them. Credit each source when using its values
 | File | Bytes | sha256 |
 |---|---|---|
 | data/projects.json | 184,496 | `c0bdf2755068f1754a8b62c0a76aace3e768f333ab38bc1bba907d70bf00e53f` |
-| summary_pkglicense.json | 3,070 | `bf828ed71bd2f074da55fed2c3e38b68de296ade34aa563af25f0fabfd2d7e28` |
-| pkginstall/data/projects.json | 157,667 | `088b03c3c26cefdc53e8969eb0eaf0f63f747b6be8809a6cda58a0a7d63b6c95` |
+| summary_pkglicense.json | 3,070 | `e0f9455089429716d4d2e3985ccdcdd564eefec29e1e8208574af6091c530e35` |
+| pkginstall/data/projects.json | 157,667 | `59a58bf089e2b1df6feed4d40b6e1b913860c974a6fe200a7d6389dd24be9bf5` |
 | pkginstall/data/listdate.txt | 19 | `ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399` |
 
 ## Code

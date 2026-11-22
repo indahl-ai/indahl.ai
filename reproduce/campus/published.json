@@ -1,19 +1,19 @@
 {
  "feed": "https://indahl.ai/campus/live.json",
- "feed_sha256": "b9ef0408ddf82b5cb452d330fc3575d4ec3feb1e4c88b5bd895079df76a2f3f1",
+ "feed_sha256": "60d7fc248f80f3dd4c31e4e60016206853316fd1f6212245c45a2bb7c7d02652",
  "headline": {
   "desk": "CAMPUS",
-  "display": "267 of 305",
+  "display": "269 of 305",
   "hi": null,
   "keys": [
    2
   ],
   "lo": null,
-  "n": 267,
+  "n": 269,
   "of": 305,
   "outcome": null,
-  "value": 267
+  "value": 269
  },
- "read_at": "2026-11-22T16:02:19Z",
- "stamp": "22 Nov 14:38"
+ "read_at": "2026-11-22T18:39:43Z",
+ "stamp": "22 Nov 16:58"
 }

@@ -23,7 +23,7 @@
    "stored_sha256": "3311520abe8947ee7434220e1eb0876424fce091d67877ec652fa1619b30d596"
   }
  ],
- "made": "2026-11-22T16:02:38Z",
+ "made": "2026-11-22T18:39:52Z",
  "mode": "inputs",
  "name": "AIRLINE",
  "reference": [
@@ -33,7 +33,7 @@
   },
   {
    "path": "desk/airline_tick.py",
-   "sha256": "d1eb1bcb297595c768ea733d1e4c9cec578f9d01539c303d0969f7785831157b"
+   "sha256": "2551a31e61e9f43aef4502ed47e09091e14203668b195376f0b8ced17a6de7f5"
   }
  ]
 }

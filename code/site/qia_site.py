@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""qia_site.py (17 Nov 2026, the owner: "Quantum Idle Audit.com, a straight-up biz page for the corporate emails ... a deck in website form
-... clean, and just have links to indahl.ai").
+"""qia_site.py (17 Nov 2026, the owner).
 
 Builds quantumidleaudit.com: a short business site for companies, all measurement and receipts, no physics papers, no names.
 Pages go to cloudflare-workers/heuremen-door/public/_qiasite/; the heuremen-door worker serves them when the host is quantumidleaudit.com.
@@ -310,7 +309,7 @@ LISTED = f'''
 </div></section>
 '''
 
-# 17 Nov 2026 (the owner: "start building out these tables on quantumidleaudit.com ... the pitch points there"): the findings and the
+# 17 Nov 2026 (the owner): the findings and the
 # calibrations tables, rendered from indahl-ai/qiasite_tables.json (one data file; edit there, run this script). Internal source paths in the
 # data are not printed; each row prints where a reader can check both IBM's side and ours.
 import json as _json
@@ -388,7 +387,7 @@ if __name__ == '__main__':
     if os.path.exists(_pd):
         import importlib.util as _iu2; _sp2 = _iu2.spec_from_file_location('demos_render', _pd); _m2 = _iu2.module_from_spec(_sp2); _sp2.loader.exec_module(_m2)
         _m2.write_all(page, OUT)
-    _pc = os.path.expanduser('~/forge/calibrations/site/console/build.py')   # 21 Nov 2026 (the owner: "Go with console"; ship now): The designer's Console pages replace home, demos, calibrations and add /runs, /monitoring, /inquiries
+    _pc = os.path.expanduser('~/forge/calibrations/site/console/build.py')   # 21 Nov 2026 (the owner; ship now): The designer's Console pages replace home, demos, calibrations and add /runs, /monitoring, /inquiries
     if os.path.exists(_pc):
         import importlib.util as _iu3; _sp3 = _iu3.spec_from_file_location('console_build', _pc); _m3 = _iu3.module_from_spec(_sp3); _sp3.loader.exec_module(_m3)
         _m3.write_all(OUT, inquiry_form=CONTACT)

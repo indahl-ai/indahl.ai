@@ -1,4 +1,4 @@
-"""THE IN-BETWEEN SHOT (the operator, by hand, 2026-10-02 evening). the owner: "get on your horse and ride man, it closes never. Fire."
+"""THE IN-BETWEEN SHOT (the operator, by hand, 2026-10-02 evening). the owner
 Leftover from the second reader's review (ledger §146-§148): with ten pushes and 30 us between them, the in-between start lands 4 widths off the line through the
 OFF and ON starts (raw -0.68% +- 0.17; push run, three reads). Starting from populations, every dynamics -- quantum or classical, with memory or without --
 lands a mix ON that line, so only three things can move it off: (a) its own coherence against the push axis, (b) its neighbours' coherence (every bit gets

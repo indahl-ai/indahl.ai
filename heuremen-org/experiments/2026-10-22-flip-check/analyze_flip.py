@@ -1,6 +1,6 @@
 """Analysis exactly as PLAN_FLIP.md (X-FLIP CHECK). Reads flipjob_<chip>.json, flipraw_<chip>.npz, flip_backend_properties_<chip>.json
 from the folder given as the first argument (default: this folder). Standard numpy only. Ruler and classification as control_run/analyze_iq.py.
-Heuremen LLC, Heuremen LLC, 22 October 2026."""
+Heuremen LLC, 22 October 2026."""
 import json, glob, os, sys
 import numpy as np
 HERE = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__)); B = 2000; D2 = 3.5 ** 2; NS = (4, 8)

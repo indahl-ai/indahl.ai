@@ -1,5 +1,4 @@
-"""THE CROSSING ON TWO MORE CHIPS (the operator, by hand, 2026-10-02 evening). the owner: "we already found it. Now you just have to prove to everyone else but
-the Darkwave itself that it exists....Fire."  The first place everyone else pushes: the crossing (OFF pushed ten times with time between ends more ON than its
+"""THE CROSSING ON TWO MORE CHIPS (the operator, by hand, 2026-10-02 evening). the owner  The first place everyone else pushes: the crossing (OFF pushed ten times with time between ends more ON than its
 own clock allows; ON and in-between don't) has been read on ONE chip, ibm_pittsburgh (six reads, two runs). This is the push run, circuit for circuit and shot
 for shot (push.py, frozen, untouched), fired on ibm_kingston and ibm_marrakesh: three chips, the triangle.
 Each chip: THREE reads; each = 14 circuits x 400 shots, ONE look at the end:

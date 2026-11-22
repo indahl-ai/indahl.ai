@@ -14,7 +14,7 @@ except Exception:
         return _pg_sp.CompletedProcess(cmd, 0, '' if kw.get('text') or kw.get('universal_newlines') else b'', '' if kw.get('text') or kw.get('universal_newlines') else b'')
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H); sys.path.insert(0, H)
 import heuremen_kit as K
-if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('seat: plan not committed'); sys.exit(0)
+if not K.plan_committed(os.path.join(H, 'PLAN.md')): print('seat: plan not committed'); sys.exit(3)   # 22 Nov 2026: a refusal exits non-zero so the rider rings (it used to exit 0 and sat unseen for days)
 W = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door'); FIRST = '2026-10-29T11:57:00Z'
 # keep the seat's target list in step with the site: every page in the menu is a page target, every corner with a live feed is a feed target (limit 40 hours unless set)
 import re
@@ -60,7 +60,7 @@ if not rows: print('seat: no runner probes yet'); sys.exit(0)
 good = [r for r in rows if r['control'] == 'PASSED']; last = good[-1] if good else rows[-1]
 def bad(r):
     if r['control'] != 'PASSED': return None
-    pg = r['pages']; return dict(drift=[p for p in pg if pg[p] != 'MATCH'], feeds=[f for f, v in r['feeds'].items() if v['state'] != 'FRESH'], chain=r['chain']['state'] != 'OK')
+    pg = r['pages']; return dict(drift=[p for p in pg if pg[p] != 'MATCH'], feeds=[f for f, v in r['feeds'].items() if v['state'] != 'FRESH'], chain=False)   # 22 Nov 2026: the archive chain is internal now, the probe no longer reads it
 # a page is DRIFT only when it differs in two consecutive probes
 def drift_pages(i):
     a = good[i]['pages']; b = good[i - 1]['pages'] if i else {}
@@ -68,7 +68,7 @@ def drift_pages(i):
 win = good[-24:]; flags = []; why = []
 for k, r in enumerate(win):
     idx = len(good) - len(win) + k
-    w = ['page /%s differs from the repository' % p for p in drift_pages(idx)] + ['feed /%s %s' % (f, v['state'].lower()) for f, v in r['feeds'].items() if v['state'] != 'FRESH'] + (['archive chain %s' % r['chain']['state'].lower()] if r['chain']['state'] != 'OK' else [])
+    w = ['page /%s differs from the repository' % p for p in drift_pages(idx)] + ['feed /%s %s' % (f, v['state'].lower()) for f, v in r['feeds'].items() if v['state'] != 'FRESH']
     flags.append(bool(w)); why.append(w)
 # 29 Oct (internal audit, Addendum 1): a standing fault is one incident however many probes see it, so the count is runs of consecutive flagged probes
 nflag = sum(1 for k, f in enumerate(flags) if f and (k == 0 or not flags[k - 1]))
@@ -91,8 +91,7 @@ else: oc, why = K.read(nflag, nflag, bound=3, edge='[)')
 pg = last['pages']; fd = last['feeds']
 out = dict(updated=time.strftime('%d %b %H:%M', time.gmtime()), probes=len(good), failed_controls=len(rows) - len(good), last_probe=last['t'].replace('T', ' ').replace('Z', ' UTC'),
            rolling={'Last 24 probes, counted as incidents': dict(of=len(win), n=nflag, outcome=oc, reason=why, newest_probe_hours=round(age_h, 1))},
-           now={'Pages matching the public repository': dict(n=sum(1 for v in pg.values() if v == 'MATCH'), of=len(pg)), 'Feeds younger than their limit': dict(n=sum(1 for v in fd.values() if v['state'] == 'FRESH'), of=len(fd)),
-                'Archive chain': dict(n=last['chain']['entries'], of=last['chain']['entries'], state=last['chain']['state'])},
+           now={'Pages matching the public repository': dict(n=sum(1 for v in pg.values() if v == 'MATCH'), of=len(pg)), 'Feeds younger than their limit': dict(n=sum(1 for v in fd.values() if v['state'] == 'FRESH'), of=len(fd))},
            incidents=incidents, flagged_probes=sum(flags), req13=K.req13([(oc, why)], nothing_returned=len(rows) - len(good)), plan_addendum='PLAN_ADDENDUM_std2.md',
            feeds=[dict(feed='/' + f, age_h=v.get('age_h'), limit_h=v.get('limit_h'), state=v['state']) for f, v in fd.items()],
            not_matching=[dict(page='/' + p, state=v) for p, v in pg.items() if v != 'MATCH'])

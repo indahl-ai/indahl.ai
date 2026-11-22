@@ -14,22 +14,22 @@
  "desk": "weights",
  "inputs": [
   {
-   "bytes": 2988939,
+   "bytes": 2990231,
    "gzip_added": true,
-   "modified": "2026-11-22T14:51:11Z",
+   "modified": "2026-11-22T17:22:10Z",
    "path": "data/repos.json",
-   "sha256": "3b7d77ade1aa6199f536c6e2ec6c19bdfe6bd70196dd19dd02f6f127bc6b34c7",
+   "sha256": "a6940ef117a97df04b3687b768f377ef24a6ff16ff6717ca3954f79d93f451ee",
    "stored": "data/repos.json.gz",
-   "stored_sha256": "236dc4d9a1c376d6c28a0e16f56a557964f0d9da0dd2d1f54fc709b414b09da0"
+   "stored_sha256": "d42a4b4df06764833589409c615e901b67b13ce4ad78db12d67562559179ba9e"
   }
  ],
- "made": "2026-11-22T16:02:30Z",
+ "made": "2026-11-22T18:39:48Z",
  "mode": "fetch",
  "name": "WEIGHTS",
  "reference": [
   {
    "path": "desk/weights_tick.py",
-   "sha256": "20b2563297015728dd959589b0ba8de3060ce580d30cd93db17853e8ef5bc6ac"
+   "sha256": "fb478fa489a3dacbc35a0f3a5315e71ff01e38b302a105c7e3dcf704517ff109"
   }
  ],
  "sources": [

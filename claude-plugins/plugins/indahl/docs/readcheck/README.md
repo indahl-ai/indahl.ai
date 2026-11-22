@@ -56,7 +56,7 @@ The plugin directory accepts command hooks only from Verified organizations, so 
 
 This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
 
-- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/744bcd22548a/claude-plugins/plugins/readcheck/scripts/readcheck.py
-  sha256 cc0e26802ddbcc157def5ea0ee90e8d4a9b2c516336658f34072882c03c90592
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/5f4dd3b6d4e8/claude-plugins/src/readcheck/scripts/readcheck.py
+  sha256 5f4dd3b6d4e8dee9faa3ec13b781d6e2c7e5f5863323fa2bc1e8082f89dc96fa
 
 The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

@@ -1,6 +1,5 @@
 #!/bin/zsh
-# Mirror every public indahl repo to Hugging Face as indahl/<name> (15 Nov 2026, the owner: "add ALL our indahl repos to HuggingFace,
-# plugins and all"). Only files COMMITTED in each local clone go up (git archive HEAD), never a working folder. The Hub has no code
+# Mirror every public indahl repo to Hugging Face as indahl/<name> (15 Nov 2026, the owner). Only files COMMITTED in each local clone go up (git archive HEAD), never a working folder. The Hub has no code
 # repo type, so these are model repos holding the source; each keeps its own README. house-site-source (private) never goes up.
 #   hf_mirror.sh            all repos
 #   hf_mirror.sh <name>...  just these
@@ -16,7 +15,7 @@ for n in $names; do
   [ "$n" = house-site-source ] && { echo "SKIP $n: private"; continue; }
   [ "$n" = indahl.ai ] && { echo "SKIP $n: synced by hf_stage/hf_site_sync.py on every public push"; continue; }
   [ "$n" = indahl.ai ] && { echo "SKIP $n: synced by hf_stage/hf_site_sync.py on every public push"; continue; }
-  GHO=indahl-ai; [ "$n" = claude-plugins ] && GHO=Heuremen-LLC   # 15 Nov: github.com/indahl-ai is the public home; claude-plugins stays until the directory reviews clear
+  GHO=indahl-ai; [ "$n" = claude-plugins ] && GHO=indahl-ai   # 15 Nov: github.com/indahl-ai is the public home; claude-plugins stays until the directory reviews clear
   out=$T/$n; mkdir -p $out; git -C $s archive HEAD | tar -x -C $out
   sha=$(git -C $s rev-parse --short HEAD)
   # HF card header (the Hub warns without one): license read from the repo's LICENSE, tags, and the GitHub source. GitHub copy is untouched.

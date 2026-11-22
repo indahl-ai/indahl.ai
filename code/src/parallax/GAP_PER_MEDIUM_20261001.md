@@ -1,7 +1,6 @@
 # THE GAP PER MEDIUM -- THIRD_RUNG_20260928.md Sec60, 2026-10-01
 
-The owner: "one of your measurements was from two different substrates. I don't think the darkwave
-travels the same speed in every substrate. A regular wave wouldn't." A regular wave's speed belongs
+The owner A regular wave's speed belongs
 to the medium (air 343 m/s, water 1480 m/s, steel 5900 m/s; light slows in glass). THE_CLOCK_GAP
 (Sec58) found the clock-minus-arrow (G_a) and clock-minus-split (G_s) gaps run the SAME SIGN in 38
 of 41 calls but are too wide to be ONE number overall (chi2/dof 4.83 and 1.63), loosely ordered by

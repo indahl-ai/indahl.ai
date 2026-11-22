@@ -1,5 +1,4 @@
-"""THE HOLD RUN (the operator, by hand, 2026-10-02). the owner: "you better not just be re-creating an actual clock... make them show you how to make time
-our little bitch." Not a dial. This run ACTS on a bit's time and reads what the bit says passed.
+"""THE HOLD RUN (the operator, by hand, 2026-10-02). the owner Not a dial. This run ACTS on a bit's time and reads what the bit says passed.
 Every arm: START ON, then 300 us of OUR time, then the last look. What differs is what we do inside the 300:
   N0             nothing
   L1 / L3 / L9   LOOK at it 1 / 3 / 9 times on the way (evenly spaced)               -- the observer's act

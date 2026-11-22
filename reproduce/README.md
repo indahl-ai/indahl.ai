@@ -14,7 +14,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [ARES](ares/) | fetch and verify | `9a571f396218edaa23e43a66cc94ee236638effeee24d169c434b525372d0ca2` |
 | [ARGUS](argus/) | fetch and verify | `a3f1012ded4bad73f008cca85340107e4bae889deadf585c0cb3f2fab3ffe442` |
 | [CADENCE](cadence/) | included | `7933c886d1748f0ad7e5f37935dc478a35e9b3f2690469f8c5649601781b0aa3` |
-| [CAMPUS](campus/) | fetch and verify | `fe00f96ae1cf9432b5f00c88ce28b57d4137cb116dad88789b416a50c5cf5c3f` |
+| [CAMPUS](campus/) | fetch and verify | `975e05958a91b4d456f879d871322bb9f9474b09d22abd58595490103ad9d20b` |
 | [CENSUS](census/) | included | `43f7368f318b9aef23d0af04771a2eb2dcdbc8eb4e81455405b5762fdccc2f1b` |
 | [CHANGE](change/) | fetch and verify | `3da1b7f2707fa3cff0dab7ba2eb91494b96fadb45ee93ef03eeadccd7041c4a8` |
 | [CONE](cone/) | included | `3a3cc8410a5f9d20204e42be09f230296d0a5d27a7f22182b340590551e02201` |
@@ -32,7 +32,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [PROMETHEUS](prometheus/) | fetch and verify | `75765f774094ce3738a5bbbf8bf3da76344397a2caf3b9d277b437b3944f8961` |
 | [QUAKE](quake/) | included | `026cc97e8c5e51a5906ae1d2edb2a209a7aaa5e48a145d66b83f27ea504b7dc1` |
 | [SEASONAL](seasonal/) | included | `1cba88ef5719653d4062694b26db6777fd39a1f8c715816ce344494fbbc44b3b` |
-| [SECRECORDS](secrecords/) | fetch and verify | `116c7c2b6901e2cb855dbff21d4d1a616a9a37cde329a4dc4cd378d6f1fc60a6` |
+| [SECRECORDS](secrecords/) | fetch and verify | `4740ccce5fbdedd5a133cbcb06f8f5119b14ad81f7108c16f8d6098fcd218cb1` |
 | [SOLAR](solar/) | fetch and verify | `2d116169c1de5e8599bf3e4a1bf513aff2a41e8f836a36472e1564d17d098c19` |
 | [STEO](steo/) | included | `62582754f487e4bbb247ecb496530bfe0811c434a8f16222e973664ae554574d` |
 | [SUPPORT](support/) | fetch and verify | `9378e1e83aa28ab04128e4a2e5d34065cb9f8df38764de1fde8949ce23353f87` |

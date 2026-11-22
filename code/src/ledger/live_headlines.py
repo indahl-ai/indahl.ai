@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""live_headlines.py: the ledger rule for headline numbers that move on every read (10 Nov 2026, cold read row 12, the owner: "it depends on
-the headline and how big the change is; WATER is good for every twelve hours").
+"""live_headlines.py: the ledger rule for headline numbers that move on every read (10 Nov 2026, cold read row 12, the owner).
 
 Each live desk headline has ONE ledger row of kind 'live_headline'. The row names the feed and the JSON field the headline comes from, the
 desk's refresh cadence in hours, and the material-change rule. check_ledger.py reads every such row against the live feed: the field must exist

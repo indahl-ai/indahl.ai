@@ -1,5 +1,5 @@
 # Known-good seat for the flat-beat analysis, on real hardware (written and pushed BEFORE the flat-beat job's output is opened)
-Heuremen LLC (Heuremen LLC), 22 October 2026. Added after the plan was pushed and the job fired, and before its data returned.
+Heuremen LLC, 22 October 2026. Added after the plan was pushed and the job fired, and before its data returned.
 Why: analyze_flat.py was tested only on synthetic data. If phoenix reads FLAT, nothing in the run separates "phoenix's beat does not follow
 the calibration" from "this free fit, on real hardware, flattens every beat". A seat where the answer is already known is needed.
 The seat: knowngood.py runs analyze_flat's own fit and readings, unchanged, on the 22 Oct one-neighbour run (ibm_fez: an outside referee's

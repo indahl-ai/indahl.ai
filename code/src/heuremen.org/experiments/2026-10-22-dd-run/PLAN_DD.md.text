@@ -1,5 +1,5 @@
 # DD run: does an echo on the untouched qubits remove the readout kick and the readout coherence cost?
-Pre-registered. Written, SHA-256 hashed (PLAN_DD.sha256; code in CODE_DD.sha256) BEFORE any job is submitted. Heuremen LLC, Heuremen LLC, 22 October 2026. Circuits and fire path: dd.py (dry run against the live chips, nothing submitted). Analysis: analyze_dd.py, which
+Pre-registered. Written, SHA-256 hashed (PLAN_DD.sha256; code in CODE_DD.sha256) BEFORE any job is submitted. Heuremen LLC, 22 October 2026. Circuits and fire path: dd.py (dry run against the live chips, nothing submitted). Analysis: analyze_dd.py, which
 imports the deciding runs' ruler (deciding_runs/analyze.py) unchanged. Synthetic test: synth_dd.py (synth_output.txt, null_floor.txt, nulls/).
 
 ## What is on the record

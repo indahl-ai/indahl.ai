@@ -364,7 +364,7 @@ What was read: Emitter fall time, alone 26.6 us (26.0-27.6), full 31.2 us (30.0-
 
 **2026-09-29 Cepheus-1-108Q -- stack** (54 tasks: 54/0/0)
 
-What was laid: Two shots with all outcomes kept: START, q0's heat at the start measured by the readout-proof swap trick plus a plain read, in rooms ALONE, HALF (54 clocks), FULL (106 clocks), rotated A,H,F then F,H,A; THREE, q0 at rest or at level 2, q9 the clock, q10 parked in 0 or 1, waits 1, 2, 4 us; 54 tasks [standoff/fuckup_stack.py].
+What was laid: Two shots with all outcomes kept: START, q0's heat at the start measured by the readout-proof swap trick plus a plain read, in rooms ALONE, HALF (54 clocks), FULL (106 clocks), rotated A,H,F then F,H,A; THREE, q0 at rest or at level 2, q9 the clock, q10 parked in 0 or 1, waits 1, 2, 4 us; 54 tasks [standoff/fault_stack.py].
 
 What was read: START: ALONE 3.85% +/- 0.36, HALF 3.81 +/- 0.36, FULL 4.96 +/- 0.38; plain read 4.55 / 4.95 / 6.10%. THREE: q0's pull on q9 -60.9 deg/us (q10 at 0) and -62.2 (q10 at 1) [§13].
 

@@ -16,29 +16,29 @@
   {
    "bytes": 216758,
    "gzip_added": true,
-   "modified": "2026-11-22T14:47:41Z",
+   "modified": "2026-11-22T17:00:57Z",
    "path": "data/repos.json",
-   "sha256": "fa7ccf534b15651e7eb646c0cf0a2b0b004e688dd7a82cfb939885252198dcaf",
+   "sha256": "db53ba2b5cc3c926f4433a8dde50d7a271c11aea6e10bc6ebf3ef634f66408d9",
    "stored": "data/repos.json.gz",
-   "stored_sha256": "cb5893e0f8f35177396e61ada5422911094430c4029cdd4d589c0ce45f240126"
+   "stored_sha256": "5915aca114a55b5d6b6c0e063b1f6ef0d5d3582be9c9912c41e1e24e9aca1f6a"
   },
   {
    "bytes": 4447,
    "gzip_added": true,
-   "modified": "2026-11-22T14:47:41Z",
+   "modified": "2026-11-22T17:00:57Z",
    "path": "summary_hfsize.json",
-   "sha256": "51da3fad7116b2d231ca2d97783991a3ff79bd83891abd96de34fc198d727a33",
+   "sha256": "019ec0426dee86d6e4c1ee41754a044c47d93cd8bb06f156915410347bd6396f",
    "stored": "summary_hfsize.json.gz",
-   "stored_sha256": "f11f1f41afd2ab295847597dbebc4beb0150f416309183e4c4b173a461172836"
+   "stored_sha256": "ac439a5034be7453a36021cff9721000ec1cbf5171705af714e5be4ed060ede8"
   }
  ],
- "made": "2026-11-22T16:02:26Z",
+ "made": "2026-11-22T18:39:47Z",
  "mode": "fetch",
  "name": "HFSIZE",
  "reference": [
   {
    "path": "desk/hfsize_tick.py",
-   "sha256": "1f2fee351ba4e322900baadc60d0b43cb5705de71276aec754237414c4af627b"
+   "sha256": "08849ded6229384caff4d054c0592e11c5022e2ce7373f92e8898c3fdd2681ac"
   }
  ],
  "sources": [

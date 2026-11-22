@@ -3,7 +3,7 @@ pairs entangled. analyze_pairs_iq.py does not print the N = 0 arm, so this small
 (mu0, mu1 = mean of all calibration-0 / -1 shots, both copies; bit = 1 if the projection on mu1 - mu0 exceeds 0.5) and its concurrence
 formula copied verbatim. Wired = at least one measured qubit cz-coupled to either member (the run's saved properties), as in R1.
 Read with the analysis's own ruler: median N = 0 concurrence over wired pairs, 95 % bootstrap (2000), four outcomes; known-good holds if ABOVE 0.
-Heuremen LLC, Heuremen LLC, 22 October 2026.   Usage: known_good_pairs.py [FOLDER] [TAG] -> known_good_<TAG>.txt here"""
+Heuremen LLC, 22 October 2026.   Usage: known_good_pairs.py [FOLDER] [TAG] -> known_good_<TAG>.txt here"""
 import os, sys, json, glob
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); SRC = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else HERE; TAG = sys.argv[2] if len(sys.argv) > 2 else 'repeat'

@@ -66,7 +66,7 @@ third place.
 ## 3. Reset memory on tonight's Rigetti data: order IS stored; the 9/26 rule is NOT there chip-wide; q0 carries rung 2, not rung 1
 
 **Is shot order stored?** Yes.
-- Every collector (rigetti_chip, blink_hour, witness_*, edge_room, fuckup_stack) saves Braket's per-shot `measurements`
+- Every collector (rigetti_chip, blink_hour, witness_*, edge_room, fault_stack) saves Braket's per-shot `measurements`
   array in the order Braket returns it.
 - The same array sits in each task's S3 `results.json`, so any task not saved to an npz can be pulled for fractions of a
   cent.

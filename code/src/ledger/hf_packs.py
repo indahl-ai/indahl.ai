@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Every indahl.ai desk data pack as a Hugging Face dataset, indahl/<desk>-data-pack (15 Nov 2026, the owner: "ANYTHING else from
-Indahl.ai that you can put on hf"). Reads only what is COMMITTED in public_mirror/indahl.ai (git show HEAD:<desk>/<desk>-data-pack.zip),
+"""Every indahl.ai desk data pack as a Hugging Face dataset, indahl/<desk>-data-pack (15 Nov 2026, the owner). Reads only what is COMMITTED in public_mirror/indahl.ai (git show HEAD:<desk>/<desk>-data-pack.zip),
 unpacks it UNCHANGED into pack/ (so its SHA256SUMS.txt still verifies every file), and writes a separate dataset card as the top README: license "other" linked to the pack's LICENSE.txt (each part keeps
 its source's terms), and one viewer config per results CSV. A dataset that already exists is updated only with --update (the hand-built
 atlas and oy cards are never touched without it).

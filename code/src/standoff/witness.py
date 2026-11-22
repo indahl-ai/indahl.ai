@@ -1,4 +1,4 @@
-"""THE WITNESS -- 2026-09-28 night. the owner: "we need the measurement another qubit would get, from inside the system."
+"""THE WITNESS -- 2026-09-28 night. the owner
 Emitter q0: parked on rung 0 (E0), rung 1 (E1), or pushed to rung 2 (E2) and left to fall (rung 2 -> 1, ~12 us, one packet of energy).
 Witness clocks, all held in superposition through the wait: q9 and q1 (direct neighbors), q10 (two steps away, control).
 After the wait: emitter read after a flip (E2: 0 = it fell to rung 1, 1 = still on rung 2); each clock read in X or Y.

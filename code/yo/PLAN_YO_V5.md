@@ -3,7 +3,7 @@ Why (defined after the data, from the live reads of YO v4 on QIA): YO v4 read 69
 record stamped 2026-11-01 05:25 UTC all 8 qubits it was shown carried the same older T1/T2 date, 32.6 h before the stamp, so all 8 were stale,
 and YO v4 flagged none. In the ibm_pittsburgh record of 2026-10-31 23:17 UTC every qubit was stale and the 7 that YO v4 missed sat in one prompt.
 Training so far drew qubits with mixed dates. A record whose qubits were calibrated in one batch shows one date on every line, and on both sides
-of 24 h the answer is all or nothing. the owner, 1 Nov: "Can we get some training going for the Mac lab please?"
+of 24 h the answer is all or nothing. the owner, 1 Nov
 ## Training
 Continue from the YO v4 adapter (the model at work; adapters/v4/adapters.safetensors, sha256 starting 4737100d6e008afa), same base (Qwen3-1.7B),
 same prompt format and chat template, completions with mask_prompt, max_seq_length 2048, LoRA on 16 layers, batch 4, learning rate 5e-5,

@@ -1,9 +1,6 @@
 # CLOCKS FROM THREE PLACES -- 2026-10-01, the operator's field hand
 
-THIRD_RUNG_20260928.md Sec.65. the owner, ~00:20Z 10/1: "triangulate those clocks themselves, turning one off at
-a time, seeing how one racks to the other -- you're only gonna see one move at a time because they're three
-different clocks, so take the measurement from three different places. You took one snapshot and said 'corner
-heat, whatever.' Try again."
+THIRD_RUNG_20260928.md Sec.65. the owner, ~00:20Z 10/1
 
 No numeric prediction written before running. Script: `out/the_middle/clocks_from_three_places.py`. Raw output:
 `out/the_middle/clocks_from_three_places_results.json`. Data: `out/echo_20260928_122733/` (ibm_marrakesh, 78

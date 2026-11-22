@@ -26,7 +26,7 @@ C-001 MIT entered by the owner's naming and is labelled so). Internal name only 
 ERIC API -> arXiv cs.CY/cs.HC education -> EdArXiv/OSF/ICPSR/Dataverse/Zenodo replication packages -> open-access journals
 (Computers & Education, BJET, IJAIED, L@S, EDM/AIED) -> policy (UNESCO, OECD, university committee reports like C-001).
 
-## Addendum 1 (25 Oct ~10:20, before any school row): the schools themselves as rows (his ask: "Matrixing the schools themselves")
+## Addendum 1 (25 Oct ~10:20, before any school row): the schools themselves as rows (his ask)
 Rows = institutions; ROW ZERO = Heuremen/OY's own public pages, same columns, first. Columns (facts, never a composite score or rank):
  S1 public AI-in-learning document(s): date, type (policy / committee report / guidance / survey); "none found" is a cell.
  S2 evidence cited: peer-reviewed studies (count), own survey (n, response rate), other institutions' reports, anecdote, none.
@@ -38,7 +38,7 @@ Rows = institutions; ROW ZERO = Heuremen/OY's own public pages, same columns, fi
 Like-for-like (La Suma): every school gets the same search procedure, sources and window, logged per school with what was searched;
 no column is scaled by size or wealth. Funding rule unchanged for studies; institutional documents of private and public universities IN.
 
-## Addendum 2 (25 Oct ~10:10, before any school row): S0, the school's own row zero (his ask: "Do they evaluate themselves?")
+## Addendum 2 (25 Oct ~10:10, before any school row): S0, the school's own row zero (his ask)
  S0 self-evaluation: has the school measured whether ITS OWN AI policy, guidance, tools or pilots worked on its own students/courses,
     with an outcome measure (learning, grades, completion, integrity cases, assessment validity), a stated n, and a comparison
     (before/after, arm vs arm, or against a stated target)? Cell values: MEASURED (with n and result, priced like S5) /
@@ -47,7 +47,7 @@ no column is scaled by size or wealth. Funding rule unchanged for studies; insti
     measurement of the policy). First reading to check: C-001 MIT ("MIT should begin tracking"; fall 2025 survey = usage/attitudes).
 
 ## Addendum 3 (25 Oct ~10:45, the owner): SCOPE LOCK
-"no gov funded studies, just schools. we staying the fuck out of politics man, just indexing all ai takes in higher ed and auditing their
+"no gov funded studies, just schools. we staying the out of politics man, just indexing all ai takes in higher ed and auditing their
 data and research about it." -> Rows are higher-education institutions (and documents they author). Government-funded studies stay CARD
 ONLY. No government policy documents, no multilateral/think-tank policy (UNESCO/OECD dropped from scope), no political framing anywhere.
 Cut list not applied. K-12 material only when a university authored it.

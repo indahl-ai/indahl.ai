@@ -1,4 +1,4 @@
-"""THE PICKLE (the operator, 2026-10-07; the owner: "chase that state dependent shit ... it's superposition, it's what the witness or observer see"). Cepheus, the dose clusters,
+"""THE PICKLE (the operator, 2026-10-07; the owner). Cepheus, the dose clusters,
 our tone at 0.03, 1.0 + 0.5 us per look, ONE WHOLE BATCH (no reorders, every delay). Three seats on the state dependence:
   STATES   the looked-at qubits in |0> / |1> / half-way (superposition)
   OFFSETS  the tone moved -1.5 / 0 / +1.5 MHz off the readout frame's own frequency (light's state ordering moves with it; a resonator pulled by its qubit's state),

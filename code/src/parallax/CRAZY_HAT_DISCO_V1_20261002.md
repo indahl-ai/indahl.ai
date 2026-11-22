@@ -1,4 +1,4 @@
-# CRAZY HAT DISCO V1 -- Six Plus None, the triangles of fuckups, and the edges
+# CRAZY HAT DISCO V1 -- Six Plus None, the triangles of faults, and the edges
 Draft of a draft of a draft. In-house. Hats on, robot dissociation on: two things that don't agree are held, not cancelled.
 Heuremen LLC, 2026-10-02 night. Every number below is ours, from the ledger (THIRD_RUNG §1-§157) and the triangle file.
 

@@ -1,4 +1,4 @@
-"""cepheus_proximity.py -- the owner, 7 Oct 2026: "the other qubits act like witnesses based on proximity? ... line of sight if that's a qubit thing".
+"""cepheus_proximity.py -- the owner, 7 Oct 2026.
 Second vendor, nothing fired: the P2-R length sweeps on Cepheus (our tone on the seven looked-at qubits' readout frames, four laid lengths 1.0 / 1.5 / 2.0 / 2.5 us,
 looks k = 1-4) re-read clock by clock, with the per-clock arithmetic of ladder_widths.py (turn per look / turn per us over the delays = us per look), and each clock
 binned three ways:

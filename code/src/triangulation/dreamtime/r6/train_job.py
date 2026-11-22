@@ -1,4 +1,4 @@
-"""train_job.py (r6) -- THE CURVE, REPEATED (call DREAMTIME_R6_CALL_20261007.txt): seats EU (Latxa) x seeds 2 and 3, EN (Llama) x seed 2 as control; all held-out pairs, ENGLISH exam only, arms E / EP / L; was r3: (the owner, 7 Oct: "make it a learning/training curve with qubit and Inorganics"). Call DREAMTIME_R3_CALL_20261007.txt.
+"""train_job.py (r6) -- THE CURVE, REPEATED (call DREAMTIME_R6_CALL_20261007.txt): seats EU (Latxa) x seeds 2 and 3, EN (Llama) x seed 2 as control; all held-out pairs, ENGLISH exam only, arms E / EP / L; was r3: (the owner, 7 Oct). Call DREAMTIME_R3_CALL_20261007.txt.
 Per seat (EN Llama 3.1 8B / TH Typhoon 2 / EU Latxa): LoRA (r 16, q/k/v/o) on Wen's qubit-reading cases in ENGLISH with DIGIT marks rotated at random per case; loss on the
 answer digit only. Every 40 steps (0 .. 240) the held weighting is read with nothing emitted on: the QUBIT exam (15 held-out pairs: E / EP / L x 3 rotations) in en, th, eu,
 and the INORGANIC pull (the idle arms N / NP in th and eu vs en). Training cases whose text contains an exam reading are dropped. Writes /workspace/out/curve_<seat>.jsonl."""

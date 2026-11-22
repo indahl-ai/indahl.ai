@@ -1,5 +1,4 @@
-"""levels.py -- 7 Oct 2026. The recursion, level by level, each level beside its own jitter (the owner: "go for level three and take the three stooges
-bonefished with you"). Level 1 = the values (6 Oct reads + the four miner stooges' speeds); level n+1 = every ratio between two level-n HITS, in its propagated
+"""levels.py -- 7 Oct 2026. The recursion, level by level, each level beside its own jitter (the owner). Level 1 = the values (6 Oct reads + the four miner stooges' speeds); level n+1 = every ratio between two level-n HITS, in its propagated
 width. At each level: the share of values inside one width of a Seven number, beside the same pipeline run on level-1 values jittered 15 % (300 x)."""
 import math, itertools, numpy as np
 from patterns_of_patterns import S, V

@@ -1,4 +1,4 @@
-"""THE FULL ROOM -- 2026-09-28 night, the owner: "double down... let it ride." The headline shot (q9 witness, q0 emitter, same waits,
+"""THE FULL ROOM -- 2026-09-28 night, the owner The headline shot (q9 witness, q0 emitter, same waits,
 same shots) repeated with the room filled with observers: HALF = every other qubit also a clock; FULL = every qubit a clock.
 With tonight's ALONE run (witness_headline.py) that is three points: 0 / half / full observers. No outcome written.
   python witness_room.py dry | submit | collect"""

@@ -1,4 +1,4 @@
-"""TRIANGLE C: THE CROSSING ON CEPHEUS WITH A WITNESS THAT OUTLASTS IT (the operator, 2026-10-04; the owner: "fire at will... triangles only"). Not a repeat: batch 3's free clocks forgot in ~10 us;
+"""TRIANGLE C: THE CROSSING ON CEPHEUS WITH A WITNESS THAT OUTLASTS IT (the operator, 2026-10-04; the owner). Not a repeat: batch 3's free clocks forgot in ~10 us;
 these clocks are ECHOED (pi at the end of the train), so static detuning cancels and what stays is what the emitters did while the clocks ran.
 OBSERVER  the laid train: the seven emitters of batch 3 from |0>, ten pushes a pulse every g = 0.5 / 1 / 2 us (train L = 5 / 10 / 20 us), then idle L.
 WITNESS   every other qubit an echoed clock: half-way at 0, pi at L (the train's end), read at 2L on two hands; references at each L: emitters held in |1> for the first half then flipped back (the pull scale),

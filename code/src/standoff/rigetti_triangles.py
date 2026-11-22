@@ -1,4 +1,4 @@
-"""TWO TRIANGLES ON CEPHEUS (the operator, 2026-10-04; the owner: "we can spend to the end, but it better be a fucking triangle"). Neither repeats a run already made.
+"""TWO TRIANGLES ON CEPHEUS (the operator, 2026-10-04; the owner). Neither repeats a run already made.
 A. THE q9 TRIANGLE, all three seats in one batch. OBSERVER: q0 put at rest / in |1> / in |2>, laid windows 0.5 / 1 / 2 / 4 / 6 us (9/28's ladder). WITNESS: every other qubit a clock, read on two hands
    (X paired with q0's plain read, Y with q0's swap-then-flip read), at 1 / 2 / 3+ links. TIME: q0's own |2> population after each window, from its rung-2 read (this batch's readout model): the seat that was empty.
    8 cal + 2 reference (no window) + 5 windows x 3 states x 2 = 40 tasks x 900 shots (cal 1500).

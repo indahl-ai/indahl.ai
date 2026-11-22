@@ -66,7 +66,7 @@ The full package adds the Faults and Guards package, the check block, FaultsBenc
 - List of studies: https://indahl.ai/iris/list
 - Key: https://indahl.ai/iris/key
 - Package page: https://indahl.ai/iris/package
-- Code: https://github.com/indahl-ai/indahl.ai
+- Code: https://github.com/Heuremen-LLC/indahl.ai
 - Faults and Guards on PyPI: https://pypi.org/project/faultsguards/
 - Data and models: https://indahl.ai/downloads
 

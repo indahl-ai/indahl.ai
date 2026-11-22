@@ -1,5 +1,4 @@
-// indexreq.js -- the open door under each Matrix (QIA 24 Oct; OY 25 Oct) (24 Oct 2026, the owner): "doors wide open for Kumar's next idea ... just a box that
-// only accepts links to pdfs". One field. Indexing is only considered; nothing is promised, nothing is labelled, nothing is calibrated.
+// indexreq.js -- the open door under each Matrix (QIA 24 Oct; OY 25 Oct) (24 Oct 2026, the owner). One field. Indexing is only considered; nothing is promised, nothing is labelled, nothing is calibrated.
 // Stores only the URL and the time (no name, no email, no IP); a hashed address is kept 1 hour for the rate limit, then expires.
 const OK = 'Thank you. The link has been received for consideration for indexing.';
 const isPdfUrl = s => /^https:\/\/[^\s]+\.pdf([?#][^\s]*)?$/i.test(s) || /^https:\/\/arxiv\.org\/pdf\/[^\s]+$/i.test(s);

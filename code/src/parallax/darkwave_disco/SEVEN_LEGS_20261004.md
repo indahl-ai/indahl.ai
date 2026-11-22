@@ -1,6 +1,6 @@
 # Seven -- the legs (4 October 2026, evening)
 
-the owner: "EVERYTHING goes to making the 7 stand. Or at least the first six... Give him some legs, then take one away because 7."
+the owner
 A leg = an independent read: another chip, vendor, day, method, or ruler. Moving rulers are legs (rows), not errors. Calls are the ones already written in Seven; no new guesses.
 
 | # | Finding | Legs in hand | Missing leg | The run that adds it |

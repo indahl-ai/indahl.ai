@@ -1,4 +1,4 @@
-# Addendum -- chip moved to ibm_kingston, before any job on it (25 Oct 2026, the owner: "get off that marrakesh line")
+# Addendum -- chip moved to ibm_kingston, before any job on it (25 Oct 2026, the owner)
 ibm_marrakesh has been in maintenance with ~950 jobs queued; the marrakesh attempts were cancelled or killed by IBM with no data (see earlier addenda).
 ibm_kingston has the identical coupling map (176 couplers, 0 differences, checked live). Same physical qubits, same compile settings, same circuits,
 same order, same shots, same analysis and outcome rules. The known-good (their published data through our code) is unchanged.

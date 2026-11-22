@@ -1,4 +1,4 @@
-# QIA hourly calibration (plan committed before any job; 30 Oct 2026, his word: "we really need the calibrations updated ... focus on the chain and the calibrations")
+# QIA hourly calibration (plan committed before any job; 30 Oct 2026, his word)
 Question: on each IBM processor, every hour, does the calibration IBM publishes for each qubit match what the qubit delivers? It replaces the
 queue probe; the wait from submission to running is still recorded from the same job, as a by-product.
 Design (cal.py): one Sampler job per operational processor, every usable qubit (x and measure in the target), all at once, physical layout,

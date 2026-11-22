@@ -138,13 +138,12 @@ def functional(src_bytes):
 
 
 def main():
-    page('/', must='qia-cr')
+    page('/')   # 22 Nov 2026: Check a run removed from the QIA site
     for s in demo_slugs(): page('/demo-' + s)
     inquiry_door()
     try: subprocess.run([sys.executable, os.path.join(B, 'ledger', 'inquiry_bell.py')], timeout=150, capture_output=True)   # rings any new inquiry after a ship too
     except Exception: pass
-    js('/check_run.js')
-    rc_src = js('/qia/runcheck.js')
+    rc_src = None   # 22 Nov 2026: Check a run removed; its engine and form are no longer checked
     ix = jget('/qia/records/index.json')
     cal = jget('/qia/cal.json')
     jget('/qia/offchain.json')
@@ -154,7 +153,7 @@ def main():
         p = (cal.get('processors') or {}).get(PROC)
         if not p or not p.get('job_id'): fail('/qia/cal.json has no newest job for %s' % PROC)
         else: jget('/qia/cal/%s.json' % p['job_id'])
-    if rc_src is not None: functional(rc_src)   # also fetches the day files a run today needs; a missing one throws there
+    pass   # also fetches the day files a run today needs; a missing one throws there
     if not QUIET:
         for o in oks: print('ok   ' + o)
     # ring only when the set of failures changes (a new set, or cleared), so a standing failure rings once, not every run;
@@ -165,7 +164,7 @@ def main():
     for f in fails: print('FAIL ' + f)
     if key != last:
         for f in fails: ring('MONEY PATH FAILED: ' + f)
-        if not fails and last: ring('money path: cleared, quantumidleaudit.com Check a run works end to end')
+        if not fails and last: ring('money path: cleared')
         try: tmp = STATE + '.tmp'; json.dump({'at': time.strftime('%Y-%m-%dT%H:%M:%S'), 'fails': key}, open(tmp, 'w'), indent=1); os.replace(tmp, STATE)
         except Exception: pass
     print('money path: %d checks ok, %d failed' % (len(oks), len(fails)))

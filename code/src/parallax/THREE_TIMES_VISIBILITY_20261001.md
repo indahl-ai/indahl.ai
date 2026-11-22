@@ -1,7 +1,6 @@
 # THREE TIMES ON THE CHIP -- WHEN DOES VISIBILITY SWITCH ON AND OFF
 
-the owner, ~02:25Z 10/1 (THIRD_RUNG_20260928.md Sec68): "IBM has two times, we need three; they go
-invisible to each other." Builds directly on `CLOCK_EXISTENCE_20261001.md` (A = ~64us clustering
+the owner, ~02:25Z 10/1 (THIRD_RUNG_20260928.md Sec68) Builds directly on `CLOCK_EXISTENCE_20261001.md` (A = ~64us clustering
 clock / arisen carry, B = look-heat drain, C = IBM's T1/T2; A<->B EXISTS only at readout cutoff
 0.50 in that run's 3-cutoff check, C is mutually invisible with both on every snapshot day) and
 `CHIP_TRIANGLE_20261001.md` (shot clocks vs the microsecond clock). THE CHASE: when does

@@ -1,4 +1,4 @@
-// 15 Nov 2026 (the owner: "go for those ideas"): prints every MCP tool, read from api.js itself (the server card and the OpenAPI
+// 15 Nov 2026 (the owner): prints every MCP tool, read from api.js itself (the server card and the OpenAPI
 // document), so the /connect/tools pages built by build_site.py never drift from what tools/list serves.
 const m = await import('./api.js');
 const get = async (p) => (await m.handleApi(new Request('https://indahl.ai' + p), {}, new URL('https://indahl.ai' + p))).json();

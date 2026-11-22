@@ -1,4 +1,4 @@
-"""rigetti_drift_probe.py -- THE ROW AGAINST TIME SINCE CALIBRATION (the operator, 2026-10-05; the owner's hat: "Calibration only takes care of one corner of the triangle").
+"""rigetti_drift_probe.py -- THE ROW AGAINST TIME SINCE CALIBRATION (the operator, 2026-10-05; the owner's hat).
 One lean round = the seal's 4-us row, every corner re-read each round:
   OBSERVER  all three readout rulers re-measured every round (shared 8 seq + emitters-only rest / |1> 16 seq, 1500 shots each).
   WITNESS   the other qubits at rest | half-way (F copy) | |1> at readout, emitters held in |2> 4 us, e / ba arms, 1000 shots.

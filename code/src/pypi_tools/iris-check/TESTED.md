@@ -19,7 +19,7 @@ The repeat command gave these flip counts. The two same-machine pairs were run w
 - Mac against CUDA, bare runs: 11 flips, on 391 matched items
 - Mac against CUDA, copy runs: 10 flips, on 391 matched items
 
-These equal the counts we published from separate code, the script `item_flips.py` and its output `item_flips.txt`, which are in the repository at https://github.com/indahl-ai/indahl.ai/tree/main/code/iris/pub2/seats_compare and give flips 1, 4, 11 and 10 on the 391 items that all four runs hold. The two same-machine pairs hold 393 items each, and the 2 extra items have no flips. Both programs were written by us. So the agreement shows that the two implementations agree. It is not a check by anyone else.
+These equal the counts we published from separate code, the script `item_flips.py` and its output `item_flips.txt`, which are in the repository at https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/iris/pub2/seats_compare and give flips 1, 4, 11 and 10 on the 391 items that all four runs hold. The two same-machine pairs hold 393 items each, and the 2 extra items have no flips. Both programs were written by us. So the agreement shows that the two implementations agree. It is not a check by anyone else.
 
 The comparison command (`--vs`) on the Mac bare run and the CUDA bare run read CANNOT_TELL at the default margin of 0.02, with an exact two-sided McNemar p of 0.2266. The published value is 0.227.
 

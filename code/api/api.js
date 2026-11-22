@@ -5,7 +5,7 @@ import { STANDARD } from './standard_current.js';   // 21 Nov 2026: name from fa
 import { DESKS_LIVE } from './desks_live.js';   // 21 Nov 2026: written by build_site.py from ledger/desks.json (the one desk registry) on every build
 import { signBytes, SIGNING_KEY } from './security.js';
 import { packageCheck, modelCheck } from './checks.js';
-import { TOOLKIT, TOOLKIT_GROUPS } from './toolkit.js';   // 16 Nov 2026 (the owner: "turn all the skills you can into MCP tools"): skills as read-only tools   // 14 Nov 2026: desk rules on any package or model a person names   // 14 Nov 2026: a signed receipt on every MCP tool answer   // 14 Nov 2026: checks a person brings (research connector)
+import { TOOLKIT, TOOLKIT_GROUPS } from './toolkit.js';   // 16 Nov 2026 (the owner): skills as read-only tools   // 14 Nov 2026: desk rules on any package or model a person names   // 14 Nov 2026: a signed receipt on every MCP tool answer   // 14 Nov 2026: checks a person brings (research connector)
 const TERMS = 'https://indahl.ai/terms', USE = 'Retrieval and answering are permitted. Use as training data is not permitted.';
 const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-methods': 'GET, POST, OPTIONS', 'access-control-allow-headers': 'content-type, mcp-protocol-version, mcp-session-id, accept' };
 const kv = async (env, key) => { const v = env.IRIS_BENCH ? await env.IRIS_BENCH.get(key) : null; try { return v ? JSON.parse(v) : null; } catch (e) { return null; } };
@@ -209,7 +209,7 @@ const PROMPTS = [
   { name: 'whats_changed', title: 'What changed since', tool: 'what_changed', description: 'Which live checks changed in substance since a time.', arguments: [{ name: 'since', description: 'ISO time, default 24 hours ago', required: false }],
     text: (a) => `Run what_changed${a.since ? ` with since "${a.since}"` : ''}. List each changed feed with when it changed and its page. Then open the changed feeds with their own tools and summarise what each now says.` },
 ];
-// 13 Nov 2026 (the owner: "Quantum is WIDE fucking open"): focused connectors on the same server, one URL each, each its own directory listing.
+// 13 Nov 2026 (the owner): focused connectors on the same server, one URL each, each its own directory listing.
 const DIVS_FOR = {   // 16 Nov 2026 (the designer's review): list_divisions on a focused server returns that server’s divisions; /mcp keeps every one
   quantum: ['qia'], astrophysics: ['sagar'], education: ['oy', 'campus'], infrastructure: ['atlas'],
   models: ['iris', 'model', 'hosts', 'ailuminate', 'weights', 'pkginstall', 'hfsize', 'hflicense', 'pkglicense', 'change', 'arxivdrift', 'linkrot'],
@@ -235,9 +235,9 @@ for (const [k, g] of Object.entries(TOOLKIT_GROUPS)) {   // 16 Nov 2026: toolkit
   if (GROUPS[k] && g.add) GROUPS[k].tools.push(...g.add.filter(n => !GROUPS[k].tools.includes(n)));
   else if (!GROUPS[k] && g.tools) GROUPS[k] = { title: g.title, note: g.note, tools: g.tools };
 }
-// 19 Nov 2026 (the owner: "keep only the indahl quantum"): one connector, Indahl Quantum, with the IBM calibration audit tools only.
+// 19 Nov 2026 (the owner): one connector, Indahl Quantum, with the IBM calibration audit tools only.
 // No other division servers; /mcp and /api/v1 serve the same quantum tools (with the QIA study index, find_study).
-const KEEP_GROUPS = ['quantum', 'checks', 'verify', 'research'];   // 20 Nov 2026 (the owner: "keep all the quantum and checks"): quantum plus the check servers the plugins use
+const KEEP_GROUPS = ['quantum', 'checks', 'verify', 'research'];   // 20 Nov 2026 (the owner): quantum plus the check servers the plugins use
 for (const k of Object.keys(GROUPS)) if (!KEEP_GROUPS.includes(k)) delete GROUPS[k];
 GROUPS.quantum.title = 'Indahl Quantum';
 GROUPS.quantum.note = 'QIA, the Quantum Idle Audit: the calibration IBM publishes for its quantum processors, measured against our own runs, and the QIA index of quantum hardware studies.';
@@ -261,7 +261,7 @@ export const LEGACY_SERVERS = Object.keys(GROUPS);
 export async function handleApi(req, env, u) {
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
   const p = u.pathname;
-  // 15 Nov 2026 (the owner: "go for those ideas"): an MCP server card for discovery, built from TOOLS and GROUPS at request time so it
+  // 15 Nov 2026 (the owner): an MCP server card for discovery, built from TOOLS and GROUPS at request time so it
   // never drifts from what tools/list serves. Same at /.well-known/mcp.json and /.well-known/mcp/server-card.json.
   if (p === '/.well-known/mcp.json' || p === '/.well-known/mcp/server-card.json') {
     const servers = [{ name: 'indahl.ai', title: 'indahl.ai', url: MCP_URL, tools: MAIN.map(t => t.name) }];   // 21 Nov 2026: the one published server

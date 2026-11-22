@@ -59,7 +59,7 @@ The options added to run_check.py: --t1max and --t2max (microseconds, applied to
 1. In the fez rerun the flagged qubit's delays were sized from its own first result and the control kept the old grid, so the two were not read on the same grid. The rerun is described as such on the page.
 2. The CANNOT_TELL class holds both an unresolved ratio and a failed or on-bound fit from our own delay grid. The page's rows say which, through the fit-on-bound column. They are different facts and are not to be read as one.
 
-## Note 6 (30 Oct, about 02:10 EDT, written after the boston, kingston and fez results were read; the owner: "the outcome is still what's actually happening")
+## Note 6 (30 Oct, about 02:10 EDT, written after the boston, kingston and fez results were read; the owner)
 Note 3 left published T2 against measured unscored because IBM does not state whether its T2 is echo or Ramsey. That gap closes with physics: any T2,
 echo or Ramsey, is at most 2 x T1. Two readings are added for every qubit, both against the record in force at the job (its dates printed beside it):
 - IBM T2 against this qubit now: ABOVE when the published T2 exceeds 2 x the upper end of our measured T1 interval (no T2 of either kind can be that

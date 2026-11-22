@@ -1,9 +1,6 @@
 # ONE QUBIT, THREE CLOCKS -- 2026-10-01, the operator's field hand
 
-THIRD_RUNG_20260928.md Sec62-63. the owner: "you got three clocks and three equations and everything we're doing
-is three and triangulation, and you can triangulate the time on these chips and haven't been doing it -- start
-now." Sec63's named leg: "ONE-QUBIT TRIANGLE: arisen carry 64 us / look-heat drain ~80 us / T1 148 us (IBM's) --
-three clocks on one qubit, never closed." This runs it, per qubit, for real -- not the pooled numbers already on
+THIRD_RUNG_20260928.md Sec62-63. the owner Sec63's named leg This runs it, per qubit, for real -- not the pooled numbers already on
 the ledger.
 
 No numeric prediction written before running. Script: `out/the_middle/one_qubit_triangle.py`. Raw output:

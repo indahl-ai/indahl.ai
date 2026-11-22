@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """reading.py -- A READING THAT REFUSES TO BE COLLAPSED. (the operator, 9 Oct 2026.)
 
-the owner: "what do we actually need to stop this binary shit from happening man, are we building
-toward it with the nuevos?"
+the owner
 
 THE MEASURED ANSWER TO THE FIRST HALF. Correction does not work. 96 pushbacks across three days left
 the two-lane frame rate FLAT at 0.79, 0.69 and 0.88 per thousand words. What worked was structural:
@@ -171,7 +170,7 @@ if __name__ == '__main__':
 
 
 # ================================================================ ACROSS THE WIRE
-# 9 Oct, the owner: "can you run the exam path through the nuevos so this stops happening?"
+# 9 Oct, the owner
 #
 # A TYPE THAT DIES AT json.dumps() PROTECTS NOTHING. The exam writes JSON, a board reads it, and the
 # moment a Reading becomes the integer 48 every guarantee is gone -- which is exactly how one margin

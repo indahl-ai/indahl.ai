@@ -26,7 +26,7 @@ ibm = ["qiskit-ibm-runtime"]
 [project.urls]
 Homepage = "https://indahl.ai/qia"
 Documentation = "https://indahl.ai/qia/package"
-Source = "https://github.com/indahl-ai/indahl.ai"
+Source = "https://github.com/Heuremen-LLC/indahl.ai"
 
 [project.scripts]
 qia-check = "qia_check:main"

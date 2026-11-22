@@ -1,4 +1,4 @@
-"""THE TIME CORNER ON A SECOND VENDOR, WITH THE THIRD RUNG READ (the operator, 2026-10-04; the owner: "Fire away until we're dry... ride triangulated").
+"""THE TIME CORNER ON A SECOND VENDOR, WITH THE THIRD RUNG READ (the operator, 2026-10-04; the owner).
 Rigetti Cepheus-1-108Q, every qubit in parallel. The push train of time_wide.py (IBM), spaced in the qubit's own time (Cepheus T1 median ~27 us, so the
 IBM ladder's fractions of the decay time become 1 / 3 / 8 / 20 us, plus back-to-back), with each qubit's own decay read in the same batch in three copies, and
 the end state read on all three rungs: every arm is read plain ('e') and through the tuned 1<->2 swap then the 0<->1 flip ('ba'), and each batch carries
@@ -88,7 +88,7 @@ def guard_and_book(label, items):
     if S['tasks'] + nt > DAY_CAP_TASKS or S['shots'] + ns > DAY_CAP_SHOTS:
         sys.exit(f"REFUSED: {label} would take the day to {S['tasks'] + nt} tasks / {S['shots'] + ns} shots, past the cap {DAY_CAP_TASKS} / {DAY_CAP_SHOTS}")
     c = nt * PER_TASK + ns * PER_SHOT
-    L = json.load(open(LEDGER)); L['cap'] = round(L['spent_est'] + c + 0.01, 4)        # the owner: "Fire away until we're dry" (10/4), within the plan he was given
+    L = json.load(open(LEDGER)); L['cap'] = round(L['spent_est'] + c + 0.01, 4)        # the owner (10/4), within the plan he was given
     L['spent_est'] = round(L['spent_est'] + c, 4); L['entries'].append({'at': time.strftime('%Y-%m-%dT%H:%M:%S'), 'label': label, 'tasks': nt, 'shots': ns, 'cost_est': round(c, 4)})
     json.dump(L, open(LEDGER, 'w'), indent=1)
     S['tasks'] += nt; S['shots'] += ns; S['stages'].append({'label': label, 'tasks': nt, 'shots': ns, 'at': time.strftime('%H:%M:%S')}); json.dump(S, open(STATE, 'w'), indent=1)
@@ -127,7 +127,7 @@ def tune_fit():
     print(f"tuned: {sum(v['swing'] > 0.3 for v in fit.values())} of {len(QS)} qubits swing > 0.3 (9/28: 95); median a_pi12 {np.median([v['a_pi12'] for v in fit.values()]):.3f} (9/28: 0.150); "
           f"change vs 9/28 on qubits good both days: median {np.median(d):+.3f}, middle half {np.percentile(d, 25):+.3f}..{np.percentile(d, 75):+.3f}")
 
-# ---------------- BATCH 3, THE WITNESS (added 10/4 after batches 1-2 had no clocks inside; the owner: "Observer. Witness. Triangles. Time.") ----------------
+# ---------------- BATCH 3, THE WITNESS (added 10/4 after batches 1-2 had no clocks inside; the owner) ----------------
 # Emitters: seeded order (202610043), each >= 5 links from every earlier one (so clocks sit at 1, 2 AND 3+ links -- at >= 3 the grid gave only 1 and 2: two lanes), only qubits whose swap is tuned.
 # Clocks: every other qubit, put half-way after the starts, free through the train, read on two hands (X: rx(pi/2); Y: rz(pi/2) rx(pi/2)); distance to the
 # nearest emitter read afterwards. Reference: the same clocks over laid windows with the emitters at rest and with the emitters held in |1>.

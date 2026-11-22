@@ -1,5 +1,4 @@
-"""WHO'S WATCHING -- 2026-09-28 night. the owner: "the resonance comes back with the frequency of the observer... account for the new
-measurements in the system." Same event (q0 to rung 2), different sets of observers (clocks) inside the system. No outcome written.
+"""WHO'S WATCHING -- 2026-09-28 night. the owner Same event (q0 to rung 2), different sets of observers (clocks) inside the system. No outcome written.
  LEAK : all clocks on; arms E0 (rest) vs EP (the f12 push fired with q0 on rung 0 -- the push does nothing to q0 itself).
  FAR  : clocks ON only on far noticers q5,q43,q45,q35,q62,q80 + far controls q7,q13,q30,q50; neighbors q1,q9 parked at 0. E0 vs E2.
  FAR+N: the same plus q1,q9 as clocks. E0 vs E2.

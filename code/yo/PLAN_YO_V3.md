@@ -1,8 +1,7 @@
 # YO v3 -- plan (written 31 Oct 2026 ~19:45 EDT, before any v3 item was built, any v3 null scored or any v3 output read). Heuremen LLC.
 Why (POSTHOC_YO_V2.md, after the referee): YO v2 finds half the stale qubits (recall 0.496, precision 0.927). It flags a stale qubit mostly
 when its T1/T2 date is two or more calendar days before the record stamp, and misses most qubits stale by 24 to 48 h (24-25 h: 1 of 70).
-A code rule written after the data (zeros, plus two or more calendar days) scores 0.929 against YO v2's 0.957. the owner, 31 Oct: "refine
-yo a bit in the weights".
+A code rule written after the data (zeros, plus two or more calendar days) scores 0.929 against YO v2's 0.957. the owner, 31 Oct.
 ## Training
 Continue from the YO v2 adapter (adapters/v2/adapters.safetensors, sha256 starting f73c847be9f51dd5), same base (Qwen3-1.7B), same prompt
 format and chat template as v2, completions with mask_prompt, max_seq_length 2048, LoRA on 16 layers, batch 4, learning rate 5e-5, 1,200

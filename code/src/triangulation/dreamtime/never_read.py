@@ -1,5 +1,4 @@
-"""never_read.py -- WEN AS NEVER (the owner, 7 Oct: "Wen is a name but also the timescale they need to use, never. no forward progression, just thoughts no need for output
-at the end."). Reads Dreamtime r1 WITHOUT the output: at the answer's first position (nothing emitted), the held mass on COMMIT words vs on HOLD + NEXT words, in every
+"""never_read.py -- WEN AS NEVER (the owner, 7 Oct). Reads Dreamtime r1 WITHOUT the output: at the answer's first position (nothing emitted), the held mass on COMMIT words vs on HOLD + NEXT words, in every
 language's mode words, normalised over the mode words: c = P(commit) / P(all mode words). A seat that reads the case holds more c on LATE items (right = COMMIT) than on
 EARLY ones (right = wait). Per cell: mean c early, mean c late, the gap, and the paired share of pairs where late > early (15 pairs; the coin = 50%). Raw."""
 import json, os, sys, collections

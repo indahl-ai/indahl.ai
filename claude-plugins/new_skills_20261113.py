@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""13 Nov 2026 (the owner: "companion skills ... all of it"): writes the seven companion and the referee-proposed skills into src/, packaged like
+"""13 Nov 2026 (the owner): writes the seven companion and the referee-proposed skills into src/, packaged like
 the others, and registers them in the builders and the marketplace. Run once; rerunning rewrites the same files."""
 import json, os, shutil
 H = os.path.dirname(os.path.abspath(__file__)); os.chdir(H)

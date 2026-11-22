@@ -6,7 +6,7 @@ import json, os, sys
 import numpy as np
 os.environ.setdefault('AWS_PROFILE', 'braket'); os.environ.setdefault('AWS_DEFAULT_REGION', 'us-west-1')
 import rigetti_chip as C
-import fuckup_stack as S
+import fault_stack as S
 S.ROOMS.update({'EDGE': [35, 62, 80], 'MIDDLE': [39, 58, 75]})
 SPEC = []
 for rnd, order in ((1, ('ALONE', 'EDGE', 'MIDDLE')), (2, ('MIDDLE', 'EDGE', 'ALONE'))):

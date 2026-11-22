@@ -111,7 +111,7 @@ resample/shuffle draws underneath them.
 
 # BACKWARDS
 
-the owner: "run the standoff backwards and see what boogies." Two runs on the same record
+the owner Two runs on the same record
 (`parallax/out/yeast/nadh_fig4_raw_digitized.csv`, same three windows: before 200-800s, during/
 synchrony 800-1400s, after 1400-2000s). Script: `parallax/out/yeast/three/backwards.py`. Raw
 output: `parallax/out/yeast/three/backwards_results.json`. No expectation written first.
@@ -260,7 +260,7 @@ call (not a p-value).
 
 ## ERRORS, DIVERGENT FITS, AND BOOTSTRAP ERROR SIZES (addendum)
 
-the owner: "DO NOT THROW AWAY ERRORS." Every fit attempt run for this backwards pass is reported
+the owner Every fit attempt run for this backwards pass is reported
 below, including the ones not used for the headline numbers above, with its exact value and its
 bootstrap error sitting in the same table as the results -- not a footnote. Full numbers in
 `backwards_results.json` (`run_A_10_9_8.step3_clock_all_windows` now carries all three window fits,

@@ -1,7 +1,6 @@
 # Qubit plan -- reviewed for binary (the operator, 2026-10-04, second pass; replaces the first pass of the same day)
 
-the owner: "review your plan to shore up our data and make sure you didn't inadvertently go binary on us. We're chasing bugs in reality
-as shown with qubits without measuring the ruler or limiting our outcomes with direct prediction."
+the owner
 
 ## What the first pass got wrong (owned)
 1. **Runs parked on our own numbers.** The look at the three positions that give 1.09 / 1.62 / 1.48; the push at a spacing "called from the

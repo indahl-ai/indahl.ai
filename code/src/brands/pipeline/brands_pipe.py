@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sagar_pipe.py -- the SAGAR indexing pipeline on HER ticks (the owner 12 Nov 2026: "make a fucking PIPELINE ... no more one-off, one-row").
+"""sagar_pipe.py -- the SAGAR indexing pipeline on HER ticks (the owner 12 Nov 2026).
 tick_bus rider. Each call advances the state machine without waiting:
   CUT    next 12 reachable papers -> index/batch_NN.json
   DRAFT  headless Sonnet agent (claude -p) drafts every cell -> index/batch_NN_draft.jsonl

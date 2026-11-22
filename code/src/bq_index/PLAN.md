@@ -1,7 +1,7 @@
 # BIGQUERY: our public tables, loaded from the files already in our public repository. Plan, written before the first load.
 
 ## What it does
-Every few hours a script loads the trend history of each live page, the current rows of STACK, the hash chain of our records and the queue readings into one public BigQuery dataset, so anyone with a Google account can query our data with SQL. Nothing is loaded that is not already in the public repository at github.com/indahl-ai/indahl.ai. The loader changes no number. Column names are made legal for BigQuery by turning each dot in a name into two underscores, and every other illegal character into one underscore. Nothing else about a row is changed.
+Every few hours a script loads the trend history of each live page, the current rows of STACK, the hash chain of our records and the queue readings into one public BigQuery dataset, so anyone with a Google account can query our data with SQL. Nothing is loaded that is not already in the public repository at github.com/Heuremen-LLC/indahl.ai. The loader changes no number. Column names are made legal for BigQuery by turning each dot in a name into two underscores, and every other illegal character into one underscore. Nothing else about a row is changed.
 
 ## Tables (fixed now)
 - history_SLUG: one table per live page, read from code/SLUG/history.jsonl in the public repository, replaced whole at each load.

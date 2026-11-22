@@ -2,7 +2,7 @@
   8 OCT REVERSAL: the bylines ARE "Heuremen LLC" -- the 7 Oct "names off until the physics lands" rule is RETIRED.
   What stays off forever is his REAL name. The footer is now "Heuremen LLC" with "We found it." underneath.
   AND THE DISCLOSURE LANGUAGE CHANGED: not "AI assistance" but "made with inorganic intelligence assistance".
-  His words: "fuck man use inorganic intelligence and not ai for disclosure. change starts with us."
+  His words
   The 7 Oct behaviour is kept below as public_names_off() for anything that still wants it.
   PRIOR RULE (7 Oct), now retired:
   names off (bylines -> "Heuremen"; the owner -> W., the operator -> B. elsewhere; URLs, lowercase code names and Law Eleven's "The the operator" untouched),

@@ -1,4 +1,4 @@
-"""THE SEAL ON CEPHEUS (the operator, 2026-10-04; the owner: "If we can seal the deal then fucking do it... stop after each step for a binary check, we'll do it together").
+"""THE SEAL ON CEPHEUS (the operator, 2026-10-04; the owner).
 Fired AFTER the chip's recalibration of 2026-10-04 18:02Z (triangles D-H ran before it). Two steps, each fired only on the owner's yes:
 STEP A  the |2> rows with the clocks' state at readout, on a denser window ladder.
   OBSERVER  the seven emitters (as D-H) held in |2> for 2 / 3.5 / 4 / 4.5 / 6 us; three readout models (shared every round; emitters-only with the others at rest / in |1>, round 1).

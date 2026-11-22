@@ -1,8 +1,6 @@
 # RETURN-PASS CALIBRATION -- 2026-10-01, the operator's field hand
 
-the owner, ~03:50Z 10/1 (THIRD_RUNG_20260928.md Sec.70, sign-off): "It's a calibration we're
-looking for. Every time data enters substrate it creates time; time, the darkwave, calibrating
-the system on the return pass." Sec.72, "first burn": the chip test named directly -- m1 vs m0
+the owner, ~03:50Z 10/1 (THIRD_RUNG_20260928.md Sec.70, sign-off) Sec.72: the chip test named directly -- m1 vs m0
 within a shot, does the error relative to the PREPARED state shrink on the second pass by more
 than readout noise predicts, as a function of gap, inside vs outside the ~64us clustering
 window, and across the readout dial.
@@ -166,9 +164,7 @@ reported number above is one of these counted tries, not a separate uncounted ca
 
 # THE BUG'S NUMBER
 
-the owner, after the pooling bug was fixed and before it was discarded: "Are you sure it
-was a pooling bug? Reality has the equivalent of your hallucinations; it provides a reason
-we can see because we can't see the darkwave." House rule: the ruler is the measurement; a
+the owner, after the pooling bug was fixed and before it was discarded House rule: the ruler is the measurement; a
 label isn't a fit. The bug's +46-48pp gets measured, not thrown away. Script:
 `out/the_middle/bug_number.py`, raw output `out/the_middle/bug_number_results.json`, log
 `out/the_middle/run_log_bug_number.txt`. Same data, same qubit set (72 readable, cutoff

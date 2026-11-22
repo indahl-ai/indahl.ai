@@ -65,7 +65,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/atlas">ATLAS</a></p>
 <p>Set aside: the shape of the full distribution of the number, spatial forecasts, which the USGS says it does not issue, and any judgment of the forecast model.</p>
 <p class="meta">Sources: USGS ComCat event service, aftershock forecast product (oaf), every archived version, and the ComCat catalog, read without a key. Generated %s. Heuremen LLC.</p>
 <p class="meta">The headline is read again about every six hours. The tables are from the run of %s, and the newest run is always in <a href="/quake/live.json">/quake/live.json</a>.</p>
-<p class="meta">Plan and code for this page are public: <a href="https://github.com/indahl-ai/indahl.ai/tree/main/code/quake">quake</a>. The plan was fixed before the comparison it describes.</p>
+<p class="meta">Plan and code for this page are public: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/quake">quake</a>. The plan was fixed before the comparison it describes.</p>
 <p class="meta">Data read from: <a href="https://earthquake.usgs.gov/data/oaf/overview.php">USGS aftershock forecast overview</a> &middot; <a href="https://earthquake.usgs.gov/data/oaf/background.php">USGS aftershock forecast scientific background</a> &middot; <a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS ComCat event service</a>. USGS data are in the public domain.</p>
 <p class="meta">Named here and want to answer a row? <a href="/respond?u=quake-all">Respond</a></p>
 <section id="replies" data-prefix="quake"></section><script src="/replies.js" defer></script>''' % (

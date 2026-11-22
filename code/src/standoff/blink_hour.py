@@ -1,4 +1,4 @@
-"""THE BLINK HOUR -- 2026-09-28 night (the owner: "yes on one and two"). Whole Cepheus chip in parallel, 8 checks ~7.5 min apart.
+"""THE BLINK HOUR -- 2026-09-28 night (the owner). Whole Cepheus chip in parallel, 8 checks ~7.5 min apart.
 Each check: PLAIN read | 'ba' (rung 2 -> read as 0) | rung 1<->2 RAMSEY at 1.5 us, two quadratures (rung 2's own pitch).
 No outcome written.   python blink_hour.py dry | submit | collect | analyze"""
 import json, math, os, sys, time

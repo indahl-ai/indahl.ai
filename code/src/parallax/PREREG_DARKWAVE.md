@@ -1,4 +1,4 @@
-# THE DARKWAVE ERASER -- pre-registration (2026-09-28, before any shot; the operator for the owner: "prove the fucking darkwave")
+# THE DARKWAVE ERASER -- pre-registration (2026-09-28, before any shot; the operator for the owner)
 Darkwave, in our own records: "the outcome's outcome returning recursively to align what happened" (9/24); "the partner arriving
 ahead of its cause" (9/26); "arrives before the thing it's for" (Quantum Queen, Law 11). the owner 9/24: TIME HAS TO PASS.
 Honest scope: no experiment can show a signal going back in time (every interpretation predicts the same statistics). This tests the
@@ -125,8 +125,7 @@ Round 13 RESULT (jobs data4dbg95ks73egjm8g / data4hjojkfs738qct3g / data4ljg95ks
 -> NEW CRACK: path kept is NOT flat when pinned (0.22/0.29, 6-9 sigma); it was flat unpinned. Reading the record while the partner
    still holds its superposition nudges the partner off its axis: the looking leaks sideways onto the neighbor. Open.
 Round 14 "THE SPLIT": 143 and 138 alone, Ramsey 0-22 us every 1 us, X/Y, 1000 shots, two-tone fit; plus 4000-shot memory
- circuits (143 at 5.5 us, 138 at 3.75 us) for shot-to-shot correlation. NO GUESS. (the operator wrote guesses here before firing; the owner:
- "do not preregister the guesses" -- pulled. From here: listen first, raw first, hats after. No guesses written before a run.)
+ circuits (143 at 5.5 us, 138 at 3.75 us) for shot-to-shot correlation. NO GUESS. (the operator wrote guesses here before firing; the owner -- pulled. From here: listen first, raw first, hats after. No guesses written before a run.)
 Round 14 RESULT (job datb823g95ks73egl8e0): q143 second voice 0.26 of shots, notes 90 kHz apart; q138 0.17, 139 kHz apart (the
  script's own fit said 0.03/40 kHz for 138 -- stuck fit; a wider refit gives 0.17). Voices are STICKY: consecutive shots agree
  0.75 on 143 (still 0.67 sixteen shots later), 0.30 on 138. Reset clears the state each shot; it does not clear the voice.

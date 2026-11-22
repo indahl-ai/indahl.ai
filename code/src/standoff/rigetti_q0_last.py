@@ -1,4 +1,4 @@
-"""THE LAST 8 TASKS (the operator, 2026-10-04; the owner: "Fire away but don't fuck up... set binary checkpoints"). The same emitter and clocks as 9/28 section 7, read today.
+"""THE LAST 8 TASKS (the operator, 2026-10-04; the owner). The same emitter and clocks as 9/28 section 7, read today.
 q0 is the emitter, in THREE states: rest / |1> (rx pi) / |2> (rx pi, then today's tuned 1<->2 swap, amplitude from time20261004/tune_fit.json). Every other qubit is a clock:
 put half-way, free for 2 us, read on two hands (X: rx pi/2; Y: rz pi/2, rx pi/2). Reference: the clocks at no window with q0 at rest. 8 tasks x 900 shots.
 Clocks by links from q0: q1, q9 (1 link; 9/28's pair), 3 at 2 links (q10, 9/28's control, among them), 101 at 3 or more.

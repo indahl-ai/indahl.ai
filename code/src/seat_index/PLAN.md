@@ -4,7 +4,7 @@
 A GitHub runner, which is not our Mac and not our network, fetches the live site and compares it with what we publish elsewhere. Our own release script checks drift from the same machine that built the pages, which is one seat. This is a second seat that does not share our machine, our network or our clock.
 
 ## Reads (fixed now)
-1. Page against repository. For each page in drift/targets.json the runner fetches the served page from indahl.ai and the same file from the main branch of github.com/indahl-ai/indahl.ai, and compares SHA-256. MATCH or DIFFER. A release writes the site first and the repository after, so a single DIFFER can be a deploy in progress. A page counts as DRIFT only when it DIFFERs in two consecutive probes.
+1. Page against repository. For each page in drift/targets.json the runner fetches the served page from indahl.ai and the same file from the main branch of github.com/Heuremen-LLC/indahl.ai, and compares SHA-256. MATCH or DIFFER. A release writes the site first and the repository after, so a single DIFFER can be a deploy in progress. A page counts as DRIFT only when it DIFFERs in two consecutive probes.
 2. Feed freshness. For each live feed in drift/targets.json the runner fetches the JSON, reads its updated or read stamp, and computes its age in hours. Each feed has a limit set from its rider's cadence at three times the cadence, with a floor of 1.5 hours. FRESH when younger than the limit, STALE when older, UNREACHABLE when the fetch fails or the stamp cannot be read. The stamps are in UTC.
 3. Archive chain. The runner downloads chain.jsonl and the manifests from code/archive in the repository and recomputes every digest. OK or BROKEN, with the number of entries.
 

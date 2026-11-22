@@ -1,4 +1,4 @@
-"""HEAT vs LENS through the third level (Rabi population measurement) -- Rigetti Cepheus q0, 2026-09-28 (the operator; the owner: "do it").
+"""HEAT vs LENS through the third level (Rabi population measurement) -- Rigetti Cepheus q0, 2026-09-28 (the operator; the owner).
 PRE-REGISTERED (written before any shot):
   A (heat):  f12 pulse amp a (0 .. 2*pi of the 1<->2 swing) -> rx(pi) -> read.   P(read 0) = Pe * cos^2(theta/2) * contrast + offset
   B (ref):   rx(pi) -> f12 pulse amp a -> rx(pi) -> read.                         P(read 0) = Pg * cos^2(theta/2) * contrast + offset

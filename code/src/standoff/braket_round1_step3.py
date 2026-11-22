@@ -23,7 +23,7 @@ import json, math, os, sys, time
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CAP = 195.00   # 2026-09-26 the owner: "just fucking hit it" -- ring rerun (~$22)
+CAP = 195.00   # 2026-09-26 the owner -- ring rerun (~$22)
 PER_TASK = 0.30; PER_SHOT = 0.000425
 LEDGER = os.path.join(HERE, 'braket_ledger.json')
 DEVICE = "arn:aws:braket:us-west-1::device/qpu/rigetti/Cepheus-1-108Q"

@@ -1,7 +1,6 @@
 // TAPE: reads /tape/live.json, written by the tick bus. Shows the chain newest first, the beacon and the anchor.
 (function () {
   var box = document.getElementById('tape-live'); if (!box) return;
-  var GH = 'https://github.com/indahl-ai/indahl.ai/blob/main/code/tape/';
   var KIND = { pages: 'pages', feeds: 'feeds', beacon: 'beacon' };
   function el(t, txt, cls) { var e = document.createElement(t); if (txt != null) e.textContent = txt; if (cls) e.className = cls; return e; }
   function link(href, txt) { var a = el('a', txt); a.href = href; return a; }

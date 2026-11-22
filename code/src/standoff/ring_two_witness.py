@@ -1,5 +1,5 @@
 """THE RING -- two-witness KCBS contextuality on Rigetti Cepheus qutrits (q0 and q90), quantum-coin ordering, a time ruler.
-2026-09-26, the operator (the owner: "two witnesses is what we've been missing... we flip quantum coins").
+2026-09-26, the operator (the owner).
 
 KCBS: five real unit vectors v_j = (cos t, sin t cos(4 pi j/5), sin t sin(4 pi j/5)), cos^2 t = cos(pi/5)/(1+cos(pi/5)); v_j is
 orthogonal to v_{j+1}. State |0> = (1,0,0): P(v_j) = cos^2 t = 0.4472 each; ring sum S = sqrt5 = 2.236. Any noncontextual model: S <= 2.

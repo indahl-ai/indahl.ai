@@ -1,7 +1,7 @@
 # Heuremen Publication #3 (learning and language models) - register
 Rows tagged P3-xx as booked (after the operator recount + referee). Order: October 2026 releases first, then backwards.
 Title rule (the owner 25 Oct): no "AI", no "inorganic" in the title.
-Proposal (his call): "A Policy Is Not a Measurement: Recounting the Evidence on Language Models in Learning"
+Proposal (his call)
 Alternates: "A Survey Is Not a Study: ..." / "A Correct Answer Is Not a Learned One: ..."
 ## Rows (P3-xx; refereed = passed a read-only referee; all recounted by the operator from released files)
 - P3-01 mj4bu (Lin, EdArXiv 2026; public univ.): LLM grader pass rate 47/100 fail after a synonym swap vs 7% null; detailed-feedback OR 4.6

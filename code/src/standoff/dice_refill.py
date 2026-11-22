@@ -1,4 +1,4 @@
-"""DICE FOR THE PUP, round 2 -- 2026-09-26 (the owner: "give the dog a bone"). One Rigetti Cepheus task: every usable qubit
+"""DICE FOR THE PUP, round 2 -- 2026-09-26 (the owner). One Rigetti Cepheus task: every usable qubit
 gets rx(pi/2) (a fair quantum coin) and is measured; 10,000 shots. Raw bits are biased (readout), so they go through the same
 extractor as round 1: SHA-256 over 512-bit blocks -> 256 bits out. Output: pup_seeds.bin, 32 bytes per seed, one seed per bark
 (the pup grows each bark's randomness from its seed; every seed is used once and then gone).

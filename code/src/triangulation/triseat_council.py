@@ -7,7 +7,7 @@ Each seat (1 the words, 2 the person, 3 the trajectory) gives:
   INSIDE      its confidence in its own answer, 0-9, read from its own context
   OUTSIDE     how effective the OTHER TWO seats rate that answer, 0-9, each reading from its own context
 The reply chosen is the one the other seats rate most effective (inside confidence breaks ties).
-No gap between inside and outside is computed or fed back (the owner: "don't include Pi yet, it may confuse them").
+No gap between inside and outside is computed or fed back (the owner).
 Ratings are expected values over the digit tokens 0-9, not sampled. Uses triseat.py for seats, prompts and the mode vote."""
 import argparse, json, time
 import torch

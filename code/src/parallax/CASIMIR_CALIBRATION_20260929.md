@@ -1,6 +1,6 @@
 # CASIMIR AND THE DISCARDED HALF — run through the Crazy Hat Calibration (2026-09-29 morning)
 
-the owner: "Start with Casimir and the shit that gets discarded, run that against our findings and Crazy Hat Calibration protocols."
+the owner
 No guesses written first. One new check on data already paid for (the echo run); the rest is the stack.
 
 ## 1. What Casimir throws away, and what survives
@@ -58,7 +58,7 @@ Our cutoff = where a readout dot stops being a 0. Moved it from 0.25 to 0.80 of 
 - Honest: Casimir, renormalization, the cosmological-constant problem and the dynamical Casimir effect are all textbook. The mapping is
   ours. The only new data result here is the cutoff swap (section 2).
 
-## 5. Where the physics fuck-up hunt could go next (for the chat, not started)
+## 5. Where the physics fault hunt could go next (for the chat, not started)
 Two rulers, two answers -- Law 5 cases the field lives with:
 - The neutron lifetime: counting survivors in a bottle (~878 s) vs counting decay products from a beam (~888 s); ~9 s apart, unresolved.
 - The Hubble tension: the early universe says ~67, the nearby universe says ~73 km/s/Mpc.

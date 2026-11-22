@@ -1,4 +1,4 @@
-"""THE WHOLE-CHIP GAMBLE -- 2026-09-28 night, the owner paid: "we're looking for the fuck ups." Every Cepheus qubit in parallel.
+"""THE WHOLE-CHIP GAMBLE -- 2026-09-28 night, the owner paid Every Cepheus qubit in parallel.
 No outcome written.  stage 1 TUNE: rx(pi) -> f12 push of amplitude a -> rx(pi) -> read, 8 amplitudes: each qubit's own rung-2 push.
 stage 2 SHUFFLE: the at-rest state shuffled across rungs 0/1/2 (a = flip 0<->1, b = swap 1<->2), 8 sequences -> per-qubit rung 2
 at the start (same fit as rigetti_gamble.py). stage 3 BLINK/DRAIN: 'ba' now, 'ba' after 60 us, plain, in 3 batches minutes apart.
@@ -136,5 +136,5 @@ def analyze():
         ok = [r for r in good if r[key]]; rho, pv = spearmanr([r[key] for r in ok], [r['p2'] for r in ok]); print(f"   rung 2 at start vs {lab:18s} rho {rho:+.2f} (p {pv:.2g}, n {len(ok)})")
     dr = [r for r in rows if r['drain'] == r['drain']]; print(f"DRAIN (rung-2 read now minus after 60 us), chip mean {np.mean([r['drain'] for r in dr]):+.4f}; biggest:", [(r['q'], round(r['drain'], 3)) for r in sorted(dr, key=lambda r: -r['drain'])[:6]])
     bl = [r for r in rows if r['blink'] == r['blink']]; print('BLINK (batch-to-batch spread in noise units; ~1 = steady):', [(r['q'], round(r['blink'], 1)) for r in sorted(bl, key=lambda r: -r['blink'])[:6]])
-    bad = sorted(rows, key=lambda r: (r['readout'] or 1))[:6]; print('THE FUCK-UPS (worst readout):', [(r['q'], round(r['readout'] or 0, 3), 'rung2', None if r['p2'] != r['p2'] else round(r['p2'], 4), 'rest reads 1', round(r['rest1'], 3)) for r in bad])
+    bad = sorted(rows, key=lambda r: (r['readout'] or 1))[:6]; print('THE FAULTS (worst readout):', [(r['q'], round(r['readout'] or 0, 3), 'rung2', None if r['p2'] != r['p2'] else round(r['p2'], 4), 'rest reads 1', round(r['rest1'], 3)) for r in bad])
 if __name__ == '__main__' and len(sys.argv) > 1 and sys.argv[1] == 'analyze': analyze()

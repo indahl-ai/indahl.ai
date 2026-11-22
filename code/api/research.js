@@ -239,7 +239,7 @@ export async function arxivVersionCheck(args) {
     note: 'Compares the title and the numbers stated in the abstract of the version read with the current version. A change in the body of the paper would not show here.' };
 }
 
-// ---------- paper_statistics (15 Nov 2026, the owner: "a test drive ... so anyone could see our shit works") ----------
+// ---------- paper_statistics (15 Nov 2026, the owner) ----------
 // The full text of one arXiv paper, read from arXiv’s own HTML rendering (LaTeXML), with every reported test statistic and percentage
 // recomputed by checkReportedStatistics. Math is read from LaTeXML’s alttext (the LaTeX the authors typed). The references section is cut.
 // Text is read in chunks that end on paragraph breaks, so no number is split. Sends only the arXiv id to arxiv.org.

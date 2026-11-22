@@ -1,4 +1,4 @@
-"""cepheus_clock_triangle.py -- the clocks triangulated on Cepheus (7 Oct 2026; the owner: "triangulate the qubits clocks ... always triangle"). For each clock, on each
+"""cepheus_clock_triangle.py -- the clocks triangulated on Cepheus (7 Oct 2026; the owner). For each clock, on each
 of the four laid lengths: OBSERVER = the laid look (tone + 0.5 us); PHASE = turn per look / turn per us over the delays (as all night); HAND = hand kept per look read as
 laid time on the clock's own hand-fade over the delays (log-line 0-15 us); and the HAND RULER AS AN OBJECT beside it: an honest synthetic clock with the clock's own fitted
 fade exp(-(t/tau)^beta), looks costing exactly the laid time, read by the same hand ruler. Binned by looked-at qubits within 2 grid pitches. Raw, no verdict.

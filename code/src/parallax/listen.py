@@ -1,4 +1,4 @@
-"""THE LISTEN -- 2026-09-28, the owner: "have you tried even once to send a run without a pre-registered hypothesis?" No. So: no
+"""THE LISTEN -- 2026-09-28, the owner No. So: no
 question, no prediction. Every even qubit on the chip (the parallax set), plain Ramsey all at once, 12 waits, read X and Y. Save
 everything raw; afterwards, just look at who does what."""
 import sys, os, json, math, time

@@ -1,4 +1,4 @@
-"""THE PUNCH (the operator, 2026-10-07; the owner: "how do we punch that crosstalk photon fucker before he opens his mouth?"). Cepheus, the dose clusters of rigetti_look_dose.py
+"""THE PUNCH (the operator, 2026-10-07; the owner). Cepheus, the dose clusters of rigetti_look_dose.py
 (plus of 4 around clock 13, T of 3 around 44, pair around 56, single 88), our tone at strength 0.03, 1.0 us + 0.5 us empty per look. Crosstalk's own predictions are
 hashed first: darkwave_disco/calls/CROSSTALK_PUNCH_CALL_20261007.txt.
   STATES  the looked-at qubits held in |0> / |1> / half-way while k = 1-4 looks land; clocks read on two hands. Readout photons see the three nearly alike.

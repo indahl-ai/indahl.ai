@@ -136,7 +136,7 @@ def auto_status(reqs, rc):
         json.dump({'at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'ok': False, 'rc': rc, 'tail': tail}, open(AUTO_STATUS, 'w'))
 
 
-# 22 Nov 2026 (the owner: "random spurts of builds"; 14 ships on 21 Nov, 6 in one hour): ONE bundled ship per CLOCK seconds.
+# 22 Nov 2026 (the owner; 14 ships on 21 Nov, 6 in one hour): ONE bundled ship per CLOCK seconds.
 # A request whose label starts with MONEY: or URGENT: ships at once (money path first). Everything else waits for the next slot and rides
 # in that bundle. The runner holds its lock while it waits, so later requests join the same bundle instead of starting a ship of their own.
 CLOCK = int(os.environ.get('SHIP_CLOCK_S', '3600')); LASTAT = os.path.join(L, '.last_ship_at')

@@ -1,7 +1,6 @@
 # THE PROOF SHAPE — every row of THE_LINEUP against the owner's standard, 2026-09-30
 
-Standard (the owner, §46 THIRD_RUNG_20260928.md, ~19:50Z): "to prove our shit all we have to do is show a
-null and account for everything else around it having an explanation." The null must be MEASURED (a number
+Standard (the owner, §46 THIRD_RUNG_20260928.md, ~19:50Z) The null must be MEASURED (a number
 against a stated background), and every neighbor (every other non-null reading in the same record) must be
 MEASURED-EXPLAINED (a fit/control/background with a number), never LABELLED (a word like "leakage" or
 "confound" with no fit behind it). Applied to all 47 rows of THE_LINEUP_20260930.md. Sources: THE_LINEUP

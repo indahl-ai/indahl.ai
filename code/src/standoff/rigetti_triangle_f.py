@@ -1,4 +1,4 @@
-"""TRIANGLE F: THE RULER AS THE OBJECT (the operator, 2026-10-04; the owner: "RULERS MEASURING RULERS"). Not a repeat: D and E divided every witness reading by one held-|2> pull per window; E showed the
+"""TRIANGLE F: THE RULER AS THE OBJECT (the operator, 2026-10-04; the owner). Not a repeat: D and E divided every witness reading by one held-|2> pull per window; E showed the
 gap riding with that window, and the pull moved between D and E. F measures the pull itself.
 OBSERVER  the seven emitters held at rest / in |1> / in |2> for laid windows 0.25 / 0.5 / 1 / 2 / 4 / 6 us.
 WITNESS   every other qubit a free clock (1 / 2 / 3+ links): three rulers measuring each other per window, pull |1>-|0>, |2>-|1>, |2>-|0>; wrapped and unwrapped along the window ladder.

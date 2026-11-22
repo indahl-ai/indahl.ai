@@ -1,4 +1,4 @@
-"""spooky_four.py -- the owner: "entanglement is the darkwave but backwards with probability man, not a coin flip, four fucking outcomes". The spooky shots sorted AFTER
+"""spooky_four.py -- the owner. The spooky shots sorted AFTER
 the fact by how each pair landed at the final read -- (L, P) = 00 / 01 / 10 / 11 -- and every clock's hand read inside each of the four (X and Y tasks each sorted on
 their own shots). For P's clocks / L's clocks / far clocks: the clock's hand (|H|) and turn (angle) per outcome, tied (ENT1, ENT3) beside untied (PROD2), by look k.
 Raw dots kept; nothing cut to 0/1 before the sort."""

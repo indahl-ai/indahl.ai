@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Builds plugins/indahl, the one-install bundle of every Heuremen LLC plugin, from the plugins in plugins/ (13 Nov 2026, the owner: "can we
-make this all a bundle too?"). Every skill, command, script, the readcheck gate hook and the indahl.ai connector, copied unchanged; each
+"""Builds plugins/indahl, the one-install bundle of every Heuremen LLC plugin, from the plugins in plugins/ (13 Nov 2026, the owner). Every skill, command, script, the readcheck gate hook and the indahl.ai connector, copied unchanged; each
 plugin's own license kept under licenses/<plugin>/. Run before every release (push_public.sh calls it); never edit plugins/indahl by hand.
   python3 build_bundle.py [--check]   (--check: exit 1 if plugins/indahl is not what this script would build)"""
 import json, os, shutil, sys, filecmp, tempfile

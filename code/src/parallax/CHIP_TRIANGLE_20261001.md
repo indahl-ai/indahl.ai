@@ -1,6 +1,6 @@
 # THE CHIP'S THREE CLOCKS, TRIANGULATED
 
-the owner, ~00:50Z 10/1 (THIRD_RUNG_20260928.md Sec62): "you got three clocks and three equations and everything we're doing is three and triangulation, and you can triangulate the time on these chips and haven't been doing it -- start now."
+the owner, ~00:50Z 10/1 (THIRD_RUNG_20260928.md Sec62)
 
 **Scope.** Data on disk only. No new quantum jobs, no network calls. No guess written before running. Script: `parallax/out/the_middle/chip_triangle.py` (numpy only, single process, ~2s runtime, writes `chip_triangle_results.json`).
 

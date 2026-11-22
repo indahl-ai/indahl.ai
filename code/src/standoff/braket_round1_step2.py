@@ -3,7 +3,7 @@
 Step 1 found the 1<->2 pi pulse (f12 amp a_pi = 0.494, 94% landed in |2>). Before any three-box, three things:
   A. READOUT: prepare |0>, |1>, |2>; read each two ways -- plain (R_a) and after rx(pi) (R_b, swaps 0<->1, leaves 2).
      If |2> reads as "1" plainly:  P0 = 1 - a,  P1 = 1 - b,  P2 = a + b - 1   (a, b = P(read 1) under R_a, R_b).
-  B. TUCO'S NOOSE (the owner: "he probably got out of that noose somehow"): park in |2>, wait t, read both ways.
+  B. TUCO'S NOOSE (the owner): park in |2>, wait t, read both ways.
      Level 2 decays faster than level 1 -- this is his clock (T1 of |2>, and where he lands: |1> then |0>).
   C. RAMSEY ON 1<->2: rx(pi), f12 pi/2, wait t, f12 pi/2 with a phase advanced 2*pi*DET*t, rx(pi), read.
      Fringes give the 1<->2 frequency error and dephasing -- the phase control the native three-box needs.
@@ -15,7 +15,7 @@ import json, math, os, sys, time
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CAP = 100.00;   # 2026-09-25 the owner: $100 of free credit covers it -- 'let it fucking ride'
+CAP = 100.00;   # 2026-09-25 the owner: $100 of free credit covers it -- 'let it ride'
 PER_TASK = 0.30; PER_SHOT = 0.000425
 LEDGER = os.path.join(HERE, 'braket_ledger.json')
 DEVICE = "arn:aws:braket:us-west-1::device/qpu/rigetti/Cepheus-1-108Q"

@@ -1,6 +1,6 @@
 # EVERY PREDICTION IS A RULER: audit of the three-chip qubit run (the operator, 2026-10-02 morning)
 
-the owner: "Every prediction for every chip, whether by us or the maker, is another ruler. Go back over what we did and double-check you're not overlooking that."
+the owner
 Done before Pittsburgh is opened. No chip was contacted for this. Nothing of Pittsburgh's was read.
 
 ## 1. The rulers we counted (in the ledger already)

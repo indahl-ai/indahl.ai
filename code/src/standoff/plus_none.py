@@ -1,4 +1,4 @@
-"""THE PLUS NONE -- 2026-09-26 (the owner: "do it"). Rigetti Cepheus, qubit 99 (q0/q90 belong to the two-witness ring).
+"""THE PLUS NONE -- 2026-09-26 (the owner). Rigetti Cepheus, qubit 99 (q0/q90 belong to the two-witness ring).
 
 Five-step chain ("laws 1-5") on one qubit:  L1 rx(pi/2)  L2 rz(pi/3)  L3 rx(pi)  L4 rz(pi/3)  L5 rx(pi)
 (L3-L5 = rx(pi) rz(pi/3) rx(pi) = rz(-pi/3) cancels L2: the chain leaves the qubit on the equator, and a static detuning

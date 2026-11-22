@@ -1,0 +1,33 @@
+
+## 2026-11-21 21:14 DEUS first read: lab-stated GPQA Diamond, SWE-bench Verified and FrontierMath scores (2026 launch posts and model cards of seven labs) against Epoch AI internal reruns, plan 8527300
+packs: L,P
+(answer each line: holds:/fixed:/caught:/n/a:/cannot tell: followed by what was checked)
+- I: holds: the none built first: the frame benchmarks were kept or dropped from the zip's file list and columns before any score (GPQA Diamond, SWE-bench Verified, FrontierMath kept on Epoch internal runs; HLE dropped, its 56 external rows name no source and no setup; AIME 2025 dropped, no run in the zip). Like for like: same model group, same dataset version (FrontierMath v2 when the page prints v2 or is dated on or after 2026-06-12), same reasoning effort where the claim names one. Dropped and set apart by kind: 18 no rerun, 10 held, 66 on dropped benchmarks, 17 pages held
+- II: n/a: no item-level data on either side, Epoch publishes a mean and a standard error per run set, so no item flips can be counted. The repeat floor is Epoch's own stderr over runs
+- III: holds: every one of the 17 cannot tell readings has the stated score above the rerun interval, none below, and no claim reads below. Two reruns on opposite sides would read RERUNS_DISAGREE, none did
+- V: holds: the plan's ruler is the rerun's 95 percent interval, Epoch stderr x1.96 (Epoch FAQ: plus and minus one standard error, raw/epoch/pages/benchmarks_about.text.txt). The Wilson item-count floor is in the code for rows with no stderr and was not needed on a read claim. One ruler only in this first run, said on the page
+- VI: holds: four outcomes plus no rerun, held and dropped counted apart. 40 read: 23 consistent, 0 above, 0 below, 17 cannot tell (all SETUP_UNMATCHED, stated above). No size that matters is named in the plan, so the both-alternatives test is not applied and the page says so. Headline deus.stated_above_share 0 of 40, model-block bootstrap 0 to 0 (every draw is zero, said on the page)
+- R: holds: counts from data/deus.json of the run at 2026-11-22T02:1x UTC (summary_deus.json). Plan sealed: deus_index git 6007e6f at 01:48:21Z, byte for byte from indahl-ai/calibrations 8527300 (01:46:42Z), sha256 b80c1d88, first comparison 02:14:14Z (data/plan_seal.json). Epoch snapshot raw/epoch/20261122, zip sha256 in manifest.json. Implementation notes not in the plan, written before the first comparison and listed in deus_read.py: one claim per model, benchmark, variant and printed figure across a lab's pages; a claim with no effort pairs with every rerun of the model; a page with a table image refused by robots.txt is held
+- X: holds: no earlier reading
+- L1: holds: read_reruns.py and deus_read.py written and read through before the first comparison. read_reruns.py was run once in structure-only mode, printing row counts per benchmark and model names, no score
+- L2: holds: before 02:14:14Z only CSV header lines, model names, benchmark_metadata.csv and the HLE Notes column (all empty) were printed. No score column was printed or summarized
+- L3: holds: the fifteen setup fields are compared per claim. Epoch internal names harness, prompt (GPQA), extraction (GPQA), dataset version, items, trials averaged, scaffold (SWE-bench, FrontierMath). It names no chat template, temperature, max tokens, stop or seeds, so no claim can reach a decided above or below. Stated side setup read from column labels, Notes cells and footnotes (OpenAI xhigh page lines, Anthropic trial counts)
+- L4: n/a: no runs on our machines. Epoch's run count per model is stated as 16 for most GPQA Diamond models in its FAQ
+- L5: cannot tell: no per-item files released by Epoch for these runs (the log viewer refuses automated access), so the rerun scores are read as published, not recounted
+- L6: holds: no rerun counted by reason (14 no rerun of the model on the benchmark, 3 reruns only at another effort, 1 no source names the model) and by lab and benchmark. Held: 10 claims, 17 pages listed with why. 66 printed scores on dropped benchmarks listed in the feed
+- L7: n/a: no gold built, no labeller
+- L8: n/a: no paired runs of our own. Claims for one model are resampled together in the headline bootstrap
+- L9: n/a: no prompts run
+- L10: holds: model match is by Epoch model group and effort, and a dated version string where either side prints one (DeepSeek V4 Flash 0731 and V4 Pro 0813 kept apart from V4 Flash and V4 Pro; the V4.1-Flash card row that drops the version suffix was not used, the dated news page with versions was)
+- L11: n/a: no dataset substituted. AIME 2025 dropped and not replaced, as the plan says
+- L12: holds: the readers and builders are Claude models, made by Anthropic, one of the labs measured. Every Anthropic row on the page carries the conflict line, the plan's section 0, and the same rules run for every lab. Image tables were read by eye from the saved images (claims_image.json, sha256 in each page's meta.json), a second reader has not checked them yet
+- P1: holds: every text score is taken from the saved table line or text line by code (claims_text.json names page and line, values parsed from the line). Image scores were typed from the saved images, listed with image file and sha256. Epoch quotes copied from its about page as fetched 2026-11-22
+- P2: holds: page figures come from data/deus.json through build_page.py and deus_headline.py, the feed /deus/live.json is the summary with the read claims
+- P3: holds: benchmark names, effort labels and variants as printed (for example Single attempt, no tools, xhigh). Order claims use the labels printed in the lab's own table
+- P4: holds: no cause named. The page says a reading does not say why a printed score and a rerun differ
+- P5: holds: the rerun interval is labelled as Epoch's standard error of the mean over runs times 1.96, the headline interval as a bootstrap of whole models
+- P6: holds: the summary prints the four-way count beside the share and the cannot tell direction. PRELIMINARY first run not refereed and partial frame labels on page and feed
+- P7: holds: ledger row written with ledger.py before the ship request, release through ledger/ship_request.sh only
+- P8: cannot tell: the page was built to deus.html and read as text, not rendered, nothing deployed yet
+- P9: holds: lint_copy.py 27 hits, all cleared: AI and Claude inside proper names (Epoch AI, the model names Claude Opus and Claude Sonnet in Epoch's run names) and error inside standard error. No semicolons, no digits in headings, no lab name in a title or heading, Heuremen LLC named
+- P10: holds: no label added after the data. Held-page and dedupe rules were in the code before the first comparison

@@ -1,0 +1,49 @@
+{
+ "cwd": "",
+ "desk": "argus",
+ "headline": {
+  "field": [
+   "argus",
+   "direction_outcomes",
+   "CONSISTENT"
+  ],
+  "keys": [
+   [
+    "argus",
+    "direction_outcomes"
+   ],
+   [
+    "argus",
+    "triples"
+   ],
+   [
+    "argus",
+    "unmappable_count"
+   ],
+   [
+    "argus",
+    "dna_test_no_test_count"
+   ]
+  ],
+  "n": [
+   "argus",
+   "direction_outcomes",
+   "CONSISTENT"
+  ],
+  "of": [
+   "argus",
+   "triples"
+  ],
+  "show": "n_of"
+ },
+ "name": "ARGUS",
+ "output": "data/argus_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "argus_tick.py",
+   "data/argus_live.json",
+   "--offline"
+  ]
+ ]
+}

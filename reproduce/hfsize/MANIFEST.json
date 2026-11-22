@@ -1,0 +1,49 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/hfsize/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "hfsize_tick.py lines 56 to 57 and 63, the counts, the interval and the comparison block",
+   "path": "hfsize_score.py",
+   "sha256": "d27caa339a10aae829765b7da5bb1477d82496867a5cd39bd58d7585f096dc1d"
+  }
+ ],
+ "desk": "hfsize",
+ "inputs": [
+  {
+   "bytes": 216758,
+   "gzip_added": true,
+   "modified": "2026-11-22T14:47:41Z",
+   "path": "data/repos.json",
+   "sha256": "fa7ccf534b15651e7eb646c0cf0a2b0b004e688dd7a82cfb939885252198dcaf",
+   "stored": "data/repos.json.gz",
+   "stored_sha256": "cb5893e0f8f35177396e61ada5422911094430c4029cdd4d589c0ce45f240126"
+  },
+  {
+   "bytes": 4447,
+   "gzip_added": true,
+   "modified": "2026-11-22T14:47:41Z",
+   "path": "summary_hfsize.json",
+   "sha256": "51da3fad7116b2d231ca2d97783991a3ff79bd83891abd96de34fc198d727a33",
+   "stored": "summary_hfsize.json.gz",
+   "stored_sha256": "f11f1f41afd2ab295847597dbebc4beb0150f416309183e4c4b173a461172836"
+  }
+ ],
+ "made": "2026-11-22T16:02:26Z",
+ "mode": "fetch",
+ "name": "HFSIZE",
+ "reference": [
+  {
+   "path": "desk/hfsize_tick.py",
+   "sha256": "1f2fee351ba4e322900baadc60d0b43cb5705de71276aec754237414c4af627b"
+  }
+ ],
+ "sources": [
+  "The 1,000 most downloaded models, https://huggingface.co/api/models?sort=downloads&direction=-1&limit=1000",
+  "For each model, https://huggingface.co/api/models/MODEL (safetensors totals), as hfsize_tick.py reads them. Each row of data/repos.json carries its read time."
+ ],
+ "why_not_included": "the Hugging Face API is under its terms of service and not an open licence"
+}

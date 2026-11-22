@@ -1,0 +1,29 @@
+{
+ "feed": "https://indahl.ai/voightkampff/live.json",
+ "feed_sha256": "91e6e4418b47387a1dd1b26e35530b0db6c11acabc55593c7749c4f72b54f899",
+ "headline": {
+  "desk": "VOIGHT-KAMPFF",
+  "display": "5 of 5",
+  "hi": null,
+  "keys": [
+   {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CANNOT_TELL": 5,
+    "CONSISTENT": 0
+   },
+   3,
+   2,
+   {
+    "DATE_UNMATCHED": 5
+   }
+  ],
+  "lo": null,
+  "n": 5,
+  "of": 5,
+  "outcome": null,
+  "value": 5
+ },
+ "read_at": "2026-11-22T15:57:30Z",
+ "stamp": "2026-11-22T02:10:37Z"
+}

@@ -1,0 +1,70 @@
+# Indahl Relay
+
+`indahl-relay`
+
+Runs multi-stage unattended work as a chain of stages with dependencies, machine lanes, recorded outcomes and an optional end-of-run handoff. It is built for training ladders, eval sweeps and data pipelines. It is not a single-prompt loop. It runs locally, and nothing is sent anywhere unless a stage you write sends it.
+
+## What you get
+
+- Every stage whose dependencies finished with exit code 0 and whose lane is free, started on each `tick`.
+- Each stage's outcome written to a file as its own exit code.
+- A status that lists every stage as waiting, running, done rc 0, failed rc N or BLOCKED, with times.
+- An optional handoff stage that runs at the end.
+
+## How to use
+
+In Claude Code the command is `/relay`. For example:
+
+```
+/relay status chain.json
+/relay tick chain.json
+```
+
+## Commands
+
+- `relay.py tick CHAIN.json` starts every stage whose dependencies finished with exit code 0 and whose lane is free, and records each finish.
+- `relay.py status CHAIN.json` lists every stage as waiting, running, done rc 0, failed rc N, or BLOCKED, with times.
+- `relay.py add CHAIN.json STAGE.json` appends a stage and refuses a duplicate id or an unknown dependency. A decide stage calls this to add the next step.
+- `relay.py selftest` runs planted chains in a temporary directory.
+
+## A chain
+
+```json
+[
+  {"id": "train", "lane": "gpu", "cmd": ["python3", "train.py"]},
+  {"id": "eval", "after": ["train"], "lane": "gpu", "cmd": ["python3", "eval.py"]},
+  {"id": "handoff", "finally": true, "cmd": ["sh", "-c", "claude -p \"$(cat handoff_prompt.md)\" > MORNING.md"]}
+]
+```
+
+The handoff stage is optional.
+
+## No timers inside
+
+relay has no timer and no daemon. `tick` does one pass and exits, and it is safe to call again at any time. Call it from cron, launchd, a CI schedule or a loop you own.
+
+## Failures are never silent
+
+Each stage's outcome is its own exit code, written to a file. A process that vanished without writing it reads FAILED (no rc), not done. A stage whose dependency failed is BLOCKED and listed. Status shows every stage, not only the ones that passed.
+
+## Install
+
+```
+/plugin marketplace add indahl-ai/indahl.ai
+/plugin install indahl-relay@heuremen
+```
+
+## Requirements
+
+Python 3.9 or later, standard library only.
+
+## Services this plugin contacts
+
+None. The plugin reads no personal data and stores nothing outside the folder beside your chain file.
+
+## Privacy and terms
+
+Privacy: https://indahl.ai/privacy
+Terms: https://indahl.ai/terms
+
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai

@@ -1,0 +1,26 @@
+{
+ "feed": "https://indahl.ai/deus/live.json",
+ "feed_sha256": "23acac122676fb7eceed73bdca95a2f46a1959c33ad0325e0d362a46550fd8db",
+ "headline": {
+  "desk": "DEUS",
+  "display": "0 of 40",
+  "hi": null,
+  "keys": [
+   0,
+   40,
+   {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CANNOT_TELL": 17,
+    "CONSISTENT": 23
+   }
+  ],
+  "lo": null,
+  "n": 0,
+  "of": 40,
+  "outcome": null,
+  "value": 0.0
+ },
+ "read_at": "2026-11-22T17:10:09Z",
+ "stamp": "2026-11-22T02:17:38Z"
+}

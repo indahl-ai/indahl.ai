@@ -1,0 +1,22 @@
+{
+ "feed": "https://indahl.ai/airq/live.json",
+ "feed_sha256": "4b2d69b57761f800df7b23683f91cdce734dff7f99f5151e41fe201dd73d25cc",
+ "headline": {
+  "desk": "AIRQ",
+  "display": "53 of 61",
+  "hi": 0.932,
+  "keys": [
+   24,
+   61,
+   "CANNOT_TELL",
+   "2026-11-21"
+  ],
+  "lo": 0.762,
+  "n": 53,
+  "of": 61,
+  "outcome": "ABOVE",
+  "value": 0.8689
+ },
+ "read_at": "2026-11-22T16:03:07Z",
+ "stamp": "22 Nov 15:41 UTC"
+}

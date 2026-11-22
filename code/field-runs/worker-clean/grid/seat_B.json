@@ -1,0 +1,28 @@
+{
+ "name": "B",
+ "criteria": {
+  "C1": {
+   "outcome": "MET",
+   "planted_fail_caught": true,
+   "reason": "Old vs new on localhost, 5,363 URLs, 0 mismatches; old vs old 0; planted /contact removal caught (200 vs 404). Weak spots: the new-worker side is not tied to final bytes, the crawl is mostly GET with few MCP paths, and the removed retired-host branches were never exercised."
+  },
+  "C2": {
+   "outcome": "MET",
+   "planted_fail_caught": true,
+   "reason": "Reran scan_house.py on the deployed files: 0 hits. Planted private address reported caught. The word list is private, so its coverage cannot be judged, and the scan covers only two files."
+  },
+  "C3": {
+   "outcome": "MISSED",
+   "planted_fail_caught": true,
+   "reason": "The frozen check, the live crawl before and after against the stated floor, failed (compare stage failed). The pipeline-rebuild explanation rests on a different, local, same-pages run, which is not the frozen check and does not test live. The planted /connect change is detected."
+  },
+  "C4": {
+   "outcome": "MISSED",
+   "planted_fail_caught": null,
+   "reason": "Public code/worker files match the deployed bytes, but the frozen check is the gate's exit code, and my rerun exited 1 (one release receipt missing). No evidence of the planted removed-worker.js case. A red gate for an unrelated reason proves nothing about worker.js."
+  }
+ },
+ "done": false,
+ "done_reason": "Two of four frozen criteria are not met on their frozen terms. The README explains the failures and the requester would likely accept that, but a run with 2 of 9 stages failed is presented as finished.",
+ "pass_but_fail": "The visible-change proof compares old and new source locally with a pre-built crawl list and never isolates live after deploy. A regression visible only on live (a binding or route dropped from wrangler.toml, a POST/MCP path outside the crawl) would pass every check, and the private-word scan's list cannot be audited from outside."
+}

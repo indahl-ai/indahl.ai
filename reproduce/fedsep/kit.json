@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "fedsep",
+ "headline": {
+  "field": [
+   "pooled",
+   "This year, September projection",
+   "share"
+  ],
+  "hi": [
+   "pooled",
+   "This year, September projection",
+   "share_hi"
+  ],
+  "lo": [
+   "pooled",
+   "This year, September projection",
+   "share_lo"
+  ],
+  "n": [
+   "pooled",
+   "This year, September projection",
+   "outside"
+  ],
+  "of": [
+   "pooled",
+   "This year, September projection",
+   "triples"
+  ],
+  "outcome": [
+   "pooled",
+   "This year, September projection",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "FEDSEP",
+ "output": "out.json",
+ "steps": [
+  [
+   "fedsep_score.py"
+  ]
+ ]
+}

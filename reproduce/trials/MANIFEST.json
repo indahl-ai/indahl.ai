@@ -1,0 +1,39 @@
+{
+ "code": [
+  {
+   "path": "trials_summary.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/trials/trials_summary.py",
+   "sha256": "3c82ed08d93f6a52580f0a2300b7a11e068dd2c8663517c465331785a24a346b"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/trials/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  }
+ ],
+ "desk": "trials",
+ "inputs": [
+  {
+   "bytes": 7095810,
+   "gzip_added": true,
+   "modified": "2026-11-21T23:14:38Z",
+   "path": "data/records.jsonl",
+   "sha256": "6c1067c4a505e9f9e34bb01e759f27ac083ac8cdea62a3eb81ba211d3344f15d",
+   "stored": "data/records.jsonl.gz",
+   "stored_sha256": "683d78561d907e8f3aa56a30d358120d928d59f22730550662a9b8e3c7245e0b"
+  },
+  {
+   "bytes": 55,
+   "gzip_added": true,
+   "modified": "2026-11-21T23:14:38Z",
+   "path": "data/read_at.txt",
+   "sha256": "fac23cf96c2a1a75c0ef751861eac247d4a20cdbe71fea244c6e9071e5c2eecb",
+   "stored": "data/read_at.txt.gz",
+   "stored_sha256": "687c5ca553c176beb2420a38e009437cfd60f80db0b05e3bd72104115292644d"
+  }
+ ],
+ "made": "2026-11-22T00:03:15Z",
+ "mode": "inputs",
+ "name": "TRIALS",
+ "reference": []
+}

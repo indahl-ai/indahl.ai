@@ -1,0 +1,57 @@
+# CAMPUS reproduce kit
+
+Heuremen LLC · https://indahl.ai/campus · https://indahl.ai/reproduce
+
+This kit recomputes the CAMPUS headline number and its outcome label with the desk’s own code (its scoring lines, copied as written), from what the kit holds, with its network proxies pointed at a closed port.
+
+## The command
+
+```
+python3 run.py --check
+```
+
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `fe00f96ae1cf9432b5f00c88ce28b57d4137cb116dad88789b416a50c5cf5c3f`.
+
+## What it reproduces
+
+The headline as the live feed https://indahl.ai/campus/live.json served it at the feed stamp 22 Nov 14:38, read by us at 2026-11-22T16:02:19Z. The feed bytes had sha256 `b9ef0408ddf82b5cb452d330fc3575d4ec3feb1e4c88b5bd895079df76a2f3f1`.
+
+- number: 267 of 305
+- value: 267
+- outcome: none, this headline carries no outcome label
+
+The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
+
+## Inputs
+
+Not included. Each school keeps its rights to its pages, and the data pack holds only the indahl.ai status counts, so this kit carries no copy of the source data. MANIFEST.json lists each input file the desk’s scoring read, with its size, its sha256 and the time it was last written. Those exact files are kept and this kit is rerun on them before every release.
+
+The input files are what the desk kept from its reads of the sources, with the time of each read where the desk records it. To check them, read the sources below again and compare. With a copy of the input files, `python3 run.py --check --inputs DIR` reruns the kit on them. A file whose sha256 differs from MANIFEST.json is named and the run stops. Sources change, so a later read can differ from ours.
+
+- Every external source cited on https://indahl.ai/oy, read pass after pass. The newest line of data/reads.jsonl holds the status of each address on the newest pass, with the pass time.
+
+## Sources and their terms
+
+As the CAMPUS data pack lists them. Credit each source when using its values.
+
+- School pages and documents cited on the OY page, https://indahl.ai/oy. Each school keeps its rights. The pack holds only our status counts.
+
+## Input files
+
+| File | Bytes | sha256 |
+|---|---|---|
+| data/reads.jsonl | 18,911,420 | `fb6d28a6ef66f448a8abb9eb55618dcb7ff6858c8dc75f66c103dad87aa41fcb` |
+
+## Code
+
+The desk’s tick script reads its sources, scores and publishes in one run, so it never runs in a kit. code/campus_score.py is the scoring step of that script and nothing else: campus_tick.py lines 126 to 138, the stnow function and the state_now block. The desk files it follows are under desk/, byte for byte, to read beside it. The scripts that run: code/campus_score.py. Before every release the gate checks that this extract prints the number the desk published.
+
+## Files
+
+- kit.json: the steps, the output file and the headline fields.
+- run.py: the command.
+- expected.json and expected.sha256: the line run.py must print.
+- published.json: the headline as the live feed served it when this kit was made.
+- MANIFEST.json: every input and code file with its sha256.
+- desk/: the desk scripts the extract follows, where the kit runs an extract.
+- SHA256SUMS.txt: the sha256 of every file in this folder.

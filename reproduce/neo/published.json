@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/neo/live.json",
+ "feed_sha256": "b3244f027630a941bf6bd0c382b314f8d14ec74188e979ebca8eebf0e7f474e5",
+ "headline": {
+  "desk": "NEO",
+  "display": "218 of 218",
+  "hi": 1.0,
+  "keys": [],
+  "lo": 0.9827,
+  "n": 218,
+  "of": 218,
+  "outcome": "CONSISTENT",
+  "value": 1.0
+ },
+ "read_at": "2026-11-22T15:55:40Z",
+ "stamp": "2026-11-22T12:17:23Z"
+}

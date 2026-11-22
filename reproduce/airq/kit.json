@@ -1,0 +1,74 @@
+{
+ "cwd": "",
+ "desk": "airq",
+ "headline": {
+  "field": [
+   "live",
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "share"
+  ],
+  "hi": [
+   "live",
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "share_hi"
+  ],
+  "keys": [
+   [
+    "live",
+    "comparison",
+    "cf_1 corrected for humidity (Barkjohn 2021)",
+    "n"
+   ],
+   [
+    "live",
+    "comparison",
+    "cf_1 corrected for humidity (Barkjohn 2021)",
+    "of"
+   ],
+   [
+    "live",
+    "comparison",
+    "cf_1 corrected for humidity (Barkjohn 2021)",
+    "outcome"
+   ],
+   [
+    "live",
+    "sensor_days_through"
+   ]
+  ],
+  "lo": [
+   "live",
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "share_lo"
+  ],
+  "n": [
+   "live",
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "n"
+  ],
+  "of": [
+   "live",
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "of"
+  ],
+  "outcome": [
+   "live",
+   "comparison",
+   "Map reading (atm channels, raw)",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "AIRQ",
+ "output": "out.json",
+ "steps": [
+  [
+   "airq_live_score.py"
+  ]
+ ]
+}

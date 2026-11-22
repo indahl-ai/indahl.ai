@@ -1,0 +1,27 @@
+{
+ "feed": "https://indahl.ai/argus/live.json",
+ "feed_sha256": "9ee90a8fdbb20888ab90986716159751d6021865e0ae9eeedc91119a34ed142c",
+ "headline": {
+  "desk": "ARGUS",
+  "display": "4 of 6",
+  "hi": null,
+  "keys": [
+   {
+    "ABOVE": 0,
+    "BELOW": 0,
+    "CANNOT_TELL": 2,
+    "CONSISTENT": 4
+   },
+   6,
+   10,
+   3
+  ],
+  "lo": null,
+  "n": 4,
+  "of": 6,
+  "outcome": null,
+  "value": 4
+ },
+ "read_at": "2026-11-22T15:53:18Z",
+ "stamp": "2026-11-22T10:13:31Z"
+}

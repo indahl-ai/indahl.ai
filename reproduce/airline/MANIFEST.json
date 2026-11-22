@@ -1,0 +1,39 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/airline/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "airline_summary.py lines 12 to 25, the table of 2026 against 2025 and the headline block",
+   "path": "airline_score.py",
+   "sha256": "7c9006520542221c5e96c35593b3c40792bd30f00776896a5ff87ba049ddedce"
+  }
+ ],
+ "desk": "airline",
+ "inputs": [
+  {
+   "bytes": 15807,
+   "gzip_added": true,
+   "modified": "2026-11-12T15:28:00Z",
+   "path": "data/results.json",
+   "sha256": "19bd037dee3f08dfaa809d0d12c7e8065350b1272a9e3a216579d3ff22ba9e00",
+   "stored": "data/results.json.gz",
+   "stored_sha256": "3311520abe8947ee7434220e1eb0876424fce091d67877ec652fa1619b30d596"
+  }
+ ],
+ "made": "2026-11-22T16:02:38Z",
+ "mode": "inputs",
+ "name": "AIRLINE",
+ "reference": [
+  {
+   "path": "desk/airline_summary.py",
+   "sha256": "c0c17fe362f907ed0986c8c9d46e1bc2ea8ddeef07735b9adff1e43c50e21f5c"
+  },
+  {
+   "path": "desk/airline_tick.py",
+   "sha256": "d1eb1bcb297595c768ea733d1e4c9cec578f9d01539c303d0969f7785831157b"
+  }
+ ]
+}

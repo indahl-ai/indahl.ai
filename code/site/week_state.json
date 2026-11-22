@@ -1,0 +1,391 @@
+{
+ "desks": [
+  [
+   "/census/revisions",
+   "REVISIONS",
+   "Stated Census intervals against the revisions that followed"
+  ],
+  [
+   "/census/coverage",
+   "COVERAGE",
+   "The 2020 Census state counts against the Census Bureau\u2019s own survey"
+  ],
+  [
+   "/census/fidelity",
+   "FIDELITY",
+   "State marriage and divorce counts from the CDC against the Census survey estimates"
+  ],
+  [
+   "/census/vintages",
+   "VINTAGES",
+   "State population estimates across Vintages and against the 2020 Census count"
+  ],
+  [
+   "/campus",
+   "CAMPUS",
+   "The documents behind the OY page, kept over time"
+  ],
+  [
+   "/rank",
+   "RANK",
+   "US News education rankings against the public record"
+  ],
+  [
+   "/iris/lab",
+   "LAB",
+   "House model runs: STANYO training live, the house training, Falcon training, the finalists, the Heuremen Standard across models"
+  ],
+  [
+   "/yo",
+   "YO",
+   "A small language model trained on IBM calibration records: live reads and every test"
+  ],
+  [
+   "/hfsize",
+   "HFSIZE",
+   "Model names against the weights"
+  ],
+  [
+   "/hflicense",
+   "HFLICENSE",
+   "Stated licenses against license files"
+  ],
+  [
+   "/pkglicense",
+   "PKGLICENSE",
+   "Package licenses against repository licenses"
+  ],
+  [
+   "/pkginstall",
+   "PKGINSTALL",
+   "Install commands against pip resolution"
+  ],
+  [
+   "/weights",
+   "WEIGHTS",
+   "Model names against their weight files, pass after pass"
+  ],
+  [
+   "/ailuminate",
+   "AILUMINATE",
+   "MLCommons AILuminate Safety results, kept and checked"
+  ],
+  [
+   "/hosts",
+   "HOSTS",
+   "One open-weight model, many hosts, stated uptime and quantization"
+  ],
+  [
+   "/atlas/electricity",
+   "ELECTRICITY",
+   "Prices, providers and generation by state"
+  ],
+  [
+   "/atlas/power-plants",
+   "POWER PLANTS",
+   "Every operating plant by fuel and capacity"
+  ],
+  [
+   "/atlas/carbon",
+   "CARBON",
+   "Pounds of CO2 per megawatthour by state and grid region"
+  ],
+  [
+   "/atlas/planned-plants",
+   "PLANNED PLANTS",
+   "What is coming, by fuel, stage and year"
+  ],
+  [
+   "/petrol",
+   "PETROL",
+   "OPEC+ required production against delivered output"
+  ],
+  [
+   "/water",
+   "WATER",
+   "Reservoir forecasts against measured levels"
+  ],
+  [
+   "/neo",
+   "NEO",
+   "Stated asteroid close-approach distances against the later record"
+  ],
+  [
+   "/solar",
+   "SOLAR",
+   "Stated flare and storm chances against what happened"
+  ],
+  [
+   "/quake",
+   "QUAKE",
+   "Stated aftershock odds against the aftershocks that followed"
+  ],
+  [
+   "/cone",
+   "CONE",
+   "The hurricane forecast cone against where storms went"
+  ],
+  [
+   "/uptime",
+   "UPTIME",
+   "Vendor status pages against independent probes"
+  ],
+  [
+   "/time",
+   "TIME",
+   "Public time servers, stated against delivered"
+  ],
+  [
+   "/cada",
+   "CADA",
+   "Public DNS filters against fresh abuse reports"
+  ],
+  [
+   "/secrecords",
+   "SECRECORDS",
+   "Security records against their own rules"
+  ],
+  [
+   "/seat",
+   "SEAT",
+   "An outside seat reads the indahl.ai pages"
+  ],
+  [
+   "/support",
+   "SUPPORT",
+   "Stated support windows against release activity"
+  ],
+  [
+   "/change",
+   "CHANGE",
+   "Announced shutdown dates, kept over time"
+  ],
+  [
+   "/airline",
+   "AIRLINE",
+   "Scheduled flight time against flown time"
+  ],
+  [
+   "/airq",
+   "AIRQ",
+   "Air sensors against the EPA\u2019s own targets"
+  ],
+  [
+   "/ares",
+   "ARES",
+   "Where public conflict trackers agree that armed violence happened"
+  ],
+  [
+   "/argus",
+   "ARGUS",
+   "Breed standard temperament against open dog genetics and behavior data"
+  ],
+  [
+   "/arxivdrift",
+   "ARXIVDRIFT",
+   "Studies read, then revised"
+  ],
+  [
+   "/cadence",
+   "CADENCE",
+   "Stated update schedules against delivered"
+  ],
+  [
+   "/cassandra",
+   "CASSANDRA",
+   "Warnings against what followed, every warning counted"
+  ],
+  [
+   "/census",
+   "CENSUS",
+   "Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed"
+  ],
+  [
+   "/chronos",
+   "CHRONOS",
+   "Today in the world\u2019s calendars"
+  ],
+  [
+   "/credit",
+   "CREDIT",
+   "Stated complaint responses and card terms against the public record"
+  ],
+  [
+   "/hermes/datapapers",
+   "DATA PAPERS",
+   "Papers in four data journals, each listed with the files its repository serves"
+  ],
+  [
+   "/deus",
+   "DEUS",
+   "Benchmark scores the AI labs state against independent reruns"
+  ],
+  [
+   "/fedsep",
+   "FEDSEP",
+   "The Fed\u2019s stated ranges against outcomes"
+  ],
+  [
+   "/flu",
+   "FLU",
+   "Stated flu forecast intervals against reported admissions"
+  ],
+  [
+   "/forecast",
+   "FORECAST",
+   "Stated chance against what happened"
+  ],
+  [
+   "/hpt",
+   "HPT",
+   "Hospital price files against the rule"
+  ],
+  [
+   "/launch",
+   "LAUNCH",
+   "Stated launch time against the time it flew"
+  ],
+  [
+   "/linkrot",
+   "LETHE",
+   "The links papers forget: stated code links against live"
+  ],
+  [
+   "/hermes/model",
+   "MODEL",
+   "Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data"
+  ],
+  [
+   "/predictions",
+   "NOW",
+   "Public predictions against their deadline, and FORTUNE"
+  ],
+  [
+   "/oy",
+   "OY",
+   "Education policy studies and school data against the public record"
+  ],
+  [
+   "/prometheus",
+   "PROMETHEUS",
+   "Stated wildfire outlooks against the large fires that followed"
+  ],
+  [
+   "/revise",
+   "REVISE",
+   "Stated margin against later revision"
+  ],
+  [
+   "/seasonal",
+   "SEASONAL",
+   "Stated seasonal outlook chances against what was observed"
+  ],
+  [
+   "/social",
+   "SOCIAL",
+   "Platform reports against the filings"
+  ],
+  [
+   "/steo",
+   "STEO",
+   "Stated energy price intervals against the spot price"
+  ],
+  [
+   "/tape",
+   "TAPE",
+   "Every page and live feed, hashed and chained, with a beacon"
+  ],
+  [
+   "/tornado",
+   "TORNADO",
+   "Stated tornado chances and warning goals against the tornadoes that came"
+  ],
+  [
+   "/trials",
+   "TRIALS",
+   "Results due against results posted, and stopped trials"
+  ],
+  [
+   "/vault",
+   "VAULT",
+   "A receipt for any file, or a file sealed until a date, no file stored"
+  ],
+  [
+   "/voightkampff",
+   "VOIGHT-KAMPFF",
+   "AI-text detector claims against independent tests"
+  ],
+  [
+   "/wiki",
+   "WIKI",
+   "Cited figures against their source"
+  ]
+ ],
+ "first_seen": {
+  "/ailuminate": "2026-10-29T18:04:48Z",
+  "/airline": "2026-10-29T14:57:22Z",
+  "/airq": "2026-10-29T18:22:27Z",
+  "/ares": "2026-11-22T15:28:10Z",
+  "/argus": "2026-11-22T02:14:46Z",
+  "/arxivdrift": "2026-10-29T02:07:39Z",
+  "/atlas/carbon": null,
+  "/atlas/electricity": null,
+  "/atlas/planned-plants": null,
+  "/atlas/power-plants": null,
+  "/cada": null,
+  "/cadence": "2026-10-28T23:43:20Z",
+  "/campus": "2026-10-29T18:28:01Z",
+  "/cassandra": "2026-11-22T02:21:01Z",
+  "/census": "2026-11-11T15:44:37Z",
+  "/census/coverage": "2026-11-11T16:35:13Z",
+  "/census/fidelity": "2026-11-11T16:41:08Z",
+  "/census/revisions": "2026-11-11T15:36:20Z",
+  "/census/vintages": "2026-11-11T18:31:40Z",
+  "/change": "2026-10-29T11:12:43Z",
+  "/chronos": "2026-11-21T21:22:31Z",
+  "/cone": "2026-11-10T15:50:55Z",
+  "/credit": "2026-11-10T18:12:46Z",
+  "/deus": "2026-11-22T02:21:01Z",
+  "/fedsep": "2026-10-29T12:56:10Z",
+  "/flu": "2026-11-10T15:50:55Z",
+  "/forecast": "2026-10-28T23:43:20Z",
+  "/hermes/datapapers": "2026-11-12T10:21:03Z",
+  "/hermes/model": "2026-10-29T13:11:24Z",
+  "/hflicense": "2026-10-29T03:36:56Z",
+  "/hfsize": "2026-10-29T11:02:15Z",
+  "/hosts": "2026-10-29T19:18:57Z",
+  "/hpt": "2026-10-29T15:30:48Z",
+  "/iris/lab": "2026-10-30T00:40:25Z",
+  "/launch": "2026-10-28T23:54:05Z",
+  "/linkrot": "2026-10-29T00:56:18Z",
+  "/neo": "2026-11-10T13:59:24Z",
+  "/oy": "2026-11-12T22:42:18Z",
+  "/petrol": "2026-11-12T01:19:59Z",
+  "/pkginstall": "2026-10-29T12:16:37Z",
+  "/pkglicense": "2026-10-29T02:44:25Z",
+  "/predictions": "2026-11-10T16:25:14Z",
+  "/prometheus": "2026-11-22T02:14:46Z",
+  "/quake": "2026-11-10T15:50:55Z",
+  "/rank": "2026-11-10T16:27:24Z",
+  "/revise": "2026-10-29T12:40:10Z",
+  "/seasonal": "2026-11-10T16:33:09Z",
+  "/seat": "2026-10-29T11:58:53Z",
+  "/secrecords": "2026-10-29T11:54:10Z",
+  "/social": "2026-11-10T12:49:07Z",
+  "/solar": "2026-11-10T15:51:33Z",
+  "/stack": "2026-10-29T12:21:11Z",
+  "/steo": "2026-11-10T16:19:33Z",
+  "/support": "2026-10-29T02:25:43Z",
+  "/tape": "2026-10-29T21:44:56Z",
+  "/time": null,
+  "/tornado": "2026-11-10T15:50:55Z",
+  "/trials": "2026-10-28T23:51:50Z",
+  "/uptime": "2026-10-28T23:37:42Z",
+  "/vault": "2026-10-29T21:51:28Z",
+  "/voightkampff": "2026-11-22T02:14:46Z",
+  "/water": "2026-11-10T04:09:31Z",
+  "/weights": "2026-10-29T15:10:38Z",
+  "/wiki": "2026-11-10T09:42:08Z",
+  "/yo": "2026-11-09T20:33:50Z"
+ }
+}

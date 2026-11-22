@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+"""digest.py: ARCHIVE per PLAN.md. Hashes the live corners' records into a manifest, chains the digest, stamps it with OpenTimestamps, copies the chain to the public repo.
+Modes: (default) append a digest; --upgrade only upgrades stamps; --verify recomputes the last manifest and checks the chain."""
+import os, sys, json, glob, hashlib, time, subprocess, fcntl
+H = os.path.dirname(os.path.abspath(__file__)); R = os.path.expanduser('~/forge'); os.chdir(H); os.makedirs('manifests', exist_ok=True); os.makedirs('stamps', exist_ok=True)
+PUB = R + '/public_mirror/indahl.ai/code/archive'; OTS = H + '/venv/bin/ots'
+_l = open('.lock', 'w')
+try: fcntl.flock(_l, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except OSError: sys.exit(0)
+def sha(p):
+    h = hashlib.sha256()
+    with open(p, 'rb') as f:
+        for b in iter(lambda: f.read(1 << 20), b''): h.update(b)
+    return h.hexdigest()
+PATTERNS = ['tape_index/tape.jsonl', 'tape_index/leaves/*.json', '*_index/PLAN*.md', '*_index/data/history*.jsonl', '*_index/data/changes.jsonl', '*_index/data/rows.json', '*_index/data/cancelled.json', '*_index/data/hand_checked.json', '*_index/data/repos.json', '*_index/data/projects.json', '*_index/data/domains.json',
+            '*_index/summary*.json', 'qia_mirror/AUDIT_PLAN.md', 'qia_mirror/STABILITY_PLAN.md', 'qia_mirror/changes.jsonl', 'qia_mirror/polls.jsonl', 'qia_mirror/summary.json', 'qia_mirror/audit.json', 'qia_mirror/records/*', 'qia_queue/PLAN.md', 'qia_queue/data/*.jsonl',
+            't1t2_check/PLAN.md', 't1t2_check/runs/*.json', 'coin_index/PROGRESS.md', 'coin_index/summary_trends.json', 'trials_index/PLAN.md', 'trials_index/data/summary.json', 'archive/PLAN.md', 'replies/PLAN.md', 'nodes_repo/drift/PLAN.md', 'nodes_repo/drift/targets.json', 'nodes_repo/data/drift/history.jsonl', 'nodes_repo/data/linkrot/results.jsonl',
+            'archive/pre-hermes/*', 'ledger/ledger.jsonl', 'qia_leads/THE_BOOK.md', 'notify_state/alert_receipts.jsonl']   # 10 Nov: the alert receipt chain (indahl-ai/alert_receipts.py), so each stamped digest covers the alerts sent
+INTERNAL = {'ledger/ledger.jsonl', 'qia_leads/THE_BOOK.md'}
+def manifest():
+    files = {}
+    for pat in PATTERNS:
+        for p in sorted(glob.glob(os.path.join(R, pat))):
+            if os.path.isfile(p): files[os.path.relpath(p, R)] = dict(sha256=sha(p), bytes=os.path.getsize(p))
+    return files
+chain = [json.loads(l) for l in open('chain.jsonl')] if os.path.exists('chain.jsonl') else []
+def stamp(path):   # 13 Nov 2026 (the owner: 'i just would prefer to not be a part of that chain'): no OpenTimestamps, no Bitcoin, from today. Past .ots files stay as they were.
+    return None
+def upgrade():
+    return 0   # no chain (13 Nov 2026)
+    n = 0
+    for p in sorted(glob.glob('stamps/*.ots')):
+        r = subprocess.run([OTS, 'upgrade', p], capture_output=True, text=True, timeout=180)
+        if 'Success' in (r.stdout + r.stderr) or 'upgraded' in (r.stdout + r.stderr).lower(): n += 1
+    return n
+def publish():
+    os.makedirs(PUB + '/manifests', exist_ok=True); os.makedirs(PUB + '/stamps', exist_ok=True)
+    rc = [subprocess.run(['cp', 'chain.jsonl', PUB + '/chain.jsonl']).returncode, subprocess.run('cp manifests/* %s/manifests/ && for f in stamps/*; do case "$f" in *.bak|*.bak-*) ;; *) cp "$f" %s/stamps/;; esac; done && cp PLAN.md digest.py %s/' % (PUB, PUB, PUB), shell=True).returncode]
+    same = os.path.exists(PUB + '/chain.jsonl') and sha(PUB + '/chain.jsonl') == sha('chain.jsonl')   # 29 Oct (audit): read the public copy back
+    if any(rc) or not same: print('archive: PUBLIC COPY FAILED', rc, same); return False
+    return True
+def internal_marked(m):
+    return {k: (dict(sha256=v['sha256'], bytes=v['bytes'], internal=True) if k in INTERNAL else v) for k, v in m.items()}
+if '--verify' in sys.argv:
+    ok = True; prev = '0' * 64
+    for e in chain:
+        mp = 'manifests/%s.json' % e['id']; msha = sha(mp) if os.path.exists(mp) else None
+        d = hashlib.sha256((prev + (msha or '')).encode()).hexdigest()
+        if msha != e['manifest_sha256'] or d != e['digest'] or e['prev'] != prev: ok = False; print('BROKEN at', e['id'])
+        prev = e['digest']
+    bad = []
+    for e in chain:
+        st = 'stamps/%s.digest.ots' % e['id']
+        if e['id'] >= '20261113T18': continue   # no OpenTimestamps from 13 Nov 2026; the hash chain itself is verified above
+        if not os.path.exists(st): bad.append(e['id']); continue
+        r = subprocess.run([OTS, 'info', st], capture_output=True, text=True)
+        if r.returncode: bad.append(e['id'])
+        if open('stamps/%s.digest' % e['id']).read().strip() != e['digest']: bad.append(e['id'] + ' digest file differs')
+    if bad: ok = False; print('stamps missing, unreadable or not matching:', bad[:5])
+    print('chain', 'OK' if ok else 'BROKEN', len(chain), 'entries, stamps checked'); sys.exit(0 if ok else 1)
+if '--upgrade' in sys.argv: print('upgraded', upgrade()); publish(); sys.exit(0)
+m = internal_marked(manifest()); t = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
+while os.path.exists('manifests/%s.json' % t): t += 'x'   # 29 Oct (audit): a second run inside one second never overwrites a manifest
+prev = chain[-1]['digest'] if chain else '0' * 64
+old = json.load(open('manifests/%s.json' % chain[-1]['id'])) if chain else {'files': {}}
+removed = sorted(set(old['files']) - set(m)); changed = sum(1 for k, v in m.items() if old['files'].get(k, {}).get('sha256') != v['sha256'])
+mf = dict(id=t, prev_digest=prev, files=m, removed=removed)
+mp = 'manifests/%s.json' % t; json.dump(mf, open(mp, 'w'), sort_keys=True, indent=0)
+msha = sha(mp); digest = hashlib.sha256((prev + msha).encode()).hexdigest()
+entry = dict(id=t, prev=prev, manifest_sha256=msha, digest=digest, files=len(m), changed=changed, removed=len(removed))
+with open('chain.jsonl', 'a') as f: f.write(json.dumps(entry) + '\n')
+open('stamps/%s.digest' % t, 'w').write(digest + '\n'); ok = stamp('stamps/%s.digest' % t)
+n = upgrade(); publish()
+ok2 = True
+print('archive: digest', digest[:16], 'files', len(m), 'changed', changed, 'removed', len(removed), 'stamp', 'none (no chain since 13 Nov 2026)' if ok is None else ('ok' if ok else 'FAILED'), 'upgraded', n)

@@ -1,0 +1,41 @@
+{
+ "cwd": "",
+ "desk": "tornado",
+ "headline": {
+  "field": [
+   "warnings",
+   "pooled",
+   "pod",
+   "value"
+  ],
+  "hi": [
+   "warnings",
+   "pooled",
+   "pod",
+   "hi"
+  ],
+  "lo": [
+   "warnings",
+   "pooled",
+   "pod",
+   "lo"
+  ],
+  "outcome": [
+   "warnings",
+   "pooled",
+   "pod",
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "TORNADO",
+ "output": "data/tornado_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "tornado_tick.py",
+   "data/tornado_live.json",
+   "--offline"
+  ]
+ ]
+}

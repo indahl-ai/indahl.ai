@@ -1,0 +1,21 @@
+{
+  "name": "indahl-data",
+  "version": "1.0.0",
+  "description": "The read-only indahl.ai MCP server inside Claude Code: IBM Quantum calibration checked against our own runs, and checks on the papers, statistics, quotes, citations, packages and models you bring, quoted with interval, outcome and receipt.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/mcp",
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "SEE LICENSE.txt",
+  "keywords": [
+    "data",
+    "mcp",
+    "measurements",
+    "quantum",
+    "benchmarks",
+    "open-data"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

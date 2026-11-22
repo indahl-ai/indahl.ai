@@ -1,0 +1,21 @@
+after deploy: 5360 urls, 108 differ, 1 inside the stated floor, 107 outside it
+  OUTSIDE FLOOR ('GET', '/ailuminate') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/airline') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/airq') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/arxivdrift') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/atlas') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/adguard') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/anthropic') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/apple') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/atlassian') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/aws') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/bureau-of-reclamation') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/canonical') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/cisco') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/cleanbrowsing') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/cloudflare') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/control-d') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/cz-nic') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/datadog') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/digitalocean') 200 -> 200
+  OUTSIDE FLOOR ('GET', '/brand/discord') 200 -> 200

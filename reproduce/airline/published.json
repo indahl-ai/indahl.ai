@@ -1,0 +1,25 @@
+{
+ "feed": "https://indahl.ai/airline/live.json",
+ "feed_sha256": "b2c55b0398bd1ab633c355f18f0ff97fcae7943a674a11b41345aa895430728f",
+ "headline": {
+  "desk": "AIRLINE",
+  "display": "5 of 13",
+  "hi": null,
+  "keys": [
+   [
+    "American (AA)",
+    "Alaska (AS)",
+    "Envoy (MQ)",
+    "PSA (OH)",
+    "Republic (YX)"
+   ]
+  ],
+  "lo": null,
+  "n": 5,
+  "of": 13,
+  "outcome": null,
+  "value": 5
+ },
+ "read_at": "2026-11-22T16:02:38Z",
+ "stamp": "15 Nov 22:44"
+}

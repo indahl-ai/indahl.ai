@@ -1,0 +1,81 @@
+# Changes: what has shipped
+
+Every item has its live page and its plan. A desk is added here automatically when its page goes live, with the date it first appeared in this repository.
+
+- [x] **arXiv version drift on every indexed study** ([live](https://indahl.ai/arxivdrift), [code](code/arxivdrift)). Flag when a later arXiv version changes the numbers or the claim we read, both versions shown. arXiv API, no key.
+- [x] **Support windows against release activity** ([live](https://indahl.ai/support), [plan and two addenda](code/support/PLAN.md), and an error in our first classifier caught on a full read before publishing). Stated end-of-life and support dates (endoflife.date) against actual release and support activity.
+- [x] **Package claims against the files** ([PKGLICENSE live](https://indahl.ai/pkglicense): PyPI-stated license against the repository license, every disagreement read in full)
+- [x] **Hugging Face license claims against the license files** ([live](https://indahl.ai/hflicense), [plan and four addenda](code/hflicense/PLAN.md): the planted-text gate and full reads caught four reading errors before anything was shown). PyPI metadata (license, requires-python, stated contents) against what the release files hold.
+- [x] **Older corners onto heuremen_kit** (Wilson interval moved to the kit in FORECAST, CADENCE, LAUNCH and CADA, with an error in three of them found and corrected, see each plan). TIME, CADA, UPTIME, FORECAST, CADENCE move to the shared kit with summaries confirmed unchanged.
+- [x] **Second seat for LINKROT** ([plan addendum 2](code/linkrot/PLAN.md)). Runner-network seat. A disagreement between seats reads BLOCKED.
+- [x] **T1 and T2 rerun** (fez q148, plan note 4: T1 measured 0.82 then 1.05 microseconds against 5.86 published, and T2 is still unresolved because the echo decays faster than the first delay step, [results](https://indahl.ai/qia)). Interleaved circuits and delays sized to the measured T1 (fez q148 measured T1 0.82 microseconds against 5.86 published).
+- [x] **Security claims against DNS records** ([SECRECORDS live](https://indahl.ai/secrecords), [plan and note](code/secrecords/PLAN.md): an HSTS preload header against its own requirements, an SPF record against the 10-lookup limit, with every mismatch read in full and the SPF counts repeated with a second script).
+- [x] **Stated model sizes against the weights** ([HFSIZE live](https://indahl.ai/hfsize), [plan, addendum and notes](code/hfsize/PLAN.md): a reader error and an inconsistency in the Hugging Face API found on a full read before anything was shown).
+- [x] **Vendor shutdown dates kept over time** ([CHANGE live](https://indahl.ai/change), [plan](code/change/PLAN.md)). Anthropic, OpenAI, Google and Cloudflare tables, with every move, addition and removal logged. The test of whether stated dates hold fills as dates pass.
+- [x] **Queue at each IBM processor** ([on QIA](https://indahl.ai/qia), [plan](code/qia-queue/PLAN.md)). Pending jobs hourly beside the waits our own jobs saw.
+- [x] **Stopped trials in the last two years** ([TRIALS](https://indahl.ai/trials), [plan addendum 3](code/trials/PLAN.md)).
+- [x] **Hash-chained archive of our records** ([plan](code/archive/PLAN.md)). OpenTimestamps proofs, Software Heritage, Internet Archive, and Zenodo copies of the repositories.
+- [x] **Stated margin against later revision** ([REVISE live](https://indahl.ai/revise), [plan and note](code/revise/PLAN.md)). Monthly payroll first estimates against the BLS's stated interval, from the Philadelphia Fed's real-time data. No prices.
+- [x] **The Fed's stated projection ranges against outcomes** ([FEDSEP live](https://indahl.ai/fedsep), [plan, addendum and notes](code/fedsep/PLAN.md)). September projections 2015 to 2025 against the 70 percent error ranges the Fed publishes. No rates or prices of ours.
+- [x] **Every test side by side** ([STACK live](https://indahl.ai/stack), [plan and addendum](code/stack/PLAN.md)). The headline test of every live page in one table, ordered by outcome, no reading of its own.
+- [x] **An outside seat reads our own pages** ([SEAT live](https://indahl.ai/seat), [plan](https://github.com/indahl-ai/indahl.ai/blob/main/code/nodes/drift/PLAN.md)). A GitHub runner compares every page with the repository and every feed with its limit.
+- [x] **Install commands against resolution** ([PKGINSTALL live](https://indahl.ai/pkginstall), [plan, two addenda and a note](code/pkginstall/PLAN.md): a placeholder the reader missed and commands that did not install the project, both caught on a full read before anything was shown).
+- [x] **Our data as SQL tables** ([dataset heuremen-llc-data.heuremen_public](code/bigquery/README.md), [plan and addendum](code/bigquery/PLAN.md)). Every trend history, the hash chain and the STACK rows in BigQuery, readable by any signed-in Google account, row counts read back after each load.
+- [x] **MLCommons AILuminate Safety results, kept and checked** ([AILUMINATE live](https://indahl.ai/ailuminate), [plan and note](code/ailuminate/PLAN.md)). The results page against its own reports, and every read kept so a later change to a published score shows. Release month against Hugging Face is next.
+- [x] **The documents behind OY, kept** ([CAMPUS live](https://indahl.ai/campus), [plan and addendum](code/campus/PLAN.md)). Every external source cited on the OY page, read and kept pass after pass so a moved, changed or removed page shows. Next for OY: the school list to every degree-granting US institution, then plans to measure against results published.
+- [x] **One model, many hosts** ([HOSTS live](https://indahl.ai/hosts), [plan](code/hosts/PLAN.md)). Every open-weight model on OpenRouter, every host serving it, stated quantization and uptime, polled every 12 minutes and kept. The stated one-day uptime is checked against our own 5-minute record once 24 hours exist.
+- [x] **A public hash chain of what we publish** ([TAPE live](https://indahl.ai/tape), [plan](code/tape/PLAN.md)). Every public page and live feed hashed into one chain about every half hour, a beacon value from the drand round and the run's feeds, anchored through the ARCHIVE stamps. The verifier is in the repository and needs only Python. No coin, no mining.
+- [x] **Receipts and sealed files, no file stored** ([VAULT live](https://indahl.ai/vault), [plan addendum 1](code/tape/PLAN.md)). A file is hashed, sealed to a future drand round or opened in the visitor's own browser. Only a hash is ever sent, and it joins the TAPE chain. We cannot read, scan, host or release any file.
+- [x] **Quantum bits in the beacon** ([plan addendum 2](code/tape/PLAN.md), [run plan](code/tape/qbits/PLAN_QBITS.md.text)). First run 29 Oct on ibm_fez. The bits read not usable under the plan's own flags, and the tape entry says so. Beacons after it carry the run's hash as a fourth input.
+- [x] **Queue against wait, the analysis** ([rule](code/qia-queue/PLAN.md), Note 1, [analysis](code/qia-queue/ANALYSIS.md)). Run on 21 days of readings with the committed rule, read at run level, with a run-gap sensitivity added after the first reading.
+- [x] **Model names against their weights** ([WEIGHTS live](https://indahl.ai/weights), [plan](code/weights/PLAN.md)). The most downloaded open-weight models read pass after pass. The first pass is read and the comparison starts with the second.
+- [x] **New Zenodo versions with every release** (ledger/zenodo_sync.py). Each release refreshes the Zenodo records whose files changed, at most once a day per record.
+- [x] **Boston T1 and T2** ([results](https://indahl.ai/qia#t1t2-live), [code](code/t1t2-check)). Run 2 times on qubit 85, newest 2026-11-11 (job dbqbqpmjjaos73ah0o20): T1 9.32 microseconds, T2 20.15, so no T2 of either kind can exceed 20.5 on that qubit, against 47.9 published.
+- [x] **Hospital price-transparency files** ([HPT live](https://indahl.ai/hpt), [plan and two addenda](code/hpt/PLAN.md)). The cms-hpt.txt at the root of each hospital website, the file it links, and the template header. A full read found non-subjects in the list and eleven reading errors in the first read, both corrected in the addenda.
+- [x] **Scheduled flight time against flown time** ([AIRLINE live](https://indahl.ai/airline), [plan and two addenda](code/airline/PLAN.md)). Bureau of Transportation Statistics record, January to August of 2019, 2025 and 2026, routes as the independent units, every ABOVE read in full on its largest routes.
+- [x] **Air quality sensors against EPA monitors** ([AIRQ live](https://indahl.ai/airq), [plan and note](code/airq/PLAN.md)). PurpleAir outdoor sensors within 200 metres of EPA continuous monitors, June to September 2025, against the EPA's own sensor performance targets.
+- [x] **STANDARDS** ([live](https://indahl.ai/standard)). 13 Nov 2026: Faults and Guards is now called Standards on every page, with a STANDARDS banner. Released versions, receipts and past records keep the name they were published under.
+- [x] **CLAUDE CODE PLUGINS** ([live](https://indahl.ai/plugins)). 13 Nov 2026: seven plugins (standards, eval-check, readcheck, indahl-data, reproduce, qia-calibration, darkwave-correction) at github.com/Heuremen-LLC/claude-plugins, after an outside referee pass.
+- [x] **DARKWAVE CORRECTION KIT 1.1.1** ([live](https://indahl.ai/darkwave)). 13 Nov 2026: a target with idle coherence 0 no longer crashes the printout after a paid job; a paid submit runs only from your own terminal; the opening line names no cause. Zenodo version 24203188 (13 Nov) carries the 1.1.1 code with the 1.1 README; the next version carries the 1.1.1 README.
+- [x] **NO OUTSIDE TIMESTAMP CHAIN** ([stamps](https://indahl.ai/receipts/stamps)). 13 Nov 2026: we no longer stamp anything with OpenTimestamps or read Bitcoin. Our own hash chains hold the time (TAPE, the archive digest chain, release-to-release hashes), with public repository pushes and Internet Archive captures as outside copies. Proofs made before this date are kept as they were.
+- [x] **PREREG** ([plugins](https://indahl.ai/plugins)). 13 Nov 2026: a Claude Code plugin to seal a plan in git and check it against the first run using the git host's own push record, after an outside referee pass.
+<!-- auto: desks from build_site.py DESKS (ledger/roadmap_sync.py) -->
+- [x] **REVISIONS** ([live](https://indahl.ai/census/revisions)). Stated Census intervals against the revisions that followed.
+- [x] **COVERAGE** ([live](https://indahl.ai/census/coverage)). The 2020 Census state counts against the Census Bureau's own survey.
+- [x] **FIDELITY** ([live](https://indahl.ai/census/fidelity)). State marriage and divorce counts from the CDC against the Census survey estimates.
+- [x] **VINTAGES** ([live](https://indahl.ai/census/vintages)). State population estimates across Vintages and against the 2020 Census count.
+- [x] **RANK** ([live](https://indahl.ai/rank)). US News education rankings against the public record.
+- [x] **LAB** ([live](https://indahl.ai/iris/lab)). House model runs: STANYO training live, the house training, Falcon training, the finalists, Standards across models.
+- [x] **YO** ([live](https://indahl.ai/yo)). A small language model trained on IBM calibration records: live reads and every test.
+- [x] **ELECTRICITY** ([live](https://indahl.ai/atlas/electricity)). Prices, providers and generation by state.
+- [x] **POWER PLANTS** ([live](https://indahl.ai/atlas/power-plants)). Every operating plant by fuel and capacity.
+- [x] **CARBON** ([live](https://indahl.ai/atlas/carbon)). Pounds of CO2 per megawatthour by state and grid region.
+- [x] **PLANNED PLANTS** ([live](https://indahl.ai/atlas/planned-plants)). What is coming, by fuel, stage and year.
+- [x] **PETROL** ([live](https://indahl.ai/petrol)). OPEC+ required production against delivered output.
+- [x] **WATER** ([live](https://indahl.ai/water)). Reservoir forecasts against measured levels.
+- [x] **NEO** ([live](https://indahl.ai/neo)). Stated asteroid close-approach distances against the later record.
+- [x] **SOLAR** ([live](https://indahl.ai/solar)). Stated flare and storm chances against what happened.
+- [x] **QUAKE** ([live](https://indahl.ai/quake)). Stated aftershock odds against the aftershocks that followed.
+- [x] **CONE** ([live](https://indahl.ai/cone)). The hurricane forecast cone against where storms went.
+- [x] **UPTIME** ([live](https://indahl.ai/uptime)). Vendor status pages against independent probes.
+- [x] **TIME** ([live](https://indahl.ai/time)). Public time servers, stated against delivered.
+- [x] **CADA** ([live](https://indahl.ai/cada)). Public DNS filters against fresh abuse reports.
+- [x] **DATA PAPERS** ([live](https://indahl.ai/hermes/datapapers)). Papers in four data journals, each listed with the files its repository serves.
+- [x] **MODEL** ([live](https://indahl.ai/hermes/model)). Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data.
+- [x] **CADENCE** ([live](https://indahl.ai/cadence)). Stated update schedules against delivered.
+- [x] **FORECAST** ([live](https://indahl.ai/forecast)). Stated chance against what happened.
+- [x] **SEASONAL** ([live](https://indahl.ai/seasonal)). Stated seasonal outlook chances against what was observed.
+- [x] **STEO** ([live](https://indahl.ai/steo)). Stated energy price intervals against the spot price.
+- [x] **FLU** ([live](https://indahl.ai/flu)). Stated flu forecast intervals against reported admissions.
+- [x] **TORNADO** ([live](https://indahl.ai/tornado)). Stated tornado chances and warning goals against the tornadoes that came.
+- [x] **CREDIT** ([live](https://indahl.ai/credit)). Stated complaint responses and card terms against the public record.
+- [x] **FORECASTERS** ([live](https://indahl.ai/forecasters)). Every forecaster desk on one axis, stated against delivered.
+- [x] **LAUNCH** ([live](https://indahl.ai/launch)). Stated launch time against the time it flew.
+- [x] **LINKROT** ([live](https://indahl.ai/linkrot)). Stated code links against live.
+- [x] **WIKI** ([live](https://indahl.ai/wiki)). Cited figures against their source.
+- [x] **SOCIAL** ([live](https://indahl.ai/social)). Platform reports against the filings.
+- [x] **NOW** ([live](https://indahl.ai/predictions)). Public predictions against their deadline, and FORTUNE.
+- [x] **OY** ([live](https://indahl.ai/oy)). Education policy studies and school data against the public record.
+- [x] **CENSUS** ([live](https://indahl.ai/census)). Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed.
+<!-- /auto -->
+Built and live: see `code/README.md` for every page and its folder.

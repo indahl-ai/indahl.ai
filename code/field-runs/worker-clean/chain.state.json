@@ -1,0 +1,74 @@
+{
+ "install": {
+  "status": "done",
+  "pid": 20726,
+  "started": "2026-11-14T09:00:16",
+  "lane": "default",
+  "rc": 0,
+  "ended": "2026-11-14T09:00:16"
+ },
+ "house-scan": {
+  "status": "done",
+  "pid": 20773,
+  "started": "2026-11-14T09:00:31",
+  "lane": "default",
+  "rc": 0,
+  "ended": "2026-11-14T09:00:31"
+ },
+ "ccr-approve": {
+  "status": "done",
+  "pid": 20807,
+  "started": "2026-11-14T09:00:46",
+  "lane": "default",
+  "rc": 0,
+  "ended": "2026-11-14T09:00:46"
+ },
+ "ship": {
+  "status": "done",
+  "pid": 20906,
+  "started": "2026-11-14T09:01:01",
+  "lane": "site",
+  "rc": 0,
+  "ended": "2026-11-14T09:06:13"
+ },
+ "ccr-release": {
+  "status": "done",
+  "pid": 26972,
+  "started": "2026-11-14T09:06:18",
+  "lane": "default",
+  "rc": 0,
+  "ended": "2026-11-14T09:06:18"
+ },
+ "snap-after": {
+  "status": "done",
+  "pid": 27092,
+  "started": "2026-11-14T09:06:33",
+  "lane": "default",
+  "rc": 0,
+  "ended": "2026-11-14T09:09:06"
+ },
+ "compare": {
+  "status": "failed",
+  "pid": 27811,
+  "started": "2026-11-14T09:09:19",
+  "lane": "default",
+  "rc": 1,
+  "ended": "2026-11-14T09:09:19"
+ },
+ "gate": {
+  "status": "failed",
+  "pid": 27850,
+  "started": "2026-11-14T09:09:34",
+  "lane": "default",
+  "rc": 1,
+  "ended": "2026-11-14T09:09:34"
+ },
+ "ccr-verify": {
+  "status": "done",
+  "pid": 27876,
+  "started": "2026-11-14T09:09:49",
+  "lane": "default",
+  "rc": 0,
+  "ended": "2026-11-14T09:09:49"
+ }
+}

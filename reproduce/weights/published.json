@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/weights/live.json",
+ "feed_sha256": "2a0a7861c222af30a3a1be06f2d1bbd723f43208479a1c04da59f3566c92ccfd",
+ "headline": {
+  "desk": "WEIGHTS",
+  "display": "28 of 1,115",
+  "hi": 0.0361,
+  "keys": [],
+  "lo": 0.0174,
+  "n": 28,
+  "of": 1115,
+  "outcome": "CONSISTENT",
+  "value": 0.0251
+ },
+ "read_at": "2026-11-22T16:02:30Z",
+ "stamp": "22 Nov 14:38"
+}

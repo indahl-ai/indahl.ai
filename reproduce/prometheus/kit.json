@@ -1,0 +1,47 @@
+{
+ "cwd": "",
+ "desk": "prometheus",
+ "headline": {
+  "field": [
+   "prometheus",
+   "above_exceed_share",
+   "display"
+  ],
+  "hi": [
+   "prometheus",
+   "above_exceed_share",
+   "hi"
+  ],
+  "lo": [
+   "prometheus",
+   "above_exceed_share",
+   "lo"
+  ],
+  "n": [
+   "prometheus",
+   "above_exceed_share",
+   "exceeded"
+  ],
+  "of": [
+   "prometheus",
+   "above_exceed_share",
+   "psa_months"
+  ],
+  "outcome": [
+   "prometheus",
+   "above_exceed_share",
+   "outcome"
+  ],
+  "show": "text"
+ },
+ "name": "PROMETHEUS",
+ "output": "data/prometheus_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "prometheus_tick.py",
+   "data/prometheus_live.json",
+   "--offline"
+  ]
+ ]
+}

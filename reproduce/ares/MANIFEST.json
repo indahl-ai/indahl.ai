@@ -1,0 +1,142 @@
+{
+ "code": [
+  {
+   "path": "ares_tick.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/ares/ares_tick.py",
+   "sha256": "e31f1d98492a1c430e9f2ef500c31f812bcd4d470fa32786dd7a8c11245969b0"
+  },
+  {
+   "path": "ares_lines.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/ares/ares_lines.py",
+   "sha256": "e1797be4b007ba21d0f9b8da212b515db1ada51482dbc7fe61dde96996ff3cd8"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/ares/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "path": "build_crosswalk.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/ares/build_crosswalk.py",
+   "sha256": "f63ed83d569e3a8cccfad37ad0e2acf8ff50dcd0162a1e46c4bcfbe6066303c8"
+  },
+  {
+   "path": "fetch/fetch_ucdp.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/ares/fetch/fetch_ucdp.py",
+   "sha256": "4cd955cd304c6843cee5fdf223103cb3bc7fd02db5285c88248ad0f05d2635f4"
+  },
+  {
+   "path": "fetch/fetch_gdelt.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/ares/fetch/fetch_gdelt.py",
+   "sha256": "22bea7315433cd2c9a0ee255123184eaefe13971044012c6824c21300b7b75b7"
+  },
+  {
+   "extract_of": "the clock only. It runs ares_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/ares_live.json), which sets the window",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
+  }
+ ],
+ "desk": "ares",
+ "inputs": [
+  {
+   "bytes": 1067850,
+   "gzip_added": true,
+   "modified": "2026-11-22T16:22:19Z",
+   "path": "data/ares_live.json",
+   "sha256": "1b7aaf41a091ace97275028b65e978521f5a189289d80493329ae9e0152f2110",
+   "stored": "data/ares_live.json.gz",
+   "stored_sha256": "b90042be4b740e65f08824ee80c582f7ae28c93279fdcc3f5c93dbaa7ad8461b"
+  },
+  {
+   "bytes": 413194,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:21:05Z",
+   "path": "data/ucdp_pm.json",
+   "sha256": "dcab1ffe5fbf50ace6cce4069b819b460dd97302f86bb3e7bd004a676287f2ad",
+   "stored": "data/ucdp_pm.json.gz",
+   "stored_sha256": "55e7979ac5de26c0a22f1e5ced71ab203840c0e8ac94ba14696cd24bfad82431"
+  },
+  {
+   "bytes": 439406,
+   "gzip_added": true,
+   "modified": "2026-11-22T16:22:03Z",
+   "path": "data/gdelt_pm.json",
+   "sha256": "702495d47625003863b1ec2768394f1cb654862c13e5dba6d87785432db8dab0",
+   "stored": "data/gdelt_pm.json.gz",
+   "stored_sha256": "824b71820762f816968ab57778a49525c08f272ff5140107815dbed4a729e0eb"
+  },
+  {
+   "bytes": 2071448,
+   "gzip_added": true,
+   "modified": "2026-11-22T16:22:03Z",
+   "path": "data/gdelt_files.tsv",
+   "sha256": "2033c5a56af8f51aa7b309a809eb91db1b126dad6a4879e0271080475243b8ee",
+   "stored": "data/gdelt_files.tsv.gz",
+   "stored_sha256": "90be168eda7e245ff676c8f60752d481bca31acce22248c7f803fd83672479e0"
+  },
+  {
+   "bytes": 304346,
+   "gzip_added": true,
+   "modified": "2026-11-22T16:22:18Z",
+   "path": "data/crosswalk.json",
+   "sha256": "4868543b3bde3985d479e43d544773003d13b6dd78ae1998e5544f1e3e218704",
+   "stored": "data/crosswalk.json.gz",
+   "stored_sha256": "859da5bdb1c362c104171ad83d05390daeb9fd98ef3e97b1eefa287cd232512d"
+  },
+  {
+   "bytes": 193,
+   "gzip_added": true,
+   "modified": "2026-11-22T16:22:18Z",
+   "path": "data/crosswalk_seal.json",
+   "sha256": "5ab9b50b4fe2e1c01d31eca9f2805dd451ced20f91228912b3819067eecd4bbd",
+   "stored": "data/crosswalk_seal.json.gz",
+   "stored_sha256": "6a0d1c90b89a1253012187ac1164caf0269e1508d36bb34b68a189a7f64d0019"
+  },
+  {
+   "bytes": 63165,
+   "gzip_added": true,
+   "modified": "2026-11-22T16:22:18Z",
+   "path": "data/ne_units.json",
+   "sha256": "ad7d5a8f18f6a62e32bb09d85e971e7a71f0eebfeb0749abb49792222ba3a6bb",
+   "stored": "data/ne_units.json.gz",
+   "stored_sha256": "ed4546ff6fb93314d97a7950cc5117f239c929dd000e8d505c07237fb9a651cf"
+  },
+  {
+   "bytes": 46722,
+   "gzip_added": false,
+   "modified": "2026-11-22T16:22:19Z",
+   "path": "data/ares_kit.csv.gz",
+   "sha256": "dcf51b086cd287cf67203fec9f79e30d92512c07ec732b7606a1d61604d98d22",
+   "stored": "data/ares_kit.csv.gz",
+   "stored_sha256": "dcf51b086cd287cf67203fec9f79e30d92512c07ec732b7606a1d61604d98d22"
+  },
+  {
+   "bytes": 10980,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:13:19Z",
+   "path": "PLAN.md",
+   "sha256": "21e08738bc8c8fb1070ab9345b084378fd09eb78c7427f520dd6cf1b187ac86d",
+   "stored": "PLAN.md.gz",
+   "stored_sha256": "b62f5b555cbdf81d3371484b72509317dd87657f27401ed4d6045d024db32bef"
+  },
+  {
+   "bytes": 499,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:21:44Z",
+   "path": "data/plan_seal.json",
+   "sha256": "d185ce6416e04041ffba91f87ae70994ff5a1a9155ee6d4079eb2dbc6923001f",
+   "stored": "data/plan_seal.json.gz",
+   "stored_sha256": "81387e7ec8ca74b25fb9aff89765d8bbbf87adb26a55683b5eda40307dc00936"
+  }
+ ],
+ "made": "2026-11-22T16:22:35Z",
+ "mode": "fetch",
+ "name": "ARES",
+ "reference": [],
+ "sources": [
+  "UCDP GED 26.1, https://ucdp.uu.se/downloads/ged/ged261-csv.zip, and UCDP Candidate 26.01.26.09, https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv (CC BY 4.0, sha256 in data/ucdp_pm.json).",
+  "GDELT 2.0 event exports listed in https://data.gdeltproject.org/gdeltv2/masterfilelist.txt, each checked against its MD5 (data/gdelt_files.tsv).",
+  "Natural Earth Admin 1, 1:10m, public domain (sha256 in data/crosswalk.json), used only to group places, never drawn."
+ ],
+ "why_not_included": "the raw UCDP and GDELT files carry fields ARES never stores, so the fetch keeps only the province-month tables. Every source file is public and named with its hash, and fetch/ rebuilds the tables from them"
+}

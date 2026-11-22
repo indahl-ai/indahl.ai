@@ -1,0 +1,59 @@
+{
+ "cwd": "",
+ "desk": "seasonal",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "cell": "temperature, leaning"
+   },
+   "observed"
+  ],
+  "hi": [
+   "cells",
+   {
+    "cell": "temperature, leaning"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "cell": "temperature, leaning"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "cell": "temperature, leaning"
+   },
+   "hits"
+  ],
+  "of": [
+   "cells",
+   {
+    "cell": "temperature, leaning"
+   },
+   "rows"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "cell": "temperature, leaning"
+   },
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "SEASONAL",
+ "output": "data/seasonal_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "seasonal_tick.py",
+   "data/seasonal_live.json",
+   "--offline"
+  ]
+ ]
+}

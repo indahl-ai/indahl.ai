@@ -1,0 +1,471 @@
+{
+ "code": [
+  {
+   "path": "prometheus_tick.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/prometheus/prometheus_tick.py",
+   "sha256": "b7d2dd851b978115069ef243be4fa2f029bfff2c16c865c2a110f946693781f4"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/prometheus/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "the clock only. It runs prometheus_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/prometheus_live.json)",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
+  }
+ ],
+ "desk": "prometheus",
+ "inputs": [
+  {
+   "bytes": 36108,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:13:32Z",
+   "path": "data/prometheus_live.json",
+   "sha256": "5112e14663fc53334d2562c4cd80d766e3390be07186a35a52f44009eeb382d4",
+   "stored": "data/prometheus_live.json.gz",
+   "stored_sha256": "16ff3ab3dc803101a87302cf93cfe83eab4b3dfb320395c89a2615239b0927c9"
+  },
+  {
+   "bytes": 28476,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:13:31Z",
+   "path": "data/outlook_manifest.json",
+   "sha256": "919aefe33c66f98ce22d7277b372e3a34c0254d58b69d0e34ae8bc14db6c7299",
+   "stored": "data/outlook_manifest.json.gz",
+   "stored_sha256": "6e686b712084757d519476238b1def34867308c04d3fd6d57e84625f88666b34"
+  },
+  {
+   "bytes": 2059381,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:19Z",
+   "path": "data/raw/outlooks/2023-01_JFMA.zip",
+   "sha256": "eb1aea48023e5c5cb36194bd8644b973c203c3c1a52448bf0bdd1c8e959b39e7",
+   "stored": "data/raw/outlooks/2023-01_JFMA.zip",
+   "stored_sha256": "eb1aea48023e5c5cb36194bd8644b973c203c3c1a52448bf0bdd1c8e959b39e7"
+  },
+  {
+   "bytes": 2117263,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:13Z",
+   "path": "data/raw/outlooks/2023-02_FMAM.zip",
+   "sha256": "2f128f5a625e47bb9b77c62334f500bbc89c76b6afd4bcd8cc54d2ec5af9eca5",
+   "stored": "data/raw/outlooks/2023-02_FMAM.zip",
+   "stored_sha256": "2f128f5a625e47bb9b77c62334f500bbc89c76b6afd4bcd8cc54d2ec5af9eca5"
+  },
+  {
+   "bytes": 2120680,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:33Z",
+   "path": "data/raw/outlooks/2023-03_MAMJ.zip",
+   "sha256": "273b00ad1b5dd68697dd47673ff02eaaf7956b6056e591ebe679ce921ca76004",
+   "stored": "data/raw/outlooks/2023-03_MAMJ.zip",
+   "stored_sha256": "273b00ad1b5dd68697dd47673ff02eaaf7956b6056e591ebe679ce921ca76004"
+  },
+  {
+   "bytes": 2461648,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:57:55Z",
+   "path": "data/raw/outlooks/2023-04_AMJJ.zip",
+   "sha256": "30bcc8f7ce185905af9728d28d9b9e0ea3eecde9b5e26a37204004c9cbcf9bcb",
+   "stored": "data/raw/outlooks/2023-04_AMJJ.zip",
+   "stored_sha256": "30bcc8f7ce185905af9728d28d9b9e0ea3eecde9b5e26a37204004c9cbcf9bcb"
+  },
+  {
+   "bytes": 2177854,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:41Z",
+   "path": "data/raw/outlooks/2023-05_MJJA.zip",
+   "sha256": "a31919f480232291c6d7c177bcebfa6e7b30d0b2aeb132277431677d534dbd10",
+   "stored": "data/raw/outlooks/2023-05_MJJA.zip",
+   "stored_sha256": "a31919f480232291c6d7c177bcebfa6e7b30d0b2aeb132277431677d534dbd10"
+  },
+  {
+   "bytes": 2278754,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:57:40Z",
+   "path": "data/raw/outlooks/2023-06_JJAS.zip",
+   "sha256": "da9c79cd412f94df8c3db53a29ce4f1b8f5a8e6474291501d48fe537cb50e77a",
+   "stored": "data/raw/outlooks/2023-06_JJAS.zip",
+   "stored_sha256": "da9c79cd412f94df8c3db53a29ce4f1b8f5a8e6474291501d48fe537cb50e77a"
+  },
+  {
+   "bytes": 2274664,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:57:32Z",
+   "path": "data/raw/outlooks/2023-07_JASO.zip",
+   "sha256": "b2e57136706bff0ca76daf721240eae56cbf5debf909652cae3dcfb2d65900e9",
+   "stored": "data/raw/outlooks/2023-07_JASO.zip",
+   "stored_sha256": "b2e57136706bff0ca76daf721240eae56cbf5debf909652cae3dcfb2d65900e9"
+  },
+  {
+   "bytes": 2438227,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:57:25Z",
+   "path": "data/raw/outlooks/2023-08_ASON.zip",
+   "sha256": "7d5111cffcfffefcf322df9a0e39fcde67a6196394763ac952494df6f829db27",
+   "stored": "data/raw/outlooks/2023-08_ASON.zip",
+   "stored_sha256": "7d5111cffcfffefcf322df9a0e39fcde67a6196394763ac952494df6f829db27"
+  },
+  {
+   "bytes": 2410676,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:57:48Z",
+   "path": "data/raw/outlooks/2023-09_SOND.zip",
+   "sha256": "eae4859f99e8cc360a478f89292ce7b4c2134f9c0af74bb9ad25a3a3b05c77cb",
+   "stored": "data/raw/outlooks/2023-09_SOND.zip",
+   "stored_sha256": "eae4859f99e8cc360a478f89292ce7b4c2134f9c0af74bb9ad25a3a3b05c77cb"
+  },
+  {
+   "bytes": 2607597,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:57Z",
+   "path": "data/raw/outlooks/2023-10_ONDJ.zip",
+   "sha256": "f9d9135f0ac61db73f53166fbd54d4d5029f66d0ea93307e2957aeb8835545e1",
+   "stored": "data/raw/outlooks/2023-10_ONDJ.zip",
+   "stored_sha256": "f9d9135f0ac61db73f53166fbd54d4d5029f66d0ea93307e2957aeb8835545e1"
+  },
+  {
+   "bytes": 2164613,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:52Z",
+   "path": "data/raw/outlooks/2023-11_NDJF.zip",
+   "sha256": "061572aaa1b3fc41fadf927439b500b3b36ac1cfbf9b90c5af1542131dc7dd40",
+   "stored": "data/raw/outlooks/2023-11_NDJF.zip",
+   "stored_sha256": "061572aaa1b3fc41fadf927439b500b3b36ac1cfbf9b90c5af1542131dc7dd40"
+  },
+  {
+   "bytes": 2384478,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:58:05Z",
+   "path": "data/raw/outlooks/2023-12_DJFM.zip",
+   "sha256": "9e9c492e000b82934e177201650718cacaec2e685d86e3f5529ed0edba870e94",
+   "stored": "data/raw/outlooks/2023-12_DJFM.zip",
+   "stored_sha256": "9e9c492e000b82934e177201650718cacaec2e685d86e3f5529ed0edba870e94"
+  },
+  {
+   "bytes": 2391740,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:59:57Z",
+   "path": "data/raw/outlooks/2024-01_JFMA.zip",
+   "sha256": "ccbb8dde3d38681bec27386bd4a903d879faeb572923348afd07cfba9af47fd5",
+   "stored": "data/raw/outlooks/2024-01_JFMA.zip",
+   "stored_sha256": "ccbb8dde3d38681bec27386bd4a903d879faeb572923348afd07cfba9af47fd5"
+  },
+  {
+   "bytes": 2296256,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:59:49Z",
+   "path": "data/raw/outlooks/2024-02_FMAM.zip",
+   "sha256": "0a4014c55b4db42634cc05bf8f7dd4b33441218e2dc403449627ab940a421fb1",
+   "stored": "data/raw/outlooks/2024-02_FMAM.zip",
+   "stored_sha256": "0a4014c55b4db42634cc05bf8f7dd4b33441218e2dc403449627ab940a421fb1"
+  },
+  {
+   "bytes": 5063094,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:00:29Z",
+   "path": "data/raw/outlooks/2024-03_MAMJ.zip",
+   "sha256": "59aaddb7d3fae4ba6463cdfac75c0b99d07487e3334fde3fec900b9320da905b",
+   "stored": "data/raw/outlooks/2024-03_MAMJ.zip",
+   "stored_sha256": "59aaddb7d3fae4ba6463cdfac75c0b99d07487e3334fde3fec900b9320da905b"
+  },
+  {
+   "bytes": 4916005,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:59:07Z",
+   "path": "data/raw/outlooks/2024-04_AMJJ.zip",
+   "sha256": "00af1ffa5fa3a7fd818988a8bc081b17960e93a9d4499dd28c11bb94d76f667d",
+   "stored": "data/raw/outlooks/2024-04_AMJJ.zip",
+   "stored_sha256": "00af1ffa5fa3a7fd818988a8bc081b17960e93a9d4499dd28c11bb94d76f667d"
+  },
+  {
+   "bytes": 5681367,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:00:46Z",
+   "path": "data/raw/outlooks/2024-05_MJJA.zip",
+   "sha256": "52ffa567cea8bbc6e86c647a718c0e24d529be10cd0ed037818c17c45cddf0f3",
+   "stored": "data/raw/outlooks/2024-05_MJJA.zip",
+   "stored_sha256": "52ffa567cea8bbc6e86c647a718c0e24d529be10cd0ed037818c17c45cddf0f3"
+  },
+  {
+   "bytes": 6254175,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:00:20Z",
+   "path": "data/raw/outlooks/2024-06_JJAS.zip",
+   "sha256": "f925e1114f38aa8f3dcc3d3c2f6e814299173e65ce55a4bafb772010060fc56a",
+   "stored": "data/raw/outlooks/2024-06_JJAS.zip",
+   "stored_sha256": "f925e1114f38aa8f3dcc3d3c2f6e814299173e65ce55a4bafb772010060fc56a"
+  },
+  {
+   "bytes": 6315715,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:00:09Z",
+   "path": "data/raw/outlooks/2024-07_JASO.zip",
+   "sha256": "841a467fa7f600d2258611e272cbe4711a769079e869ef87bca737d022bcf454",
+   "stored": "data/raw/outlooks/2024-07_JASO.zip",
+   "stored_sha256": "841a467fa7f600d2258611e272cbe4711a769079e869ef87bca737d022bcf454"
+  },
+  {
+   "bytes": 6277033,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:59:31Z",
+   "path": "data/raw/outlooks/2024-08_ASON.zip",
+   "sha256": "4fe0a79719896298d43ab800cf121c3273d2bcd83c7d45b5fd9d85fd8187d6fe",
+   "stored": "data/raw/outlooks/2024-08_ASON.zip",
+   "stored_sha256": "4fe0a79719896298d43ab800cf121c3273d2bcd83c7d45b5fd9d85fd8187d6fe"
+  },
+  {
+   "bytes": 6461678,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:01:19Z",
+   "path": "data/raw/outlooks/2024-09_SOND.zip",
+   "sha256": "6c13c29cef7f3504b748aa5508e35adc168b18c06d86ebe5aee7fc0ca2b3f9eb",
+   "stored": "data/raw/outlooks/2024-09_SOND.zip",
+   "stored_sha256": "6c13c29cef7f3504b748aa5508e35adc168b18c06d86ebe5aee7fc0ca2b3f9eb"
+  },
+  {
+   "bytes": 6182881,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:01:07Z",
+   "path": "data/raw/outlooks/2024-10_ONDJ.zip",
+   "sha256": "9c6ba8c6fbfd91d9ead4aa59220620afb1bc85ebe9e3734225323123d4ca77b8",
+   "stored": "data/raw/outlooks/2024-10_ONDJ.zip",
+   "stored_sha256": "9c6ba8c6fbfd91d9ead4aa59220620afb1bc85ebe9e3734225323123d4ca77b8"
+  },
+  {
+   "bytes": 5961768,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:00:57Z",
+   "path": "data/raw/outlooks/2024-11_NDJF.zip",
+   "sha256": "72abc1189f91970a2fca37a2edfdda5570287ab596b6b6ff5a82a302762df02d",
+   "stored": "data/raw/outlooks/2024-11_NDJF.zip",
+   "stored_sha256": "72abc1189f91970a2fca37a2edfdda5570287ab596b6b6ff5a82a302762df02d"
+  },
+  {
+   "bytes": 6152954,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:59:41Z",
+   "path": "data/raw/outlooks/2024-12_DJFM.zip",
+   "sha256": "6a1b2276574f47937934a7d888b1dafff7942a6202a4c5d997023be658c2ad93",
+   "stored": "data/raw/outlooks/2024-12_DJFM.zip",
+   "stored_sha256": "6a1b2276574f47937934a7d888b1dafff7942a6202a4c5d997023be658c2ad93"
+  },
+  {
+   "bytes": 6042792,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:03:14Z",
+   "path": "data/raw/outlooks/2025-01_JFMA.zip",
+   "sha256": "96b84f1145b089d69f02231a9fb4982b4b195e10a78e961ec592004cfb12b689",
+   "stored": "data/raw/outlooks/2025-01_JFMA.zip",
+   "stored_sha256": "96b84f1145b089d69f02231a9fb4982b4b195e10a78e961ec592004cfb12b689"
+  },
+  {
+   "bytes": 6178232,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:02:45Z",
+   "path": "data/raw/outlooks/2025-02_FMAM.zip",
+   "sha256": "8da9403df123ce7ced07e7cc97f6cbd2e477c3e34fb1f1b97facb947f081bf9d",
+   "stored": "data/raw/outlooks/2025-02_FMAM.zip",
+   "stored_sha256": "8da9403df123ce7ced07e7cc97f6cbd2e477c3e34fb1f1b97facb947f081bf9d"
+  },
+  {
+   "bytes": 6216568,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:03:41Z",
+   "path": "data/raw/outlooks/2025-03_MAMJ.zip",
+   "sha256": "5cf1ed9f7730dca167b82b2cbc6c3ad7f0a7ea1c566fef967aa6614cd3e292f6",
+   "stored": "data/raw/outlooks/2025-03_MAMJ.zip",
+   "stored_sha256": "5cf1ed9f7730dca167b82b2cbc6c3ad7f0a7ea1c566fef967aa6614cd3e292f6"
+  },
+  {
+   "bytes": 6144278,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:01:29Z",
+   "path": "data/raw/outlooks/2025-04_AMJJ.zip",
+   "sha256": "457a05de272f34bb2ccd48e5866dbd53dac12599969ef05cf76ee849f22d7c61",
+   "stored": "data/raw/outlooks/2025-04_AMJJ.zip",
+   "stored_sha256": "457a05de272f34bb2ccd48e5866dbd53dac12599969ef05cf76ee849f22d7c61"
+  },
+  {
+   "bytes": 6849414,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:03:46Z",
+   "path": "data/raw/outlooks/2025-05_MJJA.zip",
+   "sha256": "9b08f04728af98c7e0231308ca26f9545cf71349fa7767121a70c3753cddeaaa",
+   "stored": "data/raw/outlooks/2025-05_MJJA.zip",
+   "stored_sha256": "9b08f04728af98c7e0231308ca26f9545cf71349fa7767121a70c3753cddeaaa"
+  },
+  {
+   "bytes": 6740741,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:03:34Z",
+   "path": "data/raw/outlooks/2025-06_JJAS.zip",
+   "sha256": "c6525733c5365311d6977ea27bb24dffe1999938b3c727783ba84da783c9c412",
+   "stored": "data/raw/outlooks/2025-06_JJAS.zip",
+   "stored_sha256": "c6525733c5365311d6977ea27bb24dffe1999938b3c727783ba84da783c9c412"
+  },
+  {
+   "bytes": 6410558,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:03:22Z",
+   "path": "data/raw/outlooks/2025-07_JASO.zip",
+   "sha256": "6d2e136c9fa6b678fd0b9139ceaa62ab430c3ed3fc5d24bccb002ad52f4f09ac",
+   "stored": "data/raw/outlooks/2025-07_JASO.zip",
+   "stored_sha256": "6d2e136c9fa6b678fd0b9139ceaa62ab430c3ed3fc5d24bccb002ad52f4f09ac"
+  },
+  {
+   "bytes": 6487352,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:01:37Z",
+   "path": "data/raw/outlooks/2025-08_ASON.zip",
+   "sha256": "33ab57cb1bd74b6f7822fcc055a9fca1beb765f0778b6b1ee4959cd4e6bd22f1",
+   "stored": "data/raw/outlooks/2025-08_ASON.zip",
+   "stored_sha256": "33ab57cb1bd74b6f7822fcc055a9fca1beb765f0778b6b1ee4959cd4e6bd22f1"
+  },
+  {
+   "bytes": 6441337,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:05:21Z",
+   "path": "data/raw/outlooks/2025-09_SOND.zip",
+   "sha256": "c77263dcf9b7e8ced562f05e4e41a0070eae10fa6821d26f91003bf7151f1af8",
+   "stored": "data/raw/outlooks/2025-09_SOND.zip",
+   "stored_sha256": "c77263dcf9b7e8ced562f05e4e41a0070eae10fa6821d26f91003bf7151f1af8"
+  },
+  {
+   "bytes": 6134525,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:05:10Z",
+   "path": "data/raw/outlooks/2025-10_ONDJ.zip",
+   "sha256": "24d9ddf0e0a32c49502108b24f21754fcb9b8c33d07bbec38702330fd24b7111",
+   "stored": "data/raw/outlooks/2025-10_ONDJ.zip",
+   "stored_sha256": "24d9ddf0e0a32c49502108b24f21754fcb9b8c33d07bbec38702330fd24b7111"
+  },
+  {
+   "bytes": 6071068,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:04:51Z",
+   "path": "data/raw/outlooks/2025-11_NDJF.zip",
+   "sha256": "e03da0031743a5dd6c556e3272601dc000d12572fc0410bd5bf01c889a601539",
+   "stored": "data/raw/outlooks/2025-11_NDJF.zip",
+   "stored_sha256": "e03da0031743a5dd6c556e3272601dc000d12572fc0410bd5bf01c889a601539"
+  },
+  {
+   "bytes": 6111213,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:02:18Z",
+   "path": "data/raw/outlooks/2025-12_DJFM.zip",
+   "sha256": "ddaf56a63f96e89f3c0cf1e00f863a17155e810b1271c1142ee50c23fecf4624",
+   "stored": "data/raw/outlooks/2025-12_DJFM.zip",
+   "stored_sha256": "ddaf56a63f96e89f3c0cf1e00f863a17155e810b1271c1142ee50c23fecf4624"
+  },
+  {
+   "bytes": 6373751,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:06:04Z",
+   "path": "data/raw/outlooks/2026-01_JFMA.zip",
+   "sha256": "bab0b229fc4a450b877b2777f3a1a2b8cb240f3762ba5012b8fc4df70a26c7a3",
+   "stored": "data/raw/outlooks/2026-01_JFMA.zip",
+   "stored_sha256": "bab0b229fc4a450b877b2777f3a1a2b8cb240f3762ba5012b8fc4df70a26c7a3"
+  },
+  {
+   "bytes": 6071816,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:05:56Z",
+   "path": "data/raw/outlooks/2026-02_FMAM.zip",
+   "sha256": "1b1fdefc8b5ce62341e32082b5677d90efdf67288ec2ab8594f2073013184ef4",
+   "stored": "data/raw/outlooks/2026-02_FMAM.zip",
+   "stored_sha256": "1b1fdefc8b5ce62341e32082b5677d90efdf67288ec2ab8594f2073013184ef4"
+  },
+  {
+   "bytes": 6137085,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:07:16Z",
+   "path": "data/raw/outlooks/2026-03_MAMJ.zip",
+   "sha256": "a7f7b9d99cccfbb0909699a03f2082cb1a2a3db78072d6fe037ac7f0bcbb674f",
+   "stored": "data/raw/outlooks/2026-03_MAMJ.zip",
+   "stored_sha256": "a7f7b9d99cccfbb0909699a03f2082cb1a2a3db78072d6fe037ac7f0bcbb674f"
+  },
+  {
+   "bytes": 6337435,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:05:33Z",
+   "path": "data/raw/outlooks/2026-04_AMJJ.zip",
+   "sha256": "8faec37be6dee34319b0ff7575a16132a0fca7d537b4c39419114bba1779a654",
+   "stored": "data/raw/outlooks/2026-04_AMJJ.zip",
+   "stored_sha256": "8faec37be6dee34319b0ff7575a16132a0fca7d537b4c39419114bba1779a654"
+  },
+  {
+   "bytes": 6331635,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:07:30Z",
+   "path": "data/raw/outlooks/2026-05_MJJA.zip",
+   "sha256": "bd1804296d0f87b1d3d0839ad56999a84e68afb50a273463efb242f52364c9b0",
+   "stored": "data/raw/outlooks/2026-05_MJJA.zip",
+   "stored_sha256": "bd1804296d0f87b1d3d0839ad56999a84e68afb50a273463efb242f52364c9b0"
+  },
+  {
+   "bytes": 6493382,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:06:38Z",
+   "path": "data/raw/outlooks/2026-06_JJAS.zip",
+   "sha256": "8e24ba2bd48145e1f11fba5ff6ec90c4898d3ed8a31e6f11d6f50ea6bb0b9d7f",
+   "stored": "data/raw/outlooks/2026-06_JJAS.zip",
+   "stored_sha256": "8e24ba2bd48145e1f11fba5ff6ec90c4898d3ed8a31e6f11d6f50ea6bb0b9d7f"
+  },
+  {
+   "bytes": 6602699,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:06:13Z",
+   "path": "data/raw/outlooks/2026-07_JASO.zip",
+   "sha256": "006c087c33d849fc4da08590185582a1ceb8e112700c4155645a8350f4fb829a",
+   "stored": "data/raw/outlooks/2026-07_JASO.zip",
+   "stored_sha256": "006c087c33d849fc4da08590185582a1ceb8e112700c4155645a8350f4fb829a"
+  },
+  {
+   "bytes": 6682044,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:05:42Z",
+   "path": "data/raw/outlooks/2026-08_ASON.zip",
+   "sha256": "87c0ace26336ff95943d09701fa08bc5cdb51d7e67a3cc653a1cd0e6a8858ef1",
+   "stored": "data/raw/outlooks/2026-08_ASON.zip",
+   "stored_sha256": "87c0ace26336ff95943d09701fa08bc5cdb51d7e67a3cc653a1cd0e6a8858ef1"
+  },
+  {
+   "bytes": 6533933,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:07:39Z",
+   "path": "data/raw/outlooks/2026-09_SOND.zip",
+   "sha256": "a8c9996620c3a042797c2df529dec571d98777b508e0e9b7a26d14ea9dedce71",
+   "stored": "data/raw/outlooks/2026-09_SOND.zip",
+   "stored_sha256": "a8c9996620c3a042797c2df529dec571d98777b508e0e9b7a26d14ea9dedce71"
+  },
+  {
+   "bytes": 8115,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:56:19Z",
+   "path": "PLAN.md",
+   "sha256": "22a872afbff435c7a158f6fa8ba886ddde21f20d406e16e981976cba63260ae8",
+   "stored": "PLAN.md.gz",
+   "stored_sha256": "773731f73c949719e637e479dc77e157a273e7e94cec7d0c20f04acf0f41ea42"
+  },
+  {
+   "bytes": 300,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:56:21Z",
+   "path": "data/plan_seal.json",
+   "sha256": "69ebe2223c416a215160b382230534df4e76bc5448512bf5cc9b22100181154b",
+   "stored": "data/plan_seal.json.gz",
+   "stored_sha256": "99aebc8357a79dbc2b165e898bf1b780da99084652da939389761c66c4490705"
+  }
+ ],
+ "made": "2026-11-22T15:55:45Z",
+ "mode": "fetch",
+ "name": "PROMETHEUS",
+ "reference": [],
+ "sources": [
+  "NIFC Significant Wildland Fire Potential Outlook monthly archive, one ZIP per issue, linked from https://www.nifc.gov/nicc/predictive-services/outlooks (data/raw/outlooks/YYYY-MM_CODE.zip, listed with sha256 in data/outlook_manifest.json)."
+ ],
+ "why_not_included": "its inputs are the NIFC monthly outlook archive ZIPs, about 270 MB of maps and PDFs, more than a public kit carries. Every source is public and listed below, and each file is named in MANIFEST.json with its sha256"
+}

@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/pkginstall/live.json",
+ "feed_sha256": "1c9ace68c7f2e1c14ddcfc3f024adc649cf187fe260b0747c28bbe267b0f9395",
+ "headline": {
+  "desk": "PKGINSTALL",
+  "display": "523 of 524",
+  "hi": 0.0107,
+  "keys": [],
+  "lo": 0.0003,
+  "n": 1,
+  "of": 524,
+  "outcome": "CONSISTENT",
+  "value": 0.0019
+ },
+ "read_at": "2026-11-22T16:02:34Z",
+ "stamp": "22 Nov 14:45"
+}

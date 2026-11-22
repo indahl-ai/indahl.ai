@@ -1,0 +1,145 @@
+path,label,outcome,n,of,share,lo,hi,series,geo,step,width_basis,rows,scored,inside,above,below,reason,cannot_tell,median_abs_rev_pct,median_abs_miss_half_widths,share_rse_minus_half,share_rse_plus_half,p90_abs_miss_half_widths,max_abs_miss_half_widths,same_release_rows,first_month,last_month
+/cells[0],cells[0],ABOVE,,,1.0,0.9682096231761248,1.0,SALES,US,S1,as served 2026,129,117,117,0,0,,12,3.1377899045020468,0.22481610042984843,0.9914529914529915,1.0,0.5443378109205506,0.9645515541042845,3,2016-01,2026-09
+/cells[0]/counted_in,counted_in,,,,1.0,0.9708620041018919,1.0,,,,,,128,128,,,,,,,,,,,,,
+/cells[0]/without_same_release,without_same_release,,,,,0.9674003068525885,1.0,,,,,,114,114,,,,,,,,,,,,,
+/cells[1],cells[1],ABOVE,,,1.0,0.9647046717431569,1.0,SALES,US,S2,as served 2026,129,105,105,0,0,,24,3.819918144611187,0.2896088350001931,0.9809523809523809,1.0,0.6521599227278967,0.9763143779348246,0,2016-01,2026-09
+/cells[1]/counted_in,counted_in,,,,1.0,0.9706393073762475,1.0,,,,,,127,127,,,,,,,,,,,,,
+/cells[1]/without_same_release,without_same_release,,,,,0.9647046717431569,1.0,,,,,,105,105,,,,,,,,,,,,,
+/cells[2],cells[2],ABOVE,,,0.984375,0.9448179261814565,0.9957046402922513,SALES,US,S3,as served 2026,129,128,126,1,1,,1,3.579928434717484,0.26922342207401184,0.96875,0.984375,0.6515362562752067,1.224030959170244,0,2016-01,2026-09
+/cells[2]/counted_in,counted_in,,,,0.984375,0.9448179261814565,0.9957046402922513,,,,,,128,126,,,,,,,,,,,,,
+/cells[2]/without_same_release,without_same_release,,,,,0.9448179261814565,0.9957046402922513,,,,,,128,126,,,,,,,,,,,,,
+/cells[3],cells[3],ABOVE,,,0.9658119658119658,0.9153808812238059,0.9866263745556608,SALES,Northeast,S1,as served 2026,129,117,113,4,0,,12,12.0,0.2554213174631555,0.9658119658119658,0.9658119658119658,0.6397267035564906,3.312290546333099,3,2016-01,2026-09
+/cells[3]/counted_in,counted_in,,,,0.9609375,0.9118117730873819,0.9832016369440498,,,,,,128,123,,,,,,,,,,,,,
+/cells[3]/without_same_release,without_same_release,,,,,0.9132402851480909,0.986272280872737,,,,,,114,110,,,,,,,,,,,,,
+/cells[4],cells[4],CANNOT_TELL,,,0.9238095238095239,0.8568122391570511,0.9608898159395297,SALES,Northeast,S2,as served 2026,129,105,97,8,0,STRADDLES_EDGE,24,14.583333333333334,0.3117449925960564,0.9238095238095239,0.9238095238095239,0.7147867330238149,3.896812407450705,0,2016-01,2026-09
+/cells[4]/counted_in,counted_in,,,,0.9291338582677166,0.8707960129490254,0.9622723689723208,,,,,,127,118,,,,,,,,,,,,,
+/cells[4]/without_same_release,without_same_release,,,,,0.8568122391570511,0.9608898159395297,,,,,,105,97,,,,,,,,,,,,,
+/cells[5],cells[5],CANNOT_TELL,,,0.9296875,0.871763878213073,0.9625706565619905,SALES,Northeast,S3,as served 2026,129,128,119,9,0,STRADDLES_EDGE,1,14.760348583877997,0.30907325578521916,0.9296875,0.9296875,0.8378146676019016,4.091653027823241,0,2016-01,2026-09
+/cells[5]/counted_in,counted_in,,,,0.9296875,0.871763878213073,0.9625706565619905,,,,,,128,119,,,,,,,,,,,,,
+/cells[5]/without_same_release,without_same_release,,,,,0.871763878213073,0.9625706565619905,,,,,,128,119,,,,,,,,,,,,,
+/cells[6],cells[6],ABOVE,,,1.0,0.9682096231761248,1.0,SALES,Midwest,S1,as served 2026,129,117,117,0,0,,12,5.263157894736842,0.15547384541235548,1.0,1.0,0.45252657481209724,0.8237934266965885,3,2016-01,2026-09
+/cells[6]/counted_in,counted_in,,,,1.0,0.9708620041018919,1.0,,,,,,128,128,,,,,,,,,,,,,
+/cells[6]/without_same_release,without_same_release,,,,,0.9674003068525885,1.0,,,,,,114,114,,,,,,,,,,,,,
+/cells[7],cells[7],ABOVE,,,1.0,0.9647046717431569,1.0,SALES,Midwest,S2,as served 2026,129,105,105,0,0,,24,6.422018348623854,0.19274024589800573,0.9904761904761905,1.0,0.581814023218954,0.994233446013124,0,2016-01,2026-09
+/cells[7]/counted_in,counted_in,,,,1.0,0.9706393073762475,1.0,,,,,,127,127,,,,,,,,,,,,,
+/cells[7]/without_same_release,without_same_release,,,,,0.9647046717431569,1.0,,,,,,105,105,,,,,,,,,,,,,
+/cells[8],cells[8],ABOVE,,,0.984375,0.9448179261814565,0.9957046402922513,SALES,Midwest,S3,as served 2026,129,128,126,2,0,,1,5.985074626865671,0.18405855482190425,0.984375,0.984375,0.5639136819691654,2.3182731440935553,0,2016-01,2026-09
+/cells[8]/counted_in,counted_in,,,,0.984375,0.9448179261814565,0.9957046402922513,,,,,,128,126,,,,,,,,,,,,,
+/cells[8]/without_same_release,without_same_release,,,,,0.9448179261814565,0.9957046402922513,,,,,,128,126,,,,,,,,,,,,,
+/cells[9],cells[9],ABOVE,,,1.0,0.9682096231761248,1.0,SALES,South,S1,as served 2026,129,117,117,0,0,,12,4.600484261501211,0.22953051299186844,1.0,1.0,0.5443813627119682,0.9282465422816298,3,2016-01,2026-09
+/cells[9]/counted_in,counted_in,,,,1.0,0.9708620041018919,1.0,,,,,,128,128,,,,,,,,,,,,,
+/cells[9]/without_same_release,without_same_release,,,,,0.9674003068525885,1.0,,,,,,114,114,,,,,,,,,,,,,
+/cells[10],cells[10],ABOVE,,,0.9904761904761905,0.9480124705673876,0.9983168740949471,SALES,South,S2,as served 2026,129,105,104,1,0,,24,4.943820224719101,0.2522916491464133,0.9809523809523809,0.9904761904761905,0.6236175031578799,1.0385710616849122,0,2016-01,2026-09
+/cells[10]/counted_in,counted_in,,,,0.9921259842519685,0.9567449252236082,0.9986087237687615,,,,,,127,126,,,,,,,,,,,,,
+/cells[10]/without_same_release,without_same_release,,,,,0.9480124705673876,0.9983168740949471,,,,,,105,104,,,,,,,,,,,,,
+/cells[11],cells[11],ABOVE,,,0.984375,0.9448179261814565,0.9957046402922513,SALES,South,S3,as served 2026,129,128,126,1,1,,1,4.529513053607151,0.23879857367368934,0.9765625,0.9921875,0.6170392912384026,1.1714924941711882,0,2016-01,2026-09
+/cells[11]/counted_in,counted_in,,,,0.984375,0.9448179261814565,0.9957046402922513,,,,,,128,126,,,,,,,,,,,,,
+/cells[11]/without_same_release,without_same_release,,,,,0.9448179261814565,0.9957046402922513,,,,,,128,126,,,,,,,,,,,,,
+/cells[12],cells[12],ABOVE,,,0.9914529914529915,0.9531693460245405,0.9984896853024199,SALES,West,S1,as served 2026,129,117,116,1,0,,12,4.639175257731959,0.22005528889133394,0.9914529914529915,1.0,0.5687088953265739,1.0131712259371835,3,2016-01,2026-09
+/cells[12]/counted_in,counted_in,,,,0.9921875,0.9570726816506786,0.998619603637121,,,,,,128,127,,,,,,,,,,,,,
+/cells[12]/without_same_release,without_same_release,,,,,0.9519784746833306,0.9984498969613178,,,,,,114,113,,,,,,,,,,,,,
+/cells[13],cells[13],ABOVE,,,1.0,0.9647046717431569,1.0,SALES,West,S2,as served 2026,129,105,105,0,0,,24,4.827586206896552,0.22890366589220928,1.0,1.0,0.5866219396605432,0.8183306055646481,0,2016-01,2026-09
+/cells[13]/counted_in,counted_in,,,,1.0,0.9706393073762475,1.0,,,,,,127,127,,,,,,,,,,,,,
+/cells[13]/without_same_release,without_same_release,,,,,0.9647046717431569,1.0,,,,,,105,105,,,,,,,,,,,,,
+/cells[14],cells[14],ABOVE,,,0.9765625,0.9333551190997279,0.9919977285598879,SALES,West,S3,as served 2026,129,128,125,3,0,,1,6.5875120540019285,0.28000071421695394,0.96875,0.984375,0.7981439019139653,1.0965056557761723,0,2016-01,2026-09
+/cells[14]/counted_in,counted_in,,,,0.9765625,0.9333551190997279,0.9919977285598879,,,,,,128,125,,,,,,,,,,,,,
+/cells[14]/without_same_release,without_same_release,,,,,0.9333551190997279,0.9919977285598879,,,,,,128,125,,,,,,,,,,,,,
+/cells[15],cells[15],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S1,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[15]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[15]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[16],cells[16],ABOVE,,,1.0,0.9684705387979147,1.0,STARTS,US,S1,as served 2026,129,118,118,0,0,,11,1.197518368571,0.13685500899217384,1.0,1.0,0.4040284164723916,0.7078319523670733,3,2016-01,2026-09
+/cells[16]/counted_in,counted_in,,,,1.0,0.9710813480114663,1.0,,,,,,129,129,,,,,,,,,,,,,
+/cells[16]/without_same_release,without_same_release,,,,,0.9676746189886368,1.0,,,,,,115,115,,,,,,,,,,,,,
+/cells[17],cells[17],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S2,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[17]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[17]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[18],cells[18],ABOVE,,,0.9905660377358491,0.9484851921062201,0.9983327712155086,STARTS,US,S2,as served 2026,129,106,105,1,0,,23,1.6611927591141606,0.18907756070375425,0.9905660377358491,1.0,0.4874429071977076,1.0630529408541876,0,2016-01,2026-09
+/cells[18]/counted_in,counted_in,,,,0.9921875,0.9570726816506786,0.998619603637121,,,,,,128,127,,,,,,,,,,,,,
+/cells[18]/without_same_release,without_same_release,,,,,0.9484851921062201,0.9983327712155086,,,,,,106,105,,,,,,,,,,,,,
+/cells[19],cells[19],CANNOT_TELL,,,,0.0,1.0,STARTS,US,S3,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[19]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[19]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[20],cells[20],ABOVE,,,0.9922480620155039,0.9573955085729391,0.9986303146631554,STARTS,US,S3,as served 2026,129,129,128,1,0,,0,2.05761316872428,0.24561726689386268,0.9922480620155039,1.0,0.5342333720170254,1.0630529408541876,0,2016-01,2026-09
+/cells[20]/counted_in,counted_in,,,,0.9922480620155039,0.9573955085729391,0.9986303146631554,,,,,,129,128,,,,,,,,,,,,,
+/cells[20]/without_same_release,without_same_release,,,,,0.9573955085729391,0.9986303146631554,,,,,,129,128,,,,,,,,,,,,,
+/cells[21],cells[21],CANNOT_TELL,,,,0.0,1.0,STARTS,Northeast,S1,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[21]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[21]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[22],cells[22],CANNOT_TELL,,,,0.0,1.0,STARTS,Northeast,S2,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[22]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[22]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[23],cells[23],CANNOT_TELL,,,,0.0,1.0,STARTS,Northeast,S3,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[23]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[23]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[24],cells[24],CANNOT_TELL,,,,0.0,1.0,STARTS,Midwest,S1,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[24]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[24]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[25],cells[25],CANNOT_TELL,,,,0.0,1.0,STARTS,Midwest,S2,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[25]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[25]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[26],cells[26],CANNOT_TELL,,,,0.0,1.0,STARTS,Midwest,S3,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[26]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[26]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[27],cells[27],CANNOT_TELL,,,,0.0,1.0,STARTS,South,S1,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[27]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[27]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[28],cells[28],CANNOT_TELL,,,,0.0,1.0,STARTS,South,S2,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[28]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[28]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[29],cells[29],CANNOT_TELL,,,,0.0,1.0,STARTS,South,S3,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[29]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[29]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[30],cells[30],CANNOT_TELL,,,,0.0,1.0,STARTS,West,S1,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[30]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[30]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[31],cells[31],CANNOT_TELL,,,,0.0,1.0,STARTS,West,S2,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[31]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[31]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[32],cells[32],CANNOT_TELL,,,,0.0,1.0,STARTS,West,S3,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[32]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[32]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[33],cells[33],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S1,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[33]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[33]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[34],cells[34],ABOVE,,,0.9830508474576272,0.9403013738539171,0.9953396551542378,COMPLETIONS,US,S1,as served 2026,129,118,116,1,1,,11,1.4646736453243239,0.15502622802515703,0.9830508474576272,0.9915254237288136,0.45955924881686006,1.3521264127365877,3,2016-01,2026-09
+/cells[34]/counted_in,counted_in,,,,0.9844961240310077,0.9452322795481141,0.995738018912609,,,,,,129,127,,,,,,,,,,,,,
+/cells[34]/without_same_release,without_same_release,,,,,0.9387986235183484,0.9952177478532923,,,,,,115,113,,,,,,,,,,,,,
+/cells[35],cells[35],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S2,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[35]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[35]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[36],cells[36],ABOVE,,,1.0,0.9650260010779157,1.0,COMPLETIONS,US,S2,as served 2026,129,106,106,0,0,,23,1.6248371689101173,0.17655936452497795,0.9905660377358491,1.0,0.471467390732911,0.9641723054940433,0,2016-01,2026-09
+/cells[36]/counted_in,counted_in,,,,1.0,0.9708620041018919,1.0,,,,,,128,128,,,,,,,,,,,,,
+/cells[36]/without_same_release,without_same_release,,,,,0.9650260010779157,1.0,,,,,,106,106,,,,,,,,,,,,,
+/cells[37],cells[37],CANNOT_TELL,,,,0.0,1.0,COMPLETIONS,US,S3,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[37]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[37]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[38],cells[38],ABOVE,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,COMPLETIONS,US,S3,as served 2026,129,129,125,3,1,,0,2.259522272433828,0.23812212285104384,0.9689922480620154,1.0,0.5452457353034618,1.073897577018592,0,2016-01,2026-09
+/cells[38]/counted_in,counted_in,,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
+/cells[38]/without_same_release,without_same_release,,,,,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
+/cells[39],cells[39],CANNOT_TELL,,,,0.0,1.0,RETAIL,US,S1,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[39]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[39]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[40],cells[40],ABOVE,,,0.9741379310344828,0.9267119938162736,0.9911662721614838,RETAIL,US,S1,as served 2026,129,116,113,3,0,,13,0.22602058532999836,0.19024856219162328,0.9655172413793104,0.9741379310344828,0.4641287978012322,1.7410351035030625,0,2016-01,2026-09
+/cells[40]/counted_in,counted_in,,,,0.9689922480620154,0.9229820910947879,0.9878771578151919,,,,,,129,125,,,,,,,,,,,,,
+/cells[40]/without_same_release,without_same_release,,,,,0.9267119938162736,0.9911662721614838,,,,,,116,113,,,,,,,,,,,,,
+/cells[41],cells[41],CANNOT_TELL,,,,0.0,1.0,RETAIL,US,S2,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[41]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[41]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[42],cells[42],CANNOT_TELL,,,0.9519230769230769,0.8923565255405173,0.9792922630531236,RETAIL,US,S2,as served 2026,129,104,99,5,0,STRADDLES_EDGE,25,0.25619915872007903,0.20030972814665024,0.9519230769230769,0.9711538461538461,0.5677781637422468,1.7793661196867916,0,2016-01,2026-09
+/cells[42]/counted_in,counted_in,,,,0.921875,0.8621517266143844,0.957013089346587,,,,,,128,118,,,,,,,,,,,,,
+/cells[42]/without_same_release,without_same_release,,,,,0.8923565255405173,0.9792922630531236,,,,,,104,99,,,,,,,,,,,,,
+/cells[43],cells[43],CANNOT_TELL,,,,0.0,1.0,RETAIL,US,S3,as printed,1,0,0,0,0,NO_INTERVAL_FORMABLE,1,,,,,,,0,2026-10,2026-10
+/cells[43]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[43]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[44],cells[44],CANNOT_TELL,,,1.0,0.20654329147389294,1.0,RETAIL,US,S3,as served 2026,129,1,1,0,0,TOO_WIDE_TO_RESOLVE,128,0.21690663753102263,0.11248593970389598,1.0,1.0,,0.11248593970389598,0,2016-01,2026-09
+/cells[44]/counted_in,counted_in,,,,0.03875968992248062,0.01666725738662231,0.08752901847876926,,,,,,129,5,,,,,,,,,,,,,
+/cells[44]/without_same_release,without_same_release,,,,,0.20654329147389294,1.0,,,,,,1,1,,,,,,,,,,,,,
+/cells[45],cells[45],CANNOT_TELL,,,,0.0,1.0,PERMITS,US,S1,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[45]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[45]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[46],cells[46],CANNOT_TELL,,,,0.0,1.0,PERMITS,US,S2,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[46]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[46]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[47],cells[47],CANNOT_TELL,,,,0.0,1.0,PERMITS,US,S3,none,130,0,0,0,0,NO_INTERVAL_FORMABLE,130,,,,,,,0,2016-01,2026-10
+/cells[47]/counted_in,counted_in,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,
+/cells[47]/without_same_release,without_same_release,,,,,0.0,1.0,,,,,,0,0,,,,,,,,,,,,,

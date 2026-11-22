@@ -1,0 +1,53 @@
+{
+ "cwd": "",
+ "desk": "voightkampff",
+ "headline": {
+  "field": [
+   "voightkampff",
+   "fpr_outcomes",
+   "counts",
+   "CANNOT_TELL"
+  ],
+  "keys": [
+   [
+    "voightkampff",
+    "fpr_outcomes",
+    "counts"
+   ],
+   [
+    "voightkampff",
+    "fpr_outcomes",
+    "nothing_returned"
+   ],
+   [
+    "voightkampff",
+    "fpr_outcomes",
+    "no_test"
+   ],
+   [
+    "voightkampff",
+    "fpr_outcomes",
+    "cannot_tell_by_reason"
+   ]
+  ],
+  "n": [
+   "voightkampff",
+   "fpr_outcomes",
+   "counts",
+   "CANNOT_TELL"
+  ],
+  "of": [
+   "voightkampff",
+   "fpr_outcomes",
+   "pairings"
+  ],
+  "show": "n_of"
+ },
+ "name": "VOIGHT-KAMPFF",
+ "output": "data/voightkampff_live.json",
+ "steps": [
+  [
+   "vk_tick.py"
+  ]
+ ]
+}

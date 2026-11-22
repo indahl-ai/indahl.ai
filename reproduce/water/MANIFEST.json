@@ -1,0 +1,44 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/water/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "water_tick.py lines 34, 180 to 186, 213 to 220 and 464, the verdict and the six-month band cells",
+   "path": "water_score.py",
+   "sha256": "d540628ed4df7378c9e2fed09c1f4a6ca26c519598cd8d12303b0fdaca7705d7"
+  }
+ ],
+ "desk": "water",
+ "inputs": [
+  {
+   "bytes": 5292832,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:15:06Z",
+   "path": "data/water.json",
+   "sha256": "a62a8000782249438c1dbfab6ce4239bfe5a92107d5b85c021ca671135240a02",
+   "stored": "data/water.json.gz",
+   "stored_sha256": "a28e22140ab1b8545bbb118909803aed5006c0a2646da96649d99d833c2830db"
+  },
+  {
+   "bytes": 228772,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:15:06Z",
+   "path": "summary_water.json",
+   "sha256": "669bdd5803bea68211adf76e663d404f7ee49c9c844129a9463f5562fd6c3be7",
+   "stored": "summary_water.json.gz",
+   "stored_sha256": "f354e28b17e9fd3f035d19e8f65413e2245c5d2bb3b8af7a6690129efeb8e434"
+  }
+ ],
+ "made": "2026-11-22T16:02:45Z",
+ "mode": "inputs",
+ "name": "WATER",
+ "reference": [
+  {
+   "path": "desk/water_tick.py",
+   "sha256": "c860b179c2a50d63f94d952f6212af55eff771ce9b35e9e183ecde6186211bc0"
+  }
+ ]
+}

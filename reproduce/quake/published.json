@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/quake/live.json",
+ "feed_sha256": "8a1db8406d10e658cb35c5eefac9213ad7ca97d8c882a39a8467a6f5e82fa0bf",
+ "headline": {
+  "desk": "QUAKE",
+  "display": "30.2%",
+  "hi": 0.3728,
+  "keys": [],
+  "lo": 0.2353,
+  "n": 5272,
+  "of": 17462,
+  "outcome": "BELOW",
+  "value": 0.3019
+ },
+ "read_at": "2026-11-22T16:27:45Z",
+ "stamp": "2026-11-22T16:24:45Z"
+}

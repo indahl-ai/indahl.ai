@@ -1,0 +1,20 @@
+{
+ "feed": "https://indahl.ai/change/live.json",
+ "feed_sha256": "06ff68e556e5342bbf0d7129f96eab05da568038cb67dd866eeff7be259bf2cb",
+ "headline": {
+  "desk": "CHANGE",
+  "display": "10 of 33",
+  "hi": null,
+  "keys": [
+   10,
+   33
+  ],
+  "lo": null,
+  "n": 10,
+  "of": 33,
+  "outcome": null,
+  "value": 10
+ },
+ "read_at": "2026-11-22T16:02:32Z",
+ "stamp": "22 Nov 15:41"
+}

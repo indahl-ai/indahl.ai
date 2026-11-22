@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/credit/live.json",
+ "feed_sha256": "290c02837d22a1ffd4da5dfd98d07c2234a0bdb458515c3717149fed747508f5",
+ "headline": {
+  "desk": "CREDIT",
+  "display": "99.55%",
+  "hi": 0.996794,
+  "keys": [],
+  "lo": 0.993501,
+  "n": null,
+  "of": null,
+  "outcome": "CANNOT_TELL",
+  "value": 0.995497
+ },
+ "read_at": "2026-11-22T16:02:50Z",
+ "stamp": "2026-11-20T12:53:49Z"
+}

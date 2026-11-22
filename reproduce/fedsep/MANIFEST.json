@@ -1,0 +1,44 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/fedsep/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "fedsep_tick.py lines 24 and 49 to 69, the inside test, the triples and the pooled bootstrap",
+   "path": "fedsep_score.py",
+   "sha256": "13de91b208c82e02f1a4db1e71e2fedde4bf842c0c8d5cacb78bda51d616ecb4"
+  }
+ ],
+ "desk": "fedsep",
+ "inputs": [
+  {
+   "bytes": 4223,
+   "gzip_added": true,
+   "modified": "2026-11-22T14:41:06Z",
+   "path": "data/projections.json",
+   "sha256": "389aa46dd55e746079d0426e73bf4de42b087088ec596c0fd7cc821e6b031c3b",
+   "stored": "data/projections.json.gz",
+   "stored_sha256": "5a0500e50b1629aefbf658745929c8db8b9cb5c3d889645ea889cd1ceddb0ed6"
+  },
+  {
+   "bytes": 2431,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:28:56Z",
+   "path": "data/outcomes_day.json",
+   "sha256": "bdd302a74caf8343bf3afd7265134687ec10eaba0c29fd76adeb46f935436687",
+   "stored": "data/outcomes_day.json.gz",
+   "stored_sha256": "3e96b3c04806ad16396e55d08c10c325719f808bff1b1037356390640eda6dfb"
+  }
+ ],
+ "made": "2026-11-22T16:02:40Z",
+ "mode": "inputs",
+ "name": "FEDSEP",
+ "reference": [
+  {
+   "path": "desk/fedsep_tick.py",
+   "sha256": "259a96b68c7a3680c22993c54f913c208875a11ec4faa9bc2604a1cced65c22b"
+  }
+ ]
+}

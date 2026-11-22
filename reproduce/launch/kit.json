@@ -1,0 +1,62 @@
+{
+ "cwd": "",
+ "desk": "launch",
+ "headline": {
+  "field": [
+   "cells",
+   {
+    "lead": "1 day",
+    "who": "All providers"
+   },
+   "share"
+  ],
+  "hi": [
+   "cells",
+   {
+    "lead": "1 day",
+    "who": "All providers"
+   },
+   "hi"
+  ],
+  "lo": [
+   "cells",
+   {
+    "lead": "1 day",
+    "who": "All providers"
+   },
+   "lo"
+  ],
+  "n": [
+   "cells",
+   {
+    "lead": "1 day",
+    "who": "All providers"
+   },
+   "over_24h"
+  ],
+  "of": [
+   "cells",
+   {
+    "lead": "1 day",
+    "who": "All providers"
+   },
+   "n"
+  ],
+  "outcome": [
+   "cells",
+   {
+    "lead": "1 day",
+    "who": "All providers"
+   },
+   "outcome"
+  ],
+  "show": "of_minus_n"
+ },
+ "name": "LAUNCH",
+ "output": "out.json",
+ "steps": [
+  [
+   "launch_score.py"
+  ]
+ ]
+}

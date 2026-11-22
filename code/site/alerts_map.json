@@ -1,0 +1,4310 @@
+{
+"brands": {},
+"desks": {
+"ailuminate": [
+"AILUMINATE",
+"Do the published results stay what they say?"
+],
+"airline": [
+"AIRLINE",
+"Are schedules getting longer while flights are not?"
+],
+"airq": [
+"AIRQ",
+"Do the sensors meet the targets the EPA wrote down?"
+],
+"ares": [
+"ARES",
+"Do public conflict trackers agree on where armed violence happened?"
+],
+"argus": [
+"ARGUS",
+"Do dogs of a breed behave the way its standard says?"
+],
+"cadence": [
+"CADENCE",
+"Stated update cadence against delivered"
+],
+"campus": [
+"CAMPUS",
+"Do the pages schools published stay where they were?"
+],
+"census": [
+"CENSUS",
+"When the Census Bureau states how uncertain a first print is, does the later value stay inside?"
+],
+"change": [
+"CHANGE",
+"When a vendor says something ends on a date, does the date hold?"
+],
+"cone": [
+"CONE",
+"When the National Hurricane Center draws a cone, how often does the storm stay inside it?"
+],
+"credit": [
+"CREDIT",
+"When the CFPB states how companies answer complaints, what does its own database show?"
+],
+"deus": [
+"DEUS",
+"When a lab states a benchmark score for its own model, where does an independent rerun put it?"
+],
+"fedsep": [
+"FEDSEP",
+"Do the Fed's stated ranges describe what happened?"
+],
+"flu": [
+"FLU",
+"When the CDC flu forecast states an interval, how often does the reported count land inside it?"
+],
+"hflicense": [
+"HFLICENSE",
+"Does the license a repository states match the license file it carries?"
+],
+"hfsize": [
+"HFSIZE",
+"Does the size in a model's name match the weights?"
+],
+"hosts": [
+"HOSTS",
+"Who serves the same model, and how steadily?"
+],
+"hpt": [
+"HPT",
+"Is the price file where the rule says it is?"
+],
+"launch": [
+"LAUNCH",
+"Stated launch time against the time it flew"
+],
+"linkrot": [
+"LETHE",
+"Papers state where their code is. Does the link still lead there?"
+],
+"neo": [
+"NEO",
+"When JPL states how close an object will pass, where does the latest solution put it?"
+],
+"petrol": [
+"PETROL",
+"Required production against delivered output"
+],
+"pkginstall": [
+"PKGINSTALL",
+"Does the install command a project gives work today?"
+],
+"pkglicense": [
+"PKGLICENSE",
+"Is the license a package states the license of its repository?"
+],
+"prometheus": [
+"PROMETHEUS",
+"When the national wildfire outlook rates an area above normal, do more large fires follow?"
+],
+"quake": [
+"QUAKE",
+"When the USGS states the odds of aftershocks, what follows?"
+],
+"rank": [
+"RANK",
+"US News education rankings, set against the public record"
+],
+"revise": [
+"REVISE",
+"How far does a first estimate move?"
+],
+"seasonal": [
+"SEASONAL",
+"When the seasonal outlook states a chance, how often does it happen?"
+],
+"secrecords": [
+"SECRECORDS",
+"Do a domain's security records do what they say?"
+],
+"social": [
+"SOCIAL",
+"Two filings, one platform"
+],
+"solar": [
+"SOLAR",
+"When SWPC states a chance of a solar flare or a geomagnetic storm, how often does it happen?"
+],
+"steo": [
+"STEO",
+"When EIA states a price interval, how often does the price land inside it?"
+],
+"support": [
+"SUPPORT",
+"Is a cycle that is stated as supported still being released?"
+],
+"tornado": [
+"TORNADO",
+"When the Storm Prediction Center draws a tornado chance, how often does a tornado come?"
+],
+"trials": [
+"TRIALS",
+"Results due against results posted"
+],
+"voightkampff": [
+"VOIGHT-KAMPFF",
+"When a detector maker states a false positive rate, what do independent tests show?"
+],
+"water": [
+"WATER",
+"When Reclamation projects a lake level, where does the lake end up?"
+],
+"weights": [
+"WEIGHTS",
+"Does a model name keep the same weights?"
+]
+},
+"divs": {
+"atlas": [
+"ATLAS",
+[
+"atlas/electricity",
+"atlas/power-plants",
+"atlas/carbon",
+"atlas/planned-plants",
+"petrol",
+"water",
+"neo",
+"solar",
+"quake",
+"cone",
+"uptime",
+"time",
+"cada",
+"secrecords",
+"seat",
+"support",
+"change"
+]
+],
+"hermes": [
+"HERMES",
+[
+"airline",
+"airq",
+"ares",
+"argus",
+"arxivdrift",
+"cadence",
+"cassandra",
+"census",
+"chronos",
+"credit",
+"hermes/datapapers",
+"deus",
+"fedsep",
+"flu",
+"forecast",
+"forecasters",
+"hpt",
+"launch",
+"linkrot",
+"hermes/model",
+"predictions",
+"prometheus",
+"revise",
+"seasonal",
+"social",
+"steo",
+"tape",
+"tornado",
+"trials",
+"vault",
+"voightkampff",
+"wiki"
+]
+],
+"iris": [
+"IRIS",
+[
+"iris/lab",
+"yo",
+"hfsize",
+"hflicense",
+"pkglicense",
+"pkginstall",
+"weights",
+"ailuminate",
+"hosts"
+]
+],
+"oy": [
+"OY",
+[
+"campus",
+"rank"
+]
+],
+"qia": [
+"QIA",
+[
+"qia/list",
+"qia/key"
+]
+]
+},
+"dwell": {
+"cada": 60,
+"seat": 60,
+"time": 60,
+"uptime": 60
+},
+"ent_every": 30,
+"ents": {
+"backend/amazon-braket": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "Amazon Braket",
+"url": "/e/backend/amazon-braket"
+},
+"backend/ibm-aachen": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_aachen",
+"url": "/e/backend/ibm-aachen"
+},
+"backend/ibm-algiers": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_algiers",
+"url": "/e/backend/ibm-algiers"
+},
+"backend/ibm-auckland": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_auckland",
+"url": "/e/backend/ibm-auckland"
+},
+"backend/ibm-belem": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_belem",
+"url": "/e/backend/ibm-belem"
+},
+"backend/ibm-boston": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_boston",
+"url": "/e/backend/ibm-boston"
+},
+"backend/ibm-brisbane": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_brisbane",
+"url": "/e/backend/ibm-brisbane"
+},
+"backend/ibm-cairo": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_cairo",
+"url": "/e/backend/ibm-cairo"
+},
+"backend/ibm-cleveland": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_cleveland",
+"url": "/e/backend/ibm-cleveland"
+},
+"backend/ibm-fez": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_fez",
+"url": "/e/backend/ibm-fez"
+},
+"backend/ibm-guadalupe": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_guadalupe",
+"url": "/e/backend/ibm-guadalupe"
+},
+"backend/ibm-hanoi": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_hanoi",
+"url": "/e/backend/ibm-hanoi"
+},
+"backend/ibm-kawasaki": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_kawasaki",
+"url": "/e/backend/ibm-kawasaki"
+},
+"backend/ibm-kingston": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_kingston",
+"url": "/e/backend/ibm-kingston"
+},
+"backend/ibm-kyiv": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_kyiv",
+"url": "/e/backend/ibm-kyiv"
+},
+"backend/ibm-kyoto": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_kyoto",
+"url": "/e/backend/ibm-kyoto"
+},
+"backend/ibm-lagos": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_lagos",
+"url": "/e/backend/ibm-lagos"
+},
+"backend/ibm-manhattan": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_manhattan",
+"url": "/e/backend/ibm-manhattan"
+},
+"backend/ibm-manila": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_manila",
+"url": "/e/backend/ibm-manila"
+},
+"backend/ibm-marrakesh": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_marrakesh",
+"url": "/e/backend/ibm-marrakesh"
+},
+"backend/ibm-miami": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_miami",
+"url": "/e/backend/ibm-miami"
+},
+"backend/ibm-nairobi": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_nairobi",
+"url": "/e/backend/ibm-nairobi"
+},
+"backend/ibm-osaka": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_osaka",
+"url": "/e/backend/ibm-osaka"
+},
+"backend/ibm-oslo": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_oslo",
+"url": "/e/backend/ibm-oslo"
+},
+"backend/ibm-peekskill": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_peekskill",
+"url": "/e/backend/ibm-peekskill"
+},
+"backend/ibm-perth": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_perth",
+"url": "/e/backend/ibm-perth"
+},
+"backend/ibm-phoenix": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_phoenix",
+"url": "/e/backend/ibm-phoenix"
+},
+"backend/ibm-pittsburgh": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_pittsburgh",
+"url": "/e/backend/ibm-pittsburgh"
+},
+"backend/ibm-quito": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_quito",
+"url": "/e/backend/ibm-quito"
+},
+"backend/ibm-sherbrooke": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_sherbrooke",
+"url": "/e/backend/ibm-sherbrooke"
+},
+"backend/ibm-strasbourg": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_strasbourg",
+"url": "/e/backend/ibm-strasbourg"
+},
+"backend/ibm-tokyo": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_tokyo",
+"url": "/e/backend/ibm-tokyo"
+},
+"backend/ibm-torino": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "ibm_torino",
+"url": "/e/backend/ibm-torino"
+},
+"backend/ionq-aria-1": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "IonQ Aria-1",
+"url": "/e/backend/ionq-aria-1"
+},
+"backend/ionq-aria1": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "IonQ Aria1",
+"url": "/e/backend/ionq-aria1"
+},
+"backend/quantinuum-h1-1": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "Quantinuum H1-1",
+"url": "/e/backend/quantinuum-h1-1"
+},
+"backend/rigetti-ankaa-3": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "Rigetti Ankaa-3",
+"url": "/e/backend/rigetti-ankaa-3"
+},
+"backend/rigetti-cepheus-1-108q": {
+"feed": false,
+"kind": "backend",
+"kword": "quantum backend",
+"name": "Rigetti Cepheus-1-108Q",
+"url": "/e/backend/rigetti-cepheus-1-108q"
+},
+"model/deep-cogito-cogito-v2-1-671b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Deep Cogito Cogito v2.1 671B",
+"url": "/e/model/deep-cogito-cogito-v2-1-671b"
+},
+"model/deepseek-r1-1-5b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "deepseek-r1:1.5b",
+"url": "/e/model/deepseek-r1-1-5b"
+},
+"model/falcon-family": {
+"feed": false,
+"kind": "model",
+"kword": "model family",
+"name": "Falcon",
+"url": "/e/model/falcon-family"
+},
+"model/falcon3-3b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "Falcon3 3B Instruct",
+"url": "/e/model/falcon3-3b"
+},
+"model/gemma-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "Gemma",
+"url": "/e/model/gemma-family"
+},
+"model/gemma3-4b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "gemma3:4b",
+"url": "/e/model/gemma3-4b"
+},
+"model/gemma3n-e4b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Google Gemma 3n E4B IT",
+"url": "/e/model/gemma3n-e4b"
+},
+"model/gpt-oss120b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "OpenAI gpt-oss-120b",
+"url": "/e/model/gpt-oss120b"
+},
+"model/granite-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "Granite",
+"url": "/e/model/granite-family"
+},
+"model/granite3-3-2b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "granite3.3:2b",
+"url": "/e/model/granite3-3-2b"
+},
+"model/granite4-1-3b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Granite 4.1 3B",
+"url": "/e/model/granite4-1-3b"
+},
+"model/granite4-2-30b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "IBM Granite 4.2 30B",
+"url": "/e/model/granite4-2-30b"
+},
+"model/granite4-2-3b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "IBM Granite 4.2 3B",
+"url": "/e/model/granite4-2-3b"
+},
+"model/granite4-2-8b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "IBM Granite 4.2 8B",
+"url": "/e/model/granite4-2-8b"
+},
+"model/inclusionai-ling2-6-1t": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "InclusionAI Ling 2.6 1T",
+"url": "/e/model/inclusionai-ling2-6-1t"
+},
+"model/inclusionai-ling3-0-flash": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "InclusionAI Ling 3.0 Flash",
+"url": "/e/model/inclusionai-ling3-0-flash"
+},
+"model/inclusionai-ling3-0-flash-fin": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "InclusionAI Ling 3.0 Flash Fin",
+"url": "/e/model/inclusionai-ling3-0-flash-fin"
+},
+"model/inclusionai-ling3-0-flash-vl": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "InclusionAI Ling 3.0 Flash VL",
+"url": "/e/model/inclusionai-ling3-0-flash-vl"
+},
+"model/llama-family": {
+"feed": false,
+"kind": "model",
+"kword": "model family",
+"name": "Llama",
+"url": "/e/model/llama-family"
+},
+"model/llama-guard2-8b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Meta Llama Guard 2 8B",
+"url": "/e/model/llama-guard2-8b"
+},
+"model/llama-guard3-8b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Meta Llama Guard 3 8B",
+"url": "/e/model/llama-guard3-8b"
+},
+"model/llama-guard4-12b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Meta Llama Guard 4 12B",
+"url": "/e/model/llama-guard4-12b"
+},
+"model/llama3-1-8b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "llama3.1:8b",
+"url": "/e/model/llama3-1-8b"
+},
+"model/medium-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "Medium",
+"url": "/e/model/medium-family"
+},
+"model/medium3-5": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Mistral Medium 3.5",
+"url": "/e/model/medium3-5"
+},
+"model/mistral-family": {
+"feed": false,
+"kind": "model",
+"kword": "model family",
+"name": "Mistral",
+"url": "/e/model/mistral-family"
+},
+"model/mistral7b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "mistral:7b",
+"url": "/e/model/mistral7b"
+},
+"model/moonshot-ai-kimi-k2-7-code": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Moonshot AI Kimi K2.7 Code",
+"url": "/e/model/moonshot-ai-kimi-k2-7-code"
+},
+"model/nemotron-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "Nemotron",
+"url": "/e/model/nemotron-family"
+},
+"model/nemotron3-5-content-safety": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "NVIDIA Nemotron 3.5 Content Safety",
+"url": "/e/model/nemotron3-5-content-safety"
+},
+"model/nemotron3-ultra550b-a55b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "NVIDIA Nemotron 3 Ultra 550B A55B",
+"url": "/e/model/nemotron3-ultra550b-a55b"
+},
+"model/olmo-family": {
+"feed": false,
+"kind": "model",
+"kword": "model family",
+"name": "Olmo",
+"url": "/e/model/olmo-family"
+},
+"model/olmo2-7b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "olmo2:7b",
+"url": "/e/model/olmo2-7b"
+},
+"model/phi-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "Phi",
+"url": "/e/model/phi-family"
+},
+"model/phi4-mini": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Phi-4-mini-instruct",
+"url": "/e/model/phi4-mini"
+},
+"model/qwen-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "Qwen",
+"url": "/e/model/qwen-family"
+},
+"model/qwen3-1-7b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "Qwen3-1.7B",
+"url": "/e/model/qwen3-1-7b"
+},
+"model/qwen3-235b-a22b-instruct2507": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Qwen3 235B A22B Instruct 2507",
+"url": "/e/model/qwen3-235b-a22b-instruct2507"
+},
+"model/qwen3-4b": {
+"feed": false,
+"kind": "model",
+"kword": "model",
+"name": "qwen3:4b",
+"url": "/e/model/qwen3-4b"
+},
+"model/smollm-family": {
+"feed": true,
+"kind": "model",
+"kword": "model family",
+"name": "SmolLM",
+"url": "/e/model/smollm-family"
+},
+"model/smollm2-1-7b": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "SmolLM2-1.7B-Instruct",
+"url": "/e/model/smollm2-1-7b"
+},
+"model/speakleash-bielik11b-v3-0": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "SpeakLeash Bielik 11B v3.0 Instruct",
+"url": "/e/model/speakleash-bielik11b-v3-0"
+},
+"model/tencent-hy4-preview": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Tencent HY4 Preview",
+"url": "/e/model/tencent-hy4-preview"
+},
+"model/v4-flash": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "DeepSeek V4 Flash",
+"url": "/e/model/v4-flash"
+},
+"model/v4-flash-vision-exp": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "DeepSeek V4 Flash Vision Exp",
+"url": "/e/model/v4-flash-vision-exp"
+},
+"model/xiaomi-mimo-v2-5-pro": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Xiaomi MiMo V2.5 Pro",
+"url": "/e/model/xiaomi-mimo-v2-5-pro"
+},
+"model/z-ai-glm5-3-flash-bf16": {
+"feed": true,
+"kind": "model",
+"kword": "model",
+"name": "Z.ai GLM-5.3 Flash BF16",
+"url": "/e/model/z-ai-glm5-3-flash-bf16"
+},
+"package/opencv-python": {
+"feed": true,
+"kind": "package",
+"kword": "package",
+"name": "opencv-python",
+"url": "/e/package/opencv-python"
+},
+"package/opencv-python-headless": {
+"feed": true,
+"kind": "package",
+"kword": "package",
+"name": "opencv-python-headless",
+"url": "/e/package/opencv-python-headless"
+},
+"package/pandas-gbq": {
+"feed": true,
+"kind": "package",
+"kword": "package",
+"name": "pandas-gbq",
+"url": "/e/package/pandas-gbq"
+},
+"package/redshift-connector": {
+"feed": true,
+"kind": "package",
+"kword": "package",
+"name": "redshift-connector",
+"url": "/e/package/redshift-connector"
+},
+"school/adrian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Adrian College",
+"url": "/oy/school/168528"
+},
+"school/agnes-scott-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Agnes Scott College",
+"url": "/oy/school/138600"
+},
+"school/alaska-pacific-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Alaska Pacific University",
+"url": "/oy/school/102669"
+},
+"school/albion-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Albion College",
+"url": "/oy/school/168546"
+},
+"school/albright-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Albright College",
+"url": "/oy/school/210571"
+},
+"school/alice-lloyd-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Alice Lloyd College",
+"url": "/oy/school/156189"
+},
+"school/allegheny-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Allegheny College",
+"url": "/oy/school/210669"
+},
+"school/allen-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Allen University",
+"url": "/oy/school/217624"
+},
+"school/alma-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Alma College",
+"url": "/oy/school/168591"
+},
+"school/american-baptist-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "American Baptist College",
+"url": "/oy/school/219505"
+},
+"school/american-jewish-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "American Jewish University",
+"url": "/oy/school/116846"
+},
+"school/amherst-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Amherst College",
+"url": "/oy/school/164465"
+},
+"school/antioch-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Antioch College",
+"url": "/oy/school/483018"
+},
+"school/aquinas-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Aquinas College",
+"url": "/oy/school/168786"
+},
+"school/arizona-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Arizona Christian University",
+"url": "/oy/school/105899"
+},
+"school/arlington-baptist-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Arlington Baptist University",
+"url": "/oy/school/222877"
+},
+"school/augustana-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Augustana College",
+"url": "/oy/school/143084"
+},
+"school/austin-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Austin College",
+"url": "/oy/school/222983"
+},
+"school/ave-maria-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ave Maria University",
+"url": "/oy/school/446048"
+},
+"school/bacone-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bacone College",
+"url": "/oy/school/206817"
+},
+"school/baptist-university-of-florida": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Baptist University of Florida",
+"url": "/oy/school/132408"
+},
+"school/baptist-university-of-the-americas": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Baptist University of the Americas",
+"url": "/oy/school/444398"
+},
+"school/barclay-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Barclay College",
+"url": "/oy/school/155070"
+},
+"school/bard-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bard College",
+"url": "/oy/school/189088"
+},
+"school/barnard-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Barnard College",
+"url": "/oy/school/189097"
+},
+"school/barton-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Barton College",
+"url": "/oy/school/197911"
+},
+"school/bates-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bates College",
+"url": "/oy/school/160977"
+},
+"school/batten-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Batten University",
+"url": "/oy/school/234173"
+},
+"school/beacon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Beacon College",
+"url": "/oy/school/384254"
+},
+"school/belmont-abbey-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Belmont Abbey College",
+"url": "/oy/school/197984"
+},
+"school/beloit-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Beloit College",
+"url": "/oy/school/238333"
+},
+"school/benedict-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Benedict College",
+"url": "/oy/school/217721"
+},
+"school/benedictine-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Benedictine College",
+"url": "/oy/school/154712"
+},
+"school/bennett-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bennett College",
+"url": "/oy/school/197993"
+},
+"school/bennington-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bennington College",
+"url": "/oy/school/230816"
+},
+"school/berea-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Berea College",
+"url": "/oy/school/156295"
+},
+"school/bethany-college-ks": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bethany College (KS)",
+"url": "/oy/school/154721"
+},
+"school/bethany-college-wv": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bethany College (WV)",
+"url": "/oy/school/237181"
+},
+"school/bethany-lutheran-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bethany Lutheran College",
+"url": "/oy/school/173142"
+},
+"school/bethel-college-north-newton": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bethel College-North Newton",
+"url": "/oy/school/154749"
+},
+"school/bethesda-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bethesda University",
+"url": "/oy/school/110060"
+},
+"school/bethune-cookman-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bethune-Cookman University",
+"url": "/oy/school/132602"
+},
+"school/beulah-heights-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Beulah Heights University",
+"url": "/oy/school/139153"
+},
+"school/blackburn-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Blackburn College",
+"url": "/oy/school/143288"
+},
+"school/blue-mountain-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Blue Mountain Christian University",
+"url": "/oy/school/175430"
+},
+"school/bluffton-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bluffton University",
+"url": "/oy/school/201371"
+},
+"school/boricua-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Boricua College",
+"url": "/oy/school/189413"
+},
+"school/bowdoin-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bowdoin College",
+"url": "/oy/school/161004"
+},
+"school/brescia-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Brescia University",
+"url": "/oy/school/156356"
+},
+"school/brevard-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Brevard College",
+"url": "/oy/school/198066"
+},
+"school/brewton-parker-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Brewton-Parker College",
+"url": "/oy/school/139205"
+},
+"school/bridgewater-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bridgewater College",
+"url": "/oy/school/231581"
+},
+"school/brigham-young-university-hawaii": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Brigham Young University-Hawaii",
+"url": "/oy/school/230047"
+},
+"school/brigham-young-university-idaho": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Brigham Young University-Idaho",
+"url": "/oy/school/142522"
+},
+"school/bryn-athyn-college-of-the-new-church": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bryn Athyn College of the New Church",
+"url": "/oy/school/210492"
+},
+"school/bryn-mawr-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bryn Mawr College",
+"url": "/oy/school/211273"
+},
+"school/bucknell-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Bucknell University",
+"url": "/oy/school/211291"
+},
+"school/calvary-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Calvary University",
+"url": "/oy/school/176789"
+},
+"school/caribbean-university-carolina": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Caribbean University-Carolina",
+"url": "/oy/school/241386"
+},
+"school/caribbean-university-ponce": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Caribbean University-Ponce",
+"url": "/oy/school/363907"
+},
+"school/caribbean-university-vega-baja": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Caribbean University-Vega Baja",
+"url": "/oy/school/363916"
+},
+"school/carleton-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Carleton College",
+"url": "/oy/school/173258"
+},
+"school/carroll-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Carroll College",
+"url": "/oy/school/180106"
+},
+"school/catawba-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Catawba College",
+"url": "/oy/school/198215"
+},
+"school/centenary-college-of-louisiana": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Centenary College of Louisiana",
+"url": "/oy/school/158477"
+},
+"school/central-baptist-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Central Baptist College",
+"url": "/oy/school/106713"
+},
+"school/central-christian-college-of-kansas": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Central Christian College of Kansas",
+"url": "/oy/school/154855"
+},
+"school/central-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Central College",
+"url": "/oy/school/153108"
+},
+"school/central-methodist-university-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Central Methodist University-College",
+"url": "/oy/school/176947"
+},
+"school/centre-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Centre College",
+"url": "/oy/school/156408"
+},
+"school/chowan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Chowan University",
+"url": "/oy/school/198303"
+},
+"school/city-vision-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "City Vision University",
+"url": "/oy/school/457697"
+},
+"school/claflin-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Claflin University",
+"url": "/oy/school/217873"
+},
+"school/claremont-mckenna-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Claremont McKenna College",
+"url": "/oy/school/112260"
+},
+"school/coe-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Coe College",
+"url": "/oy/school/153144"
+},
+"school/colby-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Colby College",
+"url": "/oy/school/161086"
+},
+"school/colby-sawyer-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Colby-Sawyer College",
+"url": "/oy/school/182634"
+},
+"school/colgate-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Colgate University",
+"url": "/oy/school/190099"
+},
+"school/college-of-saint-benedict": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "College of Saint Benedict",
+"url": "/oy/school/174747"
+},
+"school/college-of-the-atlantic": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "College of the Atlantic",
+"url": "/oy/school/160959"
+},
+"school/college-of-the-holy-cross": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "College of the Holy Cross",
+"url": "/oy/school/166124"
+},
+"school/college-of-the-ozarks": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "College of the Ozarks",
+"url": "/oy/school/178697"
+},
+"school/colorado-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Colorado College",
+"url": "/oy/school/126678"
+},
+"school/concordia-college-at-moorhead": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Concordia College at Moorhead",
+"url": "/oy/school/173300"
+},
+"school/connecticut-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Connecticut College",
+"url": "/oy/school/128902"
+},
+"school/cornell-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Cornell College",
+"url": "/oy/school/153162"
+},
+"school/covenant-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Covenant College",
+"url": "/oy/school/139393"
+},
+"school/criswell-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Criswell College",
+"url": "/oy/school/475608"
+},
+"school/crowley-s-ridge-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Crowley's Ridge College",
+"url": "/oy/school/106810"
+},
+"school/culver-stockton-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Culver-Stockton College",
+"url": "/oy/school/177144"
+},
+"school/dakota-wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Dakota Wesleyan University",
+"url": "/oy/school/219091"
+},
+"school/dallas-christian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Dallas Christian College",
+"url": "/oy/school/224244"
+},
+"school/davidson-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Davidson College",
+"url": "/oy/school/198385"
+},
+"school/davis-elkins-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Davis & Elkins College",
+"url": "/oy/school/237358"
+},
+"school/dean-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Dean College",
+"url": "/oy/school/165574"
+},
+"school/defiance-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Defiance College",
+"url": "/oy/school/202514"
+},
+"school/denison-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Denison University",
+"url": "/oy/school/202523"
+},
+"school/depauw-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "DePauw University",
+"url": "/oy/school/150400"
+},
+"school/dickinson-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Dickinson College",
+"url": "/oy/school/212009"
+},
+"school/dillard-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Dillard University",
+"url": "/oy/school/158802"
+},
+"school/divine-word-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Divine Word College",
+"url": "/oy/school/153241"
+},
+"school/drew-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Drew University",
+"url": "/oy/school/184348"
+},
+"school/drury-university-college-of-continuing": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Drury University-College of Continuing",
+"url": "/oy/school/492801"
+},
+"school/earlham-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Earlham College",
+"url": "/oy/school/150455"
+},
+"school/east-west-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "East-West University",
+"url": "/oy/school/144883"
+},
+"school/ecclesia-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ecclesia College",
+"url": "/oy/school/446233"
+},
+"school/eckerd-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Eckerd College",
+"url": "/oy/school/133492"
+},
+"school/edward-waters-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Edward Waters University",
+"url": "/oy/school/133526"
+},
+"school/elmira-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Elmira College",
+"url": "/oy/school/190983"
+},
+"school/embry-riddle-aeronautical-university-prescott": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Embry-Riddle Aeronautical University-Prescott",
+"url": "/oy/school/104586"
+},
+"school/emmanuel-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Emmanuel College",
+"url": "/oy/school/165671"
+},
+"school/emmanuel-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Emmanuel University",
+"url": "/oy/school/139630"
+},
+"school/emmaus-bible-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Emmaus Bible College",
+"url": "/oy/school/153302"
+},
+"school/eureka-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Eureka College",
+"url": "/oy/school/144971"
+},
+"school/faith-baptist-bible-college-and-theological": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Faith Baptist Bible College and Theological",
+"url": "/oy/school/153320"
+},
+"school/ferrum-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ferrum College",
+"url": "/oy/school/232089"
+},
+"school/fisher-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Fisher College",
+"url": "/oy/school/165802"
+},
+"school/fisk-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Fisk University",
+"url": "/oy/school/220181"
+},
+"school/flagler-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Flagler College",
+"url": "/oy/school/133711"
+},
+"school/florida-memorial-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Florida Memorial University",
+"url": "/oy/school/133979"
+},
+"school/franklin-and-marshall-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Franklin and Marshall College",
+"url": "/oy/school/212577"
+},
+"school/franklin-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Franklin College",
+"url": "/oy/school/150604"
+},
+"school/furman-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Furman University",
+"url": "/oy/school/218070"
+},
+"school/georgetown-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Georgetown College",
+"url": "/oy/school/156745"
+},
+"school/gettysburg-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Gettysburg College",
+"url": "/oy/school/212674"
+},
+"school/gods-bible-school-and-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Gods Bible School and College",
+"url": "/oy/school/202903"
+},
+"school/gordon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Gordon College",
+"url": "/oy/school/165936"
+},
+"school/goshen-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Goshen College",
+"url": "/oy/school/150668"
+},
+"school/goucher-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Goucher College",
+"url": "/oy/school/162654"
+},
+"school/grace-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Grace Christian University",
+"url": "/oy/school/170000"
+},
+"school/great-lakes-christian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Great Lakes Christian College",
+"url": "/oy/school/170091"
+},
+"school/grinnell-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Grinnell College",
+"url": "/oy/school/153384"
+},
+"school/grove-city-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Grove City College",
+"url": "/oy/school/212805"
+},
+"school/guilford-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Guilford College",
+"url": "/oy/school/198613"
+},
+"school/gustavus-adolphus-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Gustavus Adolphus College",
+"url": "/oy/school/173647"
+},
+"school/hallmark-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hallmark University",
+"url": "/oy/school/225201"
+},
+"school/hamilton-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hamilton College",
+"url": "/oy/school/191515"
+},
+"school/hampden-sydney-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hampden-Sydney College",
+"url": "/oy/school/232256"
+},
+"school/hampshire-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hampshire College",
+"url": "/oy/school/166018"
+},
+"school/hannibal-lagrange-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hannibal-LaGrange University",
+"url": "/oy/school/177542"
+},
+"school/hanover-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hanover College",
+"url": "/oy/school/150756"
+},
+"school/hartwick-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hartwick College",
+"url": "/oy/school/191533"
+},
+"school/harvey-mudd-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Harvey Mudd College",
+"url": "/oy/school/115409"
+},
+"school/hastings-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hastings College",
+"url": "/oy/school/181127"
+},
+"school/haverford-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Haverford College",
+"url": "/oy/school/212911"
+},
+"school/hebrew-theological-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hebrew Theological College",
+"url": "/oy/school/145497"
+},
+"school/hellenic-college-holy-cross-greek-orthodox": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hellenic College-Holy Cross Greek Orthodox",
+"url": "/oy/school/166054"
+},
+"school/hendrix-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hendrix College",
+"url": "/oy/school/107080"
+},
+"school/herzing-university-atlanta": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Herzing University-Atlanta",
+"url": "/oy/school/140340"
+},
+"school/high-point-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "High Point University",
+"url": "/oy/school/198695"
+},
+"school/hilbert-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hilbert College",
+"url": "/oy/school/191621"
+},
+"school/hillsdale-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hillsdale College",
+"url": "/oy/school/170286"
+},
+"school/hiram-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hiram College",
+"url": "/oy/school/203128"
+},
+"school/hobart-william-smith-colleges": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hobart William Smith Colleges",
+"url": "/oy/school/191630"
+},
+"school/hobe-sound-bible-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hobe Sound Bible College",
+"url": "/oy/school/134510"
+},
+"school/hollins-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hollins University",
+"url": "/oy/school/232308"
+},
+"school/holy-cross-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Holy Cross College",
+"url": "/oy/school/150774"
+},
+"school/hope-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Hope College",
+"url": "/oy/school/170301"
+},
+"school/houghton-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Houghton University",
+"url": "/oy/school/191676"
+},
+"school/howard-payne-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Howard Payne University",
+"url": "/oy/school/225548"
+},
+"school/huntingdon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Huntingdon College",
+"url": "/oy/school/101435"
+},
+"school/huston-tillotson-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Huston-Tillotson University",
+"url": "/oy/school/225575"
+},
+"school/illinois-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Illinois College",
+"url": "/oy/school/145691"
+},
+"school/illinois-wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Illinois Wesleyan University",
+"url": "/oy/school/145646"
+},
+"school/indiana-institute-of-technology-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Indiana Institute of Technology-College",
+"url": "/oy/school/492962"
+},
+"school/inter-american-university-of-puerto": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Inter American University of Puerto",
+"url": "/oy/school/242644"
+},
+"school/inter-american-university-of-puerto-rico-bayamon": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Inter American University of Puerto Rico-Bayamon",
+"url": "/oy/school/242705"
+},
+"school/inter-american-university-of-puerto-rico-fajardo": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Inter American University of Puerto Rico-Fajardo",
+"url": "/oy/school/242680"
+},
+"school/inter-american-university-of-puerto-rico-guayama": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Inter American University of Puerto Rico-Guayama",
+"url": "/oy/school/242699"
+},
+"school/inter-american-university-of-puerto-rico-ponce": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Inter American University of Puerto Rico-Ponce",
+"url": "/oy/school/242662"
+},
+"school/jarvis-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Jarvis Christian University",
+"url": "/oy/school/225885"
+},
+"school/john-paul-the-great-catholic-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "John Paul the Great Catholic University",
+"url": "/oy/school/462354"
+},
+"school/johnson-c-smith-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Johnson C. Smith University",
+"url": "/oy/school/198756"
+},
+"school/johnson-wales-university-charlotte": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Johnson & Wales University-Charlotte",
+"url": "/oy/school/445708"
+},
+"school/juniata-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Juniata College",
+"url": "/oy/school/213251"
+},
+"school/kalamazoo-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kalamazoo College",
+"url": "/oy/school/170532"
+},
+"school/kansas-wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kansas Wesleyan University",
+"url": "/oy/school/155414"
+},
+"school/kentucky-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kentucky Christian University",
+"url": "/oy/school/157100"
+},
+"school/kentucky-mountain-bible-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kentucky Mountain Bible College",
+"url": "/oy/school/157030"
+},
+"school/kentucky-wesleyan-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kentucky Wesleyan College",
+"url": "/oy/school/157076"
+},
+"school/kenyon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kenyon College",
+"url": "/oy/school/203535"
+},
+"school/keystone-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Keystone College",
+"url": "/oy/school/213303"
+},
+"school/knox-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Knox College",
+"url": "/oy/school/146427"
+},
+"school/kuyper-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Kuyper College",
+"url": "/oy/school/171881"
+},
+"school/lafayette-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lafayette College",
+"url": "/oy/school/213385"
+},
+"school/lagrange-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "LaGrange College",
+"url": "/oy/school/140234"
+},
+"school/lake-forest-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lake Forest College",
+"url": "/oy/school/146481"
+},
+"school/lane-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lane College",
+"url": "/oy/school/220598"
+},
+"school/lawrence-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lawrence University",
+"url": "/oy/school/239017"
+},
+"school/le-moyne-owen-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Le Moyne-Owen College",
+"url": "/oy/school/220604"
+},
+"school/lees-mcrae-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lees-McRae College",
+"url": "/oy/school/198808"
+},
+"school/lewis-clark-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lewis & Clark College",
+"url": "/oy/school/209056"
+},
+"school/life-pacific-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Life Pacific University",
+"url": "/oy/school/117104"
+},
+"school/limestone-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Limestone University",
+"url": "/oy/school/218238"
+},
+"school/linfield-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Linfield University",
+"url": "/oy/school/209065"
+},
+"school/livingstone-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Livingstone College",
+"url": "/oy/school/198862"
+},
+"school/loras-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Loras College",
+"url": "/oy/school/153825"
+},
+"school/luther-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Luther College",
+"url": "/oy/school/153834"
+},
+"school/lycoming-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lycoming College",
+"url": "/oy/school/213668"
+},
+"school/lyon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Lyon College",
+"url": "/oy/school/106342"
+},
+"school/macalester-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Macalester College",
+"url": "/oy/school/173902"
+},
+"school/manna-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Manna University",
+"url": "/oy/school/461528"
+},
+"school/marietta-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Marietta College",
+"url": "/oy/school/203845"
+},
+"school/mars-hill-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Mars Hill University",
+"url": "/oy/school/198899"
+},
+"school/martin-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Martin University",
+"url": "/oy/school/151810"
+},
+"school/marymount-manhattan-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Marymount Manhattan College",
+"url": "/oy/school/192864"
+},
+"school/maryville-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Maryville College",
+"url": "/oy/school/220710"
+},
+"school/mcmurry-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "McMurry University",
+"url": "/oy/school/226587"
+},
+"school/mcpherson-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "McPherson College",
+"url": "/oy/school/155511"
+},
+"school/meredith-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Meredith College",
+"url": "/oy/school/198950"
+},
+"school/mid-atlantic-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Mid-Atlantic Christian University",
+"url": "/oy/school/199458"
+},
+"school/middlebury-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Middlebury College",
+"url": "/oy/school/230959"
+},
+"school/miles-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Miles College",
+"url": "/oy/school/101675"
+},
+"school/millikin-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Millikin University",
+"url": "/oy/school/147244"
+},
+"school/millsaps-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Millsaps College",
+"url": "/oy/school/175980"
+},
+"school/missouri-valley-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Missouri Valley College",
+"url": "/oy/school/178369"
+},
+"school/mitchell-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Mitchell College",
+"url": "/oy/school/129774"
+},
+"school/monmouth-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Monmouth College",
+"url": "/oy/school/147341"
+},
+"school/montreat-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Montreat College",
+"url": "/oy/school/199032"
+},
+"school/montserrat-college-of-art": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Montserrat College of Art",
+"url": "/oy/school/166911"
+},
+"school/morehouse-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Morehouse College",
+"url": "/oy/school/140553"
+},
+"school/morris-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Morris College",
+"url": "/oy/school/218399"
+},
+"school/mount-aloysius-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Mount Aloysius College",
+"url": "/oy/school/214166"
+},
+"school/mount-holyoke-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Mount Holyoke College",
+"url": "/oy/school/166939"
+},
+"school/muhlenberg-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Muhlenberg College",
+"url": "/oy/school/214175"
+},
+"school/new-saint-andrews-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "New Saint Andrews College",
+"url": "/oy/school/440396"
+},
+"school/newberry-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Newberry College",
+"url": "/oy/school/218414"
+},
+"school/north-carolina-wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "North Carolina Wesleyan University",
+"url": "/oy/school/199209"
+},
+"school/north-central-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "North Central University",
+"url": "/oy/school/174437"
+},
+"school/northland-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Northland College",
+"url": "/oy/school/239512"
+},
+"school/northwest-university-center-for-online": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Northwest University-Center for Online",
+"url": "/oy/school/487603"
+},
+"school/oak-hills-christian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Oak Hills Christian College",
+"url": "/oy/school/174525"
+},
+"school/oakwood-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Oakwood University",
+"url": "/oy/school/101912"
+},
+"school/oberlin-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Oberlin College",
+"url": "/oy/school/204501"
+},
+"school/occidental-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Occidental College",
+"url": "/oy/school/120254"
+},
+"school/oglethorpe-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Oglethorpe University",
+"url": "/oy/school/140696"
+},
+"school/ohio-northern-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ohio Northern University",
+"url": "/oy/school/204635"
+},
+"school/ohio-wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ohio Wesleyan University",
+"url": "/oy/school/204909"
+},
+"school/ottawa-university-milwaukee": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ottawa University-Milwaukee",
+"url": "/oy/school/428259"
+},
+"school/ottawa-university-online": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ottawa University-Online",
+"url": "/oy/school/454582"
+},
+"school/ottawa-university-ottawa": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ottawa University-Ottawa",
+"url": "/oy/school/155627"
+},
+"school/ottawa-university-surprise": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ottawa University-Surprise",
+"url": "/oy/school/464226"
+},
+"school/ouachita-baptist-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ouachita Baptist University",
+"url": "/oy/school/107512"
+},
+"school/pacific-islands-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pacific Islands University",
+"url": "/oy/school/439862"
+},
+"school/pacific-rim-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pacific Rim Christian University",
+"url": "/oy/school/457484"
+},
+"school/pacific-union-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pacific Union College",
+"url": "/oy/school/120865"
+},
+"school/paine-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Paine College",
+"url": "/oy/school/140720"
+},
+"school/patrick-henry-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Patrick Henry College",
+"url": "/oy/school/451927"
+},
+"school/paul-quinn-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Paul Quinn College",
+"url": "/oy/school/227429"
+},
+"school/paul-smiths-college-of-arts-and-science": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Paul Smiths College of Arts and Science",
+"url": "/oy/school/194392"
+},
+"school/peirce-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Peirce College",
+"url": "/oy/school/214883"
+},
+"school/philander-smith-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Philander Smith University",
+"url": "/oy/school/107600"
+},
+"school/pillar-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pillar College",
+"url": "/oy/school/440794"
+},
+"school/pitzer-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pitzer College",
+"url": "/oy/school/121257"
+},
+"school/point-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Point University",
+"url": "/oy/school/138868"
+},
+"school/polytechnic-university-of-puerto-rico-miami": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Polytechnic University of Puerto Rico-Miami",
+"url": "/oy/school/456481"
+},
+"school/polytechnic-university-of-puerto-rico-orlando": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Polytechnic University of Puerto Rico-Orlando",
+"url": "/oy/school/456490"
+},
+"school/pomona-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pomona College",
+"url": "/oy/school/121345"
+},
+"school/pontifical-catholic-university-of-puerto": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pontifical Catholic University of Puerto",
+"url": "/oy/school/243586"
+},
+"school/pontifical-college-josephinum": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Pontifical College Josephinum",
+"url": "/oy/school/205027"
+},
+"school/presbyterian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Presbyterian College",
+"url": "/oy/school/218539"
+},
+"school/principia-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Principia College",
+"url": "/oy/school/148016"
+},
+"school/providence-christian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Providence Christian College",
+"url": "/oy/school/455770"
+},
+"school/quincy-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Quincy University",
+"url": "/oy/school/148131"
+},
+"school/randall-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Randall University",
+"url": "/oy/school/207157"
+},
+"school/randolph-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Randolph College",
+"url": "/oy/school/233301"
+},
+"school/randolph-macon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Randolph-Macon College",
+"url": "/oy/school/233295"
+},
+"school/reed-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Reed College",
+"url": "/oy/school/209922"
+},
+"school/reinhardt-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Reinhardt University",
+"url": "/oy/school/140872"
+},
+"school/rhodes-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Rhodes College",
+"url": "/oy/school/221351"
+},
+"school/ripon-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ripon College",
+"url": "/oy/school/239628"
+},
+"school/roanoke-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Roanoke College",
+"url": "/oy/school/233426"
+},
+"school/rochester-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Rochester University",
+"url": "/oy/school/170967"
+},
+"school/rust-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Rust College",
+"url": "/oy/school/176318"
+},
+"school/sacred-heart-major-seminary": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Sacred Heart Major Seminary",
+"url": "/oy/school/172033"
+},
+"school/saint-anselm-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Saint Anselm College",
+"url": "/oy/school/183239"
+},
+"school/saint-augustine-s-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Saint Augustine's University",
+"url": "/oy/school/199582"
+},
+"school/saint-john-s-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Saint John's University",
+"url": "/oy/school/174792"
+},
+"school/saint-mary-s-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Saint Mary's College",
+"url": "/oy/school/152390"
+},
+"school/saint-michael-s-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Saint Michael's College",
+"url": "/oy/school/231059"
+},
+"school/saint-vincent-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Saint Vincent College",
+"url": "/oy/school/215798"
+},
+"school/salem-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Salem College",
+"url": "/oy/school/199607"
+},
+"school/sarah-lawrence-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Sarah Lawrence College",
+"url": "/oy/school/195304"
+},
+"school/scripps-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Scripps College",
+"url": "/oy/school/123165"
+},
+"school/shaw-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Shaw University",
+"url": "/oy/school/199643"
+},
+"school/simmons-college-of-kentucky": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Simmons College of Kentucky",
+"url": "/oy/school/461759"
+},
+"school/simpson-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Simpson College",
+"url": "/oy/school/154350"
+},
+"school/simpson-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Simpson University",
+"url": "/oy/school/123457"
+},
+"school/skidmore-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Skidmore College",
+"url": "/oy/school/195526"
+},
+"school/smith-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Smith College",
+"url": "/oy/school/167835"
+},
+"school/soka-university-of-america": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Soka University of America",
+"url": "/oy/school/399911"
+},
+"school/south-florida-bible-college-and-theological": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "South Florida Bible College and Theological",
+"url": "/oy/school/366003"
+},
+"school/southern-california-seminary": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Southern California Seminary",
+"url": "/oy/school/117575"
+},
+"school/southern-virginia-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Southern Virginia University",
+"url": "/oy/school/233611"
+},
+"school/southwestern-adventist-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Southwestern Adventist University",
+"url": "/oy/school/228468"
+},
+"school/southwestern-christian-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Southwestern Christian University",
+"url": "/oy/school/207856"
+},
+"school/southwestern-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Southwestern College",
+"url": "/oy/school/155900"
+},
+"school/southwestern-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Southwestern University",
+"url": "/oy/school/228343"
+},
+"school/spelman-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Spelman College",
+"url": "/oy/school/141060"
+},
+"school/spring-hill-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Spring Hill College",
+"url": "/oy/school/102234"
+},
+"school/st-andrews-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. Andrews University",
+"url": "/oy/school/199698"
+},
+"school/st-francis-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. Francis College",
+"url": "/oy/school/195173"
+},
+"school/st-john-s-college-md": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. John's College (MD)",
+"url": "/oy/school/163976"
+},
+"school/st-john-s-college-nm": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. John's College (NM)",
+"url": "/oy/school/245652"
+},
+"school/st-lawrence-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. Lawrence University",
+"url": "/oy/school/195216"
+},
+"school/st-norbert-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. Norbert College",
+"url": "/oy/school/239716"
+},
+"school/st-olaf-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "St. Olaf College",
+"url": "/oy/school/174844"
+},
+"school/sterling-college-ks": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Sterling College (KS)",
+"url": "/oy/school/155937"
+},
+"school/sterling-college-vt": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Sterling College (VT)",
+"url": "/oy/school/231095"
+},
+"school/stillman-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Stillman College",
+"url": "/oy/school/102270"
+},
+"school/stonehill-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Stonehill College",
+"url": "/oy/school/167996"
+},
+"school/susquehanna-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Susquehanna University",
+"url": "/oy/school/216278"
+},
+"school/swarthmore-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Swarthmore College",
+"url": "/oy/school/216287"
+},
+"school/sweet-briar-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Sweet Briar College",
+"url": "/oy/school/233718"
+},
+"school/tabor-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Tabor College",
+"url": "/oy/school/155973"
+},
+"school/talladega-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Talladega College",
+"url": "/oy/school/102298"
+},
+"school/taylor-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Taylor University",
+"url": "/oy/school/152530"
+},
+"school/tennessee-wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Tennessee Wesleyan University",
+"url": "/oy/school/221731"
+},
+"school/texas-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Texas College",
+"url": "/oy/school/228884"
+},
+"school/texas-lutheran-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Texas Lutheran University",
+"url": "/oy/school/228981"
+},
+"school/the-college-of-idaho": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "The College of Idaho",
+"url": "/oy/school/142294"
+},
+"school/the-college-of-wooster": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "The College of Wooster",
+"url": "/oy/school/206589"
+},
+"school/the-cooper-union-for-the-advancement": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "The Cooper Union for the Advancement",
+"url": "/oy/school/190372"
+},
+"school/the-university-of-olivet": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "The University of Olivet",
+"url": "/oy/school/171599"
+},
+"school/the-university-of-the-south": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "The University of the South",
+"url": "/oy/school/221519"
+},
+"school/thiel-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Thiel College",
+"url": "/oy/school/216357"
+},
+"school/thomas-aquinas-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Thomas Aquinas College",
+"url": "/oy/school/124292"
+},
+"school/thomas-more-college-of-liberal-arts": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Thomas More College of Liberal Arts",
+"url": "/oy/school/183275"
+},
+"school/toccoa-falls-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Toccoa Falls College",
+"url": "/oy/school/141185"
+},
+"school/tougaloo-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Tougaloo College",
+"url": "/oy/school/176406"
+},
+"school/transylvania-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Transylvania University",
+"url": "/oy/school/157818"
+},
+"school/trine-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Trine University",
+"url": "/oy/school/152567"
+},
+"school/trinity-baptist-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Trinity Baptist College",
+"url": "/oy/school/137953"
+},
+"school/trinity-christian-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Trinity Christian College",
+"url": "/oy/school/149505"
+},
+"school/trinity-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Trinity College",
+"url": "/oy/school/130590"
+},
+"school/trinity-college-of-florida": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Trinity College of Florida",
+"url": "/oy/school/137962"
+},
+"school/trinity-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Trinity University",
+"url": "/oy/school/229267"
+},
+"school/truett-mcconnell-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Truett McConnell University",
+"url": "/oy/school/141237"
+},
+"school/union-adventist-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Union Adventist University",
+"url": "/oy/school/181738"
+},
+"school/union-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Union College",
+"url": "/oy/school/196866"
+},
+"school/university-of-mount-saint-vincent": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "University of Mount Saint Vincent",
+"url": "/oy/school/193399"
+},
+"school/university-of-puget-sound": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "University of Puget Sound",
+"url": "/oy/school/236328"
+},
+"school/university-of-richmond": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "University of Richmond",
+"url": "/oy/school/233374"
+},
+"school/university-of-the-ozarks": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "University of the Ozarks",
+"url": "/oy/school/107558"
+},
+"school/university-of-the-west": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "University of the West",
+"url": "/oy/school/449870"
+},
+"school/university-of-valley-forge": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "University of Valley Forge",
+"url": "/oy/school/216542"
+},
+"school/urshan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Urshan University",
+"url": "/oy/school/494685"
+},
+"school/ursinus-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Ursinus College",
+"url": "/oy/school/216524"
+},
+"school/vassar-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Vassar College",
+"url": "/oy/school/197133"
+},
+"school/vaughn-college-of-aeronautics-and-technology": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Vaughn College of Aeronautics and Technology",
+"url": "/oy/school/188340"
+},
+"school/villa-maria-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Villa Maria College",
+"url": "/oy/school/197142"
+},
+"school/virginia-union-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Virginia Union University",
+"url": "/oy/school/234164"
+},
+"school/voorhees-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Voorhees University",
+"url": "/oy/school/218919"
+},
+"school/wabash-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wabash College",
+"url": "/oy/school/152673"
+},
+"school/warner-pacific-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Warner Pacific University",
+"url": "/oy/school/210304"
+},
+"school/warner-pacific-university-professional": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Warner Pacific University Professional",
+"url": "/oy/school/480198"
+},
+"school/warren-wilson-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Warren Wilson College",
+"url": "/oy/school/199865"
+},
+"school/wartburg-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wartburg College",
+"url": "/oy/school/154527"
+},
+"school/washington-and-lee-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Washington and Lee University",
+"url": "/oy/school/234207"
+},
+"school/washington-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Washington College",
+"url": "/oy/school/164216"
+},
+"school/washington-jefferson-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Washington & Jefferson College",
+"url": "/oy/school/216667"
+},
+"school/webber-international-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Webber International University",
+"url": "/oy/school/138293"
+},
+"school/welch-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Welch College",
+"url": "/oy/school/220206"
+},
+"school/wellesley-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wellesley College",
+"url": "/oy/school/168218"
+},
+"school/wesleyan-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wesleyan College",
+"url": "/oy/school/141325"
+},
+"school/wesleyan-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wesleyan University",
+"url": "/oy/school/130697"
+},
+"school/west-virginia-wesleyan-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "West Virginia Wesleyan College",
+"url": "/oy/school/237969"
+},
+"school/westminster-college-mo": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Westminster College (MO)",
+"url": "/oy/school/179946"
+},
+"school/westminster-college-pa": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Westminster College (PA)",
+"url": "/oy/school/216807"
+},
+"school/westmont-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Westmont College",
+"url": "/oy/school/125727"
+},
+"school/wheaton-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wheaton College",
+"url": "/oy/school/149781"
+},
+"school/wheaton-college-massachusetts": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wheaton College (Massachusetts)",
+"url": "/oy/school/168281"
+},
+"school/whitman-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Whitman College",
+"url": "/oy/school/237057"
+},
+"school/whittier-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Whittier College",
+"url": "/oy/school/125763"
+},
+"school/whitworth-university-adult-degree-programs": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Whitworth University-Adult Degree Programs",
+"url": "/oy/school/475200"
+},
+"school/wilberforce-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wilberforce University",
+"url": "/oy/school/206491"
+},
+"school/wiley-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wiley University",
+"url": "/oy/school/229887"
+},
+"school/willamette-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Willamette University",
+"url": "/oy/school/210401"
+},
+"school/william-jewell-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "William Jewell College",
+"url": "/oy/school/179955"
+},
+"school/william-peace-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "William Peace University",
+"url": "/oy/school/199272"
+},
+"school/william-penn-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "William Penn University",
+"url": "/oy/school/154590"
+},
+"school/williams-baptist-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Williams Baptist University",
+"url": "/oy/school/107877"
+},
+"school/williams-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Williams College",
+"url": "/oy/school/168342"
+},
+"school/wilmington-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wilmington College",
+"url": "/oy/school/206507"
+},
+"school/wisconsin-lutheran-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wisconsin Lutheran College",
+"url": "/oy/school/240338"
+},
+"school/wittenberg-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wittenberg University",
+"url": "/oy/school/206525"
+},
+"school/wofford-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Wofford College",
+"url": "/oy/school/218973"
+},
+"school/york-university": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "York University",
+"url": "/oy/school/181853"
+},
+"school/young-harris-college": {
+"feed": false,
+"kind": "school",
+"kword": "school",
+"name": "Young Harris College",
+"url": "/oy/school/141361"
+}
+},
+"follow": {
+"ailuminate": {
+"div": "iris",
+"every": "checked about every 8 hours",
+"every_min": 468,
+"mode": "outcome",
+"name": "AILUMINATE",
+"src": "feed limit",
+"what": "MLCommons AILuminate Safety results, kept and checked"
+},
+"airline": {
+"div": "hermes",
+"every": "checked about every hour",
+"every_min": 90,
+"mode": "outcome",
+"name": "AIRLINE",
+"src": "feed limit",
+"what": "Scheduled flight time against flown time"
+},
+"airq": {
+"div": "hermes",
+"every": "checked about every 3 hours",
+"every_min": 198,
+"mode": "outcome",
+"name": "AIRQ",
+"src": "feed limit",
+"what": "Air sensors against the EPA’s own targets"
+},
+"ares": {
+"div": "hermes",
+"every": "checked about every 30 minutes",
+"every_min": 29,
+"mode": "outcome",
+"name": "ARES",
+"src": "ledger pass",
+"what": "Where public conflict trackers agree that armed violence happened"
+},
+"argus": {
+"div": "hermes",
+"every": "checked about every 30 minutes",
+"every_min": 29,
+"mode": "outcome",
+"name": "ARGUS",
+"src": "ledger pass",
+"what": "Breed standard temperament against open dog genetics and behavior data"
+},
+"arxivdrift": {
+"div": "hermes",
+"every": "checked about every 4 hours",
+"every_min": 240,
+"mode": "update",
+"name": "ARXIVDRIFT",
+"src": "feed limit",
+"what": "Studies read, then revised"
+},
+"atlas": {
+"div": "atlas",
+"every": "each desk at its own pace",
+"every_min": null,
+"mode": "division",
+"name": "ATLAS",
+"page_every": "when we publish a new version",
+"page_every_min": null,
+"src": "release",
+"what": "The division page"
+},
+"atlas/carbon": {
+"div": "atlas",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "CARBON",
+"src": "release",
+"what": "Pounds of CO2 per megawatthour by state and grid region"
+},
+"atlas/electricity": {
+"div": "atlas",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "ELECTRICITY",
+"src": "release",
+"what": "Prices, providers and generation by state"
+},
+"atlas/planned-plants": {
+"div": "atlas",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "PLANNED PLANTS",
+"src": "release",
+"what": "What is coming, by fuel, stage and year"
+},
+"atlas/power-plants": {
+"div": "atlas",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "POWER PLANTS",
+"src": "release",
+"what": "Every operating plant by fuel and capacity"
+},
+"cada": {
+"div": "atlas",
+"every": "checked about every hour, sent once a change holds for an hour",
+"every_min": 150,
+"mode": "update",
+"name": "CADA",
+"src": "feed limit",
+"what": "Public DNS filters against fresh abuse reports"
+},
+"cadence": {
+"div": "hermes",
+"every": "checked about every hour",
+"every_min": 90,
+"mode": "outcome",
+"name": "CADENCE",
+"src": "feed limit",
+"what": "Stated update schedules against delivered"
+},
+"campus": {
+"div": "oy",
+"every": "checked about once a day",
+"every_min": 1404,
+"mode": "outcome",
+"name": "CAMPUS",
+"src": "feed limit",
+"what": "The documents behind the OY page, kept over time"
+},
+"cassandra": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "CASSANDRA",
+"src": "release",
+"what": "Warnings against what followed, every warning counted"
+},
+"census": {
+"div": "hermes",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "CENSUS",
+"src": "feed limit",
+"what": "Census Bureau statements about the uncertainty of its first estimates, against the revisions that followed"
+},
+"change": {
+"div": "atlas",
+"every": "checked about every 8 hours",
+"every_min": 468,
+"mode": "outcome",
+"name": "CHANGE",
+"src": "feed limit",
+"what": "Announced shutdown dates, kept over time"
+},
+"chronos": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "CHRONOS",
+"src": "release",
+"what": "Today in the world’s calendars"
+},
+"cone": {
+"div": "atlas",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "CONE",
+"src": "feed limit",
+"what": "The hurricane forecast cone against where storms went"
+},
+"credit": {
+"div": "hermes",
+"every": "checked about every 10 days",
+"every_min": 14400,
+"mode": "outcome",
+"name": "CREDIT",
+"src": "feed limit",
+"what": "Stated complaint responses and card terms against the public record"
+},
+"deus": {
+"div": "hermes",
+"every": "checked about every 30 minutes",
+"every_min": 29,
+"mode": "outcome",
+"name": "DEUS",
+"src": "ledger pass",
+"what": "Benchmark scores the AI labs state against independent reruns"
+},
+"fedsep": {
+"div": "hermes",
+"every": "checked about every 12 hours",
+"every_min": 702,
+"mode": "outcome",
+"name": "FEDSEP",
+"src": "feed limit",
+"what": "The Fed’s stated ranges against outcomes"
+},
+"flu": {
+"div": "hermes",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "FLU",
+"src": "feed limit",
+"what": "Stated flu forecast intervals against reported admissions"
+},
+"forecast": {
+"div": "hermes",
+"every": "checked about every hour",
+"every_min": 90,
+"mode": "update",
+"name": "FORECAST",
+"src": "feed limit",
+"what": "Stated chance against what happened"
+},
+"forecasters": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "FORECASTERS",
+"src": "release",
+"what": "Every forecaster desk on one axis, stated against delivered"
+},
+"hermes": {
+"div": "hermes",
+"every": "each desk at its own pace",
+"every_min": null,
+"mode": "division",
+"name": "HERMES",
+"page_every": "when we publish a new version",
+"page_every_min": null,
+"src": "release",
+"what": "The division page"
+},
+"hermes/datapapers": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "DATA PAPERS",
+"src": "release",
+"what": "Papers in four data journals, each listed with the files its repository serves"
+},
+"hermes/model": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "MODEL",
+"src": "release",
+"what": "Models and the hardware they run on: vendor statements against published results, model claims rerun, studies against their released data"
+},
+"hflicense": {
+"div": "iris",
+"every": "checked about once a day",
+"every_min": 1290,
+"mode": "outcome",
+"name": "HFLICENSE",
+"src": "feed limit",
+"what": "Stated licenses against license files"
+},
+"hfsize": {
+"div": "iris",
+"every": "checked about once a day",
+"every_min": 1248,
+"mode": "outcome",
+"name": "HFSIZE",
+"src": "feed limit",
+"what": "Model names against the weights"
+},
+"hosts": {
+"div": "iris",
+"every": "checked about every hour",
+"every_min": 90,
+"mode": "outcome",
+"name": "HOSTS",
+"src": "feed limit",
+"what": "One open-weight model, many hosts, stated uptime and quantization"
+},
+"hpt": {
+"div": "hermes",
+"every": "checked about every 24 days",
+"every_min": 33930,
+"mode": "outcome",
+"name": "HPT",
+"src": "feed limit",
+"what": "Hospital price files against the rule"
+},
+"iris": {
+"div": "iris",
+"every": "each desk at its own pace",
+"every_min": null,
+"mode": "division",
+"name": "IRIS",
+"page_every": "when we publish a new version",
+"page_every_min": null,
+"src": "release",
+"what": "The division page"
+},
+"iris/lab": {
+"div": "iris",
+"every": "checked about every hour",
+"every_min": 90,
+"mode": "update",
+"name": "LAB",
+"src": "feed limit",
+"what": "House model runs: STANYO training live, the house training, Falcon training, the finalists, the Heuremen Standard across models"
+},
+"launch": {
+"div": "hermes",
+"every": "checked about every 2 hours",
+"every_min": 114,
+"mode": "outcome",
+"name": "LAUNCH",
+"src": "feed limit",
+"what": "Stated launch time against the time it flew"
+},
+"linkrot": {
+"div": "hermes",
+"every": "checked about every 2 hours",
+"every_min": 114,
+"mode": "outcome",
+"name": "LETHE",
+"src": "feed limit",
+"what": "The links papers forget: stated code links against live"
+},
+"neo": {
+"div": "atlas",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "NEO",
+"src": "feed limit",
+"what": "Stated asteroid close-approach distances against the later record"
+},
+"oy": {
+"div": "oy",
+"every": "each desk at its own pace",
+"every_min": null,
+"mode": "division",
+"name": "OY",
+"page_every": "when we publish a new version",
+"page_every_min": null,
+"src": "release",
+"what": "The division page"
+},
+"petrol": {
+"div": "atlas",
+"every": "checked about once a week",
+"every_min": 12000,
+"mode": "outcome",
+"name": "PETROL",
+"src": "feed limit",
+"what": "OPEC+ required production against delivered output"
+},
+"pkginstall": {
+"div": "iris",
+"every": "checked about every 20 hours",
+"every_min": 1170,
+"mode": "outcome",
+"name": "PKGINSTALL",
+"src": "feed limit",
+"what": "Install commands against pip resolution"
+},
+"pkglicense": {
+"div": "iris",
+"every": "checked about once a day",
+"every_min": 1326,
+"mode": "outcome",
+"name": "PKGLICENSE",
+"src": "feed limit",
+"what": "Package licenses against repository licenses"
+},
+"predictions": {
+"div": "hermes",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "update",
+"name": "NOW",
+"src": "feed limit",
+"what": "Public predictions against their deadline, and FORTUNE"
+},
+"prometheus": {
+"div": "hermes",
+"every": "checked about every 30 minutes",
+"every_min": 29,
+"mode": "outcome",
+"name": "PROMETHEUS",
+"src": "ledger pass",
+"what": "Stated wildfire outlooks against the large fires that followed"
+},
+"qia": {
+"div": "qia",
+"every": "each desk at its own pace",
+"every_min": null,
+"mode": "division",
+"name": "QIA",
+"page_every": "checked about every 2 hours",
+"page_every_min": 150,
+"src": "feed limit",
+"what": "The division page"
+},
+"qia/key": {
+"div": "qia",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "KEY",
+"src": "release",
+"what": "The QIA codes, problem by problem"
+},
+"qia/list": {
+"div": "qia",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "THE LIST",
+"src": "release",
+"what": "Every indexed quantum study with its receipt"
+},
+"quake": {
+"div": "atlas",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "QUAKE",
+"src": "feed limit",
+"what": "Stated aftershock odds against the aftershocks that followed"
+},
+"rank": {
+"div": "oy",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "RANK",
+"src": "feed limit",
+"what": "US News education rankings against the public record"
+},
+"revise": {
+"div": "hermes",
+"every": "checked about every 12 hours",
+"every_min": 702,
+"mode": "outcome",
+"name": "REVISE",
+"src": "feed limit",
+"what": "Stated margin against later revision"
+},
+"seasonal": {
+"div": "hermes",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "SEASONAL",
+"src": "feed limit",
+"what": "Stated seasonal outlook chances against what was observed"
+},
+"seat": {
+"div": "atlas",
+"every": "checked about every 3 hours, sent once a change holds for an hour",
+"every_min": 234,
+"mode": "update",
+"name": "SEAT",
+"src": "feed limit",
+"what": "An outside seat reads the indahl.ai pages"
+},
+"secrecords": {
+"div": "atlas",
+"every": "checked about once a day",
+"every_min": 1212,
+"mode": "outcome",
+"name": "SECRECORDS",
+"src": "feed limit",
+"what": "Security records against their own rules"
+},
+"social": {
+"div": "hermes",
+"every": "checked about every 3 days",
+"every_min": 4332,
+"mode": "outcome",
+"name": "SOCIAL",
+"src": "feed limit",
+"what": "Platform reports against the filings"
+},
+"solar": {
+"div": "atlas",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "SOLAR",
+"src": "feed limit",
+"what": "Stated flare and storm chances against what happened"
+},
+"steo": {
+"div": "hermes",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "STEO",
+"src": "feed limit",
+"what": "Stated energy price intervals against the spot price"
+},
+"support": {
+"div": "atlas",
+"every": "checked about every 16 hours",
+"every_min": 936,
+"mode": "outcome",
+"name": "SUPPORT",
+"src": "feed limit",
+"what": "Stated support windows against release activity"
+},
+"tape": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "TAPE",
+"src": "release",
+"what": "Every page and live feed, hashed and chained, with a beacon"
+},
+"time": {
+"div": "atlas",
+"every": "checked about every hour, sent once a change holds for an hour",
+"every_min": 150,
+"mode": "update",
+"name": "TIME",
+"src": "feed limit",
+"what": "Public time servers, stated against delivered"
+},
+"tornado": {
+"div": "hermes",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "outcome",
+"name": "TORNADO",
+"src": "feed limit",
+"what": "Stated tornado chances and warning goals against the tornadoes that came"
+},
+"trials": {
+"div": "hermes",
+"every": "checked about every 16 hours",
+"every_min": 936,
+"mode": "outcome",
+"name": "TRIALS",
+"src": "feed limit",
+"what": "Results due against results posted, and stopped trials"
+},
+"uptime": {
+"div": "atlas",
+"every": "checked about every hour, sent once a change holds for an hour",
+"every_min": 150,
+"mode": "update",
+"name": "UPTIME",
+"src": "feed limit",
+"what": "Vendor status pages against independent probes"
+},
+"vault": {
+"div": "hermes",
+"every": "when we publish a new version",
+"every_min": null,
+"mode": "update",
+"name": "VAULT",
+"src": "release",
+"what": "A receipt for any file, or a file sealed until a date, no file stored"
+},
+"voightkampff": {
+"div": "hermes",
+"every": "checked about every 30 minutes",
+"every_min": 29,
+"mode": "outcome",
+"name": "VOIGHT-KAMPFF",
+"src": "ledger pass",
+"what": "AI-text detector claims against independent tests"
+},
+"water": {
+"div": "atlas",
+"every": "checked about every 12 hours",
+"every_min": 720,
+"mode": "outcome",
+"name": "WATER",
+"src": "feed limit",
+"what": "Reservoir forecasts against measured levels"
+},
+"weights": {
+"div": "iris",
+"every": "checked about every 12 hours",
+"every_min": 702,
+"mode": "outcome",
+"name": "WEIGHTS",
+"src": "feed limit",
+"what": "Model names against their weight files, pass after pass"
+},
+"wiki": {
+"div": "hermes",
+"every": "checked about once a week",
+"every_min": 10800,
+"mode": "update",
+"name": "WIKI",
+"src": "feed limit",
+"what": "Cited figures against their source"
+},
+"yo": {
+"div": "iris",
+"every": "checked about every 2 days",
+"every_min": 2400,
+"mode": "update",
+"name": "YO",
+"src": "feed limit",
+"what": "A small language model trained on IBM calibration records: live reads and every test"
+}
+},
+"signals": {
+"arxivdrift": {
+"/arxivdrift/live.json": [
+"classes.*.n",
+"drifted[].{latest,cls}"
+]
+},
+"atlas": {},
+"atlas/carbon": {},
+"atlas/electricity": {},
+"atlas/planned-plants": {},
+"atlas/power-plants": {},
+"cada": {
+"/cada/live.json": [
+"resolvers[].checkpoints.*.state"
+]
+},
+"cassandra": {},
+"chronos": {},
+"forecast": {
+"/forecast/live.json": [
+"measurable.cells[].outcome",
+"cells[].outcome"
+]
+},
+"forecasters": {},
+"hermes": {},
+"hermes/datapapers": {},
+"hermes/model": {},
+"iris": {},
+"iris/lab": {
+"/iris/live.json": [
+"done[].title",
+"running[].title"
+]
+},
+"oy": {},
+"predictions": {
+"/predictions/live.json": [
+"resolved",
+"fortune",
+"entries",
+"binary.all"
+]
+},
+"qia": {
+"/qia/audit.json": [
+"processors[].{above,cannot_tell,mismatch}",
+"flagged[].qubit"
+]
+},
+"qia/key": {},
+"qia/list": {},
+"seat": {
+"/seat/live.json": [
+"rolling.*.outcome",
+"incidents[].{first,saw}",
+"not_matching"
+]
+},
+"tape": {},
+"time": {
+"/time/live.json": [
+"totals",
+"servers[].{outcome,outcome_2}"
+]
+},
+"uptime": {
+"/uptime/live.json": [
+"totals",
+"vendors[].incidents[].name"
+]
+},
+"vault": {},
+"wiki": {
+"/wiki/live.json": [
+"@all"
+]
+},
+"yo": {
+"/iris/yo.json": [
+"state",
+"result.rows"
+],
+"/qia/yo.json": [
+"adapter"
+]
+}
+},
+"tick_min": 2.42
+}

@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/launch/live.json",
+ "feed_sha256": "493ee4a4b64f945c0cf519815e9e295c16fed128fd8b003d458f9676331d3ece",
+ "headline": {
+  "desk": "LAUNCH",
+  "display": "18 of 18",
+  "hi": 0.176,
+  "keys": [],
+  "lo": 0.0,
+  "n": 0,
+  "of": 18,
+  "outcome": "CANNOT_TELL",
+  "value": 0.0
+ },
+ "read_at": "2026-11-22T16:02:33Z",
+ "stamp": "22 Nov 15:48"
+}

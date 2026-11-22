@@ -1,0 +1,50 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/airq/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "airq_live_tick.py, the live panel of PLAN.md Addenda 2 and 3: the sensor pick from data/pairs.json, metrics, meets, corrected, ab_ok and outcome as written, and the rolling evaluation over the last 60 UTC days the tick read, which end on the newest AirNow day it kept",
+   "path": "airq_live_score.py",
+   "sha256": "67588317dbdbaa27b0fe6c775e73c64c72c1aa251d924b29c2e3de58ff539b36"
+  }
+ ],
+ "desk": "airq",
+ "inputs": [
+  {
+   "bytes": 129089,
+   "gzip_added": true,
+   "modified": "2026-10-29T18:20:35Z",
+   "path": "data/pairs.json",
+   "sha256": "d6a7d46b4db8c67ec78cacebfac6a25935bebdebe2c2f54233a724fb688fb1e8",
+   "stored": "data/pairs.json.gz",
+   "stored_sha256": "7d9e1c3c8d60738ebb278ba3e0a022985ab3c41079ce56051f0e4ebbe17f9318"
+  },
+  {
+   "bytes": 673523,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:41:28Z",
+   "path": "data/live_days.json",
+   "sha256": "06577fa0bc7b27c6686cb6b393afa951c3652829b80a0389deab2cad7c42dbc8",
+   "stored": "data/live_days.json.gz",
+   "stored_sha256": "9846a0755c68243ca8b19c98c9b507f60189c1e2961cc97d46ba62db83a01f8e"
+  }
+ ],
+ "made": "2026-11-22T16:03:07Z",
+ "mode": "fetch",
+ "name": "AIRQ",
+ "reference": [
+  {
+   "path": "desk/airq_live_tick.py",
+   "sha256": "b74b4fe2ffb59cf45ea5eb8258d2951745e005e66741423e73bce02a477e5225"
+  }
+ ],
+ "sources": [
+  "AirNow real-time hourly files, https://files.airnowtech.org/airnow/YYYY/YYYYMMDD/HourlyData_YYYYMMDDHH.dat, PM2.5 lines of the panel monitors. data/live_days.json (ref) keeps the daily mean of each monitor, from 18 or more hours.",
+  "PurpleAir daily history of the sensor picked for each monitor, https://api.purpleair.com/v1/sensors/ID/history with average=1440. data/live_days.json (sens) keeps the atm and cf_1 channels and humidity of each day. A PurpleAir read needs a PurpleAir key.",
+  "data/pairs.json is the sensor and monitor pairing of the main read (1 March to 30 June 2026), from which the live panel takes the median-RMSE sensor of each monitor."
+ ],
+ "why_not_included": "its inputs are the AirNow and PurpleAir daily values the live tick read, and a PurpleAir read needs a PurpleAir key. Each input is named with its sha256"
+}

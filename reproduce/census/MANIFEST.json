@@ -1,0 +1,44 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/census/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "census_tick.py cells() and the outcome rule against 90 percent, for the national total cells",
+   "path": "census_score.py",
+   "sha256": "1e58361dc0d4376375fb35e1da025aa01bfd7ccf3532f5fefdba8b8a759fb738"
+  }
+ ],
+ "desk": "census",
+ "inputs": [
+  {
+   "bytes": 1943543,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:14:00Z",
+   "path": "data/census.json",
+   "sha256": "af4149a5befa07156966185942eebd01f1d2aee8dd6c3cf81e77fe03b8961a77",
+   "stored": "data/census.json.gz",
+   "stored_sha256": "d4dadb74555b733260983e055cd3685016f56ddeda2fc460f6c084abc23ca337"
+  },
+  {
+   "bytes": 77744,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:14:00Z",
+   "path": "summary_census.json",
+   "sha256": "6ca070e8a0f5d5469d81131a49967c7f496078925a3fe8464b8ed570f492c2bf",
+   "stored": "summary_census.json.gz",
+   "stored_sha256": "6c3e63d82d96e73f964f6fd2e1150a88753022d11729b8ac853c5d78132cf6c1"
+  }
+ ],
+ "made": "2026-11-22T16:02:55Z",
+ "mode": "inputs",
+ "name": "CENSUS",
+ "reference": [
+  {
+   "path": "desk/census_tick.py",
+   "sha256": "57fac8efff61086165a63eba93ea416d25b35994203e88f0ca2c05ab3248dc94"
+  }
+ ]
+}

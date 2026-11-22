@@ -1,0 +1,39 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/launch/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "launch_tick.py lines 28 to 58, flown_watched and the cells, without the count still waiting",
+   "path": "launch_score.py",
+   "sha256": "db2993a69f127bca7fe99d48d38885d5377adc644ac67e75854011f2ed331864"
+  }
+ ],
+ "desk": "launch",
+ "inputs": [
+  {
+   "bytes": 4141892,
+   "gzip_added": true,
+   "modified": "2026-11-22T14:43:20Z",
+   "path": "data/snapshots.jsonl",
+   "sha256": "8bc7173b7eefa9b8b09f7486e13dff26412bb9e770db1228a7e87b1d792fd32c",
+   "stored": "data/snapshots.jsonl.gz",
+   "stored_sha256": "8aa385e89c46c9c7fdf1183d58fe54e9d8a813bc5d2f7e84b61a7e4617669752"
+  }
+ ],
+ "made": "2026-11-22T16:02:33Z",
+ "mode": "fetch",
+ "name": "LAUNCH",
+ "reference": [
+  {
+   "path": "desk/launch_tick.py",
+   "sha256": "5a77a291a618a3a2146f8c5d761d9b394a7200739aee914cdd7845e5e7849af8"
+  }
+ ],
+ "sources": [
+  "Launch Library 2, https://ll.thespacedevs.com/2.3.0/launches/upcoming/?limit=100&mode=normal and .../previous/?limit=100&mode=normal, read every 6 ticks. Each row of data/snapshots.jsonl is one launch as read, with the read time in its read field."
+ ],
+ "why_not_included": "The Space Devs state no data licence for Launch Library 2"
+}

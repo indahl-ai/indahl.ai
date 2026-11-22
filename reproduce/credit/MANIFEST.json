@@ -1,0 +1,35 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/credit/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "credit_tick.py lines 23, 39, 128 to 150 and 195 to 200, the printed band, the company-month block bootstrap and ruler one for 2025",
+   "path": "credit_score.py",
+   "sha256": "e8f4e32ac318187e12420a3509a631f7bfb36f12477be4ddf63b57d5e2e21268"
+  }
+ ],
+ "desk": "credit",
+ "inputs": [
+  {
+   "bytes": 22572830,
+   "gzip_added": true,
+   "modified": "2026-11-17T11:39:45Z",
+   "path": "data/cache/agg_a2516688944feb17.json",
+   "sha256": "a003b4a16065b1999b37a9d873789ad1cf87585b72788de6c2b586215e2c2d12",
+   "stored": "data/cache/agg_a2516688944feb17.json.gz",
+   "stored_sha256": "915ec74fdb8824d9d8c4f02a06380243cc068a368a0b59d4824f594139035e76"
+  }
+ ],
+ "made": "2026-11-22T16:02:50Z",
+ "mode": "inputs",
+ "name": "CREDIT",
+ "reference": [
+  {
+   "path": "desk/credit_tick.py",
+   "sha256": "a4d7eeb9d55a0f5c89d1e2ebe5d5ac221e085a1d2ae1546d49a7d4a7c4f8caab"
+  }
+ ]
+}

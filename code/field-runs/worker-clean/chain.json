@@ -1,0 +1,126 @@
+[
+ {
+  "id": "install",
+  "cmd": [
+   "bash",
+   "~/forge/field-runs/worker-clean/install.sh"
+  ],
+  "cwd": "~/forge/field-runs/worker-clean"
+ },
+ {
+  "id": "house-scan",
+  "after": [
+   "install"
+  ],
+  "cmd": [
+   "python3",
+   "~/forge/field-runs/worker-clean/scan_house.py",
+   "~/forge/cloudflare-workers/heuremen-door/worker.js",
+   "~/forge/cloudflare-workers/heuremen-door/wrangler.toml"
+  ],
+  "cwd": "~/forge/field-runs/worker-clean"
+ },
+ {
+  "id": "ccr-approve",
+  "after": [
+   "house-scan"
+  ],
+  "cmd": [
+   "bash",
+   "-c",
+   "[...]"
+  ],
+  "cwd": "~/forge/cloudflare-workers/heuremen-door",
+  "env": {
+   "CLAUDE_PROJECT_DIR": "~/forge/cloudflare-workers/heuremen-door"
+  }
+ },
+ {
+  "id": "ship",
+  "after": [
+   "ccr-approve"
+  ],
+  "lane": "site",
+  "cmd": [
+   "perl",
+   "-e",
+   "alarm 1500; exec @ARGV",
+   "bash",
+   "~/forge/ledger/ship.sh",
+   "indahl.ai worker cleaned for public: code only the retired flock hosts reached is gone (house address, private site routing, personal quotes), comments stripped, unused service bindings dropped; parity 5363 URLs 0 mismatches; worker.js now in the public repo (field run: field-runs/worker-clean)"
+  ],
+  "cwd": "~/forge"
+ },
+ {
+  "id": "ccr-release",
+  "after": [
+   "ship"
+  ],
+  "cmd": [
+   "python3",
+   "~/forge/claude-plugins/src/ccr/scripts/ccr.py",
+   "release",
+   "worker.js",
+   "wrangler.toml",
+   "--by",
+   "ship.sh"
+  ],
+  "cwd": "~/forge/cloudflare-workers/heuremen-door",
+  "env": {
+   "CLAUDE_PROJECT_DIR": "~/forge/cloudflare-workers/heuremen-door"
+  }
+ },
+ {
+  "id": "snap-after",
+  "after": [
+   "ship"
+  ],
+  "cmd": [
+   "perl",
+   "-e",
+   "alarm 900; exec @ARGV",
+   "python3",
+   "~/forge/field-runs/worker-clean/snap.py",
+   "take",
+   "live_after.json"
+  ],
+  "cwd": "~/forge/field-runs/worker-clean"
+ },
+ {
+  "id": "compare",
+  "after": [
+   "snap-after"
+  ],
+  "cmd": [
+   "python3",
+   "~/forge/field-runs/worker-clean/compare_floor.py"
+  ],
+  "cwd": "~/forge/field-runs/worker-clean"
+ },
+ {
+  "id": "gate",
+  "after": [
+   "ship"
+  ],
+  "cmd": [
+   "python3",
+   "~/forge/ledger/served_public_gate.py"
+  ],
+  "cwd": "~/forge/field-runs/worker-clean"
+ },
+ {
+  "id": "ccr-verify",
+  "after": [
+   "ccr-release"
+  ],
+  "cmd": [
+   "bash",
+   "-c",
+   "[...]"
+  ],
+  "cwd": "~/forge/cloudflare-workers/heuremen-door",
+  "env": {
+   "CLAUDE_PROJECT_DIR": "~/forge/cloudflare-workers/heuremen-door"
+  }
+ }
+]

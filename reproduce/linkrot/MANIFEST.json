@@ -1,0 +1,44 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/linkrot/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "linkrot_tick.py lines 84 to 92 and 101, the cell and combined functions and the all cell",
+   "path": "linkrot_score.py",
+   "sha256": "de696c17bd28dd42ea791548d5c9720f8c01f59ec84fcbd22b1ffc918594d034"
+  }
+ ],
+ "desk": "linkrot",
+ "inputs": [
+  {
+   "bytes": 538638,
+   "gzip_added": true,
+   "modified": "2026-11-20T14:44:22Z",
+   "path": "data/links.json",
+   "sha256": "52bc78462931125525a853e196e832997a26024e2546962199de6a31daeb58fb",
+   "stored": "data/links.json.gz",
+   "stored_sha256": "78a08ba7a8850343ae24fda3eb38f9ce0104ccdcabd56e03078fa75a3d170b0d"
+  },
+  {
+   "bytes": 13656,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:49:30Z",
+   "path": "summary_linkrot.json",
+   "sha256": "d98e1e0b7b1495cccbf689d5a3663cc33b8e0af2e466f448a45908b3af17bf62",
+   "stored": "summary_linkrot.json.gz",
+   "stored_sha256": "9c148fa7b48bed965ec987e0ea9a8cc8e64e6233925a22598aa8abb9e854378e"
+  }
+ ],
+ "made": "2026-11-22T16:02:15Z",
+ "mode": "inputs",
+ "name": "LETHE",
+ "reference": [
+  {
+   "path": "desk/linkrot_tick.py",
+   "sha256": "13d98cb8822e78918ef1fb0f748af0ac5d613580b2aa81ea26578aa288b8e2d9"
+  }
+ ]
+}

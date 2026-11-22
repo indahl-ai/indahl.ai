@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "hpt",
+ "headline": {
+  "field": [
+   "comparison",
+   "1 A cms-hpt.txt at the root of the domain",
+   "share"
+  ],
+  "hi": [
+   "comparison",
+   "1 A cms-hpt.txt at the root of the domain",
+   "share_hi"
+  ],
+  "lo": [
+   "comparison",
+   "1 A cms-hpt.txt at the root of the domain",
+   "share_lo"
+  ],
+  "n": [
+   "comparison",
+   "1 A cms-hpt.txt at the root of the domain",
+   "n"
+  ],
+  "of": [
+   "comparison",
+   "1 A cms-hpt.txt at the root of the domain",
+   "of"
+  ],
+  "outcome": [
+   "comparison",
+   "1 A cms-hpt.txt at the root of the domain",
+   "outcome"
+  ],
+  "show": "n_of"
+ },
+ "name": "HPT",
+ "output": "out.json",
+ "steps": [
+  [
+   "hpt_score.py"
+  ]
+ ]
+}

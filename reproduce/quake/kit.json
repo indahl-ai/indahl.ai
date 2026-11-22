@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "quake",
+ "headline": {
+  "field": [
+   "described",
+   "stated_10_percent_or_more_all",
+   "share"
+  ],
+  "hi": [
+   "described",
+   "stated_10_percent_or_more_all",
+   "hi"
+  ],
+  "lo": [
+   "described",
+   "stated_10_percent_or_more_all",
+   "lo"
+  ],
+  "n": [
+   "described",
+   "stated_10_percent_or_more_all",
+   "occurred"
+  ],
+  "of": [
+   "described",
+   "stated_10_percent_or_more_all",
+   "scored"
+  ],
+  "outcome": [
+   "described",
+   "stated_10_percent_or_more_all",
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "QUAKE",
+ "output": "out.json",
+ "steps": [
+  [
+   "quake_score.py"
+  ]
+ ]
+}

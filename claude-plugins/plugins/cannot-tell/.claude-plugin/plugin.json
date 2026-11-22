@@ -1,0 +1,19 @@
+{
+  "name": "indahl-cannot-tell",
+  "version": "1.0.0",
+  "description": "Answer \"cannot tell yet\" usefully instead of forcing a guess. Returns the range of what is possible, the one or two facts that would decide it, and the cheapest next step. Runs inside your session.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "homepage": "https://indahl.ai/standard",
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "uncertainty",
+    "honesty",
+    "decision",
+    "verification"
+  ],
+  "icon": ".claude-plugin/icon.png"
+}

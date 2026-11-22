@@ -1,0 +1,49 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/secrecords/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "secrecords_tick.py lines 150 to 162, read_share, the grp function and the comparison block",
+   "path": "secrecords_score.py",
+   "sha256": "c195bf62ca5afe000d71ffa731fdcfb872d40d9e8f9a2c3e16c58ee0da98107c"
+  }
+ ],
+ "desk": "secrecords",
+ "inputs": [
+  {
+   "bytes": 368342,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:54:49Z",
+   "path": "data/domains.json",
+   "sha256": "43b4cdd866e12fc51340f849fa78ae2d0aacb9bddaad76d7eee9428176ac4001",
+   "stored": "data/domains.json.gz",
+   "stored_sha256": "6b8b99498518a301ada04760a9b6c65ebdc3cf971435267d0cfafb68f22ab666"
+  },
+  {
+   "bytes": 14936,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:54:49Z",
+   "path": "summary_secrecords.json",
+   "sha256": "9be0c514da7cd502a163d640b932044c8bfeae4974239657cd8de37c9be1a040",
+   "stored": "summary_secrecords.json.gz",
+   "stored_sha256": "501d28e9e18ce2c4faff4bf969b85bf45a09cf846630ab0c3173009794862fb4"
+  }
+ ],
+ "made": "2026-11-22T16:02:21Z",
+ "mode": "fetch",
+ "name": "SECRECORDS",
+ "reference": [
+  {
+   "path": "desk/secrecords_tick.py",
+   "sha256": "b999ee7c47a42a6d9bd1f3b76c48b2e93f8c16c9039c44a10150e73126995d54"
+  }
+ ],
+ "sources": [
+  "The domain list: the top 1,000 rows of the Tranco list of the date in data/listdate.txt of the desk, https://tranco-list.eu/",
+  "For each domain, the first HTTPS response of https://DOMAIN/ (no redirect followed) and its SPF record read through DNS over HTTPS, as secrecords_tick.py does. Each row of data/domains.json carries the time it was read in its read field."
+ ],
+ "why_not_included": "the Tranco list draws on a non-commercial input and a share-alike input"
+}

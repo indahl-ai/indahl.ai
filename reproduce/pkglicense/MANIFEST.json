@@ -1,0 +1,67 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/pkglicense/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "pkglicense_tick.py lines 97 to 102, the rows of the listed names, the counts and the disagree block",
+   "path": "pkglicense_score.py",
+   "sha256": "f1c0543865598c37db271b6d3468432481f1410e77582c4b833b315bf02a13f1"
+  }
+ ],
+ "desk": "pkglicense",
+ "inputs": [
+  {
+   "bytes": 184496,
+   "gzip_added": true,
+   "modified": "2026-11-22T14:47:44Z",
+   "path": "data/projects.json",
+   "sha256": "c0bdf2755068f1754a8b62c0a76aace3e768f333ab38bc1bba907d70bf00e53f",
+   "stored": "data/projects.json.gz",
+   "stored_sha256": "05531fc1ccf5a9b4969d8cf3425477ab9d5caa2782d4844f8038feb592d6c18a"
+  },
+  {
+   "bytes": 3070,
+   "gzip_added": true,
+   "modified": "2026-11-22T14:47:44Z",
+   "path": "summary_pkglicense.json",
+   "sha256": "bf828ed71bd2f074da55fed2c3e38b68de296ade34aa563af25f0fabfd2d7e28",
+   "stored": "summary_pkglicense.json.gz",
+   "stored_sha256": "222a2d2d2371126a63c014601f3d66a6b8cee2dd4aa32c70e1f3121957c50300"
+  },
+  {
+   "bytes": 157667,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:16:40Z",
+   "path": "pkginstall/data/projects.json",
+   "sha256": "088b03c3c26cefdc53e8969eb0eaf0f63f747b6be8809a6cda58a0a7d63b6c95",
+   "stored": "pkginstall/data/projects.json.gz",
+   "stored_sha256": "2c70b4f40efd112e3a5cb0d4114334dc6272f0b22a19ba2cf944b05fa45584a9"
+  },
+  {
+   "bytes": 19,
+   "gzip_added": true,
+   "modified": "2026-11-22T15:16:40Z",
+   "path": "pkginstall/data/listdate.txt",
+   "sha256": "ce00e09e717676959017c3ccf380945489c8e20154f04283a3e6692ba0b6d399",
+   "stored": "pkginstall/data/listdate.txt.gz",
+   "stored_sha256": "d23e1d3031fea3e62381d44a960e1fd2cc4c5ddb518c54cf3810ab9c34896a96"
+  }
+ ],
+ "made": "2026-11-22T16:02:36Z",
+ "mode": "fetch",
+ "name": "PKGLICENSE",
+ "reference": [
+  {
+   "path": "desk/pkglicense_tick.py",
+   "sha256": "9d10950517d06573425b5643e4ca519b0d1064ab0b94a1fbf81df0769b861d1e"
+  }
+ ],
+ "sources": [
+  "The top PyPI projects list of the list date in summary_pkglicense.json, https://hugovk.github.io/top-pypi-packages/top-pypi-packages.json",
+  "For each project, https://pypi.org/pypi/PROJECT/json and the licenseInfo of its GitHub repository from the GitHub GraphQL API. Each row carries its read time."
+ ],
+ "why_not_included": "PyPI and GitHub metadata are under their terms of service and not an open licence"
+}

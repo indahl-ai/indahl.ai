@@ -1,0 +1,44 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/hpt/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "hpt_tick.py lines 121 to 124 and 128, the grp function and the comparison block",
+   "path": "hpt_score.py",
+   "sha256": "0bcb907b218b89599d180a70d2527305f1d922dc6c29716fa1d1adb2405a6aee"
+  }
+ ],
+ "desk": "hpt",
+ "inputs": [
+  {
+   "bytes": 445118,
+   "gzip_added": true,
+   "modified": "2026-11-21T17:57:07Z",
+   "path": "data/domains.json",
+   "sha256": "7805e095cec597ccf5c230f22f2c9c908e65a2182e58e150323285d10fe52d19",
+   "stored": "data/domains.json.gz",
+   "stored_sha256": "f2562ced6a17bd62d79dbb53b73fd7af32598829913034d005be51f6aa15247c"
+  },
+  {
+   "bytes": 6350,
+   "gzip_added": true,
+   "modified": "2026-11-21T17:57:07Z",
+   "path": "summary_hpt.json",
+   "sha256": "5265f22c263958631f72dfac0ba7972fc930f5992f3c7ba44a5756503de25502",
+   "stored": "summary_hpt.json.gz",
+   "stored_sha256": "91a41317567ee810f294140abd1103e2a4f8148c570f6db42aecde030167c988"
+  }
+ ],
+ "made": "2026-11-22T16:02:17Z",
+ "mode": "inputs",
+ "name": "HPT",
+ "reference": [
+  {
+   "path": "desk/hpt_tick.py",
+   "sha256": "862e818deefe4c9bbc177d1e43f5411223d963f1100a81f76d274bb0a96792f2"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "cwd": "",
+ "desk": "ares",
+ "headline": {
+  "field": [
+   "ares",
+   "agree_share",
+   "value"
+  ],
+  "hi": [
+   "ares",
+   "agree_share",
+   "hi"
+  ],
+  "lo": [
+   "ares",
+   "agree_share",
+   "lo"
+  ],
+  "n": [
+   "ares",
+   "agree_share",
+   "n"
+  ],
+  "of": [
+   "ares",
+   "agree_share",
+   "of"
+  ],
+  "show": "n_of"
+ },
+ "name": "ARES",
+ "output": "data/ares_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "ares_tick.py",
+   "data/ares_live.json",
+   "--offline"
+  ]
+ ]
+}

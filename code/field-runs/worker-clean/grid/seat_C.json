@@ -1,0 +1,28 @@
+{
+ "name": "C",
+ "criteria": {
+  "C1": {
+   "outcome": "MET",
+   "planted_fail_caught": true,
+   "reason": "Parity old vs new, 5,363 URLs including MCP calls, 0 mismatches; control 0; planted /contact caught (200 vs 404)."
+  },
+  "C2": {
+   "outcome": "MET",
+   "planted_fail_caught": true,
+   "reason": "scan_house.py on the deployed files: 0 hits, and an IPv4 grep found none. Planted run reported caught but not seen. The word list is private."
+  },
+  "C3": {
+   "outcome": "CANNOT_TELL",
+   "planted_fail_caught": true,
+   "reason": "Live pages return 200, but the criterion's own before/after crawl failed (107 outside the floor). The local same-pages test shows the worker code did not change output. It does not show the live site was unchanged. The planted /connect change is caught."
+  },
+  "C4": {
+   "outcome": "CANNOT_TELL",
+   "planted_fail_caught": null,
+   "reason": "Public worker.js is byte-identical to the deployed file and the gate lists both files as required, but the gate stage failed (rc 1) over a late receipt, and the planted removed-worker.js check was never shown."
+  }
+ },
+ "done": false,
+ "done_reason": "Nearly done but not clean: deployed and published, private material gone, but compare and gate failed, and the after-deploy proof rests on a substitute test chosen afterwards. They would want a clean re-run of the after-deploy comparison and a gate at exit 0.",
+ "pass_but_fail": "Checks measure the worker's behaviour or its text, not the rest of the public repo or the live site. A visitor-visible live change could not be told apart from the rebuild, and private names could sit elsewhere in the public repo, for example in published criteria, receipts or logs, and still pass."
+}

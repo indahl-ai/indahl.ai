@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/linkrot/live.json",
+ "feed_sha256": "d98e1e0b7b1495cccbf689d5a3663cc33b8e0af2e466f448a45908b3af17bf62",
+ "headline": {
+  "desk": "LETHE",
+  "display": "3.4%",
+  "hi": 0.0434,
+  "keys": [],
+  "lo": 0.0273,
+  "n": 68,
+  "of": 1980,
+  "outcome": "CONSISTENT",
+  "value": 0.0344
+ },
+ "read_at": "2026-11-22T16:02:15Z",
+ "stamp": "22 Nov 15:49"
+}

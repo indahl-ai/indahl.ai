@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/water/live.json",
+ "feed_sha256": "d4328ab6f1fa300eabfbba7230103234cf4aa16ef3f518ad120f31494cdb58a8",
+ "headline": {
+  "desk": "WATER",
+  "display": "42 of 83",
+  "hi": 0.701,
+  "keys": [],
+  "lo": 0.299,
+  "n": 42,
+  "of": 83,
+  "outcome": "BELOW",
+  "value": 0.51
+ },
+ "read_at": "2026-11-22T16:02:45Z",
+ "stamp": "2026-11-22 10:11"
+}

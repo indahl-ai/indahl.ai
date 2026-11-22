@@ -1,0 +1,36 @@
+{
+ "cwd": "",
+ "desk": "cadence",
+ "headline": {
+  "field": [
+   "totals",
+   "below"
+  ],
+  "keys": [
+   [
+    "totals",
+    "below"
+   ],
+   [
+    "totals",
+    "readable"
+   ]
+  ],
+  "n": [
+   "totals",
+   "below"
+  ],
+  "of": [
+   "totals",
+   "readable"
+  ],
+  "show": "n_of"
+ },
+ "name": "CADENCE",
+ "output": "out.json",
+ "steps": [
+  [
+   "cadence_score.py"
+  ]
+ ]
+}

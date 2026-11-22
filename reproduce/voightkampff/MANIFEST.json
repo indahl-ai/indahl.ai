@@ -1,0 +1,532 @@
+{
+ "code": [
+  {
+   "path": "vk_tick.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/voightkampff/vk_tick.py",
+   "sha256": "e23a29f5aa60d528358ef0f573790fea3b2e19a00dcec1405e8637babbf2e95e"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/voightkampff/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  }
+ ],
+ "desk": "voightkampff",
+ "inputs": [
+  {
+   "bytes": 147,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:24Z",
+   "path": "data/raw/stated/copyleaks/live.html.meta.json",
+   "sha256": "ede00f6b4a2fb61f032dc27629e0680c48e3c28df291a5d4cb5271f56a565e5a",
+   "stored": "data/raw/stated/copyleaks/live.html.meta.json.gz",
+   "stored_sha256": "44d0a21ca71fc7c9e81b4773e8f2192dc2c7bcf6102dc6446815c85b10a5206f"
+  },
+  {
+   "bytes": 390,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:13Z",
+   "path": "data/raw/stated/gptzero/live.html.meta.json",
+   "sha256": "bb8f50a55740565a7e78634c153d18fe7566f907d2b9889d557e70d9a8e6ec26",
+   "stored": "data/raw/stated/gptzero/live.html.meta.json.gz",
+   "stored_sha256": "a784bcfca54c11299c0e5f32152988b0ac7e8dc7f7189d7d2a55ce1a5a2cfcd0"
+  },
+  {
+   "bytes": 436,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:22Z",
+   "path": "data/raw/stated/originality/live.html.meta.json",
+   "sha256": "189235ad17815f74f4460190739d778c8e0d830d3b2b3ebd8e56a1566782e61c",
+   "stored": "data/raw/stated/originality/live.html.meta.json.gz",
+   "stored_sha256": "4899422cfec2cc030d1270fd43ee455482b27bbdadbf4d0d20216ea8780f5b09"
+  },
+  {
+   "bytes": 450,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:29Z",
+   "path": "data/raw/stated/pangram/live.html.meta.json",
+   "sha256": "bc2b9db15b8be3ddd49b5183b65ffc308c20fd7b922bb563306df1acf61a7ec7",
+   "stored": "data/raw/stated/pangram/live.html.meta.json.gz",
+   "stored_sha256": "42a052adb5501a7ee210fe5e8fd7bb9a45fbcb6ca01265d63a8f9b673f8383a0"
+  },
+  {
+   "bytes": 155,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:17Z",
+   "path": "data/raw/stated/turnitin/live.html.meta.json",
+   "sha256": "0dcbb9493ba0c87a65462b676c8d3665e077094ccf2712673d77e3a77de07eeb",
+   "stored": "data/raw/stated/turnitin/live.html.meta.json.gz",
+   "stored_sha256": "0bab5978d1e4280d5ae7d1d123c4367cd8914f4a709d00fe1b1a04183294ae4f"
+  },
+  {
+   "bytes": 414,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:36Z",
+   "path": "data/raw/stated/winston/live.html.meta.json",
+   "sha256": "05b35be26ef24693c4c8d537e9e690b04b556847efdfb3ef00212b48a1fa1816",
+   "stored": "data/raw/stated/winston/live.html.meta.json.gz",
+   "stored_sha256": "947e7454878dd94e907fd5801a2582f4bf03eed022e42b5992774fb1299fbf9a"
+  },
+  {
+   "bytes": 12521,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:13Z",
+   "path": "data/raw/stated/gptzero/live.html.text.txt",
+   "sha256": "d27279dd00538b044bab308849ff42f235698baa7cc61c2c05178acde5b28dad",
+   "stored": "data/raw/stated/gptzero/live.html.text.txt.gz",
+   "stored_sha256": "1a068e6e8b5f7d660a8336315012d2d765dbf2e91555539cebe1fd8b62bca9f4"
+  },
+  {
+   "bytes": 30202,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:22Z",
+   "path": "data/raw/stated/originality/live.html.text.txt",
+   "sha256": "ffa0d5a810b04bf0af6041e2e21bf354d711db82203a667faaa6ca6c79e2a015",
+   "stored": "data/raw/stated/originality/live.html.text.txt.gz",
+   "stored_sha256": "c1e1a3e636c9812a9a5753c83e87dcfee9fae9824f0ae0e40d115042e02b88a0"
+  },
+  {
+   "bytes": 16983,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:29Z",
+   "path": "data/raw/stated/pangram/live.html.text.txt",
+   "sha256": "36ff1451914bab23b19321192dfd2fcb96869e964699202320cd7bcb37e69ec5",
+   "stored": "data/raw/stated/pangram/live.html.text.txt.gz",
+   "stored_sha256": "e8a460c5ed0be3a05446ba8228b66c67f41c6dcb2b9c828de8892d242ecb5907"
+  },
+  {
+   "bytes": 13224,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:36Z",
+   "path": "data/raw/stated/winston/live.html.text.txt",
+   "sha256": "bffb07dcc725feb2a69f54b9f9a68491c6c33fcb4d5c275db1305c9f0ae79b78",
+   "stored": "data/raw/stated/winston/live.html.text.txt.gz",
+   "stored_sha256": "3520d2b72483d4017626f33ef1084d8f026276ae6f4c0ce916e0a861f61f06ef"
+  },
+  {
+   "bytes": 5049,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:25Z",
+   "path": "data/raw/stated/copyleaks/cdx.json",
+   "sha256": "ab2d4df2704742aca5d0a5e20b2349b1b54d1c6e885db04ca4140ec6299a36ed",
+   "stored": "data/raw/stated/copyleaks/cdx.json.gz",
+   "stored_sha256": "078b641362884d01a26c74c0bcc0f20c4d422f7d75239c6f3fee3f9da2dc8547"
+  },
+  {
+   "bytes": 7028,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:15Z",
+   "path": "data/raw/stated/gptzero/cdx.json",
+   "sha256": "85b5b71ffa6fdde73c04c580b2801bece267b56b257c1a05bad157a8028dd440",
+   "stored": "data/raw/stated/gptzero/cdx.json.gz",
+   "stored_sha256": "b524bb39cf0153b332211771e01d601afbf72d6587058e195c83f91c182649eb"
+  },
+  {
+   "bytes": 11181,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:23Z",
+   "path": "data/raw/stated/originality/cdx.json",
+   "sha256": "097cca79dd0567b9c38a496619c1f5d12f048aa62094cb4fa52fce35ed0a27c0",
+   "stored": "data/raw/stated/originality/cdx.json.gz",
+   "stored_sha256": "e730d629f25d7b7eba2619aac4a4da428f9f359df42f4c3aa48d82461edc2c05"
+  },
+  {
+   "bytes": 4354,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:30Z",
+   "path": "data/raw/stated/pangram/cdx.json",
+   "sha256": "f50263abb157e5f3adfba6e73a4ae5926b8150022edd2c86434dd9f04a4e8394",
+   "stored": "data/raw/stated/pangram/cdx.json.gz",
+   "stored_sha256": "8238416f202dee58f171e3943e62c27a90e53fa358542bfe9e80d8675faa730b"
+  },
+  {
+   "bytes": 186,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:18Z",
+   "path": "data/raw/stated/turnitin/cdx.json",
+   "sha256": "c589ee015a1dd6efae61bd040313910a9f9816a996511ee0f692e1ad4d19d801",
+   "stored": "data/raw/stated/turnitin/cdx.json.gz",
+   "stored_sha256": "ebc3d1e418688dbaec35b5b64fd01338861e9f9201c1d507ece89b28d779dd02"
+  },
+  {
+   "bytes": 3409,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:37Z",
+   "path": "data/raw/stated/winston/cdx.json",
+   "sha256": "206473451aba7ba874e754cbd858621a5396182dd27173f167eb983a5b494633",
+   "stored": "data/raw/stated/winston/cdx.json.gz",
+   "stored_sha256": "a38730ceb76c5c05a78baae6c905402745ea479e912c26159ee0690060eafdad"
+  },
+  {
+   "bytes": 205936,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:05Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/GPTZero.json",
+   "sha256": "87463f526cda0ef610e7073f23f4ac3990c695d1f0f92bd10536a94fccd35ce3",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/GPTZero.json.gz",
+   "stored_sha256": "0e980948a3f4877589d3e69c63bf214244397dee4612ab1c223b0fbf2a923c4a"
+  },
+  {
+   "bytes": 586,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:06Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/GPTZero.json.meta.json",
+   "sha256": "457c77935d61d21253270143ea7ab232851758d4d98d1899409f635552c43c5d",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/GPTZero.json.meta.json.gz",
+   "stored_sha256": "df50a167663f3e27458f171496244a68b68f92141c6b6c57a6d99860987c73ad"
+  },
+  {
+   "bytes": 687743,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:10Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/OriginalityAI.json",
+   "sha256": "a294a02729eec5f0932e51b3a97bfebbb657f0217980789d68d2ed8ee0dd31d8",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/OriginalityAI.json.gz",
+   "stored_sha256": "63ecbcdad64f6c9b5d854e7633005e4bf74d9acdcc3ebcb289aef52f2dcab002"
+  },
+  {
+   "bytes": 604,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:10Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/OriginalityAI.json.meta.json",
+   "sha256": "e7175c3ec3bac7ce04e0e5a6038471f95555b68dd2c662de3de52a68470280a8",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/OriginalityAI.json.meta.json.gz",
+   "stored_sha256": "bd629353dc3d57fca0a5659ccaaeb3477defc2d5bdc4d43bb3eb1d2b6e260310"
+  },
+  {
+   "bytes": 178308,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:14Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/data.json",
+   "sha256": "fa62fd0355b7121283feb3ee4468bd0db23ba7847806a04d4a754f77b723a31d",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/data.json.gz",
+   "stored_sha256": "3f798420941708ef2b81ea36880e736de493dce398f9cc0c9c5299cf2659f783"
+  },
+  {
+   "bytes": 577,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:14Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/data.json.meta.json",
+   "sha256": "7d0f4d4833c6041cd9221c8986c8596c9bdf04f88f509d666a6124fd504555b1",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/data.json.meta.json.gz",
+   "stored_sha256": "0484dec630d3ad32598a1a8e4bfdc31a76248ac9cd6e6afba710240ebbbb380a"
+  },
+  {
+   "bytes": 66,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:11Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/name.json",
+   "sha256": "f3a57ee64aaf918c53f6315f3dc0238f2105bedf49c1b4b9e9cec04e1f3022a0",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/name.json.gz",
+   "stored_sha256": "81153e3c64f67ee33c03a41ca0898f7b8e669499f48c413fd23d1f326a660922"
+  },
+  {
+   "bytes": 573,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:11Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/name.json.meta.json",
+   "sha256": "fceb82f23acbfd9b1ac16c5ccce9be2a51d9ecd1f212114d6226da19dd8a4588",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CS224N_real_145/name.json.meta.json.gz",
+   "stored_sha256": "363ec67e1c72ba52a11a9029bb7eeb31cb011fdbbf158f4091164ea484115871"
+  },
+  {
+   "bytes": 267382,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:56Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/GPTZero.json",
+   "sha256": "9dbcc99ee00ba0bc10643f8b875bf130651c45043071db5d2510244257594e75",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/GPTZero.json.gz",
+   "stored_sha256": "6bd19009ca4962250f5cf6c6bec2204d6dc1b95aed2206266c0acffe0cc39070"
+  },
+  {
+   "bytes": 601,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:56Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/GPTZero.json.meta.json",
+   "sha256": "900c54dc15be50464f46e2006f40fe468211f3c1c83039e2c80eca041118117d",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/GPTZero.json.meta.json.gz",
+   "stored_sha256": "5a0823ee1add352ffa6d7284d21be55445ed3540db02524802ad3def837bebee"
+  },
+  {
+   "bytes": 863000,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:00Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/OriginalityAI.json",
+   "sha256": "080ab9faf3fd876be2a94660e100bad03a3bc091666a8c05f3c05c8374b0ada8",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/OriginalityAI.json.gz",
+   "stored_sha256": "186ba2e69d2fe2f5d1423d1cac9fb47aade522a77575db64cbc4c629d24f0292"
+  },
+  {
+   "bytes": 619,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:00Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/OriginalityAI.json.meta.json",
+   "sha256": "e07a2914fe38af52cbb8d5f09201aa041a69728102a55c46131cad62643024fc",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/OriginalityAI.json.meta.json.gz",
+   "stored_sha256": "90eb4b8deb740d8f2f35fad537bea569e0cf4daa265a1161f246c96a5556c490"
+  },
+  {
+   "bytes": 250505,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:03Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/data.json",
+   "sha256": "37534035e5ad8bbb7a362433644b38c6b8d45ad9c444836cc89a7013eb0d9917",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/data.json.gz",
+   "stored_sha256": "b0552a4edce8d182a80033527e66bb340c0d330c66b2ae0a342d3a38e99c4e80"
+  },
+  {
+   "bytes": 592,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:03Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/data.json.meta.json",
+   "sha256": "948e9b9a0cc46dc09412e3d76547503b89c28616fef8937299f7495c2c1fc2ef",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/data.json.meta.json.gz",
+   "stored_sha256": "3e37b22687fb3effa416a555380f5d24f382bc0352ebc360b08559a3655b1c37"
+  },
+  {
+   "bytes": 74,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:00Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/name.json",
+   "sha256": "69b4797da887ee2dfea23c0e954aacd472ca6d76571a3981c2fc712b4da58ae7",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/name.json.gz",
+   "stored_sha256": "50f456588f8fea2e0b880d63a3d505d4946fd1ce7d31ecf453bae1147c543306"
+  },
+  {
+   "bytes": 588,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:00Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/name.json.meta.json",
+   "sha256": "6c8c00d1c67a4545ee83791517172a6b48206d8e148d067e262549067f96203e",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/CollegeEssay_real_70/name.json.meta.json.gz",
+   "stored_sha256": "6d28aaf73dd79681a64938eecab054d966bdb671d9e3349b5dd8e2ef069a81ee"
+  },
+  {
+   "bytes": 208128,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:17Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/GPTZero.json",
+   "sha256": "f08aa8d89a0d1fd3cf84ea5080beca6d4d18f33907c6032ac9f663cae54f20bb",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/GPTZero.json.gz",
+   "stored_sha256": "b29c0cae3925c22e9e1c711a9d91ce2c385dee9ff72c2797a119165efb80472d"
+  },
+  {
+   "bytes": 622,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:17Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/GPTZero.json.meta.json",
+   "sha256": "ead09fd5f3ba0aed775355ecf409bde56e650e3fc6f4df56017da4ad08c6cc83",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/GPTZero.json.meta.json.gz",
+   "stored_sha256": "71ea4a3d32b5f6fa2c0dd079d40eb52afba3ccd9e5f6b5397d0384a8cf582fee"
+  },
+  {
+   "bytes": 651790,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:20Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/OriginalityAI.json",
+   "sha256": "924b814cfa61a911cbc2fedb93191a90f308e4e2e16a5bc7a6649a07d3972403",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/OriginalityAI.json.gz",
+   "stored_sha256": "a39d5e04958bcaf4843884ab6ab0782f585b957b31b77d57c66131fd59f8afc1"
+  },
+  {
+   "bytes": 640,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:20Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/OriginalityAI.json.meta.json",
+   "sha256": "10371eb13190b699eba366a2ef84dc48e4e435d09769037cba04ce9e4c9c8046",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/OriginalityAI.json.meta.json.gz",
+   "stored_sha256": "39d7a6f9c8600cf798ee0c28578ce49d7d3ff9ff76d5fe5261cf15a6fed4aec8"
+  },
+  {
+   "bytes": 187850,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:27Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/data.json",
+   "sha256": "6145e4e8bf36b780624626b31a783d7ca97696e1e14ae6d13c083b79da2f042d",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/data.json.gz",
+   "stored_sha256": "7047c5e7a7b12aa47952b67001641c57d47f5c15c2f3ca0e6e478ce9795684d7"
+  },
+  {
+   "bytes": 613,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:27Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/data.json.meta.json",
+   "sha256": "94a51c23be56e140e8c83449bd4c581d4633baef71b3fcee0237c8f2b36f7c82",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/data.json.meta.json.gz",
+   "stored_sha256": "a61d55e85569ec87e8ef5e84d90371f742ce6fa84acbb1265839ed873d0d8e1c"
+  },
+  {
+   "bytes": 73,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:22Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/name.json",
+   "sha256": "283d08094b0573d9563b5e7918c207c8ef329b024ded208a87be8d5c77dccb5a",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/name.json.gz",
+   "stored_sha256": "5c28e4300b6e9d7ed88b19029e190365e0e8aca88ce2f2e7cf68e5f54083696e"
+  },
+  {
+   "bytes": 609,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:58:22Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/name.json.meta.json",
+   "sha256": "3945791907592301a38f9923a045eebe1d753188025385ca8982c5fb6cc01511",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/HewlettStudentEssay_real_88/name.json.meta.json.gz",
+   "stored_sha256": "a389ee1154b244cc0d3c678c28e9e4d82d283d43218ca76e17254b388f544fd9"
+  },
+  {
+   "bytes": 76327,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:48Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/GPTZero.json",
+   "sha256": "0f3d39d382b3d7146db19535b269dc3e7f4c5ce0a6ca704972d71e585d8f3f37",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/GPTZero.json.gz",
+   "stored_sha256": "9c181106e5cbc15e2e547eb23d15c6c4c80a473d017cfa628fa81abaf7718694"
+  },
+  {
+   "bytes": 579,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:48Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/GPTZero.json.meta.json",
+   "sha256": "c38f8f4d839c6d1e35de26962421cca60b69b4300ea62e9efc17c1f49f159d6f",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/GPTZero.json.meta.json.gz",
+   "stored_sha256": "fcca7d6d7df58a4ca51f5ce737bd26cda0c670c87583691baa5ce31e2e975389"
+  },
+  {
+   "bytes": 316046,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:50Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/OriginalityAI.json",
+   "sha256": "3df006dc648bce0b0cab94bb9d7110872e5fc6f8f93baf554992261922f50395",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/OriginalityAI.json.gz",
+   "stored_sha256": "1bda5c8178a9b864a8612eee2ee2a94ee13be1ee76583afa027d740d4c390ffa"
+  },
+  {
+   "bytes": 598,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:50Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/OriginalityAI.json.meta.json",
+   "sha256": "da8f41da3d88ad3d110fb062459eb28b08e5f937d0c83a690aead4220c5a7ef3",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/OriginalityAI.json.meta.json.gz",
+   "stored_sha256": "bc580d48fe1fc4fd8ca742b22c6f2a9cf59e71e3544960ea994e9407ab25cf0c"
+  },
+  {
+   "bytes": 56146,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:54Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/data.json",
+   "sha256": "d5e2bf0bd4831262d60aa936b2ac8e532bd3859067411288b6c22ed16867666b",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/data.json.gz",
+   "stored_sha256": "d8ec1880574d229ce1de6c8317d521d1873fe2e0c02b5d9b95b330872b0af875"
+  },
+  {
+   "bytes": 570,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:54Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/data.json.meta.json",
+   "sha256": "159948273e92488b1293dd4d2d1ffc577a311e05e7a3779d6d7638a4389ef9fc",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/data.json.meta.json.gz",
+   "stored_sha256": "1a71e6a24645070466b4beb3e1163d4b0f9687288e3a1cd5f46b3836d4aaa605"
+  },
+  {
+   "bytes": 65,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:52Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/name.json",
+   "sha256": "e94ab2e2e8a9d5fefc4baac388e1576a9e5a81a5bf96d8f3ac680e30a556c4e8",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/name.json.gz",
+   "stored_sha256": "c47a49116c8379cd52d4da8be947a27f79c48cd4f6e43cddae3a915c3fd403bb"
+  },
+  {
+   "bytes": 567,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:52Z",
+   "path": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/name.json.meta.json",
+   "sha256": "b1036248a4ac71a9f0c2a0181ce262210dbfeb2e1573fb5be4f9c23bf42b57f9",
+   "stored": "data/raw/tests/liang2023/Data_and_Results/Human_Data/TOEFL_real_91/name.json.meta.json.gz",
+   "stored_sha256": "ad9ae0c25c46ad604947f1b5a8a3e1a0377ef8e319d76b8de663b6f924db2434"
+  },
+  {
+   "bytes": 16645240,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:59:02Z",
+   "path": "data/raw/tests/jabarian2025/all_json/different_threshold_json_files/merged_corpus_withDetectors_defaultProb.json",
+   "sha256": "660941bd29da0087bb30a3ece10315739f5939843096c7e20afc8bfffc319d2c",
+   "stored": "data/raw/tests/jabarian2025/all_json/different_threshold_json_files/merged_corpus_withDetectors_defaultProb.json.gz",
+   "stored_sha256": "ee33ef4c4fbf1205a64575369b15cc3713778a1e6ee8718d159a781d3ff0a87d"
+  },
+  {
+   "bytes": 227,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:12Z",
+   "path": "data/raw/tests/raid/leaderboard/submissions/gptzero/metadata.json",
+   "sha256": "d70a22ffbf74bab908920828b49744adefc2ea86071150d9620dd8c8695eb9fe",
+   "stored": "data/raw/tests/raid/leaderboard/submissions/gptzero/metadata.json.gz",
+   "stored_sha256": "fa120819cfa1458f76603b4093c3f5abef006628da4001fad50f2b969b5b4d04"
+  },
+  {
+   "bytes": 209,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:25Z",
+   "path": "data/raw/tests/raid/leaderboard/submissions/winston-ai/metadata.json",
+   "sha256": "49695a9ddd43da31718d36f081737107bd3db7b8e4fbe23be7d1cd2eeedeb1ca",
+   "stored": "data/raw/tests/raid/leaderboard/submissions/winston-ai/metadata.json.gz",
+   "stored_sha256": "dc9d0e512c54f153b686ee0f05e959d7dc21c18b714e66cc387941e6155ef75f"
+  },
+  {
+   "bytes": 3664,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:11Z",
+   "path": "data/raw/tests/raid/hf_README.md",
+   "sha256": "54df4f236108b360e8ad4b4e527b3764c4068fb77c95cbce1e9bac78af64d35c",
+   "stored": "data/raw/tests/raid/hf_README.md.gz",
+   "stored_sha256": "16cb4d9954361460e2f694aebdc4478ff4ca2b4cfc13983cb4086ee817c49270"
+  },
+  {
+   "bytes": 9050,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:56Z",
+   "path": "sources.json",
+   "sha256": "03d55cd43a7725e0756bc0ea98fc1b7d6371d34cf95b337e485d28986484d0da",
+   "stored": "sources.json.gz",
+   "stored_sha256": "28ffcde94ee47a8cbc0cfda6e87c38ab3be9667ebf126e63be37c95111f18717"
+  },
+  {
+   "bytes": 10213,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:54:37Z",
+   "path": "PLAN.md",
+   "sha256": "f05422739d134c2ae59f4ad79c522c0ca92e163119b76e3b9f0ddced062d8d87",
+   "stored": "PLAN.md.gz",
+   "stored_sha256": "0158ca4218d308e289756056afb89193a34f141ed3a59b3acdf12d075df8af2e"
+  },
+  {
+   "bytes": 300,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:54:39Z",
+   "path": "data/plan_seal.json",
+   "sha256": "a319c5e14ece08dc7890098f5b117c16a1d414858dd8b16ca3a2e9114f8a2347",
+   "stored": "data/plan_seal.json.gz",
+   "stored_sha256": "6d54707e53ecf84bac11fef077318d254e322ae3db99a21ea372202af89003d5"
+  },
+  {
+   "bytes": 1800,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:54:49Z",
+   "path": "data/plan_answers.json",
+   "sha256": "4fbcb625ed8204a7733e9921f11dd8d0e9e0f636da68fad162164cdb83ef5bf9",
+   "stored": "data/plan_answers.json.gz",
+   "stored_sha256": "386b3617367a4721092140f2086d6a856281b8a3fdd322252d225d2a0c97a40e"
+  }
+ ],
+ "made": "2026-11-22T15:57:30Z",
+ "mode": "fetch",
+ "name": "VOIGHT-KAMPFF",
+ "reference": [],
+ "sources": [
+  "The makers' pages named in PLAN.md section 1, each fetched by vk_fetch.py stated, with the Internet Archive capture list for the same address (data/raw/stated/<maker>/).",
+  "Liang and others 2023, https://github.com/Weixin-Liang/ChatGPT-Detector-Bias, Data_and_Results/Human_Data (MIT badge).",
+  "Jabarian and Imas 2025, https://github.com/brianjabarian/DetectionAI, all_json/different_threshold_json_files/merged_corpus_withDetectors_defaultProb.json (MIT).",
+  "RAID, https://huggingface.co/datasets/liamdugan/raid (README) and https://github.com/liamdugan/raid leaderboard/submissions/*/metadata.json (MIT)."
+ ],
+ "why_not_included": "the stated side is the text of the detector makers' own pages, which this house does not pass on. The test files are public under the MIT license and are named with their sha256 and source"
+}

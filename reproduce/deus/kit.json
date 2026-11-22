@@ -1,0 +1,40 @@
+{
+ "cwd": "",
+ "desk": "deus",
+ "headline": {
+  "field": [
+   "headline",
+   "share"
+  ],
+  "keys": [
+   [
+    "headline",
+    "n"
+   ],
+   [
+    "headline",
+    "of"
+   ],
+   [
+    "headline",
+    "four"
+   ]
+  ],
+  "n": [
+   "headline",
+   "n"
+  ],
+  "of": [
+   "headline",
+   "of"
+  ],
+  "show": "n_of"
+ },
+ "name": "DEUS",
+ "output": "summary_deus.json",
+ "steps": [
+  [
+   "deus_read.py"
+  ]
+ ]
+}

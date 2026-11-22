@@ -1,0 +1,19 @@
+{
+  "name": "indahl-spend-cap",
+  "version": "1.0.0",
+  "description": "Refuse an agent's tool calls once its session has used the budget you set, in raw tokens or in dollars at your own prices. Counts the session and its subagents, warns once near the limit, and enforces the stricter of your project and home budgets. A refusal, not a kill switch.",
+  "author": {
+    "name": "Heuremen LLC",
+    "url": "https://indahl.ai"
+  },
+  "repository": "https://github.com/indahl-ai/indahl.ai",
+  "license": "MIT",
+  "keywords": [
+    "budget",
+    "tokens",
+    "cost",
+    "hooks"
+  ],
+  "homepage": "https://indahl.ai/connect",
+  "icon": ".claude-plugin/icon.png"
+}

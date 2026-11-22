@@ -1,0 +1,91 @@
+# Indahl Rubicon
+
+`indahl-rubicon`
+
+Work can pass every check and still fail. Indahl Rubicon is a gate that asks for the four things that usually go missing, and keeps a record of whether they were done:
+
+| How it happens | What the gate asks for | Who shows it |
+|---|---|---|
+| The finish line is written after the work | Criteria frozen with a hash before work starts. A criterion added later is labelled "defined after the work" and the grid must run again. | Self-reported: the freeze time is this machine's clock. |
+| The checks are written by the same hand as the work | Three blind seats judge the finished work. | Self-reported: the worker writes the grid file and says whether the seats ran independently. |
+| A check that cannot fail passes anything | Every criterion names a planted wrong answer, and the working agent reruns each check against it before a MET counts. | The working agent's own rerun: recorded, not witnessed. A seat voting MET without reporting the catch keeps the row UNRESOLVED. |
+| A majority vote erases the dissent | A two-to-one split reads UNRESOLVED, with the minority's reason kept in the row. | Enforced by the tally. |
+
+Each seat also tries to build a way the work passes every check and still fails what was asked. If any seat builds one, the criteria have a hole, and that row stays UNRESOLVED until a criterion closes it. A MET there means no seat built one. It does not show that none exists.
+
+Outcomes: **MET**, **MISSED**, **UNRESOLVED**, **CANNOT_TELL**.
+
+**Rubicon is a record and a prompt, not a lock.** It interrupts the first attempt to finish and asks for the open rows to be reported. A second stop goes through, and an agent that edits `.rubicon/` can defeat it. It catches a careless "done", not a determined one.
+
+## What you get
+
+- Criteria frozen with a hash before work starts, and a record of whether they changed afterward.
+- Three blind seats that judge the finished work, with a two-to-one split kept as UNRESOLVED and the minority's reason in the row.
+- A planted wrong answer per criterion, rerun before a MET counts.
+- One outcome per row: MET, MISSED, UNRESOLVED or CANNOT_TELL.
+- A Stop hook that interrupts the first attempt to finish while rows are open.
+
+## How to use
+
+Run `/rubicon` with the task in one sentence, for example:
+
+```
+/rubicon add rate limiting to the upload endpoint
+```
+
+The skill freezes the criteria, does the work, runs the three-by-three grid and closes or acknowledges every open row.
+
+## What is in it
+
+- `skills/rubicon/SKILL.md`: the procedure. Freeze the criteria, do the work, run the three-by-three grid, ask the person when the seats are not sure, then close or acknowledge every open row.
+- `scripts/rubicon.py`: keeps the record in `.rubicon/` in the working folder. It freezes the criteria, refuses a grid with a missing or unreadable seat answer, tallies the grid, records the asker's own answer as its own row (`person`), records acknowledgements and runs the planted selftest (`python3 scripts/rubicon.py selftest`, 34 cases). Standard library only, and nothing is sent anywhere.
+- `hooks/hooks.json`: a Stop hook. It applies only in a folder where criteria have been frozen. There it interrupts the first attempt to finish while there is no verdict, while the verdict was made against older criteria, while the verdict is MISSED, or while a row is UNRESOLVED or CANNOT_TELL and not acknowledged. It never blocks twice in a row, so it cannot trap a session.
+
+An acknowledged row stays open in the record, with the reason beside it. Acknowledging is not resolving.
+
+## Limits
+
+- The gate does not judge whether the criteria were the right ones to want.
+- Seats from one model share blind spots, so their agreement counts once, not three times. Every verdict records which seats were used and whether they ran independently.
+- The seats' answer on whether the person would call it done is a model's guess about the asker, not the asker. When it is not a unanimous yes, the skill asks the person and records their answer as its own row.
+
+## Install
+
+```
+/plugin marketplace add indahl-ai/indahl.ai
+/plugin install indahl-rubicon@heuremen
+```
+
+## Requirements
+
+Python 3 (`python3`, or `python` on Windows). Standard library only.
+
+## Services this plugin contacts
+
+None. Nothing is sent anywhere. The record stays in `.rubicon/` in the working folder.
+
+## Privacy and terms
+
+Privacy: https://indahl.ai/privacy
+Terms: https://indahl.ai/terms
+
+Heuremen LLC, https://indahl.ai. Source: https://github.com/indahl-ai/indahl.ai
+
+MIT licence.
+
+## Credits
+
+Refereed before release by the outside referee on our work.
+
+Windows fix, 14 Nov 2026: The referee asked, the operator found and fixed. the outside referee on our work, asked whether `python3` resolves on Windows. The operator ran it on a Windows machine, found it was the Microsoft Store stub that runs nothing (exit 49), so the hook would fail without a word and the check would be silently off, and fixed it in every plugin hook. The hook now falls back to `python`.
+
+The referee also refereed the design before release. She found that adding a criterion after a verdict left the old verdict passing, that CANNOT_TELL rows could not be acknowledged, that missing seat answers fell through instead of refusing, and that the first README described a lock where the code is a record and a prompt.
+
+## How the scripts arrive
+
+This copy carries no executable file. Its commands fetch each script from the public repository github.com/indahl-ai/indahl.ai at a pinned commit and run it only if its sha256 matches the value written in the command:
+
+- https://raw.githubusercontent.com/indahl-ai/indahl/main/pinned/d30a91ae5edf/claude-plugins/src/rubicon/scripts/rubicon.py
+  sha256 4683bcee1d797fc288a7b61008dc3036667c9bdf20dbd9ca47792592e1bd0fb0
+
+The same scripts are bundled directly in the version in our own marketplace (`/plugin marketplace add indahl-ai/indahl.ai`).

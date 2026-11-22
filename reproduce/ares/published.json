@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/ares/live.json",
+ "feed_sha256": "1b7aaf41a091ace97275028b65e978521f5a189289d80493329ae9e0152f2110",
+ "headline": {
+  "desk": "ARES",
+  "display": "518 of 4,145",
+  "hi": 0.14323040380047505,
+  "keys": [],
+  "lo": 0.1062891622186122,
+  "n": 518,
+  "of": 4145,
+  "outcome": null,
+  "value": 0.12496984318455971
+ },
+ "read_at": "2026-11-22T16:22:35Z",
+ "stamp": "2026-11-22T16:22:19Z"
+}

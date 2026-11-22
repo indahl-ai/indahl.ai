@@ -1,0 +1,202 @@
+{
+ "code": [
+  {
+   "path": "argus_tick.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/argus/argus_tick.py",
+   "sha256": "a257cb7bdb34dba6101956d5722874deffabdb385a5b8a6a2bcc9476e2959631"
+  },
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/argus/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "the clock only. It runs argus_tick.py with --offline and the clock pinned to the time the published run read (the generated field of data/argus_live.json)",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
+  }
+ ],
+ "desk": "argus",
+ "inputs": [
+  {
+   "bytes": 28119,
+   "gzip_added": true,
+   "modified": "2026-11-22T10:13:51Z",
+   "path": "data/argus_live.json",
+   "sha256": "9ee90a8fdbb20888ab90986716159751d6021865e0ae9eeedc91119a34ed142c",
+   "stored": "data/argus_live.json.gz",
+   "stored_sha256": "2bddc42426789b84993bdc4d8d1c049fcf5ada29ad0c3ec846605b3f4a07bd93"
+  },
+  {
+   "bytes": 104537423,
+   "gzip_added": true,
+   "modified": "2021-12-19T16:14:44Z",
+   "path": "data/raw/darwinsark/DarwinsArk_20191115_answers.csv",
+   "sha256": "af26b5858dd8e5d6527b3d7ff12fca32ddd417905f0bc938aa7deaa157abb72f",
+   "stored": "data/raw/darwinsark/DarwinsArk_20191115_answers.csv.gz",
+   "stored_sha256": "400ea28d224920c185e6ee2d2b8b04dee4851b778692cbb6852ff6316acb8f22"
+  },
+  {
+   "bytes": 793747,
+   "gzip_added": true,
+   "modified": "2021-07-13T01:29:52Z",
+   "path": "data/raw/darwinsark/DarwinsArk_20191115_breedcalls.csv",
+   "sha256": "57ef4fba71e7da49f0fe4357f6c47c0eba5a1c5143cc773036a9662e95723fb2",
+   "stored": "data/raw/darwinsark/DarwinsArk_20191115_breedcalls.csv.gz",
+   "stored_sha256": "5e3c2f8bef314935e16b9610d836b0a44f0456bc567db1f7cf83dda35263e8c8"
+  },
+  {
+   "bytes": 4139906,
+   "gzip_added": true,
+   "modified": "2021-09-22T11:04:14Z",
+   "path": "data/raw/darwinsark/DarwinsArk_20191115_dogs.csv",
+   "sha256": "5902b3f29eaf8e70818f98b6f9e7405172f412096657a5313dfe3cb6b2aa13bd",
+   "stored": "data/raw/darwinsark/DarwinsArk_20191115_dogs.csv.gz",
+   "stored_sha256": "dffbc67b92cef5df7f503cf437e72c0b629ac6b7a6a0c798d40bdd254391aa96"
+  },
+  {
+   "bytes": 5088455,
+   "gzip_added": true,
+   "modified": "2021-09-27T20:36:44Z",
+   "path": "data/raw/darwinsark/DarwinsArk_20191115_factor_scores.csv",
+   "sha256": "7e25602a6604ae36b434b26af37298970dd9d1a9ee5805a1bd3a4aa23beb91e1",
+   "stored": "data/raw/darwinsark/DarwinsArk_20191115_factor_scores.csv.gz",
+   "stored_sha256": "a7b8a574a42ada9b518a312bdaa53398e3ed4400869c640b7acfb0dd5ac5487d"
+  },
+  {
+   "bytes": 26353,
+   "gzip_added": true,
+   "modified": "2021-07-10T02:34:40Z",
+   "path": "data/raw/darwinsark/DarwinsArk_20191115_factors.csv",
+   "sha256": "218cd3205a8cc4dcebc4749945e6c2d0ca83bf99367c6fcc8af4a41955408090",
+   "stored": "data/raw/darwinsark/DarwinsArk_20191115_factors.csv.gz",
+   "stored_sha256": "711fc280262162baa255b0ebd89542ed53b2fc45fa82d6a3a2d11412b7404d91"
+  },
+  {
+   "bytes": 30648,
+   "gzip_added": true,
+   "modified": "2021-09-12T22:33:08Z",
+   "path": "data/raw/darwinsark/DarwinsArk_20191115_questions.csv",
+   "sha256": "a9392e8120a1955d9dcdce838c1558d26a21c6ea6bebd83cadfd1b56cb3e1168",
+   "stored": "data/raw/darwinsark/DarwinsArk_20191115_questions.csv.gz",
+   "stored_sha256": "35976d2aa08631fabb9f5b5a8f351d07c97cccbae4338b9a303d0ce05172d8d5"
+  },
+  {
+   "bytes": 263,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:01:06Z",
+   "path": "data/raw/standards/AmericanPitBullTerrier_akc_response.xml",
+   "sha256": "abb5ea2c99c769090363c86b5fe90f469a54c54cc6c7ab60b518eba5a8f398f4",
+   "stored": "data/raw/standards/AmericanPitBullTerrier_akc_response.xml.gz",
+   "stored_sha256": "7867f30af836f22d84e337e3a56c5b2096858cee6ad3ff671160f2d22184d4ca"
+  },
+  {
+   "bytes": 229296,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:00:59Z",
+   "path": "data/raw/standards/GoldenRetriever.pdf",
+   "sha256": "aa0be1bd97c9df51766f4dc586d44597bf5366b6d1cea9ebe8bbc0699451edf6",
+   "stored": "data/raw/standards/GoldenRetriever.pdf",
+   "stored_sha256": "aa0be1bd97c9df51766f4dc586d44597bf5366b6d1cea9ebe8bbc0699451edf6"
+  },
+  {
+   "bytes": 189315,
+   "gzip_added": false,
+   "modified": "2026-11-22T02:01:03Z",
+   "path": "data/raw/standards/LabradorRetriever.pdf",
+   "sha256": "cc37e4b63d60e70a5ba80c81a4cd223dfbd4ae9beb7fc290155dec33dcb8cef5",
+   "stored": "data/raw/standards/LabradorRetriever.pdf",
+   "stored_sha256": "cc37e4b63d60e70a5ba80c81a4cd223dfbd4ae9beb7fc290155dec33dcb8cef5"
+  },
+  {
+   "bytes": 44707720,
+   "gzip_added": false,
+   "modified": "2026-11-22T01:59:57Z",
+   "path": "data/raw/zenodo/DarwinsArk.zip",
+   "sha256": "560fc0243b34a0454a967ea01f428bc7cc6355db6bf498161f1511470d90e27f",
+   "stored": "data/raw/zenodo/DarwinsArk.zip",
+   "stored_sha256": "560fc0243b34a0454a967ea01f428bc7cc6355db6bf498161f1511470d90e27f"
+  },
+  {
+   "bytes": 12800,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:37Z",
+   "path": "data/raw/zenodo/README.md",
+   "sha256": "ad5264e5dcbf4438ca9ecca778780d92d8e1f5e394ce2f38a4f27e7543b9d0b2",
+   "stored": "data/raw/zenodo/README.md.gz",
+   "stored_sha256": "7f20e83c4a3b1c18ac044d546898ff0012f51e4bbc991659788af90dece95fee"
+  },
+  {
+   "bytes": 9271,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:57:31Z",
+   "path": "data/raw/zenodo/record_6522639.json",
+   "sha256": "f7a594b0af79f0a29cc492babf9f2e81fb267a4a8aadf5555e146559346e3212",
+   "stored": "data/raw/zenodo/record_6522639.json.gz",
+   "stored_sha256": "2f30db0ddfd6c32a1c27b0228cabd3548439d387faa59db743ef57b55e2ed7b0"
+  },
+  {
+   "bytes": 8378,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:00:11Z",
+   "path": "PLAN.md",
+   "sha256": "e63f757281dd52089289b5c9b7a4c3442e01a1c2db465939307208bdb0d4303a",
+   "stored": "PLAN.md.gz",
+   "stored_sha256": "baf195ec88bde6d02c2f827af7baa04b5d3c833e93ae30132e305273c94e71cc"
+  },
+  {
+   "bytes": 2813,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:05:40Z",
+   "path": "PLAN_ADDENDUM_referee1.md",
+   "sha256": "87e10fd54b72e76bc4ea6ff6e7bec7f616d40e475feadb7f70aed0ab779a5dc7",
+   "stored": "PLAN_ADDENDUM_referee1.md.gz",
+   "stored_sha256": "9cbefe2a3e81d2e2120fc61eeca1faedc33881840011c467e9262c676c5cfb98"
+  },
+  {
+   "bytes": 11789,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:05:28Z",
+   "path": "mapping.json",
+   "sha256": "c78d067fd3cd29ac81a249b34bf68008b7cb609baa2ec2d6fd74d4fd8ac2fcba",
+   "stored": "mapping.json.gz",
+   "stored_sha256": "9d156896c8f5d35df1fa7687e81e8dd1a0979546896ff174fd815059c3fde344"
+  },
+  {
+   "bytes": 1535,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:06:12Z",
+   "path": "dna_claims.json",
+   "sha256": "b52656d3550155f833e4a935d3d38dc56fee7ad9c735e52586cbe56ff367de7b",
+   "stored": "dna_claims.json.gz",
+   "stored_sha256": "2ed96b71935c87a8bbdda062394dc0b086a75945aa985cec15db3e06b03b4b97"
+  },
+  {
+   "bytes": 569,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:06:21Z",
+   "path": "data/referee_mapping_read.json",
+   "sha256": "d6d66f654803f1a188c7ea916aa8fe15f09d44bb6740856f2ef378d25f0fa7d6",
+   "stored": "data/referee_mapping_read.json.gz",
+   "stored_sha256": "6b2780e903adfcdbe4d3623767c17693b1383ddca54af1ce0e542cef2d7435c2"
+  },
+  {
+   "bytes": 1121,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:06:29Z",
+   "path": "data/plan_seal.json",
+   "sha256": "d9a25f8e98258a8001c78d82960e3069bb741782b9632a34f3886a5b61cca0c7",
+   "stored": "data/plan_seal.json.gz",
+   "stored_sha256": "d5d94c5a0f00383ac43c47aa37da131d5129eb4b14d4946bc984a3d2c563b748"
+  }
+ ],
+ "made": "2026-11-22T15:53:18Z",
+ "mode": "fetch",
+ "name": "ARGUS",
+ "reference": [],
+ "sources": [
+  "Darwin\u2019s Ark release, Zenodo record 6522639, https://zenodo.org/records/6522639 (data/raw/zenodo: record_6522639.json, README.md, DarwinsArk.zip, CC0, checked against the md5 the record gives), with the six files argus_tick.py reads from the zip in data/raw/darwinsark.",
+  "The American Kennel Club breed standard PDFs named in mapping.json, https://images.akc.org/pdf/breeds/standards/GoldenRetriever.pdf and https://images.akc.org/pdf/breeds/standards/LabradorRetriever.pdf (data/raw/standards)."
+ ],
+ "why_not_included": "its inputs are the Darwin\u2019s Ark archive (DarwinsArk.zip, 45 MB, and about 115 MB of files read from it), more than a public kit carries. Every source is public, the archive is CC0, and each file is named with its sha256"
+}

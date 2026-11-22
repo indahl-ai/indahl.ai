@@ -1,6 +1,6 @@
 ---
 name: indahl-data
-description: Answer questions with indahl.ai's read-only MCP server (tools named mcp__indahl__* or similar). Use when someone asks whether the calibration IBM publishes for an IBM Quantum processor holds against our own runs (T1, T2, readout error, before a run or for a run already done), or brings something to check: a paper by DOI or arXiv id (retraction and correction notices, current version, withdrawn, stated links), reported statistics in pasted text, the numbers, quotations or citations in a draft against their sources, an estimate and its interval against a stated value, several readings of one quantity, the wording of result sentences, an LLM evaluation setup, a PyPI package or a Hugging Face model.
+description: Answer questions with indahl.ai's read-only MCP server (tools named mcp__indahl__* or similar). Use when someone asks whether the calibration IBM publishes for an IBM Quantum processor holds against our own runs (T1, T2, readout error, before a run or for a run already done), or brings something to check: a paper by DOI or arXiv id (retraction and correction notices, current version, withdrawn, stated links), reported statistics in pasted text, the numbers, quotations or citations in a draft against their sources, an estimate and its interval against a stated value, several readings of one quantity, the wording of result sentences, a PyPI package or a Hugging Face model.
 ---
 
 # indahl.ai data
@@ -10,24 +10,22 @@ do not know which tool holds the answer. The tools fall in two groups:
 
 - **QIA, the Quantum Idle Audit**, on the calibration IBM publishes: `qia_calibration_check` (the record a circuit's qubits will run on),
   `qia_run_check` (which record was in force during a run already done, and what changed), `qia_qubit_history` (every distinct T1, T2 and
-  readout-error figure for one qubit), `qia_audit` (the audit of one processor's saved records) and `qia_measured` (IBM's stated figure
-  beside our latest hourly measurement of the same qubit).
+  readout-error figure for one qubit) and `qia_measured` (IBM's stated figure beside our latest hourly measurement of the same qubit).
 - **Checks you bring your own input to**: `paper_check` (one DOI or arXiv id, read live from Crossref, arXiv and the links in the
-  abstract), `check_reported_statistics`, `number_check`, `quote_check`, `source_check`, `interval_verdict`, `triangulate_readings`,
-  `claim_wording_check`, `eval_setup_check`, `package_check` (one PyPI project), `model_check` (one Hugging Face model), `link_rot` (one
+  abstract), `paper_statistics` (every reported statistic in one arXiv paper's full text, recomputed), `check_reported_statistics`,
+  `number_check`, `quote_check`, `source_check`, `interval_verdict`, `triangulate_readings`, `claim_wording_check`, `package_check` (one PyPI project), `model_check` (one Hugging Face model), `link_rot` (one
   arXiv id, or up to 10 links you give) and `arxiv_version_drift` (one arXiv id, with the version you read).
 
 If the MCP tools are not available, each tool answers as JSON over HTTP at `https://indahl.ai/api/v1/<tool_name>` (index at
 https://indahl.ai/api/v1, OpenAPI at https://indahl.ai/api/openapi.json). Only the parameters in a tool's schema work (for example
-`processor`, `qubits`, `id`); anything else is ignored without an error, so do not guess parameters.
+`processor`, `qubits`, `id`); any other parameter is refused with the names the tool takes, so do not guess parameters.
 
 ## Reading the responses
 
 - Every response carries `source` (the page), `read_at` (when the data was last read; null for static lists) and `served_at` (when
   the response was sent). Quote the time as "read at <read_at>", or `served_at` when `read_at` is null.
-- The QIA tools read the saved index of IBM's published records. `qia_audit` (the Quantum Idle Audit) gives the current findings per
-  processor and the 7-day counts of restamps and value changes, not last week's findings, and `qia_qubit_history` reaches back up to 30
-  days. Say a comparison outside that window cannot be answered from the tools rather than inventing one.
+- The QIA tools read the saved index of IBM's published records. `qia_calibration_check` reads the newest saved record, or the one in
+  force at a given time, and `qia_qubit_history` reaches back up to 30 days. Say a comparison outside that window cannot be answered from the tools rather than inventing one.
 - The checks read only what is passed to them and the public sources they name. They never see local files unless their text is passed.
 - Responses can be large (tens of KB). Parse them with a short script rather than by eye, and pick fields by name.
 - Rows with null values and an outcome of NOTHING_RETURNED returned no data. Count them separately and leave them out of any ranking.

@@ -4,8 +4,14 @@ ONE_INQUIRY_ALLOW = ()   # 22 Nov: FW-028 landed; no page is excused
 import json, re, os, html, sys, glob, fnmatch
 B = os.path.expanduser('~/forge'); R = json.load(open(os.path.join(B, 'heuremen-specbook', 'site_rules.json')))
 _FILE = os.path.abspath(sys.argv[sys.argv.index('--file') + 1]) if '--file' in sys.argv else None   # 22 Nov 2026: --file <path> checks one rendered page (pagebuilder/desk_publish.py), as an indahl.ai page
+_QIA = os.path.abspath(sys.argv[sys.argv.index('--qia') + 1]) if '--qia' in sys.argv else None   # 22 Nov 2026 (QIA split): --qia <dir> checks the built quantumidleaudit.com files (ledger/ship_qia.sh)
+_QIA_FILES = (sorted(glob.glob(os.path.join(_QIA, '**', '*.html'), recursive=True)) + sorted(glob.glob(os.path.join(_QIA, '**', '*.js'), recursive=True))) if _QIA else []
 def pages():
     if _FILE: yield 'indahl.ai', os.path.relpath(_FILE, B); return
+    if _QIA:
+        for p in _QIA_FILES:
+            if p.endswith('.html'): yield 'quantumidleaudit.com', os.path.relpath(p, B)
+        return
     for site, globs in R['pages'].items():
         for g in globs:
             for p in sorted(glob.glob(os.path.join(B, g), recursive=True)):
@@ -25,7 +31,7 @@ for site, rel in pages():
             print(f'  BREACH {ft["rule"]:5} {rel}: no footer block reads exactly the specbook footer'); bad += 1
 import importlib.util as _u
 _spec = _u.spec_from_file_location('count_scan', os.path.join(B, 'heuremen-specbook', 'count_scan.py')); _cs = _u.module_from_spec(_spec); _spec.loader.exec_module(_cs)
-_files = [os.path.join(B, rel) for _, rel in pages()] + ([] if _FILE else [os.path.join(B, 'ligera', f) for f in ('FAULTS.html', 'GUARDS.html')])   # 30 Oct (HEU1-12): experiment pages included
+_files = [os.path.join(B, rel) for _, rel in pages()] + ([] if (_FILE or _QIA) else [os.path.join(B, 'ligera', f) for f in ('FAULTS.html', 'GUARDS.html')])   # 30 Oct (HEU1-12): experiment pages included
 for rel, hit, ctx in _cs.scan(_files):
     print(f'  BREACH 0b.5  {rel}: count in a title/heading/label: {hit!r}'); bad += 1
 _spec2 = _u.spec_from_file_location('tone_scan', os.path.join(B, 'heuremen-specbook', 'tone_scan.py')); _ts = _u.module_from_spec(_spec2); _spec2.loader.exec_module(_ts)
@@ -37,7 +43,7 @@ for site, rel in pages():
 HANDS = re.compile(r'(?i)\bby hand\b|\bhand[- ](?:read|check|count)|\bhand-?checked\b')
 _nh = 0
 _served = set(re.findall(r"from '\./([^']+\.html)'", open(os.path.join(B, 'indahl-ai', 'pages.js')).read())) if os.path.exists(os.path.join(B, 'indahl-ai', 'pages.js')) else set()   # only pages the site serves (held pages stay on disk unserved)
-for p in [_FILE] if _FILE else [os.path.join(B, 'indahl-ai', s) for s in sorted(_served)] + sorted(glob.glob(os.path.join(B, 'cloudflare-workers', 'heuremen-door', 'public', '**', '*.js'), recursive=True)):
+for p in [_FILE] if _FILE else _QIA_FILES if _QIA else [os.path.join(B, 'indahl-ai', s) for s in sorted(_served)] + sorted(glob.glob(os.path.join(B, 'cloudflare-workers', 'heuremen-door', 'public', '**', '*.js'), recursive=True)):
     rel = os.path.relpath(p, B)
     if any(fnmatch.fnmatch(rel, s) for s in R['skip']) or '.pre-' in rel: continue
     _nh += 1

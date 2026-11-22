@@ -61,7 +61,6 @@ def main():
         with open(f, 'a') as o: o.write(json.dumps(dict(t=now, **row), sort_keys=True) + '\n')
         changed.append(corner)
     print('progress: rows added for', sorted(set(changed)) or 'none')
-    if changed:
-        p = subprocess.run(['python3', os.path.expanduser('~/forge/ledger/site_lock.py'), 'run', '--label', 'public_progress', '--', 'bash', os.path.expanduser('~/forge/ledger/push_public.sh'), 'Trend rows: ' + ', '.join(sorted(set(changed)))], capture_output=True, text=True)   # 22 Nov 2026: under the site lock; it pushed mid-ship and staled the QIA package (22:23 refusal)
-        print('progress:', (p.stdout.strip().splitlines() or ['no output'])[-1])
+    # 22 Nov 2026: rows ride the next ship's public push. A trend-row push took the site lock for 30+ min ahead of the QIA ship.
+    if changed: print('progress: rows wait for the next ship push')
 if __name__ == '__main__': main()

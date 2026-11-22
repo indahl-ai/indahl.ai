@@ -7,7 +7,7 @@
   function mode() { return m ? m.value : 'paper'; }
   function show() {
     var md = mode(), p = md !== 'stats';
-    inp.placeholder = md === 'qubit' ? 'A processor and qubits, for example: ibm_fez 155   or   ibm_kingston 0-5' : (md === 'paper' ? 'An arXiv id (2401.01234) or a DOI (10.xxxx/...)' : 'Paste a passage with reported statistics, for example: t(28) = 2.20, p = .036');
+    inp.placeholder = md === 'qubit' ? 'A processor and qubits, for example: ibm_fez q5   or   ibm_kingston 0-5' : (md === 'paper' ? 'An arXiv id (2401.01234) or a DOI (10.xxxx/...)' : 'Paste a passage with reported statistics, for example: t(28) = 2.20, p = .036');
     inp.rows = p ? 1 : 5;
   }
   if (m) m.addEventListener('change', show); show();
@@ -54,15 +54,39 @@
     }
     return h + receipt(r.rec);
   }
+  // 22 Nov 2026: "ibm_fez qubit 5", "ibm_fez q5", "fez q5", "q0, q1 on ibm_kingston", "ibm_kingston 0-3" -> { processor, qubits }.
+  // A bare name (fez) becomes ibm_fez. Any word left over that is not a processor, a qubit or a joining word means the input did not parse.
+  function parseQubit(v) {
+    var t = String(v).toLowerCase().replace(/[;:]/g, ' ').replace(/\s*-\s*/g, '-').trim(), proc = null, qs = [], bad = false;
+    t.split(/[\s,]+/).forEach(function (w) {
+      if (!w) return;
+      var m;
+      if (/^ibm_[a-z0-9_]+$/.test(w)) { if (proc) bad = true; proc = w; return; }
+      if (/^(qubits?|qs?|on|of|and|the|processor|ibm)$/.test(w)) return;
+      if ((m = w.match(/^q?(\d{1,4})(?:-q?(\d{1,4}))?$/))) { qs.push(m[2] != null ? m[1] + '-' + m[2] : m[1]); return; }
+      if (/^[a-z]{3,20}$/.test(w) && !proc) { proc = 'ibm_' + w; return; }
+      bad = true;
+    });
+    return bad ? {} : { processor: proc, qubits: qs.join(',') };
+  }
   f.addEventListener('submit', function (e) {
     e.preventDefault(); var v = inp.value.trim(); if (!v) return;
     o.hidden = false; o.innerHTML = '<p>Reading&hellip;</p>';
     if (mode() === 'qubit') {   // 18 Nov 2026: qia_measured, IBM's stated figure beside our latest hourly measurement; the page shows the tool's own text
-      var mq = v.match(/(ibm_[a-z0-9_]+)\s*[,:]?\s*([0-9,\-\s]*)/i);
-      if (!mq) { o.innerHTML = '<p>Give a processor and qubits, for example: ibm_fez 155</p>'; return; }
-      call('qia_measured', { processor: mq[1].toLowerCase(), qubits: (mq[2] || '').replace(/\s+/g, '') }).then(function (r) {
+      // 22 Nov 2026: natural wordings ("ibm_fez qubit 5", "ibm_fez q5", "fez q5", "qubits 0-3 on ibm_kingston"). Anything that does not parse,
+      // and any answer with no measured line, gets one plain line saying what to type. The tool is never called with no qubits.
+      var HOWTO = 'Type a processor and qubits, for example: ibm_fez 5, ibm_fez q5 or ibm_kingston 0-3.';
+      var pq = parseQubit(v);
+      if (!pq.processor || !pq.qubits) { o.innerHTML = '<p>' + esc(!pq.processor && pq.qubits ? 'Name the processor too. ' + HOWTO : HOWTO) + '</p>'; return; }
+      call('qia_measured', { processor: pq.processor, qubits: pq.qubits }).then(function (r) {
         var d = r.ans && r.ans.data ? r.ans.data : r.ans;
-        o.innerHTML = '<h3>Stated against measured</h3><pre class="tryjson">' + esc(d && d.text ? d.text : (d && d.error) || 'Nothing returned.') + '</pre>' + receipt(r.rec);
+        if (!d || d.error) { o.innerHTML = '<p>' + esc((d && d.error) || 'Nothing returned.') + ' ' + HOWTO + '</p>'; return; }
+        if (!(d.lines || []).length) {
+          var noRun = /no published hourly run/i.test(d.text || '');
+          o.innerHTML = '<p>' + esc(noRun ? 'No hourly runs are published for ' + pq.processor + '. ' + HOWTO : 'No hourly measurement of qubit ' + pq.qubits + ' on ' + pq.processor + ' is published. ' + HOWTO) + '</p>' + receipt(r.rec);
+          return;
+        }
+        o.innerHTML = '<h3>Stated against measured</h3><pre class="tryjson">' + esc(d.text || '') + '</pre>' + receipt(r.rec);
       }).catch(function (err) { o.innerHTML = '<p>Could not reach the server: ' + esc(err.message || err) + '</p>'; });
       return;
     }

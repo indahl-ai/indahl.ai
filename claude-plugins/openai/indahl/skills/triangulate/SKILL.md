@@ -119,5 +119,5 @@ The user can rerun the same block later and diff the two receipts; a changed out
 
 This plugin connects the indahl.ai server (`https://indahl.ai/mcp`, read-only, no account). When its tool `triangulate_readings` is
 available and the seats return numbers with an uncertainty, pass the readings to it and report its pairwise outcomes and combined value as
-returned. A seat may also use the server's other tools (for example `paper_check`, `source_check`, `qia_audit`) as source material.
+returned. A seat may also use the server's other tools (for example `paper_check`, `source_check`, `qia_calibration_check`) as source material.
 Every number taken from it keeps its receipt link in the seat's answer.

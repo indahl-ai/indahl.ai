@@ -15,7 +15,7 @@ GFILES = ('README.txt', 'google-political-ads-updated.csv', 'google-political-ad
           'google-political-ads-advertiser-geo-spend.csv')
 FECB = 'https://www.fec.gov/files/bulk-downloads/'
 PUBLIC_DATA_URL = '/social/adspend.json'          # where the page links the slim public file (the operator sets the final path at ship)
-PLAN_URL = 'https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/adspend'
+PLAN_URL = 'https://github.com/indahl-ai/indahl.ai/tree/main/code/adspend'
 RULERS = {'primary': (31, 92), 'second': (92, 183)}          # (P days before the ad week, Q days after it), PLAN.md
 ABOVE, BELOW, CONSISTENT, CANNOT_TELL, NOTHING = 'ABOVE', 'BELOW', 'CONSISTENT', 'CANNOT_TELL', 'NOTHING_RETURNED'
 SIZE_ABS, SIZE_REL, BAND_FACTOR, ROUND = 1000.0, 0.10, 2.0, 100.0

@@ -15,7 +15,7 @@ Checks:
   - every tool on every live server, called once with the sample below: fails on HTTP 404, a JSON-RPC error (other than an expected
     "not found" for the sample), isError, or a data source that returned nothing (data null or empty, data.error, or a CANNOT_TELL whose
     reason says the source could not be read)
-  - retired tools (find_study, astrophysics_find_study, all_tests_side_by_side) are on no server
+  - retired tools (find_study, astrophysics_find_study, all_tests_side_by_side, qia_audit, eval_setup_check) are on no server
   - every retired server answers JSON-RPC error -32001 naming MCP_URL, with an HTTP status other than 404
 
   python3 ledger/mcp_gate.py                       against https://indahl.ai (run right after deploy)
@@ -36,7 +36,8 @@ def opt(name, default=None):
     return ARGS[ARGS.index(name) + 1] if name in ARGS and ARGS.index(name) + 1 < len(ARGS) else default
 BASE = opt('--base', 'https://indahl.ai').rstrip('/'); HOST = opt('--host'); QUIET = '--quiet' in ARGS
 UA = 'indahl-mcp-gate/1.0'
-RETIRED_TOOLS = ['find_study', 'astrophysics_find_study', 'all_tests_side_by_side']
+RETIRED_TOOLS = ['find_study', 'astrophysics_find_study', 'all_tests_side_by_side',
+                 'qia_audit', 'eval_setup_check']   # 22 Nov 2026 (owner: kill what does nothing useful): CANNOT_TELL on every qubit; MATCHED with nothing compared
 # A JSON-RPC error that is the right answer to the sample input. None today: every sample names something that exists.
 EXPECT_NOT_FOUND = set()
 fails, oks = [], []
@@ -88,15 +89,14 @@ def samples(proc):
         'qia_calibration_check': {'processor': proc, 'qubits': '0,1'},
         'qia_run_check': {'processor': proc, 'start': hour_ago, 'qubits': '0,1'},
         'qia_qubit_history': {'processor': proc, 'qubit': 0, 'days': 3},
-        'qia_audit': {'processor': proc},
         'qia_measured': {'processor': proc, 'qubits': '0,1'},
         'paper_check': {'id': '1706.03762'},
+        'paper_statistics': {'id': '1706.03762'},
         'check_reported_statistics': {'text': 't(28) = 2.20, p = .036'},
         'number_check': {'text': 'The model has 7 billion parameters.', 'source_text': 'The model has 7 billion parameters.'},
         'interval_verdict': {'estimate': 0.5, 'low': 0.4, 'high': 0.6, 'stated': 0.45},
         'triangulate_readings': {'readings': [{'label': 'a', 'value': 1.0, 'se': 0.1}, {'label': 'b', 'value': 1.1, 'se': 0.1}]},
         'claim_wording_check': {'text': 'Our method is the first to beat the baseline.'},
-        'eval_setup_check': {'claimed': {'shots': '5'}, 'ours': {'shots': '0'}},
         'package_check': {'name': 'requests'},
         'model_check': {'repo': 'Qwen/Qwen2.5-7B-Instruct'},
         'link_rot': {'urls': 'https://indahl.ai/ https://arxiv.org/'},
@@ -106,7 +106,6 @@ def samples(proc):
         'list_divisions': {},
         # legacy servers (served, not listed)
         'what_changed': {},
-        'paper_statistics': {'id': '1706.03762'},
         'standards_card': {'id': '1706.03762'},
         'margin_check': {'value': 1.0, 'uncertainty': 0.1, 'breaks_at': 0.5},
         'controls_check': {'controls': [{'name': 'pos', 'kind': 'positive', 'expected': 'fires', 'observed': 'fires'}, {'name': 'neg', 'kind': 'negative', 'expected': 'silent', 'observed': 'silent'}]},
@@ -212,6 +211,10 @@ def main():
         e = (j or {}).get('error') if isinstance(j, dict) else None
         if not e or e.get('code') != -32001 or main_url not in str(e.get('message', '')): fail(p, 'retired server does not answer the JSON-RPC error naming %s (HTTP %s %s)' % (main_url, st, (raw or '')[:120])); continue
         oks.append(p + ' retired: JSON-RPC error names ' + main_url)
+    for n in RETIRED_TOOLS:   # 22 Nov 2026: a retired tool is gone from the JSON API too, not only from the MCP servers
+        st, j, raw = http('GET', '/api/v1/' + n)
+        if st != 404: fail('/api/v1/' + n, 'retired tool still answers on the API (HTTP %s)' % st)
+        else: oks.append('/api/v1/' + n + ' retired: 404')
     if not QUIET:
         for o in oks: print('ok   ' + o)
     for f in fails: print('FAIL ' + f)

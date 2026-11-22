@@ -48,7 +48,7 @@ See TESTED.md in the source distribution, installed under `share/doc/qia-check/`
 - Package page: https://indahl.ai/qia/package
 - List of studies: https://indahl.ai/qia/list
 - Key: https://indahl.ai/qia/key
-- Code: https://github.com/Heuremen-LLC/indahl.ai
+- Code: https://github.com/indahl-ai/indahl.ai
 - Faults and Guards on PyPI: https://pypi.org/project/faultsguards/
 - YO: https://indahl.ai/downloads
 

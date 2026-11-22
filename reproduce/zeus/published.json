@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/zeus/live.json",
+ "feed_sha256": "abfe3c6ada739d76388d3e060ba02b4658d0a77b0d6b77e52a5d46c8bddf4df6",
+ "headline": {
+  "desk": "ZEUS",
+  "display": "48.6%",
+  "hi": 0.5341,
+  "keys": [],
+  "lo": 0.4376,
+  "n": 160375,
+  "of": 329921,
+  "outcome": "CONSISTENT",
+  "value": 0.4861
+ },
+ "read_at": "2026-11-22T21:41:39Z",
+ "stamp": "2026-11-22T21:40:47Z"
+}

@@ -5,6 +5,7 @@ import { handleInquiry } from "../../indahl-ai/inquire.js";
 import { handleIndexRequest } from "../../indahl-ai/indexreq.js";
 import { handleResponse } from "../../indahl-ai/respondreq.js";
 import { handleCorrection } from "../../indahl-ai/correctreq.js";
+import { messagePage, formTitle } from "../../indahl-ai/security.js";   // 22 Nov 2026: form answers carry their own title (they read "Inquiry received" on errors)
 import { handleApi } from "../../indahl-ai/api.js";
 import { handleListRows } from "../../indahl-ai/listrows.js";   // 17 Nov 2026, owner: one public list per desk; no study-list downloads (a copy already downloaded keeps a removed study on).
 import { handleWeekly } from "../../indahl-ai/newsletter.js";
@@ -179,6 +180,14 @@ async function handle(req, env) {
     }
     if ((host === "indahl.ai" || host === "www.indahl.ai") && u.pathname === "/argus/live.json" && env.IRIS_BENCH) {   // 22 Nov 2026: ARGUS (HERMES)
       const v = await env.IRIS_BENCH.get("argus_live");
+      return new Response(v || "{}", { headers: { "content-type": "application/json", "cache-control": "no-store" } });
+    }
+    if ((host === "indahl.ai" || host === "www.indahl.ai") && u.pathname === "/zeus/live.json" && env.IRIS_BENCH) {   // 22 Nov 2026: ZEUS (HERMES)
+      const v = await env.IRIS_BENCH.get("zeus_live");
+      return new Response(v || "{}", { headers: { "content-type": "application/json", "cache-control": "no-store" } });
+    }
+    if ((host === "indahl.ai" || host === "www.indahl.ai") && u.pathname === "/seldon/live.json" && env.IRIS_BENCH) {   // 22 Nov 2026: SELDON (HERMES)
+      const v = await env.IRIS_BENCH.get("seldon_live");
       return new Response(v || "{}", { headers: { "content-type": "application/json", "cache-control": "no-store" } });
     }
     if ((host === "indahl.ai" || host === "www.indahl.ai") && u.pathname === "/tornado/live.json" && env.IRIS_BENCH) {
@@ -641,15 +650,15 @@ async function handle(req, env) {
       }
       if (u.pathname === "/index-request") {
         const escI = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-        return handleIndexRequest(req, env, (msg, status) => html(INDAHL_PAGES["/inquire-ok"].replace(/<main[\s\S]*<\/main>/, `<main><p>${escI(msg)}</p></main>`), status));
+        return handleIndexRequest(req, env, (msg, status) => html(messagePage(INDAHL_PAGES["/inquire-ok"], formTitle("Link", status), `<main class="wrap"><section class="closing"><p>${escI(msg)}</p></section></main>`), status));
       }
       if (u.pathname === "/correction-request") {
         const escC = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-        return handleCorrection(req, env, (msg, status) => html(INDAHL_PAGES["/inquire-ok"].replace(/<main[\s\S]*<\/main>/, `<main><p>${escC(msg)}</p></main>`), status));
+        return handleCorrection(req, env, (msg, status) => html(messagePage(INDAHL_PAGES["/inquire-ok"], formTitle("Correction request", status), `<main class="wrap"><section class="closing"><p>${escC(msg)}</p></section></main>`), status));
       }
       if (u.pathname === "/respond-request") {
         const escR = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-        return handleResponse(req, env, (msg, status) => html(INDAHL_PAGES["/inquire-ok"].replace(/<main[\s\S]*<\/main>/, `<main><p>${escR(msg)}</p></main>`), status));
+        return handleResponse(req, env, (msg, status) => html(messagePage(INDAHL_PAGES["/inquire-ok"], formTitle("Response", status), `<main class="wrap"><section class="closing"><p>${escR(msg)}</p></section></main>`), status));
       }
       if (u.pathname === "/respond") {
         const uq = (u.searchParams.get("u") || "").toLowerCase();

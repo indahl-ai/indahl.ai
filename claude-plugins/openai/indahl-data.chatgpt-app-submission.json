@@ -44,18 +44,6 @@
         "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
       }
     },
-    "qia_audit": {
-      "annotations": {
-        "readOnlyHint": true,
-        "openWorldHint": false,
-        "destructiveHint": false
-      },
-      "justifications": {
-        "read_only_justification": "Only retrieves indahl.ai's own published measurements for this desk and returns them; nothing is created, changed or stored.",
-        "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
-        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
-      }
-    },
     "qia_measured": {
       "annotations": {
         "readOnlyHint": true,
@@ -69,6 +57,18 @@
       }
     },
     "paper_check": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Computes its result from the text or numbers the person supplies (and any public page they name) and returns it; nothing is created, changed or stored.",
+        "open_world_justification": "Reads public records at the source the person names (Crossref, arXiv, PyPI, GitHub or Hugging Face) to answer, and never writes to the internet or to any third-party system.",
+        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
+      }
+    },
+    "paper_statistics": {
       "annotations": {
         "readOnlyHint": true,
         "openWorldHint": true,
@@ -137,18 +137,6 @@
       "justifications": {
         "read_only_justification": "Computes its result from the text or numbers the person supplies (and any public page they name) and returns it; nothing is created, changed or stored.",
         "open_world_justification": "Reads only indahl.ai's own public data and never writes to the internet or to any third-party system.",
-        "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
-      }
-    },
-    "eval_setup_check": {
-      "annotations": {
-        "readOnlyHint": true,
-        "openWorldHint": true,
-        "destructiveHint": false
-      },
-      "justifications": {
-        "read_only_justification": "Computes its result from the text or numbers the person supplies (and any public page they name) and returns it; nothing is created, changed or stored.",
-        "open_world_justification": "Reads public records at the source the person names (Crossref, arXiv, PyPI, GitHub or Hugging Face) to answer, and never writes to the internet or to any third-party system.",
         "destructive_justification": "Cannot delete, overwrite, send or revoke anything; repeated calls return the same published data."
       }
     },

@@ -1,0 +1,17 @@
+{
+ "feed": "https://indahl.ai/seldon/live.json",
+ "feed_sha256": "38cf6ed97ada221a233bfce1ac6d0ceef808e8e90190805e5a1c6e74b623859a",
+ "headline": {
+  "desk": "SELDON",
+  "display": "84.6%",
+  "hi": 1.0,
+  "keys": [],
+  "lo": 0.7333,
+  "n": 11,
+  "of": 13,
+  "outcome": "ABOVE",
+  "value": 0.8462
+ },
+ "read_at": "2026-11-22T22:30:07Z",
+ "stamp": "2026-11-22T22:25:55Z"
+}

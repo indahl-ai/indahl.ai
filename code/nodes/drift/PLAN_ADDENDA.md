@@ -4,7 +4,7 @@
 A GitHub runner, which is not our Mac and not our network, fetches the live site and compares it with what we publish elsewhere. Our own release script checks drift from the same machine that built the pages, which is one seat. This is a second seat that does not share our machine, our network or our clock.
 
 ## Reads (fixed now)
-1. Page against repository. For each page in drift/targets.json the runner fetches the served page from indahl.ai and the same file from the main branch of github.com/Heuremen-LLC/indahl.ai, and compares SHA-256. MATCH or DIFFER. A release writes the site first and the repository after, so a single DIFFER can be a deploy in progress. A page counts as DRIFT only when it DIFFERs in two consecutive probes.
+1. Page against repository. For each page in drift/targets.json the runner fetches the served page from indahl.ai and the same file from the main branch of github.com/indahl-ai/indahl.ai, and compares SHA-256. MATCH or DIFFER. A release writes the site first and the repository after, so a single DIFFER can be a deploy in progress. A page counts as DRIFT only when it DIFFERs in two consecutive probes.
 2. Feed freshness. For each live feed in drift/targets.json the runner fetches the JSON, reads its updated or read stamp, and computes its age in hours. Each feed has a limit set from its rider's cadence at three times the cadence, with a floor of 1.5 hours. FRESH when younger than the limit, STALE when older, UNREACHABLE when the fetch fails or the stamp cannot be read. The stamps are in UTC.
 3. Archive chain. The runner downloads chain.jsonl and the manifests from code/archive in the repository and recomputes every digest. OK or BROKEN, with the number of entries.
 
@@ -55,3 +55,7 @@ probe records the commit read (repo_commit) and the rereads used (settle_rounds)
 against the same file in the repository, MATCH or DIFFER, and a page that never matches the repository is still DIFFER.
 2. STACK retired 21 Nov 2026 at the owner's word. The page /stack and the feed stack/live.json are no longer targets; probes before this
 commit read them as unreachable, which was the retirement, not an outage. No rule changed.
+
+## Addendum 6 (22 Nov 2026, ZEUS added)
+The ZEUS desk went live on 22 Nov 2026. The page /zeus and the feed zeus/live.json are targets from this commit on. Its rider runs every 240
+ticks, about 8.5 hours, so the feed limit is 26 hours (three times the cadence, rounded up). No rule changed.

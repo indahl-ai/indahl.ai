@@ -114,7 +114,7 @@ A('<p>A row above or below names no cause. NCHS labels its rate tables as based 
 A('<h2>Sources</h2>')
 A('<p>CDC National Center for Health Statistics, National Vital Statistics System, marriage and divorce state tables and counts, 2000 to 2023 and rates to 2024, <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm">cdc.gov/nchs/nvss/marriage-divorce.htm</a>. U.S. Census Bureau, American Community Survey 1-year estimates, tables B12501, B12503 and B01003, through the Census Data API, <a href="https://www.census.gov/data/developers/data-sets/acs-1year.html">census.gov</a>. The plan was committed on %s before any state-year was compared.</p>' % e(S['plan_seal']['plan_commit_time']))
 A('<p>This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.</p>')
-A('<p class="meta">Plan and code for this page are public: <a href="https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/fidelity">fidelity</a>. The plan was fixed before the comparison it describes. This desk was run once on the NCHS tables of %s and does not refresh the readings. Dated copies of the NCHS workbooks are kept.</p>' % e(S['run'][:10]))
+A('<p class="meta">Plan and code for this page are public: <a href="https://github.com/indahl-ai/indahl.ai/tree/main/code/fidelity">fidelity</a>. The plan was fixed before the comparison it describes. This desk was run once on the NCHS tables of %s and does not refresh the readings. Dated copies of the NCHS workbooks are kept.</p>' % e(S['run'][:10]))
 page = '''<!doctype html>
 <html lang="en">
 <head>

@@ -6,5 +6,5 @@ authors:
 version: 1.0.0
 date-released: 2026-11-01
 url: "https://indahl.ai/qia/package"
-repository-code: "https://github.com/Heuremen-LLC/indahl.ai"
+repository-code: "https://github.com/indahl-ai/indahl.ai"
 keywords: [quantum computing, calibration, IBM Quantum, T1, T2, reproducibility]

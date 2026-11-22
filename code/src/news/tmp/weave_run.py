@@ -40,7 +40,7 @@ for d in cur:
         if r>sr[0]: sr=(r,c)
         if j>sj[0]: sj=(round(j,2),c)
     seen.append((d['cycle'],t))
-    print(d['cycle'],d['at'][11:19],d['status'],'names',len(names),'minority' if d['synthesis'].lstrip().startswith('Minority report') else '-','len',len(d['synthesis']),'run',br,'jac',bj,'sageJ',sj,'sageRun',sr,'SAME_NEXT' if d['synthesis'].strip()==str(d['next']).strip() else '','flags',repr(d.get('flags'))[:60])
+    print(d['cycle'],d['at'][11:19],d['status'],'names',len(names),'minority' if d['synthesis'].lstrip().startswith('Minority report') else '-','len',len(d['synthesis']),'run',br,'jac',bj,'refereeJ',sj,'refereeRun',sr,'SAME_NEXT' if d['synthesis'].strip()==str(d['next']).strip() else '','flags',repr(d.get('flags'))[:60])
 import sys
 if len(sys.argv)>1:
     for d in cur:

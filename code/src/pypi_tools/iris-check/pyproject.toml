@@ -23,7 +23,7 @@ dependencies = []
 [project.urls]
 Homepage = "https://indahl.ai/iris"
 Documentation = "https://indahl.ai/iris/package"
-Source = "https://github.com/Heuremen-LLC/indahl.ai"
+Source = "https://github.com/indahl-ai/indahl.ai"
 
 [project.scripts]
 iris-check = "iris_check:main"

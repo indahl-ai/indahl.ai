@@ -301,6 +301,18 @@ export const DESKS_LIVE = [
 "what": "Breed standard temperament against open dog genetics and behavior data"
 },
 {
+"id": "zeus",
+"title": "ZEUS",
+"url": "https://indahl.ai/zeus",
+"what": "Thunderstorm outlooks against the lightning that struck"
+},
+{
+"id": "seldon",
+"title": "SELDON",
+"url": "https://indahl.ai/seldon",
+"what": "Long-range budget and growth ranges against outcomes"
+},
+{
 "id": "deus",
 "title": "DEUS",
 "url": "https://indahl.ai/deus",

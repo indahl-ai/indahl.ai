@@ -21,7 +21,7 @@ Method: every list and method page re-read from US News in our own browser tab (
 | edu | University of Virginia | place | (blank) | Charlottesville, VA |
 | med | all 16 Tier 1 schools | place | (blank, but the table has a Place column) | Houston TX, Cleveland OH, Atlanta GA, Rochester MN, Columbus OH, Los Angeles CA, La Jolla CA, San Francisco CA, Aurora CO, Gainesville FL, Pittsburgh PA, Rochester NY, Tampa FL, Dallas TX, Nashville TN, New Haven CT (in desk order) |
 
-Not a data difference: the footer link https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/rank returned 404 when I checked it.
+Not a data difference: the footer link https://github.com/indahl-ai/indahl.ai/tree/main/code/rank returned 404 when I checked it.
 
 ## Fixes in order
 1. Fill the UChicago enrollment cell with "7,453 (fall 2025)".

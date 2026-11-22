@@ -4,7 +4,7 @@ Heuremen LLC, 2 November 2026, on the package as published at https://indahl.ai/
 
 1. Against our mirror's audit code. For the latest published calibration record of each of seven IBM processors (ibm_aachen, ibm_boston,
    ibm_fez, ibm_kingston, ibm_marrakesh, ibm_phoenix, ibm_pittsburgh), `qia_check.py before` was compared with the separate audit code that
-   runs our public IBM mirror (https://github.com/Heuremen-LLC/indahl.ai/tree/main/code/mirror). The T2 above 2 x T1 flags, with their
+   runs our public IBM mirror (https://github.com/indahl-ai/indahl.ai/tree/main/code/mirror). The T2 above 2 x T1 flags, with their
    outcomes, and the T1 and T2 date-gap flags agreed qubit for qubit on all seven. Both were written by us to the same rules, so this shows
    the two implementations agree. It does not test the rules themselves.
 2. Against 362 saved ibm_kingston records. The before checks were recounted with separate code, and every count agreed on every record.

@@ -5,7 +5,7 @@
   His words
   The 7 Oct behaviour is kept below as public_names_off() for anything that still wants it.
   PRIOR RULE (7 Oct), now retired:
-  names off (bylines -> "Heuremen"; the owner -> W., the operator -> B. elsewhere; URLs, lowercase code names and Law Eleven's "The the operator" untouched),
+  names off (bylines -> "Heuremen"; the owner -> W., the operator -> B. elsewhere; URLs, lowercase code names and Law Eleven's "The operator" untouched),
   and the AI line becomes the collaboration line. The footer, for our pages: A collaboration between organic and inorganic intelligences. / Heuremen / "We found it."
   Papers for a venue (arXiv) follow the venue's disclosure format instead -- not this file. Used by heuremen.org/build_pdfs.py and trail-site/build_trail.py."""
 import re
@@ -26,7 +26,7 @@ def public_names_off(text):
     out.append(_names(text[last:])); return ''.join(out)
 def _names(seg):
     seg = re.sub(r'\b' + 'Way' + 'finder' + r'\b', 'W.', seg)
-    return re.sub(r'(?<!The )\bBones\b(?!fish)', 'B.', seg)
+    return re.sub(r'(?<!The )\bOperator\b(?!fish)', 'B.', seg)
 
 
 # ---- 8 Oct 2026: the live rule ----

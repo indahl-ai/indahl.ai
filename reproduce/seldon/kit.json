@@ -1,0 +1,46 @@
+{
+ "cwd": "",
+ "desk": "seldon",
+ "headline": {
+  "field": [
+   "seldon",
+   "cbo_range_hit_share",
+   "value"
+  ],
+  "hi": [
+   "seldon",
+   "cbo_range_hit_share",
+   "hi"
+  ],
+  "lo": [
+   "seldon",
+   "cbo_range_hit_share",
+   "lo"
+  ],
+  "n": [
+   "seldon",
+   "cbo_range_hit_share",
+   "hits"
+  ],
+  "of": [
+   "seldon",
+   "cbo_range_hit_share",
+   "ranges"
+  ],
+  "outcome": [
+   "seldon",
+   "cbo_range_hit_share",
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "SELDON",
+ "output": "data/seldon_live.json",
+ "steps": [
+  [
+   "clock_run.py",
+   "seldon_tick.py",
+   "data/seldon_live.json"
+  ]
+ ]
+}

@@ -246,7 +246,7 @@ export async function arxivVersionCheck(args) {
 export function htmlToText(h) {
   const dec = (s) => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, ' ').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16))).replace(/&amp;/g, '&');
   h = h.replace(/<(script|style|nav|header|footer)\b[\s\S]*?<\/\1>/gi, ' ');
-  h = h.replace(/<math\b[^>]*?alttext="([^"]*)"[\s\S]*?<\/math>/gi, (_, a) => ' ' + a.replace(/\\mathrm\{([^}]*)\}|\\text\{([^}]*)\}/g, '$1$2').replace(/\\(?:left|right|,|;|!|quad)/g, '').replace(/[{}]/g, '') + ' ');
+  h = h.replace(/<math\b[^>]*?alttext="([^"]*)"[\s\S]*?<\/math>/gi, (_, a) => ' ' + a.replace(/\\mathrm\{([^}]*)\}|\\text\{([^}]*)\}/g, '$1$2').replace(/\\(?:left|right|,|;|!|quad)/g, '').replace(/[{}]/g, '').replace(/\\chi\s*\^\s*2/g, 'χ2') + ' ');   // 22 Nov 2026: LaTeX \chi^2(1)=21.51 reads as χ2(1)=21.51, so chi-square rows in math are found
   h = h.replace(/<\/(p|div|section|h[1-6]|li|tr|table|figure|caption)>/gi, '\n\n').replace(/<br\s*\/?>/gi, '\n');
   return dec(h.replace(/<[^>]+>/g, ' ')).replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*(\n\s*)+/g, '\n\n').trim();
 }

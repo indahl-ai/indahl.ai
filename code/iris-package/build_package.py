@@ -69,7 +69,7 @@ open(D + '/START_HERE.html', 'w').write(f'<!doctype html><html lang="en"><meta c
     f'<header>{ic.LOGO}<div><b>IRIS Research Package</b><br><span class="note">Heuremen LLC &middot; <a href="https://indahl.ai/iris">indahl.ai/iris</a></span></div></header>' + '\n'.join(body) + '</main></html>')
 # gate: nothing private
 bad = re.compile(r'forge|/Users/|\.ibm_quantum_key|\.ibm_.*crn|wrangler|\bKV\b|IBM_QUANTUM_TOKEN="?[A-Za-z0-9]{10}|hf_[A-Za-z0-9]{20}|pypi-[A-Za-z0-9]{20}|[\w.+-]+@(?!example\.(invalid|com)\b)[\w-]+\.[a-z]{2,}'
-                 r'|the owner|\bNova\b|his word|Gpuhost|127\.0\.0\.1:11500|\bBones\b')
+                 r'|the owner|\bNova\b|his word|Gpuhost|127\.0\.0\.1:11500|\bOperator\b')
 INTERNAL = re.compile(r'watch/|release ledger|ledger first|three-box|\bbill\b|\bhis\b|\(\d{1,2}[–-]?\d* ?Oct|ROUND_S|Addendum|\bS[123]\b|\bpack Q\b', re.I)
 HANDS = re.compile(r'by hand|hand-read|hand-checked|hand-reads')
 for r, _, fs in os.walk(D):

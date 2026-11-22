@@ -1,0 +1,246 @@
+{
+ "code": [
+  {
+   "path": "seldon_tick.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/seldon/seldon_tick.py",
+   "sha256": "e15c8a54166d1b40efaea8e237039687794b63ccd1194e20bb772ab589cbd9c1"
+  },
+  {
+   "extract_of": "the clock only. It runs seldon_tick.py with the clock pinned to the time the published run read (the generated field of data/seldon_live.json). The tick reads no network and the clock only stamps the run",
+   "path": "clock_run.py",
+   "sha256": "f40eea8e07b0df53c499abb27465b057e8456cc7b9c9d3bc733dff36afb57dad"
+  }
+ ],
+ "desk": "seldon",
+ "inputs": [
+  {
+   "bytes": 40202,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:25:55Z",
+   "path": "data/seldon_live.json",
+   "sha256": "38cf6ed97ada221a233bfce1ac6d0ceef808e8e90190805e5a1c6e74b623859a",
+   "stored": "data/seldon_live.json.gz",
+   "stored_sha256": "197705d723b075ef76e5dcaf78289d27eef94f921cb411fdbb3cbbf5cf81fee2"
+  },
+  {
+   "bytes": 8631,
+   "gzip_added": true,
+   "modified": "2026-11-22T01:54:47Z",
+   "path": "PLAN.md",
+   "sha256": "0800f1522c9e7125de3c9443407bc60de57ee5a201d25cebfa2e1b7c362b93bd",
+   "stored": "PLAN.md.gz",
+   "stored_sha256": "e1e99d368f189fd96432b8dc7212bd5686b3ca77683c482ab016537c36edeb0a"
+  },
+  {
+   "bytes": 580,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:22:41Z",
+   "path": "data/plan_seal.json",
+   "sha256": "9ce3245ffa8f65f4b9055f7ba820d639706000d07d25b369bf2791558ca4e253",
+   "stored": "data/plan_seal.json.gz",
+   "stored_sha256": "f8daf87be33f12f903010ed054d0a31653db989f537991a94b76f6a66c9e9276"
+  },
+  {
+   "bytes": 58202,
+   "gzip_added": true,
+   "modified": "2026-11-22T02:21:09Z",
+   "path": "data/stated_ranges.json",
+   "sha256": "1af69d3e0a9c262e393b051f19040c94c35445c7a07c35cf419b03441014933a",
+   "stored": "data/stated_ranges.json.gz",
+   "stored_sha256": "8f01166e639b53354f76543cc341108cd03741e85a62e83104ccacf192708b86"
+  },
+  {
+   "bytes": 15445,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:20:08Z",
+   "path": "data/imf_events.json",
+   "sha256": "60ad5ffafae9e557c7f6e81d2ebb56b2fd149c48c5d89d849042324cbdcfee24",
+   "stored": "data/imf_events.json.gz",
+   "stored_sha256": "ee71502df2fb63325813478d13f403b6d15a81e3435fc7f903e74cb9f10752bd"
+  },
+  {
+   "bytes": 632,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:15:09Z",
+   "path": "data/raw/cbo_actuals/actual_GDP.csv",
+   "sha256": "eb90d2eb38d8f7d5f3af27c9600bf52d4dcc8903e8e196191ba562f5800c10b4",
+   "stored": "data/raw/cbo_actuals/actual_GDP.csv.gz",
+   "stored_sha256": "3b03f431319b69ea37d4e35ca6a240e63e97e2edbfb043e6283bd5c318a0845b"
+  },
+  {
+   "bytes": 38624,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:15:08Z",
+   "path": "data/raw/cbo_actuals/actuals.csv",
+   "sha256": "810e101e0691d9f1d734e8de2578bf69d6343396151ffa5eea7a4e4c3a2bf996",
+   "stored": "data/raw/cbo_actuals/actuals.csv.gz",
+   "stored_sha256": "0eb19fef0b8d1ac272ae2dff5ebe9fbaafd8f5c11e217e30b9a7ebec644558a8"
+  },
+  {
+   "bytes": 1839,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:18:43Z",
+   "path": "data/raw/cbo_actuals/debt_actuals_pct_GDP.csv",
+   "sha256": "b21ef4456d15044268a0a95d4f6c36c1071b0a1b290a1ca30355121e43fb4de9",
+   "stored": "data/raw/cbo_actuals/debt_actuals_pct_GDP.csv.gz",
+   "stored_sha256": "0ebeefaef5386891d7524a3f6f70211b96b3c8f697647b6eeaf55ebed9470b76"
+  },
+  {
+   "bytes": 1953,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:18:43Z",
+   "path": "data/raw/cbo_actuals/deficit_actuals_pct_GDP.csv",
+   "sha256": "40926316f6b562e057cf13c5c26aff21874d8f760c044171518cbb2691976ee6",
+   "stored": "data/raw/cbo_actuals/deficit_actuals_pct_GDP.csv.gz",
+   "stored_sha256": "4dbcfc6763e998656b376807ba5432339d764dc3d4923a0b57672ce4ded8c43c"
+  },
+  {
+   "bytes": 62,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:15:14Z",
+   "path": "data/raw/cbo_actuals/eval_projections_commit.txt",
+   "sha256": "b3c70f9c44a36dc2c35022c2c186834f7b2ddb3bc9d5b138b49bd611161ba7eb",
+   "stored": "data/raw/cbo_actuals/eval_projections_commit.txt.gz",
+   "stored_sha256": "2848771e88a356abaec134e6960ad3e31cf175f7a0ac6f32257485269d3288cf"
+  },
+  {
+   "bytes": 62,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:01Z",
+   "path": "data/raw/cbo_data/cbo_data_commit.txt",
+   "sha256": "48bc2b86ca01ff73cf9c20fca60b1f3886b63643043d47bb129c9b1cec5c0865",
+   "stored": "data/raw/cbo_data/cbo_data_commit.txt.gz",
+   "stored_sha256": "f256b858d36b7475a196e44dcb1b36191540080110562b82d5812891017c0f5f"
+  },
+  {
+   "bytes": 80365,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:12Z",
+   "path": "data/raw/cbo_data/economic_projections_calendar_2024-02.csv",
+   "sha256": "8802a8ccd17ac3583d6103ef3f072c760131fa377503bb7ef35fdac89d42ee3e",
+   "stored": "data/raw/cbo_data/economic_projections_calendar_2024-02.csv.gz",
+   "stored_sha256": "ec4f01890502806b9eff352c6befd85b3499ba413997005d478e977b5f88b848"
+  },
+  {
+   "bytes": 69308,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:17:12Z",
+   "path": "data/raw/cbo_data/economic_projections_calendar_2024-06.csv",
+   "sha256": "4e8c9b5f6600a68d477a8d5767240d7f04af2a98071471ec878de1d6c806a970",
+   "stored": "data/raw/cbo_data/economic_projections_calendar_2024-06.csv.gz",
+   "stored_sha256": "fa97f8a54ebde303af3847db6ddbdfd94e6f587adc7d60b22c7299ecf590d423"
+  },
+  {
+   "bytes": 82652,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:11Z",
+   "path": "data/raw/cbo_data/economic_projections_calendar_2025-01.csv",
+   "sha256": "dfe6699335b84dfaaca1ae92ee2671b4e1ed766cf0e7eedfc780897c1ee653e4",
+   "stored": "data/raw/cbo_data/economic_projections_calendar_2025-01.csv.gz",
+   "stored_sha256": "96a85684ccd1d967d87c8bb7bda35e0302fc5c38ac68434847323eff920c5d3b"
+  },
+  {
+   "bytes": 11269,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:11Z",
+   "path": "data/raw/cbo_data/economic_projections_calendar_2025-09.csv",
+   "sha256": "43fc2e319349a4a8e9007f5f79ae2d1f72aebb189ca6c44794657623ca262f66",
+   "stored": "data/raw/cbo_data/economic_projections_calendar_2025-09.csv.gz",
+   "stored_sha256": "a2fb143d5fcf0be83233694f62cf44b1f383a6ed41da06714439ab7fb8cfb69e"
+  },
+  {
+   "bytes": 88093,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:17:13Z",
+   "path": "data/raw/cbo_data/economic_projections_calendar_2026-02.csv",
+   "sha256": "6b54df40058d206247e78fadfe5ebd11e02ae29efd2f0e1a4a86b6767c9ca559",
+   "stored": "data/raw/cbo_data/economic_projections_calendar_2026-02.csv.gz",
+   "stored_sha256": "8802cd12dedd52f9161939aedeb26d32381451fd559fb6cf50511e8f7b7cc5f4"
+  },
+  {
+   "bytes": 46908,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:11Z",
+   "path": "data/raw/cbo_data/economic_projections_quarterly_2025-09.csv",
+   "sha256": "31c2986c194dd83ea188399961dfc87c6c694adbde13e6a102c934bef439591c",
+   "stored": "data/raw/cbo_data/economic_projections_quarterly_2025-09.csv.gz",
+   "stored_sha256": "b0e67aea6e41ceaa8070ad1481b8eb7e89ad6bc34d3db135ebda3bdc04c8de48"
+  },
+  {
+   "bytes": 235221,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:11Z",
+   "path": "data/raw/cbo_data/historical_economic_annual_cy_2026-02.csv",
+   "sha256": "b7a11ad35e5b1d9dc90f029ef21eca1eafe7834cf3ca92ac6b84d865076fb284",
+   "stored": "data/raw/cbo_data/historical_economic_annual_cy_2026-02.csv.gz",
+   "stored_sha256": "68140761ae8bea159b664cea414aa674f6a45c9df3692101dc4949c615a85ded"
+  },
+  {
+   "bytes": 841182,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:17:10Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2022-05.csv",
+   "sha256": "ed06d49482379829658b29fbd4032ca73ad6d0737b04cb3818c789bc56a7257c",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2022-05.csv.gz",
+   "stored_sha256": "d5e01ffd7accdff45b027aa2623e701db1fd34651bfe3893efbb176bff5e1db5"
+  },
+  {
+   "bytes": 851993,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:03Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2023-02.csv",
+   "sha256": "c75df7240be757e70a6bceb39fcbc6f7002abf72d4bbbcfe19c56a9a3dca6803",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2023-02.csv.gz",
+   "stored_sha256": "728c63689f7592a8f6feb7610df7ac712799f8b88db93072e6dec67e44c089b9"
+  },
+  {
+   "bytes": 767052,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:17:11Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2023-07.csv",
+   "sha256": "109210126f0808ba6150625d868321daf5af26cbbec21b6e121a78e31cea36f5",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2023-07.csv.gz",
+   "stored_sha256": "e5a9f6056ebb43378efd5a89d9ab0bbfbc7586cc31194186ccc49320f34dda42"
+  },
+  {
+   "bytes": 866526,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:07Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2024-02.csv",
+   "sha256": "0df6ffb5e38afed00b1a65a12ebc98ae3b142c410afe97854ccd89d8e860fef0",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2024-02.csv.gz",
+   "stored_sha256": "38b840b2fc23922852411a0eb510d405ddb9c5831cc134077eb889905f94184e"
+  },
+  {
+   "bytes": 867707,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:17:12Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2024-06.csv",
+   "sha256": "f65a56ec08297fa1a9190133e8631d88649d2a8ae8b55e68770e4098ed98328d",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2024-06.csv.gz",
+   "stored_sha256": "4565b2f4874526015bac27b377ed68d4bfaaa81b0a0b7eb2e150d48bcbbc444f"
+  },
+  {
+   "bytes": 860669,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:09Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2025-01.csv",
+   "sha256": "14df2a1dda723a85d4b55d920c8eebf3c747f72130456bba57dc5741dbd269de",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2025-01.csv.gz",
+   "stored_sha256": "cb93f8a7c086b18d1635518f47fc5e29f80b4e5a0986997b0cff73866201a83b"
+  },
+  {
+   "bytes": 1013425,
+   "gzip_added": true,
+   "modified": "2026-11-22T22:16:10Z",
+   "path": "data/raw/cbo_data/historical_economic_quarterly_2026-02.csv",
+   "sha256": "e51170462dab40316574a38f691f302794aaa7500f7f89b97d79d4dfa4193934",
+   "stored": "data/raw/cbo_data/historical_economic_quarterly_2026-02.csv.gz",
+   "stored_sha256": "32b220167f122390299dada0be31ae735aa8b18e1672e02e653449db982be846"
+  }
+ ],
+ "made": "2026-11-22T22:30:07Z",
+ "mode": "inputs",
+ "name": "SELDON",
+ "reference": []
+}

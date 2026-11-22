@@ -46,7 +46,7 @@ for f in sorted(glob.glob(PUB + '/*/history.jsonl')):
     if not n: continue
     if not load('history_' + slug, dst, TERMS.replace('SLUG', os.path.basename(os.path.dirname(f)))): ok = False; continue   # 22 Nov: a failed load is a failed run (an expired gcloud login failed silently)
     c = count('history_' + slug); report['history_' + slug] = (n, c); ok &= (c == n)
-for name, rel in (('archive_chain', 'archive/chain.jsonl'),):
+for name, rel in ():   # 22 Nov 2026: the archive chain is internal now (code/archive left the public mirror); no longer loaded
     f = PUB + '/' + rel; dst = os.path.join(tmp, name + '.jsonl'); n = clean_file(f, dst)
     if not n: continue
     if not load(name, dst, TERMS.replace('SLUG', 'archive')): ok = False; continue

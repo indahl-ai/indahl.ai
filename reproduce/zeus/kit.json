@@ -1,0 +1,44 @@
+{
+ "cwd": "",
+ "desk": "zeus",
+ "headline": {
+  "field": [
+   "zeus",
+   "tstm_hit_share",
+   "value"
+  ],
+  "hi": [
+   "zeus",
+   "tstm_hit_share",
+   "hi"
+  ],
+  "lo": [
+   "zeus",
+   "tstm_hit_share",
+   "lo"
+  ],
+  "n": [
+   "zeus",
+   "tstm_hit_share",
+   "hit_point_days"
+  ],
+  "of": [
+   "zeus",
+   "tstm_hit_share",
+   "thunder_point_days"
+  ],
+  "outcome": [
+   "zeus",
+   "tstm_hit_share",
+   "outcome"
+  ],
+  "show": "pct1"
+ },
+ "name": "ZEUS",
+ "output": "out.json",
+ "steps": [
+  [
+   "zeus_score.py"
+  ]
+ ]
+}

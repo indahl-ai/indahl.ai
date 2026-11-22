@@ -10,7 +10,7 @@ const names = a => a.map(t => t.name);
 // Focused servers at https://indahl.ai/mcp/<key>. Keys already in api.js GROUPS get these tools added; new keys become new servers.
 export const TOOLKIT_GROUPS = {
   quantum: { add: names(TOOLS_QIA) },
-  research: { add: [...names(TOOLS_TEXT), 'interval_verdict', 'triangulate_readings', 'eval_setup_check'] },
+  research: { add: [...names(TOOLS_TEXT), 'interval_verdict', 'triangulate_readings'] },
   checks: { title: 'Indahl Checks', note: 'Checks a person brings, run on the server: quotes, figures and citations against their sources, wording that claims more than a comparison shows, intervals read as four outcomes, margins, readings from several sources, controls, two competing explanations, and evaluation setups.',
     tools: ['list_divisions', ...names(TOOLS_TEXT), ...names(TOOLS_STATS)] },
   verify: { title: 'Indahl Verify', note: 'Read an effect back from where it should have landed: a URL, a commit, a release, a published package; whether a plan was pushed before its results; batch manifests and merges; multi-stage job plans; corrections; check blocks; published file hashes.',

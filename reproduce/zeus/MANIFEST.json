@@ -1,0 +1,35 @@
+{
+ "code": [
+  {
+   "path": "heuremen_kit.py",
+   "public_copy": "https://github.com/indahl-ai/indahl.ai/blob/main/code/zeus/heuremen_kit.py",
+   "sha256": "6beeed75f73989a202f5b5760426ca2fb2e43320264270fecc17ab921de07d55"
+  },
+  {
+   "extract_of": "zeus_tick.py lines 24 to 28, 76 to 84 and 239 to 253: FLOOR, SEED and NBOOT, floor_outcome(), the day block bootstrap boot_ratio() and the headline cells",
+   "path": "zeus_score.py",
+   "sha256": "aa0121ca11d6370f84d2a3b70ae027a5f36d227ac595940c6d9f2194f4fbce1c"
+  }
+ ],
+ "desk": "zeus",
+ "inputs": [
+  {
+   "bytes": 3797,
+   "gzip_added": true,
+   "modified": "2026-11-22T21:41:15Z",
+   "path": "data/zeus_rows.json",
+   "sha256": "34f38bb7d21fea6c0bcde7cc0c5c44b3bd9ae25cc8e5087daca43989c5fb7f8b",
+   "stored": "data/zeus_rows.json.gz",
+   "stored_sha256": "d5ad4457c197cd500762cfa39134bfef1e67df5bd8be9b6046ac024865b84ef3"
+  }
+ ],
+ "made": "2026-11-22T21:41:39Z",
+ "mode": "inputs",
+ "name": "ZEUS",
+ "reference": [
+  {
+   "path": "desk/zeus_tick.py",
+   "sha256": "37a7e24a2d58426e86c4f31421867549ab397afddfcec669da4b22ddf02f5be4"
+  }
+ ]
+}

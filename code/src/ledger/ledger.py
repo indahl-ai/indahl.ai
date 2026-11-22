@@ -97,6 +97,8 @@ SURFACES = {  # surface key -> file (paths relative to ~/forge unless absolute)
     'desk_argus': 'indahl-ai/argus.html',   # 22 Nov 2026: the ARGUS desk (HERMES); page body from argus_index/argus.html
     'desk_cassandra': 'indahl-ai/cassandra.html',   # 21 Nov 2026: the CASSANDRA desk (HERMES); page body from cassandra_index/cassandra.html
     'desk_ares': 'indahl-ai/ares.html',   # 22 Nov 2026: the ARES desk (HERMES); page body from ares_index/ares.html
+    'desk_zeus': 'indahl-ai/zeus.html',   # 22 Nov 2026: the ZEUS desk (HERMES); page body from zeus_index/zeus.html
+    'desk_seldon': 'indahl-ai/seldon.html',   # 22 Nov 2026: the SELDON desk (HERMES); page body from seldon_index/seldon.html
     'desk_prometheus': 'indahl-ai/prometheus.html',   # 21 Nov 2026: the PROMETHEUS desk (HERMES); page body from prometheus_index/prometheus.html
     'desk_voightkampff': 'indahl-ai/voightkampff.html',   # 21 Nov 2026: the VOIGHT-KAMPFF desk (HERMES); page body from voightkampff_index/voightkampff.html
     'desk_flu': 'indahl-ai/flu.html',   # 10 Nov 2026: the FLU desk (HERMES); page body from flu_index/flu.html

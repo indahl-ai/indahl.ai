@@ -54,31 +54,8 @@ const TOOLS_ALL = [
     run: async (env, a) => { const d = await kv(env, 'time_live'); if (!d) return wrap('https://indahl.ai/time', null); if (a.server) d.servers = (d.servers || []).filter(s => s.server.includes(String(a.server).toLowerCase())); return wrap('https://indahl.ai/time', d); } },
   { name: 'dns_filters', description: 'Public DNS filtering resolvers held against freshly listed malware and phishing domains, live: for each resolver and checkpoint (first sight, 1 h, 6 h, 24 h) the share blocked with a 95% interval, and the counts behind it.', params: {},
     run: async (env) => wrap('https://indahl.ai/cada', await kv(env, 'caca_live')) },
-  { name: 'qia_audit', title: 'Quantum Idle Audit', description: "QIA, the Quantum Idle Audit: the audit of the calibration IBM publishes for each IBM Quantum processor, newest record and every saved record since 28 Oct. Per processor, each finding sits beside IBM’s stated figure: qubits whose T2 exceeds the 2 x T1 physical bound, T1 and T2 entries dated far apart, records restamped with no value changed, how often T1 and T2 are really measured again, and the queue IBM reports against the waits indahl.ai jobs saw. Outcomes are ABOVE, BELOW, CONSISTENT or CANNOT_TELL with the reason; a finding that cannot form an interval reads CANNOT_TELL. Optional filter by processor (for example ibm_boston).", params: { processor: { type: 'string', description: 'An IBM processor name, for example ibm_boston. Leave empty for every processor.' } },
-    run: async (env, a) => {
-      const [au, st, ca, qu] = await Promise.all(['qia_audit', 'qia_stability', 'qia_ibm', 'qia_queue'].map(k => kv(env, k)));
-      const by = (arr, f) => Object.fromEntries((arr || []).map(x => [x[f], x]));
-      const A = by(au && au.processors, 'backend'), S = by(st && st.processors, 'backend'), C = by(ca && ca.backends, 'backend'), Q = by(qu && qu.processors, 'backend');
-      const want = a.processor ? String(a.processor).trim() : '';
-      const names = [...new Set([...Object.keys(A), ...Object.keys(S), ...Object.keys(C), ...Object.keys(Q)])].filter(n => !want || n === want).sort();
-      const processors = names.map(n => {
-        const x = A[n] || {}, y = S[n] || {}, c = C[n] || {}, q = Q[n] || {};
-        return { processor: n, ibm_record_stamp: x.stamp || c.stamp || null, qubits: c.n_qubits || y.qubits || null,
-          findings: {
-            t2_over_2t1_bound: { qubits_ratio_above_2_5: x.ratio_above_2_5, qubits_ratio_2_to_2_5: x.ratio_2_to_2_5, outcome: x.outcome, reason: x.reason, qubits_flagged_in_history_over_2: y.flagged_over_2, qubits_flagged_in_history_over_2_5: y.flagged_over_2_5 },
-            t1_t2_dated_apart: { entries_more_than_a_day_apart: x.mismatch, widest_gap_hours: x.max_gap_h, entries_older_than_24h: x.age24 },
-            restamps_with_no_value_change_7d: (c.restamps_7d != null && c.value_changes_7d != null) ? { restamps: c.restamps_7d, with_value_changes: c.value_changes_7d, with_no_change: c.restamps_7d - c.value_changes_7d } : null,
-            remeasurement: { records_held: y.records || x.records, days_held: y.days, median_age_t1_hours: y.median_age_t1_h, median_age_t2_hours: y.median_age_t2_h, too_few_records_to_read: y.too_few },
-            queue: q.backend ? { ibm_reports_pending: q.pending, change_24h: q.change_24h, our_jobs: q.our_jobs, our_median_wait: q.our_median_wait, our_longest_wait: q.our_longest_wait, outcome: q.outcome } : null },
-          ibm_stated_medians: c.backend ? { t1_us: c.t1_us, t2_us: c.t2_us, readout_error: c.readout_error, two_qubit_error: c.two_qubit_error } : null,
-          req13: x.req13 || null };
-      });
-      const flagged = ((au && au.flagged) || []).filter(f => !want || f.backend === want);
-      return wrap('https://indahl.ai/qia', { audit: 'Quantum Idle Audit (QIA)', read_at: { audit: au && au.updated, history: st && st.updated, ibm_record: ca && ca.updated, queue: qu && qu.updated },
-        outcome: au && au.outcome, reason: au && au.reason, req13: au && au.req13, processors, flagged_qubits: flagged,
-        method: 'IBM figures are the stated side of each row, read from the record IBM publishes. T2 above 2 x T1 cannot happen physically, so a qubit past 2 (and past 2.5, beyond fit noise) is flagged; an interval needs repeated measurements, and until those exist the finding reads CANNOT_TELL (NO_INTERVAL_FORMABLE). Restamps are new record stamps; a restamp with no value change re-dates the same numbers.',
-        reproduce: 'https://indahl.ai/qia/package' });
-    } },
+  // 22 Nov 2026 (owner: if it does nothing useful, kill it): qia_audit removed from every server and the API. It read CANNOT_TELL on every
+  // qubit of every processor (1164 of 1164), so it told a caller nothing. The other qia_* tools answer the same questions per qubit.
   { name: 'bench_results', description: STANDARD.short + ' bench on open models, per finished round: per model and Fault family, the share of readable replies that commit the Fault with a plain prompt and with the Guard wording, with 95% intervals.', params: {}, run: async (env) => wrap('https://indahl.ai/iris', await kv(env, 'results')) },
   { name: 'uptime_vendors', description: 'Vendor status pages held against independent probes from a home network and a cloud network, live: per vendor, rounds, disagreements between the page and the probes, one-seat failures, reachability by seat and the outcome, with the measured chance floor from control targets.', params: {}, run: async (env) => wrap('https://indahl.ai/uptime', await kv(env, 'uptime_live')) },
   { name: 'forecast_calibration', description: 'National Weather Service stated chance of precipitation against what happened at 30 airports: per stated-chance bin and lead, the mean stated chance, the observed frequency with a 95% interval, the number of periods and the outcome, with the measured chance floor.', params: {}, run: async (env) => wrap('https://indahl.ai/forecast', await kv(env, 'forecast_live')) },
@@ -217,7 +194,7 @@ const DIVS_FOR = {   // 16 Nov 2026 (the designer's review): list_divisions on a
   public: ['time', 'cada', 'uptime', 'forecast', 'trials', 'launch', 'tape', 'airq', 'hpt', 'airline', 'fedsep', 'revise', 'secrecords', 'support', 'water', 'wiki', 'social', 'cadence', 'seat'] };   // 21 Nov 2026: STACK retired (ledger/desks.json retired)
 const GROUPS = {   // 15 Nov 2026 (the owner’s catch): what_changed covers every desk, so every division server carries it; research gets list_divisions like the rest
   quantum: { title: 'Quantum Idle Audit (QIA)', note: 'QIA, the Quantum Idle Audit: the audit of the calibration IBM publishes for its quantum processors, and the QIA index of quantum hardware studies.',
-    tools: ['list_divisions', 'qia_audit', 'what_changed'] },
+    tools: ['list_divisions', 'what_changed'] },
   models: { title: 'Heuremen LLC model and package data', note: 'Open models, packages and AI benchmarks: stated against delivered.',
     tools: ['list_divisions', 'package_check', 'model_check', 'huggingface_license_claims', 'huggingface_model_sizes', 'package_license_claims', 'pypi_install_commands', 'hosts', 'weights', 'ailuminate', 'bench_results', 'model_claims_round', 'announced_shutdown_dates', 'arxiv_version_drift', 'link_rot', 'find_study', 'all_tests_side_by_side', 'what_changed'] },
   education: { title: 'Indahl Campus', note: 'Where colleges and universities publish their AI-policy material, and whether each page still opens. Links and states only, no ratings.',
@@ -247,8 +224,10 @@ for (let i = PROMPTS.length - 1; i >= 0; i--) if (!TOOLS.some(t => t.name === PR
 // tools first, then the checks a person brings their own input to, then list_divisions. The site (/connect, /api, /developers, the server
 // card, /api/v1 and the OpenAPI file) lists this server and these tools only. ledger/mcp_gate.py calls every one after each deploy.
 export const MCP_URL = 'https://indahl.ai/mcp';
-export const MAIN_TOOLS = ['qia_calibration_check', 'qia_run_check', 'qia_qubit_history', 'qia_audit', 'qia_measured',
-  'paper_check', 'check_reported_statistics', 'number_check', 'interval_verdict', 'triangulate_readings', 'claim_wording_check', 'eval_setup_check',
+// 22 Nov 2026: paper_statistics back on /mcp (the /try paper mode calls it here; it had been on /mcp/research and /api/v1 only, so /try
+// answered "unknown tool"). qia_audit and eval_setup_check removed (see their notes). ledger/mcp_gate.py fails a ship if either comes back.
+export const MAIN_TOOLS = ['qia_calibration_check', 'qia_run_check', 'qia_qubit_history', 'qia_measured',
+  'paper_check', 'paper_statistics', 'check_reported_statistics', 'number_check', 'interval_verdict', 'triangulate_readings', 'claim_wording_check',
   'package_check', 'model_check', 'link_rot', 'arxiv_version_drift', 'source_check', 'quote_check', 'list_divisions'];
 const MAIN = MAIN_TOOLS.map(n => TOOLS.find(t => t.name === n)).filter(Boolean);
 if (MAIN.length !== MAIN_TOOLS.length) throw new Error('api.js: MAIN_TOOLS names a tool that does not exist: ' + MAIN_TOOLS.filter(n => !TOOLS.some(t => t.name === n)).join(', '));
@@ -278,6 +257,11 @@ export async function handleApi(req, env, u) {
   if (m) {
     if (req.method !== 'GET') return jsonR({ error: 'GET only' }, 405, { allow: 'GET, OPTIONS' });
     const args = {}; for (const [k, v] of u.searchParams) if (k.length < 40 && v.length < (k === 'text' ? 8000 : 200)) args[k] = v;   // 14 Nov: pasted text for check_reported_statistics
+    // 22 Nov 2026 (the /developers quickstart sent backend= to a tool that takes processor, and the answer silently ignored it): a parameter
+    // the tool does not take is refused with the names it does take, never dropped without a word.
+    const tt = TOOLS.find(x => x.name === m[1]); if (!tt) return jsonR({ error: 'unknown tool', see: 'https://indahl.ai/api/v1' }, 404);
+    const takes = Object.keys(tt.params || {}), extra = Object.keys(args).filter(k => !takes.includes(k));
+    if (extra.length) return jsonR({ error: `unknown parameter: ${extra.join(', ')}. ${tt.name} takes ${takes.length ? takes.join(', ') : 'no parameters'}.`, see: 'https://indahl.ai/api/openapi.json' }, 400);
     const r = await callTool(env, req, m[1], args); if (!r) return jsonR({ error: 'unknown tool', see: 'https://indahl.ai/api/v1' }, 404);
     return jsonR(r, 200, { 'cache-control': 'public, max-age=60' });
   }

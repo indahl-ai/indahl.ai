@@ -26,7 +26,7 @@ CAUGHT = ('the referee', 'a cold read', 'an internal check', 'an outside reader'
 TEXT = ('published', 'wrong', 'now', 'why')
 # public copy: plain sentences, no house words, no names, no AI statements (same spirit as ledger/receipts.py DENY)
 _PRIV = open(__import__('os').path.expanduser('~/forge/ledger/private_names.txt')).read().split('\n')[0].strip() if __import__('os').path.exists(__import__('os').path.expanduser('~/forge/ledger/private_names.txt')) else 'zzzz-no-private-list'   # private names: private file, never published code
-DENY = re.compile(r'(?i)\bSage\b(?! V)|the owner|\bBones\b|' + _PRIV + r'|Claude|An AI assistant|\bflock\b|his word|his call|/q\b|/tp\b|/Users/|Specialist|tick bus|\brider\b|\btriangles?\b|we caught it first|\bhonest|by hand|hand[ -]read|\{[A-Z][A-Z0-9_]{2,}\}')   # site gate 0b.8, 0b.9, 0b.11
+DENY = re.compile(r'(?i)\bReferee\b(?! V)|the owner|\bOperator\b|' + _PRIV + r'|Claude|An AI assistant|\bflock\b|his word|his call|/q\b|/tp\b|/Users/|Specialist|tick bus|\brider\b|\btriangles?\b|we caught it first|\bhonest|by hand|hand[ -]read|\{[A-Z][A-Z0-9_]{2,}\}')   # site gate 0b.8, 0b.9, 0b.11
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 E = lambda s: html.escape(str(s), quote=True)
 

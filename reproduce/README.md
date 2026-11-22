@@ -33,6 +33,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [QUAKE](quake/) | included | `026cc97e8c5e51a5906ae1d2edb2a209a7aaa5e48a145d66b83f27ea504b7dc1` |
 | [SEASONAL](seasonal/) | included | `1cba88ef5719653d4062694b26db6777fd39a1f8c715816ce344494fbbc44b3b` |
 | [SECRECORDS](secrecords/) | fetch and verify | `4740ccce5fbdedd5a133cbcb06f8f5119b14ad81f7108c16f8d6098fcd218cb1` |
+| [SELDON](seldon/) | included | `6006080a590859c19528a680d7f34591b20c0faa6d28346e0015bb7d9fbdabc0` |
 | [SOLAR](solar/) | fetch and verify | `2d116169c1de5e8599bf3e4a1bf513aff2a41e8f836a36472e1564d17d098c19` |
 | [STEO](steo/) | included | `62582754f487e4bbb247ecb496530bfe0811c434a8f16222e973664ae554574d` |
 | [SUPPORT](support/) | fetch and verify | `9378e1e83aa28ab04128e4a2e5d34065cb9f8df38764de1fde8949ce23353f87` |
@@ -41,6 +42,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [VOIGHT-KAMPFF](voightkampff/) | fetch and verify | `7fb742f42ea2e38282e4bce76f5dd947cf1bbeae5443a10d659ac0c1e9e7268b` |
 | [WATER](water/) | included | `9fa82deee3bf63d3989a180ae7ff29fed0d2d341b59a49bcbe5a37f4640537cf` |
 | [WEIGHTS](weights/) | fetch and verify | `696dd1f22c805d59a3b3ee9aa658614583d85b0c890575e8c24e0f6d1647bab8` |
+| [ZEUS](zeus/) | included | `a5bdac732f9a5db530dfe954c0db51980b8b3980c652506c8e2284bc585399f6` |
 
 ## Desks without a kit
 

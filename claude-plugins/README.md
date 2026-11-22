@@ -104,7 +104,7 @@ Your questions leave your machine: tool calls go to indahl.ai. The tool list and
 connects; they are not pinned in this plugin. Our server code stores no queries. Cloudflare, which serves the site,
 keeps its standard request records. Each answer is a measurement of public data at the time it was read. It is not legal advice and
 not a verdict on any vendor, model, package or author. The tools serve the current state: the QIA tools read the saved index of IBM's
-records (for example, `qia_audit` gives the current findings and 7-day change counts, not last week's findings).
+records (for example, `qia_calibration_check` reads the newest saved record or the one in force at a given time, and `qia_qubit_history` reaches back up to 30 days).
 
 ## reproduce
 

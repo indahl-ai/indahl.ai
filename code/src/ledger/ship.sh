@@ -28,6 +28,7 @@ B="$HOME/forge"; L="$B/ledger"; W="$B/cloudflare-workers/heuremen-door"
 if [ $CHECK = 1 ]; then exec > >(tee "$L/.last_check_gates.txt") 2>&1; else exec > >(tee "$L/.last_ship_gates.txt") 2>&1; fi   # 10 Nov: the ship output is kept, so /build.json can carry the gate lines (indahl-ai/accountability.py buildinfo); a --check keeps its own file
 AUTHOR=(-c "user.name=Heuremen LLC" -c user.email=349448817+indahl-ai@users.noreply.github.com)   # 15 Nov 2026, the owner: every public commit comes from Heuremen LLC (this line had been the claude-owner identity)
 newer() { [ "$1" -nt "$2" ]; }
+find /tmp -maxdepth 1 -name 'ship_gates.*' -mmin +1440 -exec rm -rf {} + 2>/dev/null   # 23 Nov 2026 (review): older runs' gate folders cleared
 GT=$(mktemp -d /tmp/ship_gates.XXXXXX)   # 23 Nov 2026 (the designer review #10): each run keeps its own gate output (fixed /tmp paths were shared)
 STEP=start; F=0; RES="${SHIP_RESULT:-$L/.ship_result.txt}"; : > "$RES"
 one() { printf '%s' "$*" | tr '\n\t' '  ' | cut -c1-300; }
@@ -178,7 +179,7 @@ python3 -c 'import json,sys,time; pr,ir=int(sys.argv[1]),int(sys.argv[2]); print
 [ $PR -eq 0 ] || note "heuremen.org PUSH FAILED (exit $PR): live heuremen.org is NOT updated"
 STEP=public; echo "== $(date +%H:%M:%S) 5b PUBLIC REPOS (started in the background: ledger/public_push_after.sh, log ledger/.last_public_push.txt)"
 python3 "$B/indahl-ai/accountability.py" buildinfo 2>&1 | tail -1 || true   # 10 Nov: the release record at /build.json (commits, deploy fingerprint, gate lines, pages hash), KV build_json
-nohup bash "$L/public_push_after.sh" "$MSG" > "$L/.last_public_push.txt" 2>&1 &   # 23 Nov 2026: off the critical path (it was 5 min 47 s of every ship)
+nohup python3 -c 'import os,sys; os.setsid(); os.execvp("bash", ["bash"] + sys.argv[1:])' "$L/public_push_after.sh" "$MSG" > "$L/.last_public_push.txt" 2>&1 &   # 23 Nov 2026 (review): own session, so a ship killed at its time limit does not take the push down   # 23 Nov 2026: off the critical path (it was 5 min 47 s of every ship)
 echo "== $(date +%H:%M:%S) 5c INDEXNOW"; python3 "$B/tools/indexnow.py" 2>&1 | tail -1 || true
 # 7 STAMPS (10 Nov): outside timestamps after a verified release. release_<commit>.json (commit, ledger hash, manifest of every deployed file)
 # stamped with OpenTimestamps, changed public URLs sent to the Internet Archive in the background, paced. Never fails a release.

@@ -170,14 +170,6 @@
       "homepage": "https://indahl.ai/standard"
     },
     {
-      "name": "indahl-eli5",
-      "source": "./claude-plugins/src/eli5",
-      "description": "Re-explain anything complex or technical in plain language, keeping the numbers, how sure anyone is, and what is still unknown. Works on papers, results, logs, contracts, error messages and plans. Runs inside your session.",
-      "version": "1.0.0",
-      "category": "research",
-      "homepage": "https://indahl.ai/standard"
-    },
-    {
       "name": "indahl-correct",
       "source": "./claude-plugins/src/correct",
       "description": "Record a correction beside the original, never over it. Produces a corrections ledger entry and a list of downstream places to update, each marked UPDATED, NOTIFIED, CANNOT_REACH or NOT_NEEDED. Runs inside your session.",
@@ -192,54 +184,6 @@
       "version": "1.0.0",
       "category": "research",
       "homepage": "https://indahl.ai/standard"
-    },
-    {
-      "name": "indahl-silent-failure-guard",
-      "source": "./claude-plugins/src/silent-failure-guard",
-      "description": "After any action that claims it worked (a push, a deploy, a job, a migration), read the effect back from where it should have landed instead of trusting the exit code. Returns VERIFIED, FAILED, NOTHING_RETURNED or CANNOT_TELL per action. Also scans scripts for patterns that hide failures.",
-      "version": "1.0.0",
-      "category": "research",
-      "homepage": "https://indahl.ai/how"
-    },
-    {
-      "name": "indahl-relay",
-      "source": "./claude-plugins/src/relay",
-      "description": "Run multi-stage unattended work (training ladders, eval sweeps, data pipelines) as a chain of stages with dependencies, machine lanes, exit codes recorded to files, explicit blocked states and an optional end-of-run handoff. Runs locally. Nothing is sent anywhere unless a stage you write sends it.",
-      "version": "1.0.0",
-      "category": "research",
-      "homepage": "https://indahl.ai/how"
-    },
-    {
-      "name": "indahl-rubicon",
-      "source": "./claude-plugins/src/rubicon",
-      "description": "Decide what done means before the work, freeze it, then judge the finished work with three blind seats. A two-to-one split stays UNRESOLVED with the minority\u2019s reason. Returns MET, MISSED, UNRESOLVED or CANNOT_TELL. A record and a prompt, not a lock. Nothing is sent outside your session.",
-      "version": "1.0.0",
-      "category": "research",
-      "homepage": "https://indahl.ai/connect"
-    },
-    {
-      "name": "indahl-spend-cap",
-      "source": "./claude-plugins/src/spend-cap",
-      "description": "Refuse an agent\u2019s tool calls once its session has used the budget you set, in raw tokens or in dollars at your own prices. Counts the session and its subagents, warns once near the limit, and enforces the stricter of your project and home budgets. A refusal, not a kill switch.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "homepage": "https://indahl.ai/connect"
-    },
-    {
-      "name": "indahl-ccr",
-      "source": "./claude-plugins/src/ccr",
-      "description": "Custody chain receipts for agent work: a hash-chained record in .ccr/ of every prompt, tool call, read and write, with approvals and releases bound to the hashes they cover. Release reads SAME, MOVED, CHANGED, CANNOT_TELL or GAP. Nothing is sent outside your project.",
-      "version": "1.0.0",
-      "category": "security",
-      "homepage": "https://indahl.ai/connect"
-    },
-    {
-      "name": "indahl-fsck",
-      "source": "./claude-plugins/src/fsck",
-      "description": "Check your MCP servers the way fsck checks a disk: run Claude Code\u2019s own health check and print only what needs your hand, grouped by the fix. Working servers collapse to one line. Read-only: changes no setting and never prints a query string.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "homepage": "https://indahl.ai/connect"
     }
   ]
 }

@@ -9,7 +9,9 @@ import json, os, re, shutil, urllib.request, zipfile
 H = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(H, 'plugins'); O = os.path.join(H, 'openai')
 DEMO_URL = os.environ.get('INDAHL_DEMO_URL', '')   # reviewer-accessible walkthrough video, required for MCP review
 ICONS = os.path.expanduser('~/forge/cloudflare-workers/heuremen-door/public/icons')
-ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause', 'silent-failure-guard', 'relay', 'eli5']
+# 23 Nov 2026 (owner: ): eli5, relay, rubicon, spend-cap, ccr, fsck and
+# silent-failure-guard are off the listing (agent operations and plain-language tools, not research method).
+ORDER = ['indahl', 'indahl-data', 'standards', 'eval-check', 'reproduce', 'qia-calibration', 'darkwave-correction', 'prereg', 'readcheck', 'triangulate', 'batch', 'cannot-tell', 'both', 'outside-ruler', 'number-check', 'quote-check', 'source-check', 'controls', 'margin', 'correct', 'clause']
 SUB = {   # subtitle (30 characters or fewer) and three starter prompts per listing
  'indahl': ('Stated vs. delivered, measured', ["Check IBM's calibration for qubits 0-4 on ibm_kingston.", 'Has this paper been retracted? (DOI)', 'Is this quote accurate? (quote and source)']),
  'indahl-data': ('Check claims against the data', ['List the indahl.ai divisions.', 'Does this Hugging Face model match its license file?', 'Has this paper been corrected or withdrawn? (DOI or arXiv id)']),

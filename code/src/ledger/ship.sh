@@ -63,7 +63,7 @@ mkdir -p "$L/gates"; HL=0; HEADLINES_RING_LOG="$L/gates/headlines.ring" python3 
 python3 "$L/downloads.py" refresh || fail "downloads.py refresh failed"   # 11 Nov: every download is re-made from its source (copies.py publish), the List packs and the QIA Research Package are rebuilt when a file inside differs from its source, pack sizes re-read, all before build_site.py reads them
 { python3 "$B/indahl-ai/reproduce_kits.py" refresh | tail -30; } || true   # 10 Nov: remake the desk reproduce kits the ledger or a live feed has moved past (never fails here, the gate in step 3 decides)
 (cd "$B/indahl-ai" && python3 build_site.py) || fail "build_site.py failed"
-(cd "$B/indahl-ai" && python3 qia_site.py | tail -1) || fail "quantumidleaudit.com build failed (qia_site.py)"   # 17 Nov 2026: QIA business site rebuilt on every ship
+# 23 Nov 2026 (separate lanes): quantumidleaudit.com is no longer built here; it has its own worker and ship (ledger/ship_qia.sh)
 python3 "$L/downloads.py" refresh --post || { [ $? -eq 10 ] && { (cd "$B/indahl-ai" && python3 build_site.py) && python3 "$L/downloads.py" refresh --post; }; } || fail "downloads.py refresh --post failed"   # 11 Nov: packs made from built pages (OY) are rebuilt after the pages; exit 10 = one changed, so the site is built once more with its new size and ledger row, and the pack's input record is re-read against those pages (contents unchanged, so no second pack)
 # python3 "$L/receipts.py" build   # 15 Nov 2026: receipts are internal, no public /r/ pages
 STEP=copy; echo "== 2 COPY";  gate copies_publish 1 python3 "$L/copies.py" publish
@@ -123,7 +123,7 @@ if [ "$(cat "$STAMP" 2>/dev/null)" != "$NOW" ]; then
 else echo "  indahl.ai worker: unchanged"; fi
 STEP=checks; echo "== 4a CHECKS (live after deploy)"; CHK=""
 # the two checks write their findings to ledger/gates/*.ring, not pipe.log: the ship's one ring (ship_queue.py) carries them
-MP=0; MONEY_PATH_LOG="$L/gates/money_path.ring" python3 "$L/money_path_check.py" --quiet > "$L/gates/money_path.txt" 2>&1 || MP=$?; cat "$L/gates/money_path.txt"; [ $MP = 0 ] && echo "  money path: ok" || CHK="money_path_check: $(grep -m1 '^FAIL' "$L/gates/money_path.txt" | cut -c6-200)"   # what a visitor gets on quantumidleaudit.com (home + Check a run box, demos, /inquiries, every Check a run file, a live runcheck.js run on ibm_fez)
+MP=0; MONEY_PATH_LOG="$L/gates/money_path.ring" python3 "$L/money_path_check.py" --quiet --part inquiry > "$L/gates/money_path.txt" 2>&1 || MP=$?; cat "$L/gates/money_path.txt"; [ $MP = 0 ] && echo "  money path: ok" || CHK="money_path_check: $(grep -m1 '^FAIL' "$L/gates/money_path.txt" | cut -c6-200)"   # what a visitor gets on quantumidleaudit.com (home + Check a run box, demos, /inquiries, every Check a run file, a live runcheck.js run on ibm_fez)
 if [ -f "$L/mcp_gate.py" ]; then MG=0; MCP_GATE_LOG="$L/gates/mcp_gate.ring" python3 "$L/mcp_gate.py" --quiet > "$L/gates/mcp_gate.txt" 2>&1 || MG=$?; cat "$L/gates/mcp_gate.txt"; [ $MG = 0 ] && echo "  mcp gate: ok" || CHK="${CHK:+$CHK; }mcp_gate: $(grep -m1 '^FAIL' "$L/gates/mcp_gate.txt" | cut -c6-200)"; fi
 POSTFAIL=0
 if [ -n "$CHK" ]; then

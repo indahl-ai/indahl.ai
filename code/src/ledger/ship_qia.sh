@@ -31,7 +31,7 @@ fail() { echo "QIA SHIP REFUSED ($STEP): $*"; printf '%s RING: QIA SHIP FAILED a
 wr() { ( cd "$Q" && env -u CLOUDFLARE_API_TOKEN CLOUDFLARE_API_TOKEN="$CFT" CLOUDFLARE_ACCOUNT_ID=<cloudflare-account-id> /opt/homebrew/bin/npx wrangler "$@" ) 2>&1 | { grep -v -i token || true; }; }
 
 STEP=save_source; echo "== 0 SAVE SOURCE (every source repo committed and pushed before anything is built; ledger/save_source.sh)"
-SO=$(bash "$L/save_source.sh" "$MSG" 2>&1); SR=$?; echo "$SO" | tail -8
+SO=$(SAVE_SCOPE=qia bash "$L/save_source.sh" "$MSG" 2>&1); SR=$?; echo "$SO" | tail -8   # 23 Nov 2026: qia.com files only, own lock
 [ $SR -eq 0 ] || fail "save_source: $(echo "$SO" | grep -m1 -E 'REFUSED|FAILED' | sed 's/^ *//')"
 STEP=build; echo "== 1 BUILD ($MSG)"
 rm -rf "$Q/public"; mkdir -p "$OUT" || fail "could not make $OUT"

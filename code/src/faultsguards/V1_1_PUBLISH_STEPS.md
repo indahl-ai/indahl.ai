@@ -1,5 +1,6 @@
 # Heuremen Standard V1.1: publish-time steps (internal)
 
+> 23 Nov 2026: patch 2.1.1 (American spelling) published, doi 10.5281/zenodo.24467162, files in faultsguards/standard_2_1_1, made with a newversion draft whose reserved DOI was written into the files before upload.
 > DONE 21 Nov 2026: published as Zenodo version 2.1.0, doi 10.5281/zenodo.24430790, files in faultsguards/standard_2_1 (page copier: faultsguards/standard_2_1/web/build_page.py). CURRENT.json points there. The steps below are kept as the pattern for the next version.
 
 The public name "The Heuremen Standard" (no version number in any visible copy, owner 21 Nov 2026) is served from

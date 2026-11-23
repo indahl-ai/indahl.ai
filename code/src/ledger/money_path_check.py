@@ -73,8 +73,9 @@ def inquiry_door():
     """21 Nov 2026 (money-path check): /inquiries hands off to the NDA-gated form on indahl.ai. Check the hand-off page, the form's script, and
     the POST endpoint itself with a NON-STORING request: a POST with no fill-time field is refused by indahl-ai/inquire.js at line 30 ('too
     quickly', 400) before any store write, after it has proved the route answers, the store binding exists (503 otherwise) and the body parses."""
-    st, ct, body = get('/')   # 22 Nov 2026 (the owner): no /inquiries landing page; the nav Inquiry links the form directly
-    if st == 200 and b'https://indahl.ai/contact' not in body: fail('the QIA home page no longer links the inquiry form (indahl.ai/contact)')
+    if '--part' not in sys.argv:   # 23 Nov 2026 (separate lanes): the indahl.ai ship checks only the indahl.ai half (--part inquiry)
+      st, ct, body = get('/')   # 22 Nov 2026: no /inquiries landing page; the nav Inquiry links the form directly
+      if st == 200 and b'https://indahl.ai/contact' not in body: fail('the QIA home page no longer links the inquiry form (indahl.ai/contact)')
     st, ct, body = get('https://indahl.ai/contact')
     if st != 200: fail('indahl.ai/contact (the NDA step) answered %s' % st)
     elif b'action="/agree"' not in body: fail('indahl.ai/contact has no NDA agreement form (action="/agree")')
@@ -138,6 +139,10 @@ def functional(src_bytes):
 
 
 def main():
+    if '--part' in sys.argv:   # 23 Nov 2026: indahl.ai ships check only what indahl.ai serves for QIA (the inquiry form and endpoint); qia.com checks the rest in ship_qia.sh
+        inquiry_door()
+        for f in fails: print('FAIL ' + f)
+        print('money path (indahl.ai part): %d checks ok, %d failed' % (len(oks), len(fails))); return 1 if fails else 0
     page('/')   # 22 Nov 2026: Check a run removed from the QIA site
     for s in demo_slugs(): page('/demo-' + s)
     inquiry_door()

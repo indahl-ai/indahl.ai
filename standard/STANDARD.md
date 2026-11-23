@@ -2,7 +2,7 @@
 
 An open standard for checking measurement claims.
 
-Heuremen LLC. 21 November 2026, https://doi.org/10.5281/zenodo.24430790. All versions: https://doi.org/10.5281/zenodo.24164029. Earlier editions: https://doi.org/10.5281/zenodo.24164794, https://doi.org/10.5281/zenodo.24164207, https://doi.org/10.5281/zenodo.24164030. Web: https://indahl.ai/standard
+Heuremen LLC. 23 November 2026, https://doi.org/10.5281/zenodo.24467162. All versions: https://doi.org/10.5281/zenodo.24164029. Earlier editions: https://doi.org/10.5281/zenodo.24430790, https://doi.org/10.5281/zenodo.24164794, https://doi.org/10.5281/zenodo.24164207, https://doi.org/10.5281/zenodo.24164030. Web: https://indahl.ai/standard
 
 This standard sets out how to check a claim about an AI or quantum measurement result, and how to publish the check so that anyone can rerun it. It gives each failure a stable ID, a test, and a rule for saying present, absent, cannot tell or not applicable. It is written to be cited and applied by an auditor, an insurer, a regulator, a journalist or a reader.
 
@@ -204,7 +204,7 @@ Test source: Heuremen LLC test
 
 Choosing the classical method. The recount names the method before the comparison is run. The method is the strongest simple method available for the instances, and the recount publishes why it was chosen, its settings, its result and the interval and level of that result. A weaker method named after seeing the result is not a valid choice.
 
-Matches or exceeds. Let the difference be the classical result minus the reported result, taken so that a larger value favours the classical method. The recount names a margin before the run. The default margin is zero. The difference is read against the single bound at the negative of the margin under section 6. ABOVE means the classical method matches or exceeds the reported result and the code is Present. CONSISTENT is not available for a single bound. BELOW means it falls short and the code is Absent. Any CANNOT_TELL outcome carries its reason, and the code is CANNOT_TELL with the same reason.
+Matches or exceeds. Let the difference be the classical result minus the reported result, taken so that a larger value favors the classical method. The recount names a margin before the run. The default margin is zero. The difference is read against the single bound at the negative of the margin under section 6. ABOVE means the classical method matches or exceeds the reported result and the code is Present. CONSISTENT is not available for a single bound. BELOW means it falls short and the code is Absent. Any CANNOT_TELL outcome carries its reason, and the code is CANNOT_TELL with the same reason.
 
 A classical method that was not run is a code that was not tested. It is listed under REQ-12 and has no status.
 
@@ -258,7 +258,7 @@ Test: Remove any constant attached to every unit and measure again. Compare with
 
 **FLT-09 An unequal setup across the columns being compared**
 
-Test: Check that the instrument is identical across the columns compared. Re-run with it equalised and see whether the ordering holds. Needs: Instrument settings per column. Evidence: released material. Applies to: Claims that compare columns such as instruments, models or settings. Guards: GRD-06. Test source: Heuremen LLC test.
+Test: Check that the instrument is identical across the columns compared. Re-run with it equalized and see whether the ordering holds. Needs: Instrument settings per column. Evidence: released material. Applies to: Claims that compare columns such as instruments, models or settings. Guards: GRD-06. Test source: Heuremen LLC test.
 
 **FLT-10 Saturated or censored cells averaged as data**
 
@@ -547,7 +547,7 @@ A guard is applied when a receipt shows it ran before the number was stated. It 
 
 **GRD-01 The ruler is chosen before the quantity is computed** Addresses: FLT-15, FLT-16, FLT-19.
 
-**GRD-02 Reference material is loaded hot, not summarised** Addresses: none.
+**GRD-02 Reference material is loaded hot, not summarized** Addresses: none.
 
 **GRD-03 The baseline is constructed and written down first** Addresses: FLT-01, FLT-05.
 
@@ -555,7 +555,7 @@ A guard is applied when a receipt shows it ran before the number was stated. It 
 
 **GRD-05 Per-unit constants are removed, not caveated** Addresses: FLT-08.
 
-**GRD-06 The setup is equalised across every column being compared** Addresses: FLT-09.
+**GRD-06 The setup is equalized across every column being compared** Addresses: FLT-09.
 
 ### Part II. Procedures that run during the work
 
@@ -595,7 +595,7 @@ Test: Ask for the correction and the change that shipped with it, and check that
 
 ### Part IV. Procedures against the instrument being wrong about itself
 
-**GRD-21 Any count about your own behaviour is read from the record, never from memory** Addresses: FLT-22.
+**GRD-21 Any count about your own behavior is read from the record, never from memory** Addresses: FLT-22.
 
 **GRD-22 Every rate states its denominator** Addresses: FLT-24.
 
@@ -625,7 +625,7 @@ Test: Ask for the correction and the change that shipped with it, and check that
 
 **GRD-35 A residual bin is refused by the scorer, not avoided by the scorer's author** Addresses: FLT-21.
 
-**GRD-36 The catalogue's families ride in front of every exchange, read live from the published source** Addresses: FLT-41.
+**GRD-36 The catalog's families ride in front of every exchange, read live from the published source** Addresses: FLT-41.
 
 **GRD-37 The diagnosis and the replacement instrument ship in the same document** Addresses: FLT-20.
 
@@ -663,7 +663,7 @@ Conformance is a self-declaration of method, not an assessment or a certificate.
 
 **REQ-13 Print the counts beside every headline share.** Beside every headline share the recount prints the count of NOTHING_RETURNED and the share of CANNOT_TELL, split by reason. The reasons are the outcome reasons for readings and the status reasons for statuses. Guards: none.
 
-A recount declared conforming states at its head: Recounted under The Heuremen Standard, https://doi.org/10.5281/zenodo.24430790, declared by its author as following the method, not assessed.
+A recount declared conforming states at its head: Recounted under The Heuremen Standard, https://doi.org/10.5281/zenodo.24467162, declared by its author as following the method, not assessed.
 
 ## 9. Versioning and change policy
 
@@ -679,7 +679,7 @@ A recount declared conforming states at its head: Recounted under The Heuremen S
 
 ## 10. Citation
 
-Heuremen LLC. The Heuremen Standard. 2026. https://doi.org/10.5281/zenodo.24430790. All versions: https://doi.org/10.5281/zenodo.24164029. https://indahl.ai/standard
+Heuremen LLC. The Heuremen Standard. 2026. https://doi.org/10.5281/zenodo.24467162. All versions: https://doi.org/10.5281/zenodo.24164029. https://indahl.ai/standard
 
 ## 11. Provenance of tests and links
 
@@ -709,6 +709,10 @@ Each test in section 4, section 5 and section 7 and in standard_v1.json carries 
 **Crosswalk.** The crosswalk to NIST AI RMF 1.0 is Heuremen LLC’s reading and gives a closest category and not an equivalence. NIST subcategory names are shortened from the text of NIST AI 100-1, January 2023, and the full text should be used when citing. The mappings were checked against the text of that document, and in this version a mapping was removed where the text of the subcategory did not fit the subject of the entry. Many faults map to MEASURE 2.13 because it is the subcategory on the effectiveness of testing, evaluation, verification and validation methods. That reflects the subject of the faults. An ISO/IEC 42001 column is not included because it has not been checked against the licensed standard.
 
 ## Changes
+
+**23 November 2026, https://doi.org/10.5281/zenodo.24467162.** A patch change under section 9. No code, fault, guard, test or rule changed meaning. Recounts made under the edition before it stay valid.
+
+- Spelling corrected to American throughout, including the names and published text carried from the published Faults and Guards documents and the wording this change log quotes from earlier editions. In this document: favors in QIA-F7, equalized in the test of FLT-09, summarized in the name of GRD-02, equalized in the name of GRD-06, behavior in the name of GRD-21, catalog in the name of GRD-36, and labeled in the FLT-23 entry of this change log. In the published text in standard_v1.json: analyze in FLT-10, favors and behavior in FLT-16, behavior in FLT-21, FLT-22, FLT-42 and GRD-20, labeled in FLT-23, catalog and recognize in FLT-41, equalized in GRD-06, harmonize and synchronize in GRD-12, catalog in GRD-36. The earlier spelling is in the edition before it, https://doi.org/10.5281/zenodo.24430790.
 
 **21 November 2026, https://doi.org/10.5281/zenodo.24430790.** A minor change under section 9. Recounts made under the edition before it stay valid.
 
@@ -750,6 +754,6 @@ Each test in section 4, section 5 and section 7 and in standard_v1.json carries 
 **12 November 2026, https://doi.org/10.5281/zenodo.24164207.** Wording in the tests of two faults made plainer. No code, fault, guard, test or rule changed meaning.
 
 - FLT-05. One adverb removed from the test sentence. New: Enumerate what the setup could produce. Check the baseline was priced against that set. The old wording is in the first edition, https://doi.org/10.5281/zenodo.24164030.
-- FLT-23. The test now says who labels the cases and how they are read. New: Score the checker against cases a person labelled after reading each in full. Check the direction of its errors. The old wording is in the first edition, https://doi.org/10.5281/zenodo.24164030.
+- FLT-23. The test now says who labels the cases and how they are read. New: Score the checker against cases a person labeled after reading each in full. Check the direction of its errors. The old wording is in the first edition, https://doi.org/10.5281/zenodo.24164030.
 
 **First edition.** First release, https://doi.org/10.5281/zenodo.24164030.

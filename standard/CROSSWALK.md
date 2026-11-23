@@ -2,7 +2,7 @@
 
 Every mapping below is a closest category. None is an equivalence. A closest category is the place in the other document where a reader would most likely look for related material. An empty cell means no close fit.
 
-Source. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 2023, https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf. Notes on how the crosswalk was made are in section 11 of STANDARD.md. The Heuremen Standard, https://doi.org/10.5281/zenodo.24430790.
+Source. NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 2023, https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf. Notes on how the crosswalk was made are in section 11 of STANDARD.md. The Heuremen Standard, https://doi.org/10.5281/zenodo.24467162.
 
 ## Claim-level codes
 

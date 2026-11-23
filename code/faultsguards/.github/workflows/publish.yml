@@ -6,12 +6,12 @@ on:
 jobs:
   pypi:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # PyPI trusted publishing (no stored token)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: python -m unittest discover -s tests
-      - run: pip install build && python -m build
+      - run: rm -rf dist && pip install build && python -m build   # only this release's files (old builds sit in dist/ in the repo)
       - uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.PYPI_API_TOKEN }}

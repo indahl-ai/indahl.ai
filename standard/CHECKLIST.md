@@ -1,6 +1,6 @@
 # Conformance checklist
 
-For use against any benchmark or paper claim. The Heuremen Standard (https://doi.org/10.5281/zenodo.24430790). Conformance is a self-declaration of method, not an assessment or a certificate.
+For use against any benchmark or paper claim. The Heuremen Standard (https://doi.org/10.5281/zenodo.24467162). Conformance is a self-declaration of method, not an assessment or a certificate.
 
 Claim: ____________________  Version or date read: ____________  Reader: ____________
 

@@ -1,15 +1,19 @@
 {
  "standard": {
   "title": "The Heuremen Standard",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "status": "released",
   "author": "Heuremen LLC",
-  "date": "2026-11-21",
+  "date": "2026-11-23",
   "schema": "standard_v1.schema.json",
-  "doi": "10.5281/zenodo.24430790",
+  "doi": "10.5281/zenodo.24467162",
   "all_versions_doi": "10.5281/zenodo.24164029",
   "url": "https://indahl.ai/standard",
   "previous_versions": [
+   {
+    "version": "2.1.0",
+    "doi": "10.5281/zenodo.24430790"
+   },
    {
     "version": "2.0.0",
     "doi": "10.5281/zenodo.24164794"
@@ -485,7 +489,7 @@
    "rests_on_reading": true,
    "notes": [
     "Choosing the classical method. The recount names the method before the comparison is run. The method is the strongest simple method available for the instances, and the recount publishes why it was chosen, its settings, its result and the interval and level of that result. A weaker method named after seeing the result is not a valid choice.",
-    "Matches or exceeds. Let the difference be the classical result minus the reported result, taken so that a larger value favours the classical method. The recount names a margin before the run. The default margin is zero. The difference is read against the single bound at the negative of the margin under section 6. ABOVE means the classical method matches or exceeds the reported result and the code is Present. CONSISTENT is not available for a single bound. BELOW means it falls short and the code is Absent. Any CANNOT_TELL outcome carries its reason, and the code is CANNOT_TELL with the same reason.",
+    "Matches or exceeds. Let the difference be the classical result minus the reported result, taken so that a larger value favors the classical method. The recount names a margin before the run. The default margin is zero. The difference is read against the single bound at the negative of the margin under section 6. ABOVE means the classical method matches or exceeds the reported result and the code is Present. CONSISTENT is not available for a single bound. BELOW means it falls short and the code is Absent. Any CANNOT_TELL outcome carries its reason, and the code is CANNOT_TELL with the same reason.",
     "A classical method that was not run is a code that was not tested. It is listed under REQ-12 and has no status."
    ],
    "related_faults": [
@@ -935,7 +939,7 @@
     "Longer reference lists match more of anything, wider filters catch more of anything, and longer integrations resolve more of anything. Make the instrument identical across columns and re-run. If the ordering changes, the instrument was the finding."
    ],
    "applies_to": "Claims that compare columns such as instruments, models or settings.",
-   "test": "Check that the instrument is identical across the columns compared. Re-run with it equalised and see whether the ordering holds.",
+   "test": "Check that the instrument is identical across the columns compared. Re-run with it equalized and see whether the ordering holds.",
    "source": "Heuremen LLC test",
    "text_source": "https://heuremen.org/faults.pdf",
    "needs": "Instrument settings per column",
@@ -989,7 +993,7 @@
    "name": "Saturated or censored cells averaged as data",
    "definition": "Saturated or censored cells averaged as data",
    "published_text": [
-    "A cell at a ceiling records only that the limit was reached. Count cells at the extreme before any aggregation and analyse only the ones that moved.",
+    "A cell at a ceiling records only that the limit was reached. Count cells at the extreme before any aggregation and analyze only the ones that moved.",
     "And the statistic itself can saturate, not only a data cell, 11 Oct. A rank against a pool of forty nones returned 0.024 for thirty of thirty-two units, and was read as thirty strong detections. 0.024 is 1/41: a rank or permutation p cannot go below 1/(n+1). Every unit was reporting the pool floor, so the ruler had no dynamic range left and could not distinguish any unit from any other. If every detection shares one p-value, check whether that value is 1/(n+1). Replaced by an exact null with no floor — for Gaussian noise the periodogram power is exponential with mean μ, and E[log P] = log μ − γ — the same data gave p down to 2.5 × 10 −70."
    ],
    "applies_to": "Claims that aggregate cells that may sit at a ceiling or floor.",
@@ -1293,7 +1297,7 @@
    "name": "A sum assumed where two effects multiply",
    "definition": "A sum assumed where two effects multiply",
    "published_text": [
-    "Additive analysis of a multiplicative process finds the wrong structure and misses the real one. Of the coupled cases where the cross term is large, the test returned a product in the overwhelming majority. The test favours the product whenever the cross term is large, so this counts the test’s behaviour, not a finding about the physics. Test additivity rather than assuming it."
+    "Additive analysis of a multiplicative process finds the wrong structure and misses the real one. Of the coupled cases where the cross term is large, the test returned a product in the overwhelming majority. The test favors the product whenever the cross term is large, so this counts the test’s behavior, not a finding about the physics. Test additivity rather than assuming it."
    ],
    "applies_to": "Claims that model the joint effect of two quantities.",
    "test": "Check whether a cross term was tested before an additive model was used.",
@@ -1535,7 +1539,7 @@
    "name": "Four outcomes collapsed into two",
    "definition": "Four outcomes collapsed into two",
    "published_text": [
-    "Committed, held open, refused and nothing-returned are four states. Collapsing refusal into failure prices honesty as incompetence. Collapsing nothing-returned into refusal prices your own configuration as the subject's behaviour — we did exactly that: an output limit consumed a reply's whole budget, the field came back empty with no error, and the empty cells were reported as a system declining to answer. Record the terminating reason on every call."
+    "Committed, held open, refused and nothing-returned are four states. Collapsing refusal into failure prices honesty as incompetence. Collapsing nothing-returned into refusal prices your own configuration as the subject's behavior — we did exactly that: an output limit consumed a reply's whole budget, the field came back empty with no error, and the empty cells were reported as a system declining to answer. Record the terminating reason on every call."
    ],
    "applies_to": "Claims that sort outcomes into bins.",
    "test": "Check whether distinct outcomes were collapsed into fewer bins. Each bin needs a single positive definition.",
@@ -1580,7 +1584,7 @@
    "name": "You will report a count about yourself from memory",
    "definition": "You will report a count about yourself from memory",
    "published_text": [
-    "A guard had been writing one line per checked reply for three days. Asked how often it had fired, the answer given was sixteen. The file said thirty-six — off by 2.25 times. The file was in the same directory as the guard and had been there the whole time. The same answer from anyone else would have been rejected on sight. Any count about your own behaviour is read from the record or not stated."
+    "A guard had been writing one line per checked reply for three days. Asked how often it had fired, the answer given was sixteen. The file said thirty-six — off by 2.25 times. The file was in the same directory as the guard and had been there the whole time. The same answer from anyone else would have been rejected on sight. Any count about your own behavior is read from the record or not stated."
    ],
    "applies_to": "A recount author’s own counts about its own work.",
    "test": "Read the count from the record. Compare with any count stated from memory.",
@@ -1625,7 +1629,7 @@
    "name": "Your own checker will be wrong, and all in one direction",
    "definition": "Your own checker will be wrong, and all in one direction",
    "published_text": [
-    "A guard tested against cases labelled after reading each one in full got eight of thirteen wrong on the first pass, and every single error was a false positive — it never missed a real instance. Re-running three days of its logged catches through the corrected version, 22 per cent should never have fired. A checker written by the thing it checks inherits that thing's bias, and the bias has a direction."
+    "A guard tested against cases labeled after reading each one in full got eight of thirteen wrong on the first pass, and every single error was a false positive — it never missed a real instance. Re-running three days of its logged catches through the corrected version, 22 per cent should never have fired. A checker written by the thing it checks inherits that thing's bias, and the bias has a direction."
    ],
    "applies_to": "A checker built by the recount author.",
    "test": "Score the checker against cases a person labeled after reading each in full. Check the direction of its errors.",
@@ -2478,8 +2482,8 @@
    "name": "Writing a failure mode down did not stop it",
    "definition": "Writing a failure mode down did not stop it",
    "published_text": [
-    "And the strongest evidence for this entry is this document. Mode 21 above — four outcomes collapsed into two — was written here and published, and committed again two hours later in the next experiment, with five outcomes in one bin: a wrong category, a legitimate absence, a task never attempted, an empty reply, and the reader being blind to the construction. Four facts about the subject and one about the instrument, in one column. The document was accurate, published, and had no effect, because a catalogue occupies no position in the pipeline. It is reference material, and reference material depends on recall at the moment of writing, which is exactly when context is thinnest. Knowing this failure mode did not prevent it here. What prevented it afterwards was a module that refuses to accept a bin named none, other or silent at all, and asserts that the declared outcomes are exhaustive and disjoint before it will return a table — described in the companion document. The lesson is not to read harder.",
-    "And it is not only documents. The same thing happens to a named instrument. Our tooling prints a roster of available instruments at the top of every single exchange, read live from the source so it cannot drift. On the day described above, the instrument built for exactly the reading in hand was in that roster dozens of times and its implementation was a day old. We built a new one instead — and the one we built was a verdict machine, entry 44. A roster entry is not an instrument: a one-line label reads as a name, and a name is something you recognise rather than something you reach for. Recognition is not retrieval, and the moment of needing a different ruler is the moment of lowest attention. The cause was structural and cheap to fix, which is the companion document's business rather than this one's: the corrective procedure loaded the papers saying which error this is and not the sheet saying which instrument to use instead, so it diagnosed and never re-armed.",
+    "And the strongest evidence for this entry is this document. Mode 21 above — four outcomes collapsed into two — was written here and published, and committed again two hours later in the next experiment, with five outcomes in one bin: a wrong category, a legitimate absence, a task never attempted, an empty reply, and the reader being blind to the construction. Four facts about the subject and one about the instrument, in one column. The document was accurate, published, and had no effect, because a catalog occupies no position in the pipeline. It is reference material, and reference material depends on recall at the moment of writing, which is exactly when context is thinnest. Knowing this failure mode did not prevent it here. What prevented it afterwards was a module that refuses to accept a bin named none, other or silent at all, and asserts that the declared outcomes are exhaustive and disjoint before it will return a table — described in the companion document. The lesson is not to read harder.",
+    "And it is not only documents. The same thing happens to a named instrument. Our tooling prints a roster of available instruments at the top of every single exchange, read live from the source so it cannot drift. On the day described above, the instrument built for exactly the reading in hand was in that roster dozens of times and its implementation was a day old. We built a new one instead — and the one we built was a verdict machine, entry 44. A roster entry is not an instrument: a one-line label reads as a name, and a name is something you recognize rather than something you reach for. Recognition is not retrieval, and the moment of needing a different ruler is the moment of lowest attention. The cause was structural and cheap to fix, which is the companion document's business rather than this one's: the corrective procedure loaded the papers saying which error this is and not the sheet saying which instrument to use instead, so it diagnosed and never re-armed.",
     "The uncomfortable one. Over three days, 96 pushbacks. The density of replies flagged for a two-option frame across those three days: 0.79, 0.69, 0.88 per thousand words, each day within one width of the day before (widths as in entry 24). Against the first two days pooled, a comparison chosen after the data, the third day ran at 1.24 times the rate, exact 95 per cent interval 0.76 to 1.99, so a fall of more than 24 per cent by the third day is outside what was measured. (The scanner's precision on this author is 20 to 35 per cent: 4 or 7 of 20 flagged frames were real two-option reductions, on two separate readings. Its rate on human-written prompts is 0.28 to 0.58 per thousand words. The level is not a count of real frames, and the comparison across days assumes the precision held steady across them.) The corrections landed one at a time, and the rate shows no change that clears its own width. A guard is a filter, not a teacher, and expecting it to teach is how it gets removed for underperforming at a job it never had."
    ],
    "applies_to": "Claims that record failure modes.",
@@ -2526,7 +2530,7 @@
    "name": "A rule from a single instance given a theorem's authority",
    "definition": "A rule from a single instance given a theorem's authority",
    "published_text": [
-    "A lesson learned once enters the record indistinguishable in tone from something measured many times, and later work rests on it. Every retained rule carries what it rests on — an instruction, a verified tool behaviour, an arithmetic identity, or one instance — and a one-instance rule may not be cited as though it rested on a count."
+    "A lesson learned once enters the record indistinguishable in tone from something measured many times, and later work rests on it. Every retained rule carries what it rests on — an instruction, a verified tool behavior, an arithmetic identity, or one instance — and a one-instance rule may not be cited as though it rested on a count."
    ],
    "applies_to": "Claims that keep rules drawn from single instances.",
    "test": "Check what each retained rule rests on. A single-instance rule may not be cited as a count.",
@@ -2806,7 +2810,7 @@
    "id": "GRD-02",
    "number": 2,
    "part": "I",
-   "name": "Reference material is loaded hot, not summarised",
+   "name": "Reference material is loaded hot, not summarized",
    "published_text": [
     "The three method papers are read as text, in full, at the moment of use, and not recalled. A summary of a method drifts, and the drift is invisible because a summary of a method reads exactly like the method. Loading the source each time costs context and buys the absence of a failure mode that leaves no trace. A single command loads all three and asks their questions in fixed order."
    ],
@@ -2936,9 +2940,9 @@
    "id": "GRD-06",
    "number": 6,
    "part": "I",
-   "name": "The setup is equalised across every column being compared",
+   "name": "The setup is equalized across every column being compared",
    "published_text": [
-    "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at two or three different settings of whatever was equalised: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
+    "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at two or three different settings of whatever was equalized: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
    ],
    "addresses": [
     "FLT-09"
@@ -3129,7 +3133,7 @@
    "part": "II",
    "name": "One event is read from three seats, never two",
    "published_text": [
-    "Two readings that disagree give no way to decide which is wrong. Three give a closure condition — a quantity that must come back to where it started — and a closure residual is a fault with nowhere to hide. And the disagreement between seats is kept as a measurement rather than calibrated away. Harmonise, do not synchronise: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
+    "Two readings that disagree give no way to decide which is wrong. Three give a closure condition — a quantity that must come back to where it started — and a closure residual is a fault with nowhere to hide. And the disagreement between seats is kept as a measurement rather than calibrated away. Harmonize, do not synchronize: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
    ],
    "addresses": [
     "FLT-11",
@@ -3377,7 +3381,7 @@
    "part": "III",
    "name": "Retained rules carry what they rest on",
    "published_text": [
-    "Each kept rule is tagged with its basis: an instruction, a verified tool behaviour, an arithmetic identity, or one instance. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
+    "Each kept rule is tagged with its basis: an instruction, a verified tool behavior, an arithmetic identity, or one instance. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
    ],
    "addresses": [
     "FLT-42"
@@ -3407,7 +3411,7 @@
    "id": "GRD-21",
    "number": 21,
    "part": "IV",
-   "name": "Any count about your own behaviour is read from the record, never from memory",
+   "name": "Any count about your own behavior is read from the record, never from memory",
    "published_text": [
     "Asked how often a guard had fired over three days, the answer given from memory was sixteen. The log in the same directory said thirty-six. Off by 2.25 times, and the same answer from anyone else would have been rejected on sight. A self-report is a claim about a file, so it is read out of the file or it is not stated."
    ],
@@ -3889,9 +3893,9 @@
    "id": "GRD-36",
    "number": 36,
    "part": "IV",
-   "name": "The catalogue's families ride in front of every exchange, read live from the published source",
+   "name": "The catalog's families ride in front of every exchange, read live from the published source",
    "published_text": [
-    "The eight family headings — not the individual modes — are injected at the top of every exchange alongside the ruler roster, parsed out of the published document itself so the two cannot drift apart. The purpose is to make the question which family is this arrive before the framing is fixed, which is the only moment it can change anything. Reading the catalogue afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the underlying rate showed no change that clears its own width."
+    "The eight family headings — not the individual modes — are injected at the top of every exchange alongside the ruler roster, parsed out of the published document itself so the two cannot drift apart. The purpose is to make the question which family is this arrive before the framing is fixed, which is the only moment it can change anything. Reading the catalog afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the underlying rate showed no change that clears its own width."
    ],
    "addresses": [
     "FLT-41"
@@ -4203,6 +4207,11 @@
   }
  ],
  "changes": [
+  {
+   "version": "2.1.1",
+   "date": "2026-11-23",
+   "summary": "Patch. Spelling corrected to American throughout, including fault and guard names and published text. No ID, test or rule changed meaning. See the Changes section of STANDARD.md."
+  },
   {
    "version": "2.1.0",
    "date": "2026-11-21",

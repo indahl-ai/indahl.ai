@@ -264,7 +264,8 @@ const MYDATA_JS = `(function () {
 })();`;
 
 // ------------------------------------------------------------------------------------------------ entry
-const SECURITY_TXT = 'Contact: https://indahl.ai/contact\nExpires: 2027-10-31T00:00:00.000Z\nPolicy: https://indahl.ai/security/policy\nAcknowledgments: https://indahl.ai/security/thanks\nCanonical: https://indahl.ai/.well-known/security.txt\nPreferred-Languages: en\n';
+// 23 Nov 2026: Contact is the correction form (no agreement, no sign-in, any address); /contact needs the NDA and a work email, which blocked outside reports
+const SECURITY_TXT = 'Contact: https://indahl.ai/correction\nExpires: 2027-10-31T00:00:00.000Z\nPolicy: https://indahl.ai/security/policy\nAcknowledgments: https://indahl.ai/security/thanks\nCanonical: https://indahl.ai/.well-known/security.txt\nPreferred-Languages: en\n';
 export async function handleSecurity(req, env, u, ctx) {
   const p = u.pathname;
   if (p === '/.well-known/security.txt' || p === '/security.txt') return T(SECURITY_TXT);

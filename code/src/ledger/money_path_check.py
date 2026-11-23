@@ -2,8 +2,9 @@
 """money_path_check.py (21 Nov 2026, owner-approved): after a ship deploys, check what a visitor actually gets on quantumidleaudit.com.
 
   1. the home page answers 200 and carries the Check a run box (qia-cr)
-  2. every demo page (/demo-<slug>, slugs from calibrations/site/demos.json, the list console/build.py builds from) and /inquiries answer 200;
-     21 Nov: the inquiry door too (/inquiries links indahl.ai/contact, its NDA form, /gate-ui.js, and a non-storing dry POST to /inquire), and
+  2. every demo page (/demo-<slug>, slugs from calibrations/site/demos.json, the list console/build.py builds from) answers 200;
+     the inquiry door too (23 Nov 2026: GET /inquiry with its NDA form, /gate-ui.js, a non-storing dry POST to /inquire, and the old
+     /inquiries address redirecting to /inquiry), and
      ledger/inquiry_bell.py runs so a new inquiry rings after a ship as well as on the tick bus
   3. every file Check a run loads answers 200 with the right kind of body: /check_run.js, /qia/runcheck.js (JavaScript, not an HTML page),
      /qia/records/index.json, /qia/cal.json, /qia/offchain.json (JSON that parses), and for ibm_fez its records manifest, the day files a run
@@ -82,6 +83,14 @@ def inquiry_door():
       st, ct, body = get('/')   # 22 Nov 2026: no /inquiries landing page; the nav Inquiry links the form directly
       if st == 200 and b'href="/inquiry"' not in body: fail('the QIA home page no longer links the inquiry form (/inquiry)')   # 23 Nov 2026: the form is on quantumidleaudit.com
       # 23 Nov 2026 (one inbox): the QIA form and its forward to the indahl.ai handler. The same non-storing dry POST, through the qia-site worker.
+      try:   # 23 Nov 2026 (the designer round 2 #3): the old address must send a client to the form, not a 404
+          class _NR(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, *a, **k): return None
+          urllib.request.build_opener(_NR).open(urllib.request.Request('https://quantumidleaudit.com/inquiries', headers=UA), timeout=30); rs, loc = 200, ''
+      except urllib.error.HTTPError as e: rs, loc = e.code, e.headers.get('location', '')
+      except Exception: rs, loc = 0, ''
+      if rs in (301, 302, 308) and loc.endswith('/inquiry'): ok('quantumidleaudit.com/inquiries redirects to /inquiry')
+      else: fail('quantumidleaudit.com/inquiries answered %s (location %r), not a redirect to /inquiry' % (rs, loc))
       st, ct, body = get('/inquiry')
       if st != 200: fail('quantumidleaudit.com/inquiry (the NDA step) answered %s' % st)
       elif b'action="/agree"' not in body: fail('quantumidleaudit.com/inquiry has no NDA agreement form (action="/agree")')

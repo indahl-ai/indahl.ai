@@ -14,6 +14,7 @@ exclude:
   - "**/*.bak"
 include:
   - .well-known
+  - security.txt
   - TERMS.txt
   - "**/TERMS.txt"
   - robots.txt

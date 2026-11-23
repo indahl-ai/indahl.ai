@@ -58,7 +58,7 @@ function cachePolicy(req, r) {
   return new Response(r.body, { status: r.status, statusText: r.statusText, headers: h });
 }
 var cut_default = {
-  async fetch(req, env) {
+  async fetch(req, env, ctx) {
     const u = new URL(req.url);
     const mr = mtaSts(req, u.hostname, u);
     if (mr) return mr;
@@ -66,12 +66,13 @@ var cut_default = {
     // max-age=60 only helped browsers). Security decoration still runs on every answer, hit or miss.
     const lj = req.method === "GET" && (u.hostname === "indahl.ai" || u.hostname === "www.indahl.ai") && /\/live\.json$/.test(u.pathname);
     let r = null;
-    if (lj) { const hit = await caches.default.match(req).catch(() => null); if (hit) { r = new Response(hit.body, hit); r.headers.set("x-edge-cache", "hit"); } }
+    const ljKey = lj ? new Request(u.origin + u.pathname) : null;   // 23 Nov 2026 (the designer round 2 #10): one cache entry per feed, whatever the query string
+    if (lj) { const hit = await caches.default.match(ljKey).catch(() => null); if (hit) { r = new Response(hit.body, hit); r.headers.set("x-edge-cache", "hit"); } }
     if (!r) {
       r = cachePolicy(req, await handle(req, env));
       if (lj && r.status === 200 && !r.headers.has("set-cookie")) {
         const h = new Headers(r.headers); h.set("cache-control", "public, max-age=60, s-maxage=60");
-        const c = r.clone(); await caches.default.put(req, new Response(c.body, { status: 200, headers: h })).catch(() => null);
+        const c = r.clone(); const put = caches.default.put(ljKey, new Response(c.body, { status: 200, headers: h })).catch(() => null); if (ctx && ctx.waitUntil) ctx.waitUntil(put); else await put;
       }
     }
     if (u.hostname === "indahl.ai" || u.hostname === "www.indahl.ai" || env.STAGING === "1" && u.hostname === "localhost") r = await secFinalize(req, env, await secDecorate(req, u, r));

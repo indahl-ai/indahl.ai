@@ -176,6 +176,9 @@ export const TOOLS_QIA = [
         if (best && best.value && t2.value && Math.abs(best.ms - t2.ms) <= 6e5) { used.add(best.measured); pairs.push({ t1_measured: best.measured, t2_measured: t2.measured, t1_us: +best.value.toFixed(2), t2_us: +t2.value.toFixed(2), t2_over_t1: +(t2.value / best.value).toFixed(3) }); }
         else loose.push({ t2_measured: t2.measured, t2_us: t2.value != null ? +t2.value.toFixed(2) : null, nearest_unused_t1_hours_away: best ? hrs(Math.abs(best.ms - t2.ms)) : null });
       });
+      // 23 Nov 2026 (the designer round 2 #12): a record inside the window can carry a measurement made before it; such pairs are marked, not hidden.
+      const fromMs = recs[0].stamp; let carried = 0;
+      pairs.forEach(x => { const m = seen.T1.get(x.t1_measured); if (m && m.ms != null && m.ms < fromMs) { x.measured_before_window = true; carried++; } });
       const n = pairs.length, over2 = pairs.filter(x => x.t2_over_t1 > 2).length, over25 = pairs.filter(x => x.t2_over_t1 > 2.5).length;
       const ratios = pairs.map(x => x.t2_over_t1).sort((x, y) => x - y), median = n ? (n % 2 ? ratios[(n - 1) / 2] : (ratios[n / 2 - 1] + ratios[n / 2]) / 2) : null;
       let signP = null; if (n) { let c = 1, s = 0; for (let k = 0; k <= n; k++) { if (k >= over2) s += c; c = c * (n - k) / (k + 1); } signP = +(s / 2 ** n).toFixed(4); }   // P(X >= over2), X ~ Bin(n, 1/2)
@@ -189,7 +192,7 @@ export const TOOLS_QIA = [
       const gaps = T1.map((x, i) => i && x.ms && T1[i - 1].ms ? (x.ms - T1[i - 1].ms) / 3.6e6 : null).filter(x => x != null).sort((x, y) => x - y);
       const distinctStamps = new Set(recs.map(r => r.stamp)).size;
       return answer(PAGE, { outcome, reason, processor: p, qubit: q, coverage: coverage(L),
-        window: { from: iso(recs[0].stamp), to: iso(recs[recs.length - 1].stamp), record_files_read: recs.length, distinct_stamps: distinctStamps },
+        window: { from: iso(recs[0].stamp), to: iso(recs[recs.length - 1].stamp), record_files_read: recs.length, distinct_stamps: distinctStamps, pairs_measured_before_window: carried },
         ratio_summary: { pairs: n, past_2: over2, past_2_5: over25, median_t2_over_t1: median != null ? +median.toFixed(3) : null, sign_test_p_past_2_one_sided: signP },
         remeasurement: { distinct_t1: T1.length, distinct_t2: T2.length, distinct_readout: RO.length, median_hours_between_t1: gaps.length ? +gaps[Math.floor(gaps.length / 2)].toFixed(1) : null, longest_hours_between_t1: gaps.length ? +gaps[gaps.length - 1].toFixed(1) : null,
           stamps_without_new_measurement_of_this_qubit: stampsNoNew, note: 'IBM recalibrates qubits on separate schedules; a record published without a new measurement of this qubit repeats its earlier figures.' },

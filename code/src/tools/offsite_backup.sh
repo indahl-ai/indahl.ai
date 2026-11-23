@@ -10,7 +10,7 @@ find ledger qia_leads ligera watch outbox rolodex notify_state sagar/intake_rows
 # 23 Nov 2026 (the designer review #2): uncommitted files exist only on the Mac (git bundles and GitHub carry commits only). Add every repo's
 # changed and untracked files under 100 MB, except yo_school and iris_index (training data and downloaded paper data, about 20 GB,
 # rebuilt from their sources). qia_cal's hardware runs and archive are the irreplaceable part.
-for g in $(ls -d */.git triangulation/*/.git 2>/dev/null | sed 's#/.git##'); do case "$g" in yo_school|iris_index) continue;; esac
+for g in $(find . -maxdepth 3 -name .git -type d -not -path "./node_modules/*" -not -path "./.lanes/*" -not -path "./public_mirror/*" 2>/dev/null | sed 's#^\./##; s#/.git$##'); do case "$g" in yo_school|iris_index) continue;; esac   # 23 Nov 2026 (the designer round 2 #2): nested repos too; public_mirror is rebuilt from sources and lives on GitHub
   git -C "$g" ls-files -m -o --exclude-standard 2>/dev/null | while IFS= read -r f; do p="$g/$f"; [ -f "$p" ] || continue
     case "$p" in *.log|*.log.*|*-wal|*-shm|*-journal|*.tmp|*.lock|*/node_modules/*|*/__pycache__/*) continue;; esac
     [ "$(stat -f %z "$p")" -lt 100000000 ] && echo "$p" || true; done; done >> $T/list.txt   # || true: under set -e a big last file must not end the run (review #4)
@@ -29,8 +29,8 @@ rm -rf bk bk.tar.gz   # 23 Nov 2026 (review #4): plaintext gone the moment the e
 # 23 Nov 2026: GitHub refuses release files of 2 GiB or more, and the backup passed that after 29 Oct, so every run failed silently for 25 days.
 # The encrypted file is cut into 1900 MiB parts. Restore: cat bk_$D.tar.gz.enc.part* > bk_$D.tar.gz.enc, then decrypt with the key.
 # 23 Nov 2026 (the designer review #19): CBC carries no integrity check; an HMAC-SHA256 of the encrypted file (same offline key, read by python, never
-# on a command line) is uploaded beside it. Verify before decrypting: python3 -c the same way and compare with the .hmac file.
-python3 -c "import hmac,hashlib,sys;k=open(sys.argv[1],'rb').read().strip();h=hmac.new(k,digestmod=hashlib.sha256);f=open(sys.argv[2],'rb')
+# on a command line) is uploaded beside it; the MAC key is derived from it (HMAC(key, "backup-mac"), the designer round 2 #11). Restore with tools/restore_backup.sh, which checks it first.
+python3 -c "import hmac,hashlib,sys;k=hmac.new(open(sys.argv[1],'rb').read().strip(),b'backup-mac',hashlib.sha256).digest();h=hmac.new(k,digestmod=hashlib.sha256);f=open(sys.argv[2],'rb')
 for b in iter(lambda:f.read(1<<20),b''): h.update(b)
 print(h.hexdigest())" "$K" bk_$D.tar.gz.enc > bk_$D.tar.gz.enc.hmac
 echo "offsite: encrypted size $(du -h bk_$D.tar.gz.enc | cut -f1)"

@@ -1,0 +1,6 @@
+Contact: https://indahl.ai/correction
+Expires: 2027-10-31T00:00:00.000Z
+Policy: https://indahl.ai/security/policy
+Acknowledgments: https://indahl.ai/security/thanks
+Canonical: https://heuremen.org/.well-known/security.txt
+Preferred-Languages: en

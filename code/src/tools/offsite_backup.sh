@@ -4,7 +4,20 @@ set -e; export PATH=/opt/homebrew/bin:/usr/bin:/bin; T=$(mktemp -d); D=$(date +%
 # 23 Nov 2026: repos with a GitHub remote are already off-site there; bundle only the repos that live nowhere else (yo_school and sagar
 # history alone is 11 GB and pushed the upload past what GitHub takes).
 for g in $(ls -d */.git | sed 's#/.git##'); do [ -n "$(git -C $g remote 2>/dev/null)" ] && continue; git -C $g bundle create $T/bk/$g.bundle --all >/dev/null 2>&1 || true; done
-find ledger qia_leads ligera watch outbox rolodex notify_state sagar/intake_rows -type f -size -100M ! -name '*.log' ! -name '*.log.*' ! -name '*.gz' ! -path '*/node_modules/*' ! -path '*/contact_stage_*' ! -name '*.tmp' ! -name '*.lock' ! -name '*.flock' > $T/list.txt 2>/dev/null   # 23 Nov 2026: no logs, no file over 100 MB
+find ledger qia_leads ligera watch outbox rolodex notify_state sagar/intake_rows -type f -size -100M ! -name '*.log' ! -name '*.log.*' ! -name '*.gz' ! -path '*/node_modules/*' ! -path '*/contact_stage_*' ! -name '*.tmp' ! -name '*.lock' ! -name '*.flock' ! -name '*-wal' ! -name '*-shm' ! -name '*-journal' > $T/list.txt 2>/dev/null   # 23 Nov 2026: no logs, no file over 100 MB
+# 23 Nov 2026 (the designer review #2): uncommitted files exist only on the Mac (git bundles and GitHub carry commits only). Add every repo's
+# changed and untracked files under 100 MB, except yo_school and iris_index (training data and downloaded paper data, about 20 GB,
+# rebuilt from their sources). qia_cal's hardware runs and archive are the irreplaceable part.
+for g in $(ls -d */.git triangulation/*/.git 2>/dev/null | sed 's#/.git##'); do case "$g" in yo_school|iris_index) continue;; esac
+  git -C "$g" ls-files -m -o --exclude-standard 2>/dev/null | while IFS= read -r f; do p="$g/$f"; [ -f "$p" ] || continue
+    case "$p" in *.log|*.log.*|*-wal|*-shm|*-journal|*.tmp|*.lock|*/node_modules/*|*/__pycache__/*) continue;; esac
+    [ "$(stat -f %z "$p")" -lt 100000000 ] && echo "$p"; done; done >> $T/list.txt
+sort -u -o $T/list.txt $T/list.txt
+# 23 Nov 2026: live SQLite files change and their -wal/-shm files come and go mid-pack (the 12:55 run failed on outbox.db-shm). Each
+# database is packed from a consistent snapshot (sqlite3 .backup), never from the live file.
+mkdir -p $T/dbsnap; grep '\.db$' $T/list.txt | while read -r f; do mkdir -p "$T/dbsnap/$(dirname "$f")"; sqlite3 "$f" ".backup '$T/dbsnap/$f'" || exit 1; done
+grep -v '\.db$' $T/list.txt > $T/list2.txt; mv $T/list2.txt $T/list.txt
+tar -czf $T/bk/dbsnap_$D.tar.gz -C $T/dbsnap .
 tar -czf $T/bk/internal_$D.tar.gz -T $T/list.txt   # 23 Nov 2026: a failed tar fails the backup (it used to upload a partial one)
 tar -czf $T/bk/memory_$D.tar.gz -C ~/.claude/projects/-Users-heuremen memory
 K=~/Documents/"Heuremen LLC"/ACCOUNTS/offsite-backup-key; cd $T; tar -czf bk.tar.gz bk

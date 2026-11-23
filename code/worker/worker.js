@@ -62,7 +62,18 @@ var cut_default = {
     const u = new URL(req.url);
     const mr = mtaSts(req, u.hostname, u);
     if (mr) return mr;
-    let r = cachePolicy(req, await handle(req, env));
+    // 23 Nov 2026 (the designer review #7): live.json answers are held at the edge for 60 s (they were a worker run and a KV read per request; the
+    // max-age=60 only helped browsers). Security decoration still runs on every answer, hit or miss.
+    const lj = req.method === "GET" && (u.hostname === "indahl.ai" || u.hostname === "www.indahl.ai") && /\/live\.json$/.test(u.pathname);
+    let r = null;
+    if (lj) { const hit = await caches.default.match(req).catch(() => null); if (hit) { r = new Response(hit.body, hit); r.headers.set("x-edge-cache", "hit"); } }
+    if (!r) {
+      r = cachePolicy(req, await handle(req, env));
+      if (lj && r.status === 200 && !r.headers.has("set-cookie")) {
+        const h = new Headers(r.headers); h.set("cache-control", "public, max-age=60, s-maxage=60");
+        const c = r.clone(); await caches.default.put(req, new Response(c.body, { status: 200, headers: h })).catch(() => null);
+      }
+    }
     if (u.hostname === "indahl.ai" || u.hostname === "www.indahl.ai" || env.STAGING === "1" && u.hostname === "localhost") r = await secFinalize(req, env, await secDecorate(req, u, r));
     return r;
   }

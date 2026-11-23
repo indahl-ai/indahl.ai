@@ -7,6 +7,7 @@ Run: --send [--eu]      one job per processor without a job still waiting (budge
      --collect [--eu]   read finished jobs, analyse, publish, chain (status reads only)
 """
 import os, sys, json, time, hashlib, subprocess, datetime as dt
+import socket; socket.setdefaulttimeout(180)   # 23 Nov 2026: a hung IBM call held cal.py until the 1 h rider kill (15:48 run); any network call now fails at 3 min and collect() skips that job until the next run
 import os as _pg_os, sys as _pg_sys, subprocess as _pg_sp   # 10 Nov 2026 (publish guard): the site KV is written only by a run the tick bus or the house clock started
 _PUBLISH = '--publish' in _pg_sys.argv or _pg_os.environ.get('HEUREMEN_PUBLISH') == '1'   # (they export HEUREMEN_PUBLISH=1) or a run given --publish. A copy run for a reproduce kit or a test never publishes
 if _PUBLISH: _pg_os.environ['HEUREMEN_PUBLISH'] = '1'   # passed on to the scripts this one starts, and kept across a detach or re-exec

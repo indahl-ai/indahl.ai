@@ -42,6 +42,15 @@ mkdir -p "$HG/info" 2>/dev/null && cat > "$HG/info/exclude" <<'EOF'
 /cloudflare-workers/*
 !/cloudflare-workers/heuremen-door/
 !/cloudflare-workers/qia-site/
+# 23 Nov 2026: tools/ holds the off-site backup and log rotation scripts, which were in no repo and not in the backup itself.
+# Scripts only: the ESP toolchains, built packs, caches, logs and backups stay out.
+!/tools/
+/tools/esptool-venv/
+/tools/openocd-esp32/
+/tools/desk_packs/dist/
+/tools/**/__pycache__/
+/tools/*.log
+/tools/*.bak-*
 EOF
 
 # once a day: every remote must be a PRIVATE indahl-ai repo, or nothing is pushed
@@ -52,18 +61,21 @@ if [ ! -f "$STAMP" ] || [ $(( $(date +%s) - $(stat -f %m "$STAMP") )) -gt 86400 
   if [ "$PV" = ok ]; then touch "$STAMP"; else echo "save_source: REFUSED: $PV (nothing committed or pushed)"; exit 1; fi
 fi
 
+# 23 Nov 2026 (the designer review #18): the qia and all scopes keep separate locks (qia.com never waits on an indahl.ai ship), so two saves can
+# meet in one repo. git's own index.lock is the guard; a step that loses that race waits and tries again instead of failing the save.
+gtry() { local o i; for i in 1 2 3 4 5; do o=$("$@" 2>&1) && { printf '%s' "$o"; return 0; }; case "$o" in *index.lock*) sleep 3;; *) printf '%s' "$o"; return 1;; esac; done; printf '%s' "$o"; return 1; }
 save() {   # save NAME REMOTE BRANCH git-args...   (env PATHS: only these paths, for SAVE_SCOPE=qia)
   local name="$1" remote="$2" branch="$3"; shift 3; local g=(git "$@") i r out n ahead; local pa=(); [ -n "${PATHS:-}" ] && read -r -a pa <<< "$PATHS"
   for i in $(seq 1 30); do   # a ship's own commit may hold the index for a moment
     [ -e "$("${g[@]}" rev-parse --absolute-git-dir)/index.lock" ] || break; sleep 2; done
-  out=$("${g[@]}" add -A -- "${pa[@]:-.}" 2>&1) || { OUT+=("$name: git add failed: $(echo "$out" | head -1)"); BAD=1; return; }
+  out=$(gtry "${g[@]}" add -A -- "${pa[@]:-.}") || { OUT+=("$name: git add failed: $(echo "$out" | head -1)"); BAD=1; return; }
   if ! "${g[@]}" diff --cached --quiet; then
     n=$("${g[@]}" diff --cached --name-only | wc -l | tr -d ' ')
     if [ "$name" = house-ops ]; then out=$(python3 "$L/source_scan.py" --git-dir "$HG" --work-tree "$B" 2>&1); r=$?
     else out=$(python3 "$L/source_scan.py" "$("${g[@]}" rev-parse --show-toplevel)" 2>&1); r=$?; fi
     if [ $r -ne 0 ]; then "${g[@]}" reset -q; echo "$out" | sed "s/^/  /"
       OUT+=("$name: SCAN REFUSED ($(echo "$out" | grep -c '^  HIT') hits, first: $(echo "$out" | grep -m1 '^  HIT' | sed 's/^  HIT //' | cut -c1-140)); nothing committed"); BAD=1; return; fi
-    out=$("${g[@]}" "${AUTHOR[@]}" commit -q --no-verify -m "$SUBJ" -- "${pa[@]:-.}" 2>&1) || { OUT+=("$name: COMMIT FAILED: $(echo "$out" | grep -v '^\s*$' | head -1 | cut -c1-160)"); BAD=1; return; }
+    out=$(gtry "${g[@]}" "${AUTHOR[@]}" commit -q --no-verify -m "$SUBJ" -- "${pa[@]:-.}") || { OUT+=("$name: COMMIT FAILED: $(echo "$out" | grep -v '^\s*$' | head -1 | cut -c1-160)"); BAD=1; return; }
     OUT+=("$name: committed $n files ($("${g[@]}" log -1 --format=%h))")
   else OUT+=("$name: nothing to commit"); fi
   out=$("${g[@]}" push -q "$remote" "HEAD:$branch" 2>&1); r=$?

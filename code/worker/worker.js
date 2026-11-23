@@ -714,9 +714,12 @@ export class Limiter {
     const now = Date.now(); let w = (await this.state.storage.get("w")) || [];
     w = w.filter((t) => now - t < win);
     if (w.length >= limit) { await this.state.storage.put("w", w); return new Response("limited", { status: 429 }); }
+    // 23 Nov 2026 (review #3): the record clears itself one window after the last request, so storage does not grow with every visitor.
+    await this.state.storage.setAlarm(now + win + 1000);
     w.push(now); await this.state.storage.put("w", w);
     return new Response("ok");
   }
+  async alarm() { await this.state.storage.deleteAll(); }
 }
 export {
   cut_default as default

@@ -43,8 +43,12 @@ export async function handleInquiry(req, env, render) {
   if (len > 20000) return reject('That submission is too long.', 413);
   // 23 Nov 2026 (the designer review #14): content-length can be left out (a chunked body), so the body is read with a real byte cap first.
   let f, raw;
-  try { raw = await req.arrayBuffer(); } catch (e) { return reject('That submission could not be read.'); }
-  if (raw.byteLength > 20000) return reject('That submission is too long.', 413);
+  // 23 Nov 2026 (review #5): read as a stream and stop past 20,000 bytes (arrayBuffer() loaded the whole body before the check).
+  try {
+    const rd = req.body ? req.body.getReader() : null, parts = []; let n = 0;
+    while (rd) { const { done, value } = await rd.read(); if (done) break; n += value.byteLength; if (n > 20000) { try { await rd.cancel(); } catch (e) {} return reject('That submission is too long.', 413); } parts.push(value); }
+    raw = new Uint8Array(n); let o = 0; for (const p of parts) { raw.set(p, o); o += p.byteLength; }
+  } catch (e) { return reject('That submission could not be read.'); }
   try { f = await new Request('https://form.local/', { method: 'POST', headers: { 'content-type': req.headers.get('content-type') || '' }, body: raw }).formData(); } catch (e) { return reject('That submission could not be read.'); }
   if ((f.get('website') || '').trim()) return render(null, 200);                 // honeypot: look accepted, store nothing
   const started = Number(f.get('t') || 0);
@@ -77,10 +81,14 @@ export async function handleInquiry(req, env, render) {
   const ip = clientIp(req, env);   // 23 Nov 2026: the visitor's IP on a quantumidleaudit.com forward (gate.js viaQia), else cf-connecting-ip
   // 23 Nov 2026 (the designer review #14): 3 an hour per visitor, held strictly by the Limiter Durable Object (the KV read-then-write let a burst
   // through). Without the binding it falls back to the old KV counter.
+  // 23 Nov 2026 (review #3): a limiter error must never stop an inquiry; it falls back to the KV counter below.
+  let limited = null;
   if (env.LIMITER) {
-    const lr = await env.LIMITER.get(env.LIMITER.idFromName('inq:' + await sha(ip))).fetch('https://limiter/?limit=3&win=3600');
-    if (lr.status === 429) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);
-  } else {
+    try { const lr = await env.LIMITER.get(env.LIMITER.idFromName('inq:' + await sha(ip))).fetch('https://limiter/?limit=3&win=3600'); limited = lr.status === 429; }
+    catch (e) { console.log(JSON.stringify({ limiter_error: String((e && e.message) || e).slice(0, 200) })); }
+  }
+  if (limited === true) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);
+  if (limited === null) {
     const rk = 'rate:' + await sha(ip + '|' + new Date().toISOString().slice(0, 13));
     const n = Number(await env.INDAHL_INQUIRIES.get(rk) || 0);
     if (n >= 3) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);

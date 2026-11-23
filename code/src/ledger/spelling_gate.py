@@ -21,6 +21,18 @@ BRIT = {   # British form -> American form (whole words, case-insensitive)
  'defence': 'defense', 'offence': 'offense', 'modelling': 'modeling', 'modelled': 'modeled', 'labelled': 'labeled', 'labelling': 'labeling', 'travelled': 'traveled',
  'cancelled': 'canceled', 'fulfil': 'fulfill', 'enrol': 'enroll', 'grey': 'gray', 'judgement': 'judgment', 'ageing': 'aging', 'artefact': 'artifact', 'artefacts': 'artifacts',
  'aluminium': 'aluminum', 'sceptical': 'skeptical', 'whilst': 'while', 'amongst': 'among', 'towards': 'toward', 'utilisations': 'utilizations', 'tonne': 'ton', 'tonnes': 'tons',
+ # 23 Nov 2026: the Standard carried favours, equalised, harmonise and synchronise past this list (none were in it). Each inflection is listed, since the match is whole-word.
+ 'favours': 'favors', 'favoured': 'favored', 'favouring': 'favoring', 'favourite': 'favorite', 'favourites': 'favorites', 'unfavourable': 'unfavorable', 'behavioural': 'behavioral',
+ 'colourful': 'colorful', 'coloured': 'colored', 'honours': 'honors', 'labours': 'labors', 'rumours': 'rumors', 'neighbourhood': 'neighborhood', 'endeavour': 'endeavor',
+ 'equalise': 'equalize', 'equalised': 'equalized', 'equalises': 'equalizes', 'equalising': 'equalizing', 'harmonise': 'harmonize',
+ 'synchronise': 'synchronize', 'synchronised': 'synchronized', 'summarises': 'summarizes', 'summarising': 'summarizing', 'recognises': 'recognizes', 'recognising': 'recognizing',
+ 'organises': 'organizes', 'organising': 'organizing', 'realises': 'realizes', 'realising': 'realizing', 'minimised': 'minimized', 'maximised': 'maximized',
+ 'prioritised': 'prioritized', 'emphasised': 'emphasized', 'categorised': 'categorized', 'stabilise': 'stabilize', 'stabilised': 'stabilized', 'randomised': 'randomized',
+ 'parametrised': 'parametrized', 'parameterised': 'parameterized', 'generalise': 'generalize', 'generalised': 'generalized', 'specialised': 'specialized', 'visualise': 'visualize',
+ 'visualisation': 'visualization', 'initialise': 'initialize', 'initialised': 'initialized', 'serialised': 'serialized', 'apologise': 'apologize', 'criticise': 'criticize',
+ 'catalogued': 'cataloged', 'centimetre': 'centimeter', 'millimetre': 'millimeter', 'kilometre': 'kilometer', 'kilometres': 'kilometers', 'theatre': 'theater',
+ 'modeller': 'modeler', 'signalling': 'signaling', 'travelling': 'traveling', 'cancelling': 'canceling', 'fuelled': 'fueled', 'counselling': 'counseling',
+ 'licences': 'licenses', 'defences': 'defenses', 'practise': 'practice', 'enrolment': 'enrollment', 'fulfilment': 'fulfillment', 'acknowledgement': 'acknowledgment', 'manoeuvre': 'maneuver',
 }
 RX = re.compile(r'\b(' + '|'.join(sorted(BRIT, key=len, reverse=True)) + r')\b', re.I)
 def clean(h):
@@ -40,7 +52,11 @@ def pages():
         for var, rel in files.items():
             f = os.path.join(B, 'indahl-ai', rel)
             if os.path.exists(f): yield 'indahl.ai' + paths.get(var, '/' + rel), open(f, encoding='utf-8', errors='replace').read()
-    for f in glob.glob(os.path.join(B, 'cloudflare-workers', 'heuremen-door', 'public', '_qiasite', '*.html')):
+    # 23 Nov 2026: since the QIA split (22 Nov) ship_qia.sh builds the served QIA pages into qia-site/public/_qiasite. The old heuremen-door copy
+    # was no longer rebuilt, so this gate was reading stale pages. Read the served build, the old folder only when the new one is absent.
+    _qd = os.path.join(B, 'cloudflare-workers', 'qia-site', 'public', '_qiasite')
+    if not os.path.isdir(_qd): _qd = os.path.join(B, 'cloudflare-workers', 'heuremen-door', 'public', '_qiasite')
+    for f in glob.glob(os.path.join(_qd, '*.html')):
         yield 'quantumidleaudit.com/' + os.path.basename(f)[:-5], open(f, encoding='utf-8', errors='replace').read()
 # Pages that are made of other people's words (study pages, study lists, the lookup) quote papers' own terms inside our sentences
 # ("the paper prints Run C labelled as..."; a table head "fitted centre"; a title "Portfolio optimisation"). We never change a quote, so
@@ -56,9 +72,8 @@ for u, w, a in hits: seen.setdefault((u, w.lower(), a), 0); seen[(u, w.lower(), 
 # BASELINE (allowed): occurrences already reviewed and kept on purpose: proper nouns (a UK school's own name, "Ofsted judgement", a
 # programme's official title) and vendor text we quote. `--baseline` writes the current set after a fix pass; the gate then refuses only
 # what is NOT in it: a new British spelling, or more of one on a page than the baseline allows.
-# 23 Nov 2026 (owner: the Standard shown as written, never paraphrased): indahl.ai/standard and quantumidleaudit.com/standard print the stamped
-# STANDARD.md verbatim. Its section 11 keeps the published spelling of fault and guard names (GRD-02 summarised, GRD-21 behaviour, GRD-36 catalogue)
-# and its change log quotes the old FLT-23 wording (labelled). One each per page is in the baseline. Any other British word on those pages is refused.
+# 23 Nov 2026: indahl.ai/standard and quantumidleaudit.com/standard print the Standard's STANDARD.md verbatim. Patch 2.1.1 (doi 10.5281/zenodo.24467162)
+# set it in American spelling throughout, so those pages carry no baseline entries and the gate guards them like every other page of ours.
 BL = os.path.join(B, 'ledger', 'spelling_baseline.json')
 import json as _j
 if '--baseline' in sys.argv:

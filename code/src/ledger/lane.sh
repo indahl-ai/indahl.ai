@@ -26,7 +26,9 @@ case "${1:-}" in
     done
     git -C "$R" -c user.name="Heuremen LLC" -c user.email=349448817+indahl-ai@users.noreply.github.com merge -q --no-edit "wt/$N" || { echo "lane $N: merge conflict in the live copy; resolve by hand"; exit 1; }
     git -C "$R" worktree remove --force "$W"; git -C "$R" branch -q -d "wt/$N" 2>/dev/null || true
-    echo "lane $N landed in $R ($BR)" ;;
+    case "$(basename "$R")" in ledger) RM=backup;; *) RM=origin;; esac   # 23 Nov 2026: a landed lane is pushed at once (the unsaved-source alert caught one that was not)
+    git -C "$R" push -q "$RM" "HEAD:$BR" || { echo "lane $N landed but the push to $RM/$BR failed; push by hand"; exit 1; }
+    echo "lane $N landed in $R ($BR) and pushed" ;;
   list) for d in "$LN"/*/; do [ -d "$d" ] && echo "$(basename "$d") ($(cat "$d/.lane_repo" 2>/dev/null))"; done; true ;;
   *) sed -n 2,8p "$0"; exit 2 ;;
 esac

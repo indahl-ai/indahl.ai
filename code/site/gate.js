@@ -33,7 +33,21 @@ export async function verify(env, tok) {
 const cookie = (req, name) => ((req.headers.get('cookie') || '').split(/;\s*/).find(c => c.startsWith(name + '=')) || '').slice(name.length + 1) || null;
 const setCookie = (name, val, maxAge, path = '/') => `${name}=${val}; Max-Age=${maxAge}; Path=${path}; HttpOnly; Secure; SameSite=Lax`;
 const api = env => env.WORKOS_API || 'https://api.workos.com';
-const redirectUri = (req, env) => (env.GATE_ORIGIN ? env.GATE_ORIGIN.replace(/\/$/, '') + '/auth/callback' : new URL('/auth/callback', req.url).toString());
+// 23 Nov 2026 (one inbox for both sites): quantumidleaudit.com forwards /agree, /auth/* and /inquire here from its own worker
+// (cloudflare-workers/qia-site). A forwarded request carries the shared secret QIA_FORWARD_SECRET (worker config only, never in source).
+// Only then does the sign-in return to the QIA callback, which is registered with WorkOS, and only then are the client IP and country read
+// from the forward (the forward's own connecting IP is the QIA worker's). The cookies are set by the response the QIA worker passes back,
+// so they belong to quantumidleaudit.com, and they are signed and checked exactly as on indahl.ai.
+const QIA_CALLBACK = 'https://quantumidleaudit.com/auth/callback';
+export function viaQia(req, env) {
+  const s = env.QIA_FORWARD_SECRET || '', h = req.headers.get('x-qia-forward') || '';
+  if (s.length < 32 || h.length !== s.length) return false;
+  let d = 0; for (let i = 0; i < s.length; i++) d |= s.charCodeAt(i) ^ h.charCodeAt(i);
+  return d === 0;
+}
+export const clientIp = (req, env) => viaQia(req, env) ? (req.headers.get('x-qia-client-ip') || '') : (req.headers.get('cf-connecting-ip') || '');
+export const clientCountry = (req, env) => viaQia(req, env) ? (req.headers.get('x-qia-country') || '').slice(0, 2) : ((req.cf && req.cf.country) || '');
+const redirectUri = (req, env) => viaQia(req, env) ? QIA_CALLBACK : (env.GATE_ORIGIN ? env.GATE_ORIGIN.replace(/\/$/, '') + '/auth/callback' : new URL('/auth/callback', req.url).toString());
 
 export async function session(req, env) {
   try { return await verify(env, cookie(req, 'ig_s')); } catch (e) { return null; }

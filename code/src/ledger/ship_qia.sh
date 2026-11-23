@@ -90,6 +90,7 @@ def get(p):
     except Exception: return 0, b''
 want = {}
 for f in sorted(os.listdir(out)):
+    if f.startswith('_'): continue   # 23 Nov 2026: _inquiry-*.html are templates the worker fills (/inquiry and the handler's answers), not pages
     p = '/' if f == 'index.html' else '/' + (f[:-5] if f.endswith('.html') else f)
     want[p] = open(os.path.join(out, f), 'rb').read()
 for attempt in range(4):

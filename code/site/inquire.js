@@ -7,7 +7,7 @@
 // Read them with the inquiries reader (internal).
 
 import { EmailMessage } from 'cloudflare:email';
-import { session, agreement, FREEMAIL } from './gate.js';
+import { session, agreement, FREEMAIL, viaQia, clientIp, clientCountry } from './gate.js';
 
 // 22 Nov 2026 (FW-019, the designer; wired by the operator): carry fields from the Check a run on quantumidleaudit.com, read-only on /inquiry.
 // Optional. A value that fails its shape is dropped (stored empty), never cut or rewritten. They go only in KV and the notice email, never a URL.
@@ -71,13 +71,14 @@ export async function handleInquiry(req, env, render) {
   const m = rec.email.toLowerCase().match(/^[^\s@]+@([a-z0-9.-]+\.[a-z]{2,})$/);
   if (!m) return reject('Please give a valid email address.');
   if (engagement && FREEMAIL.has(m[1])) return reject('Please write from your organization’s email address. Inquiries from personal email services are not reviewed.');
-  const ip = req.headers.get('cf-connecting-ip') || '';
+  const ip = clientIp(req, env);   // 23 Nov 2026: the visitor's IP on a quantumidleaudit.com forward (gate.js viaQia), else cf-connecting-ip
   const rk = 'rate:' + await sha(ip + '|' + new Date().toISOString().slice(0, 13));
   const n = Number(await env.INDAHL_INQUIRIES.get(rk) || 0);
   if (n >= 3) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);
   await env.INDAHL_INQUIRIES.put(rk, String(n + 1), { expirationTtl: 3600 });
   rec.received = new Date().toISOString();
-  rec.country = (req.cf && req.cf.country) || '';
+  rec.country = clientCountry(req, env);
+  rec.site = viaQia(req, env) ? 'quantumidleaudit.com' : 'indahl.ai';   // which site's form it came from; same store, same inbox
   rec.domain = m[1];
   const key = `inq:${rec.received}:${crypto.randomUUID().slice(0, 8)}`;
   rec.nda_confirmed = engagement;
@@ -103,7 +104,7 @@ async function notify(env, rec, key, kind) {
   const body = [
     `New engagement inquiry (${rec.received}, ${rec.country || 'country unknown'})`, '',
     `Name: ${rec.name}`, `Role: ${rec.role}`, `Organisation: ${rec.organisation} (${rec.domain})`, `Email: ${rec.email}`,
-    `Subject: ${rec.reason}`, `Referred by: ${rec.referral || '-'}`, (rec.agreements ? `AGREEMENTS: NDA v${rec.agreements.nda.version} and Privacy Notice ${rec.agreements.privacy.version} read to the end (Terms ${rec.agreements.terms.version}) and checked at ${rec.agreements.nda.accepted_at} by ${rec.agreements.nda.accepted_by}, ${rec.agreements.nda.title}, for ${rec.agreements.nda.organisation} (authority confirmed). Identity verified: ${rec.identity.verified_email} via ${rec.identity.method}.` : 'Agreements: not required for this reason'), '',
+    `Subject: ${rec.reason}`, `Referred by: ${rec.referral || '-'}`, `Sent from: ${rec.site || 'indahl.ai'}`, (rec.agreements ? `AGREEMENTS: NDA v${rec.agreements.nda.version} and Privacy Notice ${rec.agreements.privacy.version} read to the end (Terms ${rec.agreements.terms.version}) and checked at ${rec.agreements.nda.accepted_at} by ${rec.agreements.nda.accepted_by}, ${rec.agreements.nda.title}, for ${rec.agreements.nda.organisation} (authority confirmed). Identity verified: ${rec.identity.verified_email} via ${rec.identity.method}.` : 'Agreements: not required for this reason'), '',
     'Scope, in their words:', rec.scope, '',
     ...((rec.carry_processor || rec.carry_window || rec.carry_finding) ? ['From the Check a run (generated on quantumidleaudit.com, read-only on the form):', `Processor: ${rec.carry_processor || '-'}`, `Run window, UTC: ${rec.carry_window || '-'}`, `Finding: ${rec.carry_finding || '-'}`, ''] : []),
     `Timeline: ${rec.timeline || 'not stated'}`, '',

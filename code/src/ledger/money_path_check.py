@@ -75,7 +75,21 @@ def inquiry_door():
     quickly', 400) before any store write, after it has proved the route answers, the store binding exists (503 otherwise) and the body parses."""
     if '--part' not in sys.argv:   # 23 Nov 2026 (separate lanes): the indahl.ai ship checks only the indahl.ai half (--part inquiry)
       st, ct, body = get('/')   # 22 Nov 2026: no /inquiries landing page; the nav Inquiry links the form directly
-      if st == 200 and b'https://indahl.ai/contact' not in body: fail('the QIA home page no longer links the inquiry form (indahl.ai/contact)')
+      if st == 200 and b'href="/inquiry"' not in body: fail('the QIA home page no longer links the inquiry form (/inquiry)')   # 23 Nov 2026: the form is on quantumidleaudit.com
+      # 23 Nov 2026 (one inbox): the QIA form and its forward to the indahl.ai handler. The same non-storing dry POST, through the qia-site worker.
+      st, ct, body = get('/inquiry')
+      if st != 200: fail('quantumidleaudit.com/inquiry (the NDA step) answered %s' % st)
+      elif b'action="/agree"' not in body: fail('quantumidleaudit.com/inquiry has no NDA agreement form (action="/agree")')
+      else: ok('quantumidleaudit.com/inquiry NDA step')
+      js('/gate-ui.js')
+      try:
+          req = urllib.request.Request('https://quantumidleaudit.com/inquire', data=b'money_path_check=1', method='POST',
+                                       headers=dict(UA, **{'Content-Type': 'application/x-www-form-urlencoded'}))
+          r = urllib.request.urlopen(req, timeout=30); st, body = r.status, r.read()
+      except urllib.error.HTTPError as e: st, body = e.code, e.read()
+      except Exception as e: st, body = 0, b''
+      if st == 400 and b'too quickly' in body: ok('quantumidleaudit.com/inquire forward (dry request refused by the indahl.ai handler, nothing stored)')
+      else: fail('quantumidleaudit.com/inquire dry POST answered %s, not the 400 fill-time refusal (forward or handler broken)' % st)
     st, ct, body = get('https://indahl.ai/contact')
     if st != 200: fail('indahl.ai/contact (the NDA step) answered %s' % st)
     elif b'action="/agree"' not in body: fail('indahl.ai/contact has no NDA agreement form (action="/agree")')

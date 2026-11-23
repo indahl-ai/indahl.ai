@@ -232,7 +232,7 @@ function controlsCheck(a) {
   const hasHardest = rows.some((r) => r.hardest);
   return answer(SRC, { outcome, reason, structure, attested_as_given: attested, phase: anyObs ? 'after_run' : 'before_run', test_can_fail_inferred: can_fail_inferred, test_can_fail_note: 'An inference only: it is true when a positive and a negative control exist with different expected words; it does not show the rule can fire.', positive_controls: pos, negative_controls: neg, hardest_positive_marked: hasHardest, problems: issues, failed_controls: failed.map((r) => r.name),
     ...(cannotRows.length ? { cannot_tell_controls: cannotRows.map((r) => r.name) } : {}), table: rows, ...(desc ? { test_description: desc } : {}),
-    needs_reading: 'Three questions per control (chosen independently of the value the rule reads; the rule can fire on it; the hardest known positive is reachable under the rule limits) are computed only from the flags independent, can_fire and hardest when supplied; otherwise they need a person to read the design. Write this before the run; a control redefined after results is labelled so.',
+    needs_reading: 'Three questions per control (chosen independently of the value the rule reads; the rule can fire on it; the hardest known positive is reachable under the rule limits) are computed only from the flags independent, can_fire and hardest when supplied; otherwise they need a person to read the design. Write this before the run; a control redefined after results is labeled so.',
     method: 'Rule-based. Expected and observed outcomes are read by keyword (detect / no detect) or as a number with a tolerance; STRUCTURE_OK means the structure passes these rules, not that the design is sound; READY is given only on the attestations the caller gives. Before a run: at least one positive and one negative control, each expected outcome differs from the null. After a run: each control PASSED, FAILED or CANNOT_TELL (a control with no observed value is CANNOT_TELL, unexercised); READY only if every control passed and the attestations are given.' });
 }
 
@@ -242,25 +242,25 @@ function twoExplanations(a) {
   const A = String(a.a || '').trim().slice(0, 200), B = String(a.b || '').trim().slice(0, 200);
   if (!A || !B) return cannot('both explanations a and b must be named');
   if (A.toLowerCase() === B.toLowerCase()) return cannot('a and b are the same reading; the skill requires two readings that predict different things');
-  const ev = arr(a.evidence); if (!ev) return cannot('evidence must be an array of {item, favours, strength, independent}');
+  const ev = arr(a.evidence); if (!ev) return cannot('evidence must be an array of {item, favors, strength, independent}');
   if (ev.length > 200) return refused('at most 200 evidence items');
   const seen = new Map(); const rows = []; const dup = [];
   ev.forEach((e0, i) => {
-    const e = e0 && typeof e0 === 'object' ? e0 : {}; const item = String(e.item || `item ${i + 1}`).slice(0, 300); const f = String(e.favours || '').toUpperCase();
+    const e = e0 && typeof e0 === 'object' ? e0 : {}; const item = String(e.item || `item ${i + 1}`).slice(0, 300); const f = String(e.favors || e.favours || '').toUpperCase();
     const fav = ['A', 'B', 'BOTH', 'NEITHER'].includes(f) ? f : null; const st = String(e.strength || '').toLowerCase(); const strength = W[st] ? st : null; const ind = bool(e.independent), dsc = bool(e.discriminating);
     const key = item.toLowerCase().replace(/\s+/g, ' ').trim();
-    const row = { item, favours: fav || 'INVALID', strength: strength || 'weak (not stated, counted weak)', independent: ind !== false, discriminating: dsc === true, weight: W[strength] || 1 };
-    if (!fav) { row.counted = false; row.note = 'favours must be A, B, BOTH or NEITHER'; }
+    const row = { item, favors: fav || 'INVALID', strength: strength || 'weak (not stated, counted weak)', independent: ind !== false, discriminating: dsc === true, weight: W[strength] || 1 };
+    if (!fav) { row.counted = false; row.note = 'favors must be A, B, BOTH or NEITHER'; }
     else if (seen.has(key)) { row.counted = false; row.note = `duplicate of item ${seen.get(key) + 1}`; dup.push(item); }
     else { seen.set(key, i); row.counted = true; }
     rows.push(row);
   });
   const tally = { A: 0, B: 0, BOTH: 0, NEITHER: 0 }; const chain = {};
-  rows.filter((r) => r.counted).forEach((r) => { if (r.independent) tally[r.favours] += r.weight; else chain[r.favours] = Math.max(chain[r.favours] || 0, r.weight); });
+  rows.filter((r) => r.counted).forEach((r) => { if (r.independent) tally[r.favors] += r.weight; else chain[r.favors] = Math.max(chain[r.favors] || 0, r.weight); });
   Object.entries(chain).forEach(([k, w]) => { tally[k] += w; });
   const dependent = rows.filter((r) => r.counted && !r.independent).map((r) => r.item);
-  const counted = rows.filter((r) => r.counted && r.favours !== 'INVALID');
-  const marked = counted.filter((r) => r.discriminating && (r.favours === 'A' || r.favours === 'B')); const disc = counted.filter((r) => r.favours === 'A' || r.favours === 'B'); const strongest = (f) => disc.filter((r) => r.favours === f).sort((x, y) => y.weight - x.weight)[0];
+  const counted = rows.filter((r) => r.counted && r.favors !== 'INVALID');
+  const marked = counted.filter((r) => r.discriminating && (r.favors === 'A' || r.favors === 'B')); const disc = counted.filter((r) => r.favors === 'A' || r.favors === 'B'); const strongest = (f) => disc.filter((r) => r.favors === f).sort((x, y) => y.weight - x.weight)[0];
   let state, why;
   const m = Math.max(tally.A, tally.B, tally.BOTH, tally.NEITHER);
   if (!counted.length) { state = 'OPEN'; why = 'no usable evidence'; }
@@ -306,6 +306,6 @@ export const TOOLS_STATS = [
     required: ['controls'], openWorld: false, run: guard(async (a) => controlsCheck(a)) },
   { name: 'two_explanations', title: 'Two explanations ledger',
     description: 'Tallies an evidence ledger for two named explanations. Items are weighted by stated strength, duplicates are flagged and counted once, and items marked not independent count as one chain. Returns A, B, BOTH, NEITHER or OPEN by a stated rule; A or B needs at least one item the caller marks discriminating: true. Lists the strongest item on each side and the caller-marked discriminating items. Counts what the caller marked; it does not judge the evidence.',
-    params: { a: { type: 'string', description: 'Explanation A as a plain claim.' }, b: { type: 'string', description: 'Explanation B as a plain claim.' }, evidence: { type: 'array', items: OBJ, description: 'Objects {item, favours: A|B|BOTH|NEITHER, strength?: weak|moderate|strong, independent?: boolean, discriminating?: boolean}.' } },
+    params: { a: { type: 'string', description: 'Explanation A as a plain claim.' }, b: { type: 'string', description: 'Explanation B as a plain claim.' }, evidence: { type: 'array', items: OBJ, description: 'Objects {item, favors: A|B|BOTH|NEITHER, strength?: weak|moderate|strong, independent?: boolean, discriminating?: boolean}.' } },
     required: ['a', 'b', 'evidence'], openWorld: false, run: guard(async (a) => twoExplanations(a)) },
 ];

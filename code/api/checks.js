@@ -111,8 +111,8 @@ export async function packageCheck(args) {
     else { for (const f of ['LICENSE', 'LICENSE.md', 'LICENSE.txt', 'COPYING', 'LICENSE.rst']) { const tx = await t(`https://raw.githubusercontent.com/${repo[0]}/${repo[1]}/HEAD/${f}`); if (tx) { repoFam = famText(tx); file = f; break; } }
       if (!repoFam) why = 'GitHub did not answer and no license file was found'; }
   }
-  if (!why && famPkg(repoFam) === 'OTHER') why = 'the repository license (' + repoFam + ') is not one of the recognised families';
-  if (!why && [...famset(parts)].every(f => f === 'OTHER')) why = 'the stated license is not one of the recognised families';
+  if (!why && famPkg(repoFam) === 'OTHER') why = 'the repository license (' + repoFam + ') is not one of the recognized families';
+  if (!why && [...famset(parts)].every(f => f === 'OTHER')) why = 'the stated license is not one of the recognized families';
   const cls = why ? 'NOT_COMPARABLE' : comparePkg(famset(parts), famset([repoFam]));
   out.checks.push({ check: 'Stated license against the repository license', outcome: cls, stated: parts, repository: repo ? `https://github.com/${repo[0]}/${repo[1]}` : null, repository_license: repoFam, license_file: file,
     ...(why ? { reason: why } : {}), note: 'Licenses are compared by family (MIT, Apache-2.0, BSD, GPL versions and so on), the rules of the PKGLICENSE desk. The repository license comes from the GitHub API. When GitHub reports no assertion or refuses (it allows 60 unauthenticated requests an hour, shared across many callers), the license file at the default branch is read instead. A repository with several license files can read DISAGREE when the package states one of them.' });
@@ -139,9 +139,9 @@ export async function modelCheck(args) {
   const lf = (m.siblings || []).map(x => x.rfilename).filter(f => !f.includes('/')).find(LICENSE_FILE) || null;
   let fileFam = null, lwhy = null;
   if (!tag) lwhy = 'no license on the card';
-  else if (tagFam === 'OTHER') lwhy = 'the card names a custom or unrecognised license (' + tag + ')';
+  else if (tagFam === 'OTHER') lwhy = 'the card names a custom or unrecognized license (' + tag + ')';
   else if (!lf) lwhy = 'no license file in the repository root';
-  else { const tx = await t(`https://huggingface.co/${m.id || raw}/resolve/${m.sha || 'main'}/${lf}`); if (!tx) lwhy = 'license file not readable'; else { fileFam = famText(tx); if (fileFam === 'OTHER') lwhy = 'the license file is not one of the recognised families'; } }
+  else { const tx = await t(`https://huggingface.co/${m.id || raw}/resolve/${m.sha || 'main'}/${lf}`); if (!tx) lwhy = 'license file not readable'; else { fileFam = famText(tx); if (fileFam === 'OTHER') lwhy = 'the license file is not one of the recognized families'; } }
   out.checks.push({ check: 'Card license against the license file', outcome: lwhy ? 'NOT_COMPARABLE' : compareFam(tagFam, fileFam), card_license: tag, card_family: tagFam, license_file: lf, file_family: fileFam, ...(lwhy ? { reason: lwhy } : {}),
     note: 'Compared by family, the rules of the HFLICENSE desk.' });
   out.reading = 'AGREE and DISAGREE compare two published statements about the same model. NOT_COMPARABLE gives the reason.';

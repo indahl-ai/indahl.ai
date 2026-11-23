@@ -10,7 +10,7 @@ def build():
         e = json.loads(l); e['n'] = len(out) + 1; e['prev'] = prev; e['hash'] = hashlib.sha256(canon(e)).hexdigest(); prev = e['hash']; out.append(e)
     c = dict(updated=D.datetime.now(D.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), head=prev, count=len(out), entries=out,
              how_to_verify='python3 verify.py chain.json (in the public repository, code/qia-offchain) recomputes every hash from the first entry.')
-    _t = os.path.join(H, 'chain.json.tmp'); json.dump(c, open(_t, 'w'), indent=1, ensure_ascii=False); os.replace(_t, os.path.join(H, 'chain.json')); summary(c); return c   # 12 Nov: atomic, a reader mid-write crashed a cal append and left the feed stale
+    _t = os.path.join(H, 'chain.json.tmp'); json.dump(c, open(_t, 'w'), separators=(',', ':'), ensure_ascii=False); os.replace(_t, os.path.join(H, 'chain.json')); summary(c); return c   # 12 Nov: atomic, a reader mid-write crashed a cal append and left the feed stale
 def summary(c):
     # 16 Nov 2026 (teardown #12): the page loads this first; the full chain (off-record readings of every hourly run) loads only for a job check.
     def slim(e):

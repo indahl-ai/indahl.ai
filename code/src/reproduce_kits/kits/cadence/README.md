@@ -10,14 +10,14 @@ This kit recomputes the CADENCE headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `7933c886d1748f0ad7e5f37935dc478a35e9b3f2690469f8c5649601781b0aa3`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `ee1adc9c3a4a165bd6c9f038853295b4484f563b67f6b0d6ab6b78a16cab30b0`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/cadence/live.json served it at the feed stamp 22 Nov 15:37, read by us at 2026-11-22T16:02:43Z. The feed bytes had sha256 `6cbd73c09d7e59dd96b2a2962a2c6b459c71ddaca382d9f4fcf50925f7873b83`.
+The headline as the live feed https://indahl.ai/cadence/live.json served it at the feed stamp 23 Nov 03:12, read by us at 2026-11-23T03:14:49Z. The feed bytes had sha256 `84a55cb9eb96679acbd1be77fa231e8382c06ff69555aec8ed26c5eb40ad3d58`.
 
-- number: 638 of 1,243
-- value: 638
+- number: 639 of 1,243
+- value: 639
 - outcome: none, this headline carries no outcome label
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -37,8 +37,8 @@ As the CADENCE data pack lists them. Credit each source when using its values.
 | File | Bytes | sha256 |
 |---|---|---|
 | data/portal_bls.json | 828 | `617c4b3cb75777fdc26a115251d21f61c4f12c4e526e168a7884dea7463bf4f9` |
-| data/portal_cdc.json | 125,373 | `c6ea72b9e84cbfe96ce6a905914017c8c5ddcbd23ee111bca1b23b42d1ab0acd` |
-| data/portal_cms.json | 2,277,890 | `c1c921134320c38db170991b1635e954a5d01102c63c172b4c3737bf7239aa17` |
+| data/portal_cdc.json | 125,372 | `6b9cb884dc297059db1df237ba47f3e69e139f802b3f11c708ff56532de1b3ac` |
+| data/portal_cms.json | 2,277,889 | `b88d38352ca1581f6be33a2f0dbcd8f5bcfe87b2cd6b9c5afc1224e16d2cd3f7` |
 | data/portal_energy.json | 98,897 | `ab3f0eaa30ba8ed4140514fb15cecf9db8eba5d433430a8ef922b56a3da0ab37` |
 | data/portal_healthcare_gov.json | 39,053 | `2d386712625cf69afc094caba8695021ef9d721d2a372132d3769764fd23c8f7` |
 | data/portal_healthdata_gov.json | 449,075 | `e52bec7ec45f388a0fccbf83ce57b416df91f26747afad2f833bc16e3c37abc8` |

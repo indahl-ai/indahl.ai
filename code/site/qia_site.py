@@ -101,7 +101,7 @@ figure.fig figcaption{font-size:12.5px;color:var(--mute);margin-top:8px;line-hei
 
 MARK = '<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,10.1 96,89.9 4,89.9" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><polygon points="50,89.9 72.5,40.6 27.5,40.6" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><circle cx="50" cy="57" r="4" fill="currentColor"/></svg>'
 
-NAV = [('/', 'Overview'), ('/examples', 'Examples'), ('/findings', 'Findings'), ('/calibrations', 'Calibrations'), ('/services', 'Services')]   # 22 Nov 2026: Method page removed
+NAV = [('/', 'Overview'), ('/findings', 'Findings'), ('/calibrations', 'Calibrations'), ('/services', 'Services')]   # 22 Nov 2026: Method page removed
 
 
 def page(path, title, desc, body):
@@ -366,7 +366,7 @@ PAGES = {
     '/calibrations': ('Calibrations | Quantum Idle Audit', 'Corrections applied on IBM hardware against an uncorrected reference: what each returns, its cost and status.', CALIBS),
     '/services': ('Services | Quantum Idle Audit', 'Full audits of research papers and monitoring of quantum hardware, scoped under a statement of work after a mutual NDA.', SERVICES),
     # '/method' removed 22 Nov 2026 (the owner): the Method page is off the site; it answers 404
-    '/examples': ('Examples | Quantum Idle Audit', 'Worked examples of a Quantum Idle Audit check by the work you do, with real runs on IBM processors and the outcome printed first.', EXAMPLES),
+    # '/examples' folded into Overview 23 Nov 2026 (the owner); was: '/examples': ('Examples | Quantum Idle Audit', 'Worked examples of a Quantum Idle Audit check by the work you do, with real runs on IBM processors and the outcome printed first.', EXAMPLES),
     # '/corrections' archived 19 Nov 2026 (the owner): back with a reliable private update pipeline (~/forge/archive/qia_corrections_page_20261119)
     # '/listed' archived 19 Nov 2026 (the owner): study listings live on indahl.ai, not the business site
 }

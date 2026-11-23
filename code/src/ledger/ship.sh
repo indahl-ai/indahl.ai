@@ -41,7 +41,10 @@ export SHIP_RUN=1   # 21 Nov 2026: builders run outside a ship refuse while one 
 # 23 Nov 2026 (house review: each ship repeated the 6-minute build and gates its preflight had just run). A clean preflight records a
 # fingerprint of every source repo (HEAD + uncommitted changes). A real ship that starts within 20 minutes with the SAME fingerprint reuses
 # that build and those gates and goes straight to DEPLOY. Any change in between, even one file, means a full build as before. One use only.
-srcfp() { { for r in "$B/indahl-ai" "$B/calibrations" "$B/heuremen.org" "$L" "$B/faultsguards"; do git -C "$r" rev-parse HEAD 2>/dev/null || true; git -C "$r" status --porcelain 2>/dev/null || true; done; git --git-dir="$HOME/.house-ops.git" --work-tree="$B" status --porcelain 2>/dev/null || true; } | shasum | cut -c1-16; }
+# Fingerprint = every source repo's HEAD + its uncommitted CODE files (scripts, templates, styles). Data files the riders rewrite every few
+# minutes are left out on purpose: they changed between preflight and ship every time, so the first version never matched (tested 23 Nov:
+# this one held steady through two minutes of running jobs). A ship that reuses therefore deploys the data as of its preflight, minutes old.
+srcfp() { { for r in "$B/indahl-ai" "$B/calibrations" "$B/heuremen.org" "$L" "$B/faultsguards"; do git -C "$r" rev-parse HEAD 2>/dev/null || true; git -C "$r" status --porcelain 2>/dev/null | grep -E '\.(py|sh|js|mjs|css|toml|tex)$|/[^/]*\.html$' | grep -v -E '(^|/)(data|public|studies|_studies|out|runs|records)/|pages\.js$' || true; done; git --git-dir="$HOME/.house-ops.git" --work-tree="$B" status --porcelain 2>/dev/null | grep -E '\.(py|sh|js|mjs|css|toml)$' || true; } | shasum | cut -c1-16; }
 REUSE=0; PF="$L/.preflight_ok"
 if [ $CHECK = 0 ] && [ -f "$PF" ]; then read -r pfp pts < "$PF" || true; if [ "${pfp:-x}" = "$(srcfp)" ] && [ $(( $(date +%s) - ${pts:-0} )) -lt 1200 ]; then REUSE=1; echo "== $(date +%H:%M:%S) 1-3 REUSED: the preflight of $(date -r "${pts:-0}" +%H:%M:%S) built and gated these exact sources"; fi; fi
 rm -f "$PF"

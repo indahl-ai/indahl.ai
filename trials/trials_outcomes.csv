@@ -1,7 +1,7 @@
 path,label,outcome,n,of,share,lo,hi,posted,no_results,in_review,share_no_results,reason,sponsors,defined,completed_after,scored,share_lo,share_hi,largest_sponsor_n
 /all,all,ABOVE,22305,,0.2152,0.2098,0.2206,17506,4799,0,0.2152,,,,,,,,
 /all/sponsor_clustered,sponsor_clustered,,,,,0.1954,0.2349,,,,,,5266,"2026-11-10, after the data",,,,,
-/lag_zone,lag_zone,ABOVE,311,,0.6141,0.559,0.6665,120,191,0,0.6141,,,,2025-08-22,False,,,
+/lag_zone,lag_zone,ABOVE,311,,0.6141,0.559,0.6665,120,191,0,0.6141,,,,2025-08-23,False,,,
 /by_class/FED,FED,ABOVE,239,,0.2301,0.1813,0.2875,184,55,0,0.2301,,51,,,,,,
 /by_class/INDIV,INDIV,ABOVE,24,,0.4583,0.2789,0.6493,13,11,0,0.4583,,18,,,,,,
 /by_class/INDUSTRY,INDUSTRY,ABOVE,11206,,0.2168,0.2093,0.2246,8776,2430,0,0.2168,,2926,,,,,,

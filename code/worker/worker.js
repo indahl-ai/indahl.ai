@@ -331,7 +331,7 @@ async function handle(req, env) {
       return new Response(r.body, { status: r.status, headers: { "content-type": "image/png", "cache-control": "public, max-age=86400", "x-content-type-options": "nosniff" } });
     }
     if ((host === "indahl.ai" || host === "www.indahl.ai") && u.pathname === "/desks.js" && env.ASSETS) return env.ASSETS.fetch(req);
-    if ((host === "indahl.ai" || host === "www.indahl.ai") && env.ASSETS && ["/manifest.webmanifest", "/sw.js", "/pwa.js", "/live-tags.js", "/headline.js", "/nav.js", "/share.js", "/try.js", "/chronos.js", "/carry_result.js", "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png"].includes(u.pathname)) {
+    if ((host === "indahl.ai" || host === "www.indahl.ai") && env.ASSETS && ["/manifest.webmanifest", "/sw.js", "/pwa.js", "/live-tags.js", "/headline.js", "/nav.js", "/ares-map.js", "/share.js", "/try.js", "/chronos.js", "/carry_result.js", "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png"].includes(u.pathname)) {
       const a = await env.ASSETS.fetch(req);
       const h = new Headers(a.headers);
       h.set("cache-control", u.pathname === "/sw.js" || (u.pathname === "/live-tags.js" || u.pathname === "/headline.js") && !u.searchParams.has("v") ? "no-cache" : u.pathname === "/live-tags.js" || u.pathname === "/headline.js" ? "public, max-age=31536000, immutable" : "public, max-age=86400");

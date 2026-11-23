@@ -43,12 +43,9 @@ MAP = ('<div class="aresmap"><p><label for="ares-month">Month</label> <select id
        '<p class="bench-note">Solid dot: both trackers agree. Hollow dot: one tracker only. Dot area follows active days, from none to every day of the month. '
        'Hover a dot for the province as the source spells it, the month, which trackers, and the active days. No borders or country fills are drawn.</p></div>'
        % (''.join('<option value="%d"%s>%s</option>' % (i, ' selected' if i == len(F['months']) - 1 else '', e(mname(m))) for i, m in enumerate(F['months'])), W, HT, W, HT))
-SCRIPT = '''<script type="application/json" id="ares-data">%s</script>
-<script>(function(){var D=JSON.parse(document.getElementById('ares-data').textContent),g=document.getElementById('ares-dots'),s=document.getElementById('ares-month'),N='http://www.w3.org/2000/svg';
-function draw(m){while(g.firstChild)g.removeChild(g.firstChild);D.dots.forEach(function(d){if(d[2]!=m)return;var c=document.createElementNS(N,'circle');c.setAttribute('cx',d[0]);c.setAttribute('cy',d[1]);
-c.setAttribute('r',(2+2.2*Math.sqrt(d[4])).toFixed(1));if(d[3]==0){c.setAttribute('fill','#3b5b7a');c.setAttribute('fill-opacity','0.75');c.setAttribute('stroke','none');}else{c.setAttribute('fill','none');c.setAttribute('stroke','#3b5b7a');c.setAttribute('stroke-width','1.2');}
-var t=document.createElementNS(N,'title');t.textContent=d[5]+', '+D.months[d[2]]+', '+D.kinds[d[3]]+', active days '+d[4];c.appendChild(t);g.appendChild(c);});}
-s.addEventListener('change',function(){draw(+s.value);});draw(+s.value);})();</script>''' % MAPDATA.replace('</', '<\\/')
+SCRIPT = ('<script type="application/json" id="ares-data">%s</script>\n<script src="/ares-map.js"></script>' % MAPDATA.replace('</', '<\\/'))   # 22 Nov 2026: the site CSP (default-src 'self') blocks inline scripts; the map never drew
+open(os.path.expanduser('~/forge/cloudflare-workers/heuremen-door/public/ares-map.js'), 'w').write("(function(){var D=JSON.parse(document.getElementById('ares-data').textContent),g=document.getElementById('ares-dots'),s=document.getElementById('ares-month'),N='http://www.w3.org/2000/svg';\nfunction draw(m){while(g.firstChild)g.removeChild(g.firstChild);D.dots.forEach(function(d){if(d[2]!=m)return;var c=document.createElementNS(N,'circle');c.setAttribute('cx',d[0]);c.setAttribute('cy',d[1]);\nc.setAttribute('r',(2+2.2*Math.sqrt(d[4])).toFixed(1));if(d[3]==0){c.setAttribute('fill','#3b5b7a');c.setAttribute('fill-opacity','0.75');c.setAttribute('stroke','none');}else{c.setAttribute('fill','none');c.setAttribute('stroke','#3b5b7a');c.setAttribute('stroke-width','1.2');}\nvar t=document.createElementNS(N,'title');t.textContent=d[5]+', '+D.months[d[2]]+', '+D.kinds[d[3]]+', active days '+d[4];c.appendChild(t);g.appendChild(c);});}\ns.addEventListener('change',function(){draw(+s.value);});draw(+s.value);})();")
+
 
 def month_rows():
     out = []

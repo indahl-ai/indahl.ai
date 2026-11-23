@@ -1,0 +1,5 @@
+(function(){var D=JSON.parse(document.getElementById('ares-data').textContent),g=document.getElementById('ares-dots'),s=document.getElementById('ares-month'),N='http://www.w3.org/2000/svg';
+function draw(m){while(g.firstChild)g.removeChild(g.firstChild);D.dots.forEach(function(d){if(d[2]!=m)return;var c=document.createElementNS(N,'circle');c.setAttribute('cx',d[0]);c.setAttribute('cy',d[1]);
+c.setAttribute('r',(2+2.2*Math.sqrt(d[4])).toFixed(1));if(d[3]==0){c.setAttribute('fill','#3b5b7a');c.setAttribute('fill-opacity','0.75');c.setAttribute('stroke','none');}else{c.setAttribute('fill','none');c.setAttribute('stroke','#3b5b7a');c.setAttribute('stroke-width','1.2');}
+var t=document.createElementNS(N,'title');t.textContent=d[5]+', '+D.months[d[2]]+', '+D.kinds[d[3]]+', active days '+d[4];c.appendChild(t);g.appendChild(c);});}
+s.addEventListener('change',function(){draw(+s.value);});draw(+s.value);})();

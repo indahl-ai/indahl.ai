@@ -4,7 +4,7 @@ Heuremen LLC · https://indahl.ai/darkwave
 
 This kit measures the phase turn on untouched qubits after a mid-circuit readout, on your own IBM Quantum account,
 one value per untouched qubit in degrees per readout, and adds the matching virtual-Z correction to your own circuits. The method is the
-one in our study "A Readout's Kick Is a Turn" (data and code: https://doi.org/10.5281/zenodo.23843468). The kit names no mechanism for the turn.
+one in our study "A Readout's Kick Is a Turn" (data and code: https://doi.org/10.5281/zenodo.23843468).
 
 ## Install
 
@@ -39,11 +39,6 @@ We tested the kit on ibm_kingston on 2 November 2026 under plans committed and p
 Brackets are 95 % bootstrap bands over the target qubits. Every number was recomputed from the raw arrays with separate code. Both runs, with their plans, raw data and code, are in `hardware-check/` and at
 https://github.com/indahl-ai/indahl.ai/tree/main/code/darkwave-kit/hardware-check
 
-Version 1.1.1 (13 November 2026), this one, is version 1.1 with three changes and the same measurement and correction code: a target
-whose idle coherence is exactly 0 no longer crashes the printout after the job has run (its coherence prints as n/a); a paid submit
-(`measure --yes`) runs only from a terminal you type in yourself, never from a script or an assistant's shell; and the opening line now
-says what the kit measures, the phase turn on untouched qubits after a mid-circuit readout, without naming a cause. The hardware results
-above were made with version 1.1.
 
 ## 2. Measure your table
 

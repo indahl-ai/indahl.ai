@@ -13,6 +13,12 @@ CHIPS = ('ibm_kingston', 'ibm_marrakesh'); FLOOR = 60; FROM_HOUR = 12; LATE_HOUR
 if not os.path.exists(os.path.join(CLOCK, 'DAILY_ON')) or not os.path.exists(os.path.join(H, 'TABLE_ON')): print('table daily: off (no DAILY_ON or no TABLE_ON)'); sys.exit(0)
 now = dt.datetime.fromisoformat(os.environ['DWD_NOW']) if os.environ.get('DWD_NOW') else dt.datetime.now(dt.timezone.utc); day = now.strftime('%Y%m%d')
 def running(pattern): return bool(subprocess.run(['pgrep', '-f', pattern], capture_output=True, text=True).stdout.split())
+NAME = 'table'
+def ring(chip, why):   # 23 Nov 2026: a stalled daily fire rings once per chip per day (the 18-23 Nov stall only printed to a log nobody read)
+    m = os.path.join(H, f'rang_{day}_{chip}')
+    if os.path.exists(m): return
+    open(m, 'w').write(now.isoformat() + ' ' + why + '\n'); sys.path.insert(0, os.path.expanduser('~/forge/lib')); import ibm_pick
+    ibm_pick.ring(f'DARKWAVE DAILY STOPPED: {NAME} {chip}: {why}')
 for chip in CHIPS:
     mark = os.path.join(H, f'fired_{day}_{chip}')
     if os.path.exists(mark) or glob.glob(os.path.join(H, f'day_{day}_*_{chip}')): continue
@@ -21,9 +27,10 @@ for chip in CHIPS:
     if not os.path.exists(os.path.join(CLOCK, f'fired_{day}_{chip}')) and now.hour < LATE_HOUR: continue
     dry = subprocess.run([PY, '-I', os.path.join(H, 'daily_table.py'), chip], capture_output=True, text=True, cwd=H).stdout
     m = re.search(r'checks PASS.*remaining (\d+)', dry)
-    if not m: print('table daily:', chip, 'dry run did not pass, no fire today'); open(mark, 'w').write('dry run did not pass\n' + dry[-2000:]); continue
-    if int(m.group(1)) < FLOOR: print('table daily:', chip, 'only', m.group(1), 's left, no fire'); continue
-    open(mark, 'w').write(now.isoformat() + ' launched, ' + m.group(1) + ' s left at the dry run\n')
+    if not m: print('table daily:', chip, 'dry run did not pass, no fire today'); open(mark, 'w').write('dry run did not pass\n' + dry[-2000:]); ring(chip, 'dry run did not pass'); continue
+    inst = (re.search(r'instance: (.+?) \(', dry) or [None, '?'])[1]
+    if int(m.group(1)) < FLOOR: print('table daily:', chip, 'only', m.group(1), 's left on', inst, '(best of every instance), no fire'); ring(chip, f'only {m.group(1)} s left on the best instance ({inst}), floor {FLOOR}'); continue
+    open(mark, 'w').write(now.isoformat() + ' launched, ' + m.group(1) + ' s left at the dry run on ' + inst + '\n')
     subprocess.Popen([PY, '-I', os.path.join(H, 'daily_table.py'), chip, '--fire'], cwd=H, start_new_session=True,
                      stdout=open(os.path.join(H, f'fire_{day}_{chip}.log'), 'a'), stderr=subprocess.STDOUT)
     print('table daily: fired', chip, 'for', day)

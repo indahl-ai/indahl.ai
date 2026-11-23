@@ -112,7 +112,7 @@ def run(chip, fire, svc, b, make_sampler=default_sampler, out_root=H, public=Non
     except Exception as ex: print('properties not saved:', type(ex).__name__, flush=True)
     rec = dict(chip=chip, E=E, S=S, L_dt=L_dt, readout_pack_source_job=T.get('source_job'), shots=shots, seed_transpiler=SEED, dd='off', twirling='off',
                kit_file_sha256=sha_file(os.path.join(KIT_SRC, 'darkwave_kit.py')), keys=[list(map(str, k)) for k in keys], durations_dt=dur,
-               remaining_seconds_at_start=rem, floor=floor, planned_utc=iso(t0), jobs=[{'label': 'table', 'status': 'PLANNED'}])
+               remaining_seconds_at_start=rem, floor=floor, instance=getattr(svc, 'dw_instance', None), planned_utc=iso(t0), jobs=[{'label': 'table', 'status': 'PLANNED'}])
     rp = os.path.join(out, 'job_daily_table.json'); write_json(rp, rec)   # the record, before the job
     job = make_sampler(b).run([(c, None, shots) for c in circs]); sub = iso(utcnow()); jid = job.job_id()
     print(f'SUBMITTED table job {jid} {sub}', flush=True); rec['jobs'][0].update(job_id=jid, submitted_utc=sub, status='SUBMITTED'); write_json(rp, rec)
@@ -143,7 +143,6 @@ def run(chip, fire, svc, b, make_sampler=default_sampler, out_root=H, public=Non
     return dict(code=0, out=out, kit_table=kp, remaining=rem)
 def main(argv):
     if len(argv) < 2 or argv[1] not in CHIPS: sys.exit('usage: daily_table.py ibm_kingston|ibm_marrakesh [--fire]')
-    sys.path.insert(0, SWEEP)
-    from sweep import service
-    s = service(); r = run(argv[1], '--fire' in argv, s, s.backend(argv[1])); sys.exit(r['code'])
+    sys.path.insert(0, os.path.join(ROOT, 'lib')); import ibm_pick   # 23 Nov 2026: open (free) instances first, then paid Darkwave Disco, then Quaker (the owner 10 Nov)
+    s = ibm_pick.service(argv[1], floor=FLOOR); r = run(argv[1], '--fire' in argv, s, s.backend(argv[1])); sys.exit(r['code'])
 if __name__ == '__main__': main(sys.argv)

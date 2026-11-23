@@ -5,7 +5,7 @@ T = os.path.dirname(os.path.abspath(__file__)); H = os.path.dirname(T); FAIL = [
 def check(n, c, d=''):
     print(('ok    ' if c else 'FAIL  ') + n + (' ' + d if d else '')); 
     if not c: FAIL.append(n)
-tmp = tempfile.mkdtemp(prefix='dwd_rider_'); clock = os.path.join(tmp, 'clock'); os.makedirs(clock); work = os.path.join(tmp, 'w'); os.makedirs(work)
+tmp = tempfile.mkdtemp(prefix='dwd_rider_'); RING = os.path.join(tmp, 'pipe.log'); os.environ['IBM_PICK_RING_LOG'] = RING; clock = os.path.join(tmp, 'clock'); os.makedirs(clock); work = os.path.join(tmp, 'w'); os.makedirs(work)
 shutil.copy(os.path.join(H, 'table_daily.py'), work)
 open(os.path.join(work, 'daily_table.py'), 'w').write('''import sys, os, json
 chip = sys.argv[1]; rem = int(os.environ.get("STUB_REM", "1500"))
@@ -35,6 +35,8 @@ out = rider(19); check('fires marrakesh from 18:00 UTC without a clock marker', 
 wait(os.path.join(work, 'day_20261102_1300_ibm_marrakesh', 'kick_table_x.json')); os.remove(os.path.join(work, 'fired_20261102_ibm_marrakesh')); shutil.rmtree(os.path.join(work, 'day_20261102_1300_ibm_marrakesh'))
 shutil.rmtree(os.path.join(work, 'day_20261102_1300_ibm_kingston')); os.remove(os.path.join(work, 'fired_20261102_ibm_kingston'))
 out = rider(19, {'STUB_REM': '59'}); check('no fire below the 60 s floor', 'only 59 s left' in out and not os.path.exists(os.path.join(work, 'fired_20261102_ibm_kingston')), out)
+check('rings once below the floor', os.path.exists(RING) and open(RING).read().count('RING: DARKWAVE DAILY STOPPED: table ibm_kingston') == 1, open(RING).read() if os.path.exists(RING) else 'no ring')
+rider(19, {'STUB_REM': '59'}); check('no second ring the same day', open(RING).read().count('RING: DARKWAVE DAILY STOPPED: table ibm_kingston') == 1)
 check('no push without PUSH_ON', not os.path.exists(os.path.join(work, 'push_ran')))
 os.makedirs(os.path.join(work, 'day_20261102_1300_ibm_kingston')); json.dump({'jobs': [{'status': 'DONE'}]}, open(os.path.join(work, 'day_20261102_1300_ibm_kingston', 'job_daily_table.json'), 'w')); open(os.path.join(work, 'day_20261102_1300_ibm_kingston', 'kick_table_x.json'), 'w').write('{}')
 open(os.path.join(work, 'PUSH_ON'), 'w').write('x'); out = rider(20, {'STUB_REM': '59'}); check('push runs once with PUSH_ON', 'published 1' in out and open(os.path.join(work, 'push_ran')).read() == 'x', out)

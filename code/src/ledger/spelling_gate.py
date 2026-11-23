@@ -56,6 +56,9 @@ for u, w, a in hits: seen.setdefault((u, w.lower(), a), 0); seen[(u, w.lower(), 
 # BASELINE (allowed): occurrences already reviewed and kept on purpose: proper nouns (a UK school's own name, "Ofsted judgement", a
 # programme's official title) and vendor text we quote. `--baseline` writes the current set after a fix pass; the gate then refuses only
 # what is NOT in it: a new British spelling, or more of one on a page than the baseline allows.
+# 23 Nov 2026 (owner: the Standard shown as written, never paraphrased): indahl.ai/standard and quantumidleaudit.com/standard print the stamped
+# STANDARD.md verbatim. Its section 11 keeps the published spelling of fault and guard names (GRD-02 summarised, GRD-21 behaviour, GRD-36 catalogue)
+# and its change log quotes the old FLT-23 wording (labelled). One each per page is in the baseline. Any other British word on those pages is refused.
 BL = os.path.join(B, 'ledger', 'spelling_baseline.json')
 import json as _j
 if '--baseline' in sys.argv:

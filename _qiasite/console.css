@@ -284,3 +284,26 @@ body.qia{margin:0}
 .qia-carry[hidden],.qia-carry [hidden]{display:none}
 .qia-carry .qia-cap{margin-top:var(--qia-s2)}
 .qia-carry input{font-family:var(--qia-mono)}
+/* 23 Nov 2026: check a qubit live (overview) */
+.qia-qubit{display:block}
+.qia-qubit__row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.qia-qubit__row input{flex:1;min-width:220px;padding:10px 12px;font:inherit;background:transparent;color:inherit;border:1px solid currentColor;border-radius:6px}
+#qubit-out{margin-top:14px}
+.qia-qubit-text p{margin:0 0 10px;overflow-wrap:anywhere;font-size:.95rem;line-height:1.5}
+/* 23 Nov 2026: /standard, the Heuremen Standard rendered from STANDARD.md at build time (indahl-ai/standard_md.py) */
+.qia-std__toc{margin-top:var(--qia-s5);padding:var(--qia-s3) var(--qia-s4);background:var(--qia-panel);border:1px solid var(--qia-line);border-radius:var(--qia-r2);max-width:64ch}
+.qia-std__toc ol{margin:var(--qia-s2) 0 0;padding-left:22px;columns:2;column-gap:var(--qia-s6)}
+.qia-std__toc li{margin:0 0 4px;break-inside:avoid}
+.qia-std__toc a{color:var(--qia-text);text-underline-offset:3px}
+.qia-std__toc a:hover{color:var(--qia-gold)}
+.qia-std{max-width:78ch}
+.qia-std h2{font:700 clamp(22px,2.4vw,26px)/1.2 var(--qia-sans);letter-spacing:-.01em;margin:var(--qia-s7) 0 var(--qia-s3);padding-top:var(--qia-s5);border-top:1px solid var(--qia-line);scroll-margin-top:16px}
+.qia-std h3{font:700 18px/1.25 var(--qia-sans);margin:var(--qia-s5) 0 var(--qia-s2);color:var(--qia-gold);scroll-margin-top:16px}
+.qia .qia-std p{margin:0 0 var(--qia-s3)}
+.qia-std ul,.qia-std ol{margin:0 0 var(--qia-s3);padding-left:22px}
+.qia-std li{margin:0 0 6px}
+.qia-std b{color:var(--qia-text);font-weight:600}
+.qia-std a{color:var(--qia-gold);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;overflow-wrap:anywhere}
+.qia .qia-std p.qia-std__entry{padding-left:var(--qia-s3);border-left:2px solid var(--qia-line);scroll-margin-top:16px}
+.qia-std :target{border-left-color:var(--qia-gold);background:var(--qia-panel)}
+@media (max-width:600px){.qia-std__toc ol{columns:1}}

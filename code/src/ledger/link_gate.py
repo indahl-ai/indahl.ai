@@ -33,8 +33,11 @@ ALLOW_DYNAMIC = {   # 'host/prefix': reason. URLs a served script builds at run 
 }
 # ---- the worker's routes ----------------------------------------------------------------------------------------------
 W = open(os.path.join(CW, 'worker.js'), encoding='utf-8').read()
-qs_start = W.index('if (host === "quantumidleaudit.com"'); qs_end = W.index('if (u.pathname.startsWith("/_qiasite"))')
-QBLOCK, IBLOCK = W[qs_start:qs_end], W[qs_end:]
+qs_end = W.index('if (u.pathname.startsWith("/_qiasite"))')
+IBLOCK = W[qs_end:]
+# 23 Nov 2026 (the cause of the /qubit and /qubit.js refusals): since the 22 Nov QIA split quantumidleaudit.com is served by its own worker,
+# cloudflare-workers/qia-site/worker.js, so its routes are read from there, not from the old quantumidleaudit.com branch of heuremen-door.
+QBLOCK = open(os.path.join(B, 'cloudflare-workers', 'qia-site', 'worker.js'), encoding='utf-8').read()
 REGEX_LIT = re.compile(r'(?<![\w)\]])/(\^(?:\\/|\\.|[^/\n])+)/[gimsuy]*')
 def js_regex(src):
     s = src.replace('\\/', '/')
@@ -91,8 +94,11 @@ def indahl_ok(p):
     return False
 QS = dict(re.findall(r'"(/[^"]*)":\s*"(/[^"]*)"', re.search(r'const QS = \{([^}]*)\}', QBLOCK).group(1)))
 QRX = [js_regex(m.group(1)) for m in REGEX_LIT.finditer(QBLOCK) if '.test(p)' in QBLOCK[m.end():m.end() + 10]]
+QRX += [js_regex(m.group(2)) for m in re.finditer(r'const (\w+) = /(\^(?:\\/|\\.|[^/\n])+)/[gimsuy]*;', QBLOCK) if '%s.test(p)' % m.group(1) in QBLOCK]   # a named regex (const DATA = /^.../; DATA.test(p))
+QSELF = {m.group(1) for m in re.finditer(r'if \(p === "(/[^"]*)"[^\n]*', QBLOCK) if 'status: 404' not in m.group(0)}   # paths the QIA worker answers itself (the /qubit forward), never a 404 stub
 def qia_ok(p):
     q = p if re.search(r'\.(jpg|svg|txt|xml|pdf)$', p) else (re.sub(r'/+$', '', re.sub(r'\.html$', '', p)) or '/')
+    if q in QSELF: return True
     if q in QS: return q == '/' or pub(QS[q]) or pub(QS[q] + '.html')
     for rx in QRX:
         if rx and rx.search(q):

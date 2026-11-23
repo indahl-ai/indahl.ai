@@ -5,6 +5,9 @@
 set -uo pipefail
 B=~/forge; L=$B/ledger; MSG="${1:-site update}"; PIPE=$B/sagar/pipeline/pipe.log
 [ -z "${PP_LOCKED:-}" ] && exec env PP_LOCKED=1 /usr/bin/lockf -k "$L/.public_push.lock" bash "$0" "$@"   # one public push at a time
+# 23 Nov 2026 (review #7): also under the site lock, so it never copies pages while the next ship's builders are rewriting them. Started by a
+# ship that still holds that lock, it waits its turn and runs right after. SITE_LOCK_HELD is inherited from that ship, so it is cleared first.
+[ -z "${PP_SITE:-}" ] && exec env -u SITE_LOCK_HELD PP_SITE=1 PP_LOCKED=1 python3 "$L/site_lock.py" run --label "public push: $MSG" -- bash "$0" "$@"
 note() { echo "  NOTE: $*"; echo "$(date +%Y-%m-%dT%H:%M:%S) RING: PUBLIC PUSH: $*" >> "$PIPE"; }
 echo "== $(date +%H:%M:%S) public push for: $MSG"
 # 31 Oct: the result is recorded for the watch (it was swallowed by "|| true" and a refusal went unseen for hours); a refusal is printed loud

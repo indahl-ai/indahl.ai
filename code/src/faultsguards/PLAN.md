@@ -1,7 +1,7 @@
 # faultsguards: the Faults and Guards as a Python package for LLM use. Plan, written before the code.
 
 ## What it is
-Faults is a catalogue of the failure modes a model commits doing measurement work. Guards is the set of procedures built against them. Both are published as PDFs at heuremen.org. This package makes the same text usable inside an LLM workflow: as structured data, as prompt and checklist builders, and as a stdio MCP server a client can load.
+Faults is a catalog of the failure modes a model commits doing measurement work. Guards is the set of procedures built against them. Both are published as PDFs at heuremen.org. This package makes the same text usable inside an LLM workflow: as structured data, as prompt and checklist builders, and as a stdio MCP server a client can load.
 
 ## Rules (fixed now)
 1. The data is generated from the published sources (source/FAULTS.html and source/GUARDS.html) by tools/extract.py. Nothing is retyped. A test regenerates the data and requires it to equal the shipped data, and requires every extracted paragraph to occur in the source text.

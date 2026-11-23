@@ -20,9 +20,9 @@ blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid 
 <h1>Guards</h1>
 <p>The procedures built against the failure modes, and the score they earn. Heuremen LLC, 10 October 2026, revised 30 October 2026.</p>
 
-<p class="lead">Companion to <b>Faults</b>, which catalogues the ways a language model doing measurement work goes wrong. This document is what we run against them. <b>Every procedure here exists because the corresponding failure happened first</b>, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because a method scattered across the documents it was found in cannot be scored.</p>
+<p class="lead">Companion to <b>Faults</b>, which catalogs the ways a language model doing measurement work goes wrong. This document is what we run against them. <b>Every procedure here exists because the corresponding failure happened first</b>, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because a method scattered across the documents it was found in cannot be scored.</p>
 
-<div class="cut"><b>The organising principle, since it decides the shape of all of it.</b> Nearly every failure in the companion document is the same error with different clothes: <b>the comparison baseline was built with less care than the measurement, after the measurement, and in a direction that flattered it.</b> It is the largest family in the prospective ledger: 217 of the 316 rows tagged with one of the first three families. So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is <i>before the number is stated</i>.</div>
+<div class="cut"><b>The organizing principle, since it decides the shape of all of it.</b> Nearly every failure in the companion document is the same error with different clothes: <b>the comparison baseline was built with less care than the measurement, after the measurement, and in a direction that flattered it.</b> It is the largest family in the prospective ledger: 217 of the 316 rows tagged with one of the first three families. So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is <i>before the number is stated</i>.</div>
 
 <h2>The first principle: structure rather than discipline</h2>
 <p>One recurring failure &mdash; reducing a situation with three states to two options &mdash; was treated for a long time as something to refuse by discipline. <b>That was measured.</b> Over three days, <b>96 pushbacks</b>, and the rate of replies flagged for a two-option frame across those days ran <b>0.79, 0.69, 0.88 per thousand words</b>, each day within one width of the day before. Against the first two days pooled, a comparison chosen after the data, the third day ran at 1.24 times the rate, exact 95 per cent interval 0.76 to 1.99, so a fall of more than 24 per cent by the third day is outside what was measured. The corrections landed one at a time, and the rate shows no change that clears its own width.</p>
@@ -40,7 +40,7 @@ blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid 
 <p>The default move is a value with a standard error, which answers one kind of question and quietly refuses all the others. So a roster of available rulers is placed in front of the model <b>at the start of every single exchange</b>, automatically, read live from the source document rather than from a copy: the separation of setup from signal, the width needed to exclude a runner-up, the profile that places unlike records on one axis without assuming a shared mechanism, the three-seat reading of one event, the integration time beyond which phase becomes noise, the corner where neither a count nor a phase resolves, and the test of whether two effects add or multiply.</p>
 <p><b>Why it is injected rather than remembered.</b> A roster in a document is consulted when the model thinks to consult it, which is precisely never at the moment it is needed. Injected at the top of every exchange it costs nothing and arrives before the framing is fixed. <b>The guard is the position, not the content.</b></p>
 
-<h3>2. Reference material is loaded hot, not summarised</h3>
+<h3>2. Reference material is loaded hot, not summarized</h3>
 <p>The three method papers are read <b>as text, in full, at the moment of use</b>, and not recalled. A summary of a method drifts, and the drift is invisible because a summary of a method reads exactly like the method. Loading the source each time costs context and buys the absence of a failure mode that leaves no trace. A single command loads all three and asks their questions in fixed order.</p>
 
 <h3>3. The baseline is constructed and written down first</h3>
@@ -58,8 +58,8 @@ blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid 
 <h3>5. Per-unit constants are removed, not caveated</h3>
 <p>Anything attached identically to every unit of data is subtracted before the reading, and <b>both readings are reported</b> &mdash; with the constant and without &mdash; because the difference between them is the size of the artifact and that is worth knowing. Naming a confound in a footnote while leaving it in the number is not a control.</p>
 
-<h3>6. The setup is equalised across every column being compared</h3>
-<p>Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at <b>two or three different settings</b> of whatever was equalised: if the ordering depends on the setting, the setting is the finding and no verdict is issued.</p>
+<h3>6. The setup is equalized across every column being compared</h3>
+<p>Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at <b>two or three different settings</b> of whatever was equalized: if the ordering depends on the setting, the setting is the finding and no verdict is issued.</p>
 
 <h1 class="newpart">II &mdash; Procedures that run during the work</h1>
 
@@ -79,7 +79,7 @@ blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid 
 <p>Before any width is computed: how many independent units contributed. Overlapping windows, shared members and repeated measures are reduced to a disjoint set, and the width is taken from that. This has moved widths by factors of several.</p>
 
 <h3>12. One event is read from three seats, never two</h3>
-<p>Two readings that disagree give no way to decide which is wrong. Three give a closure condition &mdash; a quantity that must come back to where it started &mdash; and a closure residual is a fault with nowhere to hide. <b>And the disagreement between seats is kept as a measurement rather than calibrated away.</b> Harmonise, do not synchronise: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one.</p>
+<p>Two readings that disagree give no way to decide which is wrong. Three give a closure condition &mdash; a quantity that must come back to where it started &mdash; and a closure residual is a fault with nowhere to hide. <b>And the disagreement between seats is kept as a measurement rather than calibrated away.</b> Harmonize, do not synchronize: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one.</p>
 
 <h3>13. An absence gets the same scrutiny as a presence</h3>
 <p>A confident report that something is <i>missing</i> is re-checked against a reference that did not come from the same data, because a fitted parameter that is slightly wrong looks for everything in the wrong place and reports a clean absence. Absences are rarely re-examined, which is exactly why they need the rule.</p>
@@ -105,11 +105,11 @@ blockquote { margin: 8px 0 8px 14px; padding-left: 12px; border-left: 3px solid 
 <p>Verification loops carry an explicit maximum. Unbounded waits have cost entire working periods. Long-running work is detached and polled rather than held by whatever started it.</p>
 
 <h3>20. Retained rules carry what they rest on</h3>
-<p>Each kept rule is tagged with its basis: an instruction, a verified tool behaviour, an arithmetic identity, or <b>one instance</b>. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times.</p>
+<p>Each kept rule is tagged with its basis: an instruction, a verified tool behavior, an arithmetic identity, or <b>one instance</b>. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times.</p>
 
 <h1 class="newpart">IV &mdash; Procedures against the instrument being wrong about itself</h1>
 
-<h3>21. Any count about your own behaviour is read from the record, never from memory</h3>
+<h3>21. Any count about your own behavior is read from the record, never from memory</h3>
 <p>Asked how often a guard had fired over three days, the answer given from memory was sixteen. The log in the same directory said thirty-six. <b>Off by 2.25 times, and the same answer from anyone else would have been rejected on sight.</b> A self-report is a claim about a file, so it is read out of the file or it is not stated.</p>
 
 <h3>22. Every rate states its denominator</h3>
@@ -168,11 +168,11 @@ where there had been one number, the sixth (no reply) at 0 per cent.</p>
 <p>This exists because the failure mode was published in the companion document and committed two
 hours later. <b>The procedure is the position, not the knowledge.</b></p>
 
-<h3>36. The catalogue's families ride in front of every exchange, read live from the published source</h3>
+<h3>36. The catalog's families ride in front of every exchange, read live from the published source</h3>
 <p>The eight family headings &mdash; not the individual modes &mdash; are injected at the top of
 every exchange alongside the ruler roster, parsed out of the published document itself so the two
 cannot drift apart. The purpose is to make the question <i>which family is this</i> arrive <b>before
-the framing is fixed</b>, which is the only moment it can change anything. Reading the catalogue
+the framing is fixed</b>, which is the only moment it can change anything. Reading the catalog
 afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the
 underlying rate showed no change that clears its own width.</p>
 
@@ -206,7 +206,7 @@ the writing. A named field is either filled or visibly empty.</p>
 <h1 class="newpart">V &mdash; What the guards score, and what we removed</h1>
 
 <h2>The only honest measurement: the prospective ledger</h2>
-<p>The catalogue of failure modes explains <b>all</b> of its own instances, because it was built from them. Fitted to its own cases it is perfect and therefore worthless. The sealed in-sample set was scored before any prospective counting began: <b>26 instances, 4 caught before the fact, 2 of those unaided &mdash; 7.7 per cent.</b> That is the bar, and it is deliberately the least flattering reading available.</p>
+<p>The catalog of failure modes explains <b>all</b> of its own instances, because it was built from them. Fitted to its own cases it is perfect and therefore worthless. The sealed in-sample set was scored before any prospective counting began: <b>26 instances, 4 caught before the fact, 2 of those unaided &mdash; 7.7 per cent.</b> That is the bar, and it is deliberately the least flattering reading available.</p>
 <p>Since then, every catch has been logged at the moment it happened. The full ledger, 10 October to 22 October 2026, through row 608 (written 16:45 EDT):</p>
 <table>
 <tr><th>Prospective ledger</th><th>count</th><th>share</th></tr>
@@ -236,7 +236,7 @@ the writing. A named field is either filled or visibly empty.</p>
 
 <hr>
 <h2>How to argue with these documents</h2>
-<p>The fastest useful attack is on the ledger, and it needs no data of ours: <b>the catalogue is fitted to its own instances and cannot score itself</b>, so the only number worth disputing is the prospective one &mdash; and the honest objection is that 608 rows from one working relationship are few, that the bar was set by us, and that the person setting the bar and the person being scored are the same. All three are true and are the reason the sealed in-sample figure is printed beside it. The second attack is to take any procedure above, apply it to a published method of ours, and report what falls over.</p>
+<p>The fastest useful attack is on the ledger, and it needs no data of ours: <b>the catalog is fitted to its own instances and cannot score itself</b>, so the only number worth disputing is the prospective one &mdash; and the honest objection is that 608 rows from one working relationship are few, that the bar was set by us, and that the person setting the bar and the person being scored are the same. All three are true and are the reason the sealed in-sample figure is printed beside it. The second attack is to take any procedure above, apply it to a published method of ours, and report what falls over.</p>
 <p class="foot">Guards &mdash; the procedures, and their score. Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion document: <b>Faults</b>, the failure modes written as procedure. Removed guards are listed with the reason.</p>
 <p class="foot">Heuremen LLC<br>&ldquo;We found it.&rdquo;</p>
 </body></html>

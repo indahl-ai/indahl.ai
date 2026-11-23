@@ -3,8 +3,8 @@
  "source": "GUARDS.html",
  "intro": [
   "The procedures built against the failure modes, and the score they earn. Heuremen LLC, 10 October 2026, revised 30 October 2026.",
-  "Companion to Faults, which catalogues the ways a language model doing measurement work goes wrong. This document is what we run against them. Every procedure here exists because the corresponding failure happened first, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because a method scattered across the documents it was found in cannot be scored.",
-  "The organising principle, since it decides the shape of all of it. Nearly every failure in the companion document is the same error with different clothes: the comparison baseline was built with less care than the measurement, after the measurement, and in a direction that flattered it. It is the largest family in the prospective ledger: 217 of the 316 rows tagged with one of the first three families. So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is before the number is stated."
+  "Companion to Faults, which catalogs the ways a language model doing measurement work goes wrong. This document is what we run against them. Every procedure here exists because the corresponding failure happened first, and the guards we removed for making things worse are recorded in the last part. Both documents replace earlier ones, because a method scattered across the documents it was found in cannot be scored.",
+  "The organizing principle, since it decides the shape of all of it. Nearly every failure in the companion document is the same error with different clothes: the comparison baseline was built with less care than the measurement, after the measurement, and in a direction that flattered it. It is the largest family in the prospective ledger: 217 of the 316 rows tagged with one of the first three families. So the guards are not a list of separate checks. They are mostly one check, applied at the one moment it can still work, which is before the number is stated."
  ],
  "parts": [],
  "entries": [
@@ -24,7 +24,7 @@
   },
   {
    "number": 2,
-   "title": "Reference material is loaded hot, not summarised",
+   "title": "Reference material is loaded hot, not summarized",
    "part": "I — Procedures that run before the work",
    "paragraphs": [
     "The three method papers are read as text, in full, at the moment of use, and not recalled. A summary of a method drifts, and the drift is invisible because a summary of a method reads exactly like the method. Loading the source each time costs context and buys the absence of a failure mode that leaves no trace. A single command loads all three and asks their questions in fixed order."
@@ -76,15 +76,15 @@
   },
   {
    "number": 6,
-   "title": "The setup is equalised across every column being compared",
+   "title": "The setup is equalized across every column being compared",
    "part": "I — Procedures that run before the work",
    "paragraphs": [
-    "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at two or three different settings of whatever was equalised: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
+    "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at two or three different settings of whatever was equalized: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
    ],
    "html": [
-    "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at <b>two or three different settings</b> of whatever was equalised: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
+    "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at <b>two or three different settings</b> of whatever was equalized: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
    ],
-   "text": "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at two or three different settings of whatever was equalised: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
+   "text": "Reference lists cut to the same length, filters set to the same width, integrations run for the same time, sample counts matched. Then the comparison is re-run at two or three different settings of whatever was equalized: if the ordering depends on the setting, the setting is the finding and no verdict is issued."
   },
   {
    "number": 7,
@@ -151,12 +151,12 @@
    "title": "One event is read from three seats, never two",
    "part": "II — Procedures that run during the work",
    "paragraphs": [
-    "Two readings that disagree give no way to decide which is wrong. Three give a closure condition — a quantity that must come back to where it started — and a closure residual is a fault with nowhere to hide. And the disagreement between seats is kept as a measurement rather than calibrated away. Harmonise, do not synchronise: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
+    "Two readings that disagree give no way to decide which is wrong. Three give a closure condition — a quantity that must come back to where it started — and a closure residual is a fault with nowhere to hide. And the disagreement between seats is kept as a measurement rather than calibrated away. Harmonize, do not synchronize: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
    ],
    "html": [
-    "Two readings that disagree give no way to decide which is wrong. Three give a closure condition &mdash; a quantity that must come back to where it started &mdash; and a closure residual is a fault with nowhere to hide. <b>And the disagreement between seats is kept as a measurement rather than calibrated away.</b> Harmonise, do not synchronise: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
+    "Two readings that disagree give no way to decide which is wrong. Three give a closure condition &mdash; a quantity that must come back to where it started &mdash; and a closure residual is a fault with nowhere to hide. <b>And the disagreement between seats is kept as a measurement rather than calibrated away.</b> Harmonize, do not synchronize: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
    ],
-   "text": "Two readings that disagree give no way to decide which is wrong. Three give a closure condition — a quantity that must come back to where it started — and a closure residual is a fault with nowhere to hide. And the disagreement between seats is kept as a measurement rather than calibrated away. Harmonise, do not synchronise: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
+   "text": "Two readings that disagree give no way to decide which is wrong. Three give a closure condition — a quantity that must come back to where it started — and a closure residual is a fault with nowhere to hide. And the disagreement between seats is kept as a measurement rather than calibrated away. Harmonize, do not synchronize: a procedure that drives the interval between two honest readings to zero has deleted a channel, not improved one."
   },
   {
    "number": 13,
@@ -247,16 +247,16 @@
    "title": "Retained rules carry what they rest on",
    "part": "III — Procedures that run on the output",
    "paragraphs": [
-    "Each kept rule is tagged with its basis: an instruction, a verified tool behaviour, an arithmetic identity, or one instance. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
+    "Each kept rule is tagged with its basis: an instruction, a verified tool behavior, an arithmetic identity, or one instance. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
    ],
    "html": [
-    "Each kept rule is tagged with its basis: an instruction, a verified tool behaviour, an arithmetic identity, or <b>one instance</b>. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
+    "Each kept rule is tagged with its basis: an instruction, a verified tool behavior, an arithmetic identity, or <b>one instance</b>. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
    ],
-   "text": "Each kept rule is tagged with its basis: an instruction, a verified tool behaviour, an arithmetic identity, or one instance. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
+   "text": "Each kept rule is tagged with its basis: an instruction, a verified tool behavior, an arithmetic identity, or one instance. A rule resting on one instance may not be cited as though it rested on a count. Without the tag, a lesson learned once reads in the record exactly like something measured fifty times."
   },
   {
    "number": 21,
-   "title": "Any count about your own behaviour is read from the record, never from memory",
+   "title": "Any count about your own behavior is read from the record, never from memory",
    "part": "IV — Procedures against the instrument being wrong about itself",
    "paragraphs": [
     "Asked how often a guard had fired over three days, the answer given from memory was sixteen. The log in the same directory said thirty-six. Off by 2.25 times, and the same answer from anyone else would have been rejected on sight. A self-report is a claim about a file, so it is read out of the file or it is not stated."
@@ -440,15 +440,15 @@
   },
   {
    "number": 36,
-   "title": "The catalogue's families ride in front of every exchange, read live from the published source",
+   "title": "The catalog's families ride in front of every exchange, read live from the published source",
    "part": "IV — Procedures against the instrument being wrong about itself",
    "paragraphs": [
-    "The eight family headings — not the individual modes — are injected at the top of every exchange alongside the ruler roster, parsed out of the published document itself so the two cannot drift apart. The purpose is to make the question which family is this arrive before the framing is fixed, which is the only moment it can change anything. Reading the catalogue afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the underlying rate showed no change that clears its own width."
+    "The eight family headings — not the individual modes — are injected at the top of every exchange alongside the ruler roster, parsed out of the published document itself so the two cannot drift apart. The purpose is to make the question which family is this arrive before the framing is fixed, which is the only moment it can change anything. Reading the catalog afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the underlying rate showed no change that clears its own width."
    ],
    "html": [
-    "The eight family headings &mdash; not the individual modes &mdash; are injected at the top of\nevery exchange alongside the ruler roster, parsed out of the published document itself so the two\ncannot drift apart. The purpose is to make the question <i>which family is this</i> arrive <b>before\nthe framing is fixed</b>, which is the only moment it can change anything. Reading the catalogue\nafterwards is reading, and reading has been measured: over three days and 96 pushbacks, the\nunderlying rate showed no change that clears its own width."
+    "The eight family headings &mdash; not the individual modes &mdash; are injected at the top of\nevery exchange alongside the ruler roster, parsed out of the published document itself so the two\ncannot drift apart. The purpose is to make the question <i>which family is this</i> arrive <b>before\nthe framing is fixed</b>, which is the only moment it can change anything. Reading the catalog\nafterwards is reading, and reading has been measured: over three days and 96 pushbacks, the\nunderlying rate showed no change that clears its own width."
    ],
-   "text": "The eight family headings — not the individual modes — are injected at the top of every exchange alongside the ruler roster, parsed out of the published document itself so the two cannot drift apart. The purpose is to make the question which family is this arrive before the framing is fixed, which is the only moment it can change anything. Reading the catalogue afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the underlying rate showed no change that clears its own width."
+   "text": "The eight family headings — not the individual modes — are injected at the top of every exchange alongside the ruler roster, parsed out of the published document itself so the two cannot drift apart. The purpose is to make the question which family is this arrive before the framing is fixed, which is the only moment it can change anything. Reading the catalog afterwards is reading, and reading has been measured: over three days and 96 pushbacks, the underlying rate showed no change that clears its own width."
   },
   {
    "number": 37,
@@ -516,7 +516,7 @@
    "title": "The only honest measurement: the prospective ledger",
    "part": "V — What the guards score, and what we removed",
    "paragraphs": [
-    "The catalogue of failure modes explains all of its own instances, because it was built from them. Fitted to its own cases it is perfect and therefore worthless. The sealed in-sample set was scored before any prospective counting began: 26 instances, 4 caught before the fact, 2 of those unaided — 7.7 per cent. That is the bar, and it is deliberately the least flattering reading available.",
+    "The catalog of failure modes explains all of its own instances, because it was built from them. Fitted to its own cases it is perfect and therefore worthless. The sealed in-sample set was scored before any prospective counting began: 26 instances, 4 caught before the fact, 2 of those unaided — 7.7 per cent. That is the bar, and it is deliberately the least flattering reading available.",
     "Since then, every catch has been logged at the moment it happened. The full ledger, 10 October to 22 October 2026, through row 608 (written 16:45 EDT):",
     "Prospective ledger count share Rows written at the moment 608 — Caught before the reading was stated 204 33.6% Caught before, by the model, with nobody pointing at it 148 24.3% Caught before by a check or an outside referee 37 6.1% Caught before by the human partner 19 3.1% Caught by the human partner 216 35.5% Sealed in-sample bar — 7.7% Unaided catches against that bar (148 of 608) above the point bar, and consistent with the bar’s own interval (2 of 26, exact 95% 0.9–25.1%, Fisher p 0.06 two-sided) —",
     "The first twenty rows, which an earlier version of this document scored, read 13 caught before (65.0%) and 8 unaided (40.0%, exact 95% 19–64%), above the bar’s interval (Fisher p 0.01 two-sided). The full ledger reads lower, and the full ledger is the number.",
@@ -543,7 +543,7 @@
    "title": "How to argue with these documents",
    "part": "V — What the guards score, and what we removed",
    "paragraphs": [
-    "The fastest useful attack is on the ledger, and it needs no data of ours: the catalogue is fitted to its own instances and cannot score itself, so the only number worth disputing is the prospective one — and the honest objection is that 608 rows from one working relationship are few, that the bar was set by us, and that the person setting the bar and the person being scored are the same. All three are true and are the reason the sealed in-sample figure is printed beside it. The second attack is to take any procedure above, apply it to a published method of ours, and report what falls over.",
+    "The fastest useful attack is on the ledger, and it needs no data of ours: the catalog is fitted to its own instances and cannot score itself, so the only number worth disputing is the prospective one — and the honest objection is that 608 rows from one working relationship are few, that the bar was set by us, and that the person setting the bar and the person being scored are the same. All three are true and are the reason the sealed in-sample figure is printed beside it. The second attack is to take any procedure above, apply it to a published method of ours, and report what falls over.",
     "Guards — the procedures, and their score. Heuremen LLC, 10 October 2026, revised 30 October 2026. Companion document: Faults, the failure modes written as procedure. Removed guards are listed with the reason.",
     "Heuremen LLC “We found it.”"
    ]

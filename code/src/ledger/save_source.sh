@@ -21,6 +21,7 @@
 set -uo pipefail
 MSG="${1:?usage: save_source.sh \"what changed\"}"
 B="$HOME/forge"; L="$B/ledger"; HG="$HOME/.house-ops.git"
+cd "$B"   # 23 Nov 2026: house-ops adds the pathspec "." against its work tree, which git reads from the current folder; run from ledger/ it named only ledger/ (ignored there) and refused every ship request made from that folder
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 # 23 Nov 2026 (separate lanes): SAVE_SCOPE=qia saves only the qia.com source paths, under its own lock, so a qia.com ship never waits on
 # (or commits) another lane's half-done work. Unset = every source repo, as before.

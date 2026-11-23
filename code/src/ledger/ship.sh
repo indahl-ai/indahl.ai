@@ -39,7 +39,7 @@ gate() { local n="$1" t="$2" rc; shift 2; mkdir -p "$L/gates"; set +e; "$@" > "$
   if [ $rc -ne 0 ]; then echo "gate $n (exit $rc), first lines:"; grep -v '^[[:space:]]*$' "$L/gates/$n.txt" | head -15; refuse "gate $n (exit $rc): $(grep -v '^[[:space:]]*$' "$L/gates/$n.txt" | head -1 | cut -c1-200)"; fi; }
 export SHIP_RUN=1   # 21 Nov 2026: builders run outside a ship refuse while one runs (a mid-ship local build made the front page differ from what was deployed)
 STEP=build; echo "== 1 BUILD"
-for k in FAULTS:faults GUARDS:guards; do src="$B/ligera/${k%%:*}.html"; out="$B/heuremen.org/${k##*:}.pdf"
+for k in FAULTS:faults GUARDS:guards; do src="$B/faultsguards/source/${k%%:*}.html"; out="$B/heuremen.org/${k##*:}.pdf"   # 23 Nov 2026: built from faultsguards/source, the copy the package and the CI PDF check use (ligera held a stale copy with the old byline)
   if newer "$src" "$out"; then "$B/ligera/render.sh" "$src" "$out" || fail "ligera/render.sh ${k##*:} failed"; else echo "  ${k##*:}: up to date"; fi; done
 if newer "$B/arxiv_one_readout/main.tex" "$B/heuremen.org/a-readout-is-not-an-idle.pdf"; then
   T=$(mktemp -d); cp -p "$B/arxiv_one_readout/main.tex" "$B/arxiv_one_readout/refs.bib" "$T/"; cp -Rp "$B/arxiv_one_readout/figures" "$T/"

@@ -23,7 +23,7 @@ def get(u, dst):
 pj = json.load(urllib.request.urlopen('https://pypi.org/pypi/faultsguards/json', timeout=60)); v = pj['info']['version']
 whl = [u for u in pj['releases'][v] if u['filename'].endswith('.whl')][0]; get(whl['url'], 'faultsguards/' + whl['filename'])
 assert hashlib.sha256(open(D + '/faultsguards/' + whl['filename'], 'rb').read()).hexdigest() == whl['digests']['sha256'], 'wheel hash differs from PyPI'
-get('https://heuremen.org/faults.pdf', 'faultsguards/faults.pdf'); get('https://heuremen.org/guards.pdf', 'faultsguards/guards.pdf')
+cp(B + 'heuremen.org/faults.pdf', 'faultsguards/faults.pdf'); cp(B + 'heuremen.org/guards.pdf', 'faultsguards/guards.pdf')   # 23 Nov 2026: the local copies the same ship pushes to heuremen.org and the downloads gate checks against (fetching the live ones left the package one ship behind whenever a PDF changed)
 open(D + '/yo/README.md', 'w').write('# YO\n\nHeuremen LLC. YO reads an IBM calibration record and flags stale and zero entries. The exact answer computed by code is printed beside it.\n\n'
     '\n\n```\ngh release download yo-v7 --repo indahl-ai/indahl.ai --dir yo-v7   # the weights, Apache-2.0\npip install mlx-lm            # Apple silicon\npython yo_audit.py record.json --model yo-v7\n\n'
     'pip install transformers torch  # elsewhere\npython yo_audit.py record.json --fused yo-v7\n```\n\nEvery result: https://indahl.ai/iris/lab\n')

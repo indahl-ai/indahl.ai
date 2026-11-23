@@ -3,7 +3,7 @@ updates across the board, no over-exposing cloud worker"). copies.json lists eve
   check    every copy byte-identical to its canonical, and no source edited after its canonical was made  (run by the pre-commit hooks)
   publish  copy each canonical over all its copies (run after rendering a new canonical); then commit + deploy as usual
   live     fetch every public URL and compare it with the canonical (after a deploy)"""
-import json, sys, os, hashlib, shutil, urllib.request
+import time, json, sys, os, hashlib, shutil, urllib.request
 B = os.path.expanduser('~/forge'); M = json.load(open(os.path.join(B, 'ledger', 'copies.json')))
 P = lambda p: p if p.startswith('/') else os.path.join(B, p)
 h = lambda b: hashlib.sha256(b).hexdigest()[:12]
@@ -36,7 +36,7 @@ def live():
         if not os.path.exists(P(v['canonical'])): print(f'  MISSING  {k}: canonical {v["canonical"]}'); bad += 1; continue   # control audit #8
         hc = h(open(P(v['canonical']), 'rb').read())
         for u in v.get('live', []):
-            try: b = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'copies.py'}), timeout=20).read(); hl = h(b)
+            try: b = urllib.request.urlopen(urllib.request.Request(u + ('&' if '?' in u else '?') + 'v=%d' % time.time(), headers={'User-Agent': 'copies.py', 'Cache-Control': 'no-cache'}), timeout=20).read(); hl = h(b)   # 23 Nov 2026: past the edge cache (max-age 3600); a fresh deploy read as LIVE OFF and rolled back
             except Exception as e: hl = 'ERR ' + type(e).__name__
             ok = hl == hc; bad += not ok; print(f'  {"LIVE OK " if ok else "LIVE OFF"} {k}: {u} {hl}')
     print(f'live drift: {bad}'); return bad

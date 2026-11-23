@@ -9,6 +9,7 @@
 #   3 DEPLOY  wrangler deploy of qia-site only (keychain cloudflare-api-token-ship, never printed); the version live before is the rollback target
 #   4 CHECKS  only when the zone routes point at qia-site (ledger/qia_route.py): every built page and file byte-identical live, /method 404,
 #             money_path_check.py. A failed check runs `wrangler rollback <previous version>` and the ship fails.
+#   0 SAVE    (22 Nov) ledger/save_source.sh commits and pushes every source repo first; a scan hit or failed push refuses the ship
 # A failure writes ONE line to sagar/pipeline/pipe.log: `<time> RING: QIA SHIP FAILED at <step>: <reason> (<what changed>)`.
 # Rollback of the cutover itself (send quantumidleaudit.com back to heuremen-door): python3 ~/forge/ledger/qia_route.py door
 B="$HOME/forge"; L="$B/ledger"
@@ -29,6 +30,9 @@ one() { printf '%s' "$*" | tr '\n\t' '  ' | cut -c1-200; }
 fail() { echo "QIA SHIP REFUSED ($STEP): $*"; printf '%s RING: QIA SHIP FAILED at %s: %s (%s)\n' "$(date '+%Y-%m-%dT%H:%M:%S')" "$STEP" "$(one "$*")" "$(one "$MSG" | cut -c1-120)" >> "$PIPE"; echo "ship_qia: $(( $(date +%s) - T0 )) s"; exit 1; }
 wr() { ( cd "$Q" && env -u CLOUDFLARE_API_TOKEN CLOUDFLARE_API_TOKEN="$CFT" CLOUDFLARE_ACCOUNT_ID=<cloudflare-account-id> /opt/homebrew/bin/npx wrangler "$@" ) 2>&1 | { grep -v -i token || true; }; }
 
+STEP=save_source; echo "== 0 SAVE SOURCE (every source repo committed and pushed before anything is built; ledger/save_source.sh)"
+SO=$(bash "$L/save_source.sh" "$MSG" 2>&1); SR=$?; echo "$SO" | tail -8
+[ $SR -eq 0 ] || fail "save_source: $(echo "$SO" | grep -m1 -E 'REFUSED|FAILED' | sed 's/^ *//')"
 STEP=build; echo "== 1 BUILD ($MSG)"
 rm -rf "$Q/public"; mkdir -p "$OUT" || fail "could not make $OUT"
 cp -p "$Q/static/"* "$OUT/" || fail "could not copy qia-site/static"

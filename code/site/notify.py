@@ -178,7 +178,7 @@ def changelog(PAGES, page, hero_slim):
     rows = commits()
     out = ['<section class="legal">',
            '<p>Every release of indahl.ai is one commit to the site&rsquo;s source, made by the release step after every check passes. This page lists those commits, newest first, with each message as written. A new desk, a new channel and a change to a method each show up here on the day they go live. Each release appears here once the next release is built. The list starts on 10 November 2026.</p>',
-           '<p>Releases whose message names a person or an internal working file are left out of this list. Every release is stamped and listed with its files on <a href="/receipts/stamps">the release stamps page</a>.</p>',
+           '<p>Releases whose message names a person or an internal working file are left out of this list.</p>',
            '<p class="meta">Atom feed: <a href="/changelog.xml">changelog.xml</a> &middot; Code: <a href="https://github.com/indahl-ai/indahl.ai/blob/main/code/site/notify.py">notify.py</a></p>']
     day = None
     for sha, t, msg in rows:

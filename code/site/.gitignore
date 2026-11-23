@@ -2,3 +2,31 @@
 __pycache__/
 .inquiries_seen
 oy/quantum-dice/kit/
+
+# 22 Nov 2026 (save_source): this repo holds SOURCE only. Every page build_site.py, qia_site.py and the desk builders write is
+# regenerated on every build, so it stays out of git (the study pages among them: studies on site, never in git).
+*.html
+!/chronos_src.html
+!/darkwave_body.html
+!/qia_template/*.html
+!/oy/*.html
+/pages.js
+/nav_live.js
+/desks_live.js
+/standard_current.js
+/sitemap.xml
+.wrangler/
+node_modules/
+*.bak-*
+*.bak
+*.orig
+.env
+.env.*
+*.pem
+# pages no builder writes any more (kept as they are)
+!/caca.html
+!/coin.html
+!/web.html
+!/brand.html
+!/newsletter.html
+!/newsletter/*.html

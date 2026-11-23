@@ -163,17 +163,20 @@ def build(event, rows=None):
             'first_sent_at': None, 'channels': []}
 
 
-def record(event, channel, rows=None, push=True):
-    """upsert: a new receipt, or one more channel kind on an existing one. Returns the receipt id."""
+def record(event, channel, rows=None, push=True, at=None):
+    """upsert: a new receipt, or one more channel kind on an existing one. Returns the receipt id.
+    at: when the channel carried it (ISO UTC; the outbox passes its sent_at). Default now."""
     if channel not in CHANNEL_WORD: raise ValueError('unknown channel ' + channel)
+    stamp = utc(at) if at else now()
+    if stamp is None: raise ValueError('bad time %r' % (at,))
     os.makedirs(STATE, exist_ok=True)
     lk = open(LOCK, 'a'); fcntl.flock(lk, fcntl.LOCK_EX)
     try:
         have, _, _ = _load_chain(); new = build(event, rows); cur = have.get(new['id'])
         if cur and channel in cur.get('channels', []): return cur['id']
         rec = dict(cur or new); rec['channels'] = sorted(set((cur or {}).get('channels', [])) | {channel})
-        rec['first_sent_at'] = (cur or {}).get('first_sent_at') or now()
-        rec['sent_at'] = dict((cur or {}).get('sent_at') or {}, **{channel: now()})
+        rec['first_sent_at'] = (cur or {}).get('first_sent_at') or stamp
+        rec['sent_at'] = dict((cur or {}).get('sent_at') or {}, **{channel: stamp})
         rec = _append({k: v for k, v in rec.items() if k in FIELDS})
     finally: fcntl.flock(lk, fcntl.LOCK_UN); lk.close()
     if push: kv_push([rec])

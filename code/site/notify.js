@@ -17,6 +17,7 @@
 // Nothing here logs, posts or emails anything. A webhook URL receives one challenge (signed) or one "connected" message (chat) at
 // registration, from this worker, and nothing else until an outcome changes.
 import { ALERT_DESKS, ALERT_BRANDS } from './alerts_list.js';
+import { messagePage } from './security.js';
 const SITE = 'https://indahl.ai', HUB = 'https://pubsubhubbub.appspot.com/', UA = 'indahl.ai-webhooks/1.0 (+https://indahl.ai/webhooks)';
 export const VAPID_PUBLIC = 'BEalaeY6-3MQjKz6jtXAyJT4gkFBK6aQbmA-QhXEDrC9b2d9mAz78AtNkh9tfE44451yttCRvuJoQ1houIzmlfQ';
 const PRIVACY_V = '2026-11-10e';
@@ -150,8 +151,8 @@ function deskBoxes(d, all) {
 async function webhooks(req, env, u, p, ctx, fetcher) {
   const KV = env.INDAHL_INQUIRIES;
   const html0 = ctx.html; ctx = { ...ctx, html: (b, st) => { const r = html0(b, st); const h = new Headers(r.headers); h.set('x-robots-tag', 'noindex'); h.set('referrer-policy', 'no-referrer'); h.set('cache-control', 'no-store'); return new Response(r.body, { status: r.status, headers: h }); } };
-  const shell = inner => ctx.PAGES['/inquire-ok'].replace(/<main[\s\S]*<\/main>/, () => `<main class="wrap"><section class="closing">${inner}</section></main>`);
-  const page = (msg, status) => ctx.html(shell(`<p>${msg}</p><p class="actions"><a class="btn" href="/webhooks">Webhooks</a></p>`), status);
+  const shell = (inner, title) => messagePage(ctx.PAGES['/inquire-ok'], title || 'Webhooks', `<main class="wrap"><section class="closing">${inner}</section></main>`);   // 22 Nov 2026: its own title, never "Inquiry received"
+  const page = (msg, status) => ctx.html(shell(`<p>${msg}</p><p class="actions"><a class="btn" href="/webhooks">Webhooks</a></p>`, (status || 200) >= 400 ? 'Webhook not registered' : 'Webhooks'), status);
   const ip = req.headers.get('cf-connecting-ip') || '';
   if (p === '/webhooks/register') {
     if (req.method !== 'POST') return Response.redirect(SITE + '/webhooks', 303);

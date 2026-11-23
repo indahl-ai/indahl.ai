@@ -10,6 +10,7 @@
 export const EMAIL = /^[^\s@<>"(),;:\\[\]]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?)*\.[A-Za-z]{2,24}$/;
 const OK = 'Thank you. The weekly changes page will come to this address every Tuesday. Every email has a one-click unsubscribe.';
 import { PRIVACY } from './pages.js';
+import { messagePage } from './security.js';
 const PRIVACY_V = PRIVACY.version;   // 10 Nov: follows the notice version build_site.py sets, so a sign-up records the notice in force
 const JS = `(function () {
   document.querySelectorAll('form.nl').forEach(function (f) {
@@ -70,7 +71,7 @@ export async function handleWeekly(req, env, u, html, PAGES) {
       'x-frame-options': 'DENY', 'tdm-reservation': '1', 'tdm-policy': 'https://indahl.ai/terms#ai-training',
       'content-security-policy': "default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" } });
   }
-  const page = (msg, status) => html(PAGES['/inquire-ok'].replace(/<main[\s\S]*<\/main>/, () => `<main class="wrap"><section class="closing"><p>${msg}</p><p class="actions"><a class="btn" href="/week">Weekly changes</a></p></section></main>`), status);
+  const page = (msg, status) => html(messagePage(PAGES['/inquire-ok'], 'Weekly changes email', `<main class="wrap"><section class="closing"><p>${msg}</p><p class="actions"><a class="btn" href="/week">Weekly changes</a></p></section></main>`), status);
   if (p === '/newsletter/subscribe') return Response.redirect('https://indahl.ai/alerts', 303);   // 16 Nov 2026: the newsletter is confirmed by email through /signup (alerts.js); this old path no longer adds anyone
   if (p === '/newsletter/unsubscribe') {
     let t = u.searchParams.get('t') || '';
@@ -82,7 +83,7 @@ export async function handleWeekly(req, env, u, html, PAGES) {
       return page('You are unsubscribed. Your address has been deleted from the list and no further email will come.', 200);
     }
     if (!v) return page('This address is not on the list. Nothing more will be sent to it.', 200);
-    return html(PAGES['/inquire-ok'].replace(/<main[\s\S]*<\/main>/, () => `<main class="wrap"><section class="closing"><p>Unsubscribe from the weekly changes email.</p><form method="post" action="/newsletter/unsubscribe"><input type="hidden" name="t" value="${esc(t)}"><button class="btn" type="submit">Unsubscribe</button></form></section></main>`), 200);
+    return html(messagePage(PAGES['/inquire-ok'], 'Weekly changes email', `<main class="wrap"><section class="closing"><p>Unsubscribe from the weekly changes email.</p><form method="post" action="/newsletter/unsubscribe"><input type="hidden" name="t" value="${esc(t)}"><button class="btn" type="submit">Unsubscribe</button></form></section></main>`), 200);
   }
   return null;
 }

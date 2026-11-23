@@ -145,7 +145,7 @@ def verify_body():
 <ul class="ticks">
 <li>Every feed: <a href="/feed.xml">feed.xml</a>, <a href="/feed.json">feed.json</a>, the corrections feed, each desk’s changes feed, each organisation feed, the newsletter feed and the changelog feed.</li>
 <li>Every JSON answer of the <a href="/api">API</a> under /api/.</li>
-<li>Every <a href="/r/alert/">alert receipt</a> as JSON, <a href="/transparency.json">transparency.json</a>, <a href="/build.json">build.json</a> and each deletion receipt.</li>
+<li><a href="/transparency.json">transparency.json</a>, <a href="/build.json">build.json</a> and each deletion receipt.</li>
 <li>Every webhook delivery, beside the shared-secret signature it already carries.</li>
 </ul>
 <p>A signed answer carries the header <code>x-indahl-signature-ed25519</code> (the signature of the exact body bytes, base64url) and <code>x-indahl-key-id</code>. The same signature is also served on its own at the same address with <code>.sig</code> added, for example <a href="/feed.xml.sig">/feed.xml.sig</a>. A feed can change between two requests, so the header of the same answer is the exact pair.</p>
@@ -210,7 +210,7 @@ def transparency_body():
     return ('<section class="legal"><p>Counts of what the alerts, newsletter and follow channels did, for everyone together. No count is about one person. Any number under 5 is shown as fewer than 5, and a channel total also needs at least 5 different recipients, so a small count cannot point to anyone. '
             'Test subscriptions, which are used to check that alerts arrive, are left out of every count and reported on their own at the end.</p>'
             '<!--TRANSPARENCY-->'
-            '<p class="meta"><a href="/transparency.json">JSON</a> (signed, <a href="/verify">how to check</a>) &middot; <a href="/r/alert/">Alert receipts</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/mydata">Your data</a></p></section>')
+            '<p class="meta"><a href="/transparency.json">JSON</a> (signed, <a href="/verify">how to check</a>) &middot; <a href="/privacy">Privacy</a> &middot; <a href="/mydata">Your data</a></p></section>')
 
 
 def mydata_body():

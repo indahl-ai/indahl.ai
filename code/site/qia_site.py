@@ -9,7 +9,7 @@ Usage: python3 indahl-ai/qia_site.py"""
 import os, html
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', '_qiasite')
+OUT = os.environ.get('QIA_SITE_OUT') or os.path.join(HERE, '..', 'cloudflare-workers', 'heuremen-door', 'public', '_qiasite')   # 22 Nov 2026 (QIA split): ledger/ship_qia.sh builds into cloudflare-workers/qia-site/public/_qiasite
 I = 'https://indahl.ai'
 import json as _stdj; STD_NAME = _stdj.load(open(os.path.join(HERE, '..', 'faultsguards', 'CURRENT.json'), encoding='utf-8'))['name']   # 21 Nov 2026: one source for the Standard's name
 SAMPLE_PDF = '/qia-2026-002.pdf'   # 20 Nov 2026 (the owner): the sample is a calibrated run report; the IBM bill stays on indahl.ai/qia only
@@ -101,7 +101,7 @@ figure.fig figcaption{font-size:12.5px;color:var(--mute);margin-top:8px;line-hei
 
 MARK = '<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,10.1 96,89.9 4,89.9" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><polygon points="50,89.9 72.5,40.6 27.5,40.6" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><circle cx="50" cy="57" r="4" fill="currentColor"/></svg>'
 
-NAV = [('/', 'Overview'), ('/examples', 'Examples'), ('/findings', 'Findings'), ('/calibrations', 'Calibrations'), ('/services', 'Services'), ('/method', 'Method')]
+NAV = [('/', 'Overview'), ('/examples', 'Examples'), ('/findings', 'Findings'), ('/calibrations', 'Calibrations'), ('/services', 'Services')]   # 22 Nov 2026: Method page removed
 
 
 def page(path, title, desc, body):
@@ -137,9 +137,9 @@ OFFERS = f'''<div class="grid">
 <div class="card"><p class="k">Full audit of a research paper</p><h3>A paper read in full and recounted</h3>
 <p>Every claim quoted, located and recomputed from the released data or rerun on hardware, delivered as a line-item report with an evidence package.</p><p class="price">{price('audit')}</p></div>
 <div class="card"><p class="k">Monitoring</p><h3>Calibration watched over time</h3>
-<p>The processors a team depends on, read against their published calibration, with each deviation reported.</p><p class="price">{price('monitor')}</p><p class="fine">Billed monthly. Or $25,500 a year prepaid (15% off); $23,000 if signed during the pilot. Every agreement runs for one year and does not renew. Only Heuremen can end it early, and then prepaid time not yet used is refunded pro rata.</p></div>
+<p>The processors a team depends on, read against their published calibration, with each deviation reported.</p><p class="price">{price('monitor')}</p></div>
 <div class="card"><p class="k">30-day pilot</p><h3>Monitoring on your own processors, for a month</h3>
-<p>Your backends and qubits read against their published calibration for 30 days: signed receipts for each run, one variance report, and the measured corrections.</p><p class="price">{price('pilot')}</p><p class="fine">The pilot&rsquo;s 30 days and its fee count toward the year if signed during the pilot.</p></div>
+<p>Your backends and qubits read against their published calibration for 30 days: signed receipts for each run, one variance report, and the measured corrections.</p><p class="price">{price('pilot')}</p></div>
 </div>''' 
 
 SHEET = '''<div class="sheet" aria-label="Report format">
@@ -365,7 +365,7 @@ PAGES = {
     '/findings': ('Findings | Quantum Idle Audit', 'IBM published calibration figures set beside measured hardware values, with intervals, dates and how to check both sides.', FINDINGS),
     '/calibrations': ('Calibrations | Quantum Idle Audit', 'Corrections applied on IBM hardware against an uncorrected reference: what each returns, its cost and status.', CALIBS),
     '/services': ('Services | Quantum Idle Audit', 'Full audits of research papers and monitoring of quantum hardware, scoped under a statement of work after a mutual NDA.', SERVICES),
-    '/method': ('Method | Quantum Idle Audit', 'How a Quantum Idle Audit reading is made: the stated value, the record the job ran under, intervals and four outcomes.', METHOD),
+    # '/method' removed 22 Nov 2026 (the owner): the Method page is off the site; it answers 404
     '/examples': ('Examples | Quantum Idle Audit', 'Worked examples of a Quantum Idle Audit check by the work you do, with real runs on IBM processors and the outcome printed first.', EXAMPLES),
     # '/corrections' archived 19 Nov 2026 (the owner): back with a reliable private update pipeline (~/forge/archive/qia_corrections_page_20261119)
     # '/listed' archived 19 Nov 2026 (the owner): study listings live on indahl.ai, not the business site

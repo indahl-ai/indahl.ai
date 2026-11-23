@@ -95,6 +95,23 @@ export function mtaSts(req, host, u) {
   return new Response('Not found\n', { status: 404, headers: { 'content-type': 'text/plain; charset=utf-8', 'x-content-type-options': 'nosniff' } });
 }
 
+// ------------------------------------------------------------------------------------------------ message pages after a form post
+// 22 Nov 2026: one shell for the short message pages the worker writes after a form post (correction, add a PDF, respond, webhooks, email
+// updates, weekly email). Each borrowed the built /inquire-ok page and kept its title, so a refused correction read "Inquiry received" in the
+// tab. messagePage() swaps the main block and gives the page its own title and description.
+const escM = (t) => String(t == null ? '' : t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+export function messagePage(shellDoc, title, main) {
+  const t = escM(title), d = t + '.';
+  return String(shellDoc)
+    .replace(/<main[\s\S]*<\/main>/, () => main)
+    .replace(/<title>[^<]*<\/title>/, () => '<title>' + t + ' | indahl.ai</title>')
+    .replace(/(<meta name="twitter:title" content=")[^"]*(")/, (_, a, b) => a + t + ' | indahl.ai' + b)
+    .replace(/(<meta (?:name="description"|property="og:description"|name="twitter:description") content=")[^"]*(")/g, (_, a, b) => a + d + b)
+    .replace(/<link rel="canonical" href="https:\/\/indahl\.ai\/inquire-ok">/, '').replace(/<meta property="og:url" content="https:\/\/indahl\.ai\/inquire-ok">/, '');
+}
+// The title for a form answer: what was asked for, then whether it went through. A refusal (status 400 and up) never reads as received.
+export const formTitle = (what, status) => what + ((status || 200) >= 400 ? ' not sent' : ' received');
+
 // ------------------------------------------------------------------------------------------------ shell for worker-rendered pages
 function shell(ctx, title, h1, inner) {
   let doc = ctx.PAGES['/inquire-ok'].replace(/<main[\s\S]*<\/main>/, () => '<main class="wrap rp-main">' + inner + '</main>')

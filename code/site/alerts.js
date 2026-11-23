@@ -21,6 +21,7 @@
 // Nothing here is logged, posted or emailed. Addresses never leave the private KV except to Cloudflare Email Sending at send time.
 import { ALERT_DESKS, ALERT_BRANDS, ALERT_UPS, ALERT_DIVS, ALERT_EVERY, ALERT_ENTS } from './alerts_list.js';
 import { PRIVACY } from './pages.js';
+import { messagePage } from './security.js';
 import { subscribeNewsletter, NL_OK, nlHas, nlAdd, nlRemove } from './newsletter.js';
 const EMAIL = /^[^\s@<>"(),;:\\[\]]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,62}[A-Za-z0-9])?)*\.[A-Za-z]{2,24}$/;
 const OK = 'Thank you. A confirmation link is on its way to this address. Nothing starts until you open it and press Confirm. The link works for two days.';
@@ -141,8 +142,8 @@ export async function handleAlerts(req, env, u, html, PAGES) {
   if (p === '/alerts.js' || p === '/signup.js') return new Response(JS, { headers: { 'content-type': 'text/javascript; charset=utf-8', 'cache-control': 'public, max-age=3600', 'x-content-type-options': 'nosniff' } });
   if (!p.startsWith('/alerts/') && p !== '/signup') return null;
   const KV = env.INDAHL_INQUIRIES;
-  const shell = inner => PAGES['/inquire-ok'].replace(/<main[\s\S]*<\/main>/, () => `<main class="wrap"><section class="closing">${inner}</section></main>`);
-  const page = (msg, status) => html(shell(`<p>${msg}</p><p class="actions"><a class="btn" href="/alerts">Email updates</a></p>`), status);
+  const shell = (inner, title) => messagePage(PAGES['/inquire-ok'], title || 'Email updates', `<main class="wrap"><section class="closing">${inner}</section></main>`);   // 22 Nov 2026: its own title, never "Inquiry received"
+  const page = (msg, status) => html(shell(`<p>${msg}</p><p class="actions"><a class="btn" href="/alerts">Email updates</a></p>`, (status || 200) >= 400 ? 'Email updates request not completed' : 'Email updates'), status);
   const T = /^[0-9a-f]{40}$/;
   const readT = async () => { let t = u.searchParams.get('t') || ''; if (req.method === 'POST') { try { const f = await req.formData(); return [String(f.get('t') || t), f]; } catch (e) {} } return [t, null]; };
   const ip = req.headers.get('cf-connecting-ip') || '';

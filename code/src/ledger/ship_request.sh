@@ -8,6 +8,8 @@
 set -euo pipefail
 L="$(cd "$(dirname "$0")" && pwd)"; export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 LABEL="${1:?usage: ship_request.sh \"what changed\" [--wait [seconds]]}"
+# 22 Nov 2026: source is saved to git before anything else (ledger/save_source.sh); a request whose source cannot be saved is not queued
+bash "$L/save_source.sh" "$LABEL" > "$L/.last_save_source.txt" 2>&1 || { cat "$L/.last_save_source.txt"; printf '%s RING: SHIP REFUSED at save_source: %s (%s)\n' "$(date '+%Y-%m-%dT%H:%M:%S')" "$(grep -m1 -E 'REFUSED|FAILED' "$L/.last_save_source.txt" | sed 's/^ *//' | cut -c1-200)" "$(printf '%s' "$LABEL" | cut -c1-120)" >> "$L/../sagar/pipeline/pipe.log"; echo "ship_request: NOT QUEUED, the source could not be saved to git"; exit 1; }
 case "$LABEL" in auto:*) ;; *) bash "$L/preflight.sh" > /tmp/preflight_last.txt 2>&1 || { cat /tmp/preflight_last.txt; echo "ship_request: NOT QUEUED, a copy gate breached (22 Nov: one bad page refused whole bundles four times)"; exit 1; } ;; esac   # auto: requests change data only, the ship gates read them, and a preflight build each would double the builds
 if [ -n "${SITE_LOCK_HELD:-}" ]; then exec bash "$L/ship.sh" "$LABEL"; fi
 ID=$(python3 "$L/ship_queue.py" add "$LABEL")

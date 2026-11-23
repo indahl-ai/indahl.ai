@@ -133,7 +133,7 @@ def _names(xs):
     return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' and ' + xs[-1]
 
 
-def send_one(to, subject, t, h, hdr):
+def send_one(to, subject, t, h, hdr, expires=None, receipts=None):
     if FAKE:
         if not SUBS: raise SystemExit('alerts: --fake-send needs --subs')
         os.makedirs(FAKE, exist_ok=True); n = len(os.listdir(FAKE)) + 1
@@ -141,7 +141,9 @@ def send_one(to, subject, t, h, hdr):
     # 22 Nov 2026 (P4): hands the email to the one outbox (lib/outbox.py, kind 'alerts', held until the owner's word). Sends nothing itself;
     # the outbox drain is the only sender. ok = accepted by the outbox. The old Cloudflare call is in alerts_send.py.bak-20261122-p4.
     sys.path.insert(0, os.path.join(B, 'lib')); import outbox
-    ok, why = outbox.handoff('alerts', to, subject, t, html=h, headers=hdr)
+    # 22 Nov 2026 (FW-030): expires = when the email's link stops working (the outbox never sends it inside its margin); receipts = the public
+    # receipt events this email carries, recorded by the outbox's "sent" hook (alert_hooks.email_sent) only once the provider accepted it.
+    ok, why = outbox.handoff('alerts', to, subject, t, html=h, headers=hdr, expires=expires, receipts=receipts)
     return ok, ('' if ok else why.replace(to, '<to>'))
 
 
@@ -175,6 +177,14 @@ def guard_recipient(e):
 
 # ------------------------------------------------------------------------------------------------ confirmations
 FREQ = {'now': '', 'day': 'in one daily digest', 'week': 'in one weekly digest on Tuesdays'}
+CONFIRM_TTL_S = 172800   # alerts.js pendAlerts: KV.put('alp:' + token, ..., {expirationTtl: 172800}) right after at = new Date(): the link dies 48 h after 'at'
+
+
+def confirm_expires(md):
+    """Unix time the confirmation link stops working: the pending record's 'at' (sign-up time, ISO UTC) plus the KV time to live. None if unreadable."""
+    import datetime as _D
+    try: return _D.datetime.fromisoformat(str(md.get('at', '')).replace('Z', '+00:00')).timestamp() + CONFIRM_TTL_S
+    except (ValueError, TypeError): return None
 
 
 def follows(d, o, m, al=False):
@@ -235,7 +245,12 @@ def confirmations(m):
         e = md.get('e', ''); guard_recipient(e)
         txt, h = confirm_text(t, md, m)
         if DRY: print('--- DRY confirmation (placeholder token):\n' + txt.replace(t, 'x' * 40)); continue
-        ok, err = send_one(e, 'Confirm your indahl.ai email alerts', txt, h, [])
+        exp = confirm_expires(md)
+        if not FAKE:   # 22 Nov 2026 (FW-030): a link that would arrive dead is not handed over; the sign-up's own record expires in the KV
+            sys.path.insert(0, os.path.join(B, 'lib')); import outbox
+            if exp is None or time.time() >= exp - outbox.margin('alerts'):
+                print('alerts: confirm:%s skipped, %s' % (t[:12], 'its sign-up time cannot be read' if exp is None else 'its link would expire before sending')); continue
+        ok, err = send_one(e, 'Confirm your indahl.ai email alerts', txt, h, [], expires=exp)
         if not ok: log('STOPPED confirm:%s %s' % (t[:12], err)); print('STOPPED at confirm', t[:12], err); sys.exit(2)
         with open(PROG, 'a') as f: f.write('confirm:%s\n' % t[:12])
         log('ok confirm:%s' % t[:12]); sent += 1
@@ -710,8 +725,11 @@ def alert_text(tok, r, evs, m):
 
 # the accountability hooks run on the real sender only: never on a dry run, a fake send or a scratch ledger (tests)
 HOOKS = not (DRY or FAKE or SUBS or '--ledger' in A or '--state' in A)
-# 22 Nov 2026 (P4): a handoff to the outbox is not a sent email, so the public alert receipts are not written here any more. NOT PORTED:
-# the outbox does not yet call alert_hooks.email_sent on delivery; wire it before the alerts hold is lifted.
+# 22 Nov 2026 (FW-030): the guard (alert_hooks.guarded) decides what may go in an email, not whether it is sent, so it stays on with the outbox.
+# The P4 line below had switched it off together with the receipts.
+GUARD = HOOKS
+# 22 Nov 2026 (P4): a handoff to the outbox is not a sent email, so the public alert receipts are not written here. The outbox writes them:
+# the events ride in the message (send_one receipts=) and its "sent" hook calls alert_hooks.email_sent once the provider accepted the email.
 HOOKS = HOOKS and not OUTBOX
 
 
@@ -751,7 +769,7 @@ def detect(m):
     rows = value_rows()
     seen = _read_seen(SEEN, [r['id'] for r in rows], 'change rows')
     new = [r for r in rows if r['id'] not in seen] if seen is not None else []
-    if new and HOOKS:   # alert_hooks.guarded: only rows whose number is published; a refused row stays unseen and is tried again next pass
+    if new and GUARD:   # alert_hooks.guarded: only rows whose number is published; a refused row stays unseen and is tried again next pass
         import alert_hooks
         ok = {c['id'] for c in alert_hooks.guarded([{'id': r['id'], 'desk': r['desk']} for r in new])}
         if len(ok) < len(new): print('alerts: %d change row(s) held by the guard until their number is published' % (len(new) - len(ok)))
@@ -817,7 +835,7 @@ def alerts(m):
         e = r.get('e', ''); guard_recipient(e)
         subject, t, h, hdr = alert_text(tok, r, evs, m)
         if DRY: print('--- DRY email, subject %r (placeholder token):\n%s' % (subject, t.replace(tok, 'x' * 40))); continue
-        ok, err = send_one(e, subject, t, h, hdr)
+        ok, err = send_one(e, subject, t, h, hdr, receipts=[receipt_event(x) for x in evs if x['kind'] in ('chg', 'up', 'upd')])
         if not ok: log('STOPPED %s %s' % (tok[:12], err)); print('STOPPED at', tok[:12], err); sys.exit(2)
         with open(PROG, 'a') as f: f.write(''.join(pk(x['id'], tok) + '\n' for x in evs))
         if HOOKS:   # alert_hooks.email_sent: the public alert receipts gain the channel kind email for each event in this email (never subscriber data)

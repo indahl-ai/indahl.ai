@@ -35,13 +35,17 @@ def webhooks(post, deliver, url_ok=None):
     return post2, deliver2, (lambda u: u == CANARY_URL or url_ok(u))
 
 
-def email_sent(events):
-    """for alerts_send.py (not wired yet, its owner is changing it): call after send_one() returns ok for a subscriber, with the change events
-    in that email (notify_events.event() dicts, or the 'update' events with uid/desk/at). Records the channel kind email on each receipt."""
+def email_sent(events, at=None, strict=False):
+    """Records the channel kind email on each receipt, for the change events in one email (notify_events.event() dicts, or the 'update'
+    events with uid/desk/at). 22 Nov 2026 (FW-030): called by lib/outbox.py (alert_receipts_hook) once the mail provider accepted the email,
+    with at = the outbox sent_at (ISO UTC) and strict=True: every event is tried, then the first failure is raised, so the outbox rings once
+    and retries on its next drain. A retry is safe: record() is an upsert on (event, channel)."""
     import alert_receipts as AR
+    err = None
     for ev in events:
-        try: AR.record(ev, 'email')
-        except Exception: pass
+        try: AR.record(ev, 'email', at=at)
+        except Exception as e: err = err or e
+    if strict and err is not None: raise err
 
 
 def guarded(change_rows):

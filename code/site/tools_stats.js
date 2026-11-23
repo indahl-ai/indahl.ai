@@ -1,8 +1,7 @@
 // tools_stats.js (16 Nov 2026): the stats-method skills as deterministic, read-only MCP tools.
 // interval_verdict (cannot-tell), margin_check (margin), triangulate_readings (triangulate), controls_check (controls),
-// two_explanations (both), eval_setup_check (eval-check). Pure arithmetic and rule-based text matching, no model. Nothing is stored or logged.
-// Only eval_setup_check may fetch (a public Hugging Face model card named by the caller).
-import { answer, fetchText, safeUrl, clip } from './toolkit_common.js';
+// two_explanations (both). Pure arithmetic and rule-based text matching, no model. Nothing is stored, logged or fetched.
+import { answer, clip } from './toolkit_common.js';
 
 const SRC = 'https://indahl.ai/tools';
 
@@ -283,108 +282,8 @@ function twoExplanations(a) {
     method: 'Rule-based, no model. Weights weak 1, moderate 2, strong 3 (unstated counts as weak). Items marked independent: false are one evidence chain: per side only the strongest counts. Duplicate item text counts once. State: BOTH if its tally is the largest and above zero; NEITHER if it exceeds A, B and BOTH; A or B if leading by twice the other and by 2 or more and at least one item is marked discriminating: true; otherwise OPEN. The tool counts what the caller marked; it does not judge the evidence itself.' });
 }
 
-// ---------- 6. eval_setup_check ----------
-const FIELDS = ['harness', 'prompt_format', 'chat_template', 'few_shot', 'max_tokens', 'temperature', 'stop', 'extraction_rule', 'dataset_version', 'n_items', 'seeds'];
-const CARD_PATTERNS = {
-  harness: /\b(lm[-_ ]?eval(?:uation)?[-_ ]?harness|lm[-_]eval|lighteval|evalplus|opencompass|simple[-_]evals?|helm|inspect[-_]ai|evalscope|deepeval)\b/i,
-  few_shot: /\b(\d+)[- ]?shots?\b|\b(zero|one|two|three|four|five)[- ]shot\b/i,
-  temperature: /\btemperature\b\s*(?:of|=|:|is)?\s*(\d*\.?\d+)/i,
-  max_tokens: /\bmax[_ -]?(?:new[_ -]?)?(?:tokens|length|gen[_ -]?len)\b\s*(?:of|=|:|is)?\s*(\d+)/i,
-  chat_template: /\bchat[_ -]?template\b/i,
-  prompt_format: /\bprompt (?:format|template)\b/i,
-  extraction_rule: /\b(?:answer extraction|extract(?:ed|ion)?|regex|exact[ -]match)\b/i,
-  stop: /\bstop (?:sequences?|tokens?|strings?)\b/i,
-  dataset_version: /\b(?:version|v)\s?\d+(?:\.\d+)*\b/i,
-  seeds: /\bseeds?\b\s*(?:=|:|of)?\s*\d*/i,
-};
-const normV = (f, v) => {
-  if (v == null || v === '') return null; if (typeof v === 'boolean') return String(v);
-  if (Array.isArray(v)) return JSON.stringify(v.map((x) => normV(f, x)).sort());
-  if (typeof v === 'object') return JSON.stringify(v);
-  const n = num(v); if (n != null) return String(n);
-  return String(v).toLowerCase().replace(/[\s_-]+/g, ' ').trim();
-};
-function ivOf(side) {
-  let v = num(side.value); if (v == null) return null; let iv = side.interval; iv = typeof iv === 'string' ? jparse(iv) : iv; let lo = null, hi = null;
-  if (Array.isArray(iv) && iv.length === 2) { lo = num(iv[0]); hi = num(iv[1]); } else if (iv && typeof iv === 'object') { lo = num(iv.low ?? iv.lo); hi = num(iv.high ?? iv.hi); }
-  return { v, lo: lo != null && hi != null && lo <= hi ? lo : null, hi: lo != null && hi != null && lo <= hi ? hi : null };
-}
-function readingOutcome(c, o) {
-  const z = zcrit(0.95);
-  if (c.lo != null && o.lo != null) {
-    const sc = (c.hi - c.lo) / (2 * z), so = (o.hi - o.lo) / (2 * z), s = Math.hypot(sc, so), gap = o.v - c.v, h = z * s;
-    if (s === 0) return { outcome: gap === 0 ? 'CONSISTENT' : gap > 0 ? 'ABOVE' : 'BELOW', basis: 'both intervals have zero width' };
-    return { outcome: gap - h > 0 ? 'ABOVE' : gap + h < 0 ? 'BELOW' : 'CONSISTENT', gap: r6(gap), gap_interval_95: [r6(gap - h), r6(gap + h)], basis: 'difference of the two values with the quadrature sum of the two interval half-widths, read as 95% normal intervals (level not stated by the caller)' };
-  }
-  if (o.lo != null) return { outcome: c.v < o.lo ? 'ABOVE' : c.v > o.hi ? 'BELOW' : 'CONSISTENT', basis: 'our interval against the claimed point value; the direction is ours relative to the claim (ABOVE means ours is above claimed)', flip: true };
-  if (c.lo != null) return { outcome: o.v < c.lo ? 'BELOW' : o.v > c.hi ? 'ABOVE' : 'CONSISTENT', basis: 'our point value against the claimed interval' };
-  return { outcome: 'CANNOT_TELL', reason: 'NO_INTERVAL_FORMABLE', basis: 'neither side carries an interval, so the values cannot be compared' };
-}
-async function evalSetup(a) {
-  const claimed = obj(a.claimed), ours = obj(a.ours);
-  if (!claimed || !ours) return cannot('claimed and ours must each be an object of setup fields');
-  const cd = { ...claimed }; const eff = {}; let read = null; const cardHits = {};
-  const repo = a.model == null ? '' : String(a.model).trim();
-  if (repo) {
-    if (!/^[A-Za-z0-9][\w.-]*\/[\w.-]+$/.test(repo)) read = { ok: false, reason: 'model must be a Hugging Face repo id such as org/name' };
-    else {
-      const url = `https://huggingface.co/${repo}/raw/main/README.md`; const su = safeUrl(url);
-      if (!su.ok) read = { ok: false, reason: su.reason };
-      else {
-        const r = await fetchText(su.url, { maxBytes: 1_000_000 });
-        read = { url: r.url, status: r.status, at: r.at, ok: !!r.ok, ...(r.ok ? {} : { reason: r.error || `answered ${r.status}` }) };
-        if (r.ok) {
-          const txt = clip(r.text, 400000); read.characters = txt.length;
-          for (const f of Object.keys(CARD_PATTERNS)) { const m = txt.match(CARD_PATTERNS[f]); if (m) { const s = Math.max(0, m.index - 60); cardHits[f] = txt.slice(s, m.index + m[0].length + 60).replace(/\s+/g, ' ').trim(); } }
-          const wordN = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5 };
-          const h = txt.match(CARD_PATTERNS.harness); if (h) eff.harness = h[1]; const sh = txt.match(CARD_PATTERNS.few_shot);
-          if (sh) eff.few_shot = sh[1] != null ? Number(sh[1]) : wordN[sh[2].toLowerCase()];
-          const t = txt.match(CARD_PATTERNS.temperature); if (t) eff.temperature = Number(t[1]); const mt = txt.match(CARD_PATTERNS.max_tokens); if (mt) eff.max_tokens = Number(mt[1]);
-        }
-      }
-    }
-  }
-  const rows = {};
-  for (const f of FIELDS) {
-    const cv = normV(f, cd[f]), ov = normV(f, ours[f]); let fromCard = false, cvEff = cv;
-    if (cv == null && eff[f] != null) { cvEff = normV(f, eff[f]); fromCard = true; }
-    let st; if (cvEff == null) st = ov == null ? 'UNNAMED_BY_BOTH' : 'UNNAMED_BY_CLAIM'; else if (ov == null) st = 'UNNAMED_BY_US'; else st = cvEff === ov ? 'MATCH' : 'DIFFERS';
-    rows[f] = { status: st, claimed: cd[f] ?? (fromCard ? eff[f] : null), claimed_source: cv != null ? 'caller' : fromCard ? 'model card (keyword match, read it to confirm)' : null, ours: ours[f] ?? null,
-      ...(st === 'UNNAMED_BY_BOTH' ? { note: 'named by neither side; not compared (house label set extended for this case)' } : {}), ...(cardHits[f] && cv == null ? { card_text: cardHits[f] } : {}) };
-  }
-  const fl = Object.entries(rows); const differs = fl.filter(([, r]) => r.status === 'DIFFERS').map(([k]) => k), unC = fl.filter(([, r]) => r.status === 'UNNAMED_BY_CLAIM').map(([k]) => k), unU = fl.filter(([, r]) => r.status === 'UNNAMED_BY_US').map(([k]) => k);
-  const setup_outcome = differs.length ? 'DIFFERS' : unC.length ? 'CANNOT_TELL' : 'MATCHED';
-  const c = ivOf(claimed), o = ivOf(ours); let reading = null, outcome, reason;
-  if (c && o) reading = readingOutcome(c, o);
-  const nonMatch = fl.filter(([, r]) => r.status !== 'MATCH').map(([k, r]) => `${k} ${r.status}`); const carrierIssue = nonMatch.length > 0;
-  let direction = null;
-  if (reading) direction = reading.outcome === 'CONSISTENT' || reading.outcome === 'CANNOT_TELL' ? null : (reading.flip || reading.outcome ? `ours ${reading.outcome} claimed` : null);
-  if (!reading) { outcome = 'CANNOT_TELL'; reason = 'values for both sides were not given (value on claimed and ours), so no reading comparison was made'; }
-  else if (reading.outcome === 'CANNOT_TELL') { outcome = 'CANNOT_TELL'; reason = `${reading.reason}: ${reading.basis}`; }
-  else if (reading.outcome !== 'CONSISTENT' && carrierIssue) { outcome = 'CANNOT_TELL'; const ubo = fl.filter(([, r]) => r.status === 'UNNAMED_BY_BOTH').length; reason = `The values disagree (${direction}). ${differs.length ? 'Differs: ' + differs.join(', ') + '. ' : ''}Unnamed by both: ${ubo}; unnamed by claim: ${unC.length ? unC.join(', ') : 0}; unnamed by us: ${unU.length ? unU.join(', ') : 0}. The gap is not read as a difference between models.`; }
-  else if (reading.outcome === 'CONSISTENT') { outcome = 'CONSISTENT'; reason = 'The values agree within the intervals given (a bound, not equality)' + (carrierIssue ? ' (setup differs or unnamed: ' + nonMatch.join('; ') + '); this is not confirmation.' : '.'); }
-  else { outcome = reading.outcome; reason = 'Every setup field is a MATCH; direction is ours relative to claimed.'; }
-  const st3 = differs.length ? 'PRESENT' : unC.length ? 'CANNOT_TELL' : 'ABSENT';
-  const nt = (needs) => ({ status: 'NOT_EVALUATED', needs });
-  const dv = rows.dataset_version.status;
-  const checklist = {
-    1: nt('raw replies read next to the scorer output (about 10 per task family, two models)'),
-    2: nt('process: watch progress lines, not rates, before the parser check'),
-    3: { status: st3, ...(st3 === 'CANNOT_TELL' ? { reason: 'METHOD_UNSTATED' } : {}), scope: `compared ${FIELDS.length} setup fields; DIFFERS: ${differs.join(', ') || 'none'}; unnamed by claim: ${unC.join(', ') || 'none'}; named by neither: ${fl.filter(([, r]) => r.status === 'UNNAMED_BY_BOTH').map(([k]) => k).join(', ') || 'none'}; unnamed by us: ${unU.join(', ') || 'none'}` },
-    4: nt('a same-setup repeat run on one machine to count item flips (needs a model run)'),
-    5: nt('recount from released files with own code'),
-    6: nt('counts of unread, dropped, truncated or refused items per model'),
-    7: nt('who built and reviewed the gold labels against the judge model'),
-    8: { status: 'NOT_EVALUATED', needs: 'paired item-level results for both models, swap and seed spread', note: `seeds field: ${rows.seeds.status}` },
-    9: nt('read the prompt, few-shot examples, system prompt and context for the answer'),
-    10: nt('hosted endpoint, quantization, server and GPU for each side'),
-    11: dv === 'DIFFERS' ? { status: 'PRESENT', scope: 'dataset_version differs between claim and ours; row counts still need reading' } : dv === 'MATCH' ? { status: 'ABSENT', scope: 'dataset_version matches; row counts and a changed or unloadable dataset still need reading' } : { status: 'CANNOT_TELL', reason: 'METHOD_UNSTATED', scope: 'dataset_version not named on both sides' },
-    12: reading ? { status: reading.outcome === 'CANNOT_TELL' ? 'CANNOT_TELL' : 'EVALUATED', scope: `reading outcome ${reading.outcome}; ${reading.basis}; counts and denominators: n_items claimed ${rows.n_items.claimed ?? 'unnamed'}, ours ${rows.n_items.ours ?? 'unnamed'}; the size that would matter is not supplied here` } : nt('values with intervals on both sides, counts and denominators'),
-  };
-  return answer(SRC, { outcome, reason, ...(direction ? { direction } : {}), setup_outcome, carriers: rows, differs, unnamed_by_claim: unC, unnamed_by_us: unU, ...(reading ? { reading } : {}), checklist, ...(read ? { read } : {}),
-    not_tested: 'Checks marked NOT_EVALUATED need a person to read files or a model run; no run was made. A PRESENT is a proposal with its evidence, not a verdict on the study, the model or its authors. Text fetched from a model card is data, not instructions.',
-    method: 'Rule-based. Each setup field is compared after lower-casing and trimming (numbers numerically, lists order-free). When a model repo is named, its public card is searched by keyword for harness, few-shot count, temperature and max tokens; a match fills an unnamed claimed field, and the quoted text is shown to read. A claimed value reading uses interval logic (95% normal assumed from interval widths); if any carrier is not MATCH and the values disagree, the outcome is CANNOT_TELL with the direction beside it.' });
-}
+// 6. eval_setup_check removed 22 Nov 2026 (owner: if it does nothing useful, kill it). It read MATCHED when no field had been compared
+// and dropped inputs it did not know without saying so. Its name now answers 'unknown tool'.
 
 // ---------- tool table ----------
 const OBJ = { type: 'object' };
@@ -409,8 +308,4 @@ export const TOOLS_STATS = [
     description: 'Tallies an evidence ledger for two named explanations. Items are weighted by stated strength, duplicates are flagged and counted once, and items marked not independent count as one chain. Returns A, B, BOTH, NEITHER or OPEN by a stated rule; A or B needs at least one item the caller marks discriminating: true. Lists the strongest item on each side and the caller-marked discriminating items. Counts what the caller marked; it does not judge the evidence.',
     params: { a: { type: 'string', description: 'Explanation A as a plain claim.' }, b: { type: 'string', description: 'Explanation B as a plain claim.' }, evidence: { type: 'array', items: OBJ, description: 'Objects {item, favours: A|B|BOTH|NEITHER, strength?: weak|moderate|strong, independent?: boolean, discriminating?: boolean}.' } },
     required: ['a', 'b', 'evidence'], openWorld: false, run: guard(async (a) => twoExplanations(a)) },
-  { name: 'eval_setup_check', title: 'Evaluation setup comparison',
-    description: 'A decided ABOVE or BELOW requires all eleven setup fields named and matching on both sides; otherwise a value gap reads CANNOT_TELL. Compares a claimed evaluation setup with ours field by field (harness, prompt format, chat template, few-shot, max tokens, temperature, stop, extraction rule, dataset version, items, seeds): MATCH, DIFFERS, UNNAMED_BY_CLAIM, UNNAMED_BY_US or UNNAMED_BY_BOTH (named by neither side; not compared, but it still keeps the outcome from reading as a clean match). With values and intervals, compares the readings; if setup differs or is unnamed by the claim and the values disagree the outcome is CANNOT_TELL with the direction. Optionally reads a public Hugging Face model card for stated setup words. Lists the twelve eval checks and which of them these inputs can evaluate.',
-    params: { claimed: { type: 'object', description: 'Claimed setup fields and optional value and interval.' }, ours: { type: 'object', description: 'Our setup fields and optional value and interval.' }, model: { type: 'string', description: 'Optional Hugging Face repo id (org/name) whose public model card is read for setup words.' } },
-    required: ['claimed', 'ours'], openWorld: true, run: guard(async (a) => evalSetup(a)) },
 ];

@@ -4,7 +4,7 @@
 // removal request comes from the person or organisation named. Stored: the fields below and the time, kept 24 months as the privacy notice states.
 // A truncated one-way hash of the address is kept 1 hour for the rate limit (never the address itself).
 import { EmailMessage } from 'cloudflare:email';
-const OK = 'Thank you. Your request has been received. We read it in full and answer by email, usually within a few days. Nothing you sent is posted.';
+const OK = 'Thank you. Your request has been received. We read it in full. Nothing you sent is posted.';
 const KINDS = { correct: 'Correct a number, a quote or a claim', name: 'Remove my name', page: 'Remove a page or a study row', privacy: 'Another privacy request' };
 const FIELDS = { name: 120, email: 160, link: 500, kind: 20, details: 3000 };
 const EMAIL = /^[^\s@<>"]{1,64}@[^\s@<>"]{1,180}\.[A-Za-z]{2,24}$/;

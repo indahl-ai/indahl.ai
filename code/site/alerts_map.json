@@ -121,6 +121,10 @@
 "SECRECORDS",
 "Do a domain's security records do what they say?"
 ],
+"seldon": [
+"SELDON",
+"When the Congressional Budget Office prints a two-thirds range years ahead, does the outcome land inside it?"
+],
 "social": [
 "SOCIAL",
 "Two filings, one platform"
@@ -156,6 +160,10 @@
 "weights": [
 "WEIGHTS",
 "Does a model name keep the same weights?"
+],
+"zeus": [
+"ZEUS",
+"When the Storm Prediction Center draws a thunder line, how often does lightning strike inside it?"
 ]
 },
 "divs": {
@@ -208,6 +216,7 @@
 "prometheus",
 "revise",
 "seasonal",
+"seldon",
 "social",
 "steo",
 "tape",
@@ -215,7 +224,8 @@
 "trials",
 "vault",
 "voightkampff",
-"wiki"
+"wiki",
+"zeus"
 ]
 ],
 "iris": [
@@ -4081,6 +4091,15 @@
 "src": "feed limit",
 "what": "Security records against their own rules"
 },
+"seldon": {
+"div": "hermes",
+"every": "checked about once a day",
+"every_min": 1560,
+"mode": "outcome",
+"name": "SELDON",
+"src": "feed limit",
+"what": "Long-range budget and growth ranges against outcomes"
+},
 "social": {
 "div": "hermes",
 "every": "checked about every 3 days",
@@ -4215,6 +4234,15 @@
 "name": "YO",
 "src": "feed limit",
 "what": "A small language model trained on IBM calibration records: live reads and every test"
+},
+"zeus": {
+"div": "hermes",
+"every": "checked about once a day",
+"every_min": 1560,
+"mode": "outcome",
+"name": "ZEUS",
+"src": "feed limit",
+"what": "Thunderstorm outlooks against the lightning that struck"
 }
 },
 "signals": {
@@ -4306,5 +4334,5 @@
 ]
 }
 },
-"tick_min": 2.4
+"tick_min": 2.41
 }

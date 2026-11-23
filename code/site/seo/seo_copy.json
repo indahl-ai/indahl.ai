@@ -1,0 +1,497 @@
+[
+ {
+  "path": "/",
+  "title": "Published claims measured against their own data | indahl.ai",
+  "description": "Published claims about AI benchmarks, quantum hardware and public data, recounted from the data released with them."
+ },
+ {
+  "path": "/media",
+  "title": "IBM gate error measured above IBM’s figures | indahl.ai",
+  "description": "Every gate-error run made on IBM quantum processors on 23 and 24 October 2026 measured above the figures IBM publishes."
+ },
+ {
+  "path": "/contact",
+  "title": null,
+  "description": "Inquiry form for Heuremen LLC: quantum hardware audits, model evaluation recounts, custom small models and paper reads."
+ },
+ {
+  "path": "/terms",
+  "title": null,
+  "description": "Terms of use and data rights for every Heuremen LLC publication: reading, citing, API and connector use, and the rules on text and data mining."
+ },
+ {
+  "path": "/sagar",
+  "title": "SAGAR: errata in gravity and cosmology papers | indahl.ai",
+  "description": "SAGAR indexes errata in gravitational-wave and cosmology papers on arXiv: the passage the paper prints, where the paper shows otherwise, and its code."
+ },
+ {
+  "path": "/qia",
+  "title": "QIA: IBM calibration against measured runs | indahl.ai",
+  "description": "The calibration IBM publishes for its quantum processors, set against indahl.ai’s own runs, with live processor queues and the QIA study index."
+ },
+ {
+  "path": "/chronos",
+  "title": "CHRONOS: today in the world’s calendars | indahl.ai",
+  "description": "Today’s date in twelve calendars, from Gregorian and Islamic to Hebrew, Chinese and Ethiopian, with live new year countdowns. Worked out in the browser."
+ },
+ {
+  "path": "/connect/tools/arxiv_version_drift",
+  "title": "Check an arXiv paper for later versions | indahl.ai",
+  "description": "arxiv_version_drift reads one arXiv paper live: its current version, when it was first posted and last updated, and whether it says it was withdrawn."
+ },
+ {
+  "path": "/connect/tools/number_check",
+  "title": "Check report figures against a source | indahl.ai",
+  "description": "number_check pulls each number from a report with its context words and looks for it in a source given as a DOI, arXiv id, URL or pasted text."
+ },
+ {
+  "path": "/connect/tools/qia_calibration_check",
+  "title": "Check IBM calibration before a run | indahl.ai",
+  "description": "qia_calibration_check reads the calibration record IBM publishes for a processor, for the qubits a circuit will use, before the run."
+ },
+ {
+  "path": "/connect/tools/claim_wording_check",
+  "title": "Flag wording that overstates a result | indahl.ai",
+  "description": "claim_wording_check scans result sentences for wording that claims more than the comparison shows, such as proof language or causal verbs."
+ },
+ {
+  "path": "/connect/tools/qia_qubit_history",
+  "title": "One IBM qubit’s published calibration history | indahl.ai",
+  "description": "qia_qubit_history lists every distinct T1, T2 and readout error IBM published for one qubit, up to 30 days back, from the indahl.ai saved index."
+ },
+ {
+  "path": "/connect/tools/check_reported_statistics",
+  "title": "Recompute reported statistics | indahl.ai",
+  "description": "check_reported_statistics recomputes the p value of each t, F, chi-square, r and z statistic in pasted text from the statistic and its degrees of freedom."
+ },
+ {
+  "path": "/connect/tools/qia_run_check",
+  "title": "IBM calibration in force during a run | indahl.ai",
+  "description": "qia_run_check names the IBM calibration record in force at the start of a finished run and every record IBM stamped during it."
+ },
+ {
+  "path": "/connect/tools/quote_check",
+  "title": null,
+  "description": "quote_check finds each quotation in a draft and searches for it in a source given as a DOI, arXiv id, URL or pasted text."
+ },
+ {
+  "path": "/social",
+  "title": null,
+  "description": "SOCIAL: what large platforms state about their own conduct, read against public filings that cover the same activity, from DSA reports to FEC filings."
+ },
+ {
+  "path": "/atlas",
+  "title": null,
+  "description": "ATLAS: one map of US data centers, power plants, electricity prices and carbon intensity, and a year of electricity at AI data centers’ stated power."
+ },
+ {
+  "path": "/predictions",
+  "title": null,
+  "description": "NOW: public predictions logged with their exact words, source and deadline, read against the record when due. FORTUNE: famous predictions, checked."
+ },
+ {
+  "path": "/neo",
+  "title": null,
+  "description": "NEO: close-approach distance ranges NASA/JPL stated before each approach, set beside the distance from the latest orbit solution, by lead time."
+ },
+ {
+  "path": "/airq",
+  "title": null,
+  "description": "AIRQ: PurpleAir sensors within 200 meters of EPA monitors, read against the EPA’s performance targets for fine particle sensors, with a live 60-day panel."
+ },
+ {
+  "path": "/tornado",
+  "title": null,
+  "description": "TORNADO: Storm Prediction Center Day 1 tornado chances and National Weather Service warning goals, set beside the tornadoes in the SPC database."
+ },
+ {
+  "path": "/linkrot",
+  "title": null,
+  "description": "LINKROT: code and data links in arXiv papers, opened every week, with the share that no longer resolves, and random early-web samples beside them."
+ },
+ {
+  "path": "/credit",
+  "title": null,
+  "description": "CREDIT: the timely-response shares the CFPB prints, read against its own complaint database company by company, and card APRs beside Fed averages."
+ },
+ {
+  "path": "/census/vintages",
+  "title": null,
+  "description": "CENSUS: each state’s July 1 population estimate as an earlier vintage gave it, set beside later vintages and the 2020 Census count."
+ },
+ {
+  "path": "/seasonal",
+  "title": null,
+  "description": "SEASONAL: Climate Prediction Center chances for above, near and below normal seasons, set beside the observed category, and a recompute of its skill score."
+ },
+ {
+  "path": "/steo",
+  "title": null,
+  "description": "STEO: EIA’s 95 percent price ranges for WTI crude and Henry Hub gas in the Short-Term Energy Outlook, set beside the monthly average spot price."
+ },
+ {
+  "path": "/hpt",
+  "title": null,
+  "description": "HPT: whether US hospital websites carry the cms-hpt.txt file the federal price transparency rule asks for, and whether the price file it links opens."
+ },
+ {
+  "path": "/water",
+  "title": null,
+  "description": "WATER: each 24-Month Study projection of Lake Mead and Lake Powell since 2000, set beside the level the lake reached, with a live panel of both lakes."
+ },
+ {
+  "path": "/census/revisions",
+  "title": null,
+  "description": "CENSUS: first prints of home sales, housing starts and completions and retail sales, with their stated 90 percent interval, set beside later revisions."
+ },
+ {
+  "path": "/census/coverage",
+  "title": null,
+  "description": "CENSUS: the 2020 Census count of each state set beside the Census Bureau’s own Post-Enumeration Survey, read at the 90 percent level Census states."
+ },
+ {
+  "path": "/flu",
+  "title": null,
+  "description": "FLU: the CDC FluSight ensemble’s 50 and 95 percent ranges for weekly flu hospital admissions, set beside the counts later reported."
+ },
+ {
+  "path": "/iris/lab/runs",
+  "title": null,
+  "description": "Earlier IRIS lab runs: a small model trained on the house’s own answers, a Falcon trained on the Heuremen Standard, and open models on the Standard."
+ },
+ {
+  "path": "/services",
+  "title": null,
+  "description": "Quantum hardware audits (QIA), model evaluation recounts and custom small models (IRIS), and paper reads (SAGAR), with completion metrics set in advance."
+ },
+ {
+  "path": "/wiki",
+  "title": null,
+  "description": "WIKI: Wikidata figures that cite the World Bank or UNESCO, read against that source’s releases, and the Wikimedia Foundation’s stated reach."
+ },
+ {
+  "path": "/hermes/model",
+  "title": null,
+  "description": "MODEL: what AI hardware vendors and papers state, held against published MLCommons results and the papers’ own released data, row by row."
+ },
+ {
+  "path": "/atlas/electricity",
+  "title": null,
+  "description": "ATLAS electricity: 2024 average prices by state for industrial, commercial and home customers, and generation by source, with data centers on the map."
+ },
+ {
+  "path": "/revise",
+  "title": null,
+  "description": "REVISE: how often the first monthly payroll estimate was later moved by more than the margin the Bureau of Labor Statistics states."
+ },
+ {
+  "path": "/pkglicense",
+  "title": null,
+  "description": "PKGLICENSE: the license each top PyPI project states, against the license GitHub detects in its repository, read monthly, each disagreement read in full."
+ },
+ {
+  "path": "/rank",
+  "title": null,
+  "description": "RANK: the top of each US News education ranking, with its stated method and weights, set against state report cards and federal school and college data."
+ },
+ {
+  "path": "/secrecords",
+  "title": null,
+  "description": "SECRECORDS: whether the HSTS preload header and SPF record of the most visited domains meet the published rules for each, read monthly."
+ },
+ {
+  "path": "/atlas/planned-plants",
+  "title": null,
+  "description": "ATLAS planned plants: generators owners report as planned in the EIA monthly inventory for September 2026, by fuel, stage, year and state."
+ },
+ {
+  "path": "/solar",
+  "title": null,
+  "description": "SOLAR: NOAA SWPC’s daily chances of solar flares and geomagnetic storms, as first published, set beside what happened, with a Brier score."
+ },
+ {
+  "path": "/cone",
+  "title": null,
+  "description": "CONE: National Hurricane Center track forecasts set beside the best track, scored against the cone NHC says holds the storm 60 to 70 percent of the time."
+ },
+ {
+  "path": "/yo",
+  "title": null,
+  "description": "YO: a small model that reads each new IBM calibration record as it is published and flags stale T1 and T2 values, checked against code on every read."
+ },
+ {
+  "path": "/tape",
+  "title": null,
+  "description": "TAPE: a public hash chain of every page and live feed Heuremen LLC publishes. Each entry carries the hash of the one before it, so anyone can verify it."
+ },
+ {
+  "path": "/census/fidelity",
+  "title": null,
+  "description": "CENSUS: state divorce and marriage counts reported to the CDC, set beside American Community Survey estimates and the 90 percent margin Census states."
+ },
+ {
+  "path": "/hflicense",
+  "title": null,
+  "description": "HFLICENSE: the license each top Hugging Face model and dataset states, against the license file in its repository, read monthly, each mismatch in full."
+ },
+ {
+  "path": "/arxivdrift",
+  "title": null,
+  "description": "ARXIVDRIFT: each arXiv study QIA and IRIS index for a later version and whether it changed the abstract numbers, wording or standing."
+ },
+ {
+  "path": "/petrol",
+  "title": null,
+  "description": "ATLAS PETROL: each OPEC+ country’s required production against the output secondary sources report, and EIA’s weekly US crude estimate against its monthly."
+ },
+ {
+  "path": "/qia/package",
+  "title": null,
+  "description": "Checks on IBM Quantum calibration records before and after a run: a record checker, YO, the Heuremen Standard and a same-job T1 and T2 check."
+ },
+ {
+  "path": "/try",
+  "title": null,
+  "description": "One indahl.ai check in the browser, with no key or account: check a paper by DOI or arXiv id, or recompute a passage’s statistics, with a signed receipt."
+ },
+ {
+  "path": "/census",
+  "title": null,
+  "description": "CENSUS: what the US Census Bureau states about the uncertainty of its first estimates, set beside the revisions that followed. Not the Census Bureau."
+ },
+ {
+  "path": "/vault",
+  "title": null,
+  "description": "Hash a file in the browser for a receipt on the public tape, or seal it until a date with drand. The file never leaves the computer."
+ },
+ {
+  "path": "/hfsize",
+  "title": null,
+  "description": "HFSIZE: the size in a Hugging Face model’s name against the parameters its weight files hold, for the most downloaded models, each mismatch read in full."
+ },
+ {
+  "path": "/forecasters",
+  "title": null,
+  "description": "Every public forecaster the Heuremen LLC desks score, on one axis: stated coverage or chance against what happened, with each desk’s interval and outcome."
+ },
+ {
+  "path": "/alerts",
+  "title": null,
+  "description": "Email alerts when an outcome or the published data changes on chosen indahl.ai desks, plus new desks and new data. Each address is confirmed first."
+ },
+ {
+  "path": "/now",
+  "title": null,
+  "description": "Everything moving on indahl.ai now: desks being read, model training, live reads of IBM records, processor queues and the newest studies."
+ },
+ {
+  "path": "/api",
+  "title": null,
+  "description": "A read-only MCP server and JSON API: QIA calibration tools and checks on a paper, passage, package or model, with the source and time read on each answer."
+ },
+ {
+  "path": "/plugins",
+  "title": null,
+  "description": "Heuremen LLC plugins for Claude Code: check papers and eval claims against the Heuremen Standard, reproduce every desk, and check IBM Quantum runs."
+ },
+ {
+  "path": "/seat",
+  "title": null,
+  "description": "SEAT: a GitHub runner outside indahl.ai fetches every live page and feed and compares them with the public repository and each feed’s own limit."
+ },
+ {
+  "path": "/quake",
+  "title": null,
+  "description": "QUAKE: every archived USGS aftershock forecast, its stated chances and 95% ranges set beside the quakes the USGS catalog shows in the same zone and window."
+ },
+ {
+  "path": "/qia/studies/research",
+  "title": null,
+  "description": "QIA calibrated studies by research groups, institutions and individuals: quantum hardware papers recounted from their own printed values and released data."
+ },
+ {
+  "path": "/support",
+  "title": null,
+  "description": "SUPPORT: vendors’ stated support and end-of-life dates for each release cycle, against whether the cycle still gets releases."
+ },
+ {
+  "path": "/developers",
+  "title": null,
+  "description": "Developer guide for indahl.ai: a read-only MCP server and JSON API over every live measurement, with an OpenAPI 3.1 document and signed receipts."
+ },
+ {
+  "path": "/atlas/carbon",
+  "title": null,
+  "description": "ATLAS carbon: pounds of carbon dioxide per megawatthour generated, by state and grid region, from EPA eGRID 2023, with data centers drawn over the map."
+ },
+ {
+  "path": "/uptime",
+  "title": null,
+  "description": "UPTIME: vendor status pages held against independent probes from a home network and a cloud network, live, with disagreements counted against a floor."
+ },
+ {
+  "path": "/fedsep",
+  "title": null,
+  "description": "FEDSEP: how often outcomes fell outside the range the Fed’s Summary of Economic Projections says they should fall in about 70 percent of the time."
+ },
+ {
+  "path": "/hermes/model/source/apple-mac",
+  "title": "Apple MacBook Pro 14-inch with M5 Max | MODEL | indahl.ai",
+  "description": "Apple, MacBook Pro 14-inch with M5 Max, measured on the house unit: each stated figure set against the published files, with quote and outcome."
+ },
+ {
+  "path": "/darkwave",
+  "title": "Darkwave | A readout’s kick is a turn | indahl.ai",
+  "description": "A mid-circuit readout on an IBM Heron processor turns the phase of qubits it never touches. A virtual Rz gives most of it back. Run 31 October 2026."
+ },
+ {
+  "path": "/campus",
+  "title": null,
+  "description": "CAMPUS: every external source cited on the OY page, read and kept pass after pass so that a moved, changed or removed page shows.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/iris/lab",
+  "title": null,
+  "description": "The two models we train: STANYO and YO. YO reads each new IBM calibration record. Earlier runs are one link below.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/pkginstall",
+  "title": null,
+  "description": "PKGINSTALL: the pip install command in each of the most downloaded PyPI projects' descriptions against whether pip can resolve it today.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/weights",
+  "title": null,
+  "description": "WEIGHTS: whether the most downloaded open-weight models on Hugging Face keep the same weight files behind the same name, pass after pass.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/ailuminate",
+  "title": null,
+  "description": "AILUMINATE: the MLCommons AILuminate Safety results page against its own reports, and whether published scores stay as published.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/hosts",
+  "title": null,
+  "description": "HOSTS: every open-weight model served through OpenRouter, every host serving it, each host’s stated quantization and uptime and kept.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/atlas/power-plants",
+  "title": null,
+  "description": "ATLAS power plants: every operating United States power plant from EIA-860 by fuel and capacity, with the AI data centers drawn over the map.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/time",
+  "title": null,
+  "description": "TIME: public time servers held against their own stated error bounds, measured live from a GPS-disciplined clock, with the outcome for every server.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/cada",
+  "title": null,
+  "description": "CADA: public DNS filters held against fresh malware and phishing listings, live, with the share blocked and the time to block for every resolver.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/change",
+  "title": null,
+  "description": "CHANGE: the shutdown dates Anthropic, OpenAI, Google and Cloudflare publish, read again and again, with every move, addition and removal logged.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/hermes/datapapers",
+  "title": null,
+  "description": "Papers in Scientific Data, Earth System Science Data, Data in Brief and GigaScience, each listed with the files its repository serves.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/trials",
+  "title": null,
+  "description": "TRIALS: ClinicalTrials.gov records for FDA-regulated drug and device trials, results posted against results on the record, by sponsor class and sponsor, live.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/airline",
+  "title": null,
+  "description": "AIRLINE: how much longer each US airline schedules a flight than the flight takes, 2019, 2025 and 2026, from the Bureau of Transportation Statistics record.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/cadence",
+  "title": null,
+  "description": "CADENCE: what government data portals state about how often datasets update, held against when they last changed, with the series furthest past their cadence.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/forecast",
+  "title": null,
+  "description": "FORECAST: the National Weather Service stated chance of precipitation against what happened at 30 airports, as live calibration tables with intervals.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/prometheus",
+  "title": null,
+  "description": "PROMETHEUS: the NIFC Significant Wildland Fire Potential Outlook by Predictive Services Area, set beside the large fires that followed, read against more than half, with a block bootstrap interval by outlook issue.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/ares",
+  "title": null,
+  "description": "ARES: for every province and month, whether the UCDP and GDELT public trackers both recorded organized armed violence, and where only one did. No casualty figures, no sides, no borders.",
+  "source": "22 Nov 2026: the ARES desk builder"
+ },
+ {
+  "path": "/cassandra",
+  "title": null,
+  "description": "CASSANDRA: every flash flood warning from 2008 to 2025 set beside the flash flood reports inside its polygon before it expired, every warning counted, none chosen, with a block bootstrap interval by forecast office and year.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/argus",
+  "title": null,
+  "description": "ARGUS: the temperament words in breed standards, mapped in advance to behavior factors, read against the open Darwin’s Ark genetic and owner survey data, with bootstrap intervals and the share of each breed’s own dogs on the stated side.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/zeus",
+  "title": null,
+  "description": "ZEUS: the Storm Prediction Center Day 1 general thunder area set beside GOES Geostationary Lightning Mapper flashes, with a day block bootstrap interval against the stated 10 percent.",
+  "source": "22 Nov 2026: the ZEUS desk builder"
+ },
+ {
+  "path": "/seldon",
+  "title": null,
+  "description": "SELDON: the two-thirds ranges the Congressional Budget Office printed for the deficit, debt and growth years ahead, set beside the outcomes, with a report block bootstrap interval against the stated two-thirds.",
+  "source": "22 Nov 2026: the SELDON desk builder"
+ },
+ {
+  "path": "/deus",
+  "title": null,
+  "description": "DEUS: benchmark scores model developers print for their own models, set beside independent reruns from the Epoch AI Benchmarking Hub, read as ABOVE, BELOW, CONSISTENT or CANNOT_TELL with every setup field named.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/launch",
+  "title": null,
+  "description": "LAUNCH: the stated time of orbital launches, stored as it changes, against the time each launch flew, live, by lead time and provider.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/oy",
+  "title": null,
+  "description": "What United States institutions have published about measuring their own policies on AI in teaching and learning, with a source for every row.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ },
+ {
+  "path": "/voightkampff",
+  "title": null,
+  "description": "VOIGHT-KAMPFF: the false positive rates AI-text detector makers state, set beside independent tests that release their data text by text, with Wilson intervals and the four-way reading.",
+  "source": "22 Nov 2026: copied from the live page so every desk has one description here"
+ }
+]

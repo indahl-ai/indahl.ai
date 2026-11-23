@@ -23,7 +23,7 @@ L = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(L)
 Q, QLOCK, RLOCK = L + '/ship_queue.jsonl', L + '/.ship_queue.flock', L + '/.ship_queue_runner.flock'
 PIPE = B + '/sagar/pipeline/pipe.log'; LAST = L + '/ship_queue_last.log'
 AUTO_STATUS = L + '/auto_ship_status.json'   # watch/alerts_check.py reads it; auto_ship.py now queues its ship, so the runner writes it
-SHIP_TIMEOUT = 3 * 3600   # lock wait plus ship; a hung ship is killed (its whole process group) and marked exit 124
+SHIP_TIMEOUT = 45 * 60   # 23 Nov 2026 (the designer review #6): a healthy ship is 1-7 min; was 3 h, which held MONEY fixes behind a hung ship.  lock wait plus ship; a hung ship is killed (its whole process group) and marked exit 124
 KEEP_DONE = 200
 
 

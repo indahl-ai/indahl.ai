@@ -33,3 +33,12 @@ id = "<kv-namespace-id>"
 binding = "tape_commits"
 database_name = "tape-commits"
 database_id = "<d1-database-id>"
+
+# 23 Nov 2026: strict per-visitor limits (Limiter class in worker.js); quantumidleaudit.com binds the same class by script_name
+[[durable_objects.bindings]]
+name = "LIMITER"
+class_name = "Limiter"
+
+[[migrations]]
+tag = "v1-limiter"
+new_sqlite_classes = ["Limiter"]

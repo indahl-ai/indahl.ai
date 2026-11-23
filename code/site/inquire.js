@@ -41,8 +41,11 @@ export async function handleInquiry(req, env, render) {
   if (!env.INDAHL_INQUIRIES) return reject('Inquiries are temporarily unavailable. Please try again later.', 503);
   const len = Number(req.headers.get('content-length') || 0);
   if (len > 20000) return reject('That submission is too long.', 413);
-  let f;
-  try { f = await req.formData(); } catch (e) { return reject('That submission could not be read.'); }
+  // 23 Nov 2026 (the designer review #14): content-length can be left out (a chunked body), so the body is read with a real byte cap first.
+  let f, raw;
+  try { raw = await req.arrayBuffer(); } catch (e) { return reject('That submission could not be read.'); }
+  if (raw.byteLength > 20000) return reject('That submission is too long.', 413);
+  try { f = await new Request('https://form.local/', { method: 'POST', headers: { 'content-type': req.headers.get('content-type') || '' }, body: raw }).formData(); } catch (e) { return reject('That submission could not be read.'); }
   if ((f.get('website') || '').trim()) return render(null, 200);                 // honeypot: look accepted, store nothing
   const started = Number(f.get('t') || 0);
   if (!started || Date.now() - started < 3000) return reject('That went through too quickly. Please wait a moment and submit again.');
@@ -72,10 +75,17 @@ export async function handleInquiry(req, env, render) {
   if (!m) return reject('Please give a valid email address.');
   if (engagement && FREEMAIL.has(m[1])) return reject('Please write from your organization’s email address. Inquiries from personal email services are not reviewed.');
   const ip = clientIp(req, env);   // 23 Nov 2026: the visitor's IP on a quantumidleaudit.com forward (gate.js viaQia), else cf-connecting-ip
-  const rk = 'rate:' + await sha(ip + '|' + new Date().toISOString().slice(0, 13));
-  const n = Number(await env.INDAHL_INQUIRIES.get(rk) || 0);
-  if (n >= 3) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);
-  await env.INDAHL_INQUIRIES.put(rk, String(n + 1), { expirationTtl: 3600 });
+  // 23 Nov 2026 (the designer review #14): 3 an hour per visitor, held strictly by the Limiter Durable Object (the KV read-then-write let a burst
+  // through). Without the binding it falls back to the old KV counter.
+  if (env.LIMITER) {
+    const lr = await env.LIMITER.get(env.LIMITER.idFromName('inq:' + await sha(ip))).fetch('https://limiter/?limit=3&win=3600');
+    if (lr.status === 429) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);
+  } else {
+    const rk = 'rate:' + await sha(ip + '|' + new Date().toISOString().slice(0, 13));
+    const n = Number(await env.INDAHL_INQUIRIES.get(rk) || 0);
+    if (n >= 3) return reject('We have received several inquiries from you recently. Please wait before sending another.', 429);
+    await env.INDAHL_INQUIRIES.put(rk, String(n + 1), { expirationTtl: 3600 });
+  }
   rec.received = new Date().toISOString();
   rec.country = clientCountry(req, env);
   rec.site = viaQia(req, env) ? 'quantumidleaudit.com' : 'indahl.ai';   // which site's form it came from; same store, same inbox

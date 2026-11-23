@@ -50,7 +50,9 @@ export const clientCountry = (req, env) => viaQia(req, env) ? (req.headers.get('
 const redirectUri = (req, env) => viaQia(req, env) ? QIA_CALLBACK : (env.GATE_ORIGIN ? env.GATE_ORIGIN.replace(/\/$/, '') + '/auth/callback' : new URL('/auth/callback', req.url).toString());
 
 export async function session(req, env) {
-  try { return await verify(env, cookie(req, 'ig_s')); } catch (e) { return null; }
+  // 23 Nov 2026 (the designer review #13): only a real sign-in token passes. The agreement token (k: 'agree') is signed with the same key and used to
+  // pass here too, stopped only by its missing email. A session carries k: 'session' (older ones carry no k) and both e and d.
+  try { const o = await verify(env, cookie(req, 'ig_s')); return o && (o.k === undefined || o.k === 'session') && o.e && o.d ? o : null; } catch (e) { return null; }
 }
 
 // The /agree step: both documents read to the end and both boxes checked. Kept in a signed cookie (2 hours) and written into the
@@ -94,7 +96,7 @@ export async function callback(req, env, fail) {
   if (!m || user.email_verified !== true) return fail('We could not confirm an email address for that account.');
   if (FREEMAIL.has(m[1])) return fail('Inquiries need an organization account. Personal email services are not accepted.');
   const now = Math.floor(Date.now() / 1000);
-  const s = { e: email, d: m[1], n: [user.first_name, user.last_name].filter(Boolean).join(' ').slice(0, 120), u: String(user.id || ''),
+  const s = { k: 'session', e: email, d: m[1], n: [user.first_name, user.last_name].filter(Boolean).join(' ').slice(0, 120), u: String(user.id || ''),
     m: METHOD[a.authentication_method] || String(a.authentication_method || 'verified sign-in'), o: String(a.organization_id || ''), iat: now, exp: now + SESSION_S };
   const h = new Headers({ location: '/inquiry', 'cache-control': 'no-store' });
   h.append('set-cookie', setCookie('ig_s', await sign(env, s), SESSION_S));

@@ -693,6 +693,20 @@ async function handle(req, env) {
     return Response.redirect("https://indahl.ai/", 301);
   }
 }
+// 23 Nov 2026 (the designer review #9 and #14): one strict counter per key (a visitor's address), used by POST /inquire here and by POST /qubit on
+// quantumidleaudit.com (bound across scripts). A Durable Object holds each key in one place, so a burst cannot slip past as it did with
+// the KV read-then-write and with the per-location rate-limit binding. GET /?limit=N&win=SECONDS answers 200 (allowed) or 429.
+export class Limiter {
+  constructor(state) { this.state = state; }
+  async fetch(req) {
+    const u = new URL(req.url), limit = Math.max(1, Number(u.searchParams.get("limit")) || 20), win = Math.max(1, Number(u.searchParams.get("win")) || 60) * 1000;
+    const now = Date.now(); let w = (await this.state.storage.get("w")) || [];
+    w = w.filter((t) => now - t < win);
+    if (w.length >= limit) { await this.state.storage.put("w", w); return new Response("limited", { status: 429 }); }
+    w.push(now); await this.state.storage.put("w", w);
+    return new Response("ok");
+  }
+}
 export {
   cut_default as default
 };

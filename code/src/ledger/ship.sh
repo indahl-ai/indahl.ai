@@ -32,13 +32,21 @@ STEP=start; F=0; RES="${SHIP_RESULT:-$L/.ship_result.txt}"; : > "$RES"
 one() { printf '%s' "$*" | tr '\n\t' '  ' | cut -c1-300; }
 note() { echo "  NOTE: $*"; printf 'NOTE\t%s\t%s\n' "$STEP" "$(one "$*")" >> "$RES"; }   # non-fatal; the runner reports it in its one line
 fail() { echo "SHIP REFUSED ($STEP): $*"; printf 'FAIL\t%s\t%s\n' "$STEP" "$(one "$*")" >> "$RES"; exit 1; }
-refuse() { if [ $CHECK = 1 ]; then echo "== REFUSED ($STEP): $*"; printf 'FAIL\t%s\t%s\n' "$STEP" "$(one "$*")" >> "$RES"; F=1; else fail "$@"; fi; }   # a gate: --check records it and runs the rest
+refuse() { if [ $CHECK = 1 ]; then echo "== $(date +%H:%M:%S) REFUSED ($STEP): $*"; printf 'FAIL\t%s\t%s\n' "$STEP" "$(one "$*")" >> "$RES"; F=1; else fail "$@"; fi; }   # a gate: --check records it and runs the rest
 trap 'rc=$?; if [ $rc -ne 0 ]; then grep -q "^FAIL" "$RES" 2>/dev/null || printf "FAIL\t%s\t%s\n" "$STEP" "stopped (exit $rc), see ledger/.last_ship_gates.txt" >> "$RES"; if [ $CHECK = 0 ] && [ -z "${SHIP_RUNNER:-}" ]; then printf "%s RING: SHIP FAILED at %s: %s (exit %s): %s\n" "$(date "+%Y-%m-%dT%H:%M:%S")" "$(grep -m1 "^FAIL" "$RES" | cut -f2)" "$(grep -m1 "^FAIL" "$RES" | cut -f3 | cut -c1-200)" "$rc" "$(one "$MSG" | cut -c1-150)" >> "$B/sagar/pipeline/pipe.log" 2>/dev/null; fi; fi; true' EXIT
 # gate NAME TAILN cmd...: the whole output is kept in ledger/gates/NAME.txt; on failure the gate and its first lines are printed and refused
 gate() { local n="$1" t="$2" rc; shift 2; mkdir -p "$L/gates"; set +e; "$@" > "$L/gates/$n.txt" 2>&1; rc=$?; set -e; tail -"$t" "$L/gates/$n.txt"
   if [ $rc -ne 0 ]; then echo "gate $n (exit $rc), first lines:"; grep -v '^[[:space:]]*$' "$L/gates/$n.txt" | head -15; refuse "gate $n (exit $rc): $(grep -v '^[[:space:]]*$' "$L/gates/$n.txt" | head -1 | cut -c1-200)"; fi; }
 export SHIP_RUN=1   # 21 Nov 2026: builders run outside a ship refuse while one runs (a mid-ship local build made the front page differ from what was deployed)
-STEP=build; echo "== 1 BUILD"
+# 23 Nov 2026 (house review: each ship repeated the 6-minute build and gates its preflight had just run). A clean preflight records a
+# fingerprint of every source repo (HEAD + uncommitted changes). A real ship that starts within 20 minutes with the SAME fingerprint reuses
+# that build and those gates and goes straight to DEPLOY. Any change in between, even one file, means a full build as before. One use only.
+srcfp() { { for r in "$B/indahl-ai" "$B/calibrations" "$B/heuremen.org" "$L" "$B/faultsguards"; do git -C "$r" rev-parse HEAD 2>/dev/null || true; git -C "$r" status --porcelain 2>/dev/null || true; done; git --git-dir="$HOME/.house-ops.git" --work-tree="$B" status --porcelain 2>/dev/null || true; } | shasum | cut -c1-16; }
+REUSE=0; PF="$L/.preflight_ok"
+if [ $CHECK = 0 ] && [ -f "$PF" ]; then read -r pfp pts < "$PF" || true; if [ "${pfp:-x}" = "$(srcfp)" ] && [ $(( $(date +%s) - ${pts:-0} )) -lt 1200 ]; then REUSE=1; echo "== $(date +%H:%M:%S) 1-3 REUSED: the preflight of $(date -r "${pts:-0}" +%H:%M:%S) built and gated these exact sources"; fi; fi
+rm -f "$PF"
+if [ $REUSE = 0 ]; then
+STEP=build; echo "== $(date +%H:%M:%S) 1 BUILD"
 for k in FAULTS:faults GUARDS:guards; do src="$B/faultsguards/source/${k%%:*}.html"; out="$B/heuremen.org/${k##*:}.pdf"   # 23 Nov 2026: built from faultsguards/source, the copy the package and the CI PDF check use (ligera held a stale copy with the old byline)
   if newer "$src" "$out"; then "$B/ligera/render.sh" "$src" "$out" || fail "ligera/render.sh ${k##*:} failed"; else echo "  ${k##*:}: up to date"; fi; done
 if newer "$B/arxiv_one_readout/main.tex" "$B/heuremen.org/a-readout-is-not-an-idle.pdf"; then
@@ -66,8 +74,8 @@ python3 "$L/downloads.py" refresh || fail "downloads.py refresh failed"   # 11 N
 # 23 Nov 2026 (separate lanes): quantumidleaudit.com is no longer built here; it has its own worker and ship (ledger/ship_qia.sh)
 python3 "$L/downloads.py" refresh --post || { [ $? -eq 10 ] && { (cd "$B/indahl-ai" && python3 build_site.py) && python3 "$L/downloads.py" refresh --post; }; } || fail "downloads.py refresh --post failed"   # 11 Nov: packs made from built pages (OY) are rebuilt after the pages; exit 10 = one changed, so the site is built once more with its new size and ledger row, and the pack's input record is re-read against those pages (contents unchanged, so no second pack)
 # python3 "$L/receipts.py" build   # 15 Nov 2026: receipts are internal, no public /r/ pages
-STEP=copy; echo "== 2 COPY";  gate copies_publish 1 python3 "$L/copies.py" publish
-STEP=gates; echo "== 3 GATES"; CL=0; python3 "$L/check_ledger.py" > /tmp/check_ledger_last.txt || CL=$?; head -1 /tmp/check_ledger_last.txt; grep -v LIVESTALE /tmp/check_ledger_last.txt | sed -n "2,30p"; [ $CL = 0 ] || refuse "ledger drift (check_ledger.py): $(grep -v LIVESTALE /tmp/check_ledger_last.txt | sed -n 2p | cut -c1-200)"   # 15 Nov 2026: print every blocking ledger line, not only the last one
+STEP=copy; echo "== $(date +%H:%M:%S) 2 COPY";  gate copies_publish 1 python3 "$L/copies.py" publish
+STEP=gates; echo "== $(date +%H:%M:%S) 3 GATES"; CL=0; python3 "$L/check_ledger.py" > /tmp/check_ledger_last.txt || CL=$?; head -1 /tmp/check_ledger_last.txt; grep -v LIVESTALE /tmp/check_ledger_last.txt | sed -n "2,30p"; [ $CL = 0 ] || refuse "ledger drift (check_ledger.py): $(grep -v LIVESTALE /tmp/check_ledger_last.txt | sed -n 2p | cut -c1-200)"   # 15 Nov 2026: print every blocking ledger line, not only the last one
 python3 "$L/removed_gate.py" || refuse "a removed id is on a public page (removed_gate.py; ledger/remove.py <id> --why ...)"   # 17 Nov 2026, the owner: consistency site-wide; removal automated in the page builders
 gate copies_check 1 python3 "$L/copies.py" check   # restored 15 Nov 2026: the comment above had swallowed it
 DG=$(python3 "$L/downloads.py" gate 2>&1) || true; if ! echo "$DG" | grep -q "stale: 0" && ! echo "$DG" | grep "STALE" | grep -vq "its feed moved past the pack"; then echo "downloads: a live feed moved mid-ship, packs rebuilt once and re-checked"; python3 "$L/downloads.py" refresh >/dev/null 2>&1; DG=$(python3 "$L/downloads.py" gate 2>&1) || true; fi; echo "$DG" | tail -1; echo "$DG" | grep -q "stale: 0" || { echo "$DG" | head -20; refuse "a download is stale (downloads.py gate)"; }   # 11 Nov: downloads gate, a stale download or pack stops the ship (runs once)
@@ -107,8 +115,10 @@ gone = sorted(f for f in need if not os.path.exists(B + '/heuremen.org/' + f))
 if gone: print('  missing:', gone); sys.exit(1)
 PY
 python3 "$B/ledger/internal_gate.py" --site || refuse "internal material in the site (internal_gate.py --site)"   # 22 Nov 2026 (PARTS.md audit): quickship ran this gate, ship.sh did not
+fi   # end of the build and gates a fresh preflight lets a ship reuse
+if [ $CHECK = 1 ] && [ $F = 0 ]; then echo "$(srcfp) $(date +%s)" > "$PF"; fi
 if [ $CHECK = 1 ]; then if [ $F = 0 ]; then echo "preflight: all gates clean (ship.sh --check: the ship's own build and gates; nothing deployed, committed or pushed)"; else echo "preflight: fix the breaches above before ship_request.sh"; fi; exit $F; fi
-STEP=deploy; echo "== 4 DEPLOY"
+STEP=deploy; echo "== $(date +%H:%M:%S) 4 DEPLOY"
 STAMP="$W/.last_deploy.sha"; NOW=$("$L/deploy_hash.sh"); DEPLOYED=0; PREV=""; CFT=""   # 10 Nov: one hash for ship.sh and push_public.sh (deploy_hash.sh), so the two lists never drift
 wr() { ( cd "$W" && if [ -n "$CFT" ]; then CLOUDFLARE_API_TOKEN="$CFT" CLOUDFLARE_ACCOUNT_ID=<cloudflare-account-id> npx wrangler "$@"; else npx wrangler "$@"; fi ) 2>&1; }   # 22 Nov 2026: deploy token from keychain cloudflare-api-token-ship, passed explicitly
 if [ "$(cat "$STAMP" 2>/dev/null)" != "$NOW" ]; then
@@ -121,7 +131,7 @@ if [ "$(cat "$STAMP" 2>/dev/null)" != "$NOW" ]; then
   [ $WR -eq 0 ] || fail "the indahl.ai worker deploy failed (wrangler exit $WR): $(echo "$WO" | grep -i -m1 error | grep -v -i token | cut -c1-200); live is unchanged, the deploy stamp is not written"   # 21 Nov 2026 (control audit #19)
   DEPLOYED=1
 else echo "  indahl.ai worker: unchanged"; fi
-STEP=checks; echo "== 4a CHECKS (live after deploy)"; CHK=""
+STEP=checks; echo "== $(date +%H:%M:%S) 4a CHECKS (live after deploy)"; CHK=""
 # the two checks write their findings to ledger/gates/*.ring, not pipe.log: the ship's one ring (ship_queue.py) carries them
 MP=0; MONEY_PATH_LOG="$L/gates/money_path.ring" python3 "$L/money_path_check.py" --quiet --part inquiry > "$L/gates/money_path.txt" 2>&1 || MP=$?; cat "$L/gates/money_path.txt"; [ $MP = 0 ] && echo "  money path: ok" || CHK="money_path_check: $(grep -m1 '^FAIL' "$L/gates/money_path.txt" | cut -c6-200)"   # what a visitor gets on quantumidleaudit.com (home + Check a run box, demos, /inquiries, every Check a run file, a live runcheck.js run on ibm_fez)
 if [ -f "$L/mcp_gate.py" ]; then MG=0; MCP_GATE_LOG="$L/gates/mcp_gate.ring" python3 "$L/mcp_gate.py" --quiet > "$L/gates/mcp_gate.txt" 2>&1 || MG=$?; cat "$L/gates/mcp_gate.txt"; [ $MG = 0 ] && echo "  mcp gate: ok" || CHK="${CHK:+$CHK; }mcp_gate: $(grep -m1 '^FAIL' "$L/gates/mcp_gate.txt" | cut -c6-200)"; fi
@@ -137,7 +147,7 @@ if [ -n "$CHK" ]; then
 fi
 unset CFT
 if [ $DEPLOYED = 1 ]; then echo "$NOW" > "$STAMP"; { python3 "$L/stamps.py" manifest || true; }; fi   # the stamp is written only after the checks pass; 10 Nov: the manifest of what this deploy sent (stamps.py)
-STEP=commit; echo "== 5 COMMIT"
+STEP=commit; echo "== $(date +%H:%M:%S) 5 COMMIT"
 python3 - "$B" <<'PY' || fail "could not add the cited site files to the heuremen.org commit"
 import json, subprocess, sys
 B = sys.argv[1]; need = set()
@@ -153,7 +163,7 @@ cd "$B/indahl-ai"; set +e; IO=$(git push -q 2>&1); IR=$?; set -e; echo "$IO" | s
 # 21 Nov 2026 (control audit #18): both push results are written for watch/alerts_check.py (it was print-only, the indahl-ai one hidden)
 python3 -c 'import json,sys,time; pr,ir=int(sys.argv[1]),int(sys.argv[2]); print(json.dumps({"at": time.strftime("%Y-%m-%d %H:%M"), "ok": pr == 0 and ir == 0, "error": ("heuremen.org push exit %d; " % pr if pr else "") + ("indahl-ai push exit %d" % ir if ir else "")}))' "$PR" "$IR" > "$L/ship_push_status.json" || true
 [ $PR -eq 0 ] || note "heuremen.org PUSH FAILED (exit $PR): live heuremen.org is NOT updated"
-STEP=public; echo "== 5b PUBLIC REPOS"
+STEP=public; echo "== $(date +%H:%M:%S) 5b PUBLIC REPOS"
 # 31 Oct: the result is recorded for the watch (it was swallowed by "|| true" and a refusal went unseen for hours); a refusal is printed loud
 set +e; PUBOUT=$(SHIP_DEPLOYED=1 "$L/push_public.sh" "$MSG" 2>&1); PUBRC=$?; set -e; echo "$PUBOUT"   # 10 Nov: SHIP_DEPLOYED=1 makes a skipped page mirror a hard failure (exit 3)
 python3 - "$PUBRC" "$PUBOUT" > "$L/public_push_status.json" <<'PY'
@@ -166,10 +176,10 @@ set +e; python3 "$L/public_privacy_gate.py"; PPG=$?; set -e; [ $PPG -ne 0 ] && n
 set +e; python3 "$L/served_public_gate.py"; SPG=$?; set -e; [ $SPG -ne 0 ] && note "served public gate FAILED"; printf '{"at": "%s", "privacy": %s, "served": %s}\n' "$(date '+%Y-%m-%d %H:%M')" "$([ $PPG -eq 0 ] && echo true || echo false)" "$([ $SPG -eq 0 ] && echo true || echo false)" > "$L/public_gates_status.json";   # 21 Nov 2026 (control audit #11): read by watch/alerts_check.py, so the alert stays open
  if [ $SPG -ne 0 ]; then echo "!! 5b FAIL: files the site serves are missing from the public indahl.ai repo"; printf -- '- [public:served] since %s: served files missing from the public indahl.ai repo (ledger/served_public_gate.py)\n' "$(date '+%Y-%m-%d %H:%M')" >> "$B/alerts/ALERTS_OPEN.txt"; fi   # 14 Nov (the owner caught it): everything the site serves is in the public repo, checked every release
 if [ $PUBRC -ne 0 ] || echo "$PUBOUT" | grep -q REFUSED; then echo "!! PUBLIC REPOS REFUSED: the site shipped, the public code copies did not (see above; the watch shows this BAD until fixed)"; note "public repos not pushed (push_public.sh exit $PUBRC): $(echo "$PUBOUT" | grep -m1 -E 'REFUSED|FAIL' | cut -c1-200)"; fi
-echo "== 5c INDEXNOW"; python3 "$B/tools/indexnow.py" 2>&1 | tail -1 || true
+echo "== $(date +%H:%M:%S) 5c INDEXNOW"; python3 "$B/tools/indexnow.py" 2>&1 | tail -1 || true
 # 7 STAMPS (10 Nov): outside timestamps after a verified release. release_<commit>.json (commit, ledger hash, manifest of every deployed file)
 # stamped with OpenTimestamps, changed public URLs sent to the Internet Archive in the background, paced. Never fails a release.
-stamps() { echo "== 7 STAMPS"; set +e; python3 "$L/stamps.py" release 2>&1 | tail -4; echo "== 7b WEBSUB"; python3 "$B/indahl-ai/websub_ping.py" ship 2>&1 | tail -1; echo "== 7c LEDGER BACKUP"; git -C "$L" push -q backup HEAD:main 2>&1 | tail -1 && { rm -f "$L/ledger_backup_status.json"; echo "  ledger pushed to the private backup"; } || { echo "  ledger backup push FAILED"; echo "{\"at\": \"$(date -u +%FT%TZ)\", \"ok\": false}" > "$L/ledger_backup_status.json"; }; echo "== 7d ARCHIVE BACKUP"; bash "$L/archive_push.sh" 2>&1 | tail -2; echo "== 7e ZENODO"; python3 "$L/zenodo_sync.py" --publish 2>&1 | tail -20 || echo "  zenodo sync crashed (status file written)"; [ -f "$L/zenodo_status.json" ] || true; set -e; return 0; }   # 11 Nov: 7d pushes archive_private to the private repo, 7e makes a new Zenodo version of each record whose site files changed (24 h guard per record), both after the deploy verified and every gate was 0, neither fails a ship; a failure writes archive_backup_status.json / zenodo_status.json for alerts_check.py   # 10 Nov: 7b tells the WebSub hub which feeds changed (never fails a release, failures alert the operator)
-STEP=verify; echo "== 6 VERIFY"   # 23 Nov 2026 (the referee review S2): stamps (Zenodo, Internet Archive, OpenTimestamps) run only when the live checks passed
+stamps() { echo "== $(date +%H:%M:%S) 7 STAMPS"; set +e; python3 "$L/stamps.py" release 2>&1 | tail -4; echo "== $(date +%H:%M:%S) 7b WEBSUB"; python3 "$B/indahl-ai/websub_ping.py" ship 2>&1 | tail -1; echo "== $(date +%H:%M:%S) 7c LEDGER BACKUP"; git -C "$L" push -q backup HEAD:main 2>&1 | tail -1 && { rm -f "$L/ledger_backup_status.json"; echo "  ledger pushed to the private backup"; } || { echo "  ledger backup push FAILED"; echo "{\"at\": \"$(date -u +%FT%TZ)\", \"ok\": false}" > "$L/ledger_backup_status.json"; }; echo "== $(date +%H:%M:%S) 7d ARCHIVE BACKUP"; bash "$L/archive_push.sh" 2>&1 | tail -2; echo "== $(date +%H:%M:%S) 7e ZENODO"; python3 "$L/zenodo_sync.py" --publish 2>&1 | tail -20 || echo "  zenodo sync crashed (status file written)"; [ -f "$L/zenodo_status.json" ] || true; set -e; return 0; }   # 11 Nov: 7d pushes archive_private to the private repo, 7e makes a new Zenodo version of each record whose site files changed (24 h guard per record), both after the deploy verified and every gate was 0, neither fails a ship; a failure writes archive_backup_status.json / zenodo_status.json for alerts_check.py   # 10 Nov: 7b tells the WebSub hub which feeds changed (never fails a release, failures alert the operator)
+STEP=verify; echo "== $(date +%H:%M:%S) 6 VERIFY"   # 23 Nov 2026 (the referee review S2): stamps (Zenodo, Internet Archive, OpenTimestamps) run only when the live checks passed
 for i in 1 2 3 4 5 6; do python3 "$L/copies.py" live > /tmp/ship_live.txt 2>&1 && { tail -1 /tmp/ship_live.txt; if [ $POSTFAIL = 0 ]; then stamps; echo "SHIP: deployed and verified"; exit 0; fi; STEP=checks; fail "deployed and verified, but the live checks failed with the worker unchanged: $CHK"; }; sleep 20; done
 cat /tmp/ship_live.txt; fail "live does not match yet (copies.py live): $(grep -m1 'LIVE OFF' /tmp/ship_live.txt | cut -c1-200)"

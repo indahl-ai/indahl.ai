@@ -8,8 +8,8 @@
   3. every file Check a run loads answers 200 with the right kind of body: /check_run.js, /qia/runcheck.js (JavaScript, not an HTML page),
      /qia/records/index.json, /qia/cal.json, /qia/offchain.json (JSON that parses), and for ibm_fez its records manifest, the day files a run
      today needs and the newest calibration job file /qia/cal/<job>.json
-  4. a real functional run: the LIVE runcheck.js loaded in Node with a stub window (as qia_runcheck/tests/js_driver.js does), window.QIARunCheck.load
-     against the LIVE JSON for ibm_fez, today's window, qubits 0,1,5; it must return a result with no exception
+  4. the live qubit check (23 Nov 2026, replaced the Check a run functional run): POST /qubit {processor: ibm_fez, qubits: [5]} must return
+     a reading that names ibm_fez (the form on the qia.com home page)
 
 Any failure (rung once per new set of failures; see main) appends `MONEY PATH FAILED: <what>` to sagar/pipeline/pipe.log (watch/doorbell/poll.py rings it into the inbox) and exits 1.
 Nothing here writes to the site. Run: python3 ledger/money_path_check.py   (--quiet prints only failures)."""
@@ -32,9 +32,14 @@ def ring(msg):
     except Exception as e: sys.stderr.write('money_path: could not write the pipeline log (%s)\n' % e)
 
 
-def get(path, timeout=30):
-    """-> (status, content_type, body bytes). Network errors come back as status 0."""
+def get(path, timeout=30, _retry=True):
+    """-> (status, content_type, body bytes). Network errors come back as status 0. 23 Nov 2026: one retry after 5 s on a network error
+    (a single slow fetch during a heavy build rang MONEY PATH FAILED for a page that answered in 0.2 s)."""
     u = path if path.startswith('http') else SITE + path
+    if _retry:
+        r0 = get(path, timeout, False)
+        if r0[0] != 0: return r0
+        time.sleep(5); return get(path, timeout, False)
     try:
         r = urllib.request.urlopen(urllib.request.Request(u + ('&' if '?' in u else '?') + 'mpc=%d' % time.time(), headers=UA), timeout=timeout)
         return r.status, r.headers.get('Content-Type', ''), r.read()
@@ -172,7 +177,16 @@ def main():
         p = (cal.get('processors') or {}).get(PROC)
         if not p or not p.get('job_id'): fail('/qia/cal.json has no newest job for %s' % PROC)
         else: jget('/qia/cal/%s.json' % p['job_id'])
-    pass   # also fetches the day files a run today needs; a missing one throws there
+    # 23 Nov 2026 (the referee review M1): Check a run left quantumidleaudit.com; its place is "Check a qubit live" (qubit.js POSTs /qubit, which the
+    # qia-site worker forwards to qia_measured at indahl.ai/mcp). The old functional run (functional() below) tested a page that no longer exists.
+    try:
+        _rq = urllib.request.Request(SITE + '/qubit', data=json.dumps({'processor': PROC, 'qubits': [5]}).encode(), method='POST',
+                                     headers={'content-type': 'application/json', 'User-Agent': 'money-path-check'})
+        _rb = json.loads(urllib.request.urlopen(_rq, timeout=90).read().decode('utf-8', 'replace'))
+        _txt = ((_rb.get('result') or {}).get('content') or [{}])[0].get('text', '')
+        if PROC in _txt and '"error"' not in _txt[:40]: ok('qubit check: POST /qubit %s q5 returned a reading' % PROC)
+        else: fail('qubit check: POST /qubit %s q5 returned no reading: %s' % (PROC, _txt[:160]))
+    except Exception as _e: fail('qubit check: POST /qubit failed (%s)' % type(_e).__name__)
     if not QUIET:
         for o in oks: print('ok   ' + o)
     # ring only when the set of failures changes (a new set, or cleared), so a standing failure rings once, not every run;

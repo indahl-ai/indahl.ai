@@ -3,7 +3,7 @@
 
 This kit measures the phase turn on untouched qubits after a mid-circuit readout, on your own IBM Quantum account,
 one value per untouched qubit in degrees per readout, and adds the matching virtual-Z correction to your own circuits. The method is the
-one in "A Readout's Kick Is a Turn" (doi:10.5281/zenodo.23843468). It names no mechanism for the turn.
+one in "A Readout's Kick Is a Turn" (doi:10.5281/zenodo.23843468).
 
   SELF-TEST   python darkwave_kit.py selftest                                     (simulator only, needs qiskit-aer)
   MEASURE     python darkwave_kit.py measure --backend ibm_kingston --readout 5,6,7 --targets 4,8,9 --check

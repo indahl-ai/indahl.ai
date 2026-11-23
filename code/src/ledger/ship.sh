@@ -163,19 +163,9 @@ cd "$B/indahl-ai"; set +e; IO=$(git push -q 2>&1); IR=$?; set -e; echo "$IO" | s
 # 21 Nov 2026 (control audit #18): both push results are written for watch/alerts_check.py (it was print-only, the indahl-ai one hidden)
 python3 -c 'import json,sys,time; pr,ir=int(sys.argv[1]),int(sys.argv[2]); print(json.dumps({"at": time.strftime("%Y-%m-%d %H:%M"), "ok": pr == 0 and ir == 0, "error": ("heuremen.org push exit %d; " % pr if pr else "") + ("indahl-ai push exit %d" % ir if ir else "")}))' "$PR" "$IR" > "$L/ship_push_status.json" || true
 [ $PR -eq 0 ] || note "heuremen.org PUSH FAILED (exit $PR): live heuremen.org is NOT updated"
-STEP=public; echo "== $(date +%H:%M:%S) 5b PUBLIC REPOS"
-# 31 Oct: the result is recorded for the watch (it was swallowed by "|| true" and a refusal went unseen for hours); a refusal is printed loud
-set +e; PUBOUT=$(SHIP_DEPLOYED=1 "$L/push_public.sh" "$MSG" 2>&1); PUBRC=$?; set -e; echo "$PUBOUT"   # 10 Nov: SHIP_DEPLOYED=1 makes a skipped page mirror a hard failure (exit 3)
-python3 - "$PUBRC" "$PUBOUT" > "$L/public_push_status.json" <<'PY'
-import json, sys, time; rc = int(sys.argv[1]); out = sys.argv[2]; bad = rc != 0 or 'REFUSED' in out
-print(json.dumps({'at': time.strftime('%Y-%m-%d %H:%M'), 'ok': not bad, 'site_pages': rc != 3 and 'site pages mirrored' in out, 'rc': rc, 'last': (out.strip().splitlines() or [''])[-1]}))
-PY
+STEP=public; echo "== $(date +%H:%M:%S) 5b PUBLIC REPOS (started in the background: ledger/public_push_after.sh, log ledger/.last_public_push.txt)"
 python3 "$B/indahl-ai/accountability.py" buildinfo 2>&1 | tail -1 || true   # 10 Nov: the release record at /build.json (commits, deploy fingerprint, gate lines, pages hash), KV build_json
-if [ $PUBRC -eq 3 ]; then echo "!! 5b FAIL: the site deployed but its pages were NOT mirrored to the public indahl.ai repo (code only). Alert written for the operator."; fi
-set +e; python3 "$L/public_privacy_gate.py"; PPG=$?; set -e; [ $PPG -ne 0 ] && note "public privacy gate FAILED"; if [ $PPG -ne 0 ]; then echo "!! 5b FAIL: a private name, address or key path is in the public indahl.ai repo"; printf -- '- [public:privacy] since %s: private item in the public repo (ledger/public_privacy_gate.py)\n' "$(date '+%Y-%m-%d %H:%M')" >> "$B/alerts/ALERTS_OPEN.txt"; fi   # 14 Nov: the privacy gate, after the house-folder leak
-set +e; python3 "$L/served_public_gate.py"; SPG=$?; set -e; [ $SPG -ne 0 ] && note "served public gate FAILED"; printf '{"at": "%s", "privacy": %s, "served": %s}\n' "$(date '+%Y-%m-%d %H:%M')" "$([ $PPG -eq 0 ] && echo true || echo false)" "$([ $SPG -eq 0 ] && echo true || echo false)" > "$L/public_gates_status.json";   # 21 Nov 2026 (control audit #11): read by watch/alerts_check.py, so the alert stays open
- if [ $SPG -ne 0 ]; then echo "!! 5b FAIL: files the site serves are missing from the public indahl.ai repo"; printf -- '- [public:served] since %s: served files missing from the public indahl.ai repo (ledger/served_public_gate.py)\n' "$(date '+%Y-%m-%d %H:%M')" >> "$B/alerts/ALERTS_OPEN.txt"; fi   # 14 Nov (the owner caught it): everything the site serves is in the public repo, checked every release
-if [ $PUBRC -ne 0 ] || echo "$PUBOUT" | grep -q REFUSED; then echo "!! PUBLIC REPOS REFUSED: the site shipped, the public code copies did not (see above; the watch shows this BAD until fixed)"; note "public repos not pushed (push_public.sh exit $PUBRC): $(echo "$PUBOUT" | grep -m1 -E 'REFUSED|FAIL' | cut -c1-200)"; fi
+nohup bash "$L/public_push_after.sh" "$MSG" > "$L/.last_public_push.txt" 2>&1 &   # 23 Nov 2026: off the critical path (it was 5 min 47 s of every ship)
 echo "== $(date +%H:%M:%S) 5c INDEXNOW"; python3 "$B/tools/indexnow.py" 2>&1 | tail -1 || true
 # 7 STAMPS (10 Nov): outside timestamps after a verified release. release_<commit>.json (commit, ledger hash, manifest of every deployed file)
 # stamped with OpenTimestamps, changed public URLs sent to the Internet Archive in the background, paced. Never fails a release.

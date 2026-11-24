@@ -1,46 +1,46 @@
 path,label,outcome,n,of,share,lo,hi,desk,publisher,generated,plan,plan_unchanged_since_commit,outcome_rule,updated,cell,scored,inside,above,below,claim,reason,sequences,blocks,versions,range_zero_zero,occurred,stated_mean,tol,seq,issued,window,t0,t1,mag,p,nmin,nmax,count,beyond,kind,item,counts,stated,delivered,interval
-/,,,,,,,,QUAKE,Heuremen LLC,2026-11-24T19:52:42Z,PLAN.md,True,"PLAN.md with PLAN_ADDENDUM_std2.md (Standards 2.0, 12 Nov 2026)",2026-11-24T19:52:42Z,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-/headline_cell,headline_cell,CANNOT_TELL,,,0.9639,0.9464,0.9775,,,,,,,,"M3 and above, every window",30793,29681,665,447,0.95,STRADDLES_EDGE,205,83,9423,11966,,,,,,,,,,,,,,,,,,,,
-/cover_by_magnitude[0],cover_by_magnitude[0],CANNOT_TELL,,,0.9639,0.9464,0.9775,,,,,,,,M3 and above,30793,29681,665,447,0.95,STRADDLES_EDGE,205,83,9423,11966,,,,,,,,,,,,,,,,,,,,
-/cover_by_magnitude[1],cover_by_magnitude[1],ABOVE,,,0.987,0.9821,0.993,,,,,,,,M4 and above,30673,30273,393,7,0.95,,204,82,9393,21955,,,,,,,,,,,,,,,,,,,,
-/cover_by_magnitude[2],cover_by_magnitude[2],ABOVE,,,0.9971,0.994,0.9991,,,,,,,,M5 and above,30793,30705,87,1,0.95,,205,83,9423,28341,,,,,,,,,,,,,,,,,,,,
-/cover_by_magnitude[3],cover_by_magnitude[3],ABOVE,,,0.9998,0.9996,1.0,,,,,,,,M6 and above,30793,30788,5,0,0.95,,205,83,9423,30372,,,,,,,,,,,,,,,,,,,,
-/cover_by_magnitude[4],cover_by_magnitude[4],ABOVE,,,1.0,0.9998,1.0,,,,,,,,M7 and above,30793,30792,1,0,0.95,,205,83,9423,30673,,,,,,,,,,,,,,,,,,,,
-/cover_by_window[0],cover_by_window[0],ABOVE,,,0.9881,0.9797,0.993,,,,,,,,"M3 and above, 1 day",9423,9311,53,59,0.95,,205,83,9423,6830,,,,,,,,,,,,,,,,,,,,
-/cover_by_window[1],cover_by_window[1],ABOVE,,,0.9729,0.958,0.9831,,,,,,,,"M3 and above, 1 week",9306,9054,142,110,0.95,,202,82,9306,3494,,,,,,,,,,,,,,,,,,,,
-/cover_by_window[2],cover_by_window[2],CONSISTENT,,,0.9577,0.9378,0.9746,,,,,,,,"M3 and above, 1 month",8872,8497,218,157,0.95,,196,81,8872,1550,,,,,,,,,,,,,,,,,,,,
-/cover_by_window[3],cover_by_window[3],BELOW,,,0.8831,0.8114,0.9446,,,,,,,,"M3 and above, 1 year",3192,2819,252,121,0.95,,92,42,3192,92,,,,,,,,,,,,,,,,,,,,
-/cover_all,cover_all,ABOVE,,,0.9896,0.9856,0.9933,,,,,,,,"every magnitude, every window",153927,152321,1151,455,0.95,,205,83,9423,123373,,,,,,,,,,,,,,,,,,,,
-/reliability[0],reliability[0],CONSISTENT,,,0.0022,0.0008,0.0036,,,,,,,,"0 to 1 percent, not including 1",113223,,,,,,205,83,,,253,0.0011,0.01,,,,,,,,,,,,,,,,,
-/reliability[1],reliability[1],CANNOT_TELL,,,0.0309,0.0187,0.0422,,,,,,,,"1 to 5 percent, not including 5",17045,,,,,STRADDLES_EDGE,201,83,,,527,0.0243,0.0121,,,,,,,,,,,,,,,,,
-/reliability[2],reliability[2],CONSISTENT,,,0.0624,0.0401,0.0872,,,,,,,,"5 to 10 percent, not including 10",6266,,,,,,189,81,,,391,0.0714,0.0357,,,,,,,,,,,,,,,,,
+/,,,,,,,,QUAKE,Heuremen LLC,2026-11-24T21:51:56Z,PLAN.md,True,"PLAN.md with PLAN_ADDENDUM_std2.md (Standards 2.0, 12 Nov 2026)",2026-11-24T21:51:56Z,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+/headline_cell,headline_cell,CANNOT_TELL,,,0.9639,0.9464,0.9775,,,,,,,,"M3 and above, every window",30802,29689,666,447,0.95,STRADDLES_EDGE,205,83,9425,11970,,,,,,,,,,,,,,,,,,,,
+/cover_by_magnitude[0],cover_by_magnitude[0],CANNOT_TELL,,,0.9639,0.9464,0.9775,,,,,,,,M3 and above,30802,29689,666,447,0.95,STRADDLES_EDGE,205,83,9425,11970,,,,,,,,,,,,,,,,,,,,
+/cover_by_magnitude[1],cover_by_magnitude[1],ABOVE,,,0.987,0.9821,0.993,,,,,,,,M4 and above,30682,30282,393,7,0.95,,204,82,9395,21960,,,,,,,,,,,,,,,,,,,,
+/cover_by_magnitude[2],cover_by_magnitude[2],ABOVE,,,0.9971,0.994,0.9991,,,,,,,,M5 and above,30802,30714,87,1,0.95,,205,83,9425,28349,,,,,,,,,,,,,,,,,,,,
+/cover_by_magnitude[3],cover_by_magnitude[3],ABOVE,,,0.9998,0.9996,1.0,,,,,,,,M6 and above,30802,30797,5,0,0.95,,205,83,9425,30381,,,,,,,,,,,,,,,,,,,,
+/cover_by_magnitude[4],cover_by_magnitude[4],ABOVE,,,1.0,0.9998,1.0,,,,,,,,M7 and above,30802,30801,1,0,0.95,,205,83,9425,30682,,,,,,,,,,,,,,,,,,,,
+/cover_by_window[0],cover_by_window[0],ABOVE,,,0.9881,0.9797,0.993,,,,,,,,"M3 and above, 1 day",9425,9313,53,59,0.95,,205,83,9425,6832,,,,,,,,,,,,,,,,,,,,
+/cover_by_window[1],cover_by_window[1],ABOVE,,,0.9729,0.958,0.9831,,,,,,,,"M3 and above, 1 week",9309,9057,142,110,0.95,,203,82,9309,3495,,,,,,,,,,,,,,,,,,,,
+/cover_by_window[2],cover_by_window[2],CONSISTENT,,,0.9577,0.9378,0.9746,,,,,,,,"M3 and above, 1 month",8874,8499,218,157,0.95,,196,81,8874,1551,,,,,,,,,,,,,,,,,,,,
+/cover_by_window[3],cover_by_window[3],BELOW,,,0.8829,0.8114,0.9446,,,,,,,,"M3 and above, 1 year",3194,2820,253,121,0.95,,92,42,3194,92,,,,,,,,,,,,,,,,,,,,
+/cover_all,cover_all,ABOVE,,,0.9896,0.9856,0.9933,,,,,,,,"every magnitude, every window",153972,152365,1152,455,0.95,,205,83,9425,123408,,,,,,,,,,,,,,,,,,,,
+/reliability[0],reliability[0],CONSISTENT,,,0.0022,0.0008,0.0036,,,,,,,,"0 to 1 percent, not including 1",113257,,,,,,205,83,,,253,0.0011,0.01,,,,,,,,,,,,,,,,,
+/reliability[1],reliability[1],CANNOT_TELL,,,0.0309,0.0187,0.0422,,,,,,,,"1 to 5 percent, not including 5",17050,,,,,STRADDLES_EDGE,201,83,,,527,0.0243,0.0121,,,,,,,,,,,,,,,,,
+/reliability[2],reliability[2],CONSISTENT,,,0.0624,0.0401,0.0872,,,,,,,,"5 to 10 percent, not including 10",6267,,,,,,189,81,,,391,0.0714,0.0357,,,,,,,,,,,,,,,,,
 /reliability[3],reliability[3],BELOW,,,0.1012,0.0709,0.1317,,,,,,,,"10 to 20 percent, not including 20",5552,,,,,,173,78,,,562,0.1435,0.05,,,,,,,,,,,,,,,,,
-/reliability[4],reliability[4],BELOW,,,0.1921,0.1489,0.2411,,,,,,,,"20 to 40 percent, not including 40",4816,,,,,,165,74,,,925,0.2851,0.05,,,,,,,,,,,,,,,,,
-/reliability[5],reliability[5],BELOW,,,0.3304,0.2499,0.4145,,,,,,,,"40 to 60 percent, not including 60",2618,,,,,,135,58,,,865,0.4929,0.05,,,,,,,,,,,,,,,,,
-/reliability[6],reliability[6],BELOW,,,0.4245,0.2975,0.564,,,,,,,,"60 to 80 percent, not including 80",1788,,,,,,107,46,,,759,0.6959,0.05,,,,,,,,,,,,,,,,,
+/reliability[4],reliability[4],BELOW,,,0.1924,0.1491,0.2413,,,,,,,,"20 to 40 percent, not including 40",4819,,,,,,165,74,,,927,0.2851,0.05,,,,,,,,,,,,,,,,,
+/reliability[5],reliability[5],BELOW,,,0.3307,0.25,0.4146,,,,,,,,"40 to 60 percent, not including 60",2619,,,,,,135,58,,,866,0.4929,0.05,,,,,,,,,,,,,,,,,
+/reliability[6],reliability[6],BELOW,,,0.4248,0.2981,0.564,,,,,,,,"60 to 80 percent, not including 80",1789,,,,,,107,46,,,760,0.6959,0.05,,,,,,,,,,,,,,,,,
 /reliability[7],reliability[7],BELOW,,,0.6098,0.4859,0.7555,,,,,,,,"80 to 90 percent, not including 90",697,,,,,,64,37,,,425,0.8494,0.05,,,,,,,,,,,,,,,,,
 /reliability[8],reliability[8],BELOW,,,0.7445,0.63,0.8414,,,,,,,,"90 to 99 percent, not including 99",779,,,,,,48,32,,,580,0.9516,0.0242,,,,,,,,,,,,,,,,,
 /reliability[9],reliability[9],BELOW,,,0.9746,0.953,0.9886,,,,,,,,99 to 100 percent,1143,,,,,,29,21,,,1114,0.999,0.01,,,,,,,,,,,,,,,,,
-/reliability_above_mainshock,reliability_above_mainshock,CONSISTENT,,,0.0014,0.0,0.0042,,,,,,,,at least one as large as the mainshock,30793,,,,,,205,83,,,42,0.0038,0.01,,,,,,,,,,,,,,,,,
-/described/stated_10_percent_or_more[0],stated_10_percent_or_more[0],BELOW,,,0.2963,0.2239,0.3762,,,,,,,,M3 and above,12276,,,,,,174,78,,,3637,0.4376,0.05,,,,,,,,,,,,,,,,,
-/described/stated_10_percent_or_more[1],stated_10_percent_or_more[1],CANNOT_TELL,,,0.3113,0.2253,0.4021,,,,,,,,"M4 and above, M5 and above, M6 and above and M7 and above",5117,,,,,STRADDLES_EDGE,117,53,,,1593,0.3531,0.05,,,,,,,,,,,,,,,,,
+/reliability_above_mainshock,reliability_above_mainshock,CONSISTENT,,,0.0014,0.0,0.0042,,,,,,,,at least one as large as the mainshock,30802,,,,,,205,83,,,42,0.0038,0.01,,,,,,,,,,,,,,,,,
+/described/stated_10_percent_or_more[0],stated_10_percent_or_more[0],BELOW,,,0.2964,0.224,0.3762,,,,,,,,M3 and above,12280,,,,,,174,78,,,3640,0.4376,0.05,,,,,,,,,,,,,,,,,
+/described/stated_10_percent_or_more[1],stated_10_percent_or_more[1],CANNOT_TELL,,,0.3114,0.2257,0.4022,,,,,,,,"M4 and above, M5 and above, M6 and above and M7 and above",5118,,,,,STRADDLES_EDGE,117,53,,,1594,0.3531,0.05,,,,,,,,,,,,,,,,,
 /described/stated_10_percent_or_more[2],stated_10_percent_or_more[2],BELOW,,,0.2334,0.1325,0.341,,,,,,,,"every magnitude, 1 day",1358,,,,,,117,54,,,317,0.3602,0.05,,,,,,,,,,,,,,,,,
-/described/stated_10_percent_or_more[3],stated_10_percent_or_more[3],BELOW,,,0.2042,0.1245,0.3045,,,,,,,,"every magnitude, 1 week",3997,,,,,,158,73,,,816,0.3633,0.05,,,,,,,,,,,,,,,,,
-/described/stated_10_percent_or_more[4],stated_10_percent_or_more[4],BELOW,,,0.2339,0.1623,0.32,,,,,,,,"every magnitude, 1 month",7102,,,,,,168,77,,,1661,0.3925,0.05,,,,,,,,,,,,,,,,,
-/described/stated_10_percent_or_more[5],stated_10_percent_or_more[5],CANNOT_TELL,,,0.4935,0.409,0.5806,,,,,,,,"every magnitude, 1 year",4936,,,,,STRADDLES_EDGE,84,41,,,2436,0.4964,0.05,,,,,,,,,,,,,,,,,
-/described/stated_10_percent_or_more_all,stated_10_percent_or_more_all,BELOW,,,0.3007,0.2336,0.3759,,,,,,,,"every magnitude, every window",17393,,,,,,174,78,,,5230,0.4128,0.05,,,,,,,,,,,,,,,,,
-/described/by_region[0]/cover,cover,ABOVE,,,0.9723,0.9592,0.9846,,,,,,,,"M3 and above, United States and territories",28180,27399,649,132,0.95,,183,69,8639,11189,,,,,,,,,,,,,,,,,,,,
-/described/by_region[0]/rel10,rel10,BELOW,,,0.2797,0.2133,0.3515,,,,,,,,"stated 10 percent or more, United States and territories",14741,,,,,,155,66,,,4123,0.3846,0.05,,,,,,,,,,,,,,,,,
-/described/by_region[1]/cover,cover,CANNOT_TELL,,,0.8733,0.5758,0.9614,,,,,,,,"M3 and above, elsewhere",2613,2282,16,315,0.95,STRADDLES_EDGE,22,15,784,777,,,,,,,,,,,,,,,,,,,,
+/described/stated_10_percent_or_more[3],stated_10_percent_or_more[3],BELOW,,,0.2044,0.1247,0.3045,,,,,,,,"every magnitude, 1 week",3998,,,,,,158,73,,,817,0.3634,0.05,,,,,,,,,,,,,,,,,
+/described/stated_10_percent_or_more[4],stated_10_percent_or_more[4],BELOW,,,0.2338,0.1623,0.3199,,,,,,,,"every magnitude, 1 month",7103,,,,,,168,77,,,1661,0.3925,0.05,,,,,,,,,,,,,,,,,
+/described/stated_10_percent_or_more[5],stated_10_percent_or_more[5],CANNOT_TELL,,,0.4938,0.4093,0.5808,,,,,,,,"every magnitude, 1 year",4939,,,,,STRADDLES_EDGE,84,41,,,2439,0.4964,0.05,,,,,,,,,,,,,,,,,
+/described/stated_10_percent_or_more_all,stated_10_percent_or_more_all,BELOW,,,0.3008,0.2339,0.376,,,,,,,,"every magnitude, every window",17398,,,,,,174,78,,,5234,0.4128,0.05,,,,,,,,,,,,,,,,,
+/described/by_region[0]/cover,cover,ABOVE,,,0.9723,0.9592,0.9846,,,,,,,,"M3 and above, United States and territories",28188,27406,650,132,0.95,,183,69,8641,11192,,,,,,,,,,,,,,,,,,,,
+/described/by_region[0]/rel10,rel10,BELOW,,,0.2799,0.2135,0.3515,,,,,,,,"stated 10 percent or more, United States and territories",14746,,,,,,155,66,,,4127,0.3846,0.05,,,,,,,,,,,,,,,,,
+/described/by_region[1]/cover,cover,CANNOT_TELL,,,0.8734,0.5758,0.9614,,,,,,,,"M3 and above, elsewhere",2614,2283,16,315,0.95,STRADDLES_EDGE,22,15,784,778,,,,,,,,,,,,,,,,,,,,
 /described/by_region[1]/rel10,rel10,CANNOT_TELL,,,0.4174,0.2081,0.715,,,,,,,,"stated 10 percent or more, elsewhere",2652,,,,,STRADDLES_EDGE,19,13,,,1107,0.5694,0.05,,,,,,,,,,,,,,,,,
-/described/cover_without_zero_ranges[0],cover_without_zero_ranges[0],CANNOT_TELL,,,0.95,0.9208,0.9723,,,,,,,,"M3 and above, range not 0 to 0",18827,17886,494,447,0.95,STRADDLES_EDGE,197,82,7916,0,,,,,,,,,,,,,,,,,,,,
-/described/cover_without_zero_ranges[1],cover_without_zero_ranges[1],ABOVE,,,0.9791,0.9628,0.9908,,,,,,,,"M4 and above, range not 0 to 0",8718,8536,175,7,0.95,,164,74,4673,0,,,,,,,,,,,,,,,,,,,,
-/described/cover_without_zero_ranges[2],cover_without_zero_ranges[2],ABOVE,,,0.9898,0.9792,0.998,,,,,,,,"M5 and above, range not 0 to 0",2452,2427,24,1,0.95,,92,43,1656,0,,,,,,,,,,,,,,,,,,,,
+/described/cover_without_zero_ranges[0],cover_without_zero_ranges[0],CANNOT_TELL,,,0.95,0.9209,0.9722,,,,,,,,"M3 and above, range not 0 to 0",18832,17890,495,447,0.95,STRADDLES_EDGE,198,82,7917,0,,,,,,,,,,,,,,,,,,,,
+/described/cover_without_zero_ranges[1],cover_without_zero_ranges[1],ABOVE,,,0.9791,0.9628,0.9908,,,,,,,,"M4 and above, range not 0 to 0",8722,8540,175,7,0.95,,164,74,4676,0,,,,,,,,,,,,,,,,,,,,
+/described/cover_without_zero_ranges[2],cover_without_zero_ranges[2],ABOVE,,,0.9898,0.9792,0.998,,,,,,,,"M5 and above, range not 0 to 0",2453,2428,24,1,0.95,,92,43,1657,0,,,,,,,,,,,,,,,,,,,,
 /described/cover_without_zero_ranges[3],cover_without_zero_ranges[3],ABOVE,,,1.0,0.991,1.0,,,,,,,,"M6 and above, range not 0 to 0",421,421,0,0,0.95,,18,16,207,0,,,,,,,,,,,,,,,,,,,,
 /described/cover_without_zero_ranges[4],cover_without_zero_ranges[4],CANNOT_TELL,,,0.9917,0.9543,1.0,,,,,,,,"M7 and above, range not 0 to 0",120,119,1,0,0.95,TOO_WIDE_TO_RESOLVE,8,8,72,0,,,,,,,,,,,,,,,,,,,,
-/described/first_forecast_cover,first_forecast_cover,CANNOT_TELL,,,0.9266,0.8766,0.9557,,,,,,,,"first forecast of each sequence, M3 and above",695,644,16,35,0.95,STRADDLES_EDGE,205,83,205,60,,,,,,,,,,,,,,,,,,,,
-/described/first_forecast_reliability[0],first_forecast_reliability[0],CONSISTENT,,,0.0021,0.0,0.0054,,,,,,,,"0 to 1 percent, not including 1",1892,,,,,,203,81,,,4,0.0016,0.01,,,,,,,,,,,,,,,,,
-/described/first_forecast_reliability[1],first_forecast_reliability[1],CANNOT_TELL,,,0.027,0.0099,0.0456,,,,,,,,"1 to 5 percent, not including 5",482,,,,,STRADDLES_EDGE,199,81,,,13,0.0256,0.0128,,,,,,,,,,,,,,,,,
+/described/first_forecast_cover,first_forecast_cover,CANNOT_TELL,,,0.9267,0.8766,0.9559,,,,,,,,"first forecast of each sequence, M3 and above",696,645,16,35,0.95,STRADDLES_EDGE,205,83,205,60,,,,,,,,,,,,,,,,,,,,
+/described/first_forecast_reliability[0],first_forecast_reliability[0],CONSISTENT,,,0.0021,0.0,0.0054,,,,,,,,"0 to 1 percent, not including 1",1896,,,,,,203,81,,,4,0.0016,0.01,,,,,,,,,,,,,,,,,
+/described/first_forecast_reliability[1],first_forecast_reliability[1],CANNOT_TELL,,,0.0269,0.0099,0.0455,,,,,,,,"1 to 5 percent, not including 5",483,,,,,STRADDLES_EDGE,199,81,,,13,0.0257,0.0129,,,,,,,,,,,,,,,,,
 /described/first_forecast_reliability[2],first_forecast_reliability[2],BELOW,,,0.0284,0.0056,0.0606,,,,,,,,"5 to 10 percent, not including 10",211,,,,,,159,69,,,6,0.0724,0.0362,,,,,,,,,,,,,,,,,
 /described/first_forecast_reliability[3],first_forecast_reliability[3],CANNOT_TELL,,,0.1078,0.067,0.1579,,,,,,,,"10 to 20 percent, not including 20",204,,,,,STRADDLES_EDGE,150,71,,,22,0.1421,0.05,,,,,,,,,,,,,,,,,
 /described/first_forecast_reliability[4],first_forecast_reliability[4],BELOW,,,0.1532,0.0971,0.2222,,,,,,,,"20 to 40 percent, not including 40",235,,,,,,151,68,,,36,0.2918,0.05,,,,,,,,,,,,,,,,,
@@ -49,8 +49,8 @@ path,label,outcome,n,of,share,lo,hi,desk,publisher,generated,plan,plan_unchanged
 /described/first_forecast_reliability[7],first_forecast_reliability[7],BELOW,,,0.5366,0.3448,0.7429,,,,,,,,"80 to 90 percent, not including 90",41,,,,,,39,21,,,22,0.8431,0.05,,,,,,,,,,,,,,,,,
 /described/first_forecast_reliability[8],first_forecast_reliability[8],BELOW,,,0.7586,0.5738,0.9,,,,,,,,"90 to 99 percent, not including 99",58,,,,,,40,26,,,44,0.9524,0.0238,,,,,,,,,,,,,,,,,
 /described/first_forecast_reliability[9],first_forecast_reliability[9],CANNOT_TELL,,,0.9783,0.9242,1.0,,,,,,,,99 to 100 percent,92,,,,,STRADDLES_EDGE,21,17,,,90,0.9994,0.01,,,,,,,,,,,,,,,,,
-/described/cover_by_network[0],cover_by_network[0],CANNOT_TELL,,,0.9642,0.9399,0.9804,,,,,,,,"M3 and above, mainshock located by the USGS national network",20674,19934,312,428,0.95,STRADDLES_EDGE,139,42,6341,7366,,,,,,,,,,,,,,,,,,,,
-/described/cover_by_network[1],cover_by_network[1],CANNOT_TELL,,,0.9632,0.9362,0.9863,,,,,,,,"M3 and above, mainshock located by the regional network",10119,9747,353,19,0.95,STRADDLES_EDGE,66,43,3082,4600,,,,,,,,,,,,,,,,,,,,
+/described/cover_by_network[0],cover_by_network[0],CANNOT_TELL,,,0.9642,0.9399,0.9804,,,,,,,,"M3 and above, mainshock located by the USGS national network",20682,19941,313,428,0.95,STRADDLES_EDGE,139,42,6343,7369,,,,,,,,,,,,,,,,,,,,
+/described/cover_by_network[1],cover_by_network[1],CANNOT_TELL,,,0.9632,0.9362,0.9863,,,,,,,,"M3 and above, mainshock located by the regional network",10120,9748,353,19,0.95,STRADDLES_EDGE,66,43,3082,4601,,,,,,,,,,,,,,,,,,,,
 /biggest_misses[0],biggest_misses[0],BELOW,,,,,,,,,,,,,,,,,,,,,,,,,,,us6000qw60,1754065116620,1 Year,1754067632465,1785690032465,3.0,1.0,31000,340000,3036,27964,,,,,,
 /biggest_misses[1],biggest_misses[1],BELOW,,,,,,,,,,,,,,,,,,,,,,,,,,,us6000tkt2,1787251414752,1 Month,1787252431164,1789930831164,3.0,0.9999,840,3891,126,714,,,,,,
 /biggest_misses[2],biggest_misses[2],BELOW,,,,,,,,,,,,,,,,,,,,,,,,,,,us6000u18k,1791593712688,1 Month,1791594028116,1794272428116,3.0,0.9999,779,6686,91,688,,,,,,
@@ -76,13 +76,13 @@ path,label,outcome,n,of,share,lo,hi,desk,publisher,generated,plan,plan_unchanged
 /biggest_misses[22],biggest_misses[22],ABOVE,,,,,,,,,,,,,,,,,,,,,,,,,,,ci41461608,1784445634864,1 Week,1784448000000,1785052800000,3.0,0.01941,0,0,4,4,,,,,,
 /biggest_misses[23],biggest_misses[23],BELOW,,,,,,,,,,,,,,,,,,,,,,,,,,,pr2025056002,1740808740330,1 Year,1740808800000,1772344800000,3.0,0.9996,5,42,2,3,,,,,,
 /biggest_misses[24],biggest_misses[24],ABOVE,,,,,,,,,,,,,,,,,,,,,,,,,,,us7000tu3j,1793910275345,1 Day,1793912400000,1793998800000,3.0,0.03547,0,1,4,3,,,,,,
-/forecasters/rows[0],"every magnitude, every window",ABOVE,152321,153927,,0.9856,0.9933,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"every magnitude, every window",share of stated ranges that held the aftershock count,0.95,0.9896,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[1],"M3 and above, 1 day",ABOVE,9311,9423,,0.9797,0.993,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 day",share of stated ranges that held the aftershock count,0.95,0.9881,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[2],"M3 and above, 1 week",ABOVE,9054,9306,,0.958,0.9831,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 week",share of stated ranges that held the aftershock count,0.95,0.9729,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[3],"M3 and above, 1 month",CONSISTENT,8497,8872,,0.9378,0.9746,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 month",share of stated ranges that held the aftershock count,0.95,0.9577,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[4],"M3 and above, 1 year",BELOW,2819,3192,,0.8114,0.9446,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 year",share of stated ranges that held the aftershock count,0.95,0.8831,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[5],M3 and above,CANNOT_TELL,29681,30793,,0.9464,0.9775,,,,,,,,,,,,,,STRADDLES_EDGE,,,,,,,,,,,,,,,,,,,coverage,M3 and above,share of stated ranges that held the aftershock count,0.95,0.9639,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[6],M4 and above,ABOVE,30273,30673,,0.9821,0.993,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M4 and above,share of stated ranges that held the aftershock count,0.95,0.987,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[7],M5 and above,ABOVE,30705,30793,,0.994,0.9991,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M5 and above,share of stated ranges that held the aftershock count,0.95,0.9971,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[8],M6 and above,ABOVE,30788,30793,,0.9996,1.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M6 and above,share of stated ranges that held the aftershock count,0.95,0.9998,"union of the Wilson and block bootstrap intervals, as the desk gives it"
-/forecasters/rows[9],M7 and above,ABOVE,30792,30793,,0.9998,1.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M7 and above,share of stated ranges that held the aftershock count,0.95,1.0,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[0],"every magnitude, every window",ABOVE,152365,153972,,0.9856,0.9933,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"every magnitude, every window",share of stated ranges that held the aftershock count,0.95,0.9896,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[1],"M3 and above, 1 day",ABOVE,9313,9425,,0.9797,0.993,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 day",share of stated ranges that held the aftershock count,0.95,0.9881,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[2],"M3 and above, 1 week",ABOVE,9057,9309,,0.958,0.9831,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 week",share of stated ranges that held the aftershock count,0.95,0.9729,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[3],"M3 and above, 1 month",CONSISTENT,8499,8874,,0.9378,0.9746,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 month",share of stated ranges that held the aftershock count,0.95,0.9577,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[4],"M3 and above, 1 year",BELOW,2820,3194,,0.8114,0.9446,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,"M3 and above, 1 year",share of stated ranges that held the aftershock count,0.95,0.8829,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[5],M3 and above,CANNOT_TELL,29689,30802,,0.9464,0.9775,,,,,,,,,,,,,,STRADDLES_EDGE,,,,,,,,,,,,,,,,,,,coverage,M3 and above,share of stated ranges that held the aftershock count,0.95,0.9639,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[6],M4 and above,ABOVE,30282,30682,,0.9821,0.993,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M4 and above,share of stated ranges that held the aftershock count,0.95,0.987,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[7],M5 and above,ABOVE,30714,30802,,0.994,0.9991,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M5 and above,share of stated ranges that held the aftershock count,0.95,0.9971,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[8],M6 and above,ABOVE,30797,30802,,0.9996,1.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M6 and above,share of stated ranges that held the aftershock count,0.95,0.9998,"union of the Wilson and block bootstrap intervals, as the desk gives it"
+/forecasters/rows[9],M7 and above,ABOVE,30801,30802,,0.9998,1.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,coverage,M7 and above,share of stated ranges that held the aftershock count,0.95,1.0,"union of the Wilson and block bootstrap intervals, as the desk gives it"

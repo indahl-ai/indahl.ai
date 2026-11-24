@@ -35,10 +35,29 @@ def ratio_check(demos, impact):
     return bad
 
 
+RETIRED = [r'16 ?(x|×|times)', r'3\.7 ?(x|×|times)', r'(up to|by) 1\.8 ?(x|×|times)', r'\$50\b']   # 24 Nov 2026: figures withdrawn from the pages
+RELEASE_DIRS = [os.path.join(B, 'calibrations', 'demos', 'release'), os.path.join(B, 'biz')]
+
+
+def retired_check():
+    """The release and pitch drafts are written by hand from the pages; a figure withdrawn from the pages must not survive in them."""
+    import glob
+    bad = []
+    files = sorted(glob.glob(os.path.join(RELEASE_DIRS[0], 'RELEASE_FINAL_*.md')), key=os.path.getmtime)[-1:]
+    files += glob.glob(os.path.join(RELEASE_DIRS[1], '**', '*PITCH*.md'), recursive=True)
+    for f in files:
+        t = open(f, encoding='utf-8', errors='replace').read()
+        for pat in RETIRED:
+            for m in re.finditer(pat, t, re.I):
+                if 'q147' in t[max(0, m.start() - 40):m.end()]: continue      # 16.7x is a different figure (q147 readout)
+                bad.append('%s: withdrawn figure %r' % (os.path.relpath(f, B), m.group(0)))
+    return bad
+
+
 def main():
     dj, ij = os.path.join(SITE, 'demos.json'), os.path.join(SITE, 'impact.json')
     demos = json.load(open(dj))['demos']; impact = json.load(open(ij))
-    bad = ratio_check(demos, impact)
+    bad = ratio_check(demos, impact) + retired_check()
     if bad:
         print('\n'.join(bad)); print('REFUSED: impact line not backed by its table'); return 1
     h = hashlib.sha256(open(dj, 'rb').read()).hexdigest()

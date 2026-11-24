@@ -186,6 +186,12 @@ def main():
         p = (cal.get('processors') or {}).get(PROC)
         if not p or not p.get('job_id'): fail('/qia/cal.json has no newest job for %s' % PROC)
         else: jget('/qia/cal/%s.json' % p['job_id'])
+    # 24 Nov 2026 (owner): "Check a qubit live" is its own page, /check-a-qubit, opened from the overview button; it must answer and carry the form.
+    _st, _ct, _bd = get('/check-a-qubit')
+    if _st == 200 and b'id="qubit-form"' in _bd and b'/qubit.js' in _bd: ok('quantumidleaudit.com/check-a-qubit page carries the qubit form')
+    else: fail('quantumidleaudit.com/check-a-qubit answered %s or lacks the qubit form (the overview button points here)' % _st)
+    _st, _ct, _bd = get('/')
+    if _st == 200 and b'href="/check-a-qubit"' not in _bd: fail('the QIA overview no longer links /check-a-qubit')
     # 23 Nov 2026 (the referee review M1): Check a run left quantumidleaudit.com; its place is "Check a qubit live" (qubit.js POSTs /qubit, which the
     # qia-site worker forwards to qia_measured at indahl.ai/mcp). The old functional run (functional() below) tested a page that no longer exists.
     try:

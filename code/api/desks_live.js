@@ -40,7 +40,7 @@ export const DESKS_LIVE = [
 "id": "lab",
 "title": "LAB",
 "url": "https://indahl.ai/iris/lab",
-"what": "House model runs: STANYO training live, the house training, Falcon training, the finalists, the Heuremen Standard across models"
+"what": "Models trained here and scored against the Heuremen Standard, with each run's record"
 },
 {
 "id": "yo",
@@ -178,7 +178,7 @@ export const DESKS_LIVE = [
 "id": "seat",
 "title": "SEAT",
 "url": "https://indahl.ai/seat",
-"what": "An outside seat reads the indahl.ai pages"
+"what": "A runner outside indahl.ai reads every live page and feed and records what it saw"
 },
 {
 "id": "support",

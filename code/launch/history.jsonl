@@ -361,3 +361,4 @@
 {"coarse_precision": 0, "flown": 121, "flown_before_first_read": 100, "flown_watched": 21, "launches_tracked": 249, "scored.1_day": 20, "scored.30_days": 0, "scored.7_days": 12, "snapshots": 20440, "t": "2026-11-24T17:48Z", "waiting": 127}
 {"coarse_precision": 0, "flown": 122, "flown_before_first_read": 100, "flown_watched": 22, "launches_tracked": 249, "scored.1_day": 21, "scored.30_days": 0, "scored.7_days": 13, "snapshots": 20459, "t": "2026-11-24T18:48Z", "waiting": 127}
 {"coarse_precision": 0, "flown": 122, "flown_before_first_read": 100, "flown_watched": 22, "launches_tracked": 250, "scored.1_day": 21, "scored.30_days": 0, "scored.7_days": 13, "snapshots": 20616, "t": "2026-11-24T19:48Z", "waiting": 128}
+{"coarse_precision": 0, "flown": 122, "flown_before_first_read": 100, "flown_watched": 22, "launches_tracked": 268, "scored.1_day": 21, "scored.30_days": 0, "scored.7_days": 13, "snapshots": 20639, "t": "2026-11-24T20:47Z", "waiting": 146}

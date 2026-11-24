@@ -1466,3 +1466,9 @@
 {"id": "dc2ukamq4uuc73a600ng", "backend": "ibm_pittsburgh", "created": "2026-11-24T19:48:58.329159Z", "wait_s": 1.14244}
 {"id": "dc2uk9thdvas73bmsv00", "backend": "ibm_phoenix", "created": "2026-11-24T19:48:55.620398Z", "wait_s": 1.109467}
 {"id": "dc2uic2nj2vs73dhc61g", "backend": "ibm_kingston", "created": "2026-11-24T19:44:49.013419Z", "wait_s": 18.073102}
+{"id": "dc2uqr5s2omc738ckrs0", "backend": "ibm_fez", "created": "2026-11-24T20:02:52.678226Z", "wait_s": 6.6002}
+{"id": "dc2uqq5hdvas73bmt6l0", "backend": "ibm_fez", "created": "2026-11-24T20:02:49.172654Z", "wait_s": 2.457383}
+{"id": "dc2v32dhdvas73bmtj90", "backend": "ibm_fez", "created": "2026-11-24T20:20:25.678321Z", "wait_s": 1.05852}
+{"id": "dc2v2neq4uuc73a60kt0", "backend": "ibm_fez", "created": "2026-11-24T20:19:41.768036Z", "wait_s": 1.287587}
+{"id": "dc2vg1qnj2vs73dhdic0", "backend": "ibm_pittsburgh", "created": "2026-11-24T20:48:07.619999Z", "wait_s": 0.979908}
+{"id": "dc2vg1anj2vs73dhdiag", "backend": "ibm_phoenix", "created": "2026-11-24T20:48:05.682803Z", "wait_s": 0.676746}

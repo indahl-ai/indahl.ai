@@ -26,7 +26,7 @@ function carryClean(name, v) {
   if (name === 'carry_window') return ISO_RE.test(s) ? s : '';
   return s;
 }
-const SUBJECTS = ['Quick check ($50 to $100)', 'Full audit ($500)', '30-day pilot ($2,500)', 'Monitoring subscription ($2,500 a month)', 'Other'];   // 22 Nov (the owner): ONE form for both sites (quantumidleaudit.com/inquiries hands off here); every paid offer on either site, no audience split
+const SUBJECTS = ['Paper audit ($100)', 'Full audit ($500)', '30-day pilot ($2,500)', 'Monitoring subscription ($2,500 a month)', 'Other'];   // 22 Nov (the owner): ONE form for both sites (quantumidleaudit.com/inquiries hands off here); every paid offer on either site, no audience split
 const FIELDS = { reason: 300, name: 120, email: 160, organisation: 160, role: 120, scope: 3000, timeline: 40, referral: 300 };
 // 19 Nov 2026: the reason is free text now; the subject line still flags privacy and security requests by keyword.
 
@@ -61,6 +61,7 @@ export async function handleInquiry(req, env, render) {
   }
   for (const k of Object.keys(CARRY_MAX)) rec[k] = carryClean(k, f.get(k));
   // 22 Nov 2026 (the owner): the subject is one of three; no budget is asked. Privacy and security requests come under Other, flagged by keyword in the scope.
+  if (rec.reason === 'Quick check ($50 to $100)') rec.reason = 'Paper audit ($100)';   // 24 Nov 2026: the $50 tier is gone; a form opened before the change still submits
   if (!SUBJECTS.includes(rec.reason)) return reject('Please choose a subject.');
   const kind = /privacy/i.test(rec.scope || '') ? 'privacy' : /security|vulnerab/i.test(rec.scope || '') ? 'security' : 'engagement';
   const engagement = true;   // 26 Oct 2026: one inquiry form for everything; every reason goes through the agreements and the identity check

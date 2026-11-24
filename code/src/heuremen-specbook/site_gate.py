@@ -74,6 +74,10 @@ for p in [_FILE] if _FILE else _QIA_FILES if _QIA else [os.path.join(B, 'indahl-
         _h = open(p, encoding='utf-8', errors='replace').read()
         _lab = re.findall(r'<a\b[^>]*>\s*Inquir(?:y|ies|e)\s*</a>', _h, re.I)
         _btn = [x for x in re.findall(r'<a\b[^>]*class="[^"]*btn[^"]*"[^>]*href="[^"]*(?:contact|inquir)[^"]*"[^>]*>', _h, re.I) if not re.search(r'>\s*Inquir', x)]
+        # 24 Nov 2026 (owner's order: "Request a sandbox hosted by QIA" beside Colab and RunPod): one such request link per page is allowed. It
+        # goes to the same Inquiry form, carrying its topic (#qia-carry=m=Request%3A%20a%20sandbox%20hosted%20by%20QIA...). Two of them still fail.
+        _sbx = [x for x in _btn if 'qia-carry=m=Request%3A%20a%20sandbox%20hosted%20by%20QIA' in x]
+        if len(_sbx) <= 1: _btn = [x for x in _btn if x not in _sbx]
         _ninq = len(_lab) + len(_btn)
         if _ninq > 1 and not any(rel.endswith(a) for a in ONE_INQUIRY_ALLOW):
             print(f'  BREACH 0b.12 {rel}: {_ninq} inquiry buttons on one page (one only: the menu link "Inquiry")'); bad += 1

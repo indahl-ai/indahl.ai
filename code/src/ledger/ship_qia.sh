@@ -4,7 +4,7 @@
 # qia-site worker (cloudflare-workers/qia-site), checks live, and rolls the worker back on a failed check.
 #   1 BUILD   wipe cloudflare-workers/qia-site/public/ (so a page removed from the builders cannot stay live), copy qia-site/static/
 #             (the sample report PDF and cover), run indahl-ai/qia_site.py (which runs calibrations/site/console/build.py) into public/_qiasite
-#   2 GATES   site_gate.py --qia (the specbook wording rules on every QIA page and script), house_terms.py check (no house handles or names),
+#   2 GATES   demo_replay_gate.py (page figures vs the public replay code), site_gate.py --qia (the specbook wording rules on every QIA page and script), house_terms.py check (no house handles or names),
 #             internal_gate.py --tree (no internal material, keys or ids), the private-names scan (ledger/private_names.txt, home address)
 #   3 DEPLOY  wrangler deploy of qia-site only (keychain cloudflare-api-token-ship, never printed); the version live before is the rollback target
 #   4 CHECKS  only when the zone routes point at qia-site (ledger/qia_route.py): every built page and file byte-identical live, /method 404,
@@ -46,6 +46,7 @@ STEP=gates; echo "== 2 GATES"
 G=$(python3 "$B/heuremen-specbook/site_gate.py" --qia "$OUT" 2>&1) || fail "site_gate --qia: $(echo "$G" | grep -m1 BREACH)"; echo "  $(echo "$G" | tail -1)"
 G=$(python3 "$L/house_terms.py" check "$Q/public" 2>&1) || fail "house_terms: $(echo "$G" | head -1)"; echo "  $(echo "$G" | tail -1)"
 G=$(python3 "$L/internal_gate.py" --tree "$Q/public" 2>&1) || fail "internal_gate: $(echo "$G" | grep -v '^\s*$' | head -1)"; echo "  internal gate: clean"
+G=$(python3 "$L/demo_replay_gate.py" 2>&1) || fail "demo_replay_gate: $(echo "$G" | tail -2 | head -1)"; echo "  $(echo "$G" | tail -1)"   # 24 Nov 2026: page figures must match the public replay code
 G=$(python3 - "$Q/public" "$L" <<'PY'
 import os, re, sys
 top, L = sys.argv[1], sys.argv[2]

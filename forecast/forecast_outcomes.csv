@@ -1,33 +1,33 @@
 path,label,outcome,n,of,share,lo,hi,updated,stations,forecasts_stored,period_rows,periods_stored,negative_lead_rows,periods_scored,unscorable,not_stated,periods_in_no_cell,periods_in_cells,cell_periods,original_rule,primary,outcome_rule,bin,lead,mean_stated,observed,reason
-/,,,,,,,,24 Nov 00:12,30,3080,15486,3914,3139,1518,22,0,23,1495,4350,"Any hourly amount above zero, or a present-weather entry for rain, drizzle, snow, sleet, hail, showers or thunderstorm (PLAN.md, committed 28 Oct 2026 before any forecast was stored). Kept beside the primary reading, never deleted.",measurable,"PLAN_ADDENDUM_std2.md (12 Nov 2026): point figure, no tolerance, ABOVE, BELOW or CANNOT_TELL, under 30 periods TOO_WIDE_TO_RESOLVE",,,,,
-/cells[0],cells[0],ABOVE,951,,,1.62,3.6,,,,,,,,,,,,,,,,0 to 5,under 12 hours,0.97,2.42,
-/cells[1],cells[1],ABOVE,912,,,1.95,4.14,,,,,,,,,,,,,,,,0 to 5,12 to 24 hours,0.8,2.85,
-/cells[2],cells[2],ABOVE,932,,,3.44,6.16,,,,,,,,,,,,,,,,0 to 5,24 to 48 hours,0.86,4.61,
+/,,,,,,,,24 Nov 02:48,30,3090,15536,3929,3149,1530,23,0,23,1507,4382,"Any hourly amount above zero, or a present-weather entry for rain, drizzle, snow, sleet, hail, showers or thunderstorm (PLAN.md, committed 28 Oct 2026 before any forecast was stored). Kept beside the primary reading, never deleted.",measurable,"PLAN_ADDENDUM_std2.md (12 Nov 2026): point figure, no tolerance, ABOVE, BELOW or CANNOT_TELL, under 30 periods TOO_WIDE_TO_RESOLVE",,,,,
+/cells[0],cells[0],ABOVE,962,,,1.6,3.56,,,,,,,,,,,,,,,,0 to 5,under 12 hours,0.97,2.39,
+/cells[1],cells[1],ABOVE,920,,,1.94,4.11,,,,,,,,,,,,,,,,0 to 5,12 to 24 hours,0.8,2.83,
+/cells[2],cells[2],ABOVE,939,,,3.42,6.11,,,,,,,,,,,,,,,,0 to 5,24 to 48 hours,0.86,4.58,
 /cells[3],cells[3],ABOVE,194,,,28.2,41.47,,,,,,,,,,,,,,,,10 to 20,under 12 hours,14.3,34.54,
 /cells[4],cells[4],ABOVE,180,,,29.45,43.35,,,,,,,,,,,,,,,,10 to 20,12 to 24 hours,14.38,36.11,
-/cells[5],cells[5],ABOVE,214,,,27.65,40.21,,,,,,,,,,,,,,,,10 to 20,24 to 48 hours,14.55,33.64,
-/cells[6],cells[6],ABOVE,85,,,55.31,75.08,,,,,,,,,,,,,,,,30 to 40,under 12 hours,35.39,65.88,
+/cells[5],cells[5],ABOVE,216,,,27.39,39.86,,,,,,,,,,,,,,,,10 to 20,24 to 48 hours,14.55,33.33,
+/cells[6],cells[6],ABOVE,86,,,54.59,74.35,,,,,,,,,,,,,,,,30 to 40,under 12 hours,35.4,65.12,
 /cells[7],cells[7],ABOVE,91,,,52.38,71.88,,,,,,,,,,,,,,,,30 to 40,12 to 24 hours,34.8,62.64,
-/cells[8],cells[8],ABOVE,146,,,48.74,64.61,,,,,,,,,,,,,,,,30 to 40,24 to 48 hours,34.69,56.85,
+/cells[8],cells[8],ABOVE,148,,,48.03,63.82,,,,,,,,,,,,,,,,30 to 40,24 to 48 hours,34.7,56.08,
 /cells[9],cells[9],ABOVE,76,,,75.91,91.72,,,,,,,,,,,,,,,,50 to 60,under 12 hours,54.88,85.53,
 /cells[10],cells[10],ABOVE,78,,,73.54,89.99,,,,,,,,,,,,,,,,50 to 60,12 to 24 hours,53.92,83.33,
-/cells[11],cells[11],ABOVE,93,,,62.19,80.15,,,,,,,,,,,,,,,,50 to 60,24 to 48 hours,54.2,72.04,
+/cells[11],cells[11],ABOVE,94,,,61.44,79.45,,,,,,,,,,,,,,,,50 to 60,24 to 48 hours,54.17,71.28,
 /cells[12],cells[12],ABOVE,50,,,78.64,95.65,,,,,,,,,,,,,,,,70 to 80,under 12 hours,74.34,90.0,
 /cells[13],cells[13],ABOVE,45,,,82.14,97.71,,,,,,,,,,,,,,,,70 to 80,12 to 24 hours,75.16,93.33,
 /cells[14],cells[14],ABOVE,86,,,78.53,92.71,,,,,,,,,,,,,,,,70 to 80,24 to 48 hours,74.57,87.21,
 /cells[15],cells[15],CANNOT_TELL,70,,,94.8,100.0,,,,,,,,,,,,,,,,90 to 100,under 12 hours,95.8,100.0,STRADDLES_EDGE
 /cells[16],cells[16],CANNOT_TELL,69,,,87.98,98.51,,,,,,,,,,,,,,,,90 to 100,12 to 24 hours,96.17,95.65,STRADDLES_EDGE
 /cells[17],cells[17],CANNOT_TELL,78,,,91.12,99.29,,,,,,,,,,,,,,,,90 to 100,24 to 48 hours,95.45,97.44,STRADDLES_EDGE
-/measurable/cells[0],cells[0],CANNOT_TELL,945,,,0.43,1.66,,,,,,,,,,,,,,,,0 to 5,under 12 hours,0.96,0.85,STRADDLES_EDGE
-/measurable/cells[1],cells[1],CANNOT_TELL,906,,,0.45,1.73,,,,,,,,,,,,,,,,0 to 5,12 to 24 hours,0.8,0.88,STRADDLES_EDGE
-/measurable/cells[2],cells[2],ABOVE,923,,,1.15,2.93,,,,,,,,,,,,,,,,0 to 5,24 to 48 hours,0.85,1.84,
-/measurable/cells[3],cells[3],CANNOT_TELL,191,,,10.78,20.96,,,,,,,,,,,,,,,,10 to 20,under 12 hours,14.29,15.18,STRADDLES_EDGE
-/measurable/cells[4],cells[4],CANNOT_TELL,178,,,11.59,22.42,,,,,,,,,,,,,,,,10 to 20,12 to 24 hours,14.38,16.29,STRADDLES_EDGE
+/measurable/cells[0],cells[0],CANNOT_TELL,951,,,0.43,1.65,,,,,,,,,,,,,,,,0 to 5,under 12 hours,0.97,0.84,STRADDLES_EDGE
+/measurable/cells[1],cells[1],CANNOT_TELL,912,,,0.45,1.72,,,,,,,,,,,,,,,,0 to 5,12 to 24 hours,0.8,0.88,STRADDLES_EDGE
+/measurable/cells[2],cells[2],ABOVE,932,,,1.14,2.9,,,,,,,,,,,,,,,,0 to 5,24 to 48 hours,0.86,1.82,
+/measurable/cells[3],cells[3],CANNOT_TELL,194,,,10.61,20.64,,,,,,,,,,,,,,,,10 to 20,under 12 hours,14.3,14.95,STRADDLES_EDGE
+/measurable/cells[4],cells[4],CANNOT_TELL,180,,,11.46,22.18,,,,,,,,,,,,,,,,10 to 20,12 to 24 hours,14.38,16.11,STRADDLES_EDGE
 /measurable/cells[5],cells[5],CANNOT_TELL,214,,,11.2,20.86,,,,,,,,,,,,,,,,10 to 20,24 to 48 hours,14.55,15.42,STRADDLES_EDGE
 /measurable/cells[6],cells[6],CANNOT_TELL,85,,,28.09,48.27,,,,,,,,,,,,,,,,30 to 40,under 12 hours,35.39,37.65,STRADDLES_EDGE
-/measurable/cells[7],cells[7],CANNOT_TELL,90,,,23.47,42.43,,,,,,,,,,,,,,,,30 to 40,12 to 24 hours,34.83,32.22,STRADDLES_EDGE
-/measurable/cells[8],cells[8],CANNOT_TELL,143,,,25.06,40.2,,,,,,,,,,,,,,,,30 to 40,24 to 48 hours,34.76,32.17,STRADDLES_EDGE
-/measurable/cells[9],cells[9],CANNOT_TELL,75,,,46.05,67.9,,,,,,,,,,,,,,,,50 to 60,under 12 hours,54.92,57.33,STRADDLES_EDGE
+/measurable/cells[7],cells[7],CANNOT_TELL,91,,,23.2,42.01,,,,,,,,,,,,,,,,30 to 40,12 to 24 hours,34.8,31.87,STRADDLES_EDGE
+/measurable/cells[8],cells[8],CANNOT_TELL,146,,,24.53,39.43,,,,,,,,,,,,,,,,30 to 40,24 to 48 hours,34.69,31.51,STRADDLES_EDGE
+/measurable/cells[9],cells[9],CANNOT_TELL,76,,,45.39,67.14,,,,,,,,,,,,,,,,50 to 60,under 12 hours,54.88,56.58,STRADDLES_EDGE
 /measurable/cells[10],cells[10],CANNOT_TELL,78,,,47.89,69.22,,,,,,,,,,,,,,,,50 to 60,12 to 24 hours,53.92,58.97,STRADDLES_EDGE
 /measurable/cells[11],cells[11],CANNOT_TELL,93,,,41.6,61.5,,,,,,,,,,,,,,,,50 to 60,24 to 48 hours,54.2,51.61,STRADDLES_EDGE
 /measurable/cells[12],cells[12],CANNOT_TELL,50,,,64.76,87.25,,,,,,,,,,,,,,,,70 to 80,under 12 hours,74.34,78.0,STRADDLES_EDGE

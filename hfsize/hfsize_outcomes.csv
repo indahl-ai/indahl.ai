@@ -1,2 +1,2 @@
 path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,reason,organizations,awaiting
-/comparison,comparison,CANNOT_TELL,10,122,0.082,0.0451,0.1443,0.0451,0.1443,STRADDLES_EDGE,7,0
+/comparison,comparison,CANNOT_TELL,9,120,0.075,0.04,0.1364,0.04,0.1364,STRADDLES_EDGE,6,0

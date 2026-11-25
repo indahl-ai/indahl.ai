@@ -360,6 +360,22 @@ CORRECTIONS = f"""<div class="hero wrap"><p class="eyebrow">Corrections</p><h1>R
 <li>18 Nov 2026, readout table withdrawn: a table of readout entries that looked misstated was withdrawn, because IBM&rsquo;s own refreshes several days apart disagree as often. It is not a finding.</li>
 </ul></div></section>"""
 
+
+def _indexable():
+    """25 Nov 2026 (owner: indexing now): the sitemap lists every built page that does not carry a noindex tag, not a fixed list
+    (it listed four legacy pages while the six demonstrations, the showcase the release points to, were missing)."""
+    import glob
+    out = []
+    for f in sorted(glob.glob(os.path.join(OUT, '**', '*.html'), recursive=True)):
+        rel = os.path.relpath(f, OUT).replace(os.sep, '/')
+        if os.path.basename(rel).startswith('_'): continue
+        h = open(f, encoding='utf-8', errors='replace').read(4000)
+        if 'name="robots" content="noindex' in h: continue
+        p = '/' + rel[:-len('index.html')] if rel.endswith('index.html') else '/' + rel[:-5]
+        p = p.rstrip('/') or '/'
+        if p not in out: out.append(p)
+    return out
+
 PAGES = {
     '/': ('Quantum Idle Audit | Independent checks of quantum hardware claims', 'Independent checks of quantum hardware claims against the vendor’s own calibration, with line-item reports and evidence anyone can rerun.', HOME),
     '/findings': ('Findings | Quantum Idle Audit', 'IBM published calibration figures set beside measured hardware values, with intervals, dates and how to check both sides.', FINDINGS),
@@ -408,5 +424,5 @@ if __name__ == '__main__':
     open(os.path.join(OUT, 'favicon.svg'), 'w').write(MARK.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"').replace('currentColor', '#806012'))
     open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: https://quantumidleaudit.com/sitemap.xml\n')
     open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-        ''.join('<url><loc>https://quantumidleaudit.com%s</loc></url>\n' % ('' if p == '/' else p) for p in PAGES) + '</urlset>\n')
+        ''.join('<url><loc>https://quantumidleaudit.com%s</loc></url>\n' % ('' if p == '/' else p) for p in _indexable()) + '</urlset>\n')
     print('qia site: %d pages in %s' % (len(PAGES), os.path.relpath(OUT, os.path.join(HERE, '..'))))

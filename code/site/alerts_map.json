@@ -3643,7 +3643,7 @@
 "ares": {
 "div": "hermes",
 "every": "checked about every 30 minutes",
-"every_min": 31,
+"every_min": 33,
 "mode": "outcome",
 "name": "ARES",
 "src": "ledger pass",
@@ -3652,7 +3652,7 @@
 "argus": {
 "div": "hermes",
 "every": "checked about every 30 minutes",
-"every_min": 31,
+"every_min": 33,
 "mode": "outcome",
 "name": "ARGUS",
 "src": "ledger pass",
@@ -3798,7 +3798,7 @@
 "deus": {
 "div": "hermes",
 "every": "checked about every 30 minutes",
-"every_min": 31,
+"every_min": 33,
 "mode": "outcome",
 "name": "DEUS",
 "src": "ledger pass",
@@ -4002,7 +4002,7 @@
 "prometheus": {
 "div": "hermes",
 "every": "checked about every 30 minutes",
-"every_min": 31,
+"every_min": 33,
 "mode": "outcome",
 "name": "PROMETHEUS",
 "src": "ledger pass",
@@ -4193,7 +4193,7 @@
 "voightkampff": {
 "div": "hermes",
 "every": "checked about every 30 minutes",
-"every_min": 31,
+"every_min": 33,
 "mode": "outcome",
 "name": "VOIGHT-KAMPFF",
 "src": "ledger pass",
@@ -4334,5 +4334,5 @@
 ]
 }
 },
-"tick_min": 2.62
+"tick_min": 2.76
 }

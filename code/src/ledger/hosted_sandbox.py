@@ -2,6 +2,7 @@
 """hosted_sandbox.py: a QIA-hosted demonstration sandbox for a prospect (24 Nov 2026, owner: "build the hosted sandbox").
 
   python3 ledger/hosted_sandbox.py grant "<who, for the record>" [--hours 24] [--clip | --link]
+  python3 ledger/hosted_sandbox.py revoke <pod id | name | all> ["why"]   (end one now: test done, client done)
       Starts a CPU pod on the house RunPod account from the private template (JupyterLab on port 8888, same setup as the public
       template), with a fresh random password. Waits until the notebook answers, then prints the link, the password and a reply draft
       (--clip puts the draft on the clipboard; it is never sent from here). Refuses past CAP live sandboxes.
@@ -99,6 +100,16 @@ def sweep(quiet=False):
     if n or not quiet: print('sweep: %d hosted sandbox(es) terminated' % n)
 
 
+def revoke(which, why):
+    """25 Nov 2026: end a sandbox the moment its test or client is done (the owner); before this only expiry ended one."""
+    n = 0
+    for p in pods():
+        if which in ('all', p['id'], p['name']):
+            gql('mutation { podTerminate(input:{podId:"%s"}) }' % p['id']); n += 1
+            write(dict(event='terminated', pod=p['id'], at=int(time.time()), why=why)); print('revoked %s %s' % (p['id'], p['name']))
+    if not n: print('revoke: no live hosted sandbox matches %r' % which)
+
+
 def lst():
     rec = {r['pod']: r for r in records() if r.get('event') == 'created'}
     live = pods()
@@ -111,10 +122,13 @@ def lst():
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    if not a or a[0] not in ('grant', 'list', 'sweep'): sys.exit(__doc__)
+    if not a or a[0] not in ('grant', 'list', 'sweep', 'revoke'): sys.exit(__doc__)
     if a[0] == 'grant':
         if len(a) < 2: sys.exit('grant needs "<who>"')
         hours = float(a[a.index('--hours') + 1]) if '--hours' in a else 24.0
         grant(a[1], hours, 'link' if '--link' in a else '--clip' in a)
     elif a[0] == 'sweep': sweep('--quiet' in a)
+    elif a[0] == 'revoke':
+        if len(a) < 2: sys.exit('revoke needs <pod id | pod name | all> [why]')
+        revoke(a[1], a[2] if len(a) > 2 else 'revoked by hand')
     else: lst()

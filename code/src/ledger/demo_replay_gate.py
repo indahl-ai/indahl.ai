@@ -45,8 +45,20 @@ def retired_check():
     bad = []
     files = sorted(glob.glob(os.path.join(RELEASE_DIRS[0], 'RELEASE_FINAL_*.md')), key=os.path.getmtime)[-1:]
     files += glob.glob(os.path.join(RELEASE_DIRS[1], '**', '*PITCH*.md'), recursive=True)
+    files += glob.glob(os.path.join(B, 'calibrations', 'biz', '**', 'LAUNCH_NOTE*.md'), recursive=True)   # 25 Nov: the launch note kept 16x/3.7/1.8 unseen
+    try:   # the launch note lives on lane-biz, not in the checked-out branch: read it from there
+        _c = os.path.join(B, 'calibrations'); subprocess.run(['git', '-C', _c, 'fetch', '-q', 'origin', 'lane-biz'], capture_output=True, timeout=60)
+        _t = subprocess.run(['git', '-C', _c, 'show', 'origin/lane-biz:biz/LAUNCH_NOTE_27NOV.md'], capture_output=True, text=True, timeout=30).stdout
+        if _t:
+            _lp = os.path.join(B, 'ledger', 'gates', 'lane_biz_LAUNCH_NOTE_27NOV.md'); os.makedirs(os.path.dirname(_lp), exist_ok=True); open(_lp, 'w').write(_t); files.append(_lp)
+    except Exception as _e: bad.append('launch note on lane-biz unreadable: ' + type(_e).__name__)
     for f in files:
         t = open(f, encoding='utf-8', errors='replace').read()
+        # 25 Nov 2026: the wire release must name no vendor and no processor (IBM courtesy rule); a 24 Nov edit put 'ibm_fez' in it unseen
+        if os.path.basename(f).startswith('RELEASE_FINAL') or 'LAUNCH_NOTE' in f:
+            for m in re.finditer(r'\bibm\b|ibm_\w+|\b(fez|kingston|marrakesh|torino|brisbane|sherbrooke|heron|eagle|nighthawk)\b', t, re.I):
+                if '<!--' in t[max(0, m.start() - 200):m.start()] and '-->' not in t[max(0, m.start() - 200):m.start()]: continue   # internal comment line
+                bad.append('%s: names a vendor or processor %r (release names none)' % (os.path.relpath(f, B), m.group(0)))
         for pat in RETIRED:
             for m in re.finditer(pat, t, re.I):
                 if 'q147' in t[max(0, m.start() - 40):m.end()]: continue      # 16.7x is a different figure (q147 readout)

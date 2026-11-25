@@ -21,12 +21,18 @@ def local(url):
             if os.path.exists(f): return f
 def send(urls):
     if not urls: print('indexnow: nothing changed'); return 0
-    body = json.dumps({'host': HOST, 'key': KEY, 'keyLocation': 'https://%s/%s.txt' % (HOST, KEY), 'urlList': urls}).encode()
+    host = urls[0].split('/')[2]   # 25 Nov 2026: the host comes from the URLs themselves (--urls with a qia.com URL was sent as indahl.ai and refused 422)
+    if any(u.split('/')[2] != host for u in urls): print('indexnow: refused, URLs from more than one host'); return 0
+    body = json.dumps({'host': host, 'key': KEY, 'keyLocation': 'https://%s/%s.txt' % (host, KEY), 'urlList': urls}).encode()
     r = urllib.request.urlopen(urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'Content-Type': 'application/json; charset=utf-8'}), timeout=60)
     print('indexnow: sent %d urls, status %s' % (len(urls), r.status)); return r.status
 try:
     state = json.load(open(S)) if os.path.exists(S) else {}
     if '--urls' in sys.argv: send(sys.argv[sys.argv.index('--urls') + 1:]); sys.exit(0)
+    if '--qia' in sys.argv:   # 25 Nov 2026 (owner: QIA indexing now): every URL in the quantumidleaudit.com sitemap, under that host
+        HOST = 'quantumidleaudit.com'
+        t = urllib.request.urlopen(urllib.request.Request('https://quantumidleaudit.com/sitemap.xml?x=1', headers={'User-Agent': 'heuremen-indexnow/1'}), timeout=30).read().decode()
+        send(re.findall(r'<loc>(.*?)</loc>', t)); sys.exit(0)
     now = {}
     for u in sitemap():
         f = local(u)

@@ -13,7 +13,7 @@ reproduce_kits.py is the code that makes the kits and the release gate that reru
 | [AIRQ](airq/) | fetch and verify | `b75016c019c344ca87609c27552c4a4427926f8b1d52d8f465db81ee6445942a` |
 | [ARES](ares/) | fetch and verify | `9a571f396218edaa23e43a66cc94ee236638effeee24d169c434b525372d0ca2` |
 | [ARGUS](argus/) | fetch and verify | `a3f1012ded4bad73f008cca85340107e4bae889deadf585c0cb3f2fab3ffe442` |
-| [CADENCE](cadence/) | included | `b13b6b4cbc08a6f0570d7806529bb733d58ddaf4f70c99e2c6c4a95c1f49ac8c` |
+| [CADENCE](cadence/) | included | `7933c886d1748f0ad7e5f37935dc478a35e9b3f2690469f8c5649601781b0aa3` |
 | [CAMPUS](campus/) | fetch and verify | `975e05958a91b4d456f879d871322bb9f9474b09d22abd58595490103ad9d20b` |
 | [CENSUS](census/) | included | `43f7368f318b9aef23d0af04771a2eb2dcdbc8eb4e81455405b5762fdccc2f1b` |
 | [CHANGE](change/) | fetch and verify | `3da1b7f2707fa3cff0dab7ba2eb91494b96fadb45ee93ef03eeadccd7041c4a8` |

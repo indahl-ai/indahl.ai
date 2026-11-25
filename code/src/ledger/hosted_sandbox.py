@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """hosted_sandbox.py: a QIA-hosted demonstration sandbox for a prospect (24 Nov 2026, owner: "build the hosted sandbox").
 
-  python3 ledger/hosted_sandbox.py grant "<who, for the record>" [--hours 24] [--clip]
+  python3 ledger/hosted_sandbox.py grant "<who, for the record>" [--hours 24] [--clip | --link]
       Starts a CPU pod on the house RunPod account from the private template (JupyterLab on port 8888, same setup as the public
       template), with a fresh random password. Waits until the notebook answers, then prints the link, the password and a reply draft
       (--clip puts the draft on the clipboard; it is never sent from here). Refuses past CAP live sandboxes.
@@ -79,7 +79,11 @@ def grant(who, hours, clip):
              'The sandbox is a private container that is deleted on %s, with everything in it. Nothing is sent to Heuremen.\n' % (link, pw, exp))
     print('READY in %.0f s: pod %s, expires %s\n' % (time.time() - t0, pid, exp))
     print(draft)
-    if clip:
+    if clip == 'link':                                   # 25 Nov: the bare link, for an internal test (draft clipboard got overwritten once)
+        subprocess.run(['pbcopy'], input=link, text=True)                # 25 Nov: the clipboard came back empty twice, so also a file and the browser
+        f = os.path.expanduser('~/Downloads/qia_sandbox_link.txt'); open(f, 'w').write(link + '\n'); os.chmod(f, 0o600)
+        subprocess.run(['open', link]); print('(link on the clipboard, in ~/Downloads/qia_sandbox_link.txt, and opened in the browser)')
+    elif clip:
         subprocess.run(['pbcopy'], input=draft, text=True); print('(reply draft on the clipboard)')
 
 
@@ -111,6 +115,6 @@ if __name__ == '__main__':
     if a[0] == 'grant':
         if len(a) < 2: sys.exit('grant needs "<who>"')
         hours = float(a[a.index('--hours') + 1]) if '--hours' in a else 24.0
-        grant(a[1], hours, '--clip' in a)
+        grant(a[1], hours, 'link' if '--link' in a else '--clip' in a)
     elif a[0] == 'sweep': sweep('--quiet' in a)
     else: lst()

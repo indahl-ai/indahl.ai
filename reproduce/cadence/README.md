@@ -10,14 +10,14 @@ This kit recomputes the CADENCE headline number and its outcome label with the d
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `7933c886d1748f0ad7e5f37935dc478a35e9b3f2690469f8c5649601781b0aa3`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `637417e5057146729ce3e8589ea3633475c948b4acaaccfe8bed3f7cf4d15b0d`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/cadence/live.json served it at the feed stamp 25 Nov 06:47, read by us at 2026-11-25T06:48:55Z. The feed bytes had sha256 `a15075ad8caa0b81454ab55da6fcb5a6753cf2224c21e63d97b69656e8d282e6`.
+The headline as the live feed https://indahl.ai/cadence/live.json served it at the feed stamp 25 Nov 09:48, read by us at 2026-11-25T09:49:01Z. The feed bytes had sha256 `272da58f2077fed65e05c5db0a7f48dee3e71cbf6df0615b444cbd038b4a4cb6`.
 
-- number: 638 of 1,243
-- value: 638
+- number: 637 of 1,243
+- value: 637
 - outcome: none, this headline carries no outcome label
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -41,8 +41,8 @@ As the CADENCE data pack lists them. Credit each source when using its values.
 | data/portal_cms.json | 2,284,005 | `cd8369b0ca3c6b9510b43b02463b8d5de1bef8087f40fe37549a55e4aab383e4` |
 | data/portal_energy.json | 98,897 | `88388965e53a84f874e440a65b24d71a8fde1837b1e575faeeef1eec3795211a` |
 | data/portal_healthcare_gov.json | 39,052 | `ed795dbf58a40854ccbf52a2a769b21c03ad97a075ccd60aca380d8c5784c298` |
-| data/portal_healthdata_gov.json | 449,075 | `968ae8ad5d52a2050da6327474e9668ae1f17efb0fe7c29d4e7eb1e94598f9c2` |
-| data/portal_labor.json | 98,681 | `6b7598eea824084998bea7a61244c0277b331067f18099bf198a9a2f90f6c690` |
+| data/portal_healthdata_gov.json | 449,464 | `d96c5b4018d715271f2d84390ca4b796b4c7437e2dc19809b41c9ec04244a4e8` |
+| data/portal_labor.json | 98,682 | `520400a7d320eba158377233fd459cea840fd5e3a0e079f648285b610087bf30` |
 | data/portal_veterans_affairs.json | 205,198 | `9b0e96f6eaad4810d6a3bb7cb072dcd969ab1bd2969e7ed34899e48e8652f27c` |
 
 ## Code

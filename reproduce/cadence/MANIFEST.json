@@ -54,22 +54,22 @@
    "stored_sha256": "f427ea69f4090968d6658bb4de34e6391fc768084920bac2319b0a7ceaa2df10"
   },
   {
-   "bytes": 449075,
+   "bytes": 449464,
    "gzip_added": true,
-   "modified": "2026-11-24T07:48:36Z",
+   "modified": "2026-11-25T08:48:25Z",
    "path": "data/portal_healthdata_gov.json",
-   "sha256": "968ae8ad5d52a2050da6327474e9668ae1f17efb0fe7c29d4e7eb1e94598f9c2",
+   "sha256": "d96c5b4018d715271f2d84390ca4b796b4c7437e2dc19809b41c9ec04244a4e8",
    "stored": "data/portal_healthdata_gov.json.gz",
-   "stored_sha256": "d8cb7c20d4387cd807297dc2a466997def47106d6f709d342105f5b8f85394bc"
+   "stored_sha256": "a80eea78f71603bc1bc885fdf859b6da1653cf6eebc6e4a45cfde782be75e2a9"
   },
   {
-   "bytes": 98681,
+   "bytes": 98682,
    "gzip_added": true,
-   "modified": "2026-11-24T06:48:13Z",
+   "modified": "2026-11-25T07:48:01Z",
    "path": "data/portal_labor.json",
-   "sha256": "6b7598eea824084998bea7a61244c0277b331067f18099bf198a9a2f90f6c690",
+   "sha256": "520400a7d320eba158377233fd459cea840fd5e3a0e079f648285b610087bf30",
    "stored": "data/portal_labor.json.gz",
-   "stored_sha256": "38cf35a9111f50821a97303218208ab7dd9ed2d8a6babafe6f04cc9822c5d226"
+   "stored_sha256": "7cf5eb0f360437e5688eac0735887d2d1ff68ceb626afb7c40abe28400d20e4a"
   },
   {
    "bytes": 205198,
@@ -81,7 +81,7 @@
    "stored_sha256": "c5af64d7510750326d382705292f335dfe9314917804e867e7371a151396f4b6"
   }
  ],
- "made": "2026-11-25T06:48:55Z",
+ "made": "2026-11-25T09:49:01Z",
  "mode": "inputs",
  "name": "CADENCE",
  "reference": [

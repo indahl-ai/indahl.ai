@@ -1,9 +1,9 @@
 path,label,outcome,n,of,share,lo,hi,portal,read,datasets_total,stating_cadence,series,readable,consistent,below,cannot_tell,on_cadence,at_bound,outcome_rule
 /portals[0],portals[0],,,,,,,CMS,25 Nov 03:48,3552,3552,159,159,143,16,0,143,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[1],portals[1],,,,,,,CDC,25 Nov 04:48,1410,334,200,139,99,40,61,99,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
-/portals[2],portals[2],,,,,,,HealthData.gov,24 Nov 07:48,19701,1404,307,240,109,131,67,109,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
+/portals[2],portals[2],,,,,,,HealthData.gov,25 Nov 08:48,19702,1405,308,240,110,130,68,110,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[3],portals[3],,,,,,,Veterans Affairs,25 Nov 05:47,2084,621,255,255,185,70,0,185,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[4],portals[4],,,,,,,Energy,25 Nov 06:47,487,309,130,103,1,102,27,1,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
-/portals[5],portals[5],,,,,,,Labor,24 Nov 06:48,404,333,264,223,42,181,41,42,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
+/portals[5],portals[5],,,,,,,Labor,25 Nov 07:48,404,333,264,223,42,181,41,42,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[6],portals[6],,,,,,,HealthCare.gov,24 Nov 10:48,347,122,122,122,26,96,0,26,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"
 /portals[7],portals[7],,,,,,,BLS,24 Nov 11:48,31,2,2,2,0,2,0,0,0,"margin 2 x interval minus age, bound 0, no tolerance, closed edge (PLAN_ADDENDUM_std2.md)"

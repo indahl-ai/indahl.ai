@@ -1,11 +1,11 @@
 {
- "updated": "26 Nov 14:08 UTC",
- "reads_held": 35017,
+ "updated": "26 Nov 14:44 UTC",
+ "reads_held": 35038,
  "processors": [
   {
    "backend": "ibm_marrakesh",
    "pending": 0,
-   "change_24h": 0,
+   "change_24h": -1,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "14 s",
@@ -16,7 +16,7 @@
   {
    "backend": "ibm_pittsburgh",
    "pending": 0,
-   "change_24h": -2,
+   "change_24h": -1,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "15 min",
@@ -25,20 +25,9 @@
    "outcome": "COMMITTED"
   },
   {
-   "backend": "ibm_kingston",
-   "pending": 1,
-   "change_24h": 0,
-   "our_jobs": 20,
-   "our_median_wait": "1 s",
-   "our_longest_wait": "6 min",
-   "our_queued_now": 0,
-   "our_oldest_queued": null,
-   "outcome": "COMMITTED"
-  },
-  {
    "backend": "ibm_fez",
-   "pending": 2,
-   "change_24h": 2,
+   "pending": 1,
+   "change_24h": -4,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "10 s",
@@ -48,8 +37,8 @@
   },
   {
    "backend": "ibm_chicago",
-   "pending": 3,
-   "change_24h": 3,
+   "pending": 2,
+   "change_24h": 2,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "2.9 h",
@@ -58,9 +47,20 @@
    "outcome": "COMMITTED"
   },
   {
+   "backend": "ibm_kingston",
+   "pending": 3,
+   "change_24h": 3,
+   "our_jobs": 20,
+   "our_median_wait": "1 s",
+   "our_longest_wait": "6 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
+   "outcome": "COMMITTED"
+  },
+  {
    "backend": "ibm_boston",
-   "pending": 4,
-   "change_24h": -14,
+   "pending": 11,
+   "change_24h": 10,
    "our_jobs": 20,
    "our_median_wait": "1 s",
    "our_longest_wait": "18 min",
@@ -70,13 +70,13 @@
   },
   {
    "backend": "ibm_phoenix",
-   "pending": 195,
-   "change_24h": 194,
+   "pending": 166,
+   "change_24h": 99,
    "our_jobs": 20,
-   "our_median_wait": "36 s",
+   "our_median_wait": "56 s",
    "our_longest_wait": "106 min",
-   "our_queued_now": 1,
-   "our_oldest_queued": "20 min",
+   "our_queued_now": 0,
+   "our_oldest_queued": null,
    "outcome": "COMMITTED"
   }
  ]

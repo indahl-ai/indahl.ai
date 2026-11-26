@@ -1,5 +1,5 @@
 path,label,outcome,n,of,share,lo,hi,vendor,expected_from_floor,status_unread,episodes,rounds,disagree,confirm,blips,quiet,reason
-/vendors[0],GitHub,CANNOT_TELL,,,,,,GitHub,1.86,0,0,56,0,0,1,55,TOO_WIDE_TO_RESOLVE
+/vendors[0],GitHub,CANNOT_TELL,,,,,,GitHub,1.86,0,0,56,0,0,3,53,TOO_WIDE_TO_RESOLVE
 /vendors[1],Cloudflare,CANNOT_TELL,,,,,,Cloudflare,1.86,0,0,56,0,0,1,55,TOO_WIDE_TO_RESOLVE
 /vendors[2],Discord,CANNOT_TELL,,,,,,Discord,1.86,0,0,56,0,0,1,55,TOO_WIDE_TO_RESOLVE
 /vendors[3],npm,CANNOT_TELL,,,,,,npm,1.86,0,0,56,0,0,1,55,TOO_WIDE_TO_RESOLVE

@@ -1,6 +1,6 @@
 path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,reason,wilson_lo,wilson_hi,products_tested
-/all,all,ABOVE,,,0.2453,0.158,0.3436,428,105,0.158,0.3436,,0.2069,0.2882,227
-/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1938,0.1477,0.2502,227,44,0.1477,0.2502,,,,
+/all,all,ABOVE,,,0.2459,0.1596,0.3436,431,106,0.1596,0.3436,,0.2076,0.2887,227
+/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1982,0.1516,0.2549,227,45,0.1516,0.2549,,,,
 /product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,ABOVE,,,0.0925,0.0613,0.1373,227,21,0.0613,0.1373,,,,
 /by_product/amazon-neptune,amazon-neptune,CANNOT_TELL,,,1.0,0.8513,1.0,22,22,0.8513,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/jira-service-management,jira-service-management,CANNOT_TELL,,,0.8571,0.4869,0.9743,7,6,0.4869,0.9743,TOO_WIDE_TO_RESOLVE,,,
@@ -23,6 +23,7 @@ path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,reason,w
 /by_product/jekyll,jekyll,CANNOT_TELL,,,1.0,0.3424,1.0,2,2,0.3424,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/numpy,numpy,CANNOT_TELL,,,1.0,0.3424,1.0,2,2,0.3424,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/vmware-cloud-foundation,vmware-cloud-foundation,CANNOT_TELL,,,0.5,0.15,0.85,4,2,0.15,0.85,TOO_WIDE_TO_RESOLVE,,,
+/by_product/amazon-rds-mysql,amazon-rds-mysql,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,
 /by_product/apache-couchdb,apache-couchdb,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,
 /by_product/apache-lucene,apache-lucene,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,
 /by_product/bamboo,bamboo,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,

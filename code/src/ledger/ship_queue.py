@@ -195,6 +195,12 @@ def run():
                 finish({r['id'] for r in reqs}, rc, label); auto_status(reqs, rc)
                 open(LASTAT, 'w').write(str(time.time()))
                 log(ring_line(rc, len(reqs), label))
+                # 26 Nov 2026: ship.sh writes stamps, releases, builds and desk packs AFTER its own save_source step, so they sat
+                # uncommitted until the next ship and tripped the 2 h source alert on every quiet afternoon. Save them now. Non-fatal.
+                try:
+                    subprocess.run(['bash', os.path.join(B, 'ledger', 'save_source.sh'), 'post-ship artifacts: ' + label[:80]], cwd=B,
+                                   stdout=open(L + '/ship_queue_runner.log', 'a'), stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, timeout=900)
+                except Exception as e: print('%s ship_queue: post-ship save_source failed: %s' % (ts(), type(e).__name__), flush=True)
         finally:
             fcntl.flock(rf, fcntl.LOCK_UN); rf.close()
         if not pending(): return 0   # a request added while this runner was exiting would find the runner lock held; re-check after release

@@ -20,6 +20,7 @@ sort -u -o $T/list.txt $T/list.txt
 mkdir -p $T/dbsnap; grep '\.db$' $T/list.txt | while read -r f; do mkdir -p "$T/dbsnap/$(dirname "$f")"; sqlite3 "$f" ".backup '$T/dbsnap/$f'" || exit 1; done
 grep -v '\.db$' $T/list.txt > $T/list2.txt; mv $T/list2.txt $T/list.txt
 tar -czf $T/bk/dbsnap_$D.tar.gz -C $T/dbsnap .
+while IFS= read -r f; do [ -f "$f" ] && printf '%s\n' "$f"; done < $T/list.txt > $T/list3.txt; mv $T/list3.txt $T/list.txt   # 25 Nov 2026: the 16:45 run died on a file deleted between listing and packing (rerun clean); re-check right before tar
 tar -czf $T/bk/internal_$D.tar.gz -T $T/list.txt   # 23 Nov 2026: a failed tar fails the backup (it used to upload a partial one)
 tar -czf $T/bk/memory_$D.tar.gz -C ~/.claude/projects/-Users-heuremen memory
 K=~/Documents/"Heuremen LLC"/ACCOUNTS/offsite-backup-key; cd $T; tar -czf bk.tar.gz bk

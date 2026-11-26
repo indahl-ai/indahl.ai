@@ -55,6 +55,10 @@ def retired_check():
     for f in files:
         t = open(f, encoding='utf-8', errors='replace').read()
         # 25 Nov 2026: the wire release must name no vendor and no processor (IBM courtesy rule); a 24 Nov edit put 'ibm_fez' in it unseen
+        # 25 Nov 2026 (the referee): v12's top comment line ('withdrawn figures', 'Google Voice') rides along when the file is copied whole into
+        # Business Wire. The release file carries the release text only; version notes live in RELEASE_FINAL_vN.NOTE.md.
+        if os.path.basename(f).startswith('RELEASE_FINAL') and '<!--' in t:
+            bad.append('%s: holds an internal comment (copied whole to the wire); move it to a .NOTE.md file' % os.path.relpath(f, B))
         if os.path.basename(f).startswith('RELEASE_FINAL') or 'LAUNCH_NOTE' in f:
             for m in re.finditer(r'\bibm\b|ibm_\w+|\b(fez|kingston|marrakesh|torino|brisbane|sherbrooke|heron|eagle|nighthawk)\b', t, re.I):
                 if '<!--' in t[max(0, m.start() - 200):m.start()] and '-->' not in t[max(0, m.start() - 200):m.start()]: continue   # internal comment line

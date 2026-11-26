@@ -318,6 +318,16 @@ async function handle(req, env) {
       if (v) return new Response(v, { headers: { "content-type": "application/json", "cache-control": "no-store" } });
     }
     if ((host === "indahl.ai" || host === "www.indahl.ai") && u.pathname === "/qia/offchain.json" && env.IRIS_BENCH) {
+      // 26 Nov 2026: the full chain is stored in parts under 8 MB (qia_offchain_p<i>) plus a meta key; it reached 20 MB of the 25 MiB value cap as one key.
+      const meta = await env.IRIS_BENCH.get("qia_offchain_parts");
+      if (meta) {
+        const m = JSON.parse(meta); const n = m.parts | 0; delete m.parts;
+        const ps = await Promise.all(Array.from({ length: n }, (_, i) => env.IRIS_BENCH.get("qia_offchain_p" + i)));
+        if (n > 0 && ps.every(x => x !== null)) {
+          const head = JSON.stringify(m).slice(0, -1);
+          return new Response(head + ',"entries":[' + ps.join(",") + "]}", { headers: { "content-type": "application/json", "cache-control": "no-store" } });
+        }
+      }
       const v = await env.IRIS_BENCH.get("qia_offchain");
       if (v) return new Response(v, { headers: { "content-type": "application/json", "cache-control": "no-store" } });
     }

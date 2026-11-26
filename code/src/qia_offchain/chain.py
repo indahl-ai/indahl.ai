@@ -10,7 +10,25 @@ def build():
         e = json.loads(l); e['n'] = len(out) + 1; e['prev'] = prev; e['hash'] = hashlib.sha256(canon(e)).hexdigest(); prev = e['hash']; out.append(e)
     c = dict(updated=D.datetime.now(D.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), head=prev, count=len(out), entries=out,
              how_to_verify='python3 verify.py chain.json (in the public repository, code/qia-offchain) recomputes every hash from the first entry.')
-    _t = os.path.join(H, 'chain.json.tmp'); json.dump(c, open(_t, 'w'), separators=(',', ':'), ensure_ascii=False); os.replace(_t, os.path.join(H, 'chain.json')); summary(c); return c   # 12 Nov: atomic, a reader mid-write crashed a cal append and left the feed stale
+    _t = os.path.join(H, 'chain.json.tmp'); json.dump(c, open(_t, 'w'), separators=(',', ':'), ensure_ascii=False); os.replace(_t, os.path.join(H, 'chain.json')); summary(c); parts(c); return c   # 12 Nov: atomic, a reader mid-write crashed a cal append and left the feed stale
+PART_MAX = 8_000_000   # bytes per KV part; the KV value cap is 25 MiB
+def parts(c):
+    # 26 Nov 2026: the full chain as one KV value reached 20 MB of 25 MiB (and 26.4 MB on 22 Nov, when every put failed). It is now
+    # stored as entry-ordered parts under 8 MB each (qia_offchain_p<i>), plus a meta key (qia_offchain_parts). The worker stitches them
+    # into the same /qia/offchain.json the page reads, so the page and verify.py see exactly the chain.json they saw before.
+    cur, size, out = [], 0, []
+    for e in c['entries']:
+        t = json.dumps(e, separators=(',', ':'), ensure_ascii=False)
+        if cur and size + len(t.encode()) + 1 > PART_MAX: out.append(cur); cur, size = [], 0
+        cur.append(t); size += len(t.encode()) + 1
+    if cur: out.append(cur)
+    for f in os.listdir(H):
+        if f.startswith('chain_part_') and f.endswith('.txt'): os.remove(os.path.join(H, f))
+    for i, p in enumerate(out):
+        _t = os.path.join(H, 'chain_part_%d.txt.tmp' % i); open(_t, 'w').write(','.join(p)); os.replace(_t, os.path.join(H, 'chain_part_%d.txt' % i))
+    meta = {k: v for k, v in c.items() if k != 'entries'} | {'parts': len(out)}
+    _t = os.path.join(H, 'chain_parts.json.tmp'); json.dump(meta, open(_t, 'w'), separators=(',', ':'), ensure_ascii=False); os.replace(_t, os.path.join(H, 'chain_parts.json'))
+    return len(out)
 def summary(c):
     # 16 Nov 2026 (teardown #12): the page loads this first; the full chain (off-record readings of every hourly run) loads only for a job check.
     def slim(e):

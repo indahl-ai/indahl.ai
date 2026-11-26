@@ -99,7 +99,9 @@ def chain_append(entry):
             print('cal: chain already has job', entry.get('job_id'), '- not appended again', flush=True); return None
     with open(E, 'a') as f: f.write(json.dumps(entry, ensure_ascii=False) + '\n')
     sys.path.insert(0, B + '/qia_offchain'); import chain as CH
-    c = CH.build(); CH.verify(B + '/qia_offchain/chain.json'); kv('qia_offchain', B + '/qia_offchain/chain.json'); kv('qia_offchain_summary', B + '/qia_offchain/chain_summary.json'); return c['head']
+    c = CH.build(); CH.verify(B + '/qia_offchain/chain.json'); _m = json.load(open(B + '/qia_offchain/chain_parts.json'))
+    for _i in range(_m['parts']): kv('qia_offchain_p%d' % _i, B + '/qia_offchain/chain_part_%d.txt' % _i)   # 26 Nov 2026: parts under 8 MB, not one 20 MB value
+    kv('qia_offchain_parts', B + '/qia_offchain/chain_parts.json'); kv('qia_offchain_summary', B + '/qia_offchain/chain_summary.json'); return c['head']
 def process(s, r, corrects=None):
     """Read one finished job against the record in force when it ran; publish; add a chain entry. corrects = chain entry number it corrects."""
     j = s.job(r['id']); rec = json.load(open(H + '/data/rec_%s.json' % r['id'])); qs = rec['qubits']

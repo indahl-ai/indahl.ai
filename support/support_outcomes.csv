@@ -1,6 +1,6 @@
 path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,reason,wilson_lo,wilson_hi,products_tested
-/all,all,ABOVE,,,0.2459,0.1596,0.3436,431,106,0.1596,0.3436,,0.2076,0.2887,227
-/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1982,0.1516,0.2549,227,45,0.1516,0.2549,,,,
+/all,all,ABOVE,,,0.2442,0.1578,0.3419,430,105,0.1578,0.3419,,0.206,0.2869,227
+/product_level/Products with at least one unreleased supported cycle,Products with at least one unreleased supported cycle,ABOVE,,,0.1938,0.1477,0.2502,227,44,0.1477,0.2502,,,,
 /product_level/Products where every tested supported cycle is unreleased,Products where every tested supported cycle is unreleased,ABOVE,,,0.0925,0.0613,0.1373,227,21,0.0613,0.1373,,,,
 /by_product/amazon-neptune,amazon-neptune,CANNOT_TELL,,,1.0,0.8513,1.0,22,22,0.8513,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/jira-service-management,jira-service-management,CANNOT_TELL,,,0.8571,0.4869,0.9743,7,6,0.4869,0.9743,TOO_WIDE_TO_RESOLVE,,,
@@ -35,7 +35,6 @@ path,label,outcome,n,of,share,lo,hi,tested,unreleased,share_lo,share_hi,reason,w
 /by_product/drush,drush,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,
 /by_product/hashicorp-packer,hashicorp-packer,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/kong-gateway,kong-gateway,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,
-/by_product/longhorn,longhorn,CANNOT_TELL,,,0.5,0.0945,0.9055,2,1,0.0945,0.9055,TOO_WIDE_TO_RESOLVE,,,
 /by_product/nomad,nomad,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,TOO_WIDE_TO_RESOLVE,,,
 /by_product/oracle-linux,oracle-linux,CANNOT_TELL,,,0.3333,0.0615,0.7923,3,1,0.0615,0.7923,TOO_WIDE_TO_RESOLVE,,,
 /by_product/phpmyadmin,phpmyadmin,CANNOT_TELL,,,1.0,0.2065,1.0,1,1,0.2065,1.0,TOO_WIDE_TO_RESOLVE,,,

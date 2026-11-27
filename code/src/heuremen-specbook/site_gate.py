@@ -35,9 +35,13 @@ _files = [os.path.join(B, rel) for _, rel in pages()] + ([] if (_FILE or _QIA) e
 for rel, hit, ctx in _cs.scan(_files):
     print(f'  BREACH 0b.5  {rel}: count in a title/heading/label: {hit!r}'); bad += 1
 _spec2 = _u.spec_from_file_location('tone_scan', os.path.join(B, 'heuremen-specbook', 'tone_scan.py')); _ts = _u.module_from_spec(_spec2); _spec2.loader.exec_module(_ts)
+# 27 Nov 2026 (his word): /media reproduces the release AS ISSUED on Business Wire, so its own
+# wording ("actually" x2, "Trust" in the headline) is a quote of a published document, not site copy. Only these words, only on this page.
+TONE_ISSUED = {'indahl-ai/media.html': {'actually', 'trust'}}
 for site, rel in pages():
     if site != 'indahl.ai': continue
     for kind, hit in _ts.scan(os.path.join(B, rel)):
+        if hit.lower() in TONE_ISSUED.get(rel, ()): continue
         print(f'  BREACH 0b.8  {rel}: tone {kind}: {hit!r}'); bad += 1
 # 30 Oct 2026 (the owner ... "read in full is the best"): public copy says "read in full", never "by hand".
 HANDS = re.compile(r'(?i)\bby hand\b|\bhand[- ](?:read|check|count)|\bhand-?checked\b')

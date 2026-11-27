@@ -48,6 +48,7 @@ SURFACES = {  # surface key -> file (paths relative to ~/forge unless absolute)
     'web': 'indahl-ai/web.html',   # 28 Oct: WEB, pages that returned a wall (generated from oy_index/web_walls.json)
     'sad': 'indahl-ai/model_all.html',   # 28 Oct: the MODEL desk of HERMES (formerly SAD). The surface key stays sad: it is internal to the ledger. Generated from mlperf_index/
     'media_old': 'indahl-ai/media/2026-10-26.html',   # 29 Oct 2026: the 26 Oct release, archived
+    'media_oct29': 'indahl-ai/media/2026-10-29.html',   # 27 Nov 2026: the 29 Oct release, archived when the QIA launch release took /media
     'media': 'indahl-ai/media.html',   # 26 Oct 2026: the press release lives on indahl.ai (heuremen.org links to it)
     'qia_matrix': 'indahl-ai/qia.html',
     'qia_process': 'indahl-ai/qia/process.html',

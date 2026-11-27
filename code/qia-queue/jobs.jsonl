@@ -1887,3 +1887,17 @@
 {"id": "dc4okedhdvas73bq3c90", "backend": "ibm_fez", "created": "2026-11-27T13:48:41.520526Z", "wait_s": 1.039064}
 {"id": "dc4okdts2omc738fo6jg", "backend": "ibm_chicago", "created": "2026-11-27T13:48:40.053844Z", "wait_s": 267.323526}
 {"id": "dc4okdlhdvas73bq3c7g", "backend": "ibm_boston", "created": "2026-11-27T13:48:38.542934Z", "wait_s": 152.795052}
+{"id": "dc4orjqnj2vs73dkfop0", "backend": "ibm_kingston", "created": "2026-11-27T14:03:59.478276Z", "wait_s": 3.735259}
+{"id": "dc4orjmq4uuc73a9777g", "backend": "ibm_kingston", "created": "2026-11-27T14:03:58.467665Z", "wait_s": 3.399162}
+{"id": "dc4p2athdvas73bq3tvg", "backend": "ibm_kingston", "created": "2026-11-27T14:18:20.107851Z", "wait_s": 1.723017}
+{"id": "dc4p2ats2omc738fon9g", "backend": "ibm_kingston", "created": "2026-11-27T14:18:19.431144Z", "wait_s": 1.350415}
+{"id": "dc4p0athdvas73bq3rlg", "backend": "ibm_kingston", "created": "2026-11-27T14:14:03.42695Z", "wait_s": 2.764034}
+{"id": "dc4p0amq4uuc73a97csg", "backend": "ibm_kingston", "created": "2026-11-27T14:14:02.571962Z", "wait_s": 2.326229}
+{"id": "dc4p3glhdvas73bq40d0", "backend": "ibm_kingston", "created": "2026-11-27T14:20:51.017652Z", "wait_s": 40.747706}
+{"id": "dc4p3ganj2vs73dkg2hg", "backend": "ibm_kingston", "created": "2026-11-27T14:20:50.424288Z", "wait_s": 26.18151}
+{"id": "dc4pgl5hdvas73bq4m70", "backend": "ibm_pittsburgh", "created": "2026-11-27T14:48:52.792331Z", "wait_s": 1.069063}
+{"id": "dc4pgkqnj2vs73dkgnr0", "backend": "ibm_marrakesh", "created": "2026-11-27T14:48:51.165858Z", "wait_s": 1.63356}
+{"id": "dc4pgkanj2vs73dkgnq0", "backend": "ibm_kingston", "created": "2026-11-27T14:48:49.681468Z", "wait_s": 1.699168}
+{"id": "dc4pgjuq4uuc73a987v0", "backend": "ibm_fez", "created": "2026-11-27T14:48:47.639286Z", "wait_s": 0.919317}
+{"id": "dc4pgj5hdvas73bq4m2g", "backend": "ibm_boston", "created": "2026-11-27T14:48:44.590984Z", "wait_s": 0.761293}
+{"id": "dc4okfdhdvas73bq3cag", "backend": "ibm_phoenix", "created": "2026-11-27T13:48:45.754012Z", "wait_s": 3673.355897}

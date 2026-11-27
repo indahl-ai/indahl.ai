@@ -26,7 +26,7 @@ function carryClean(name, v) {
   if (name === 'carry_window') return ISO_RE.test(s) ? s : '';
   return s;
 }
-const SUBJECTS = ['Paper audit ($100)', 'Full audit ($500)', '30-day pilot ($2,500)', 'Monitoring subscription ($2,500 a month)', 'Other'];   // 22 Nov (the owner): ONE form for both sites (quantumidleaudit.com/inquiries hands off here); every paid offer on either site, no audience split
+const SUBJECTS = ['Paper audit ($100)', 'Full audit ($500)', '30-day pilot ($2,500)', 'Monitoring subscription ($2,500 a month)', 'Machine owners (by quote)', 'Other'];   // 22 Nov (the owner): ONE form for both sites (quantumidleaudit.com/inquiries hands off here); every paid offer on either site, no audience split
 const FIELDS = { reason: 300, name: 120, email: 160, organisation: 160, role: 120, scope: 3000, timeline: 40, referral: 300 };
 // 19 Nov 2026: the reason is free text now; the subject line still flags privacy and security requests by keyword.
 

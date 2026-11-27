@@ -7,7 +7,8 @@
    {
     "geo": "US",
     "series": "SALES",
-    "step": "S1"
+    "step": "S1",
+    "width_basis": "as served 2026"
    },
    "share"
   ],
@@ -16,7 +17,8 @@
    {
     "geo": "US",
     "series": "SALES",
-    "step": "S1"
+    "step": "S1",
+    "width_basis": "as served 2026"
    },
    "hi"
   ],
@@ -25,7 +27,8 @@
    {
     "geo": "US",
     "series": "SALES",
-    "step": "S1"
+    "step": "S1",
+    "width_basis": "as served 2026"
    },
    "lo"
   ],
@@ -34,7 +37,8 @@
    {
     "geo": "US",
     "series": "SALES",
-    "step": "S1"
+    "step": "S1",
+    "width_basis": "as served 2026"
    },
    "inside"
   ],
@@ -43,7 +47,8 @@
    {
     "geo": "US",
     "series": "SALES",
-    "step": "S1"
+    "step": "S1",
+    "width_basis": "as served 2026"
    },
    "scored"
   ],
@@ -52,7 +57,8 @@
    {
     "geo": "US",
     "series": "SALES",
-    "step": "S1"
+    "step": "S1",
+    "width_basis": "as served 2026"
    },
    "outcome"
   ],

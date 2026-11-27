@@ -10,15 +10,15 @@ This kit recomputes the CENSUS headline number and its outcome label with the de
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `43f7368f318b9aef23d0af04771a2eb2dcdbc8eb4e81455405b5762fdccc2f1b`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `1a4440bf8f730442337be269ab734863c1b8b6a7b993e40ae7ff2769468fc98d`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/census/live.json served it at the feed stamp 2026-11-22T10:13:59Z, read by us at 2026-11-22T16:02:55Z. The feed bytes had sha256 `557e588f3e0810949ed0ddfc27a9610591952fafb47c593cb68fa73b195703d3`.
+The headline as the live feed https://indahl.ai/census/live.json served it at the feed stamp 2026-11-26T21:57:10Z, read by us at 2026-11-27T01:36:05Z. The feed bytes had sha256 `d26be6b190ad841504752aae636e480775b0cdedae560b7e9dfbeb5b5c0c475e`.
 
-- number: 117 of 117
+- number: 118 of 118
 - value: 1.0
-- interval: 0.9682096231761248 to 1.0
+- interval: 0.9684705387979147 to 1.0
 - outcome: ABOVE
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
@@ -38,8 +38,8 @@ As the CENSUS data pack lists them. Credit each source when using its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/census.json | 1,943,543 | `af4149a5befa07156966185942eebd01f1d2aee8dd6c3cf81e77fe03b8961a77` |
-| summary_census.json | 77,744 | `6ca070e8a0f5d5469d81131a49967c7f496078925a3fe8464b8ed570f492c2bf` |
+| data/census.json | 1,949,851 | `db9b7035a2a48384c4f8bf840e61b5df403096545a41c846b72fba5d2f4673fe` |
+| summary_census.json | 96,302 | `de5a1eec9bb3ac2bac375b0662ef911776bb4adfbdc1e1ec527d46806dcbb60d` |
 
 ## Code
 

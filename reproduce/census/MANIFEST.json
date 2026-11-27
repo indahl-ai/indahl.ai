@@ -8,31 +8,31 @@
   {
    "extract_of": "census_tick.py cells() and the outcome rule against 90 percent, for the national total cells",
    "path": "census_score.py",
-   "sha256": "1e58361dc0d4376375fb35e1da025aa01bfd7ccf3532f5fefdba8b8a759fb738"
+   "sha256": "34eefda9f993cd5968a4a9187e3ec229da402832057e9f2ae59951a1d41ec235"
   }
  ],
  "desk": "census",
  "inputs": [
   {
-   "bytes": 1943543,
+   "bytes": 1949851,
    "gzip_added": true,
-   "modified": "2026-11-22T10:14:00Z",
+   "modified": "2026-11-26T21:57:11Z",
    "path": "data/census.json",
-   "sha256": "af4149a5befa07156966185942eebd01f1d2aee8dd6c3cf81e77fe03b8961a77",
+   "sha256": "db9b7035a2a48384c4f8bf840e61b5df403096545a41c846b72fba5d2f4673fe",
    "stored": "data/census.json.gz",
-   "stored_sha256": "d4dadb74555b733260983e055cd3685016f56ddeda2fc460f6c084abc23ca337"
+   "stored_sha256": "20be5e117b72c346927eb1a5ca2bf7809897da19cd8ff1466499973810ea2bae"
   },
   {
-   "bytes": 77744,
+   "bytes": 96302,
    "gzip_added": true,
-   "modified": "2026-11-22T10:14:00Z",
+   "modified": "2026-11-26T21:57:11Z",
    "path": "summary_census.json",
-   "sha256": "6ca070e8a0f5d5469d81131a49967c7f496078925a3fe8464b8ed570f492c2bf",
+   "sha256": "de5a1eec9bb3ac2bac375b0662ef911776bb4adfbdc1e1ec527d46806dcbb60d",
    "stored": "summary_census.json.gz",
-   "stored_sha256": "6c3e63d82d96e73f964f6fd2e1150a88753022d11729b8ac853c5d78132cf6c1"
+   "stored_sha256": "b619dd7bbdada358caf87a020c04d5ee0b0979e5a19c7dd993da0a92b5f48383"
   }
  ],
- "made": "2026-11-22T16:02:55Z",
+ "made": "2026-11-27T01:36:05Z",
  "mode": "inputs",
  "name": "CENSUS",
  "reference": [

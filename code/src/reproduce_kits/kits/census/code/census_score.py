@@ -10,5 +10,5 @@ for s in ('SALES', 'STARTS', 'COMPLETIONS', 'RETAIL'):
         rs = [r for r in rows if r['series'] == s and r['geo'] == 'US' and r['step'] == st and r['width_basis'] == 'as served 2026']
         c = C.Counter(r['outcome'] for r in rs); k = c[K.CONSISTENT]; n = k + c[K.ABOVE] + c[K.BELOW]; lo, hi = K.wilson(k, n)
         oc = K.CANNOT_TELL if (n < 10 or not gate_ok) else (K.ABOVE if lo > 0.90 else (K.BELOW if hi < 0.90 else K.CONSISTENT))
-        out.append(dict(series=s, geo='US', step=st, scored=n, inside=k, above=c[K.ABOVE], below=c[K.BELOW], share=(k / n) if n else None, lo=lo, hi=hi, outcome=oc))
+        out.append(dict(series=s, geo='US', step=st, width_basis='as served 2026', scored=n, inside=k, above=c[K.ABOVE], below=c[K.BELOW], share=(k / n) if n else None, lo=lo, hi=hi, outcome=oc))
 json.dump(dict(cells=out), open('out.json', 'w'), indent=1)

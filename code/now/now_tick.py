@@ -79,7 +79,7 @@ def due_rows(ents, now, readings):
         if rd:
             want = EVENT if e['kind'] == 'probability' else BINARY
             if rd.get('outcome') not in want or not rd.get('evidence'): log('reading refused (outcome or evidence missing)', e['id']); continue
-            rows.append(dict(kind='outcome', entry=e['id'], outcome=rd['outcome'], read_by=rd.get('read_by', 'the operator's), evidence=rd['evidence'], reason=rd.get('reason', '')))
+            rows.append(dict(kind='outcome', entry=e['id'], outcome=rd['outcome'], read_by=rd.get('read_by', 'Operator'), evidence=rd['evidence'], reason=rd.get('reason', '')))
         elif not e['dues']:
             rows.append(dict(kind='due', entry=e['id'], note='deadline passed, no reading with evidence yet'))
     return rows

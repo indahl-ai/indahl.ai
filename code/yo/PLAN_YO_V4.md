@@ -2,7 +2,7 @@
 Why (readings_after_referee.text, defined after the data): on TEST3, in items where all 8 qubits were stale by 24 to 48 h (240 qubits in 30
 records), YO v3 found 0.408, YO v2 0.367 and the date rule 0.367. The first live read on QIA (ibm_pittsburgh, record stamp 2026-10-31 23:17 UTC)
 held 8 stale qubits by the code and YO v2 flagged none. v3's band items held 3 to 5 band qubits each, so a record whose qubits all went stale
-together reached v3's training only through replay. the owner, 31 Oct
+together reached v3's training only through replay. The owner, 31 Oct
 ## Training
 Continue from the YO v2 adapter (the model at work; adapters/v2/adapters.safetensors, sha256 starting f73c847be9f51dd5), same base (Qwen3-1.7B),
 same prompt format and chat template, completions with mask_prompt, max_seq_length 2048, LoRA on 16 layers, batch 4, learning rate 5e-5,

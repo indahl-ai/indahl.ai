@@ -4,7 +4,7 @@ adopted, because seed 47 flagged 25 qubits that were not stale and seed 48 lost 
 by every YO model so far (YO v4's three seeds and both v5 seeds), sat in an item where 7 or 8 of the 8 qubits share one date younger than a day.
 Read item by item they are of two kinds: (a) a young group whose date falls on the previous calendar day (6.6 to 23.7 hours old), flagged
 whole, and (b) a young group with one stale qubit beside it, flagged whole. TEST5's younger items never held a stale neighbour.
-the owner, 1 Nov
+The owner, 1 Nov
 ## Training
 Continue from the YO v4 adapter (the model at work; adapters/v4/adapters.safetensors, sha256 starting 4737100d6e008afa), same base, prompt
 format, chat template and settings as v4 and v5 (mask_prompt, max_seq_length 2048, LoRA on 16 layers, batch 4, learning rate 5e-5, 1,200

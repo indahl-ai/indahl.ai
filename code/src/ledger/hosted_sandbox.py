@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """hosted_sandbox.py: a QIA-hosted demonstration sandbox for a prospect (24 Nov 2026, owner: "build the hosted sandbox").
 
-  python3 ledger/hosted_sandbox.py grant "<who, for the record>" [--hours 24] [--clip | --link]
+  python3 ledger/hosted_sandbox.py grant "<who, for the record>" [--hours 24] [--clip | --link] [--family heron_r2|nighthawk_r2] [--backend ibm_x] [--for "Org"]
   python3 ledger/hosted_sandbox.py revoke <pod id | name | all> ["why"]   (end one now: test done, client done)
       Starts a CPU pod on the house RunPod account from the private template (JupyterLab on port 8888, same setup as the public
       template), with a fresh random password. Waits until the notebook answers, then prints the link, the password and a reply draft
@@ -15,7 +15,7 @@ import json, os, secrets, subprocess, sys, time, urllib.request
 
 TEMPLATE = 'xkgdhxfb9o'          # private template "QIA hosted sandbox": public template's setup + ports 8888/http,22/tcp
 INSTANCE = 'cpu3c-2-4'
-CAP = 5
+CAP = 10                         # 27 Nov 2026 (owner): bespoke pods for every top-tier pitch, paid whether used or not
 REC = os.path.expanduser('~/forge/ledger/gates/hosted_sandboxes.jsonl')
 PREFIX = 'qia-hosted-'
 NB = 'lab/tree/demo/QIA_demonstrations.ipynb'
@@ -44,17 +44,20 @@ def write(rec):
     with open(REC, 'a') as f: f.write(json.dumps(rec) + '\n')
 
 
-def grant(who, hours, clip):
+def grant(who, hours, clip, family=None, backend=None, prepared_for=None):
     live = pods()
     if len(live) >= CAP: sys.exit('REFUSED: %d hosted sandboxes are live (cap %d). Run list, or sweep.' % (len(live), CAP))
     pw = secrets.token_urlsafe(12)
-    name = PREFIX + time.strftime('%m%d-%H%M')
+    name = PREFIX + time.strftime('%m%d-%H%M%S')
+    env = [{'key': 'JUPYTER_PASSWORD', 'value': pw}]   # 27 Nov: a bespoke pod presets the notebook's owner cells (demo-sandbox v1.4+)
+    for k, v in (('QIA_FAMILY', family), ('QIA_MY_BACKEND', backend), ('QIA_PREPARED_FOR', prepared_for)):
+        if v: env.append({'key': k, 'value': v})
     d = gql('mutation($i: deployCpuPodInput!) { deployCpuPod(input: $i) { id costPerHr } }',
             {'i': dict(name=name, instanceId=INSTANCE, cloudType='SECURE', templateId=TEMPLATE, containerDiskInGb=10, startJupyter=True,
-                       env=[{'key': 'JUPYTER_PASSWORD', 'value': pw}])})['deployCpuPod']
+                       env=env)})['deployCpuPod']
     if not d: sys.exit('RunPod returned no pod (no CPU capacity?). Try again in a minute.')
     pid, t0 = d['id'], time.time()
-    write(dict(event='created', who=who, pod=pid, name=name, created=int(t0), expires=int(t0 + hours * 3600), cost_per_hr=d.get('costPerHr')))
+    write(dict(event='created', who=who, pod=pid, name=name, created=int(t0), expires=int(t0 + hours * 3600), cost_per_hr=d.get('costPerHr'), family=family, backend=backend))
     url = 'https://%s-8888.proxy.runpod.net/' % pid
     ok = False
     for i in range(60):                                   # up to 10 minutes: pod start, setup (about a minute), JupyterLab
@@ -78,7 +81,7 @@ def grant(who, hours, clip):
              'chemistry, optimization, simulation, error_correction or ai_kernels. A live run on your own IBM Quantum account is optional and '
              'is switched on in its own cell. No account is needed for the sandbox itself.\n\n'
              'The sandbox is a private container that is deleted on %s, with everything in it. Nothing is sent to Heuremen.\n' % (link, pw, exp))
-    print('READY in %.0f s: pod %s, expires %s\n' % (time.time() - t0, pid, exp))
+    print('READY in %.0f s: pod %s, expires %s, presets: %s\n' % (time.time() - t0, pid, exp, ', '.join('%s=%s' % (e['key'], e['value']) for e in env if e['key'] != 'JUPYTER_PASSWORD') or 'none'))
     print(draft)
     if clip == 'link':                                   # 25 Nov: the bare link, for an internal test (draft clipboard got overwritten once)
         subprocess.run(['pbcopy'], input=link, text=True)                # 25 Nov: the clipboard came back empty twice, so also a file and the browser
@@ -126,7 +129,8 @@ if __name__ == '__main__':
     if a[0] == 'grant':
         if len(a) < 2: sys.exit('grant needs "<who>"')
         hours = float(a[a.index('--hours') + 1]) if '--hours' in a else 24.0
-        grant(a[1], hours, 'link' if '--link' in a else '--clip' in a)
+        opt = lambda f: a[a.index(f) + 1] if f in a else None
+        grant(a[1], hours, 'link' if '--link' in a else '--clip' in a, family=opt('--family'), backend=opt('--backend'), prepared_for=opt('--for'))
     elif a[0] == 'sweep': sweep('--quiet' in a)
     elif a[0] == 'revoke':
         if len(a) < 2: sys.exit('revoke needs <pod id | pod name | all> [why]')

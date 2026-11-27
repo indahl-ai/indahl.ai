@@ -6,8 +6,13 @@
  },
  {
   "path": "/media",
+  "title": "Heuremen launches QuantumIdleAudit.com | indahl.ai",
+  "description": "Release of 27 November 2026, published on Business Wire: Heuremen launches QuantumIdleAudit.com, check the hardware before you trust the answer."
+ },
+ {
+  "path": "/media/2026-10-29",
   "title": "IBM gate error measured above IBM’s figures | indahl.ai",
-  "description": "Every gate-error run made on IBM quantum processors on 23 and 24 October 2026 measured above the figures IBM publishes."
+  "description": "Release of 29 October 2026: every gate-error run made on IBM quantum processors on 23 and 24 October 2026 measured above the figures IBM publishes."
  },
  {
   "path": "/contact",

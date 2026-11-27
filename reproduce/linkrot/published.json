@@ -1,6 +1,6 @@
 {
  "feed": "https://indahl.ai/linkrot/live.json",
- "feed_sha256": "36f698775f64d2915431b82eb218587cae774035439a3ba6f36be29a25c0a8b0",
+ "feed_sha256": "1c5c3e5c9f87bfa05780050f99ffdd52978e0b1e6cd42c4caa3c2f81a8db60f1",
  "headline": {
   "desk": "LETHE",
   "display": "3.4%",
@@ -9,9 +9,9 @@
   "lo": 0.0273,
   "n": 68,
   "of": 1980,
-  "outcome": "CONSISTENT",
+  "outcome": "CANNOT_TELL",
   "value": 0.0344
  },
- "read_at": "2026-11-24T11:16:29Z",
- "stamp": "24 Nov 11:10"
+ "read_at": "2026-11-27T19:07:31Z",
+ "stamp": "27 Nov 18:58"
 }

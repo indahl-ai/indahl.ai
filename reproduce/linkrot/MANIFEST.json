@@ -14,25 +14,25 @@
  "desk": "linkrot",
  "inputs": [
   {
-   "bytes": 538638,
+   "bytes": 596148,
    "gzip_added": true,
-   "modified": "2026-11-20T14:44:22Z",
+   "modified": "2026-11-27T14:46:44Z",
    "path": "data/links.json",
-   "sha256": "52bc78462931125525a853e196e832997a26024e2546962199de6a31daeb58fb",
+   "sha256": "401c9168821b2aed47fee83f95a026fefdd9813c4d49975924da922dbe849710",
    "stored": "data/links.json.gz",
-   "stored_sha256": "78a08ba7a8850343ae24fda3eb38f9ce0104ccdcabd56e03078fa75a3d170b0d"
+   "stored_sha256": "d2f243e384d3176fa68276f548660fe6a3790177ba1a962674913606c4ada659"
   },
   {
-   "bytes": 13656,
+   "bytes": 14084,
    "gzip_added": true,
-   "modified": "2026-11-24T11:10:46Z",
+   "modified": "2026-11-27T18:58:17Z",
    "path": "summary_linkrot.json",
-   "sha256": "36f698775f64d2915431b82eb218587cae774035439a3ba6f36be29a25c0a8b0",
+   "sha256": "1c5c3e5c9f87bfa05780050f99ffdd52978e0b1e6cd42c4caa3c2f81a8db60f1",
    "stored": "summary_linkrot.json.gz",
-   "stored_sha256": "ff74e94d6ec309a6b394d180308983e65fd923446df66a7ffdee65011c14acc8"
+   "stored_sha256": "da1a48ce9d07c6ce4fe3c70836cff79c2e8643350ae0f235f98b442c86b84e4e"
   }
  ],
- "made": "2026-11-24T11:16:29Z",
+ "made": "2026-11-27T19:07:31Z",
  "mode": "inputs",
  "name": "LETHE",
  "reference": [

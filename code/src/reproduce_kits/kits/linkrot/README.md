@@ -10,16 +10,16 @@ This kit recomputes the LETHE headline number and its outcome label with the des
 python3 run.py --check
 ```
 
-Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `301f97cf489129761a35a170d88462950cf5031aa6802d687099656974967a60`.
+Needs Python 3.9 or later and nothing else. It prints one line of JSON and checks it against expected.json. The line it must print has sha256 `9677de3b1c850c00fe81d7617fc6f9ebcb6c5b913c8cad384a51f43db1117dd5`.
 
 ## What it reproduces
 
-The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 24 Nov 11:10, read by us at 2026-11-24T11:16:29Z. The feed bytes had sha256 `36f698775f64d2915431b82eb218587cae774035439a3ba6f36be29a25c0a8b0`.
+The headline as the live feed https://indahl.ai/linkrot/live.json served it at the feed stamp 27 Nov 18:58, read by us at 2026-11-27T19:07:31Z. The feed bytes had sha256 `1c5c3e5c9f87bfa05780050f99ffdd52978e0b1e6cd42c4caa3c2f81a8db60f1`.
 
 - number: 3.4%
 - value: 0.0344
 - interval: 0.0273 to 0.0434
-- outcome: CONSISTENT
+- outcome: CANNOT_TELL
 
 The live page can move inside the interval between releases. Each move outside it, or a change of label, gets a new row in the indahl.ai ledger, and a release is refused until this kit reproduces the number that row covers. The headline fields are the ones the ledger reads (`kit.json`, headline).
 
@@ -38,8 +38,8 @@ As the LETHE data pack lists them. Credit each source when using its values.
 
 | File | Bytes | sha256 |
 |---|---|---|
-| data/links.json | 538,638 | `52bc78462931125525a853e196e832997a26024e2546962199de6a31daeb58fb` |
-| summary_linkrot.json | 13,656 | `36f698775f64d2915431b82eb218587cae774035439a3ba6f36be29a25c0a8b0` |
+| data/links.json | 596,148 | `401c9168821b2aed47fee83f95a026fefdd9813c4d49975924da922dbe849710` |
+| summary_linkrot.json | 14,084 | `1c5c3e5c9f87bfa05780050f99ffdd52978e0b1e6cd42c4caa3c2f81a8db60f1` |
 
 ## Code
 

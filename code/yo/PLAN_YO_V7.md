@@ -3,7 +3,7 @@ Why (defined after the data, from the YO v6 reading, yo6_results.text): both v6 
 neighbour (YO v4 0.048 of young qubits flagged, both seeds 0.001, below), but seed 49 lost whole-window recall on YO v4's test records
 (0.931 against 0.975, below) and seed 50 missed more stale qubits beside young ones (0.977 against 0.995, below), so neither passed.
 v6 trained on 1,200 whole-window items where YO v4 trained on 2,400, and on no band items where YO v4 had 1,200. v7 restores both and
-changes nothing else. The owner, 1 Nov
+changes nothing else. the owner, 1 Nov
 ## Training
 Continue from the YO v4 adapter (adapters/v4/adapters.safetensors, sha256 starting 4737100d6e008afa), same base, prompt format, chat
 template and settings as v4 to v6 (mask_prompt, max_seq_length 2048, LoRA on 16 layers, batch 4, learning rate 5e-5, 1,200 iterations,

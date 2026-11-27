@@ -150,7 +150,7 @@ body = hl + '''<p class="meta crumb">Division: <a href="/hermes">HERMES</a></p>
 <p>Counted apart and never folded into a reading. Complaints with a timely value other than Yes or No: %s. Complaints with an unreadable date: %s. Complaints with no sent date: %s. Duplicate complaint numbers: %s. Complaints received outside the window: %s. TCCP files that could not be read: %s.</p>
 <h2>What this page holds and what it leaves out</h2>
 <p>Left out: complaint text, ZIP codes, states, tags, issues and company public responses, the Philadelphia Fed series built from the Y-14 filings, and the New York Fed household debt report. A reading says where the database sits against a printed figure. It does not say why, and it does not say whether any complaint was right.</p>
-<p class="meta">By Heuremen LLC.</p>
+<p class="meta">By Heuremen LLC, Heuremen LLC.</p>
 <p class="meta">Sources: CFPB Consumer Complaint Database, full file of %s (sha256 %s). CFPB Consumer Response Annual Reports for 2021 to 2025. CFPB complaint process and data use pages. 15 U.S.C. 1681i and 12 U.S.C. 5534 as printed by the Legal Information Institute. CFPB Terms of Credit Card Plans survey files, second half of 2022 to second half of 2025. Federal Reserve G.19 terms of credit history table. All read without a key, one request at a time. Generated %s. Heuremen LLC.</p>
 <p class="meta">Known-good check against the CFPB search service: %s.</p>
 <p class="meta">The headline is read again about once a week. The newest run is always in <a href="/credit/live.json">/credit/live.json</a>.</p>

@@ -335,12 +335,22 @@ def apply(PAGES, page, hero_slim, HOME=None, cssv='', FEED=None):
         PAGES[k] = PAGES[k].replace('@@CSSV@@', cssv)
         if HOME is not None: HOME[k] = '/hermes'
     PAGES['/follow'] = PAGES['/follow'].replace('</body>', tag + '\n</body>', 1)
+    # 28 Nov 2026 (owner: "drop this but make sure the option exists on the follow page"): the desk pages no longer carry the
+    # feed / webhook / device block. Each desk gets /follow/<desk>: the email form with that desk ticked, its feed, webhook,
+    # calendar and the device button. The footer line on the desk page ("Get notified about updates.") links there (alerts.footer).
+    import alerts as _AL
+    try: _items = json.load(open(_AL.MAP))['follow']
+    except Exception: _items = {}
     for d in desks:
         k = '/' + d
-        if k not in PAGES or '</main>' not in PAGES[k] or 'class="np"' in PAGES[k]: continue
-        doc = PAGES[k]; i = doc.rfind('</main>')
-        PAGES[k] = doc[:i] + _np(d, d in cal_desks) + doc[i:]
-        PAGES[k] = PAGES[k].replace('</body>', tag + '\n</body>', 1); nd += 1
+        if k not in PAGES: continue
+        nm = names.get(d, d.upper())
+        box = _AL.item_box(d, _items[d]).replace('type="checkbox"', 'type="checkbox" checked', 1) if d in _items else ''
+        body = ('<section class="legal"><p>Ways to hear when <a href="%s">%s</a> changes. Pick any.</p></section>' % (k, E(nm))
+                + '<section class="legal">' + _AL.signup_form(box) + '</section>' + _np(d, d in cal_desks))
+        PAGES['/follow' + k] = page('/follow' + k, 'Follow %s | indahl.ai | Heuremen LLC' % nm, 'Email, a feed, a webhook or a notification on this device when %s changes.' % nm,
+                                    body, hero_slim('Follow %s' % nm, 'Get notified about updates')).replace('@@CSSV@@', cssv)
+        PAGES['/follow' + k] = PAGES['/follow' + k].replace('</body>', tag + '\n' + _AL.script_tag() + '\n</body>', 1); nd += 1
     for b, (nm, ds) in brands.items():
         k = '/brand/' + b
         if k not in PAGES or '</main>' not in PAGES[k]: continue

@@ -25,7 +25,7 @@ TICK_BUS = os.path.join(B, 'watch', 'tick_bus.py'); TICKS = os.path.join(B, 'wat
 # 10 Nov 2026 (owner’s word): ONE sign-up form, in the footer of every page and on /alerts. Boxes: nl (weekly newsletter, at once), up (new desks
 # and new data), all (outcome changes on every desk), d=<desk> (outcome changes), u=<page> (updates), dv=<division> (everything in it),
 # o=<organisation>, and f = delivery (now, day, week).
-CSS = """.su-link{margin:10px 0 4px;font-size:14px}
+CSS = """.su-link{margin:12px 0 6px;font-size:14px;text-align:center}
 .su{max-width:640px;margin:0 auto 12px;padding:4px 0 12px;border-bottom:1px solid #4a3d24;text-align:left}.su-h{margin:0 0 6px;font-weight:600;color:#efe5cf;font-size:15px}
 .su-row{display:flex;gap:8px;margin:0 0 6px}.su input[type=email]{font:inherit;font-size:15px;padding:6px 8px;border:1px solid #4a3d24;background:#fffaf0;color:#1a1208;flex:1 1 auto;min-width:0;max-width:340px}
 .su .btn{flex:none;background:var(--lit);color:var(--cave);padding:6px 14px;border:0;font:inherit;font-size:15px;cursor:pointer}.su .btn:hover{background:#f3e2a0}
@@ -241,8 +241,8 @@ def footer(PAGES):
         # elif k in by_url: extra = ent_box(by_url[k], eidx[by_url[k]])   # a brand page, an entity page or an OY school page: this company or named thing
         elif k.startswith('/brand/') and k[7:] in brands: extra = brand_box(k[7:], brands[k[7:]][0])
         # 28 Nov 2026 (owner: "get the box off, just a link to the breakout page"): one line, the page's own box ticked on /alerts.
-        _q = ('?d=' + s) if s in items else ''
-        d = d.replace(FOOT, FOOT + '<p class="su-link"><a href="/alerts%s#signup">Get email updates about this page.</a></p>' % _q, 1); n += 1
+        _href = ('/follow/' + s) if ('/follow/' + s) in PAGES else '/follow'
+        d = d.replace(FOOT, FOOT + '<p class="su-link"><a href="%s">Get notified about updates.</a></p>' % _href, 1); n += 1
         PAGES[k] = d
     for k, d in PAGES.items():
         if 'class="su"' in d and '/signup.js' not in d and '</body>' in d: PAGES[k] = d.replace('</body>', tag + '\n</body>', 1)

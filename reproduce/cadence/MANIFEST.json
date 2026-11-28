@@ -11,77 +11,77 @@
   {
    "bytes": 828,
    "gzip_added": true,
-   "modified": "2026-11-24T11:48:45Z",
+   "modified": "2026-11-27T16:47:50Z",
    "path": "data/portal_bls.json",
-   "sha256": "e49be497741859dd80ca11f7fb9ccac3ae5301202d37014a99010d87777df389",
+   "sha256": "857eec71a865e4a3f9299c58dfaf241524c506353a5e01225eb5b458b00f0bbf",
    "stored": "data/portal_bls.json.gz",
-   "stored_sha256": "f2aa13ca85708357e856824efc32689a01b311fd712fdd239752557c629e2591"
+   "stored_sha256": "8bcac40fe8341dec090ef22547d45bbeebd29465edb6d9ad43da0d8b49e4146c"
   },
   {
    "bytes": 125724,
    "gzip_added": true,
-   "modified": "2026-11-25T04:48:43Z",
+   "modified": "2026-11-28T07:48:39Z",
    "path": "data/portal_cdc.json",
-   "sha256": "55f67d441b46b0b9c7d35475b101f8da89356b6d76a1858bd13874a1345e24d8",
+   "sha256": "d0e2de02939982cc7213664be91de8b3b51b40385ab5043596f365ecfc2a0f52",
    "stored": "data/portal_cdc.json.gz",
-   "stored_sha256": "d99509e76d4fd0e02ff325d8a664a91cd43570774b53288f89dc5e11b75447d0"
+   "stored_sha256": "aafb995aaafed262d2b0d86ec38f194e8b401c7aa452dfb0316d6f2a42934456"
   },
   {
-   "bytes": 2284005,
+   "bytes": 2287301,
    "gzip_added": true,
-   "modified": "2026-11-25T03:48:36Z",
+   "modified": "2026-11-28T06:48:30Z",
    "path": "data/portal_cms.json",
-   "sha256": "cd8369b0ca3c6b9510b43b02463b8d5de1bef8087f40fe37549a55e4aab383e4",
+   "sha256": "835e026b7a69d7191d4ebeedfec152413a084e2ff61d9176a5c4dcd826253a65",
    "stored": "data/portal_cms.json.gz",
-   "stored_sha256": "8ba67dcc7bf4b84d57bf45aeec8124f377de098fb491c4547039dbdb0e932f26"
+   "stored_sha256": "bccb92ea048923302e2e2ebc7ac76d970d26ea2610d302c098d595a92ebf3880"
   },
   {
    "bytes": 98897,
    "gzip_added": true,
-   "modified": "2026-11-25T06:47:55Z",
+   "modified": "2026-11-28T09:47:49Z",
    "path": "data/portal_energy.json",
-   "sha256": "88388965e53a84f874e440a65b24d71a8fde1837b1e575faeeef1eec3795211a",
+   "sha256": "0cbfbf77e697814dc26b1af2b37b718c5247b250d01c8f9f84b76fc04abbd1e2",
    "stored": "data/portal_energy.json.gz",
-   "stored_sha256": "22543c2500a85959e61cdcb7255c8508ac12c32477809f6fe7d3dba26834110f"
+   "stored_sha256": "1cd4e7c39885898fbedd8fb10b72bd14b2e6f09284b010ac2c5b0668ed2115b3"
   },
   {
-   "bytes": 39052,
+   "bytes": 39053,
    "gzip_added": true,
-   "modified": "2026-11-24T10:48:38Z",
+   "modified": "2026-11-27T13:48:29Z",
    "path": "data/portal_healthcare_gov.json",
-   "sha256": "ed795dbf58a40854ccbf52a2a769b21c03ad97a075ccd60aca380d8c5784c298",
+   "sha256": "d619177eea11337d99df3843be765344f3c08e23218e0e008c38c304f8c9ac43",
    "stored": "data/portal_healthcare_gov.json.gz",
-   "stored_sha256": "f427ea69f4090968d6658bb4de34e6391fc768084920bac2319b0a7ceaa2df10"
+   "stored_sha256": "8f3cc8d870e06a9f1da119ab55df97c7e4cee3cbe18e8c147748e0513af08d82"
   },
   {
    "bytes": 449464,
    "gzip_added": true,
-   "modified": "2026-11-25T08:48:25Z",
+   "modified": "2026-11-27T14:48:56Z",
    "path": "data/portal_healthdata_gov.json",
-   "sha256": "d96c5b4018d715271f2d84390ca4b796b4c7437e2dc19809b41c9ec04244a4e8",
+   "sha256": "da59f2ff11bf34350aab8a5eef529ba8781aab1b1b18a388636686c3646477c2",
    "stored": "data/portal_healthdata_gov.json.gz",
-   "stored_sha256": "a80eea78f71603bc1bc885fdf859b6da1653cf6eebc6e4a45cfde782be75e2a9"
+   "stored_sha256": "a184821e7ed82b4cb85b259cc34555a54980938bab2d63e76a2d5e6b0f22685c"
   },
   {
    "bytes": 98682,
    "gzip_added": true,
-   "modified": "2026-11-25T07:48:01Z",
+   "modified": "2026-11-28T10:47:56Z",
    "path": "data/portal_labor.json",
-   "sha256": "520400a7d320eba158377233fd459cea840fd5e3a0e079f648285b610087bf30",
+   "sha256": "654b4d1f5f4b2c1e1a221d2f7e897b2a8bd00e83ae1f75d554ad3b911c0781bf",
    "stored": "data/portal_labor.json.gz",
-   "stored_sha256": "7cf5eb0f360437e5688eac0735887d2d1ff68ceb626afb7c40abe28400d20e4a"
+   "stored_sha256": "136cd040da30e651019e44ac471712b04fa4fcbc460c671c98413102acb519b5"
   },
   {
    "bytes": 205198,
    "gzip_added": true,
-   "modified": "2026-11-25T05:47:52Z",
+   "modified": "2026-11-28T08:48:55Z",
    "path": "data/portal_veterans_affairs.json",
-   "sha256": "9b0e96f6eaad4810d6a3bb7cb072dcd969ab1bd2969e7ed34899e48e8652f27c",
+   "sha256": "40ad68bee5afa42ee0e1425d08cb2c82a4450713dbc65481bb134815e7539d35",
    "stored": "data/portal_veterans_affairs.json.gz",
-   "stored_sha256": "c5af64d7510750326d382705292f335dfe9314917804e867e7371a151396f4b6"
+   "stored_sha256": "0094adec8c8cb609699daabc3803a3c5471f6a654f55ecf87e915e3a4655ebda"
   }
  ],
- "made": "2026-11-25T09:49:01Z",
+ "made": "2026-11-28T10:48:48Z",
  "mode": "inputs",
  "name": "CADENCE",
  "reference": [

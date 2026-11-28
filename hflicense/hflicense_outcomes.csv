@@ -1,5 +1,5 @@
 path,label,outcome,n,of,share,lo,hi,share_lo,share_hi,reason,awaiting,no_file
 /comparison/Models,Models,CONSISTENT,0,110,0.0,0.0,0.0337,0.0,0.0337,,0,
 /comparison/Datasets,Datasets,CANNOT_TELL,0,31,0.0,0.0,0.1103,0.0,0.1103,TOO_WIDE_TO_RESOLVE,0,
-/stated_without_file/Models,Models,,,,0.7362,0.6999,0.7695,0.6999,0.7695,,,452
-/stated_without_file/Datasets,Datasets,,,,0.8998,0.8703,0.9232,0.8703,0.9232,,,449
+/stated_without_file/Models,Models,,,,0.735,0.6987,0.7683,0.6987,0.7683,,,452
+/stated_without_file/Datasets,Datasets,,,,0.884,0.853,0.9092,0.853,0.9092,,,442

@@ -176,5 +176,5 @@ path,label,outcome,n,of,share,lo,hi,posted,no_results,in_review,share_no_results
 /by_year/2023,2023,ABOVE,3415,,0.2395,0.2255,0.2541,2597,818,0,0.2395,,,,,,,,
 /by_year/2024,2024,ABOVE,3282,,0.2946,0.2793,0.3105,2315,967,0,0.2946,,,,,,,,
 /by_year/2025,2025,ABOVE,1749,,0.3979,0.3752,0.4211,1053,696,0,0.3979,,,,,,,,
-/cancelled/tests/Stopped records with no reason given,Stopped records with no reason given,CONSISTENT,25,1674,0.0149,0.0101,0.022,,,,,,,,,,0.0101,0.022,24
+/cancelled/tests/Stopped records with no reason given,Stopped records with no reason given,CONSISTENT,25,1673,0.0149,0.0101,0.022,,,,,,,,,,0.0101,0.022,24
 /cancelled/tests/Withdrawn records that list participants enrolled,Withdrawn records that list participants enrolled,CONSISTENT,0,1102,0.0,0.0,0.0035,,,,,,,,,,0.0,0.0035,

@@ -1,7 +1,7 @@
 // indahl.ai worker (Heuremen LLC). Serves indahl.ai and its MTA-STS host. Built from the private source by kibble/worker-clean/clean_worker.py.
 import { PAGES as INDAHL_PAGES, STYLE as INDAHL_CSS, OY_FILES, NDA, PRIVACY, GATE_JS, FEED, BUILT, LASTMOD, LLMS, SITEMAP } from "../../indahl-ai/pages.js";
 import * as GATE from "../../indahl-ai/gate.js";
-import { handleInquiry } from "../../indahl-ai/inquire.js";
+import { handleInquiry, handleMediaInquiry } from "../../indahl-ai/inquire.js";
 import { handleIndexRequest } from "../../indahl-ai/indexreq.js";
 import { handleResponse } from "../../indahl-ai/respondreq.js";
 import { handleCorrection } from "../../indahl-ai/correctreq.js";
@@ -687,6 +687,10 @@ async function handle(req, env) {
         const ok = /^(model|oy|qia|iris|atlas|time|cada|uptime|forecast|cadence|trials|launch|linkrot|arxivdrift|support|pkglicense|hflicense|hfsize|change|secrecords|seat|pkginstall|stack|revise|fedsep|airline|weights|hpt|ailuminate|airq|campus|hosts|tape|water|neo|tornado|cassandra|voightkampff|credit|cone|solar|wiki|social|adspend|predictions)-[a-z0-9._-]{1,70}$/.test(uq);
         const escU = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
         return html(INDAHL_PAGES["/respond"].replace("__UNIT__", () => ok ? escU(uq) : ""), 200);
+      }
+      if (u.pathname === "/media/inquire") {   // 28 Nov 2026: no-friction media inquiries (inquire.js handleMediaInquiry)
+        const escM = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+        return handleMediaInquiry(req, env, (msg, status) => msg === null ? html(INDAHL_PAGES["/media/inquire-ok"], status) : html(INDAHL_PAGES["/inquire-error"].replace("__MSG__", () => escM(msg)), status));
       }
       if (u.pathname === "/inquire") {
         const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);

@@ -32,7 +32,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Heuremen">
-<link rel="stylesheet" href="/style.css?v=6e03b7c4">
+<link rel="stylesheet" href="/style.css?v=81097ec1">
 
 </head>
 <body>
@@ -46,7 +46,7 @@
 <section class="legal"><p>Takes two or more readings (value with se or low/high). Returns pairwise gaps with z and ABOVE / BELOW / CONSISTENT per pair, an inverse-variance combined value with chi2 per dof (quoted only if the chi-square p is at least 0.05; se inflated by sqrt(chi2/dof) when above 1, factor printed), an outlier (three or more readings only) when one reading accounts for a disagreement, pairwise comparisons not corrected for multiplicity, and an overall outcome against an optional stated value. Assumes the readings are independent and normal; shared sources are not detected.</p><h2>Inputs</h2><table class="mtx"><thead><tr><th>Input</th><th>Required</th><th>What it takes</th></tr></thead><tbody><tr><td><code>readings</code></td><td>yes</td><td>Objects {label, value, se} or {label, value, low, high}.</td></tr><tr><td><code>stated</code></td><td>no</td><td>Optional claimed value to compare the combined reading with.</td></tr><tr><td><code>level</code></td><td>no</td><td>Interval level, default 0.95.</td></tr></tbody></table><h2>Use it</h2><p>Add any of these MCP servers to Claude, ChatGPT, HuggingChat or another MCP client. No key and no account.</p><table class="mtx"><thead><tr><th>Server</th><th>Address</th></tr></thead><tbody><tr><td>indahl.ai</td><td><code>https://indahl.ai/mcp</code></td></tr></tbody></table><p>Then ask the assistant to use <code>triangulate_readings</code> with <code>readings</code>, and to give each outcome with the source it read.</p><p>Or call it directly: <code>https://indahl.ai/api/v1/triangulate_readings?readings=&hellip;</code> (<a href="/api/openapi.json">OpenAPI</a>).</p><h2>What it does with a request</h2><p>Read-only. It reads data indahl.ai has already published and sends nothing onward. The server keeps nothing from the request. Each answer carries a signed receipt. <a href="/security#mcp">How the server handles requests</a>.</p><p><a href="/connect/tools">Every tool</a> &middot; <a href="/connect">Connect</a></p></section>
 </main>
 <footer class="foot"><div class="wrap"><p class="su-link"><a href="/follow">Get notified about updates.</a></p>
-<p class="fl"><a href="/now">Now</a><a href="/downloads">Downloads</a><a href="/developers">Developers</a><a href="/plugins">Plugins</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/indahl-ai/indahl.ai">GitHub</a><a href="/follow">Follow</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
+<p class="fl"><a href="/media">Media</a><a href="/now">Now</a><a href="/downloads">Downloads</a><a href="/developers">Developers</a><a href="/plugins">Plugins</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/conflict-of-interest">Conflict of interest</a><a href="https://github.com/indahl-ai/indahl.ai">GitHub</a><a href="/follow">Follow</a><a href="/community">Community</a><a href="/contact">Inquiry</a></p>
 <p class="fs">Heuremen LLC</p>
 <p class="fs">&ldquo;We found it.&rdquo;</p>
 <p class="fs">Insured by Hiscox.</p>

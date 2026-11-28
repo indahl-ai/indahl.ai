@@ -137,3 +137,47 @@ async function notify(env, rec, key, kind) {
   ].join('\r\n');
   await env.INQUIRY_MAIL.send(new EmailMessage(env.INQUIRY_FROM, env.INQUIRY_TO, raw));
 }
+
+// 28 Nov 2026 (owner: "follow IBM's lead and create a no-friction submission for media outlet inquiries"): /media/inquire.
+// No agreements and no identity check, unlike the engagement form: name, outlet, email, deadline and question. Guards: a honeypot field,
+// a 20,000-byte cap, and 3 an hour per visitor (the Limiter Durable Object, falling back to a KV counter). Stored as media:<time>:<id>
+// for 24 months like every inquiry, and mailed to the same private inbox. A notice failure leaves notify-failed:<key> for the inquiry bell.
+const MEDIA_FIELDS = { name: 200, outlet: 200, email: 200, deadline: 200, question: 4000 };
+export async function handleMediaInquiry(req, env, render) {
+  if (req.method !== 'POST') return render('Please use the form on the media page.', 405);
+  if (!env.INDAHL_INQUIRIES) return render('Media inquiries are temporarily unavailable. Please write again shortly.', 503);
+  let raw;
+  try {
+    const rd = req.body ? req.body.getReader() : null, parts = []; let n = 0;
+    while (rd) { const { done, value } = await rd.read(); if (done) break; n += value.byteLength; if (n > 20000) { try { await rd.cancel(); } catch (e) {} return render('That message is too long.', 413); } parts.push(value); }
+    raw = new Uint8Array(n); let o = 0; for (const p of parts) { raw.set(p, o); o += p.byteLength; }
+  } catch (e) { return render('That message could not be read.', 400); }
+  let f; try { f = await new Request('https://form.local/', { method: 'POST', headers: { 'content-type': req.headers.get('content-type') || '' }, body: raw }).formData(); } catch (e) { return render('That message could not be read.', 400); }
+  if ((f.get('website') || '').trim()) return render(null, 200);   // honeypot: look accepted, store nothing
+  const rec = {};
+  for (const [k, max] of Object.entries(MEDIA_FIELDS)) { const v = String(f.get(k) || '').trim(); if (v.length > max) return render(`The ${k} field is too long.`, 400); rec[k] = v; }
+  for (const k of ['name', 'outlet', 'email', 'question']) if (!rec[k]) return render('Please fill in your name, outlet, email and question.', 400);
+  const m = rec.email.toLowerCase().match(/^[^\s@]+@([a-z0-9.-]+\.[a-z]{2,})$/);
+  if (!m) return render('Please give a valid email address.', 400);
+  const ip = clientIp(req, env); let limited = null;
+  if (env.LIMITER) { try { const lr = await env.LIMITER.get(env.LIMITER.idFromName('media:' + await sha(ip))).fetch('https://limiter/?limit=3&win=3600'); limited = lr.status === 429; } catch (e) {} }
+  if (limited === true) return render('We have received several messages from you in the last hour. Please wait before sending another.', 429);
+  if (limited === null) {
+    const rk = 'mrate:' + await sha(ip + '|' + new Date().toISOString().slice(0, 13)), c = Number(await env.INDAHL_INQUIRIES.get(rk) || 0);
+    if (c >= 3) return render('We have received several messages from you in the last hour. Please wait before sending another.', 429);
+    await env.INDAHL_INQUIRIES.put(rk, String(c + 1), { expirationTtl: 3600 });
+  }
+  rec.received = new Date().toISOString(); rec.country = clientCountry(req, env); rec.domain = m[1];
+  const key = `media:${rec.received}:${crypto.randomUUID().slice(0, 8)}`;
+  await env.INDAHL_INQUIRIES.put(key, JSON.stringify(rec), { expirationTtl: 63072000 });
+  try {
+    if (!env.INQUIRY_MAIL || !env.INQUIRY_TO || !env.INQUIRY_FROM) throw new Error('mail binding or address missing');
+    const h = v => String(v || '').replace(/[\r\n]+/g, ' ').slice(0, 200);
+    const body = [`New media inquiry (${rec.received}, ${rec.country || 'country unknown'})`, '', `Name: ${rec.name}`, `Outlet: ${rec.outlet}`, `Email: ${rec.email}`,
+      `Deadline: ${rec.deadline || 'not stated'}`, '', 'Question:', rec.question, '', `Stored as ${key}.`].join('\r\n');
+    const mail = [`From: Indahl inquiries <${env.INQUIRY_FROM}>`, `To: <${env.INQUIRY_TO}>`, `Reply-To: ${h(rec.email)}`, `Subject: MEDIA: ${h(rec.outlet)} (${h(rec.name)})`,
+      `Date: ${new Date().toUTCString()}`, `Message-ID: <${crypto.randomUUID()}@indahl.ai>`, 'MIME-Version: 1.0', 'Content-Type: text/plain; charset=utf-8', 'Content-Transfer-Encoding: 8bit', '', body].join('\r\n');
+    await env.INQUIRY_MAIL.send(new EmailMessage(env.INQUIRY_FROM, env.INQUIRY_TO, mail));
+  } catch (e) { await env.INDAHL_INQUIRIES.put('notify-failed:' + key, String(e && e.message || e)); }
+  return render(null, 200);
+}

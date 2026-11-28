@@ -15,7 +15,7 @@ import json, os, secrets, subprocess, sys, time, urllib.request
 
 TEMPLATE = 'xkgdhxfb9o'          # private template "QIA hosted sandbox": public template's setup + ports 8888/http,22/tcp
 INSTANCE = 'cpu3c-2-4'
-CAP = 25                         # 27 Nov 2026 (owner): bespoke pods for every top-tier pitch, paid whether used or not
+CAP = 10**6                      # 28 Nov 2026 (owner): no cap; pods are the pipeline to cash. Was 25.
 REC = os.path.expanduser('~/forge/ledger/gates/hosted_sandboxes.jsonl')
 PREFIX = 'qia-hosted-'
 NB = 'lab/tree/demo/QIA_demonstrations.ipynb'

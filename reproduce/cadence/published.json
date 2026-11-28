@@ -1,20 +1,20 @@
 {
  "feed": "https://indahl.ai/cadence/live.json",
- "feed_sha256": "c9fabf1734353a18c39f0fb0839dd30628a5fa2d21992909ab0ead843efaf401",
+ "feed_sha256": "e3a5c96bda649e7bfcd13200e007cedfe18cde230ff7381891b8eba11d7906cc",
  "headline": {
   "desk": "CADENCE",
-  "display": "639 of 1,243",
+  "display": "641 of 1,243",
   "hi": null,
   "keys": [
-   639,
+   641,
    1243
   ],
   "lo": null,
-  "n": 639,
+  "n": 641,
   "of": 1243,
   "outcome": null,
-  "value": 639
+  "value": 641
  },
- "read_at": "2026-11-28T10:48:48Z",
- "stamp": "28 Nov 10:47"
+ "read_at": "2026-11-28T15:54:11Z",
+ "stamp": "28 Nov 15:48"
 }

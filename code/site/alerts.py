@@ -19,13 +19,13 @@ HERE = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(B, 'ledger'))
 E = html.escape
 MAP = os.path.join(HERE, 'alerts_map.json'); LIST_JS = os.path.join(HERE, 'alerts_list.js')
-JS_HASH_SRC = 'signup.js v3'   # bump with a change to the script served at /signup.js (alerts.js), so browsers fetch the new one
+JS_HASH_SRC = 'signup.js v4'   # bump with a change to the script served at /signup.js (alerts.js), so browsers fetch the new one
 TICK_BUS = os.path.join(B, 'watch', 'tick_bus.py'); TICKS = os.path.join(B, 'watch', 'ticks.log'); TARGETS = os.path.join(B, 'nodes_repo', 'drift', 'targets.json')
 
 # 10 Nov 2026 (owner’s word): ONE sign-up form, in the footer of every page and on /alerts. Boxes: nl (weekly newsletter, at once), up (new desks
 # and new data), all (outcome changes on every desk), d=<desk> (outcome changes), u=<page> (updates), dv=<division> (everything in it),
 # o=<organisation>, and f = delivery (now, day, week).
-CSS = """
+CSS = """.su-link{margin:10px 0 4px;font-size:14px}
 .su{max-width:640px;margin:0 auto 12px;padding:4px 0 12px;border-bottom:1px solid #4a3d24;text-align:left}.su-h{margin:0 0 6px;font-weight:600;color:#efe5cf;font-size:15px}
 .su-row{display:flex;gap:8px;margin:0 0 6px}.su input[type=email]{font:inherit;font-size:15px;padding:6px 8px;border:1px solid #4a3d24;background:#fffaf0;color:#1a1208;flex:1 1 auto;min-width:0;max-width:340px}
 .su .btn{flex:none;background:var(--lit);color:var(--cave);padding:6px 14px;border:0;font:inherit;font-size:15px;cursor:pointer}.su .btn:hover{background:#f3e2a0}
@@ -234,13 +234,15 @@ def footer(PAGES):
     by_url = {e['url']: i for i, e in eidx.items()}
     for k in list(PAGES):
         d = PAGES[k]
-        if k in NO_FOOT_FORM or FOOT not in d or 'class="su"' in d: continue
+        if k in NO_FOOT_FORM or FOOT not in d or 'class="su"' in d or 'class="su-link"' in d: continue
         extra = ''; s = k.lstrip('/')
         if s in items: extra = item_box(s, items[s])
         # 11 Nov night: no per-entity box (desk follows only); brand pages keep their brand box below
         # elif k in by_url: extra = ent_box(by_url[k], eidx[by_url[k]])   # a brand page, an entity page or an OY school page: this company or named thing
         elif k.startswith('/brand/') and k[7:] in brands: extra = brand_box(k[7:], brands[k[7:]][0])
-        d = d.replace(FOOT, FOOT + signup_form(extra), 1); n += 1
+        # 28 Nov 2026 (owner: "get the box off, just a link to the breakout page"): one line, the page's own box ticked on /alerts.
+        _q = ('?d=' + s) if s in items else ''
+        d = d.replace(FOOT, FOOT + '<p class="su-link"><a href="/alerts%s#signup">Get email updates about this page.</a></p>' % _q, 1); n += 1
         PAGES[k] = d
     for k, d in PAGES.items():
         if 'class="su"' in d and '/signup.js' not in d and '</body>' in d: PAGES[k] = d.replace('</body>', tag + '\n</body>', 1)
@@ -340,7 +342,7 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
                       % (E(dslug), E(dslug), E(dname), E(dslug), E(dname), li))   # 22 Nov 2026 (the owner): no timelines about our actions
     # 11 Nov 2026 night (owner: "take off the search box", "back to just desk follows"): no named-thing search on /alerts
     listing = ('<p class="su-h">The desks and divisions you tick</p>' + ''.join(blocks))
-    body = ('<section class="legal"><p>One form for every email from indahl.ai. The same form sits at the foot of the site&rsquo;s pages.</p>'
+    body = ('<section class="legal"><p>One form for every email from indahl.ai. Every page links here.</p>'
             '<p>New desks and new data sends one email when a new desk goes live, when a desk '
             'publishes its first value under its change rule, and when a release adds an entry to the changelog.</p>'
             '<p>Desks marked outcome changes send one email when an outcome changes. A change is what the desk&rsquo;s ledger rule counts as one: the outcome '
@@ -351,7 +353,7 @@ def apply(PAGES, page, hero_slim, HOME, bb, rows, desks=None):
             '<p>You can have alerts and updates as they happen, in one daily digest or in one weekly digest on Tuesdays. Several changes found together come in one email.</p>'
             '<p>For every box, we email a confirmation link first and send nothing else until you open it. Every email has a link to unsubscribe, '
             'and every alert has a link to change what you get. Each outcome desk&rsquo;s changes are also on its own feed, for example <a href="/airq/changes.xml">/airq/changes.xml</a>.</p>'
-            + signup_form('', listing) + '</section>')
+            + '<div id="signup"></div>' + signup_form('', listing) + '</section>')
     PAGES['/alerts'] = page('/alerts', 'Email Updates | Heuremen LLC', 'New desks and new data, and an email when an outcome or the published data changes on the indahl.ai desks and divisions you follow, with a confirmation link first for alerts.',
                             body, hero_slim('Email Updates'))
     if HOME is not None: HOME['/alerts'] = '/hermes'

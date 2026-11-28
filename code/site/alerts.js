@@ -38,6 +38,10 @@ const JS = `(function () {
       l.appendChild(box); l.appendChild(document.createTextNode(' Rows about ' + (a.getAttribute('data-n') || id))); c.insertBefore(l, c.firstChild); }
     box.checked = true; var em = f.querySelector('input[type=email]'); f.scrollIntoView({ block: 'center' }); if (em) em.focus({ preventScroll: true });
   });
+  // 28 Nov 2026 (owner: no box on every page, one link to this page): /alerts?d=<slug> ticks that page's box and puts the cursor in the email field.
+  try { var want = new URLSearchParams(location.search).get('d'); if (want) { var fm = document.querySelector('form.su'); if (fm) { var hit = 0;
+    fm.querySelectorAll('input[type=checkbox]').forEach(function (x) { if (x.value === want) { x.checked = true; hit = 1; } });
+    if (hit) { var em2 = fm.querySelector('input[type=email]'); fm.scrollIntoView({ block: 'start' }); if (em2) em2.focus({ preventScroll: true }); } } } } catch (e) {}
   document.querySelectorAll('form.al, form.su').forEach(function (f) {
     f.addEventListener('submit', function (ev) {
       if (!window.fetch || !window.FormData) return;

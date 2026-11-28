@@ -70,7 +70,9 @@ for p in [_FILE] if _FILE else _QIA_FILES if _QIA else [os.path.join(B, 'indahl-
     # reply-time promise on any page. He answers when he sits down to. Legal response times in the privacy notice are the law, not a promise.
     if p.endswith('.html') and not re.search(r'privacy', rel):
         m = re.search(r'(?i)\b(we (reply|respond|answer|acknowledge)|(answered|replied to|responded to|acknowledged)( by email)?)[^.<]{0,80}? within [^.<]{0,30}(days?|hours?)\b', open(p, encoding='utf-8', errors='replace').read())
-        if m: print(f'  BREACH 0b.13 {rel}: no reply-time promise: {m.group(0)!r}'); bad += 1
+        # 28 Nov 2026 (the owner): the one allowed line, on the indahl.ai media page only.
+        if m and not (rel.replace(os.sep, '/').endswith('media.html') and 'All media inquiries will be acknowledged within one business day.' in m.string[max(0, m.start() - 40):m.end() + 40]):
+            print(f'  BREACH 0b.13 {rel}: no reply-time promise: {m.group(0)!r}'); bad += 1
     # 22 Nov 2026 (the owner): ONE inquiry
     # button per page. Counts links whose text is exactly Inquiry/Inquiries/Inquire, plus any btn-class link to an inquiry path. Prose
     # references in legal text ("the inquiry form") are not buttons. ONE_INQUIRY_ALLOW lists pages still being fixed (FW-028); empty it after.

@@ -156,7 +156,7 @@ export async function handleMediaInquiry(req, env, render) {
   if ((f.get('website') || '').trim()) return render(null, 200);   // honeypot: look accepted, store nothing
   const rec = {};
   for (const [k, max] of Object.entries(MEDIA_FIELDS)) { const v = String(f.get(k) || '').trim(); if (v.length > max) return render(`The ${k} field is too long.`, 400); rec[k] = v; }
-  for (const k of ['name', 'outlet', 'email', 'question']) if (!rec[k]) return render('Please fill in your name, outlet, email and question.', 400);
+  for (const k of ['name', 'outlet', 'email']) if (!rec[k]) return render('Please fill in your name, outlet and email.', 400);   // 28 Nov 2026 (owner): three fields only
   const m = rec.email.toLowerCase().match(/^[^\s@]+@([a-z0-9.-]+\.[a-z]{2,})$/);
   if (!m) return render('Please give a valid email address.', 400);
   const ip = clientIp(req, env); let limited = null;

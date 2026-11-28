@@ -23,6 +23,9 @@
     }).catch(function () {});
   }
   function run() {
+    // 28 Nov 2026 (owner: the /qia readings flashed and were painted over): a page that ships its own headline block marks it data-hl-fixed,
+    // and this script leaves that page alone (no fill, no replace, no inserted headline).
+    if (document.querySelector('[data-hl-fixed]')) return;
     fetch('/headlines.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
       var pages = d.pages || {}, main = document.querySelector('main.wrap'); if (!main) return;
       var slot = document.getElementById('hl-slot');
